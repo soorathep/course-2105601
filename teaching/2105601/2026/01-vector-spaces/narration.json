@@ -1,0 +1,2137 @@
+{
+ "voice": "en-US-GuyNeural",
+ "rate": "-5%",
+ "provider": "Microsoft Edge neural speech (edge-tts)",
+ "synthetic_voice": true,
+ "total_seconds": 2453.1,
+ "slides": [
+  {
+   "n": 1,
+   "file": "audio/slide-01.mp3",
+   "duration": 34.992,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.629,
+     "en": "Welcome to Session 1 of Advanced Engineering Mathematics for Chemical Engineers.",
+     "th": "ยินดีต้อนรับสู่คาบที่ 1 ของวิชา Advanced Engineering Mathematics for Chemical Engineers"
+    },
+    {
+     "s": 5.629,
+     "e": 12.237,
+     "en": "Today is about vector spaces, linear operators, and the four fundamental subspaces of a matrix.",
+     "th": "วันนี้เราจะเรียนเรื่อง vector space, linear operator และ subspace พื้นฐานทั้งสี่ของเมทริกซ์"
+    },
+    {
+     "s": 12.237,
+     "e": 22.263,
+     "en": "We will use them to answer two practical questions: how many independent reactions a network has, and what to report when measured flows do not close the element balances.",
+     "th": "เราจะใช้แนวคิดเหล่านี้ตอบคำถามเชิงปฏิบัติสองข้อ คือ เครือข่ายปฏิกิริยามีปฏิกิริยาอิสระกี่ปฏิกิริยา และควรรายงานค่าใดเมื่อค่าอัตราการไหลที่วัดได้ไม่สอดคล้องกับ element balance"
+    },
+    {
+     "s": 22.263,
+     "e": 29.513,
+     "en": "On your own, the narration takes about forty minutes; the activities, four checks and the lab fill the rest of the three hours.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสี่สิบนาที ส่วนกิจกรรม การตรวจความเข้าใจสี่ครั้ง และแล็บ ใช้เวลาที่เหลือของสามชั่วโมง"
+    },
+    {
+     "s": 29.513,
+     "e": 34.921,
+     "en": "When the narration for a slide ends, press the right arrow key, or Next, to go on.",
+     "th": "เมื่อเสียงบรรยายของแต่ละหน้าจบ กดลูกศรขวาหรือปุ่ม Next เพื่อไปหน้าถัดไป"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "file": "audio/slide-02.mp3",
+   "duration": 38.544,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.05,
+     "en": "Here is the plan for the three hours.",
+     "th": "นี่คือแผนของสามชั่วโมง"
+    },
+    {
+     "s": 3.05,
+     "e": 13.579,
+     "en": "After a ten-minute retrieval check on undergraduate linear algebra, part one, thirty-five minutes, covers vector spaces, bases, linear operators and inner products.",
+     "th": "หลังทบทวนพีชคณิตเชิงเส้นระดับปริญญาตรีสิบนาที ส่วนที่หนึ่ง สามสิบห้านาที ครอบคลุม vector space, basis, linear operator และ inner product"
+    },
+    {
+     "s": 13.579,
+     "e": 23.291,
+     "en": "Part two, forty minutes, introduces the four fundamental subspaces, the rank nullity theorem, when a linear system has a solution, least squares as projection,",
+     "th": "ส่วนที่สอง สี่สิบนาที แนะนำ subspace พื้นฐานทั้งสี่ ทฤษฎีบท rank nullity เงื่อนไขที่ระบบเชิงเส้นมีคำตอบ least squares ในฐานะการฉาย"
+    },
+    {
+     "s": 23.291,
+     "e": 26.447,
+     "en": "and the difference between exact and numerical rank.",
+     "th": "และความต่างระหว่าง rank แบบแม่นตรงกับ rank เชิงตัวเลข"
+    },
+    {
+     "s": 26.447,
+     "e": 34.711,
+     "en": "After a break and a second activity, part three, thirty minutes, applies all of this to stoichiometry and to data reconciliation.",
+     "th": "หลังพักและกิจกรรมที่สอง ส่วนที่สาม สามสิบนาที นำทั้งหมดนี้ไปใช้กับปริมาณสัมพันธ์และการปรับกระทบยอดข้อมูล"
+    },
+    {
+     "s": 34.711,
+     "e": 38.474,
+     "en": "The session ends with Lab 1 and the Exit Ticket.",
+     "th": "คาบนี้จบด้วย Lab 1 และ Exit Ticket"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "file": "audio/slide-03.mp3",
+   "duration": 39.312,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.063,
+     "en": "Activity 1 is a retrieval check on undergraduate linear algebra.",
+     "th": "กิจกรรมที่ 1 คือการทบทวนพีชคณิตเชิงเส้นระดับปริญญาตรี"
+    },
+    {
+     "s": 5.063,
+     "e": 17.184,
+     "en": "Answer the four questions without notes. They cover a singular matrix, the rank of a three by five matrix, balancing a combustion reaction, and the projection of one vector onto another.",
+     "th": "ตอบคำถามสี่ข้อโดยไม่เปิดโน้ต คำถามครอบคลุมเมทริกซ์ singular, rank ของเมทริกซ์สามคูณห้า การดุลสมการการเผาไหม้ และการฉายเวกเตอร์หนึ่งลงบนอีกเวกเตอร์หนึ่ง"
+    },
+    {
+     "s": 17.184,
+     "e": 29.316,
+     "en": "Questions three and four are today's bridges. Balancing a reaction is solving a homogeneous linear system, and projection is the basis of least squares and of data reconciliation.",
+     "th": "ข้อสามและข้อสี่เป็นสะพานไปสู่วันนี้ การดุลสมการคือการแก้ระบบเชิงเส้นเอกพันธ์ และการฉายเป็นพื้นฐานของ least squares และการปรับกระทบยอดข้อมูล"
+    },
+    {
+     "s": 29.316,
+     "e": 39.237,
+     "en": "In class, write alone for five minutes, then compare with a partner. On your own, pause the narration, write your answers, and then press Show answers.",
+     "th": "ในห้องเรียน เขียนคนเดียวห้านาที แล้วเทียบกับเพื่อน ถ้าเรียนเอง หยุดเสียงบรรยาย เขียนคำตอบ แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "file": "audio/slide-04.mp3",
+   "duration": 41.616,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.866,
+     "en": "By the end of today you should be able to do six things.",
+     "th": "เมื่อจบคาบนี้ คุณควรทำได้หกอย่าง"
+    },
+    {
+     "s": 3.866,
+     "e": 10.0,
+     "en": "Decide whether a set of vectors or functions is a subspace, and give a basis and its dimension.",
+     "th": "ตัดสินว่าเซตของเวกเตอร์หรือฟังก์ชันเป็น subspace หรือไม่ และระบุ basis กับมิติ"
+    },
+    {
+     "s": 10.0,
+     "e": 17.342,
+     "en": "Write the matrix of a linear operator in a chosen basis, including an operator on functions such as the derivative.",
+     "th": "เขียนเมทริกซ์ของ linear operator ใน basis ที่เลือก รวมถึง operator ที่กระทำกับฟังก์ชัน เช่น อนุพันธ์"
+    },
+    {
+     "s": 17.342,
+     "e": 21.316,
+     "en": "Explain with a number why orthogonal bases matter.",
+     "th": "อธิบายด้วยตัวเลขว่าทำไม basis ที่ตั้งฉากกันจึงสำคัญ"
+    },
+    {
+     "s": 21.316,
+     "e": 29.145,
+     "en": "State the four fundamental subspaces and use them to decide whether M x equals b has a solution, and whether it is unique.",
+     "th": "ระบุ subspace พื้นฐานทั้งสี่ และใช้ตัดสินว่า M x เท่ากับ b มีคำตอบหรือไม่ และคำตอบมีเพียงหนึ่งเดียวหรือไม่"
+    },
+    {
+     "s": 29.145,
+     "e": 34.237,
+     "en": "Compute a rank exactly and numerically, and know which a data matrix needs.",
+     "th": "คำนวณ rank ทั้งแบบแม่นตรงและแบบเชิงตัวเลข และรู้ว่าเมทริกซ์ข้อมูลต้องใช้แบบใด"
+    },
+    {
+     "s": 34.237,
+     "e": 41.539,
+     "en": "And find the independent reactions and conserved quantities of a network, then reconcile measured flows by projection.",
+     "th": "และหาปฏิกิริยาอิสระกับปริมาณอนุรักษ์ของเครือข่าย แล้วปรับกระทบยอดอัตราการไหลที่วัดได้ด้วยการฉาย"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "file": "audio/slide-05.mp3",
+   "duration": 61.92,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.418,
+     "en": "This course has seven sessions before the midterm, and they share one idea: a linear operator, its subspaces and its eigenvalues.",
+     "th": "วิชานี้มีเจ็ดคาบก่อนสอบกลางภาค และทุกคาบใช้แนวคิดร่วมกัน คือ linear operator, subspace ของมัน และค่าเฉพาะของมัน"
+    },
+    {
+     "s": 8.418,
+     "e": 17.342,
+     "en": "Session 2 chooses bases that fit an operator, through eigenvalues and the singular value decomposition, and makes numerical rank precise.",
+     "th": "คาบที่ 2 เลือก basis ที่เหมาะกับ operator ผ่านค่าเฉพาะและ singular value decomposition และนิยาม rank เชิงตัวเลขให้แม่นยำ"
+    },
+    {
+     "s": 17.342,
+     "e": 24.145,
+     "en": "Session 3 solves linear ODE systems, where the null space of a rate matrix holds the conserved quantities.",
+     "th": "คาบที่ 3 แก้ระบบสมการเชิงอนุพันธ์เชิงเส้น ซึ่ง null space ของเมทริกซ์อัตราเก็บปริมาณอนุรักษ์ไว้"
+    },
+    {
+     "s": 24.145,
+     "e": 33.487,
+     "en": "Sessions 4 and 5 study stability and bifurcation. A steady state turns back exactly where its Jacobian gains a null space.",
+     "th": "คาบที่ 4 และ 5 ศึกษาเสถียรภาพและ bifurcation สภาวะคงตัวจะเลี้ยวกลับตรงจุดที่ Jacobian มี null space"
+    },
+    {
+     "s": 33.487,
+     "e": 41.105,
+     "en": "Session 6 covers scaling and perturbation, and Session 7 returns to function spaces for boundary value problems.",
+     "th": "คาบที่ 6 ว่าด้วย scaling และ perturbation และคาบที่ 7 กลับมาที่ปริภูมิฟังก์ชันสำหรับปัญหาค่าขอบ"
+    },
+    {
+     "s": 41.105,
+     "e": 50.474,
+     "en": "You need undergraduate linear algebra, calculus and reactor balances. Python runs in the browser; no installation is needed.",
+     "th": "คุณต้องมีพื้นพีชคณิตเชิงเส้น แคลคูลัส และการดุลมวลในเครื่องปฏิกรณ์ระดับปริญญาตรี Python รันในเบราว์เซอร์ ไม่ต้องติดตั้งอะไร"
+    },
+    {
+     "s": 50.474,
+     "e": 61.855,
+     "en": "The labs follow the same thread. Each one uses a chemical engineering problem with a known answer, so you can check what the mathematics gives against something you already understand.",
+     "th": "แล็บก็ต่อเนื่องในแนวเดียวกัน แต่ละแล็บใช้โจทย์วิศวกรรมเคมีที่รู้คำตอบอยู่แล้ว คุณจึงตรวจสิ่งที่คณิตศาสตร์ให้เทียบกับสิ่งที่เข้าใจอยู่แล้วได้"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "file": "audio/slide-06.mp3",
+   "duration": 52.848,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.905,
+     "en": "The notation on this slide is fixed for the whole course.",
+     "th": "สัญลักษณ์ในหน้านี้ใช้ตลอดทั้งวิชา"
+    },
+    {
+     "s": 3.905,
+     "e": 17.472,
+     "en": "M is a general matrix with m rows and n columns. A is the atom matrix, elements by species. N is the stoichiometric matrix, species by reactions, with products positive.",
+     "th": "M คือเมทริกซ์ทั่วไปขนาด m แถว n หลัก A คือ atom matrix แถวเป็นธาตุ หลักเป็นสปีชีส์ N คือ stoichiometric matrix แถวเป็นสปีชีส์ หลักเป็นปฏิกิริยา ผลิตภัณฑ์มีค่าบวก"
+    },
+    {
+     "s": 17.472,
+     "e": 23.776,
+     "en": "And xi is the vector of extents of reaction, so that n equals n zero plus N xi.",
+     "th": "และ xi คือเวกเตอร์ของ extent of reaction ดังนั้น n เท่ากับ n ศูนย์ บวก N xi"
+    },
+    {
+     "s": 23.776,
+     "e": 35.921,
+     "en": "Eigenvalues are written lambda, from Session 2. The null space of a matrix is always written with its argument, as in N of A, so it is never confused with the stoichiometric matrix.",
+     "th": "ค่าเฉพาะเขียนด้วย lambda เริ่มตั้งแต่คาบที่ 2 ส่วน null space ของเมทริกซ์เขียนพร้อมอาร์กิวเมนต์เสมอ เช่น N ของ A เพื่อไม่ให้สับสนกับ stoichiometric matrix"
+    },
+    {
+     "s": 35.921,
+     "e": 46.724,
+     "en": "Assessment is the midterm examination and the labs. Each lab is handed in by downloading the answer file at the end of the lab page and uploading it to myCourseVille.",
+     "th": "การประเมินผลประกอบด้วยการสอบกลางภาคและแล็บ ส่งแล็บแต่ละครั้งโดยดาวน์โหลดไฟล์คำตอบท้ายหน้าแล็บ แล้วอัปโหลดเข้า myCourseVille"
+    },
+    {
+     "s": 46.724,
+     "e": 52.789,
+     "en": "On any slide marked D Python, press D to see the code behind the numbers and run it yourself.",
+     "th": "ในหน้าที่มีป้าย D Python กด D เพื่อดูโค้ดที่อยู่เบื้องหลังตัวเลข และรันเองได้"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "file": "audio/slide-07.mp3",
+   "duration": 78.528,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.382,
+     "en": "Why start a graduate course with vector spaces? Because many research questions in chemical engineering are questions about subspaces.",
+     "th": "ทำไมวิชาระดับบัณฑิตศึกษาจึงเริ่มด้วย vector space เพราะคำถามวิจัยจำนวนมากในวิศวกรรมเคมีเป็นคำถามเกี่ยวกับ subspace"
+    },
+    {
+     "s": 9.382,
+     "e": 21.487,
+     "en": "How many reactions must a kinetic model contain, and which quantities can never change? That is the null space of the atom matrix, and the left null space of the stoichiometric matrix.",
+     "th": "แบบจำลองจลนพลศาสตร์ต้องมีกี่ปฏิกิริยา และปริมาณใดที่ไม่มีวันเปลี่ยน คำถามนี้คือ null space ของ atom matrix และ left null space ของ stoichiometric matrix"
+    },
+    {
+     "s": 21.487,
+     "e": 29.171,
+     "en": "Which flows do you report when the measurements do not close the balances? That is an orthogonal projection.",
+     "th": "ควรรายงานอัตราการไหลใดเมื่อค่าวัดไม่สอดคล้องกับ balance คำถามนี้คือการฉายตั้งฉาก"
+    },
+    {
+     "s": 29.171,
+     "e": 37.763,
+     "en": "Can your data identify every parameter you fit? That is the rank and the singular values of a sensitivity matrix.",
+     "th": "ข้อมูลของคุณระบุพารามิเตอร์ทุกตัวที่ fit ได้หรือไม่ คำถามนี้คือ rank และ singular value ของ sensitivity matrix"
+    },
+    {
+     "s": 37.763,
+     "e": 46.461,
+     "en": "Graduate work needs more than a recipe. It needs the statement that says when a computation can be trusted, and what it proves.",
+     "th": "งานระดับบัณฑิตศึกษาต้องการมากกว่าสูตรสำเร็จ ต้องการข้อความทางคณิตศาสตร์ที่บอกว่าการคำนวณเชื่อถือได้เมื่อใด และพิสูจน์อะไรได้บ้าง"
+    },
+    {
+     "s": 46.461,
+     "e": 57.749,
+     "en": "Consider what happens without this statement. A student fits a kinetic model with three reactions for methanol synthesis and reports three rate constants with confidence intervals.",
+     "th": "ลองคิดว่าจะเกิดอะไรขึ้นถ้าไม่มีข้อความนี้ นิสิตคนหนึ่ง fit แบบจำลองจลนพลศาสตร์สามปฏิกิริยาสำหรับการสังเคราะห์เมทานอล แล้วรายงานค่าคงที่อัตราสามค่าพร้อมช่วงความเชื่อมั่น"
+    },
+    {
+     "s": 57.749,
+     "e": 68.289,
+     "en": "If the three reactions span only a two dimensional space, one combination of those constants is not determined by any composition data, however many experiments are run.",
+     "th": "ถ้าปฏิกิริยาทั้งสาม span ได้เพียงปริภูมิสองมิติ จะมีผลรวมหนึ่งของค่าคงที่เหล่านั้นที่ข้อมูลองค์ประกอบไม่สามารถกำหนดได้ ไม่ว่าจะทดลองกี่ครั้ง"
+    },
+    {
+     "s": 68.289,
+     "e": 78.461,
+     "en": "The software will still return three numbers. Only the linear algebra tells you that one direction is set by the starting guess and the solver, not by the data.",
+     "th": "ซอฟต์แวร์ยังคืนค่าตัวเลขสามค่าให้ มีเพียงพีชคณิตเชิงเส้นที่บอกได้ว่ามีทิศหนึ่งที่ถูกกำหนดโดยค่าเริ่มต้นและตัวแก้สมการ ไม่ใช่โดยข้อมูล"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "file": "audio/slide-08.mp3",
+   "duration": 101.472,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.418,
+     "en": "A vector space is a set in which you can add any two members and scale any member, and stay in the set.",
+     "th": "vector space คือเซตที่เราบวกสมาชิกสองตัวใดๆ หรือคูณสมาชิกด้วยสเกลาร์ แล้วยังอยู่ในเซตเดิม"
+    },
+    {
+     "s": 6.418,
+     "e": 12.105,
+     "en": "The usual rules come with it: a zero vector, negatives, and the distributive laws.",
+     "th": "พร้อมกฎปกติ ได้แก่ เวกเตอร์ศูนย์ ตัวผกผันการบวก และกฎการแจกแจง"
+    },
+    {
+     "s": 12.105,
+     "e": 19.974,
+     "en": "A subspace is a subset that passes one test: it contains zero, and every linear combination of its members is a member.",
+     "th": "subspace คือเซตย่อยที่ผ่านการทดสอบเดียว คือ มีเวกเตอร์ศูนย์ และผลรวมเชิงเส้นของสมาชิกทุกแบบยังเป็นสมาชิก"
+    },
+    {
+     "s": 19.974,
+     "e": 31.855,
+     "en": "Notice how little you need to check for a subspace. The other rules, such as commutativity, are inherited from the larger space, so only closure and the zero vector remain to be shown.",
+     "th": "สังเกตว่าการตรวจ subspace ต้องการเพียงเล็กน้อย กฎอื่น เช่น การสลับที่ ได้รับสืบทอดมาจากปริภูมิที่ใหญ่กว่า จึงเหลือเพียงการปิดและเวกเตอร์ศูนย์ที่ต้องแสดง"
+    },
+    {
+     "s": 31.855,
+     "e": 40.921,
+     "en": "A useful habit is to test the zero vector first. If zero is not in the set, you are done, and the set is not a subspace.",
+     "th": "นิสัยที่มีประโยชน์คือทดสอบเวกเตอร์ศูนย์ก่อน ถ้าศูนย์ไม่อยู่ในเซต ก็จบได้เลยว่าเซตนั้นไม่ใช่ subspace"
+    },
+    {
+     "s": 40.921,
+     "e": 53.511,
+     "en": "The examples on the right matter for this course. R n holds the molar flows of n species. P k holds polynomials up to degree k, such as a heat capacity correlation.",
+     "th": "ตัวอย่างทางขวาสำคัญกับวิชานี้ R n เก็บอัตราการไหลโมลของ n สปีชีส์ P k เก็บพหุนามดีกรีไม่เกิน k เช่น สหสัมพันธ์ของความจุความร้อน C"
+    },
+    {
+     "s": 53.511,
+     "e": 58.776,
+     "en": "C of a b holds continuous functions, such as a concentration profile.",
+     "th": "ของ a b เก็บฟังก์ชันต่อเนื่อง เช่น โปรไฟล์ความเข้มข้น"
+    },
+    {
+     "s": 58.776,
+     "e": 67.474,
+     "en": "The balanced reactions form the null space of the atom matrix, and the solutions of a homogeneous linear ODE form a space of finite dimension.",
+     "th": "ปฏิกิริยาที่ดุลแล้วรวมกันเป็น null space ของ atom matrix และคำตอบของสมการเชิงอนุพันธ์เชิงเส้นเอกพันธ์รวมกันเป็นปริภูมิที่มีมิติจำกัด"
+    },
+    {
+     "s": 67.474,
+     "e": 75.513,
+     "en": "Session 7 works in function spaces. The rules are the same as in R n; only the dimension is infinite.",
+     "th": "คาบที่ 7 ทำงานในปริภูมิฟังก์ชัน กฎเหมือนกับใน R n เพียงแต่มิติเป็นอนันต์"
+    },
+    {
+     "s": 75.513,
+     "e": 78.968,
+     "en": "One more example shows why the definition is useful.",
+     "th": "อีกตัวอย่างหนึ่งแสดงว่านิยามนี้มีประโยชน์อย่างไร"
+    },
+    {
+     "s": 78.968,
+     "e": 89.921,
+     "en": "The set of concentration profiles that satisfy a zero flux condition at the center of a catalyst pellet is a subspace, because the condition is linear and homogeneous.",
+     "th": "เซตของโปรไฟล์ความเข้มข้นที่สอดคล้องกับเงื่อนไขฟลักซ์เป็นศูนย์ที่จุดศูนย์กลางของเม็ดตัวเร่งปฏิกิริยาเป็น subspace เพราะเงื่อนไขเป็นเชิงเส้นและเอกพันธ์"
+    },
+    {
+     "s": 89.921,
+     "e": 101.395,
+     "en": "The set that equals the bulk concentration at the surface is not; it is affine. Session 7 handles this by writing the solution as a particular part plus a part in the subspace.",
+     "th": "ส่วนเซตที่มีค่าเท่ากับความเข้มข้นในวัฏภาคหลักที่ผิวไม่ใช่ subspace แต่เป็น affine set คาบที่ 7 จัดการเรื่องนี้โดยเขียนคำตอบเป็นส่วนเฉพาะบวกส่วนที่อยู่ใน subspace"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
+   "duration": 77.976,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.816,
+     "en": "Here are seven sets. For each one, decide whether it is a subspace before you click.",
+     "th": "นี่คือเซตเจ็ดเซต แต่ละเซตให้ตัดสินก่อนคลิกว่าเป็น subspace หรือไม่"
+    },
+    {
+     "s": 6.816,
+     "e": 17.5,
+     "en": "The first set catches most people. Mole fraction vectors are not a subspace, because the zero vector is missing and doubling a vector makes its fractions sum to two.",
+     "th": "เซตแรกทำให้คนส่วนใหญ่ตอบผิด เวกเตอร์เศษส่วนโมลไม่ใช่ subspace เพราะไม่มีเวกเตอร์ศูนย์ และเมื่อคูณสองแล้วผลรวมเศษส่วนกลายเป็นสอง"
+    },
+    {
+     "s": 17.5,
+     "e": 30.978,
+     "en": "The pattern to remember is this. A homogeneous linear condition gives a subspace. A nonzero right hand side gives an affine set, which is a subspace moved away from zero.",
+     "th": "รูปแบบที่ควรจำคือ เงื่อนไขเชิงเส้นเอกพันธ์ให้ subspace เงื่อนไขที่ด้านขวาไม่เป็นศูนย์ให้ affine set ซึ่งคือ subspace ที่ถูกเลื่อนออกจากจุดศูนย์"
+    },
+    {
+     "s": 30.978,
+     "e": 33.342,
+     "en": "Inequalities give convex sets.",
+     "th": "และอสมการให้ convex set"
+    },
+    {
+     "s": 33.342,
+     "e": 43.013,
+     "en": "The outlet flows that satisfy the element balances are an affine set. That fact is the geometry of data reconciliation in part three.",
+     "th": "อัตราการไหลขาออกที่สอดคล้องกับ element balance เป็น affine set ข้อเท็จจริงนี้คือเรขาคณิตของการปรับกระทบยอดข้อมูลในส่วนที่สาม"
+    },
+    {
+     "s": 43.013,
+     "e": 52.822,
+     "en": "Two of the sets are solution sets of differential equations. The homogeneous equation gives a space of dimension two, spanned by cosine and sine.",
+     "th": "สองเซตเป็นเซตคำตอบของสมการเชิงอนุพันธ์ สมการเอกพันธ์ให้ปริภูมิมิติสองที่ span ด้วยโคไซน์และไซน์ เมื่อเพิ่มแหล่งค่าคงที่"
+    },
+    {
+     "s": 52.822,
+     "e": 59.474,
+     "en": "Adding a constant source gives the same space shifted by one particular solution, the constant one.",
+     "th": "จะได้ปริภูมิเดียวกันที่ถูกเลื่อนด้วยคำตอบเฉพาะหนึ่งตัว คือค่าคงที่หนึ่ง"
+    },
+    {
+     "s": 59.474,
+     "e": 75.593,
+     "en": "Before moving on, try one of your own. Is the set of temperature profiles in a rod with both ends held at zero degrees Celsius a subspace? Yes. With both ends held at one hundred degrees?",
+     "th": "ก่อนไปต่อ ลองตั้งโจทย์เอง เซตของโปรไฟล์อุณหภูมิในแท่งที่ปลายทั้งสองข้างคงที่ที่ศูนย์องศาเซลเซียสเป็น subspace หรือไม่ ใช่ แล้วถ้าปลายทั้งสองข้างคงที่ที่หนึ่งร้อยองศาล่ะ"
+    },
+    {
+     "s": 75.593,
+     "e": 77.908,
+     "en": "No. Only the shift differs.",
+     "th": "ไม่ใช่ ต่างกันเพียงการเลื่อน"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
+   "duration": 95.472,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.368,
+     "en": "The span of a set of vectors is all their linear combinations. The vectors are independent if the only combination that gives zero has all coefficients zero.",
+     "th": "span ของเซตเวกเตอร์คือผลรวมเชิงเส้นทั้งหมดของมัน เวกเตอร์เป็นอิสระเชิงเส้นถ้าผลรวมเดียวที่ให้ศูนย์คือผลรวมที่สัมประสิทธิ์เป็นศูนย์ทั้งหมด"
+    },
+    {
+     "s": 10.368,
+     "e": 20.013,
+     "en": "A basis is an independent set that spans the space. Every basis of a space has the same number of vectors, and that number is the dimension.",
+     "th": "basis คือเซตที่เป็นอิสระเชิงเส้นและ span ทั้งปริภูมิ ทุก basis ของปริภูมิเดียวกันมีจำนวนเวกเตอร์เท่ากัน และจำนวนนั้นคือมิติ"
+    },
+    {
+     "s": 20.013,
+     "e": 24.763,
+     "en": "In a basis, every vector has exactly one set of coordinates.",
+     "th": "ใน basis หนึ่ง เวกเตอร์แต่ละตัวมีพิกัดเพียงชุดเดียว"
+    },
+    {
+     "s": 24.763,
+     "e": 32.846,
+     "en": "Here is the standard test for independence in practice. Put the vectors as columns of a matrix and compute its rank.",
+     "th": "นี่คือวิธีทดสอบความเป็นอิสระที่ใช้จริง นำเวกเตอร์มาเรียงเป็นหลักของเมทริกซ์แล้วคำนวณ"
+    },
+    {
+     "s": 32.846,
+     "e": 38.303,
+     "en": "The vectors are independent exactly when the rank equals the number of vectors.",
+     "th": "rank เวกเตอร์เป็นอิสระก็ต่อเมื่อ rank เท่ากับจำนวนเวกเตอร์"
+    },
+    {
+     "s": 38.303,
+     "e": 44.059,
+     "en": "Finding coordinates in a general basis means solving a linear system with those columns.",
+     "th": "การหาพิกัดใน basis ทั่วไปคือการแก้ระบบเชิงเส้นที่มีหลักเหล่านั้น"
+    },
+    {
+     "s": 44.059,
+     "e": 55.118,
+     "en": "When the basis is nearly dependent, that system is ill conditioned, and the coordinates become sensitive to small errors. We will put a number on this two slides from now.",
+     "th": "เมื่อ basis เกือบไม่เป็นอิสระ ระบบนั้นจะมีภาวะไม่ดี และพิกัดจะไวต่อความคลาดเคลื่อนเล็กๆ อีกสองหน้าเราจะวัดเรื่องนี้เป็นตัวเลข"
+    },
+    {
+     "s": 55.118,
+     "e": 65.224,
+     "en": "Coordinates depend on the basis. A polynomial fit gives different coefficients in monomials and in Legendre polynomials, and the same curve.",
+     "th": "พิกัดขึ้นกับ basis การ fit พหุนามให้สัมประสิทธิ์ต่างกันเมื่อใช้ monomial หรือ Legendre polynomial แต่ได้เส้นโค้งเดียวกัน"
+    },
+    {
+     "s": 65.224,
+     "e": 75.671,
+     "en": "For a reaction network, a basis of the null space of the atom matrix is a set of independent reactions. Many sets are valid, but their number is fixed.",
+     "th": "สำหรับเครือข่ายปฏิกิริยา basis ของ null space ของ atom matrix คือชุดของปฏิกิริยาอิสระ มีหลายชุดที่ใช้ได้ แต่จำนวนปฏิกิริยาคงที่"
+    },
+    {
+     "s": 75.671,
+     "e": 82.474,
+     "en": "Choosing a basis is a modeling decision, and later sessions choose the basis that makes an operator simple.",
+     "th": "การเลือก basis เป็นการตัดสินใจในการสร้างแบบจำลอง และคาบต่อๆ ไปจะเลือก basis ที่ทำให้ operator อยู่ในรูปง่าย"
+    },
+    {
+     "s": 82.474,
+     "e": 95.395,
+     "en": "A short exercise: show that one, one plus x, and one plus x plus x squared form a basis of P two, and find the coordinates of x squared in it. You should get zero, minus one and one.",
+     "th": "แบบฝึกหัดสั้นๆ แสดงว่า หนึ่ง หนึ่งบวก x และ หนึ่งบวก x บวก x กำลังสอง เป็น basis ของ P สอง และหาพิกัดของ x กำลังสองใน basis นี้ คุณควรได้ ศูนย์ ลบหนึ่ง และหนึ่ง"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
+   "duration": 131.112,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.866,
+     "en": "A linear operator maps a combination of inputs to the same combination of outputs.",
+     "th": "linear operator แปลงผลรวมเชิงเส้นของอินพุตไปเป็นผลรวมเชิงเส้นแบบเดียวกันของเอาต์พุต"
+    },
+    {
+     "s": 5.866,
+     "e": 16.882,
+     "en": "Choose a basis for the input space and one for the output space. Column j of the matrix holds the coordinates of the operator applied to the j-th input basis vector.",
+     "th": "เลือก basis ของปริภูมิอินพุตและของปริภูมิเอาต์พุต หลักที่ j ของเมทริกซ์คือพิกัดของผลที่ได้เมื่อ operator กระทำกับเวกเตอร์ basis ตัวที่ j ของอินพุต"
+    },
+    {
+     "s": 16.882,
+     "e": 24.103,
+     "en": "Take the derivative on polynomials of degree three or less, with the basis one, x, x squared, x cubed.",
+     "th": "ลองพิจารณาอนุพันธ์บนพหุนามดีกรีไม่เกินสาม ใช้ basis หนึ่ง x x กำลังสอง และ x กำลังสาม"
+    },
+    {
+     "s": 24.103,
+     "e": 31.395,
+     "en": "The derivative of x to the k is k times x to the k minus one, which gives the four by four matrix shown.",
+     "th": "อนุพันธ์ของ x กำลัง k คือ k คูณ x กำลัง k ลบหนึ่ง จึงได้เมทริกซ์สี่คูณสี่ตามที่แสดง"
+    },
+    {
+     "s": 31.395,
+     "e": 39.382,
+     "en": "Its rank is three. Its null space is the constants, which is why every antiderivative carries a plus C.",
+     "th": "rank ของมันคือสาม null space คือค่าคงตัว จึงเป็นเหตุผลที่ปฏิยานุพันธ์ทุกตัวมีบวก C"
+    },
+    {
+     "s": 39.382,
+     "e": 51.512,
+     "en": "Its left null space has dimension one: the derivative of a cubic has no x cubed term. So the equation L p equals q has a solution only if q has no x cubed term.",
+     "th": "left null space มีมิติหนึ่ง เพราะอนุพันธ์ของพหุนามดีกรีสามไม่มีพจน์ x กำลังสาม ดังนั้นสมการ L p เท่ากับ q มีคำตอบเฉพาะเมื่อ q ไม่มีพจน์ x กำลังสาม"
+    },
+    {
+     "s": 51.512,
+     "e": 54.526,
+     "en": "That is our first solvability condition.",
+     "th": "นี่คือเงื่อนไขการมีคำตอบข้อแรกของเรา"
+    },
+    {
+     "s": 54.526,
+     "e": 57.202,
+     "en": "A few operators that are linear in our field:",
+     "th": "operator ที่เป็นเชิงเส้นในสาขาของเรา"
+    },
+    {
+     "s": 57.202,
+     "e": 66.566,
+     "en": "the derivative with respect to position, the Laplacian, an integral against a residence time distribution, and the Jacobian of a reactor model at a steady state.",
+     "th": "ได้แก่ อนุพันธ์เทียบกับตำแหน่ง Laplacian อินทิกรัลเทียบกับ residence time distribution และ Jacobian ของแบบจำลองเครื่องปฏิกรณ์ที่สภาวะคงตัว"
+    },
+    {
+     "s": 66.566,
+     "e": 77.921,
+     "en": "A rate law in k c squared is not linear, and neither is an operator that adds a constant. Adding a constant gives an affine map, which is a linear map plus a shift.",
+     "th": "กฎอัตราแบบ k c กำลังสองไม่เป็นเชิงเส้น และ operator ที่บวกค่าคงที่ก็ไม่เป็นเชิงเส้น การบวกค่าคงที่ให้ affine map ซึ่งคือ linear map บวกการเลื่อน"
+    },
+    {
+     "s": 77.921,
+     "e": 90.092,
+     "en": "Write the matrix of the second derivative on the same space as an exercise. You should find rank two, a two dimensional null space of linear functions, and two compatibility conditions.",
+     "th": "ลองเขียนเมทริกซ์ของอนุพันธ์อันดับสองบนปริภูมิเดียวกันเป็นแบบฝึกหัด คุณควรได้ rank สอง null space สองมิติซึ่งคือฟังก์ชันเชิงเส้น และเงื่อนไขความเข้ากันได้สองข้อ"
+    },
+    {
+     "s": 90.092,
+     "e": 95.263,
+     "en": "Rank and nullity belong to the operator, not to the basis you used to write it.",
+     "th": "rank และ nullity เป็นสมบัติของ operator ไม่ขึ้นกับ basis ที่ใช้เขียนมัน"
+    },
+    {
+     "s": 95.263,
+     "e": 102.245,
+     "en": "A last point about this example. The derivative maps P three into P three, but its image is only P two.",
+     "th": "ข้อสุดท้ายของตัวอย่างนี้ อนุพันธ์ส่ง P สามไปยัง P สาม แต่ภาพของมันมีเพียง P สอง ถ้าเลือก"
+    },
+    {
+     "s": 102.245,
+     "e": 112.046,
+     "en": "If you had chosen P two as the output space, the matrix would be three by four, with rank three and no left null space. The operator is the same;",
+     "th": "P สองเป็นปริภูมิเอาต์พุต เมทริกซ์จะมีขนาดสามคูณสี่ มี rank สาม และไม่มี left null space operator ยังเป็นตัวเดิม"
+    },
+    {
+     "s": 112.046,
+     "e": 117.618,
+     "en": "the space you allow for the output decides whether a solvability condition appears.",
+     "th": "แต่ปริภูมิที่เรายอมให้เป็นเอาต์พุตเป็นตัวกำหนดว่าจะมีเงื่อนไขการมีคำตอบหรือไม่"
+    },
+    {
+     "s": 117.618,
+     "e": 120.712,
+     "en": "Here is why the basis does not matter for rank.",
+     "th": "นี่คือเหตุผลที่ basis ไม่มีผลต่อ rank"
+    },
+    {
+     "s": 120.712,
+     "e": 131.026,
+     "en": "A change of basis multiplies the matrix on each side by an invertible matrix, and multiplying by an invertible matrix preserves the dimension of every subspace.",
+     "th": "การเปลี่ยน basis คือการคูณเมทริกซ์ทั้งสองด้านด้วยเมทริกซ์ที่หาตัวผกผันได้ และการคูณด้วยเมทริกซ์ที่หาตัวผกผันได้รักษามิติของทุก subspace ไว้"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
+   "duration": 119.112,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.461,
+     "en": "An inner product measures lengths and angles. In R n it is u transpose v; in a function space it is an integral of f times g, possibly with a weight.",
+     "th": "inner product ใช้วัดความยาวและมุม ใน R n คือ u transpose v ในปริภูมิฟังก์ชันคืออินทิกรัลของ f คูณ g ซึ่งอาจมีฟังก์ชันน้ำหนัก"
+    },
+    {
+     "s": 10.461,
+     "e": 14.632,
+     "en": "Two vectors are orthogonal when their inner product is zero.",
+     "th": "เวกเตอร์สองตัวตั้งฉากกันเมื่อ inner product เป็นศูนย์"
+    },
+    {
+     "s": 14.632,
+     "e": 20.342,
+     "en": "The Gram matrix of a basis collects the inner products of every pair of basis vectors.",
+     "th": "Gram matrix ของ basis คือเมทริกซ์ที่เก็บ inner product ของ basis ทุกคู่"
+    },
+    {
+     "s": 20.342,
+     "e": 31.855,
+     "en": "Gram Schmidt removes from each new vector its components along the previous ones. The same result comes from the Cholesky factor of the Gram matrix, which is how the module computes it.",
+     "th": "Gram Schmidt ลบองค์ประกอบของเวกเตอร์ใหม่ที่อยู่ในทิศของเวกเตอร์ก่อนหน้าออก ผลเดียวกันได้จาก Cholesky factor ของ Gram matrix ซึ่งโมดูลใช้วิธีนี้"
+    },
+    {
+     "s": 31.855,
+     "e": 41.329,
+     "en": "Applied to one, x, x squared and x cubed on minus one to one, and scaled so each equals one at x equals one, it gives the Legendre polynomials.",
+     "th": "เมื่อใช้กับ หนึ่ง x x กำลังสอง และ x กำลังสาม บนช่วงลบหนึ่งถึงหนึ่ง และปรับให้แต่ละตัวมีค่าหนึ่งที่ x เท่ากับหนึ่ง จะได้ Legendre polynomial"
+    },
+    {
+     "s": 41.329,
+     "e": 48.739,
+     "en": "Let us check the second Legendre polynomial by hand. Start with x squared and remove its component along one.",
+     "th": "ลองตรวจ Legendre polynomial ตัวที่สองด้วยมือ เริ่มจาก x กำลังสองแล้วลบองค์ประกอบในทิศของหนึ่งออก"
+    },
+    {
+     "s": 48.739,
+     "e": 58.776,
+     "en": "The inner product of x squared with one on minus one to one is two thirds, and the inner product of one with itself is two, so we subtract one third.",
+     "th": "inner product ของ x กำลังสองกับหนึ่งบนช่วงลบหนึ่งถึงหนึ่งเท่ากับสองในสาม และ inner product ของหนึ่งกับตัวเองเท่ากับสอง เราจึงลบหนึ่งในสาม"
+    },
+    {
+     "s": 58.776,
+     "e": 71.592,
+     "en": "The component along x is zero, because x cubed is odd. So the result is x squared minus one third, and scaling it to equal one at x equals one gives three x squared minus one, over two.",
+     "th": "องค์ประกอบในทิศ x เป็นศูนย์ เพราะ x กำลังสามเป็นฟังก์ชันคี่ ผลที่ได้คือ x กำลังสองลบหนึ่งในสาม และเมื่อปรับให้มีค่าหนึ่งที่ x เท่ากับหนึ่ง จะได้ สาม x กำลังสอง ลบหนึ่ง หารด้วยสอง"
+    },
+    {
+     "s": 71.592,
+     "e": 78.306,
+     "en": "Classical Gram Schmidt loses orthogonality in floating point when the vectors are nearly dependent.",
+     "th": "Gram Schmidt แบบดั้งเดิมสูญเสียการตั้งฉากเมื่อคำนวณด้วยเลขทศนิยมถ้าเวกเตอร์เกือบไม่อิสระ"
+    },
+    {
+     "s": 78.306,
+     "e": 85.355,
+     "en": "Modified Gram Schmidt, or a QR factorization by Householder reflections, is what numerical libraries use.",
+     "th": "ไลบรารีเชิงตัวเลขจึงใช้ modified Gram Schmidt หรือ QR factorization ด้วย Householder reflection"
+    },
+    {
+     "s": 85.355,
+     "e": 94.947,
+     "en": "In an orthogonal basis, each coordinate is one inner product divided by a norm squared. There is no system of equations to solve.",
+     "th": "ใน basis ที่ตั้งฉากกัน พิกัดแต่ละตัวคือ inner product หนึ่งค่าหารด้วยกำลังสองของ norm ไม่ต้องแก้ระบบสมการ"
+    },
+    {
+     "s": 94.947,
+     "e": 100.316,
+     "en": "Session 7 uses weight functions x for a cylinder and x squared for a sphere.",
+     "th": "คาบที่ 7 ใช้ฟังก์ชันน้ำหนัก x สำหรับทรงกระบอก และ x กำลังสองสำหรับทรงกลม"
+    },
+    {
+     "s": 100.316,
+     "e": 105.045,
+     "en": "The norm from an inner product also gives the error of an approximation.",
+     "th": "norm ที่ได้จาก inner product ยังให้ค่าความคลาดเคลื่อนของการประมาณด้วย"
+    },
+    {
+     "s": 105.045,
+     "e": 114.18,
+     "en": "The best approximation of a function in a subspace, in this norm, is its orthogonal projection, and the error is orthogonal to the subspace.",
+     "th": "การประมาณที่ดีที่สุดของฟังก์ชันใน subspace ตาม norm นี้คือการฉายตั้งฉาก และความคลาดเคลื่อนตั้งฉากกับ subspace"
+    },
+    {
+     "s": 114.18,
+     "e": 119.039,
+     "en": "This is the same statement as least squares in part two, now for functions.",
+     "th": "นี่คือข้อความเดียวกับ least squares ในส่วนที่สอง แต่ใช้กับฟังก์ชัน"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 106.032,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.132,
+     "en": "The monomials are a legal basis and a poor one. This chart shows why.",
+     "th": "monomial เป็น basis ที่ถูกต้องแต่ไม่ดี กราฟนี้แสดงเหตุผล"
+    },
+    {
+     "s": 6.132,
+     "e": 14.5,
+     "en": "A least squares polynomial fit on zero to one solves a system whose matrix is the Gram matrix of the monomials, the Hilbert matrix.",
+     "th": "การ fit พหุนามแบบ least squares บนช่วงศูนย์ถึงหนึ่งต้องแก้ระบบที่มีเมทริกซ์เป็น Gram matrix ของ monomial ซึ่งคือ Hilbert matrix"
+    },
+    {
+     "s": 14.5,
+     "e": 23.479,
+     "en": "Its condition number is about one point five times ten to the four for a cubic, and about one point six times ten to the thirteen for degree nine.",
+     "th": "condition number ของมันประมาณหนึ่งจุดห้าคูณสิบยกกำลังสี่สำหรับพหุนามดีกรีสาม และประมาณหนึ่งจุดหกคูณสิบยกกำลังสิบสามสำหรับดีกรีเก้า"
+    },
+    {
+     "s": 23.479,
+     "e": 26.961,
+     "en": "It grows by a factor of about thirty for each added term.",
+     "th": "เพิ่มขึ้นประมาณสามสิบเท่าต่อพจน์ที่เพิ่ม"
+    },
+    {
+     "s": 26.961,
+     "e": 37.671,
+     "en": "The condition number bounds how much a relative error in the data can grow. With sixteen digits of arithmetic, ten to the thirteen leaves about three reliable digits.",
+     "th": "condition number เป็นขอบเขตว่าความคลาดเคลื่อนสัมพัทธ์ในข้อมูลขยายได้มากเท่าใด เมื่อคำนวณด้วยความละเอียดสิบหกหลัก ค่าสิบยกกำลังสิบสามเหลือตัวเลขที่เชื่อถือได้ประมาณสามหลัก"
+    },
+    {
+     "s": 37.671,
+     "e": 40.028,
+     "en": "Where does this matter in research?",
+     "th": "เรื่องนี้สำคัญที่ใดในงานวิจัย"
+    },
+    {
+     "s": 40.028,
+     "e": 51.092,
+     "en": "Heat capacity and vapor pressure correlations, calibration curves of high degree, and polynomial response surfaces in design of experiments all use monomials by default.",
+     "th": "สหสัมพันธ์ของความจุความร้อนและความดันไอ เส้นสอบเทียบดีกรีสูง และ response surface แบบพหุนามในการออกแบบการทดลอง ล้วนใช้ monomial เป็นค่าเริ่มต้น"
+    },
+    {
+     "s": 51.092,
+     "e": 63.487,
+     "en": "Two simple remedies help a great deal. Center and scale the variable to the interval minus one to one before fitting, and use an orthogonal basis such as Legendre or Chebyshev polynomials.",
+     "th": "มีวิธีแก้ง่ายๆ สองวิธีที่ช่วยได้มาก คือ เลื่อนและปรับสเกลตัวแปรให้อยู่ในช่วงลบหนึ่งถึงหนึ่งก่อน fit และใช้ basis ที่ตั้งฉากกัน เช่น Legendre หรือ Chebyshev polynomial"
+    },
+    {
+     "s": 63.487,
+     "e": 72.053,
+     "en": "Session 2 returns to this with the Arrhenius equation, where centering the temperature changes the condition number by several orders of magnitude.",
+     "th": "คาบที่ 2 จะกลับมาที่เรื่องนี้ด้วยสมการ Arrhenius ซึ่งการเลื่อนจุดศูนย์กลางของอุณหภูมิทำให้ condition number เปลี่ยนไปหลายอันดับ"
+    },
+    {
+     "s": 72.053,
+     "e": 79.697,
+     "en": "If you open the Python drawer, you will see that at degree nine the third digit of this number already differs between computers.",
+     "th": "ถ้าเปิด Python drawer จะเห็นว่าที่ดีกรีเก้า ตัวเลขหลักที่สามของค่านี้ต่างกันแล้วเมื่อรันบนคอมพิวเตอร์ต่างเครื่อง"
+    },
+    {
+     "s": 79.697,
+     "e": 90.237,
+     "en": "An orthogonal basis has a diagonal Gram matrix. That is why spectral methods and the eigenfunction expansions of Session 7 use orthogonal functions.",
+     "th": "basis ที่ตั้งฉากกันมี Gram matrix เป็นเมทริกซ์ทแยง นี่คือเหตุผลที่ spectral method และการกระจายด้วย eigenfunction ในคาบที่ 7 ใช้ฟังก์ชันที่ตั้งฉากกัน"
+    },
+    {
+     "s": 90.237,
+     "e": 97.192,
+     "en": "A practical test: fit the same data twice, once in the raw variable and once after scaling to minus one to one.",
+     "th": "การทดสอบในทางปฏิบัติ fit ข้อมูลชุดเดียวกันสองครั้ง ครั้งแรกใช้ตัวแปรดิบ ครั้งที่สองหลังปรับสเกลเป็นลบหนึ่งถึงหนึ่ง"
+    },
+    {
+     "s": 97.192,
+     "e": 105.947,
+     "en": "If the fitted curves agree but the coefficients differ wildly between computers or software versions, the basis is the problem, not the data.",
+     "th": "ถ้าเส้นโค้งที่ได้ตรงกัน แต่สัมประสิทธิ์ต่างกันมากระหว่างคอมพิวเตอร์หรือรุ่นของซอฟต์แวร์ ปัญหาอยู่ที่ basis ไม่ใช่ข้อมูล"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 19.704,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.418,
+     "en": "Check 1 has four questions on vector spaces and operators.",
+     "th": "Check 1 มีสี่คำถามเรื่อง vector space และ operator"
+    },
+    {
+     "s": 4.418,
+     "e": 12.711,
+     "en": "They ask about mole fractions, the derivative on cubic polynomials, which of two operators is linear, and the monomial basis.",
+     "th": "คำถามเกี่ยวกับเศษส่วนโมล อนุพันธ์บนพหุนามดีกรีสาม operator สองตัวว่าตัวใดเป็นเชิงเส้น และ monomial basis"
+    },
+    {
+     "s": 12.711,
+     "e": 19.632,
+     "en": "Take five minutes. On your own, pause now, write your answers, and then press Show answers.",
+     "th": "ใช้เวลาห้านาที ถ้าเรียนเอง หยุดตอนนี้ เขียนคำตอบ แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 98.928,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.276,
+     "en": "Part two. Every matrix with m rows and n columns carries four subspaces.",
+     "th": "ส่วนที่สอง เมทริกซ์ทุกตัวที่มี m แถวและ n หลักมี subspace สี่ตัว"
+    },
+    {
+     "s": 6.276,
+     "e": 13.329,
+     "en": "In the input space R n live the row space, of dimension r, and the null space, of dimension n minus r.",
+     "th": "ในปริภูมิอินพุต R n มี row space ซึ่งมีมิติ r และ null space ซึ่งมีมิติ n ลบ r"
+    },
+    {
+     "s": 13.329,
+     "e": 20.829,
+     "en": "In the output space R m live the column space, of dimension r, and the left null space, of dimension m minus r.",
+     "th": "ในปริภูมิเอาต์พุต R m มี column space ซึ่งมีมิติ r และ left null space ซึ่งมีมิติ m ลบ r"
+    },
+    {
+     "s": 20.829,
+     "e": 27.303,
+     "en": "Here r is the rank: the number of independent columns, which equals the number of independent rows.",
+     "th": "r คือ rank ซึ่งเท่ากับจำนวนหลักที่เป็นอิสระ และเท่ากับจำนวนแถวที่เป็นอิสระด้วย"
+    },
+    {
+     "s": 27.303,
+     "e": 32.434,
+     "en": "In each space the two subspaces are orthogonal and together fill the space.",
+     "th": "ในแต่ละปริภูมิ subspace สองตัวตั้งฉากกันและรวมกันได้ทั้งปริภูมิ"
+    },
+    {
+     "s": 32.434,
+     "e": 40.289,
+     "en": "Let us read the picture for a matrix you will meet in Part 3: an atom matrix with three elements and five species, of rank three.",
+     "th": "ลองอ่านภาพนี้กับเมทริกซ์ที่จะพบในส่วนที่สาม คือ atom matrix ที่มีสามธาตุและห้าสปีชีส์ ซึ่งมี rank สาม"
+    },
+    {
+     "s": 40.289,
+     "e": 51.178,
+     "en": "The input space is R five, the space of changes in moles. The null space has dimension two: these are the balanced reactions. The row space has dimension three:",
+     "th": "ปริภูมิอินพุตคือ R ห้า ซึ่งเป็นปริภูมิของการเปลี่ยนแปลงจำนวนโมล null space มีมิติสอง คือปฏิกิริยาที่ดุลแล้ว row space"
+    },
+    {
+     "s": 51.178,
+     "e": 54.763,
+     "en": "these are the combinations of moles that count atoms.",
+     "th": "มีมิติสาม คือผลรวมของจำนวนโมลที่นับอะตอม"
+    },
+    {
+     "s": 54.763,
+     "e": 68.026,
+     "en": "The output space is R three, one entry per element. The column space is all of it, and the left null space is only the zero vector. Any atom count can be produced by some set of moles.",
+     "th": "ปริภูมิเอาต์พุตคือ R สาม หนึ่งค่าต่อหนึ่งธาตุ column space คือทั้งปริภูมิ และ left null space มีเพียงเวกเตอร์ศูนย์ จำนวนอะตอมค่าใดก็สร้างได้จากจำนวนโมลบางชุด"
+    },
+    {
+     "s": 68.026,
+     "e": 75.89,
+     "en": "The matrix sends the row space one to one onto the column space, and sends the null space to zero. Keep this picture in mind;",
+     "th": "เมทริกซ์ส่ง row space ไปยัง column space แบบหนึ่งต่อหนึ่ง และส่ง null space ไปที่ศูนย์ จำภาพนี้ไว้"
+    },
+    {
+     "s": 75.89,
+     "e": 79.947,
+     "en": "every statement about solvability and uniqueness is read from it.",
+     "th": "เพราะข้อความทุกข้อเรื่องการมีคำตอบและความเป็นหนึ่งเดียวอ่านได้จากภาพนี้"
+    },
+    {
+     "s": 79.947,
+     "e": 91.397,
+     "en": "Notice that the picture says nothing about the entries of the matrix. Two matrices with the same four subspaces can have very different entries, and very different condition numbers.",
+     "th": "สังเกตว่าภาพนี้ไม่ได้บอกอะไรเกี่ยวกับสมาชิกของเมทริกซ์ เมทริกซ์สองตัวที่มี subspace ทั้งสี่เหมือนกันอาจมีสมาชิกต่างกันมาก และมี condition number ต่างกันมาก"
+    },
+    {
+     "s": 91.397,
+     "e": 98.842,
+     "en": "The subspaces describe what a model can and cannot do; the singular values, next session, describe how well it does it.",
+     "th": "subspace บอกว่าแบบจำลองทำอะไรได้และไม่ได้ ส่วน singular value ในคาบหน้าบอกว่ามันทำได้ดีเพียงใด"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 110.016,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.208,
+     "en": "Two theorems hold the picture together.",
+     "th": "ทฤษฎีบทสองข้อยึดภาพนี้ไว้ด้วยกัน"
+    },
+    {
+     "s": 3.208,
+     "e": 9.421,
+     "en": "Rank nullity says that the dimension of the column space plus the dimension of the null space equals n.",
+     "th": "rank nullity กล่าวว่ามิติของ column space บวกมิติของ null space เท่ากับ n"
+    },
+    {
+     "s": 9.421,
+     "e": 15.713,
+     "en": "The proof is row reduction. The echelon form has r pivot columns and n minus r free columns.",
+     "th": "การพิสูจน์ใช้การลดแถว รูปขั้นบันไดมีหลัก pivot r หลัก และหลักอิสระ n ลบ r หลัก"
+    },
+    {
+     "s": 15.713,
+     "e": 25.118,
+     "en": "Setting one free variable to one and the others to zero gives one null space vector, so the free columns give a basis of n minus r vectors.",
+     "th": "เมื่อให้ตัวแปรอิสระตัวหนึ่งเป็นหนึ่งและตัวอื่นเป็นศูนย์ จะได้เวกเตอร์ใน null space หนึ่งตัว หลักอิสระทั้งหมดจึงให้ basis ที่มี n ลบ r เวกเตอร์"
+    },
+    {
+     "s": 25.118,
+     "e": 33.237,
+     "en": "Orthogonality is one line: a vector in the null space has zero inner product with every row, and so with every combination of rows.",
+     "th": "การตั้งฉากพิสูจน์ได้ในบรรทัดเดียว เวกเตอร์ใน null space มี inner product เป็นศูนย์กับทุกแถว จึงเป็นศูนย์กับผลรวมเชิงเส้นของแถวทุกแบบด้วย"
+    },
+    {
+     "s": 33.237,
+     "e": 43.934,
+     "en": "For a model with n unknowns and m equations: if the rank equals n, a solution is unique when it exists; if the rank equals m, a solution exists for every right hand side.",
+     "th": "สำหรับแบบจำลองที่มีตัวแปร n ตัวและสมการ m สมการ ถ้า rank เท่ากับ n คำตอบเป็นหนึ่งเดียวเมื่อมีคำตอบ ถ้า rank เท่ากับ m จะมีคำตอบสำหรับด้านขวาทุกค่า"
+    },
+    {
+     "s": 43.934,
+     "e": 55.487,
+     "en": "Here is the count for the three by five atom matrix. Three pivots, so two free columns. Rank three plus nullity two equals five, the number of species.",
+     "th": "นี่คือการนับสำหรับ atom matrix ขนาดสามคูณห้า มีสาม pivot จึงมีสองหลักอิสระ rank สาม บวก nullity สอง เท่ากับห้า ซึ่งคือจำนวนสปีชีส์"
+    },
+    {
+     "s": 55.487,
+     "e": 62.211,
+     "en": "For the transpose, which is five by three, the same rank three leaves a left null space of dimension zero.",
+     "th": "สำหรับ transpose ซึ่งมีขนาดห้าคูณสาม rank สามเท่าเดิมทำให้ left null space มีมิติศูนย์"
+    },
+    {
+     "s": 62.211,
+     "e": 68.447,
+     "en": "The free column construction is exactly how the lab finds an integer basis of balanced reactions.",
+     "th": "การสร้างจากหลักอิสระนี้คือวิธีที่แล็บใช้หา basis ที่เป็นจำนวนเต็มของปฏิกิริยาที่ดุลแล้ว"
+    },
+    {
+     "s": 68.447,
+     "e": 75.956,
+     "en": "In infinite dimensions the counting needs care, because both the null space and the range can be infinite dimensional.",
+     "th": "ในมิติอนันต์ การนับต้องระวัง เพราะทั้ง null space และ range อาจมีมิติอนันต์ แต่การตั้งฉากยังคงอยู่"
+    },
+    {
+     "s": 75.956,
+     "e": 82.329,
+     "en": "The orthogonality survives, and for the operators of Session 7 it gives the same alternative as here.",
+     "th": "และสำหรับ operator ในคาบที่ 7 ให้ alternative แบบเดียวกับที่นี่"
+    },
+    {
+     "s": 82.329,
+     "e": 94.459,
+     "en": "Let us run the construction on a small case. Take a matrix whose echelon form has pivots in columns one and three, out of four columns. The free variables are x two and x four.",
+     "th": "ลองใช้วิธีนี้กับกรณีเล็กๆ ให้เมทริกซ์มีรูปขั้นบันไดที่มี pivot ในหลักที่หนึ่งและสาม จากทั้งหมดสี่หลัก ตัวแปรอิสระคือ x สอง และ x สี่ ให้ x"
+    },
+    {
+     "s": 94.459,
+     "e": 104.327,
+     "en": "Set x two to one and x four to zero, solve the pivot rows for x one and x three, and you have the first null space vector. Then swap the roles.",
+     "th": "สองเป็นหนึ่งและ x สี่เป็นศูนย์ แก้แถว pivot หา x หนึ่งและ x สาม ก็ได้เวกเตอร์ใน null space ตัวแรก จากนั้นสลับบทบาท"
+    },
+    {
+     "s": 104.327,
+     "e": 109.947,
+     "en": "The two vectors are independent because each has a one where the other has a zero.",
+     "th": "เวกเตอร์ทั้งสองเป็นอิสระเพราะแต่ละตัวมีค่าหนึ่งในตำแหน่งที่อีกตัวเป็นศูนย์"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
+   "duration": 97.536,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.418,
+     "en": "When does M x equals b have a solution?",
+     "th": "M x เท่ากับ b มีคำตอบเมื่อใด"
+    },
+    {
+     "s": 3.418,
+     "e": 10.882,
+     "en": "Exactly when b is in the column space, which is the same as b being orthogonal to every vector in the left null space.",
+     "th": "เมื่อ b อยู่ใน column space เท่านั้น ซึ่งเทียบเท่ากับการที่ b ตั้งฉากกับเวกเตอร์ทุกตัวใน left null space"
+    },
+    {
+     "s": 10.882,
+     "e": 22.408,
+     "en": "This is the Fredholm alternative. Either the system has a solution, or there is a vector y with M transpose y equal to zero and y transpose b not zero, but never both.",
+     "th": "นี่คือ Fredholm alternative คือ ระบบมีคำตอบ หรือมีเวกเตอร์ y ที่ M transpose y เท่ากับศูนย์ และ y transpose b ไม่เท่ากับศูนย์ อย่างใดอย่างหนึ่ง แต่ไม่ใช่ทั้งสองอย่าง"
+    },
+    {
+     "s": 22.408,
+     "e": 30.15,
+     "en": "The left null space holds the compatibility conditions: m minus r tests that b must pass before you try to solve.",
+     "th": "left null space เก็บเงื่อนไขความเข้ากันได้ ซึ่งคือการทดสอบ m ลบ r ข้อที่ b ต้องผ่านก่อนลงมือแก้"
+    },
+    {
+     "s": 30.15,
+     "e": 35.855,
+     "en": "If a solution exists, all solutions are one particular solution plus the null space.",
+     "th": "ถ้ามีคำตอบ คำตอบทั้งหมดคือคำตอบเฉพาะหนึ่งตัวบวกกับ null space"
+    },
+    {
+     "s": 35.855,
+     "e": 49.211,
+     "en": "A small example makes this concrete. Suppose a matrix has two identical rows. Then the vector one, minus one is in its left null space, and the test says b one must equal b two.",
+     "th": "ตัวอย่างเล็กๆ ทำให้เห็นชัด สมมติว่าเมทริกซ์มีสองแถวที่เหมือนกัน เวกเตอร์ หนึ่ง ลบหนึ่ง จะอยู่ใน left null space และการทดสอบบอกว่า b หนึ่งต้องเท่ากับ b สอง"
+    },
+    {
+     "s": 49.211,
+     "e": 58.121,
+     "en": "If the data give b one equal to five and b two equal to five point one, the equations contradict each other. No solver can fix that.",
+     "th": "ถ้าข้อมูลให้ b หนึ่งเท่ากับห้า และ b สองเท่ากับห้าจุดหนึ่ง สมการจะขัดแย้งกัน ไม่มีตัวแก้สมการใดแก้ได้"
+    },
+    {
+     "s": 58.121,
+     "e": 63.882,
+     "en": "You either relax the model or accept a least squares answer, and you should say which.",
+     "th": "คุณต้องผ่อนแบบจำลองหรือยอมรับคำตอบแบบ least squares และควรระบุว่าเลือกทางใด"
+    },
+    {
+     "s": 63.882,
+     "e": 69.789,
+     "en": "In part three, these tests on a measured change in moles turn out to be the element balances.",
+     "th": "ในส่วนที่สาม เราจะเห็นว่าการทดสอบเหล่านี้กับการเปลี่ยนแปลงจำนวนโมลที่วัดได้คือ element balance"
+    },
+    {
+     "s": 69.789,
+     "e": 81.566,
+     "en": "In Session 7, the same alternative decides whether a boundary value problem has a solution. A rod with insulated ends has a steady state only if the total heat source is zero.",
+     "th": "ในคาบที่ 7 alternative เดียวกันนี้ตัดสินว่าปัญหาค่าขอบมีคำตอบหรือไม่ แท่งที่ปลายทั้งสองหุ้มฉนวนมีสภาวะคงตัวได้ก็ต่อเมื่อแหล่งความร้อนรวมเป็นศูนย์"
+    },
+    {
+     "s": 81.566,
+     "e": 89.939,
+     "en": "A habit worth forming: before solving a large linear system from a balance model, compute the left null space and test the right hand side.",
+     "th": "นิสัยที่ควรฝึก ก่อนแก้ระบบเชิงเส้นขนาดใหญ่จากแบบจำลองการดุล ให้คำนวณ left null space แล้วทดสอบด้านขวา"
+    },
+    {
+     "s": 89.939,
+     "e": 97.474,
+     "en": "A failed test points to an error in the data or in the model, and it tells you which combination of equations is inconsistent.",
+     "th": "ถ้าไม่ผ่านแสดงว่ามีข้อผิดพลาดในข้อมูลหรือในแบบจำลอง และบอกได้ว่าผลรวมใดของสมการที่ขัดแย้งกัน"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 117.744,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.774,
+     "en": "When b is not in the column space, we find the closest point that is.",
+     "th": "เมื่อ b ไม่อยู่ใน column space เราหาจุดที่ใกล้ที่สุดที่อยู่ใน column space"
+    },
+    {
+     "s": 4.774,
+     "e": 16.671,
+     "en": "At the least squares solution, the residual is orthogonal to the column space. Writing that condition gives the normal equations, M transpose M x hat equals M transpose b.",
+     "th": "ที่คำตอบ least squares เศษเหลือตั้งฉากกับ column space เมื่อเขียนเงื่อนไขนี้ออกมาจะได้ normal equation คือ M transpose M x hat เท่ากับ M transpose b"
+    },
+    {
+     "s": 16.671,
+     "e": 27.421,
+     "en": "The fitted values are a projection of b. The projector is symmetric and equals its own square, and one minus the projector projects onto the left null space.",
+     "th": "ค่าที่ fit ได้คือการฉายของ b ตัวฉายเป็นเมทริกซ์สมมาตรและเท่ากับกำลังสองของตัวเอง และหนึ่งลบตัวฉายคือการฉายลงบน left null space"
+    },
+    {
+     "s": 27.421,
+     "e": 34.368,
+     "en": "In the four subspace picture, the projection lives in the column space and the residual lives in the left null space.",
+     "th": "ในภาพของ subspace ทั้งสี่ ผลการฉายอยู่ใน column space และเศษเหลืออยู่ใน left null space"
+    },
+    {
+     "s": 34.368,
+     "e": 45.158,
+     "en": "A practical warning: forming M transpose M squares the condition number. For poorly conditioned problems use QR or the singular value decomposition.",
+     "th": "ข้อควรระวังในทางปฏิบัติ การสร้าง M transpose M ทำให้ condition number ยกกำลังสอง สำหรับปัญหาที่มีภาวะไม่ดีให้ใช้ QR หรือ singular value decomposition"
+    },
+    {
+     "s": 45.158,
+     "e": 56.605,
+     "en": "The pseudoinverse handles the rank deficient case. Among all least squares solutions it returns the one of smallest norm, which is the solution with no component in the null space.",
+     "th": "pseudoinverse จัดการกรณีที่ rank ไม่เต็ม ในบรรดาคำตอบ least squares ทั้งหมด มันคืนคำตอบที่มี norm เล็กที่สุด ซึ่งคือคำตอบที่ไม่มีองค์ประกอบใน null space"
+    },
+    {
+     "s": 56.605,
+     "e": 67.211,
+     "en": "That choice is a convention, not information from the data. When you report a fit computed with a pseudoinverse, say that a null space exists and what it contains.",
+     "th": "การเลือกนี้เป็นข้อตกลง ไม่ใช่ข้อมูลที่มาจากการวัด เมื่อรายงานผล fit ที่คำนวณด้วย pseudoinverse ให้ระบุว่ามี null space และ null space นั้นประกอบด้วยอะไร"
+    },
+    {
+     "s": 67.211,
+     "e": 75.908,
+     "en": "A weighted problem is the same projection, in an inner product that carries the weights. Data reconciliation is one such problem.",
+     "th": "ปัญหาแบบถ่วงน้ำหนักคือการฉายแบบเดียวกันใน inner product ที่มีน้ำหนักอยู่ การปรับกระทบยอดข้อมูลเป็นปัญหาแบบนี้"
+    },
+    {
+     "s": 75.908,
+     "e": 84.373,
+     "en": "Here is the derivation in one line. The squared error is a quadratic in x. Its gradient is two M transpose times M x minus b.",
+     "th": "นี่คือการหาสูตรในบรรทัดเดียว ความคลาดเคลื่อนกำลังสองเป็นฟังก์ชันกำลังสองของ x gradient ของมันคือ สอง M transpose คูณ M x ลบ"
+    },
+    {
+     "s": 84.373,
+     "e": 94.316,
+     "en": "Setting the gradient to zero gives the normal equations, and the Hessian two M transpose M is positive semidefinite, so every solution is a minimum.",
+     "th": "b เมื่อให้ gradient เป็นศูนย์จะได้ normal equation และ Hessian ซึ่งคือ สอง M transpose M เป็น positive semidefinite ดังนั้นทุกคำตอบเป็นค่าต่ำสุด"
+    },
+    {
+     "s": 94.316,
+     "e": 105.891,
+     "en": "A chemical engineering example: fitting the logarithm of a rate constant against one over temperature. The columns of M are a column of ones and a column of one over T.",
+     "th": "ตัวอย่างทางวิศวกรรมเคมี คือการ fit ลอการิทึมของค่าคงที่อัตราเทียบกับหนึ่งส่วนอุณหภูมิ หลักของ M คือหลักของเลขหนึ่ง และหลักของหนึ่งส่วน T"
+    },
+    {
+     "s": 105.891,
+     "e": 117.671,
+     "en": "Because one over T barely changes over a typical experiment, the two columns are nearly parallel, and M transpose M is badly conditioned. Session 2 fixes this by centering.",
+     "th": "เพราะหนึ่งส่วน T เปลี่ยนน้อยมากในการทดลองทั่วไป สองหลักนี้จึงเกือบขนานกัน และ M transpose M มีภาวะไม่ดี คาบที่ 2 แก้ปัญหานี้ด้วยการเลื่อนจุดศูนย์กลาง"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
+   "duration": 51.96,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.379,
+     "en": "Here is the projection in two dimensions.",
+     "th": "นี่คือการฉายในสองมิติ"
+    },
+    {
+     "s": 3.379,
+     "e": 16.645,
+     "en": "The teal line is a one dimensional column space, spanned by a single column a. The black arrow is b. The amber arrow is the projection p, and the dashed rust segment is the residual.",
+     "th": "เส้นสีเขียวหัวเป็ดคือ column space หนึ่งมิติที่ span ด้วยหลักเดียว a ลูกศรสีดำคือ b ลูกศรสีส้มอำพันคือผลการฉาย p และส่วนเส้นประสีสนิมคือเศษเหลือ"
+    },
+    {
+     "s": 16.645,
+     "e": 23.329,
+     "en": "Move either slider. The table shows that a transpose e stays at zero at every setting.",
+     "th": "เลื่อนแถบเลื่อนตัวใดก็ได้ ตารางแสดงว่า a transpose e เป็นศูนย์ทุกค่า"
+    },
+    {
+     "s": 23.329,
+     "e": 31.224,
+     "en": "Now turn b until it lies on the line. The residual vanishes, and the equation has an exact solution.",
+     "th": "ทีนี้หมุน b จนอยู่บนเส้น เศษเหลือจะหายไป และสมการมีคำตอบแม่นตรง"
+    },
+    {
+     "s": 31.224,
+     "e": 41.724,
+     "en": "The same geometry holds in any dimension. In Lab 1 the space has five dimensions and the subspace has two, but the residual is still orthogonal to it.",
+     "th": "เรขาคณิตแบบเดียวกันใช้ได้ในทุกมิติ ใน Lab 1 ปริภูมิมีห้ามิติและ subspace มีสองมิติ แต่เศษเหลือยังคงตั้งฉากกับ subspace"
+    },
+    {
+     "s": 41.724,
+     "e": 51.895,
+     "en": "Turn b to be perpendicular to the line. Then the projection is zero and the whole of b is residual: the best fit from this subspace is no fit at all.",
+     "th": "หมุน b ให้ตั้งฉากกับเส้น ผลการฉายจะเป็นศูนย์ และ b ทั้งหมดกลายเป็นเศษเหลือ การ fit ที่ดีที่สุดจาก subspace นี้คือไม่ fit อะไรเลย"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 110.52,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.813,
+     "en": "There are two ways to compute a rank, and they answer different questions.",
+     "th": "การคำนวณ rank มีสองวิธี และตอบคำถามต่างกัน"
+    },
+    {
+     "s": 4.813,
+     "e": 13.5,
+     "en": "Row reduction in rational arithmetic counts pivots exactly. That is right for an atom matrix, whose entries are integers.",
+     "th": "การลดแถวด้วยเลขตรรกยะนับ pivot ได้แม่นตรง วิธีนี้เหมาะกับ atom matrix ซึ่งมีสมาชิกเป็นจำนวนเต็ม"
+    },
+    {
+     "s": 13.5,
+     "e": 25.618,
+     "en": "For methanol synthesis, the singular values of the atom matrix are about five point two, two point six and zero point seven. The smallest is far from zero, so the rank is three.",
+     "th": "สำหรับการสังเคราะห์เมทานอล singular value ของ atom matrix ประมาณห้าจุดสอง สองจุดหก และศูนย์จุดเจ็ด ค่าที่เล็กที่สุดยังห่างจากศูนย์มาก rank จึงเท่ากับสาม"
+    },
+    {
+     "s": 25.618,
+     "e": 34.671,
+     "en": "A data matrix is different. Its entries are known to a few digits, and row reduction will find a pivot in the noise and report full rank.",
+     "th": "เมทริกซ์ข้อมูลต่างออกไป สมาชิกรู้ค่าได้เพียงไม่กี่หลัก และการลดแถวจะพบ pivot ในสัญญาณรบกวนแล้วรายงานว่า rank เต็ม"
+    },
+    {
+     "s": 34.671,
+     "e": 38.865,
+     "en": "The numerical rank counts singular values above a threshold delta.",
+     "th": "rank เชิงตัวเลขนับ singular value ที่มากกว่าค่าขีดแบ่ง delta"
+    },
+    {
+     "s": 38.865,
+     "e": 48.566,
+     "en": "The smallest singular value is the distance to the nearest matrix of lower rank, so a value below the measurement error is a direction the data cannot see.",
+     "th": "singular value ที่เล็กที่สุดคือระยะถึงเมทริกซ์ที่ใกล้ที่สุดซึ่งมี rank ต่ำกว่า ค่าที่ต่ำกว่าความคลาดเคลื่อนในการวัดจึงเป็นทิศที่ข้อมูลมองไม่เห็น"
+    },
+    {
+     "s": 48.566,
+     "e": 61.535,
+     "en": "A typical example from spectroscopy: a set of UV visible spectra of mixtures. If three species absorb, the data matrix has three large singular values and the rest at the noise level.",
+     "th": "ตัวอย่างทั่วไปจากสเปกโทรสโกปี คือชุดของสเปกตรัม UV visible ของสารผสม ถ้ามีสามสปีชีส์ที่ดูดกลืนแสง เมทริกซ์ข้อมูลจะมี singular value ขนาดใหญ่สามค่า และค่าที่เหลืออยู่ที่ระดับสัญญาณรบกวน"
+    },
+    {
+     "s": 61.535,
+     "e": 65.553,
+     "en": "Row reduction would report full rank and hide the answer.",
+     "th": "การลดแถวจะรายงานว่า rank เต็มและซ่อนคำตอบไว้"
+    },
+    {
+     "s": 65.553,
+     "e": 70.118,
+     "en": "Session 2 builds this matrix and asks you to choose the threshold.",
+     "th": "คาบที่ 2 จะสร้างเมทริกซ์นี้และให้คุณเลือกค่าขีดแบ่ง"
+    },
+    {
+     "s": 70.118,
+     "e": 79.421,
+     "en": "The rule for this course: integer models use exact rank; anything measured or computed in floating point uses singular values with a stated threshold.",
+     "th": "หลักของวิชานี้คือ แบบจำลองที่เป็นจำนวนเต็มใช้ rank แบบแม่นตรง ส่วนสิ่งที่วัดหรือคำนวณด้วยเลขทศนิยมใช้ singular value พร้อมระบุค่าขีดแบ่ง"
+    },
+    {
+     "s": 79.421,
+     "e": 90.863,
+     "en": "When you report a rank in a thesis or a paper, report how you computed it: exactly, or with singular values and a threshold. State the threshold and why you chose it.",
+     "th": "เมื่อรายงาน rank ในวิทยานิพนธ์หรือบทความ ให้ระบุว่าคำนวณอย่างไร แบบแม่นตรง หรือด้วย singular value และค่าขีดแบ่ง ระบุค่าขีดแบ่งและเหตุผลที่เลือก"
+    },
+    {
+     "s": 90.863,
+     "e": 93.329,
+     "en": "A reviewer can then check the claim.",
+     "th": "ผู้ทบทวนจะได้ตรวจสอบข้อกล่าวอ้างได้"
+    },
+    {
+     "s": 93.329,
+     "e": 104.173,
+     "en": "The last line on the left is the Eckart Young theorem. It turns a singular value into a distance: the smallest singular value is how far the matrix is from losing rank.",
+     "th": "บรรทัดสุดท้ายทางซ้ายคือทฤษฎีบท Eckart Young ซึ่งแปลง singular value เป็นระยะทาง singular value ที่เล็กที่สุดคือระยะที่เมทริกซ์อยู่ห่างจากการสูญเสีย"
+    },
+    {
+     "s": 104.173,
+     "e": 110.461,
+     "en": "If that distance is smaller than the uncertainty in the entries, you cannot claim the higher rank.",
+     "th": "rank ถ้าระยะนี้น้อยกว่าความไม่แน่นอนของสมาชิก คุณอ้างว่า rank สูงกว่านั้นไม่ได้"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 23.472,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.958,
+     "en": "Check 2 has four questions on the four subspaces.",
+     "th": "Check 2 มีสี่คำถามเรื่อง subspace ทั้งสี่"
+    },
+    {
+     "s": 3.958,
+     "e": 14.177,
+     "en": "They ask for the dimensions of the subspaces of a three by five matrix, the number of compatibility conditions for a five by three matrix, where the least squares residual lives,",
+     "th": "คำถามถามมิติของ subspace ของเมทริกซ์สามคูณห้า จำนวนเงื่อนไขความเข้ากันได้ของเมทริกซ์ห้าคูณสาม เศษเหลือของ least squares อยู่ใน subspace ใด และควรรายงาน"
+    },
+    {
+     "s": 14.177,
+     "e": 16.632,
+     "en": "and which rank to report for a data matrix.",
+     "th": "rank เท่าใดสำหรับเมทริกซ์ข้อมูล"
+    },
+    {
+     "s": 16.632,
+     "e": 23.421,
+     "en": "Take five minutes, then press Show answers. After this check, take the ten minute break.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers หลังจาก Check นี้ พักสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
+   "duration": 40.344,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.197,
+     "en": "Welcome back. Activity 2 starts a card that you will keep for the whole course.",
+     "th": "ยินดีต้อนรับกลับ กิจกรรมที่ 2 เริ่มบัตรที่คุณจะเก็บไว้ใช้ตลอดวิชา"
+    },
+    {
+     "s": 6.197,
+     "e": 16.5,
+     "en": "On the card, write one model from your own research: the system and its question, the state variables with units, the balances or governing equations, and the parameters.",
+     "th": "บนบัตร เขียนแบบจำลองหนึ่งแบบจากงานวิจัยของคุณ ได้แก่ ระบบและคำถามของมัน ตัวแปรสถานะพร้อมหน่วย สมการดุลหรือสมการควบคุม และพารามิเตอร์"
+    },
+    {
+     "s": 16.5,
+     "e": 26.868,
+     "en": "Today's layer is the linear structure. Which balance or stoichiometric matrix appears in your model, what is its rank, and which quantities are conserved?",
+     "th": "ชั้นของวันนี้คือโครงสร้างเชิงเส้น แบบจำลองของคุณมี balance matrix หรือ stoichiometric matrix ใด rank เท่าใด และปริมาณใดอนุรักษ์"
+    },
+    {
+     "s": 26.868,
+     "e": 33.066,
+     "en": "Every later session adds one layer, and Session 7 checks the card against the midterm checklist.",
+     "th": "ทุกคาบต่อจากนี้จะเพิ่มอีกหนึ่งชั้น และคาบที่ 7 จะตรวจบัตรเทียบกับรายการตรวจสำหรับสอบกลางภาค"
+    },
+    {
+     "s": 33.066,
+     "e": 40.276,
+     "en": "If you do not have a model yet, use the steam reforming network of Lab 1. Take ten minutes.",
+     "th": "ถ้ายังไม่มีแบบจำลอง ใช้เครือข่าย steam reforming ของ Lab 1 ใช้เวลาสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "file": "audio/slide-23.mp3",
+   "duration": 105.096,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.132,
+     "en": "Part three. Stoichiometry is linear algebra.",
+     "th": "ส่วนที่สาม ปริมาณสัมพันธ์คือพีชคณิตเชิงเส้น"
+    },
+    {
+     "s": 5.132,
+     "e": 15.684,
+     "en": "The atom matrix A has one row per element and one column per species. The stoichiometric matrix N has one row per species and one column per reaction.",
+     "th": "atom matrix A มีหนึ่งแถวต่อหนึ่งธาตุและหนึ่งหลักต่อหนึ่งสปีชีส์ stoichiometric matrix N มีหนึ่งแถวต่อหนึ่งสปีชีส์และหนึ่งหลักต่อหนึ่งปฏิกิริยา"
+    },
+    {
+     "s": 15.684,
+     "e": 24.763,
+     "en": "Moles change as n equals n zero plus N xi. Atoms are conserved for every choice of extents only if A N equals zero.",
+     "th": "จำนวนโมลเปลี่ยนตาม n เท่ากับ n ศูนย์ บวก N xi อะตอมจะอนุรักษ์สำหรับ extent ทุกค่าก็ต่อเมื่อ A N เท่ากับศูนย์"
+    },
+    {
+     "s": 24.763,
+     "e": 34.408,
+     "en": "So every reaction lies in the null space of A, and the number of independent reactions, the rank of N, is at most the number of species minus the rank of A.",
+     "th": "ดังนั้นทุกปฏิกิริยาอยู่ใน null space ของ A และจำนวนปฏิกิริยาอิสระ ซึ่งคือ rank ของ N มีค่าไม่เกินจำนวนสปีชีส์ลบ rank ของ A"
+    },
+    {
+     "s": 34.408,
+     "e": 40.158,
+     "en": "A kinetic model may contain fewer, but then it cannot reach every balanced composition.",
+     "th": "แบบจำลองจลนพลศาสตร์อาจมีปฏิกิริยาน้อยกว่านั้นได้ แต่จะไปไม่ถึงองค์ประกอบที่ดุลแล้วทุกแบบ"
+    },
+    {
+     "s": 40.158,
+     "e": 50.41,
+     "en": "A note on what A can contain. Electrochemical systems add a charge row. A catalytic mechanism with adsorbed species can add a site balance row.",
+     "th": "หมายเหตุว่า A มีอะไรได้บ้าง ระบบไฟฟ้าเคมีเพิ่มแถวของประจุ กลไกตัวเร่งปฏิกิริยาที่มีสปีชีส์ดูดซับอาจเพิ่มแถวของ site"
+    },
+    {
+     "s": 50.41,
+     "e": 58.882,
+     "en": "Each conserved quantity you add reduces the number of independent reactions by one, if it is independent of the others.",
+     "th": "balance ปริมาณอนุรักษ์แต่ละตัวที่เพิ่มเข้าไปลดจำนวนปฏิกิริยาอิสระลงหนึ่ง ถ้ามันเป็นอิสระจากตัวอื่น"
+    },
+    {
+     "s": 58.882,
+     "e": 67.81,
+     "en": "Two reaction sets with the same column space describe the same reachable compositions. Which set to write is a kinetic question.",
+     "th": "ชุดปฏิกิริยาสองชุดที่มี column space เดียวกันอธิบายองค์ประกอบที่ไปถึงได้ชุดเดียวกัน การเลือกเขียนชุดใดเป็นคำถามทางจลนพลศาสตร์"
+    },
+    {
+     "s": 67.81,
+     "e": 73.0,
+     "en": "A Gibbs energy minimization needs only A, because it searches the same set.",
+     "th": "การหาค่าต่ำสุดของพลังงานกิบส์ต้องการเพียง A เพราะค้นหาในเซตเดียวกัน"
+    },
+    {
+     "s": 73.0,
+     "e": 78.89,
+     "en": "A useful check when you write a mechanism: compute A times N. Every column must be zero.",
+     "th": "การตรวจที่มีประโยชน์เมื่อเขียนกลไกปฏิกิริยา คือคำนวณ A คูณ N ทุกหลักต้องเป็นศูนย์"
+    },
+    {
+     "s": 78.89,
+     "e": 88.553,
+     "en": "A nonzero column is a typing error in a coefficient or in a formula, and it is far cheaper to find it here than after a week of parameter fitting.",
+     "th": "หลักที่ไม่เป็นศูนย์คือความผิดพลาดในการพิมพ์สัมประสิทธิ์หรือสูตรเคมี และหาพบตรงนี้ได้ง่ายกว่าหลังจาก fit พารามิเตอร์ไปหนึ่งสัปดาห์มาก"
+    },
+    {
+     "s": 88.553,
+     "e": 101.834,
+     "en": "To see the bound at work, count for steam methane reforming, the lab system. Five species, three elements, rank three, so at most two independent reactions. Add solid carbon and methanol:",
+     "th": "ลองนับขอบเขตนี้สำหรับ steam methane reforming ซึ่งเป็นระบบในแล็บ มีห้าสปีชีส์ สามธาตุ rank สาม จึงมีปฏิกิริยาอิสระได้ไม่เกินสอง เมื่อเพิ่มคาร์บอนของแข็งและเมทานอล"
+    },
+    {
+     "s": 101.834,
+     "e": 105.013,
+     "en": "seven species, still three elements, so four.",
+     "th": "จะมีเจ็ดสปีชีส์ ยังคงสามธาตุ จึงมีได้สี่"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 115.248,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.945,
+     "en": "Here is a worked example: methanol synthesis, with five species and three elements.",
+     "th": "นี่คือตัวอย่าง การสังเคราะห์เมทานอล ซึ่งมีห้าสปีชีส์และสามธาตุ"
+    },
+    {
+     "s": 5.945,
+     "e": 15.026,
+     "en": "The atom matrix has rank three, so the null space has dimension two. Two independent reactions describe every balanced change.",
+     "th": "atom matrix มี rank สาม null space จึงมีมิติสอง ปฏิกิริยาอิสระสองปฏิกิริยาอธิบายการเปลี่ยนแปลงที่ดุลแล้วได้ทุกแบบ"
+    },
+    {
+     "s": 15.026,
+     "e": 27.585,
+     "en": "Let us read the atom matrix. Carbon appears in carbon monoxide, carbon dioxide and methanol. Hydrogen has two atoms in H two, four in methanol and two in water.",
+     "th": "ลองอ่าน atom matrix คาร์บอนอยู่ในคาร์บอนมอนอกไซด์ คาร์บอนไดออกไซด์ และเมทานอล ไฮโดรเจนมีสองอะตอมใน H สอง สี่อะตอมในเมทานอล และสองอะตอมในน้ำ"
+    },
+    {
+     "s": 27.585,
+     "e": 34.684,
+     "en": "Oxygen has one in carbon monoxide, two in carbon dioxide, one in methanol and one in water.",
+     "th": "ออกซิเจนมีหนึ่งอะตอมในคาร์บอนมอนอกไซด์ สองในคาร์บอนไดออกไซด์ หนึ่งในเมทานอล และหนึ่งในน้ำ"
+    },
+    {
+     "s": 34.684,
+     "e": 45.342,
+     "en": "Row reduction leaves methanol and water as free columns, and gives an integer basis: the reverse of methanol formation from carbon monoxide, and the reverse water gas shift.",
+     "th": "การลดแถวเหลือเมทานอลและน้ำเป็นหลักอิสระ และให้ basis ที่เป็นจำนวนเต็ม คือ ปฏิกิริยาย้อนกลับของการเกิดเมทานอลจากคาร์บอนมอนอกไซด์ และ reverse water gas shift"
+    },
+    {
+     "s": 45.342,
+     "e": 59.053,
+     "en": "The literature often writes three reactions. All three are balanced, but the rank of N is two, and its null space is spanned by one, one, minus one. So R3 equals R1 plus R2.",
+     "th": "เอกสารวิจัยมักเขียนสามปฏิกิริยา ทั้งสามดุลแล้ว แต่ rank ของ N เท่ากับสอง และ null space ของมัน span ด้วย หนึ่ง หนึ่ง ลบหนึ่ง ดังนั้น R3 เท่ากับ R1 บวก R2"
+    },
+    {
+     "s": 59.053,
+     "e": 67.763,
+     "en": "Kinetic models that keep three rate expressions over-parameterize a system with two stoichiometric degrees of freedom, unless the rates are linked.",
+     "th": "แบบจำลองจลนพลศาสตร์ที่เก็บนิพจน์อัตราไว้สามตัว มีพารามิเตอร์เกินสำหรับระบบที่มีระดับขั้นความเสรีทางปริมาณสัมพันธ์สองระดับ เว้นแต่จะผูกอัตราเข้าด้วยกัน"
+    },
+    {
+     "s": 67.763,
+     "e": 76.375,
+     "en": "How would you handle this in a kinetic study? One option keeps R1 and R2 as the independent reactions and treats R3 as their sum.",
+     "th": "ในการศึกษาจลนพลศาสตร์ควรจัดการอย่างไร ทางหนึ่งคือเก็บ R1 และ R2 เป็นปฏิกิริยาอิสระ แล้วถือว่า R3 เป็นผลรวมของทั้งสอง"
+    },
+    {
+     "s": 76.375,
+     "e": 86.974,
+     "en": "Another keeps three rate expressions but checks, with the singular values of the sensitivity matrix from Session 2, which rate parameters the data can identify.",
+     "th": "อีกทางหนึ่งคือเก็บนิพจน์อัตราไว้สามตัว แต่ตรวจด้วย singular value ของ sensitivity matrix จากคาบที่ 2 ว่าข้อมูลระบุพารามิเตอร์อัตราตัวใดได้"
+    },
+    {
+     "s": 86.974,
+     "e": 98.248,
+     "en": "Here is the row reduction in words. Subtract the carbon row from the oxygen row to clear carbon from it. Divide the hydrogen row by two. Then eliminate upward.",
+     "th": "นี่คือการลดแถวโดยสรุป ลบแถวคาร์บอนออกจากแถวออกซิเจนเพื่อกำจัดคาร์บอน หารแถวไฮโดรเจนด้วยสอง แล้วกำจัดขึ้นด้านบน pivot ตกที่คาร์บอนมอนอกไซด์"
+    },
+    {
+     "s": 98.248,
+     "e": 111.001,
+     "en": "The pivots fall on carbon monoxide, carbon dioxide and hydrogen, which leaves methanol and water free. Setting methanol to minus one and water to zero gives the first basis vector;",
+     "th": "คาร์บอนไดออกไซด์ และไฮโดรเจน จึงเหลือเมทานอลและน้ำเป็นตัวแปรอิสระ เมื่อให้เมทานอลเป็นลบหนึ่งและน้ำเป็นศูนย์จะได้เวกเตอร์ basis ตัวแรก"
+    },
+    {
+     "s": 111.001,
+     "e": 115.158,
+     "en": "setting water to one and methanol to zero gives the second.",
+     "th": "และเมื่อให้น้ำเป็นหนึ่งและเมทานอลเป็นศูนย์จะได้ตัวที่สอง"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
+   "duration": 79.128,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.103,
+     "en": "Each of the four subspaces of N has a chemical meaning.",
+     "th": "subspace ทั้งสี่ของ N แต่ละตัวมีความหมายทางเคมี"
+    },
+    {
+     "s": 4.103,
+     "e": 8.816,
+     "en": "The column space is every change in composition the reactions can make.",
+     "th": "column space คือการเปลี่ยนแปลงองค์ประกอบทุกแบบที่ปฏิกิริยาทำได้"
+    },
+    {
+     "s": 8.816,
+     "e": 22.408,
+     "en": "The null space is the combinations of extents that change nothing. For methanol it is one, one, minus one, so the individual extents of R1, R2 and R3 are not unique; only their effect is.",
+     "th": "null space คือผลรวมของ extent ที่ไม่ทำให้อะไรเปลี่ยน สำหรับเมทานอลคือ หนึ่ง หนึ่ง ลบหนึ่ง extent ของ R1 R2 และ R3 แต่ละตัวจึงไม่เป็นหนึ่งเดียว มีเพียงผลรวมของมันที่เป็นหนึ่งเดียว"
+    },
+    {
+     "s": 22.408,
+     "e": 32.342,
+     "en": "The left null space is the conserved quantities: weights whose weighted sum of moles never changes. Here they are the moles of carbon, hydrogen and oxygen.",
+     "th": "left null space คือปริมาณอนุรักษ์ ได้แก่ น้ำหนักที่ทำให้ผลรวมถ่วงน้ำหนักของจำนวนโมลไม่เปลี่ยน ในที่นี้คือจำนวนโมลของคาร์บอน ไฮโดรเจน และออกซิเจน"
+    },
+    {
+     "s": 32.342,
+     "e": 38.931,
+     "en": "When the reactions span less than the null space of A, there are more conserved quantities than elements.",
+     "th": "เมื่อปฏิกิริยา span ได้น้อยกว่า null space ของ A จะมีปริมาณอนุรักษ์มากกว่าจำนวนธาตุ"
+    },
+    {
+     "s": 38.931,
+     "e": 44.711,
+     "en": "These are reaction invariants, and Session 3 meets them as zero eigenvalues of a rate matrix.",
+     "th": "ปริมาณเหล่านี้คือ reaction invariant และคาบที่ 3 จะพบมันในรูปค่าเฉพาะศูนย์ของเมทริกซ์อัตรา"
+    },
+    {
+     "s": 44.711,
+     "e": 52.188,
+     "en": "The row space of N is the last one. It is the set of extent combinations that measurements of n can determine.",
+     "th": "row space ของ N เป็นตัวสุดท้าย คือเซตของผลรวม extent ที่การวัด n กำหนดได้"
+    },
+    {
+     "s": 52.188,
+     "e": 59.868,
+     "en": "For methanol it is two dimensional, so two combinations of the three extents are measurable, and the third is not.",
+     "th": "สำหรับเมทานอลมีสองมิติ ผลรวมของ extent สามตัวจึงวัดได้สองผลรวม และอีกหนึ่งวัดไม่ได้"
+    },
+    {
+     "s": 59.868,
+     "e": 66.618,
+     "en": "And the Fredholm test from slide 17, applied to a measured change in moles, is the element balance.",
+     "th": "และการทดสอบ Fredholm จากหน้า 17 เมื่อใช้กับการเปลี่ยนแปลงจำนวนโมลที่วัดได้ ก็คือ element balance"
+    },
+    {
+     "s": 66.618,
+     "e": 76.982,
+     "en": "This table is worth copying into your notes, because the same four meanings return whenever a balance matrix appears, whether for species, for energy in a heat exchanger network,",
+     "th": "ตารางนี้ควรคัดลอกไว้ในโน้ต เพราะความหมายทั้งสี่นี้กลับมาทุกครั้งที่มี balance matrix ไม่ว่าจะเป็นของสปีชีส์ ของพลังงานในเครือข่ายเครื่องแลกเปลี่ยนความร้อน"
+    },
+    {
+     "s": 76.982,
+     "e": 79.066,
+     "en": "or for flows in a process flowsheet.",
+     "th": "หรือของอัตราการไหลในแผนผังกระบวนการ"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 47.64,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.221,
+     "en": "Now build a reaction set yourself.",
+     "th": "ทีนี้ลองสร้างชุดปฏิกิริยาเอง"
+    },
+    {
+     "s": 3.221,
+     "e": 12.882,
+     "en": "Tick reactions on the left. The right panel reports the rank of N, the number of redundant reactions, and whether every reaction is balanced.",
+     "th": "ติ๊กเลือกปฏิกิริยาทางซ้าย แผงทางขวารายงาน rank ของ N จำนวนปฏิกิริยาที่ซ้ำซ้อน และปฏิกิริยาทุกตัวดุลหรือไม่"
+    },
+    {
+     "s": 12.882,
+     "e": 22.605,
+     "en": "Try R1 with two times R1: balanced, two reactions, but rank one. The set cannot reach compositions that need the water gas shift.",
+     "th": "ลอง R1 กับสองเท่าของ R1 ดุลแล้ว มีสองปฏิกิริยา แต่ rank เป็นหนึ่ง ชุดนี้ไปไม่ถึงองค์ประกอบที่ต้องอาศัย water gas shift"
+    },
+    {
+     "s": 22.605,
+     "e": 33.474,
+     "en": "Then add the proposed reaction, carbon monoxide plus hydrogen to methanol. A times nu is zero, two, zero: two hydrogen atoms appear from nothing.",
+     "th": "จากนั้นเพิ่มปฏิกิริยาที่เสนอ คาร์บอนมอนอกไซด์บวกไฮโดรเจนไปเป็นเมทานอล A คูณ nu เท่ากับ ศูนย์ สอง ศูนย์ หมายความว่ามีไฮโดรเจนสองอะตอมเกิดขึ้นจากความว่างเปล่า"
+    },
+    {
+     "s": 33.474,
+     "e": 41.135,
+     "en": "Finally, select all three literature reactions. The set spans the null space, with one redundant reaction.",
+     "th": "สุดท้าย เลือกปฏิกิริยาจากเอกสารทั้งสาม ชุดนี้ span null space ได้ โดยมีปฏิกิริยาซ้ำซ้อนหนึ่งตัว"
+    },
+    {
+     "s": 41.135,
+     "e": 47.579,
+     "en": "That is acceptable for describing compositions, but the three extents are then not unique.",
+     "th": "ใช้อธิบายองค์ประกอบได้ แต่ extent ทั้งสามจะไม่เป็นหนึ่งเดียว"
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "file": "audio/slide-27.mp3",
+   "duration": 135.96,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.039,
+     "en": "Measured flows almost never close the element balances. Data reconciliation adjusts them as little as possible so that they do.",
+     "th": "อัตราการไหลที่วัดได้แทบไม่เคยสอดคล้องกับ element balance การปรับกระทบยอดข้อมูลปรับค่าให้น้อยที่สุดเพื่อให้สอดคล้อง"
+    },
+    {
+     "s": 9.039,
+     "e": 16.697,
+     "en": "Minimize the weighted squared corrections, divided by each meter's variance, subject to A n equals A n zero.",
+     "th": "หาค่าต่ำสุดของผลรวมกำลังสองของค่าปรับแก้ หารด้วยความแปรปรวนของมาตรวัดแต่ละตัว ภายใต้เงื่อนไข A n เท่ากับ A n ศูนย์"
+    },
+    {
+     "s": 16.697,
+     "e": 25.355,
+     "en": "The solution has a closed form, shown on the slide. It comes from a Lagrangian with one multiplier per element balance.",
+     "th": "คำตอบมีรูปปิดตามที่แสดงบนหน้านี้ ได้มาจาก Lagrangian ที่มีตัวคูณหนึ่งตัวต่อหนึ่ง element balance"
+    },
+    {
+     "s": 25.355,
+     "e": 35.382,
+     "en": "With equal weights, n hat is the orthogonal projection of the measurements onto the affine set n zero plus the null space of A, and the correction lies in the row space of A.",
+     "th": "เมื่อน้ำหนักเท่ากัน n hat คือการฉายตั้งฉากของค่าวัดลงบน affine set n ศูนย์ บวก null space ของ A และค่าปรับแก้อยู่ใน row space ของ A"
+    },
+    {
+     "s": 35.382,
+     "e": 44.882,
+     "en": "With unequal weights, it is the same projection in a weighted inner product. Accurate meters move little; poor meters absorb the correction.",
+     "th": "เมื่อน้ำหนักไม่เท่ากัน ก็คือการฉายแบบเดียวกันใน inner product แบบถ่วงน้ำหนัก มาตรวัดที่แม่นยำถูกปรับน้อย มาตรวัดที่ไม่แม่นรับค่าปรับแก้ไป"
+    },
+    {
+     "s": 44.882,
+     "e": 53.329,
+     "en": "The weighted sum of squared corrections, chi squared, has as many degrees of freedom as the rank of A, and it is a global test for gross error.",
+     "th": "ผลรวมกำลังสองของค่าปรับแก้แบบถ่วงน้ำหนัก หรือ chi squared มีระดับขั้นความเสรีเท่ากับ rank ของ A และใช้เป็นการทดสอบรวมสำหรับความคลาดเคลื่อนขนาดใหญ่"
+    },
+    {
+     "s": 53.329,
+     "e": 61.228,
+     "en": "Why not simply adjust the worst looking number by hand? Because a hand adjustment chooses which meter to blame without evidence.",
+     "th": "ทำไมไม่ปรับตัวเลขที่ดูแย่ที่สุดด้วยมือ เพราะการปรับด้วยมือเลือกโทษมาตรวัดตัวหนึ่งโดยไม่มีหลักฐาน"
+    },
+    {
+     "s": 61.228,
+     "e": 70.474,
+     "en": "The weighted projection uses the stated accuracy of every meter, and it changes each flow by the least amount consistent with all the balances at once.",
+     "th": "การฉายแบบถ่วงน้ำหนักใช้ความแม่นยำที่ระบุของมาตรวัดทุกตัว และเปลี่ยนอัตราการไหลแต่ละตัวน้อยที่สุดที่สอดคล้องกับ balance ทุกตัวพร้อมกัน"
+    },
+    {
+     "s": 70.474,
+     "e": 72.005,
+     "en": "One limit is important.",
+     "th": "มีข้อจำกัดสำคัญข้อหนึ่ง"
+    },
+    {
+     "s": 72.005,
+     "e": 83.105,
+     "en": "A bias that lies in the null space of A, for example one that shifts flows along a balanced reaction, does not change any element balance, so no reconciliation can detect it.",
+     "th": "ความเอนเอียงที่อยู่ใน null space ของ A เช่น ความเอนเอียงที่เลื่อนอัตราการไหลไปตามปฏิกิริยาที่ดุลแล้ว ไม่เปลี่ยน element balance ใดเลย จึงไม่มีการปรับกระทบยอดใดตรวจพบได้"
+    },
+    {
+     "s": 83.105,
+     "e": 92.814,
+     "en": "Industrial practice adds more: gross error identification, bounds on flows, and nonlinear balances when compositions and total flows are both measured.",
+     "th": "ในทางปฏิบัติในอุตสาหกรรมมีมากกว่านี้ เช่น การระบุความคลาดเคลื่อนขนาดใหญ่ ขอบเขตของอัตราการไหล และ balance แบบไม่เชิงเส้นเมื่อวัดทั้งองค์ประกอบและอัตราการไหลรวม"
+    },
+    {
+     "s": 92.814,
+     "e": 96.711,
+     "en": "The linear case here is the core that those methods build on.",
+     "th": "กรณีเชิงเส้นที่นี่คือแกนหลักที่วิธีเหล่านั้นต่อยอด"
+    },
+    {
+     "s": 96.711,
+     "e": 105.189,
+     "en": "The closed form comes from three lines of algebra. Write the Lagrangian with a multiplier vector for the element balances.",
+     "th": "รูปปิดได้มาจากพีชคณิตสามบรรทัด เขียน Lagrangian ที่มีเวกเตอร์ตัวคูณสำหรับ element balance เมื่อให้"
+    },
+    {
+     "s": 105.189,
+     "e": 111.945,
+     "en": "Setting its gradient in n to zero gives n equals m minus Sigma A transpose times the multipliers.",
+     "th": "gradient เทียบกับ n เป็นศูนย์ จะได้ n เท่ากับ m ลบ Sigma A transpose คูณตัวคูณ"
+    },
+    {
+     "s": 111.945,
+     "e": 124.421,
+     "en": "Substituting into the balances gives a three by three linear system for the multipliers, whose matrix is A Sigma A transpose. That matrix is invertible whenever A has full row rank.",
+     "th": "แทนลงใน balance จะได้ระบบเชิงเส้นสามคูณสามสำหรับตัวคูณ ซึ่งมีเมทริกซ์เป็น A Sigma A transpose เมทริกซ์นี้หาตัวผกผันได้เสมอเมื่อ A มี rank แถวเต็ม"
+    },
+    {
+     "s": 124.421,
+     "e": 135.882,
+     "en": "If A does not have full row rank, for example because one element balance is a combination of others, remove the dependent rows first. The left null space of A tells you which ones.",
+     "th": "ถ้า A ไม่มี rank แถวเต็ม เช่น มี element balance หนึ่งที่เป็นผลรวมของตัวอื่น ให้ตัดแถวที่ไม่อิสระออกก่อน left null space ของ A บอกได้ว่าเป็นแถวใด"
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "file": "audio/slide-28.mp3",
+   "duration": 73.992,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.211,
+     "en": "Here is a synthetic methanol reactor. The feed and the true extents are known, and the measurements carry fixed errors of a few percent.",
+     "th": "นี่คือเครื่องปฏิกรณ์เมทานอลสังเคราะห์ ทราบค่าสารป้อนและ extent ที่แท้จริง และค่าวัดมีความคลาดเคลื่อนคงที่ไม่กี่เปอร์เซ็นต์"
+    },
+    {
+     "s": 9.211,
+     "e": 18.342,
+     "en": "Before reconciliation the measured flows lose carbon and oxygen and gain hydrogen. After reconciliation every imbalance is zero.",
+     "th": "ก่อนปรับกระทบยอด ค่าวัดทำให้คาร์บอนกับออกซิเจนหายไปและไฮโดรเจนเพิ่มขึ้น หลังปรับกระทบยอด ความไม่สมดุลทุกตัวเป็นศูนย์"
+    },
+    {
+     "s": 18.342,
+     "e": 28.058,
+     "en": "At the stated meter accuracies, chi squared is about two point two, below seven point eight one, the ninety-five percent point with three degrees of freedom.",
+     "th": "ที่ความแม่นยำของมาตรวัดตามที่ระบุ chi squared มีค่าประมาณสองจุดสอง ต่ำกว่าเจ็ดจุดแปดหนึ่ง ซึ่งเป็นจุดเก้าสิบห้าเปอร์เซ็นต์ที่สามระดับขั้นความเสรี"
+    },
+    {
+     "s": 28.058,
+     "e": 30.395,
+     "en": "There is no evidence of a gross error.",
+     "th": "จึงไม่มีหลักฐานของความคลาดเคลื่อนขนาดใหญ่"
+    },
+    {
+     "s": 30.395,
+     "e": 42.868,
+     "en": "Move the slider for the hydrogen meter. A large sigma lets the hydrogen flow absorb most of the correction. A small sigma spreads it over the other meters, and chi squared rises.",
+     "th": "เลื่อนแถบของมาตรวัดไฮโดรเจน sigma ที่มากทำให้อัตราการไหลไฮโดรเจนรับค่าปรับแก้ส่วนใหญ่ sigma ที่น้อยทำให้ค่าปรับแก้กระจายไปยังมาตรวัดอื่น และ chi squared เพิ่มขึ้น"
+    },
+    {
+     "s": 42.868,
+     "e": 49.733,
+     "en": "Compare the two columns. With equal weights, the correction is spread according to geometry alone.",
+     "th": "เปรียบเทียบสองคอลัมน์ เมื่อน้ำหนักเท่ากัน ค่าปรับแก้กระจายตามเรขาคณิตอย่างเดียว เมื่อใช้"
+    },
+    {
+     "s": 49.733,
+     "e": 58.816,
+     "en": "With the stated sigmas, carbon monoxide, carbon dioxide, methanol and water hardly move, and hydrogen takes most of the correction.",
+     "th": "sigma ตามที่ระบุ คาร์บอนมอนอกไซด์ คาร์บอนไดออกไซด์ เมทานอล และน้ำแทบไม่เปลี่ยน และไฮโดรเจนรับค่าปรับแก้ไปเกือบทั้งหมด"
+    },
+    {
+     "s": 58.816,
+     "e": 68.324,
+     "en": "The reconciled methanol flow is about zero point three eight six moles per second, against a measured zero point three eight zero and a true zero point four.",
+     "th": "อัตราการไหลของเมทานอลหลังปรับกระทบยอดประมาณศูนย์จุดสามแปดหกโมลต่อวินาที เทียบกับค่าวัดศูนย์จุดสามแปดศูนย์ และค่าจริงศูนย์จุดสี่"
+    },
+    {
+     "s": 68.324,
+     "e": 73.921,
+     "en": "Reconciliation removes the imbalance; it cannot recover information that no balance contains.",
+     "th": "การปรับกระทบยอดขจัดความไม่สมดุลได้ แต่กู้ข้อมูลที่ไม่มี balance ใดบรรจุอยู่กลับคืนมาไม่ได้"
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "file": "audio/slide-29.mp3",
+   "duration": 17.136,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.918,
+     "en": "Check 3 has four questions on reaction networks.",
+     "th": "Check 3 มีสี่คำถามเรื่องเครือข่ายปฏิกิริยา"
+    },
+    {
+     "s": 3.918,
+     "e": 13.776,
+     "en": "They ask for the number of independent reactions in combustion, a test of a proposed reaction, a model with a repeated reaction, and the meaning of the left null space.",
+     "th": "คำถามถามจำนวนปฏิกิริยาอิสระในการเผาไหม้ การทดสอบปฏิกิริยาที่เสนอ แบบจำลองที่มีปฏิกิริยาซ้ำ และความหมายของ left null space"
+    },
+    {
+     "s": 13.776,
+     "e": 17.079,
+     "en": "Take five minutes, then press Show answers.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 30,
+   "file": "audio/slide-30.mp3",
+   "duration": 18.552,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.616,
+     "en": "Check 4 has four questions on projection and reconciliation.",
+     "th": "Check 4 มีสี่คำถามเรื่องการฉายและการปรับกระทบยอด"
+    },
+    {
+     "s": 4.616,
+     "e": 15.197,
+     "en": "They ask where the correction lies, why reconciled extents equal least squares extents, which meter absorbs the correction, and what a chi squared value of two point two lets you conclude.",
+     "th": "คำถามถามว่าค่าปรับแก้อยู่ที่ใด ทำไม extent หลังปรับกระทบยอดจึงเท่ากับ extent จาก least squares มาตรวัดใดรับค่าปรับแก้ไป และค่า chi squared สองจุดสองให้ข้อสรุปอะไรได้"
+    },
+    {
+     "s": 15.197,
+     "e": 18.5,
+     "en": "Take five minutes, then press Show answers.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 31,
+   "file": "audio/slide-31.mp3",
+   "duration": 48.072,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.037,
+     "en": "Here is where today's ideas go in the next six sessions.",
+     "th": "นี่คือการนำแนวคิดของวันนี้ไปใช้ในหกคาบต่อไป"
+    },
+    {
+     "s": 4.037,
+     "e": 13.211,
+     "en": "Session 2 makes numerical rank precise with the singular value decomposition, and uses it to ask which fitted parameters your data can identify.",
+     "th": "คาบที่ 2 นิยาม rank เชิงตัวเลขให้แม่นยำด้วย singular value decomposition และใช้ถามว่าข้อมูลระบุพารามิเตอร์ที่ fit ตัวใดได้"
+    },
+    {
+     "s": 13.211,
+     "e": 20.684,
+     "en": "Session 3 writes a reaction network as d n d t equals N r, where the left null space of N gives the invariants.",
+     "th": "คาบที่ 3 เขียนเครือข่ายปฏิกิริยาเป็น d n d t เท่ากับ N r ซึ่ง left null space ของ N ให้ค่าที่ไม่แปรเปลี่ยน"
+    },
+    {
+     "s": 20.684,
+     "e": 29.632,
+     "en": "Sessions 4 and 5 use the Jacobian as a linear operator: its eigenvalues decide stability, and a turning point is where it gains a null space.",
+     "th": "คาบที่ 4 และ 5 ใช้ Jacobian เป็น linear operator ค่าเฉพาะของมันตัดสินเสถียรภาพ และจุดเลี้ยวกลับคือจุดที่มันมี null space"
+    },
+    {
+     "s": 29.632,
+     "e": 36.645,
+     "en": "Session 7 brings back inner products of functions, orthogonal eigenfunctions and the Fredholm alternative.",
+     "th": "คาบที่ 7 นำ inner product ของฟังก์ชัน eigenfunction ที่ตั้งฉากกัน และ Fredholm alternative กลับมาใช้"
+    },
+    {
+     "s": 36.645,
+     "e": 42.316,
+     "en": "For your own research: state the rank of every matrix you invert, and how you computed it.",
+     "th": "สำหรับงานวิจัยของคุณ ให้ระบุ rank ของทุกเมทริกซ์ที่คุณหาตัวผกผัน และบอกว่าคำนวณอย่างไร"
+    },
+    {
+     "s": 42.316,
+     "e": 48.0,
+     "en": "Each of these links is made explicit when we reach it, with a slide that points back to today.",
+     "th": "ความเชื่อมโยงแต่ละข้อจะชี้ให้เห็นชัดเมื่อถึงคาบนั้น โดยมีสไลด์ที่อ้างกลับมาถึงวันนี้"
+    }
+   ]
+  },
+  {
+   "n": 32,
+   "file": "audio/slide-32.mp3",
+   "duration": 47.952,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.484,
+     "en": "Lab 1 takes forty minutes and uses steam methane reforming.",
+     "th": "Lab 1 ใช้เวลาสี่สิบนาที และใช้กระบวนการ steam methane reforming"
+    },
+    {
+     "s": 4.484,
+     "e": 14.132,
+     "en": "You will predict the number of independent reactions, compute the rank and a basis of the null space, and test the three textbook reactions to find the redundant one.",
+     "th": "คุณจะทำนายจำนวนปฏิกิริยาอิสระ คำนวณ rank และ basis ของ null space และทดสอบปฏิกิริยาสามตัวจากตำราเพื่อหาตัวที่ซ้ำซ้อน"
+    },
+    {
+     "s": 14.132,
+     "e": 21.447,
+     "en": "Then you reconcile synthetic outlet measurements, with and without the meter variances, and read the methane conversion.",
+     "th": "จากนั้นคุณปรับกระทบยอดค่าวัดขาออกที่สังเคราะห์ขึ้น ทั้งแบบมีและไม่มีความแปรปรวนของมาตรวัด แล้วอ่านค่า conversion ของมีเทน"
+    },
+    {
+     "s": 21.447,
+     "e": 27.618,
+     "en": "Finally you add solid carbon and methanol as species, and explain how the dimension changes.",
+     "th": "สุดท้าย คุณเพิ่มคาร์บอนของแข็งและเมทานอลเป็นสปีชีส์ แล้วอธิบายว่ามิติเปลี่ยนไปอย่างไร"
+    },
+    {
+     "s": 27.618,
+     "e": 35.829,
+     "en": "Scan the code or open the link, and work alone. Download the answer file at the end and upload it to myCourseVille.",
+     "th": "สแกนโค้ดหรือเปิดลิงก์ แล้วทำคนเดียว ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
+    },
+    {
+     "s": 35.829,
+     "e": 44.806,
+     "en": "A hint for the reconciliation step: write the imbalance of each element before you reconcile, and compare it with the stated meter accuracies.",
+     "th": "คำแนะนำสำหรับขั้นปรับกระทบยอด ให้เขียนความไม่สมดุลของแต่ละธาตุก่อนปรับ แล้วเทียบกับความแม่นยำของมาตรวัดที่ระบุ"
+    },
+    {
+     "s": 44.806,
+     "e": 47.882,
+     "en": "That tells you in advance which meters will move.",
+     "th": "จะบอกได้ล่วงหน้าว่ามาตรวัดใดจะถูกปรับ"
+    }
+   ]
+  },
+  {
+   "n": 33,
+   "file": "audio/slide-33.mp3",
+   "duration": 54.288,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 2.761,
+     "en": "Here is what to take from today.",
+     "th": "นี่คือสิ่งที่ควรนำกลับไปจากวันนี้"
+    },
+    {
+     "s": 2.761,
+     "e": 9.013,
+     "en": "A subspace is closed under linear combinations; a nonzero right hand side gives an affine set.",
+     "th": "subspace ปิดภายใต้ผลรวมเชิงเส้น ส่วนด้านขวาที่ไม่เป็นศูนย์ให้ affine set"
+    },
+    {
+     "s": 9.013,
+     "e": 19.539,
+     "en": "An operator exists before its matrix, and its rank and nullity do not depend on the basis. Orthogonal bases keep the Gram matrix well conditioned.",
+     "th": "operator มีอยู่ก่อนเมทริกซ์ของมัน และ rank กับ nullity ไม่ขึ้นกับ basis ส่วน basis ที่ตั้งฉากกันทำให้ Gram matrix มีภาวะดี"
+    },
+    {
+     "s": 19.539,
+     "e": 26.212,
+     "en": "The four subspaces have dimensions r, m minus r, r and n minus r, and are orthogonal in pairs.",
+     "th": "subspace ทั้งสี่มีมิติ r, m ลบ r, r และ n ลบ r และตั้งฉากกันเป็นคู่ M x"
+    },
+    {
+     "s": 26.212,
+     "e": 34.711,
+     "en": "M x equals b is solvable when b is orthogonal to the left null space, and least squares projects b onto the column space.",
+     "th": "เท่ากับ b มีคำตอบเมื่อ b ตั้งฉากกับ left null space และ least squares ฉาย b ลงบน column space"
+    },
+    {
+     "s": 34.711,
+     "e": 35.581,
+     "en": "For reactions:",
+     "th": "สำหรับปฏิกิริยา"
+    },
+    {
+     "s": 35.581,
+     "e": 42.826,
+     "en": "the rank of N is at most the number of species minus the rank of A, the left null space of N holds the conserved quantities,",
+     "th": "rank ของ N ไม่เกินจำนวนสปีชีส์ลบ rank ของ A left null space ของ N เก็บปริมาณอนุรักษ์"
+    },
+    {
+     "s": 42.826,
+     "e": 47.0,
+     "en": "and reconciliation is a projection onto n zero plus the null space of A.",
+     "th": "และการปรับกระทบยอดคือการฉายลงบน n ศูนย์ บวก null space ของ A"
+    },
+    {
+     "s": 47.0,
+     "e": 54.224,
+     "en": "The table on the left collects the key numbers. Use it to check your own computations in the lab.",
+     "th": "ตารางทางซ้ายรวบรวมตัวเลขสำคัญ ใช้ตรวจการคำนวณของคุณเองในแล็บ"
+    }
+   ]
+  },
+  {
+   "n": 34,
+   "file": "audio/slide-34.mp3",
+   "duration": 37.44,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.629,
+     "en": "Before the next session, finish Lab 1 and upload the answer file.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 1 ให้เสร็จและอัปโหลดไฟล์คำตอบ"
+    },
+    {
+     "s": 4.629,
+     "e": 12.25,
+     "en": "Keep your card. Session 2 adds the parameters you fit, and asks whether your data can identify them.",
+     "th": "เก็บบัตรไว้ คาบที่ 2 จะเพิ่มพารามิเตอร์ที่คุณ fit และถามว่าข้อมูลของคุณระบุค่าพวกมันได้หรือไม่"
+    },
+    {
+     "s": 12.25,
+     "e": 20.539,
+     "en": "Read Strang, Linear Algebra and Its Applications, chapter two and section three point three, and Varma and Morbidelli, chapter one.",
+     "th": "อ่าน Strang, Linear Algebra and Its Applications บทที่สองและหัวข้อสามจุดสาม และ Varma กับ Morbidelli บทที่หนึ่ง"
+    },
+    {
+     "s": 20.539,
+     "e": 26.118,
+     "en": "For the stoichiometry, read Aris or Smith and Missen, chapter two in either book.",
+     "th": "สำหรับปริมาณสัมพันธ์ อ่านหนังสือของ Aris หรือของ Smith กับ Missen บทที่สองของเล่มใดก็ได้"
+    },
+    {
+     "s": 26.118,
+     "e": 37.368,
+     "en": "Strang's chapter is the best source for the four subspaces and their picture. Varma and Morbidelli give the chemical engineering applications and the notation closest to this course.",
+     "th": "บทของ Strang เป็นแหล่งที่ดีที่สุดสำหรับ subspace ทั้งสี่และภาพของมัน Varma กับ Morbidelli ให้การประยุกต์ทางวิศวกรรมเคมีและสัญลักษณ์ที่ใกล้กับวิชานี้ที่สุด"
+    }
+   ]
+  },
+  {
+   "n": 35,
+   "file": "audio/slide-35.mp3",
+   "duration": 23.424,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 2.892,
+     "en": "Please finish with the Exit Ticket.",
+     "th": "กรุณาปิดท้ายด้วย Exit Ticket"
+    },
+    {
+     "s": 2.892,
+     "e": 14.434,
+     "en": "Scan the code and choose Session 1. Paste the answers that the lab page copied for you, then tell us the pace, your confidence, how far you got in the lab, and what is still unclear.",
+     "th": "สแกนโค้ดแล้วเลือก Session 1 วางคำตอบที่หน้าแล็บคัดลอกไว้ให้ แล้วบอกเราเรื่องความเร็วในการสอน ความมั่นใจ ความคืบหน้าในแล็บ และสิ่งที่ยังไม่ชัดเจน"
+    },
+    {
+     "s": 14.434,
+     "e": 20.158,
+     "en": "The form is anonymous. If you studied on your own, choose On my own.",
+     "th": "แบบฟอร์มไม่ระบุตัวตน ถ้าเรียนเอง ให้เลือก On my own"
+    },
+    {
+     "s": 20.158,
+     "e": 23.368,
+     "en": "Thank you, and see you in Session 2.",
+     "th": "ขอบคุณ แล้วพบกันในคาบที่ 2"
+    }
+   ]
+  }
+ ]
+}

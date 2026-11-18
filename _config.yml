@@ -1,0 +1,14 @@
+title: 2105601 Advanced Engineering Mathematics for Chemical Engineers
+description: Course materials, Department of Chemical Engineering, Chulalongkorn University.
+author: Soorathep Kheawhom
+baseurl: "/course-2105601"
+url: "https://soorathep.github.io"
+defaults:
+  # pages are reachable by link only and kept out of the sitemap (pages also carry noindex)
+  - scope: {path: "teaching/2105601/2026"}
+    values: {sitemap: false}
+plugins:
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - tools/
