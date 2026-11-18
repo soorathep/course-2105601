@@ -3,7 +3,7 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 2516.7,
+ "total_seconds": 2522.1,
  "slides": [
   {
    "n": 1,
@@ -1116,7 +1116,7 @@
   {
    "n": 18,
    "file": "audio/slide-18.mp3",
-   "duration": 117.744,
+   "duration": 118.344,
    "hold": false,
    "cues": [
     {
@@ -1169,25 +1169,25 @@
     },
     {
      "s": 75.908,
-     "e": 84.373,
-     "en": "Here is the derivation in one line. The squared error is a quadratic in x. Its gradient is two M transpose times M x minus b.",
-     "th": "นี่คือการหาสูตรในบรรทัดเดียว ความคลาดเคลื่อนกำลังสองเป็นฟังก์ชันกำลังสองของ x gradient ของมันคือ สอง M transpose คูณ M x ลบ"
+     "e": 87.603,
+     "en": "Here is the derivation in one line. The closest point M x to b is the one whose residual b minus M x is orthogonal to the column space, so M transpose times the residual is zero.",
+     "th": "นี่คือการหาสูตรในบรรทัดเดียว จุด M x ที่ใกล้ b ที่สุดคือจุดที่เศษเหลือ b ลบ M x ตั้งฉากกับ column space ดังนั้น M transpose คูณเศษเหลือเท่ากับศูนย์"
     },
     {
-     "s": 84.373,
-     "e": 94.316,
-     "en": "Setting the gradient to zero gives the normal equations, and the Hessian two M transpose M is positive semidefinite, so every solution is a minimum.",
-     "th": "b เมื่อให้ gradient เป็นศูนย์จะได้ normal equation และ Hessian ซึ่งคือ สอง M transpose M เป็น positive semidefinite ดังนั้นทุกคำตอบเป็นค่าต่ำสุด"
+     "s": 87.603,
+     "e": 94.921,
+     "en": "That is the normal equations, and Pythagoras shows that every other point of the column space is farther from b.",
+     "th": "นั่นคือ normal equation และทฤษฎีบทพีทาโกรัสแสดงว่าจุดอื่นใน column space อยู่ไกลจาก b มากกว่า"
     },
     {
-     "s": 94.316,
-     "e": 105.891,
+     "s": 94.921,
+     "e": 106.496,
      "en": "A chemical engineering example: fitting the logarithm of a rate constant against one over temperature. The columns of M are a column of ones and a column of one over T.",
      "th": "ตัวอย่างทางวิศวกรรมเคมี คือการ fit ลอการิทึมของค่าคงที่อัตราเทียบกับหนึ่งส่วนอุณหภูมิ หลักของ M คือหลักของเลขหนึ่ง และหลักของหนึ่งส่วน T"
     },
     {
-     "s": 105.891,
-     "e": 117.671,
+     "s": 106.496,
+     "e": 118.276,
      "en": "Because one over T barely changes over a typical experiment, the two columns are nearly parallel, and M transpose M is badly conditioned. Session 2 fixes this by centering.",
      "th": "เพราะหนึ่งส่วน T เปลี่ยนน้อยมากในการทดลองทั่วไป สองหลักนี้จึงเกือบขนานกัน และ M transpose M มีภาวะไม่ดี คาบที่ 2 แก้ปัญหานี้ด้วยการเลื่อนจุดศูนย์กลาง"
     }
@@ -1686,7 +1686,7 @@
   {
    "n": 27,
    "file": "audio/slide-27.mp3",
-   "duration": 135.96,
+   "duration": 131.712,
    "hold": false,
    "cues": [
     {
@@ -1697,91 +1697,91 @@
     },
     {
      "s": 9.039,
-     "e": 16.697,
-     "en": "Minimize the weighted squared corrections, divided by each meter's variance, subject to A n equals A n zero.",
-     "th": "หาค่าต่ำสุดของผลรวมกำลังสองของค่าปรับแก้ หารด้วยความแปรปรวนของมาตรวัดแต่ละตัว ภายใต้เงื่อนไข A n เท่ากับ A n ศูนย์"
+     "e": 18.197,
+     "en": "Find the flows that satisfy A n equals A n zero and lie closest to the measurements, measuring distance with each meter weighted by one over its variance.",
+     "th": "หาอัตราการไหลที่สอดคล้องกับ A n เท่ากับ A n ศูนย์ และอยู่ใกล้ค่าวัดที่สุด โดยวัดระยะทางแบบถ่วงน้ำหนักมิเตอร์แต่ละตัวด้วยหนึ่งหารความแปรปรวน"
     },
     {
-     "s": 16.697,
-     "e": 25.355,
-     "en": "The solution has a closed form, shown on the slide. It comes from a Lagrangian with one multiplier per element balance.",
-     "th": "คำตอบมีรูปปิดตามที่แสดงบนหน้านี้ ได้มาจาก Lagrangian ที่มีตัวคูณหนึ่งตัวต่อหนึ่ง element balance"
+     "s": 18.197,
+     "e": 25.711,
+     "en": "The solution has a closed form, shown on the slide. It is a projection, derived on the next slide.",
+     "th": "คำตอบมีรูปปิดตามที่แสดงบนหน้านี้ ซึ่งเป็นการฉาย และจะหาสูตรในสไลด์ถัดไป"
     },
     {
-     "s": 25.355,
-     "e": 35.382,
+     "s": 25.711,
+     "e": 35.737,
      "en": "With equal weights, n hat is the orthogonal projection of the measurements onto the affine set n zero plus the null space of A, and the correction lies in the row space of A.",
      "th": "เมื่อน้ำหนักเท่ากัน n hat คือการฉายตั้งฉากของค่าวัดลงบน affine set n ศูนย์ บวก null space ของ A และค่าปรับแก้อยู่ใน row space ของ A"
     },
     {
-     "s": 35.382,
-     "e": 44.882,
+     "s": 35.737,
+     "e": 45.237,
      "en": "With unequal weights, it is the same projection in a weighted inner product. Accurate meters move little; poor meters absorb the correction.",
      "th": "เมื่อน้ำหนักไม่เท่ากัน ก็คือการฉายแบบเดียวกันใน inner product แบบถ่วงน้ำหนัก มาตรวัดที่แม่นยำถูกปรับน้อย มาตรวัดที่ไม่แม่นรับค่าปรับแก้ไป"
     },
     {
-     "s": 44.882,
-     "e": 53.329,
+     "s": 45.237,
+     "e": 53.684,
      "en": "The weighted sum of squared corrections, chi squared, has as many degrees of freedom as the rank of A, and it is a global test for gross error.",
      "th": "ผลรวมกำลังสองของค่าปรับแก้แบบถ่วงน้ำหนัก หรือ chi squared มีระดับขั้นความเสรีเท่ากับ rank ของ A และใช้เป็นการทดสอบรวมสำหรับความคลาดเคลื่อนขนาดใหญ่"
     },
     {
-     "s": 53.329,
-     "e": 61.228,
+     "s": 53.684,
+     "e": 61.583,
      "en": "Why not simply adjust the worst looking number by hand? Because a hand adjustment chooses which meter to blame without evidence.",
      "th": "ทำไมไม่ปรับตัวเลขที่ดูแย่ที่สุดด้วยมือ เพราะการปรับด้วยมือเลือกโทษมาตรวัดตัวหนึ่งโดยไม่มีหลักฐาน"
     },
     {
-     "s": 61.228,
-     "e": 70.474,
+     "s": 61.583,
+     "e": 70.829,
      "en": "The weighted projection uses the stated accuracy of every meter, and it changes each flow by the least amount consistent with all the balances at once.",
      "th": "การฉายแบบถ่วงน้ำหนักใช้ความแม่นยำที่ระบุของมาตรวัดทุกตัว และเปลี่ยนอัตราการไหลแต่ละตัวน้อยที่สุดที่สอดคล้องกับ balance ทุกตัวพร้อมกัน"
     },
     {
-     "s": 70.474,
-     "e": 72.005,
+     "s": 70.829,
+     "e": 72.36,
      "en": "One limit is important.",
      "th": "มีข้อจำกัดสำคัญข้อหนึ่ง"
     },
     {
-     "s": 72.005,
-     "e": 83.105,
+     "s": 72.36,
+     "e": 83.461,
      "en": "A bias that lies in the null space of A, for example one that shifts flows along a balanced reaction, does not change any element balance, so no reconciliation can detect it.",
      "th": "ความเอนเอียงที่อยู่ใน null space ของ A เช่น ความเอนเอียงที่เลื่อนอัตราการไหลไปตามปฏิกิริยาที่ดุลแล้ว ไม่เปลี่ยน element balance ใดเลย จึงไม่มีการปรับกระทบยอดใดตรวจพบได้"
     },
     {
-     "s": 83.105,
-     "e": 92.814,
+     "s": 83.461,
+     "e": 93.17,
      "en": "Industrial practice adds more: gross error identification, bounds on flows, and nonlinear balances when compositions and total flows are both measured.",
      "th": "ในทางปฏิบัติในอุตสาหกรรมมีมากกว่านี้ เช่น การระบุความคลาดเคลื่อนขนาดใหญ่ ขอบเขตของอัตราการไหล และ balance แบบไม่เชิงเส้นเมื่อวัดทั้งองค์ประกอบและอัตราการไหลรวม"
     },
     {
-     "s": 92.814,
-     "e": 96.711,
+     "s": 93.17,
+     "e": 97.066,
      "en": "The linear case here is the core that those methods build on.",
      "th": "กรณีเชิงเส้นที่นี่คือแกนหลักที่วิธีเหล่านั้นต่อยอด"
     },
     {
-     "s": 96.711,
-     "e": 105.189,
-     "en": "The closed form comes from three lines of algebra. Write the Lagrangian with a multiplier vector for the element balances.",
-     "th": "รูปปิดได้มาจากพีชคณิตสามบรรทัด เขียน Lagrangian ที่มีเวกเตอร์ตัวคูณสำหรับ element balance เมื่อให้"
+     "s": 97.066,
+     "e": 101.761,
+     "en": "The closed form comes from three lines of algebra, shown on the next slide.",
+     "th": "รูปปิดได้มาจากพีชคณิตสามบรรทัด ซึ่งแสดงในสไลด์ถัดไป"
     },
     {
-     "s": 105.189,
-     "e": 111.945,
-     "en": "Setting its gradient in n to zero gives n equals m minus Sigma A transpose times the multipliers.",
-     "th": "gradient เทียบกับ n เป็นศูนย์ จะได้ n เท่ากับ m ลบ Sigma A transpose คูณตัวคูณ"
+     "s": 101.761,
+     "e": 110.904,
+     "en": "The correction must be orthogonal, in the weighted inner product, to every balanced direction, so it lies in the column space of Sigma A transpose.",
+     "th": "การปรับต้องตั้งฉากในผลคูณภายในแบบถ่วงน้ำหนักกับทุกทิศที่สมดุล จึงอยู่ใน column space ของ Sigma A transpose แทนลงใน"
     },
     {
-     "s": 111.945,
-     "e": 124.421,
-     "en": "Substituting into the balances gives a three by three linear system for the multipliers, whose matrix is A Sigma A transpose. That matrix is invertible whenever A has full row rank.",
-     "th": "แทนลงใน balance จะได้ระบบเชิงเส้นสามคูณสามสำหรับตัวคูณ ซึ่งมีเมทริกซ์เป็น A Sigma A transpose เมทริกซ์นี้หาตัวผกผันได้เสมอเมื่อ A มี rank แถวเต็ม"
+     "s": 110.904,
+     "e": 120.171,
+     "en": "Substituting into the balances gives a three by three linear system with matrix A Sigma A transpose, which is invertible whenever A has full row rank.",
+     "th": "balance จะได้ระบบเชิงเส้นสามคูณสามที่มีเมทริกซ์ A Sigma A transpose ซึ่งหาตัวผกผันได้เสมอเมื่อ A มี rank แถวเต็ม"
     },
     {
-     "s": 124.421,
-     "e": 135.882,
+     "s": 120.171,
+     "e": 131.632,
      "en": "If A does not have full row rank, for example because one element balance is a combination of others, remove the dependent rows first. The left null space of A tells you which ones.",
      "th": "ถ้า A ไม่มี rank แถวเต็ม เช่น มี element balance หนึ่งที่เป็นผลรวมของตัวอื่น ให้ตัดแถวที่ไม่อิสระออกก่อน left null space ของ A บอกได้ว่าเป็นแถวใด"
     }
@@ -1790,42 +1790,54 @@
   {
    "n": 28,
    "file": "audio/slide-28.mp3",
-   "duration": 50.856,
+   "duration": 59.904,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 11.197,
-     "en": "Here is the derivation behind reconciliation. Minimize the weighted squared adjustments subject to the element balances, with one Lagrange multiplier per element.",
-     "th": "นี่คือการหาสูตรเบื้องหลังการปรับกระทบยอด หาค่าต่ำสุดของผลรวมกำลังสองแบบถ่วงน้ำหนักของการปรับ ภายใต้สมดุลธาตุ โดยใช้ตัวคูณลากรองจ์หนึ่งตัวต่อหนึ่งธาตุ"
+     "e": 11.186,
+     "en": "Here is the derivation behind reconciliation, and it is pure linear algebra. Measure distance with an inner product that weights each meter by one over its variance.",
+     "th": "นี่คือการหาสูตรเบื้องหลังการปรับกระทบยอด ซึ่งเป็นพีชคณิตเชิงเส้นล้วน วัดระยะทางด้วยผลคูณภายในที่ถ่วงน้ำหนักมิเตอร์แต่ละตัวด้วยหนึ่งหารความแปรปรวน"
     },
     {
-     "s": 11.197,
-     "e": 22.963,
-     "en": "Setting the derivative to zero gives n equals m minus Sigma A transpose lambda. Imposing the balances fixes lambda, and the formula of the previous slide follows.",
-     "th": "การตั้งอนุพันธ์ให้เป็นศูนย์ได้ n เท่ากับ m ลบ Sigma A transpose lambda การบังคับสมดุลกำหนดค่า lambda และได้สูตรของสไลด์ก่อนหน้า"
+     "s": 11.186,
+     "e": 16.395,
+     "en": "The feasible flows form an affine subspace: the feed plus the null space of A.",
+     "th": "ค่าอัตราการไหลที่เป็นไปได้ประกอบเป็น affine subspace คือสารป้อนบวก null space ของ A"
     },
     {
-     "s": 22.963,
-     "e": 26.789,
-     "en": "With equal variances it is the orthogonal projection.",
-     "th": "เมื่อความแปรปรวนเท่ากัน สูตรนี้คือการฉายเชิงตั้งฉาก"
+     "s": 16.395,
+     "e": 22.639,
+     "en": "The closest feasible point is the one whose correction is orthogonal to every balanced direction.",
+     "th": "จุดที่เป็นไปได้ที่ใกล้ที่สุดคือจุดที่การปรับตั้งฉากกับทุกทิศที่สมดุล"
     },
     {
-     "s": 26.789,
-     "e": 34.107,
+     "s": 22.639,
+     "e": 30.286,
+     "en": "The orthogonal complement of the null space is the row space, so the correction is Sigma A transpose times some vector.",
+     "th": "ส่วนเติมเต็มเชิงตั้งฉากของ null space คือ row space การปรับจึงเท่ากับ Sigma A transpose คูณเวกเตอร์หนึ่ง"
+    },
+    {
+     "s": 30.286,
+     "e": 35.829,
+     "en": "Imposing the balances fixes that vector, and the formula of the previous slide follows.",
+     "th": "การบังคับสมดุลกำหนดเวกเตอร์นั้น และได้สูตรของสไลด์ก่อนหน้า"
+    },
+    {
+     "s": 35.829,
+     "e": 43.147,
      "en": "Two statistics follow. Chi squared tests whether the imbalance is larger than the meter noise explains.",
      "th": "ได้สถิติสองตัวตามมา chi squared ทดสอบว่าความไม่สมดุลมากกว่าที่สัญญาณรบกวนของมิเตอร์อธิบายได้หรือไม่"
     },
     {
-     "s": 34.107,
-     "e": 43.184,
+     "s": 43.147,
+     "e": 52.224,
      "en": "The measurement test divides each adjustment by its standard deviation, and points to the suspect meter. You write it in the lab.",
      "th": "measurement test หารการปรับแต่ละตัวด้วยส่วนเบี่ยงเบนมาตรฐานของมัน และชี้ไปยังมิเตอร์ที่น่าสงสัย คุณจะเขียนมันในแล็บ"
     },
     {
-     "s": 43.184,
-     "e": 50.789,
+     "s": 52.224,
+     "e": 59.829,
      "en": "One limit is worth remembering: a bias along a balanced direction leaves the imbalance unchanged, and no test can see it.",
      "th": "ข้อจำกัดหนึ่งที่ควรจำ ความเอนเอียงตามทิศที่สมดุลไม่เปลี่ยนความไม่สมดุล และไม่มีการทดสอบใดมองเห็นได้"
     }

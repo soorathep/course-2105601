@@ -3,7 +3,7 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 1849.3,
+ "total_seconds": 1850.4,
  "slides": [
   {
    "n": 1,
@@ -464,7 +464,7 @@
   {
    "n": 10,
    "file": "audio/slide-10.mp3",
-   "duration": 100.992,
+   "duration": 102.264,
    "hold": false,
    "cues": [
     {
@@ -493,45 +493,45 @@
     },
     {
      "s": 39.066,
-     "e": 46.77,
-     "en": "Many matrices in chemical engineering are symmetric. The Hessian of an objective has eigenvalues that measure curvature.",
-     "th": "เมทริกซ์จำนวนมากในวิศวกรรมเคมีเป็นเมทริกซ์สมมาตร ค่าเฉพาะของ Hessian ของฟังก์ชันเป้าหมายวัดความโค้ง"
+     "e": 46.591,
+     "en": "Many matrices in chemical engineering are symmetric: stiffness and conductance matrices, Gram matrices, and covariances.",
+     "th": "เมทริกซ์จำนวนมากในวิศวกรรมเคมีเป็นเมทริกซ์สมมาตร เช่น เมทริกซ์ความแข็งและเมทริกซ์การนำ เมทริกซ์ Gram"
     },
     {
-     "s": 46.77,
-     "e": 57.211,
+     "s": 46.591,
+     "e": 56.789,
      "en": "The covariance of fitted parameters has eigenvalues that measure the variance along each principal direction, and a large one marks a poorly identified combination.",
-     "th": "ค่าเฉพาะของความแปรปรวนร่วมของพารามิเตอร์ที่ fit วัดความแปรปรวนตามทิศหลักแต่ละทิศ และค่าที่ใหญ่บ่งบอกผลรวมของพารามิเตอร์ที่ระบุได้ไม่ดี"
+     "th": "และเมทริกซ์ความแปรปรวนร่วม ค่าเฉพาะของความแปรปรวนร่วมของพารามิเตอร์ที่ fit วัดความแปรปรวนตามทิศหลักแต่ละทิศ และค่าที่ใหญ่บ่งบอกผลรวมของพารามิเตอร์ที่ระบุได้ไม่ดี"
     },
     {
-     "s": 57.211,
-     "e": 65.145,
+     "s": 56.789,
+     "e": 64.724,
      "en": "And Session 7 extends the same theorem to differential operators, where the eigenvectors become orthogonal eigenfunctions.",
      "th": "และคาบที่ 7 ขยายทฤษฎีบทเดียวกันนี้ไปยัง differential operator ซึ่งเวกเตอร์เฉพาะกลายเป็น eigenfunction ที่ตั้งฉากกัน"
     },
     {
-     "s": 65.145,
-     "e": 76.979,
+     "s": 64.724,
+     "e": 76.557,
      "en": "The Rayleigh quotient gives a practical tool. The largest eigenvalue of a symmetric matrix is the maximum of x transpose M x over unit vectors, and the smallest is the minimum.",
      "th": "Rayleigh quotient ให้เครื่องมือในทางปฏิบัติ ค่าเฉพาะที่ใหญ่ที่สุดของเมทริกซ์สมมาตรคือค่าสูงสุดของ x transpose M x บนเวกเตอร์หนึ่งหน่วย และค่าที่เล็กที่สุดคือค่าต่ำสุด"
     },
     {
-     "s": 76.979,
-     "e": 82.461,
+     "s": 76.557,
+     "e": 82.039,
      "en": "So bounds on eigenvalues can be found by trying vectors, without solving anything.",
      "th": "จึงหาขอบเขตของค่าเฉพาะได้ด้วยการลองเวกเตอร์ โดยไม่ต้องแก้สมการใด"
     },
     {
-     "s": 82.461,
-     "e": 93.194,
-     "en": "Positive definiteness is also how you check a minimum. At a stationary point, if the Hessian has all positive eigenvalues, the point is a strict local minimum.",
-     "th": "ความเป็น positive definite ยังใช้ตรวจค่าต่ำสุดด้วย ที่จุดคงที่ ถ้า Hessian มีค่าเฉพาะเป็นบวกทั้งหมด จุดนั้นเป็นค่าต่ำสุดเฉพาะที่แบบเข้ม"
+     "s": 82.039,
+     "e": 93.577,
+     "en": "Positive definiteness also tells you when a symmetric matrix can be factored as L L transpose, the Cholesky factorization, which is how Gram and covariance matrices are solved in practice.",
+     "th": "ความเป็น positive definite ยังบอกว่าเมทริกซ์สมมาตรแยกตัวประกอบเป็น L L transpose ได้ ซึ่งคือ Cholesky factorization ที่ใช้แก้เมทริกซ์ Gram และเมทริกซ์ความแปรปรวนร่วมในทางปฏิบัติ"
     },
     {
-     "s": 93.194,
-     "e": 100.908,
-     "en": "A zero eigenvalue marks a flat direction, which in parameter estimation is again a combination the data cannot fix.",
-     "th": "ค่าเฉพาะศูนย์บ่งบอกทิศที่แบน ซึ่งในการประมาณพารามิเตอร์ก็คือผลรวมที่ข้อมูลกำหนดไม่ได้อีกเช่นกัน"
+     "s": 93.577,
+     "e": 102.184,
+     "en": "A zero eigenvalue marks a direction with no length in that inner product, which in parameter estimation is a combination the data cannot fix.",
+     "th": "ค่าเฉพาะศูนย์บ่งบอกทิศที่ไม่มีความยาวในผลคูณภายในนั้น ซึ่งในการประมาณพารามิเตอร์คือผลรวมที่ข้อมูลกำหนดไม่ได้"
     }
    ]
   },
@@ -986,7 +986,7 @@
   {
    "n": 19,
    "file": "audio/slide-19.mp3",
-   "duration": 103.968,
+   "duration": 101.16,
    "hold": false,
    "cues": [
     {
@@ -1057,21 +1057,15 @@
     },
     {
      "s": 86.882,
-     "e": 90.429,
-     "en": "This is optimal experimental design in its simplest form:",
-     "th": "นี่คือการออกแบบการทดลองที่เหมาะสมในรูปที่ง่ายที่สุด"
+     "e": 97.713,
+     "en": "The lesson is in the singular values: a sampling window is informative when the smallest singular value of the scaled sensitivity matrix is not small compared with the largest.",
+     "th": "บทเรียนอยู่ที่ singular value ช่วงเวลาเก็บตัวอย่างให้ข้อมูลดีเมื่อ singular value ที่เล็กที่สุดของ sensitivity matrix ที่ปรับสเกลแล้วไม่เล็กเมื่อเทียบกับค่าที่ใหญ่ที่สุด"
     },
     {
-     "s": 90.429,
-     "e": 101.13,
-     "en": "choose the sampling times to make the smallest singular value of the scaled sensitivity matrix as large as possible, or the determinant of S transpose S as large as possible.",
-     "th": "คือเลือกเวลาเก็บตัวอย่างให้ singular value ที่เล็กที่สุดของ sensitivity matrix ที่ปรับสเกลแล้วมีค่ามากที่สุด หรือให้ดีเทอร์มิแนนต์ของ S transpose S มากที่สุด"
-    },
-    {
-     "s": 101.13,
-     "e": 103.882,
-     "en": "The second choice is called D optimal design.",
-     "th": "ทางเลือกที่สองเรียกว่า D optimal design"
+     "s": 97.713,
+     "e": 101.079,
+     "en": "Compare windows by kappa before you run the experiment.",
+     "th": "เปรียบเทียบช่วงเวลาด้วย kappa ก่อนทำการทดลอง"
     }
    ]
   },
@@ -1518,7 +1512,7 @@
   {
    "n": 30,
    "file": "audio/slide-30.mp3",
-   "duration": 45.672,
+   "duration": 48.288,
    "hold": false,
    "cues": [
     {
@@ -1553,13 +1547,13 @@
     },
     {
      "s": 33.763,
-     "e": 41.211,
-     "en": "Third, write code that chooses the sampling window for the best estimate of a rate constant, from the sensitivity matrix.",
-     "th": "ส่วนที่สาม เขียนโค้ดเลือกช่วงเวลาเก็บตัวอย่างที่ให้ค่าประมาณค่าคงที่อัตราดีที่สุด จาก sensitivity matrix"
+     "e": 43.816,
+     "en": "Third, write the rank analysis yourself: the SVD, the noise threshold, and the low rank reconstruction, and check its error against the discarded singular values.",
+     "th": "ส่วนที่สาม เขียนการวิเคราะห์ rank เอง คือ SVD ค่าขีดแบ่งจากสัญญาณรบกวน และการสร้างเมทริกซ์ rank ต่ำ แล้วตรวจความคลาดเคลื่อนกับ singular value ที่ตัดทิ้ง"
     },
     {
-     "s": 41.211,
-     "e": 45.618,
+     "s": 43.816,
+     "e": 48.224,
      "en": "Download the answer file at the end and upload it to myCourseVille.",
      "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
     }

@@ -72,14 +72,6 @@ def decay_design(tmax, n=8):
             "se_rel_k": float(np.sqrt(cov[1, 1]) / k)}       # relative standard error of k per unit noise
 
 
-def optimal_window(lo=0.5, hi=20.0):
-    """Sampling window (n = 8 equally spaced samples) that minimizes the relative standard error of k."""
-    from scipy.optimize import minimize_scalar
-    r = minimize_scalar(lambda t: decay_design(t)["se_rel_k"], bounds=(lo, hi), method="bounded", options={"xatol": 1e-9})
-    d = decay_design(float(r.x))
-    return {"tmax": float(r.x), "se_rel_k": d["se_rel_k"], "cond": d["cond"], "corr": d["corr"]}
-
-
 def decay_sweep():
     return [decay_design(float(t)) for t in np.round(np.arange(0.5, 12.01, 0.5), 2)]
 
@@ -160,6 +152,27 @@ def spectra(noise=None, seed=11):
             "lam": lam.tolist(), "E": E.tolist(), "X0": X[0].tolist(), "X1": X[1].tolist()}
 
 
+def spectra_X(noise=None, seed=11):
+    """The absorbance matrix itself (mixtures x wavelengths), for the Lab 2 code step."""
+    rng = np.random.default_rng(seed)
+    lam = np.linspace(240, 370, SPEC["wavelengths"])
+    E = np.array([h * np.exp(-((lam - c) / w) ** 2) for c, w, h in zip(SPEC["centers"], SPEC["widths"], SPEC["heights"])])
+    Cc = rng.uniform(0.05, 1.0, (SPEC["mixtures"], SPEC["species"]))
+    Z = rng.normal(0, 1, (SPEC["mixtures"], SPEC["wavelengths"]))
+    return Cc @ E + (SPEC["noise"] if noise is None else noise) * Z
+
+
+def low_rank():
+    """Numerical rank from the noise threshold, and the Eckart-Young error of the rank-r reconstruction."""
+    X = spectra_X(); m, n = X.shape
+    U, s, Vt = svd(X, full_matrices=False)
+    delta = SPEC["noise"] * (np.sqrt(m) + np.sqrt(n)); r = int(np.sum(s > delta))
+    Xr = (U[:, :r] * s[:r]) @ Vt[:r]
+    rms = float(np.linalg.norm(X - Xr) / np.sqrt(m * n))
+    return {"rank": r, "rms": rms, "tail": float(np.sqrt(np.sum(s[r:] ** 2)) / np.sqrt(m * n)),
+            "expected": float(SPEC["noise"] * np.sqrt((m - r) * (n - r) / (m * n)))}
+
+
 def spectra_sweep():
     return [{"noise": float(v), **{k: spectra(float(v))[k] for k in ("sv", "delta", "rank")}}
             for v in [0.001, 0.002, 0.005, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.08, 0.1, 0.15, 0.2, 0.3, 0.5]]
@@ -180,7 +193,7 @@ def clean(o):
 
 def classroom_results():
     R = {"lecture": {"two": two_by_two(), "decay": decay_sweep(), "profiles": profiles()},
-         "lab": {"arr": arrhenius(), "spec": spectra(), "sweep": spectra_sweep(), "opt": optimal_window()},
+         "lab": {"arr": arrhenius(), "spec": spectra(), "sweep": spectra_sweep(), "lowrank": low_rank()},
          "versions": {"numpy": np.__version__, "scipy": __import__("scipy").__version__}}
     return clean(R)
 
