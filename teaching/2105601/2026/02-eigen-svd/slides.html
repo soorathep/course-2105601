@@ -329,6 +329,28 @@ print("lambda", r6(D["lam"]), "rank(M - 2I)", D["rank_of_M_minus_2I"])
 print("cond(V) above 1e12:", D["cond_V"] > 1e12)`,
 out:()=>{const D=TW().defective;return `lambda ${py6l(D.lam)} rank(M - 2I) ${D.rank_of_M_minus_2I}\ncond(V) above 1e12: ${D.cond_V>1e12?"True":"False"}`}}});
 
+S.push({kicker:"Part 1 · Diagonalization as a picture", title:"Same arrow, two sets of axes", html:()=>{const T=TW().sym,th=Math.atan2(T.V[0][1],T.V[0][0])*180/Math.PI;return `<div class="body"><div class="col w55"><div class="panel grow"><div class="chart" id="ch-ax"></div></div>
+<div class="ctrl" style="margin-top:6px">direction of x <input type="range" id="axa" min="0" max="345" step="15" value="60"><b id="axav"></b></div></div>
+<div class="col"><div class="panel" style="padding:12px 14px"><div class="math" style="font-size:16px;line-height:1.6">Q = [v<sub>1</sub> v<sub>2</sub>] turns the axes by ${fmt(th,1)}°<br>y = Qᵀx, &nbsp;x = Qy, &nbsp;QᵀQ = I ⇒ |y| = |x|<br>In the eigen axes: Mx has coordinates (λ<sub>1</sub>y<sub>1</sub>, λ<sub>2</sub>y<sub>2</sub>)</div></div>
+<table class="t" style="font-size:15px;margin-top:8px" id="axT"></table>
+<ul class="b xs" style="margin-top:8px"><li>One arrow, two descriptions: the coordinates change, the length does not, because Q is a rotation</li>
+<li>On the eigen axes M only stretches: y<sub>1</sub> by ${fmt(T.lam[0],2)}, y<sub>2</sub> by ${fmt(T.lam[1],2)} (teal dots to amber)</li>
+<li>Needs orthonormal eigenvectors (symmetric M). Oblique eigen axes keep the decoupling but not the length (next two slides)</li></ul></div></div>`},
+draw:()=>{const T=TW().sym,l1=T.lam[0],l2=T.lam[1],v1=T.V[0],v2=[-T.V[1][0],-T.V[1][1]],M=T.M;
+ const go=a=>{const u=a*Math.PI/180,x=[Math.cos(u),Math.sin(u)],w=[M[0][0]*x[0]+M[0][1]*x[1],M[1][0]*x[0]+M[1][1]*x[1]];
+  const y1=v1[0]*x[0]+v1[1]*x[1],y2=v2[0]*x[0]+v2[1]*x[1],z1=l1*y1,z2=l2*y2;
+  const P=plane({w:560,h:440,xr:[-4.2,4.2],yr:[-3.3,3.3],xt:[-4,-2,0,2,4],yt:[-2,0,2],xlab:"Cartesian x₁",ylab:"Cartesian x₂",l:46,b:46});let s=P.s;
+  [[v1,"y₁ (v₁)",-1],[v2,"y₂ (v₂)",-1]].forEach(([e,t,sg])=>{const tm=Math.min(4.2/Math.abs(e[0]),3.3/Math.abs(e[1]));s+=`<line x1="${P.px(-tm*e[0])}" y1="${P.py(-tm*e[1])}" x2="${P.px(tm*e[0])}" y2="${P.py(tm*e[1])}" stroke="${C.graphite}" stroke-dasharray="7 5" stroke-width="1.4"/><text x="${P.px(sg*0.9*tm*e[0])+(sg>0?-6:8)}" y="${P.py(sg*0.9*tm*e[1])+(sg>0?22:4)}" font-size="16" font-weight="700" text-anchor="${sg>0?"end":"start"}" fill="${C.graphite}">${t}</text>`});
+  const foot=(c,e)=>[c*e[0],c*e[1]],seg=(p,q,col)=>`<line x1="${P.px(p[0])}" y1="${P.py(p[1])}" x2="${P.px(q[0])}" y2="${P.py(q[1])}" stroke="${col}" stroke-dasharray="3 4" stroke-width="1.6"/>`,dot=(p,col)=>`<circle cx="${P.px(p[0])}" cy="${P.py(p[1])}" r="6" fill="${col}" stroke="#fff" stroke-width="1.5"/>`;
+  const f1=foot(y1,v1),f2=foot(y2,v2),g1=foot(z1,v1),g2=foot(z2,v2);
+  s+=seg(x,f1,C.teal)+seg(x,f2,C.teal)+seg(w,g1,C.amber)+seg(w,g2,C.amber);
+  s+=arrow(P.px(0),P.py(0),P.px(w[0]),P.py(w[1]),C.amber,4,"Mx")+arrow(P.px(0),P.py(0),P.px(x[0]),P.py(x[1]),C.teal,4,"x");
+  s+=dot(f1,C.teal)+dot(f2,C.teal)+dot(g1,C.amber)+dot(g2,C.amber);
+  document.getElementById("ch-ax").innerHTML=s+P.frame()+"</svg>";document.getElementById("axav").textContent=a+"°";
+  const c=(p,q)=>`(${mn(fmt(p,3))}, ${mn(fmt(q,3))})`,L=(p,q)=>fmt(Math.hypot(p,q),3);
+  document.getElementById("axT").innerHTML=`<tr><th></th><th class="n">Cartesian axes</th><th class="n">eigen axes</th></tr><tr><td>x</td><td class="n">${c(x[0],x[1])}</td><td class="n">${c(y1,y2)}</td></tr><tr><td>|x|</td><td class="n">${L(x[0],x[1])}</td><td class="n">${L(y1,y2)}</td></tr><tr><td>Mx</td><td class="n">${c(w[0],w[1])}</td><td class="n">${c(z1,z2)}</td></tr><tr><td>|Mx|</td><td class="n">${L(w[0],w[1])}</td><td class="n">${L(z1,z2)}</td></tr>`};
+ const sl=document.getElementById("axa");sl.oninput=()=>go(+sl.value);go(60)}});
+
 S.push({kicker:"Part 1 · Symmetric matrices", title:"The spectral theorem: real eigenvalues, orthogonal eigenvectors", html:()=>`<div class="body"><div class="col w55"><div class="panel"><div class="math" style="font-size:18px;line-height:1.75">
 M = Mᵀ ⇒ M = QΛQᵀ, &nbsp;QᵀQ = I, &nbsp;λ<sub>i</sub> real<br>
 Rayleigh quotient: r(x) = xᵀMx / xᵀx<br>
@@ -631,7 +653,7 @@ const NARR = {
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 1670.1,
+ "total_seconds": 1730.5,
  "slides": [
   {
    "n": 1,
@@ -1042,6 +1064,56 @@ const NARR = {
   {
    "n": 9,
    "file": "audio/slide-09.mp3",
+   "duration": 60.384,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.342,
+     "en": "Here is the same idea as a picture. The teal arrow x is one object. We can describe it on the Cartesian axes, or on the eigen axes, the two dashed lines along the eigenvectors.",
+     "th": "นี่คือแนวคิดเดียวกันในรูปภาพ ลูกศรสีเขียวหัวเป็ด x เป็นวัตถุเดียว เราอธิบายมันได้บนแกน Cartesian หรือบนแกนเฉพาะ คือเส้นประสองเส้นที่อยู่ตามเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 13.342,
+     "e": 26.207,
+     "en": "For this symmetric matrix the eigen axes are just the Cartesian axes turned by about thirty two degrees. So the coordinates change, but the length of the arrow is the same in both systems.",
+     "th": "สำหรับเมทริกซ์สมมาตรนี้ แกนเฉพาะคือแกน Cartesian ที่หมุนไปประมาณสามสิบสององศา พิกัดจึงเปลี่ยน แต่ความยาวของลูกศรเท่ากันทั้งสองระบบ"
+    },
+    {
+     "s": 26.207,
+     "e": 27.5,
+     "en": "The table shows it.",
+     "th": "ตารางแสดงให้เห็น"
+    },
+    {
+     "s": 27.5,
+     "e": 37.519,
+     "en": "Now apply M. On the eigen axes nothing mixes: the first coordinate is multiplied by three point six two and the second by one point three eight.",
+     "th": "ทีนี้ใช้ M บนแกนเฉพาะไม่มีการผสมกัน พิกัดแรกถูกคูณด้วยสามจุดหกสอง และพิกัดที่สองด้วยหนึ่งจุดสามแปด"
+    },
+    {
+     "s": 37.519,
+     "e": 42.079,
+     "en": "The teal dots move out to the amber dots, each along its own axis.",
+     "th": "จุดสีเขียวหัวเป็ดเลื่อนออกไปเป็นจุดสีส้มอำพัน แต่ละจุดตามแกนของตัวเอง"
+    },
+    {
+     "s": 42.079,
+     "e": 53.035,
+     "en": "Move the slider. Whatever the direction of x, the lengths agree, and the stretch on each eigen axis is the same. This picture needs orthonormal eigenvectors.",
+     "th": "เลื่อนแถบ ไม่ว่า x จะชี้ทิศใด ความยาวยังเท่ากัน และการยืดบนแกนเฉพาะแต่ละแกนยังเท่าเดิม ภาพนี้ต้องใช้เวกเตอร์เฉพาะที่ตั้งฉากปกติ"
+    },
+    {
+     "s": 53.035,
+     "e": 60.316,
+     "en": "For a matrix that is not symmetric the eigen axes are oblique, and the next two slides show what changes.",
+     "th": "สำหรับเมทริกซ์ที่ไม่สมมาตร แกนเฉพาะจะเอียงไม่ตั้งฉาก และสองสไลด์ถัดไปแสดงว่าอะไรเปลี่ยนไป"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
    "duration": 100.992,
    "hold": false,
    "cues": [
@@ -1114,8 +1186,8 @@ const NARR = {
    ]
   },
   {
-   "n": 10,
-   "file": "audio/slide-10.mp3",
+   "n": 11,
+   "file": "audio/slide-11.mp3",
    "duration": 78.48,
    "hold": false,
    "cues": [
@@ -1182,8 +1254,8 @@ const NARR = {
    ]
   },
   {
-   "n": 11,
-   "file": "audio/slide-11.mp3",
+   "n": 12,
+   "file": "audio/slide-12.mp3",
    "duration": 17.712,
    "hold": true,
    "cues": [
@@ -1208,8 +1280,8 @@ const NARR = {
    ]
   },
   {
-   "n": 12,
-   "file": "audio/slide-12.mp3",
+   "n": 13,
+   "file": "audio/slide-13.mp3",
    "duration": 108.432,
    "hold": false,
    "cues": [
@@ -1294,8 +1366,8 @@ const NARR = {
    ]
   },
   {
-   "n": 13,
-   "file": "audio/slide-13.mp3",
+   "n": 14,
+   "file": "audio/slide-14.mp3",
    "duration": 46.32,
    "hold": false,
    "cues": [
@@ -1338,8 +1410,8 @@ const NARR = {
    ]
   },
   {
-   "n": 14,
-   "file": "audio/slide-14.mp3",
+   "n": 15,
+   "file": "audio/slide-15.mp3",
    "duration": 72.408,
    "hold": false,
    "cues": [
@@ -1400,8 +1472,8 @@ const NARR = {
    ]
   },
   {
-   "n": 15,
-   "file": "audio/slide-15.mp3",
+   "n": 16,
+   "file": "audio/slide-16.mp3",
    "duration": 96.984,
    "hold": false,
    "cues": [
@@ -1492,8 +1564,8 @@ const NARR = {
    ]
   },
   {
-   "n": 16,
-   "file": "audio/slide-16.mp3",
+   "n": 17,
+   "file": "audio/slide-17.mp3",
    "duration": 103.968,
    "hold": false,
    "cues": [
@@ -1584,8 +1656,8 @@ const NARR = {
    ]
   },
   {
-   "n": 17,
-   "file": "audio/slide-17.mp3",
+   "n": 18,
+   "file": "audio/slide-18.mp3",
    "duration": 85.68,
    "hold": false,
    "cues": [
@@ -1664,8 +1736,8 @@ const NARR = {
    ]
   },
   {
-   "n": 18,
-   "file": "audio/slide-18.mp3",
+   "n": 19,
+   "file": "audio/slide-19.mp3",
    "duration": 18.864,
    "hold": true,
    "cues": [
@@ -1690,8 +1762,8 @@ const NARR = {
    ]
   },
   {
-   "n": 19,
-   "file": "audio/slide-19.mp3",
+   "n": 20,
+   "file": "audio/slide-20.mp3",
    "duration": 39.6,
    "hold": true,
    "cues": [
@@ -1728,8 +1800,8 @@ const NARR = {
    ]
   },
   {
-   "n": 20,
-   "file": "audio/slide-20.mp3",
+   "n": 21,
+   "file": "audio/slide-21.mp3",
    "duration": 95.064,
    "hold": false,
    "cues": [
@@ -1802,8 +1874,8 @@ const NARR = {
    ]
   },
   {
-   "n": 21,
-   "file": "audio/slide-21.mp3",
+   "n": 22,
+   "file": "audio/slide-22.mp3",
    "duration": 80.4,
    "hold": false,
    "cues": [
@@ -1858,8 +1930,8 @@ const NARR = {
    ]
   },
   {
-   "n": 22,
-   "file": "audio/slide-22.mp3",
+   "n": 23,
+   "file": "audio/slide-23.mp3",
    "duration": 60.72,
    "hold": false,
    "cues": [
@@ -1914,8 +1986,8 @@ const NARR = {
    ]
   },
   {
-   "n": 23,
-   "file": "audio/slide-23.mp3",
+   "n": 24,
+   "file": "audio/slide-24.mp3",
    "duration": 8.664,
    "hold": true,
    "cues": [
@@ -1934,8 +2006,8 @@ const NARR = {
    ]
   },
   {
-   "n": 24,
-   "file": "audio/slide-24.mp3",
+   "n": 25,
+   "file": "audio/slide-25.mp3",
    "duration": 11.64,
    "hold": true,
    "cues": [
@@ -1954,8 +2026,8 @@ const NARR = {
    ]
   },
   {
-   "n": 25,
-   "file": "audio/slide-25.mp3",
+   "n": 26,
+   "file": "audio/slide-26.mp3",
    "duration": 35.64,
    "hold": false,
    "cues": [
@@ -1992,8 +2064,8 @@ const NARR = {
    ]
   },
   {
-   "n": 26,
-   "file": "audio/slide-26.mp3",
+   "n": 27,
+   "file": "audio/slide-27.mp3",
    "duration": 34.872,
    "hold": true,
    "cues": [
@@ -2036,8 +2108,8 @@ const NARR = {
    ]
   },
   {
-   "n": 27,
-   "file": "audio/slide-27.mp3",
+   "n": 28,
+   "file": "audio/slide-28.mp3",
    "duration": 43.2,
    "hold": false,
    "cues": [
@@ -2080,8 +2152,8 @@ const NARR = {
    ]
   },
   {
-   "n": 28,
-   "file": "audio/slide-28.mp3",
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 23.568,
    "hold": false,
    "cues": [
@@ -2106,8 +2178,8 @@ const NARR = {
    ]
   },
   {
-   "n": 29,
-   "file": "audio/slide-29.mp3",
+   "n": 30,
+   "file": "audio/slide-30.mp3",
    "duration": 15.888,
    "hold": true,
    "cues": [

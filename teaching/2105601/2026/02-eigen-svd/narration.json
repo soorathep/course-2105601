@@ -3,7 +3,7 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 1670.1,
+ "total_seconds": 1730.5,
  "slides": [
   {
    "n": 1,
@@ -414,6 +414,56 @@
   {
    "n": 9,
    "file": "audio/slide-09.mp3",
+   "duration": 60.384,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.342,
+     "en": "Here is the same idea as a picture. The teal arrow x is one object. We can describe it on the Cartesian axes, or on the eigen axes, the two dashed lines along the eigenvectors.",
+     "th": "นี่คือแนวคิดเดียวกันในรูปภาพ ลูกศรสีเขียวหัวเป็ด x เป็นวัตถุเดียว เราอธิบายมันได้บนแกน Cartesian หรือบนแกนเฉพาะ คือเส้นประสองเส้นที่อยู่ตามเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 13.342,
+     "e": 26.207,
+     "en": "For this symmetric matrix the eigen axes are just the Cartesian axes turned by about thirty two degrees. So the coordinates change, but the length of the arrow is the same in both systems.",
+     "th": "สำหรับเมทริกซ์สมมาตรนี้ แกนเฉพาะคือแกน Cartesian ที่หมุนไปประมาณสามสิบสององศา พิกัดจึงเปลี่ยน แต่ความยาวของลูกศรเท่ากันทั้งสองระบบ"
+    },
+    {
+     "s": 26.207,
+     "e": 27.5,
+     "en": "The table shows it.",
+     "th": "ตารางแสดงให้เห็น"
+    },
+    {
+     "s": 27.5,
+     "e": 37.519,
+     "en": "Now apply M. On the eigen axes nothing mixes: the first coordinate is multiplied by three point six two and the second by one point three eight.",
+     "th": "ทีนี้ใช้ M บนแกนเฉพาะไม่มีการผสมกัน พิกัดแรกถูกคูณด้วยสามจุดหกสอง และพิกัดที่สองด้วยหนึ่งจุดสามแปด"
+    },
+    {
+     "s": 37.519,
+     "e": 42.079,
+     "en": "The teal dots move out to the amber dots, each along its own axis.",
+     "th": "จุดสีเขียวหัวเป็ดเลื่อนออกไปเป็นจุดสีส้มอำพัน แต่ละจุดตามแกนของตัวเอง"
+    },
+    {
+     "s": 42.079,
+     "e": 53.035,
+     "en": "Move the slider. Whatever the direction of x, the lengths agree, and the stretch on each eigen axis is the same. This picture needs orthonormal eigenvectors.",
+     "th": "เลื่อนแถบ ไม่ว่า x จะชี้ทิศใด ความยาวยังเท่ากัน และการยืดบนแกนเฉพาะแต่ละแกนยังเท่าเดิม ภาพนี้ต้องใช้เวกเตอร์เฉพาะที่ตั้งฉากปกติ"
+    },
+    {
+     "s": 53.035,
+     "e": 60.316,
+     "en": "For a matrix that is not symmetric the eigen axes are oblique, and the next two slides show what changes.",
+     "th": "สำหรับเมทริกซ์ที่ไม่สมมาตร แกนเฉพาะจะเอียงไม่ตั้งฉาก และสองสไลด์ถัดไปแสดงว่าอะไรเปลี่ยนไป"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
    "duration": 100.992,
    "hold": false,
    "cues": [
@@ -486,8 +536,8 @@
    ]
   },
   {
-   "n": 10,
-   "file": "audio/slide-10.mp3",
+   "n": 11,
+   "file": "audio/slide-11.mp3",
    "duration": 78.48,
    "hold": false,
    "cues": [
@@ -554,8 +604,8 @@
    ]
   },
   {
-   "n": 11,
-   "file": "audio/slide-11.mp3",
+   "n": 12,
+   "file": "audio/slide-12.mp3",
    "duration": 17.712,
    "hold": true,
    "cues": [
@@ -580,8 +630,8 @@
    ]
   },
   {
-   "n": 12,
-   "file": "audio/slide-12.mp3",
+   "n": 13,
+   "file": "audio/slide-13.mp3",
    "duration": 108.432,
    "hold": false,
    "cues": [
@@ -666,8 +716,8 @@
    ]
   },
   {
-   "n": 13,
-   "file": "audio/slide-13.mp3",
+   "n": 14,
+   "file": "audio/slide-14.mp3",
    "duration": 46.32,
    "hold": false,
    "cues": [
@@ -710,8 +760,8 @@
    ]
   },
   {
-   "n": 14,
-   "file": "audio/slide-14.mp3",
+   "n": 15,
+   "file": "audio/slide-15.mp3",
    "duration": 72.408,
    "hold": false,
    "cues": [
@@ -772,8 +822,8 @@
    ]
   },
   {
-   "n": 15,
-   "file": "audio/slide-15.mp3",
+   "n": 16,
+   "file": "audio/slide-16.mp3",
    "duration": 96.984,
    "hold": false,
    "cues": [
@@ -864,8 +914,8 @@
    ]
   },
   {
-   "n": 16,
-   "file": "audio/slide-16.mp3",
+   "n": 17,
+   "file": "audio/slide-17.mp3",
    "duration": 103.968,
    "hold": false,
    "cues": [
@@ -956,8 +1006,8 @@
    ]
   },
   {
-   "n": 17,
-   "file": "audio/slide-17.mp3",
+   "n": 18,
+   "file": "audio/slide-18.mp3",
    "duration": 85.68,
    "hold": false,
    "cues": [
@@ -1036,8 +1086,8 @@
    ]
   },
   {
-   "n": 18,
-   "file": "audio/slide-18.mp3",
+   "n": 19,
+   "file": "audio/slide-19.mp3",
    "duration": 18.864,
    "hold": true,
    "cues": [
@@ -1062,8 +1112,8 @@
    ]
   },
   {
-   "n": 19,
-   "file": "audio/slide-19.mp3",
+   "n": 20,
+   "file": "audio/slide-20.mp3",
    "duration": 39.6,
    "hold": true,
    "cues": [
@@ -1100,8 +1150,8 @@
    ]
   },
   {
-   "n": 20,
-   "file": "audio/slide-20.mp3",
+   "n": 21,
+   "file": "audio/slide-21.mp3",
    "duration": 95.064,
    "hold": false,
    "cues": [
@@ -1174,8 +1224,8 @@
    ]
   },
   {
-   "n": 21,
-   "file": "audio/slide-21.mp3",
+   "n": 22,
+   "file": "audio/slide-22.mp3",
    "duration": 80.4,
    "hold": false,
    "cues": [
@@ -1230,8 +1280,8 @@
    ]
   },
   {
-   "n": 22,
-   "file": "audio/slide-22.mp3",
+   "n": 23,
+   "file": "audio/slide-23.mp3",
    "duration": 60.72,
    "hold": false,
    "cues": [
@@ -1286,8 +1336,8 @@
    ]
   },
   {
-   "n": 23,
-   "file": "audio/slide-23.mp3",
+   "n": 24,
+   "file": "audio/slide-24.mp3",
    "duration": 8.664,
    "hold": true,
    "cues": [
@@ -1306,8 +1356,8 @@
    ]
   },
   {
-   "n": 24,
-   "file": "audio/slide-24.mp3",
+   "n": 25,
+   "file": "audio/slide-25.mp3",
    "duration": 11.64,
    "hold": true,
    "cues": [
@@ -1326,8 +1376,8 @@
    ]
   },
   {
-   "n": 25,
-   "file": "audio/slide-25.mp3",
+   "n": 26,
+   "file": "audio/slide-26.mp3",
    "duration": 35.64,
    "hold": false,
    "cues": [
@@ -1364,8 +1414,8 @@
    ]
   },
   {
-   "n": 26,
-   "file": "audio/slide-26.mp3",
+   "n": 27,
+   "file": "audio/slide-27.mp3",
    "duration": 34.872,
    "hold": true,
    "cues": [
@@ -1408,8 +1458,8 @@
    ]
   },
   {
-   "n": 27,
-   "file": "audio/slide-27.mp3",
+   "n": 28,
+   "file": "audio/slide-28.mp3",
    "duration": 43.2,
    "hold": false,
    "cues": [
@@ -1452,8 +1502,8 @@
    ]
   },
   {
-   "n": 28,
-   "file": "audio/slide-28.mp3",
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 23.568,
    "hold": false,
    "cues": [
@@ -1478,8 +1528,8 @@
    ]
   },
   {
-   "n": 29,
-   "file": "audio/slide-29.mp3",
+   "n": 30,
+   "file": "audio/slide-30.mp3",
    "duration": 15.888,
    "hold": true,
    "cues": [
