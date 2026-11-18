@@ -3,12 +3,12 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 2453.1,
+ "total_seconds": 2516.7,
  "slides": [
   {
    "n": 1,
    "file": "audio/slide-01.mp3",
-   "duration": 34.992,
+   "duration": 35.232,
    "hold": false,
    "cues": [
     {
@@ -31,13 +31,13 @@
     },
     {
      "s": 22.263,
-     "e": 29.513,
-     "en": "On your own, the narration takes about forty minutes; the activities, four checks and the lab fill the rest of the three hours.",
-     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสี่สิบนาที ส่วนกิจกรรม การตรวจความเข้าใจสี่ครั้ง และแล็บ ใช้เวลาที่เหลือของสามชั่วโมง"
+     "e": 29.75,
+     "en": "On your own, the narration takes about forty two minutes; the activities, four checks and the lab fill the rest of the three hours.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสี่สิบสองนาที ส่วนกิจกรรม การตรวจความเข้าใจสี่ครั้ง และแล็บ ใช้เวลาที่เหลือของสามชั่วโมง"
     },
     {
-     "s": 29.513,
-     "e": 34.921,
+     "s": 29.75,
+     "e": 35.158,
      "en": "When the narration for a slide ends, press the right arrow key, or Next, to go on.",
      "th": "เมื่อเสียงบรรยายของแต่ละหน้าจบ กดลูกศรขวาหรือปุ่ม Next เพื่อไปหน้าถัดไป"
     }
@@ -1790,6 +1790,50 @@
   {
    "n": 28,
    "file": "audio/slide-28.mp3",
+   "duration": 50.856,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.197,
+     "en": "Here is the derivation behind reconciliation. Minimize the weighted squared adjustments subject to the element balances, with one Lagrange multiplier per element.",
+     "th": "นี่คือการหาสูตรเบื้องหลังการปรับกระทบยอด หาค่าต่ำสุดของผลรวมกำลังสองแบบถ่วงน้ำหนักของการปรับ ภายใต้สมดุลธาตุ โดยใช้ตัวคูณลากรองจ์หนึ่งตัวต่อหนึ่งธาตุ"
+    },
+    {
+     "s": 11.197,
+     "e": 22.963,
+     "en": "Setting the derivative to zero gives n equals m minus Sigma A transpose lambda. Imposing the balances fixes lambda, and the formula of the previous slide follows.",
+     "th": "การตั้งอนุพันธ์ให้เป็นศูนย์ได้ n เท่ากับ m ลบ Sigma A transpose lambda การบังคับสมดุลกำหนดค่า lambda และได้สูตรของสไลด์ก่อนหน้า"
+    },
+    {
+     "s": 22.963,
+     "e": 26.789,
+     "en": "With equal variances it is the orthogonal projection.",
+     "th": "เมื่อความแปรปรวนเท่ากัน สูตรนี้คือการฉายเชิงตั้งฉาก"
+    },
+    {
+     "s": 26.789,
+     "e": 34.107,
+     "en": "Two statistics follow. Chi squared tests whether the imbalance is larger than the meter noise explains.",
+     "th": "ได้สถิติสองตัวตามมา chi squared ทดสอบว่าความไม่สมดุลมากกว่าที่สัญญาณรบกวนของมิเตอร์อธิบายได้หรือไม่"
+    },
+    {
+     "s": 34.107,
+     "e": 43.184,
+     "en": "The measurement test divides each adjustment by its standard deviation, and points to the suspect meter. You write it in the lab.",
+     "th": "measurement test หารการปรับแต่ละตัวด้วยส่วนเบี่ยงเบนมาตรฐานของมัน และชี้ไปยังมิเตอร์ที่น่าสงสัย คุณจะเขียนมันในแล็บ"
+    },
+    {
+     "s": 43.184,
+     "e": 50.789,
+     "en": "One limit is worth remembering: a bias along a balanced direction leaves the imbalance unchanged, and no test can see it.",
+     "th": "ข้อจำกัดหนึ่งที่ควรจำ ความเอนเอียงตามทิศที่สมดุลไม่เปลี่ยนความไม่สมดุล และไม่มีการทดสอบใดมองเห็นได้"
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 73.992,
    "hold": false,
    "cues": [
@@ -1850,8 +1894,8 @@
    ]
   },
   {
-   "n": 29,
-   "file": "audio/slide-29.mp3",
+   "n": 30,
+   "file": "audio/slide-30.mp3",
    "duration": 17.136,
    "hold": true,
    "cues": [
@@ -1876,8 +1920,8 @@
    ]
   },
   {
-   "n": 30,
-   "file": "audio/slide-30.mp3",
+   "n": 31,
+   "file": "audio/slide-31.mp3",
    "duration": 18.552,
    "hold": true,
    "cues": [
@@ -1902,8 +1946,8 @@
    ]
   },
   {
-   "n": 31,
-   "file": "audio/slide-31.mp3",
+   "n": 32,
+   "file": "audio/slide-32.mp3",
    "duration": 48.072,
    "hold": false,
    "cues": [
@@ -1952,9 +1996,9 @@
    ]
   },
   {
-   "n": 32,
-   "file": "audio/slide-32.mp3",
-   "duration": 47.952,
+   "n": 33,
+   "file": "audio/slide-33.mp3",
+   "duration": 56.544,
    "hold": true,
    "cues": [
     {
@@ -1977,33 +2021,39 @@
     },
     {
      "s": 21.447,
-     "e": 27.618,
+     "e": 30.039,
+     "en": "You also write the measurement test that finds a biased meter, in Python, in the lab page. Plan about twenty minutes for it.",
+     "th": "คุณจะเขียน measurement test ที่หามิเตอร์ที่มีความเอนเอียงด้วย Python ในหน้าแล็บด้วย เผื่อเวลาประมาณยี่สิบนาที"
+    },
+    {
+     "s": 30.039,
+     "e": 36.211,
      "en": "Finally you add solid carbon and methanol as species, and explain how the dimension changes.",
      "th": "สุดท้าย คุณเพิ่มคาร์บอนของแข็งและเมทานอลเป็นสปีชีส์ แล้วอธิบายว่ามิติเปลี่ยนไปอย่างไร"
     },
     {
-     "s": 27.618,
-     "e": 35.829,
+     "s": 36.211,
+     "e": 44.421,
      "en": "Scan the code or open the link, and work alone. Download the answer file at the end and upload it to myCourseVille.",
      "th": "สแกนโค้ดหรือเปิดลิงก์ แล้วทำคนเดียว ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
     },
     {
-     "s": 35.829,
-     "e": 44.806,
+     "s": 44.421,
+     "e": 53.398,
      "en": "A hint for the reconciliation step: write the imbalance of each element before you reconcile, and compare it with the stated meter accuracies.",
      "th": "คำแนะนำสำหรับขั้นปรับกระทบยอด ให้เขียนความไม่สมดุลของแต่ละธาตุก่อนปรับ แล้วเทียบกับความแม่นยำของมาตรวัดที่ระบุ"
     },
     {
-     "s": 44.806,
-     "e": 47.882,
+     "s": 53.398,
+     "e": 56.474,
      "en": "That tells you in advance which meters will move.",
      "th": "จะบอกได้ล่วงหน้าว่ามาตรวัดใดจะถูกปรับ"
     }
    ]
   },
   {
-   "n": 33,
-   "file": "audio/slide-33.mp3",
+   "n": 34,
+   "file": "audio/slide-34.mp3",
    "duration": 54.288,
    "hold": false,
    "cues": [
@@ -2064,46 +2114,46 @@
    ]
   },
   {
-   "n": 34,
-   "file": "audio/slide-34.mp3",
-   "duration": 37.44,
+   "n": 35,
+   "file": "audio/slide-35.mp3",
+   "duration": 41.376,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 4.629,
-     "en": "Before the next session, finish Lab 1 and upload the answer file.",
-     "th": "ก่อนคาบถัดไป ทำ Lab 1 ให้เสร็จและอัปโหลดไฟล์คำตอบ"
+     "e": 8.563,
+     "en": "Before the next session, finish Lab 1 and upload the answer file, and work through problem set one, six derivations in the style of the midterm.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 1 ให้เสร็จและอัปโหลดไฟล์คำตอบ และทำชุดโจทย์ที่หนึ่ง ซึ่งเป็นการหาสูตรหกข้อในรูปแบบการสอบกลางภาค"
     },
     {
-     "s": 4.629,
-     "e": 12.25,
+     "s": 8.563,
+     "e": 16.184,
      "en": "Keep your card. Session 2 adds the parameters you fit, and asks whether your data can identify them.",
      "th": "เก็บบัตรไว้ คาบที่ 2 จะเพิ่มพารามิเตอร์ที่คุณ fit และถามว่าข้อมูลของคุณระบุค่าพวกมันได้หรือไม่"
     },
     {
-     "s": 12.25,
-     "e": 20.539,
+     "s": 16.184,
+     "e": 24.474,
      "en": "Read Strang, Linear Algebra and Its Applications, chapter two and section three point three, and Varma and Morbidelli, chapter one.",
      "th": "อ่าน Strang, Linear Algebra and Its Applications บทที่สองและหัวข้อสามจุดสาม และ Varma กับ Morbidelli บทที่หนึ่ง"
     },
     {
-     "s": 20.539,
-     "e": 26.118,
+     "s": 24.474,
+     "e": 30.053,
      "en": "For the stoichiometry, read Aris or Smith and Missen, chapter two in either book.",
      "th": "สำหรับปริมาณสัมพันธ์ อ่านหนังสือของ Aris หรือของ Smith กับ Missen บทที่สองของเล่มใดก็ได้"
     },
     {
-     "s": 26.118,
-     "e": 37.368,
+     "s": 30.053,
+     "e": 41.303,
      "en": "Strang's chapter is the best source for the four subspaces and their picture. Varma and Morbidelli give the chemical engineering applications and the notation closest to this course.",
      "th": "บทของ Strang เป็นแหล่งที่ดีที่สุดสำหรับ subspace ทั้งสี่และภาพของมัน Varma กับ Morbidelli ให้การประยุกต์ทางวิศวกรรมเคมีและสัญลักษณ์ที่ใกล้กับวิชานี้ที่สุด"
     }
    ]
   },
   {
-   "n": 35,
-   "file": "audio/slide-35.mp3",
+   "n": 36,
+   "file": "audio/slide-36.mp3",
    "duration": 23.424,
    "hold": true,
    "cues": [

@@ -66,6 +66,11 @@ button.sm{width:38px;font-size:12px;padding:2px 9px;margin:0;background:transpar
 .ctrlrow input[type=range]{flex:1;min-width:160px;accent-color:var(--teal)}
 .wide{overflow-x:auto}.wide table.tb{font-size:12px}.wide table.tb td,.wide table.tb th{padding:3px 4px}
 @media (max-width:600px){table.tb{display:block;overflow-x:auto;font-size:13px}}
+.codestep{margin:8px 0}
+textarea.codebox{width:100%;box-sizing:border-box;background:#1f262d;color:#e8eef2;border-radius:10px;padding:10px;font-family:Menlo,Consolas,monospace;font-size:13.5px;line-height:1.45;tab-size:4;white-space:pre;overflow-x:auto;min-height:180px}
+pre.out{background:var(--paper);border-radius:8px;padding:8px 10px;font-size:13px;white-space:pre-wrap;max-height:240px;overflow:auto;margin:6px 0}
+pre.out:empty{display:none}
+.ans{background:var(--paper);border-radius:8px;padding:4px 12px;margin-top:8px}
 </style>
 
 </head>
@@ -82,8 +87,8 @@ const c = (1+P.beta)/P.B, H = SP.hopf[0], ign = SP.folds.find(q=>q.x2<2), ext = 
 const hopfDet = H.omega*H.omega, a128 = AM.find(q=>Math.abs(q.Da-0.128)<1e-9);
 const LAB = {num: 5, module: "bifurcation_lab", title: "Ignition, extinction and oscillation in a cooled CSTR",
  sub: "About 40 minutes. Works in class or on your own, on a laptop or a phone. Nothing to install; a calculator helps.",
- how: `<p>The dimensionless cooled CSTR of Sessions 4 and 5 with stronger cooling interaction. You check the cusp condition, compute both folds yourself from the closed form, read the continuation result, measure the oscillation beyond the Hopf point and test how its amplitude grows, then change β until the multiplicity disappears. Write each prediction before you look; the next step stays locked until you do. Numbers are accepted within about 1% (or the stated tolerance); after two tries the expected value is shown.</p>
- <p class="note"><b>What runs where.</b> The RUN steps and the slider show results that <a href="bifurcation_lab.py">bifurcation_lab.py</a> computed in advance (closed forms, Keller continuation, LSODA simulations); the page itself only draws them. No Python is installed or run on your device. To run the Python yourself, open the slides and press D on a slide marked “D · Python”, or run bifurcation_lab.py in desktop Python.</p>`,
+ how: `<p>The dimensionless cooled CSTR of Sessions 4 and 5 with stronger cooling interaction. You check the cusp condition, compute both folds yourself from the closed form, write the corrector of a pseudo-arclength continuation and find the Hopf point with it, measure the oscillation beyond the Hopf point and test how its amplitude grows, then change β until the multiplicity disappears. Plan about 20 minutes for the guided steps and 20 for the code. Write each prediction before you look; the next step stays locked until you do. Numbers are accepted within about 1% (or the stated tolerance); after two tries the expected value is shown.</p>
+ <p class="note"><b>What runs where.</b> The CODE step runs your Python in this page (Pyodide, with NumPy and SciPy; the first run loads it, about 20 seconds). The RUN steps and the slider show results that <a href="bifurcation_lab.py">bifurcation_lab.py</a> computed in advance (closed forms, Keller continuation, LSODA simulations); the page itself only draws them. Nothing is installed on your device. To run the Python yourself, open the slides and press D on a slide marked “D · Python”, or run bifurcation_lab.py in desktop Python.</p>`,
  dataTitle: "The model and the formulas",
  data: () => `<p>dx<sub>1</sub>/dt = −x<sub>1</sub> + Da(1 − x<sub>1</sub>)e<sup>x₂</sup>, &nbsp;dx<sub>2</sub>/dt = −x<sub>2</sub> + B Da(1 − x<sub>1</sub>)e<sup>x₂</sup> − βx<sub>2</sub>, &nbsp;with B = ${P.B}, β = ${P.beta}.</p>
  <p class="note">Steady states: x<sub>1</sub> = c x<sub>2</sub> with c = (1 + β)/B, and Da(x<sub>2</sub>) = c x<sub>2</sub>e<sup>−x₂</sup>/(1 − c x<sub>2</sub>). Folds where c x<sub>2</sub>² − x<sub>2</sub> + 1 = 0. Hopf point (planar): tr J = 0 with det J &gt; 0; small oscillations have period 2π/√det J.</p>`,
@@ -95,10 +100,65 @@ const LAB = {num: 5, module: "bifurcation_lab", title: "Ignition, extinction and
              {id: "c1b", kind: "num", label: "Da at the lower fold, ignition (1%)", sum: "Da ignition", target: () => ign.Da, d: 4},
              {id: "c1c", kind: "num", label: "Da at the upper fold, extinction (1%)", sum: "Da extinction", target: () => ext.Da, d: 4}]}]},
   {title: "Continuation and the Hopf point", steps: [
-   {id: "2a", tag: "RUN", text: "Keller continuation from Da = 0.01, with det J and tr J watched along the branch.",
-    body: () => `<table class="tb"><tr><th>Result</th><th class="n">Value</th></tr><tr><td>Steps, largest Newton count per step</td><td class="n">${L.cont.steps}, ${L.cont.max_newton}</td></tr><tr><td>Largest difference from the closed form</td><td class="n">${L.cont.err_closed_form<1e-12?"&lt; 10⁻¹²":L.cont.err_closed_form.toExponential(1)}</td></tr><tr><td>det J changes sign near Da</td><td class="n">${L.cont.folds_Da.map(v=>fmt(v,4)).join(", ")}</td></tr><tr><td>tr J changes sign (det J &gt; 0) near Da</td><td class="n">${L.cont.hopf_Da.map(v=>fmt(v,4)).join(", ")}</td></tr><tr><td>Hopf point refined from the closed form</td><td class="n">Da = ${fmt(H.Da,4)}, x₂* = ${fmt(H.x2,3)}, det J = ${fmt(hopfDet,3)}</td></tr></table>`,
-    inputs: [{id: "c2a", kind: "num", label: "Period of small oscillations at the Hopf point, 2π/√det J (1%)", sum: "Hopf period", target: () => H.period, d: 3},
-             {id: "c2b", kind: "sel", label: "The coarse continuation put the Hopf point at a slightly smaller Da than the refined value. Why?", sum: "why different", options: [["a","The sign change is only bracketed between two steps; refining inside the bracket gives the accurate value"],["b","Continuation is wrong near a Hopf point"],["c","The closed form is an approximation"]], target: () => "a"}]},
+   {id: "2a", tag: "CODE", text: `Write the corrector of Keller’s pseudo-arclength continuation and follow the steady states from Da = 0.01 through both folds. The predictor, the tangent update and the detection of tr J = 0 are written for you; the model functions come from bifurcation_lab.py. <b>Check</b> grades your Hopf point Da (0.3%). Python runs in this page; a laptop is needed.`,
+    inputs: [{id: "k2", kind: "code", label: "Da_hopf", sum: "Hopf Da from your continuation", expr: "Da_hopf", target: () => H.Da, rel: 0.003, d: 4,
+      starter: `import numpy as np
+from scipy.optimize import brentq
+from bifurcation_lab import f, jac, dfdDa         # the model, its Jacobian and dF/dDa
+B, beta, ds = 14.0, 2.0, 0.02
+c = (1 + beta) / B
+x1 = brentq(lambda a: a - 0.01 * (1 - a) * np.exp(a / c), 0, 0.5)
+y = np.array([x1, x1 / c, 0.01])                  # (x1, x2, Da) on the cold branch
+Fy = lambda y: np.column_stack([jac(y[:2], y[2], B, beta), dfdDa(y[:2], y[2], B, beta)])
+t = np.linalg.svd(Fy(y))[2][-1]; t = t if t[2] > 0 else -t   # unit tangent: null vector of [J, F_Da]
+Ys = [y.copy()]
+while y[2] < 0.2 and y[0] < 0.995:
+    z = y + ds * t                                # predictor along the tangent
+    # TODO corrector: Newton iterations on the bordered system
+    #   G(z) = [ F(z) ; t.(z - y) - ds ]  with matrix  M = [ Fy(z) ; t ]
+    #   stop when the largest |dz| is below 1e-12
+    pass
+    tn = np.linalg.svd(Fy(z))[2][-1]; tn = tn if tn @ t > 0 else -tn
+    y, t = z, tn; Ys.append(y.copy())
+Das = [p[2] for p in Ys]
+k = next(i for i in range(1, len(Das)) if Das[i] < Das[i - 1])
+print(len(Ys), "points; ignition fold near Da =", max(Das[:k + 1]))
+trs = [np.trace(jac(p[:2], p[2], B, beta)) for p in Ys]
+dets = [np.linalg.det(jac(p[:2], p[2], B, beta)) for p in Ys]
+i = next(k for k in range(len(trs) - 1) if trs[k] * trs[k + 1] < 0 and dets[k] > 0)
+Da_hopf = Ys[i][2] + (Ys[i + 1][2] - Ys[i][2]) * trs[i] / (trs[i] - trs[i + 1])   # linear interpolation of tr J = 0
+print("Hopf point near Da =", Da_hopf)`, solution: `import numpy as np
+from scipy.optimize import brentq
+from bifurcation_lab import f, jac, dfdDa         # the model, its Jacobian and dF/dDa
+B, beta, ds = 14.0, 2.0, 0.02
+c = (1 + beta) / B
+x1 = brentq(lambda a: a - 0.01 * (1 - a) * np.exp(a / c), 0, 0.5)
+y = np.array([x1, x1 / c, 0.01])                  # (x1, x2, Da) on the cold branch
+Fy = lambda y: np.column_stack([jac(y[:2], y[2], B, beta), dfdDa(y[:2], y[2], B, beta)])
+t = np.linalg.svd(Fy(y))[2][-1]; t = t if t[2] > 0 else -t   # unit tangent: null vector of [J, F_Da]
+Ys = [y.copy()]
+while y[2] < 0.2 and y[0] < 0.995:
+    z = y + ds * t                                # predictor along the tangent
+    for it in range(20):                          # corrector: Newton on F(z) = 0 and t.(z - y) = ds
+        G = np.concatenate([f(z[:2], z[2], B, beta), [t @ (z - y) - ds]])
+        M = np.vstack([Fy(z), t])
+        dz = np.linalg.solve(M, -G); z = z + dz
+        if np.abs(dz).max() < 1e-12:
+            break
+    tn = np.linalg.svd(Fy(z))[2][-1]; tn = tn if tn @ t > 0 else -tn
+    y, t = z, tn; Ys.append(y.copy())
+Das = [p[2] for p in Ys]
+k = next(i for i in range(1, len(Das)) if Das[i] < Das[i - 1])
+print(len(Ys), "points; ignition fold near Da =", max(Das[:k + 1]))
+trs = [np.trace(jac(p[:2], p[2], B, beta)) for p in Ys]
+dets = [np.linalg.det(jac(p[:2], p[2], B, beta)) for p in Ys]
+i = next(k for k in range(len(trs) - 1) if trs[k] * trs[k + 1] < 0 and dets[k] > 0)
+Da_hopf = Ys[i][2] + (Ys[i + 1][2] - Ys[i][2]) * trs[i] / (trs[i] - trs[i + 1])   # linear interpolation of tr J = 0
+print("Hopf point near Da =", Da_hopf)`},
+             {id: "c2k", kind: "sel", label: "At a fold J is singular, yet your Newton matrix M is not. Why?", sum: "why the bordered matrix works", options: [["a","The extra row t is the null direction of [J, F_Da] at the fold, so M = [J, F_Da; t] keeps full rank"],["b","Newton never reaches the fold"],["c","Arclength steps skip over the fold"]], target: () => "a"}]},
+   {id: "2c", tag: "CHECK", text: "Compare with the module, which refines the Hopf point on the closed-form curve.",
+    body: () => `<table class="tb"><tr><th>Result</th><th class="n">Value</th></tr><tr><td>Folds (closed form)</td><td class="n">${SP.folds.map(q=>fmt(q.Da,4)).join(", ")}</td></tr><tr><td>Hopf point</td><td class="n">Da = ${fmt(H.Da,5)}, x₂* = ${fmt(H.x2,3)}, det J = ${fmt(hopfDet,3)}</td></tr></table>`,
+    inputs: [{id: "c2a", kind: "num", label: "Period of small oscillations at the Hopf point, 2π/√det J (1%)", sum: "Hopf period", target: () => H.period, d: 3}]},
    {id: "2b", tag: "RUN", text: "A simulation at Da = 0.12, below the Hopf point, where the only steady state is an unstable focus.",
     body: () => labChart({xmin:0,xmax:40,ymin:0,ymax:8,xt:[0,10,20,30,40],yt:[0,2,4,6,8],xf:v=>fmt(v,0),yf:v=>fmt(v,0),xlab:"time, residence times (after the transient)",ylab:"x₂",series:[{pts:OS.t.map((t,i)=>[t,OS.x2[i]]),c:C.amber}]})+`<p class="note">x₂ swings between ${fmt(OS.x2min,2)} and ${fmt(OS.x2max,2)}.</p>`,
     inputs: [{id: "c2c", kind: "num", label: "Period read from the plot (count peaks over 40 time units; ±0.15)", sum: "period at Da 0.12", target: () => OS.period, rel: 0, abs: 0.15, d: 2},
@@ -143,13 +203,25 @@ function labChart(o){const w=o.w||640,h=o.h||280,l=o.l||60,t=16,X=w-l-16,Y=h-t-4
  s+=`<text x="${l}" y="${t-4}">${o.ylab||""}</text><text x="${l+X}" y="${t+Y+34}" text-anchor="end">${o.xlab||""}</text>`;
  if(o.legend)o.legend.forEach((g,i)=>{s+=`<line x1="${l+X-150}" x2="${l+X-128}" y1="${t+10+i*16}" y2="${t+10+i*16}" stroke="${g.c}" stroke-width="3" ${g.dash?'stroke-dasharray="6 4"':''}/><text x="${l+X-122}" y="${t+14+i*16}">${g.t}</text>`});
  return s+"</svg>"}
-const TAGCLS={"PREDICT":"p","RUN":"r","CHECK":"c","RECOMPUTE":"c","CHANGE ONE CONDITION":"r","EXPLAIN":"e"};
+const TAGCLS={"PREDICT":"p","RUN":"r","CHECK":"c","RECOMPUTE":"c","CHANGE ONE CONDITION":"r","EXPLAIN":"e","CODE":"r"};
+/* CODE steps: Python written by the student runs in the browser (Pyodide 0.29, NumPy, SciPy) with the session module importable.
+   input {id, kind:"code", label, starter, expr (Python expression evaluated after the code), target, rel, abs, d, solution, sum} */
+let PYO=null;
+async function py(){if(PYO)return PYO;
+ if(!window.loadPyodide){await new Promise((ok,bad)=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js";s.onload=ok;s.onerror=()=>bad(new Error("could not load Python"));document.head.appendChild(s)})}
+ const p=await loadPyodide();await p.loadPackage(["numpy","scipy"]);p.FS.writeFile(LAB.module+".py",await (await fetch(LAB.module+".py")).text());PYO=p;return p}
+async function runCode(q){const out=$("out_"+q.id);out.textContent=PYO?"Running…":"Loading Python in your browser (about 20 seconds the first time)…";
+ try{const p=await py();p.globals.set("__src",$(q.id).value);
+  const r=p.runPython(`import sys, io, json, math\n_b=io.StringIO();_o=sys.stdout;sys.stdout=_b\n_ns={}\ntry:\n    exec(__src,_ns)\n    _v=eval(${JSON.stringify(q.expr)},_ns)\n    _e=""\nexcept Exception as _x:\n    _v=None;_e=type(_x).__name__+": "+str(_x)\nsys.stdout=_o\njson.dumps({"out":_b.getvalue()[-3000:],"v":None if _v is None else float(_v),"e":_e})`);
+  const o=JSON.parse(r);out.textContent=(o.out||"")+(o.e?"\n"+o.e:"")+(o.v!=null?`\n${q.label}: ${o.v}`:"");return o}
+ catch(e){out.textContent="Python could not run here: "+e.message+". Use a laptop with a current browser.";return {v:null,e:String(e)}}}
 let ST={};const KEY=`lab${LAB.num}-2026-v1`;
 try{ST=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){ST={}}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(ST))}catch(e){}};
 const STEPS=[].concat(...LAB.tasks.map(t=>t.steps));const ORDER=STEPS.map(s=>s.id);
 const num=s=>parseFloat(String(s).replace(/,/g,"").replace(/[−–]/g,"-").replace("%",""));
 function inputHtml(q){
+ if(q.kind==="code")return `<div class="codestep"><textarea id="${q.id}" class="codebox" spellcheck="false" autocapitalize="off" rows="${Math.max(8,q.starter.split("\n").length+2)}">${q.starter.replace(/</g,"&lt;")}</textarea><div class="chk"><span>${q.label}</span><button type="button" class="ghost" data-run="${q.id}">Run only</button><span class="fb" id="fb_${q.id}"></span></div><pre class="out" id="out_${q.id}"></pre></div>`;
  if(q.kind==="radio")return `<div class="choices">${q.options.map(([v,l])=>`<label><input type="radio" name="${q.id}" value="${v}"> ${l}</label>`).join("")}</div>`;
  if(q.kind==="text")return `<textarea id="${q.id}"></textarea>`;
  if(q.kind==="sel")return `<div class="chk"><span>${q.label}</span><select id="${q.id}"><option value="">choose</option>${q.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join("")}</select><span class="fb" id="fb_${q.id}"></span></div>`;
@@ -178,15 +250,19 @@ function need(id,msg){const st=document.querySelector(`[data-step="${id}"]`);let
 function verdict(id,ok,expected){ST["tries_"+id]=(ST["tries_"+id]||0)+(ok?0:1);const f=$("fb_"+id);f.className="fb "+(ok?"ok":"bad");
  f.textContent=ok?"Correct":(ST["tries_"+id]>=2?`Not yet. Expected: ${expected}.`:"Not yet. Look again.");return ok||ST["tries_"+id]>=2}
 function valueOf(q){if(q.kind==="radio"){const r=document.querySelector(`input[name="${q.id}"]:checked`);return r?r.value:""}return $(q.id).value}
-function grade(q){const v=valueOf(q);ST[q.id]=v;
+async function grade(q){const v=valueOf(q);ST[q.id]=v;
+ if(q.kind==="code"){const o=await runCode(q);ST[q.id+"_val"]=o.v;if(o.v==null){ST["tries_"+q.id]=(ST["tries_"+q.id]||0);$("fb_"+q.id).className="fb bad";$("fb_"+q.id).textContent="Your code must run and define the result.";return false}
+  const t=q.target(),tol=Math.max(q.abs||0,(q.rel===undefined?0.01:q.rel)*Math.abs(t));return verdict(q.id,Math.abs(o.v-t)<=tol+1e-12,fmt(t,q.d===undefined?4:q.d))}
  if(q.target===undefined){if(q.kind==="text")return v.trim().length>=(q.min||60);return v!==""}
  if(q.kind==="sel")return verdict(q.id,v===q.target(),q.show||q.options.find(o=>o[0]===q.target())[1]);
  const t=q.target(),x=num(v),tol=Math.max(q.abs||0,(q.rel===undefined?0.01:q.rel)*Math.abs(t));
  return verdict(q.id,isFinite(x)&&Math.abs(x-t)<=tol+1e-12,fmt(t,q.d===undefined?3:q.d))}
-document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{const s=STEPS.find(z=>z.id===b.dataset.go);let ok=true;
- for(const q of s.inputs||[]){const r=grade(q);if(!r&&q.target===undefined){ok=false;need(s.id,q.kind==="text"?"Write at least three sentences.":"Choose or enter an answer first.")}else if(!r)ok=false}
- if(ok){const nd=document.querySelector(`[data-step="${s.id}"] .need`);if(nd)nd.textContent="";ST["done_"+s.id]=true;refresh()}else save()});
-function summary(){const lines=[`Lab ${LAB.num} answers`];STEPS.forEach((s,i)=>{const parts=(s.inputs||[]).map(q=>{let v=ST[q.id];if(v==null||v==="")v="?";
+document.querySelectorAll("textarea.codebox").forEach(t=>t.addEventListener("keydown",e=>{if(e.key==="Tab"){e.preventDefault();const a=t.selectionStart;t.setRangeText("    ",a,t.selectionEnd,"end")}}));
+document.querySelectorAll("[data-run]").forEach(b=>b.onclick=async()=>{const q=[].concat(...STEPS.map(s=>s.inputs||[])).find(z=>z.id===b.dataset.run);b.disabled=true;await runCode(q);b.disabled=false});
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=async()=>{const s=STEPS.find(z=>z.id===b.dataset.go);let ok=true;b.disabled=true;
+ for(const q of s.inputs||[]){const r=await grade(q);if(!r&&q.target===undefined){ok=false;need(s.id,q.kind==="text"?"Write at least three sentences.":"Choose or enter an answer first.")}else if(!r)ok=false}
+ b.disabled=false;if(ok){const nd=document.querySelector(`[data-step="${s.id}"] .need`);if(nd)nd.textContent="";ST["done_"+s.id]=true;refresh()}else save()});
+function summary(){const lines=[`Lab ${LAB.num} answers`];STEPS.forEach((s,i)=>{const parts=(s.inputs||[]).map(q=>{let v=q.kind==="code"?(ST[q.id+"_val"]==null?null:fmt(ST[q.id+"_val"],q.d===undefined?4:q.d)):ST[q.id];if(v==null||v==="")v="?";
   else if(q.options){const o=q.options.find(o=>o[0]===v);if(o)v=o[1].replace(/<[^>]+>/g,"")}return `${q.sum||q.label||"answer"}: ${String(v).replace(/<[^>]+>/g,"")}`});
   if(parts.length)lines.push(`${s.id}. ${parts.join("; ")}`)});$("sum").textContent=lines.join("\n")}
 $("copy").onclick=async()=>{try{await navigator.clipboard.writeText($("sum").textContent);$("copied").textContent="Copied. Paste it into the Exit Ticket box."}catch(e){$("copied").textContent="Copy did not work here. Select the text above and copy it."}};
@@ -196,7 +272,7 @@ STEPS.forEach(s=>(s.inputs||[]).forEach(q=>{const v=ST[q.id];if(v==null)return;i
 STEPS.forEach(s=>{if(s.draw)s.draw()});if(LAB.after)LAB.after();
 refresh();
 /* test hook: expected answers for the automated lab test */
-window.__expected=()=>Object.fromEntries([].concat(...STEPS.map(s=>(s.inputs||[]).map(q=>[q.id,q.kind==="radio"?q.options[0][0]:q.kind==="text"?"This is a test explanation of several sentences. It names the result and the reason. It states what the check shows and what it does not show.":q.target===undefined?(q.options?q.options[0][0]:"1"):(q.kind==="sel"?q.target():String(q.target()))]))));
+window.__expected=()=>Object.fromEntries([].concat(...STEPS.map(s=>(s.inputs||[]).map(q=>[q.id,q.kind==="radio"?q.options[0][0]:q.kind==="code"?q.solution:q.kind==="text"?"This is a test explanation of several sentences. It names the result and the reason. It states what the check shows and what it does not show.":q.target===undefined?(q.options?q.options[0][0]:"1"):(q.kind==="sel"?q.target():String(q.target()))]))));
 
 
 /* hand-in: an answer file for myCourseVille (no name or ID in it) */

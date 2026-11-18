@@ -3,7 +3,7 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 1373.2,
+ "total_seconds": 1479.9,
  "slides": [
   {
    "n": 1,
@@ -340,6 +340,38 @@
   {
    "n": 8,
    "file": "audio/slide-08.mp3",
+   "duration": 38.28,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.974,
+     "en": "Let us derive the intermediate concentration by hand. Drop C, since it follows from the total. The matrix for A and B is triangular, so its eigenvalues are minus k one and minus k two.",
+     "th": "มาหาความเข้มข้นของสารตัวกลางด้วยมือ ตัด C ออกเพราะหาได้จากผลรวม เมทริกซ์ของ A และ B เป็นเมทริกซ์สามเหลี่ยม ค่าลักษณะเฉพาะจึงเป็นลบ k หนึ่ง และลบ k สอง"
+    },
+    {
+     "s": 13.974,
+     "e": 22.04,
+     "en": "Expand the initial state in the two eigenvectors, multiply each coefficient by its own exponential, and you get the classic result for B.",
+     "th": "กระจายสถานะเริ่มต้นด้วยเวกเตอร์ลักษณะเฉพาะทั้งสอง คูณแต่ละสัมประสิทธิ์ด้วย exponential ของตัวเอง จะได้ผลคลาสสิกของ B"
+    },
+    {
+     "s": 22.04,
+     "e": 27.592,
+     "en": "Setting its derivative to zero gives the time of the maximum, the optimal residence time for B.",
+     "th": "การตั้งอนุพันธ์ให้เป็นศูนย์ให้เวลาที่ B สูงสุด ซึ่งคือเวลาพักที่เหมาะสมสำหรับ B"
+    },
+    {
+     "s": 27.592,
+     "e": 38.211,
+     "en": "When k one equals k two, the matrix has only one eigenvector, and a t times exponential term appears. That is the defective case from Session 2.",
+     "th": "เมื่อ k หนึ่งเท่ากับ k สอง เมทริกซ์มีเวกเตอร์ลักษณะเฉพาะเพียงตัวเดียว และเกิดพจน์ t คูณ exponential นี่คือกรณี defective จากคาบที่ 2"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
    "duration": 78.408,
    "hold": false,
    "cues": [
@@ -406,8 +438,8 @@
    ]
   },
   {
-   "n": 9,
-   "file": "audio/slide-09.mp3",
+   "n": 10,
+   "file": "audio/slide-10.mp3",
    "duration": 78.816,
    "hold": false,
    "cues": [
@@ -486,8 +518,8 @@
    ]
   },
   {
-   "n": 10,
-   "file": "audio/slide-10.mp3",
+   "n": 11,
+   "file": "audio/slide-11.mp3",
    "duration": 7.392,
    "hold": true,
    "cues": [
@@ -500,8 +532,8 @@
    ]
   },
   {
-   "n": 11,
-   "file": "audio/slide-11.mp3",
+   "n": 12,
+   "file": "audio/slide-12.mp3",
    "duration": 113.856,
    "hold": false,
    "cues": [
@@ -586,8 +618,8 @@
    ]
   },
   {
-   "n": 12,
-   "file": "audio/slide-12.mp3",
+   "n": 13,
+   "file": "audio/slide-13.mp3",
    "duration": 77.448,
    "hold": false,
    "cues": [
@@ -648,8 +680,34 @@
    ]
   },
   {
-   "n": 13,
-   "file": "audio/slide-13.mp3",
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 31.848,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.474,
+     "en": "Now derive the transfer function of two tanks in series. Take the Laplace transform of each balance with zero initial deviation. Each tank becomes a first order lag, and the two multiply.",
+     "th": "ต่อไปหา transfer function ของถังสองถังต่ออนุกรม แปลง Laplace สมดุลของแต่ละถังโดยให้ค่าเบี่ยงเบนเริ่มต้นเป็นศูนย์ แต่ละถังกลายเป็น first order lag และทั้งสองคูณกัน"
+    },
+    {
+     "s": 13.474,
+     "e": 22.682,
+     "en": "The poles are minus one over tau one and minus one over tau two, exactly the eigenvalues of K, because the denominator is the determinant of s I minus K.",
+     "th": "โพลคือลบหนึ่งหาร tau หนึ่ง และลบหนึ่งหาร tau สอง ตรงกับค่าลักษณะเฉพาะของ K พอดี เพราะตัวส่วนคือดีเทอร์มิแนนต์ของ s I ลบ K"
+    },
+    {
+     "s": 22.682,
+     "e": 31.789,
+     "en": "Partial fractions give the step response. Its initial slope is zero, so the response is S shaped: two lags in series delay the output.",
+     "th": "การแยกเศษส่วนย่อยให้ผลตอบสนองต่อขั้น ความชันเริ่มต้นเป็นศูนย์ ผลตอบสนองจึงเป็นรูปตัว S เพราะ lag สองตัวต่ออนุกรมทำให้ผลลัพธ์ช้าลง"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
    "duration": 76.656,
    "hold": false,
    "cues": [
@@ -710,8 +768,8 @@
    ]
   },
   {
-   "n": 14,
-   "file": "audio/slide-14.mp3",
+   "n": 16,
+   "file": "audio/slide-16.mp3",
    "duration": 104.136,
    "hold": false,
    "cues": [
@@ -790,8 +848,8 @@
    ]
   },
   {
-   "n": 15,
-   "file": "audio/slide-15.mp3",
+   "n": 17,
+   "file": "audio/slide-17.mp3",
    "duration": 9.6,
    "hold": true,
    "cues": [
@@ -804,8 +862,8 @@
    ]
   },
   {
-   "n": 16,
-   "file": "audio/slide-16.mp3",
+   "n": 18,
+   "file": "audio/slide-18.mp3",
    "duration": 28.728,
    "hold": true,
    "cues": [
@@ -836,8 +894,8 @@
    ]
   },
   {
-   "n": 17,
-   "file": "audio/slide-17.mp3",
+   "n": 19,
+   "file": "audio/slide-19.mp3",
    "duration": 118.152,
    "hold": false,
    "cues": [
@@ -928,8 +986,40 @@
    ]
   },
   {
-   "n": 18,
-   "file": "audio/slide-18.mp3",
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 33.24,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.632,
+     "en": "Why are the eigenvalues of a reaction network real and never positive? Detailed balance says that at equilibrium every reaction pair is balanced on its own.",
+     "th": "ทำไมค่าลักษณะเฉพาะของเครือข่ายปฏิกิริยาจึงเป็นจำนวนจริงและไม่เป็นบวก detailed balance บอกว่าที่สมดุล ปฏิกิริยาแต่ละคู่สมดุลในตัวเอง"
+    },
+    {
+     "s": 10.632,
+     "e": 18.532,
+     "en": "Then scaling K by the square roots of the equilibrium fractions gives a symmetric matrix S with the same eigenvalues.",
+     "th": "จากนั้นการปรับสเกล K ด้วยรากที่สองของสัดส่วนที่สมดุลให้เมทริกซ์สมมาตร S ที่มีค่าลักษณะเฉพาะเดียวกัน"
+    },
+    {
+     "s": 18.532,
+     "e": 24.289,
+     "en": "Its quadratic form is minus a sum of squares, so every eigenvalue is zero or negative.",
+     "th": "รูปกำลังสองของมันเท่ากับลบผลรวมของกำลังสอง ค่าลักษณะเฉพาะทุกตัวจึงเป็นศูนย์หรือเป็นลบ"
+    },
+    {
+     "s": 24.289,
+     "e": 33.184,
+     "en": "This is the result of Wei and Prater. In the lab you use this symmetric matrix to compute the matrix exponential yourself.",
+     "th": "นี่คือผลของ Wei และ Prater ในแล็บ คุณจะใช้เมทริกซ์สมมาตรนี้คำนวณ matrix exponential ด้วยตัวเอง"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
    "duration": 86.352,
    "hold": false,
    "cues": [
@@ -996,8 +1086,8 @@
    ]
   },
   {
-   "n": 19,
-   "file": "audio/slide-19.mp3",
+   "n": 22,
+   "file": "audio/slide-22.mp3",
    "duration": 63.24,
    "hold": false,
    "cues": [
@@ -1052,8 +1142,8 @@
    ]
   },
   {
-   "n": 20,
-   "file": "audio/slide-20.mp3",
+   "n": 23,
+   "file": "audio/slide-23.mp3",
    "duration": 7.224,
    "hold": true,
    "cues": [
@@ -1066,8 +1156,8 @@
    ]
   },
   {
-   "n": 21,
-   "file": "audio/slide-21.mp3",
+   "n": 24,
+   "file": "audio/slide-24.mp3",
    "duration": 7.32,
    "hold": true,
    "cues": [
@@ -1080,8 +1170,8 @@
    ]
   },
   {
-   "n": 22,
-   "file": "audio/slide-22.mp3",
+   "n": 25,
+   "file": "audio/slide-25.mp3",
    "duration": 43.728,
    "hold": false,
    "cues": [
@@ -1124,9 +1214,9 @@
    ]
   },
   {
-   "n": 23,
-   "file": "audio/slide-23.mp3",
-   "duration": 28.632,
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 30.24,
    "hold": true,
    "cues": [
     {
@@ -1137,27 +1227,33 @@
     },
     {
      "s": 7.882,
-     "e": 14.16,
+     "e": 13.993,
      "en": "Predict the number of zero eigenvalues, read the time constants, identify which species exchange in each mode,",
      "th": "ทำนายจำนวนค่าเฉพาะศูนย์ อ่านค่าคงที่เวลา ระบุว่าสปีชีส์ใดแลกเปลี่ยนกันในแต่ละโหมด"
     },
     {
-     "s": 14.16,
-     "e": 24.171,
-     "en": "compute a composition with the modal formula and compare it with the matrix exponential and an ODE solver, then change one rate constant and watch the separation of time scales.",
-     "th": "คำนวณองค์ประกอบด้วยสูตรโหมดแล้วเทียบกับ matrix exponential และตัวแก้สมการเชิงอนุพันธ์ จากนั้นเปลี่ยนค่าคงที่อัตราหนึ่งตัวแล้วดูการแยกของมาตราเวลา"
+     "s": 13.993,
+     "e": 21.922,
+     "en": "write code that computes the matrix exponential through the symmetric matrix of Wei and Prater and finds when 1 butene falls to zero point two,",
+     "th": "เขียนโค้ดคำนวณ matrix exponential ผ่านเมทริกซ์สมมาตรของ Wei และ Prater และหาเวลาที่ 1-butene ลดลงเหลือศูนย์จุดสอง"
     },
     {
-     "s": 24.171,
-     "e": 28.579,
+     "s": 21.922,
+     "e": 25.776,
+     "en": "then change one rate constant and watch the separation of time scales.",
+     "th": "จากนั้นเปลี่ยนค่าคงที่อัตราหนึ่งตัวแล้วดูการแยกของมาตราเวลา"
+    },
+    {
+     "s": 25.776,
+     "e": 30.184,
      "en": "Download the answer file at the end and upload it to myCourseVille.",
      "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
     }
    ]
   },
   {
-   "n": 24,
-   "file": "audio/slide-24.mp3",
+   "n": 27,
+   "file": "audio/slide-27.mp3",
    "duration": 39.816,
    "hold": false,
    "cues": [
@@ -1188,28 +1284,28 @@
    ]
   },
   {
-   "n": 25,
-   "file": "audio/slide-25.mp3",
-   "duration": 18.84,
+   "n": 28,
+   "file": "audio/slide-28.mp3",
+   "duration": 20.592,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 7.355,
-     "en": "Before the next session, finish Lab 3 and upload the answer file. Keep your card for Session 4.",
-     "th": "ก่อนคาบถัดไป ทำ Lab 3 ให้เสร็จและอัปโหลดไฟล์คำตอบ เก็บบัตรไว้สำหรับคาบที่ 4"
+     "e": 9.105,
+     "en": "Before the next session, finish Lab 3 and upload the answer file, and work through problem set three. Keep your card for Session 4.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 3 ให้เสร็จและอัปโหลดไฟล์คำตอบ และทำชุดโจทย์ที่สาม เก็บบัตรไว้สำหรับคาบที่ 4"
     },
     {
-     "s": 7.355,
-     "e": 18.776,
+     "s": 9.105,
+     "e": 20.526,
      "en": "Read Varma and Morbidelli, chapters one and two, and if you can, Wei and Prater's original paper in Advances in Catalysis. Moler and Van Loan's review is optional.",
      "th": "อ่าน Varma กับ Morbidelli บทที่หนึ่งและสอง และถ้าทำได้ ให้อ่านบทความต้นฉบับของ Wei และ Prater ใน Advances in Catalysis บทความทบทวนของ Moler และ Van Loan เป็นการอ่านเพิ่มเติม"
     }
    ]
   },
   {
-   "n": 26,
-   "file": "audio/slide-26.mp3",
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 9.528,
    "hold": true,
    "cues": [

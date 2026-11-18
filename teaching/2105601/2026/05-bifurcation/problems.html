@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Problem set 5 · Bifurcation and multiplicity · 2105601</title>
+<style>
+:root{--teal:#0F6E6B;--amber:#E29A2D;--rust:#BE654C;--graphite:#333F4A;--ink:#1C242B;--slate:#66727C;--mist:#B9C1C6;--paper:#F3F0EB;--sand:#DFC98F;--ok:#0F6E6B;--bad:#BE654C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Helvetica Neue",Helvetica,Arial,sans-serif}
+main{max-width:820px;margin:0 auto;padding:18px 16px 80px}
+header h1{color:var(--teal);font-size:30px;margin:4px 0 2px}
+.kicker{color:var(--amber);font-weight:700;letter-spacing:.12em;font-size:13px;text-transform:uppercase}
+.sub{color:var(--slate);font-size:15px}
+.prog{position:sticky;top:0;background:var(--paper);padding:10px 0;z-index:3}
+.bar{height:8px;background:#e2ddd4;border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.prog span{font-size:13px;color:var(--slate)}
+.card{background:#fff;border-radius:14px;padding:18px 18px 16px;margin:14px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card h2{font-size:21px;margin:0 0 4px;color:var(--teal)}
+.card h3{font-size:17px;margin:16px 0 6px}
+.step{border-left:4px solid var(--mist);padding:2px 0 2px 14px;margin:14px 0}
+.step.done{border-color:var(--teal)}.step.locked{opacity:.45;pointer-events:none}
+.step.locked .chart,.step.locked .kpi,.step.locked .chk,.step.locked input[type=range],.step.locked .row{display:none}
+.step.locked::after{content:"Finish the step above to open this one.";display:block;font-size:13px;color:var(--slate)}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;border-radius:6px;padding:2px 8px;margin-right:6px;color:#fff;background:var(--slate)}
+.tag.p{background:var(--amber)}.tag.r{background:var(--teal)}.tag.c{background:var(--graphite)}.tag.e{background:var(--rust)}
+textarea,input[type=text],select{font:inherit;font-size:16px;width:100%;border:1.5px solid var(--mist);border-radius:8px;padding:8px 10px;background:#fff}
+textarea{min-height:70px}
+button{font:inherit;font-size:15px;padding:8px 14px;border-radius:8px;border:none;background:var(--teal);color:#fff;cursor:pointer;margin:8px 8px 0 0}
+button.ghost{background:#fff;color:var(--teal);border:1.5px solid var(--teal)}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row label{flex:1 1 240px}
+.chk{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.chk input{width:150px}
+.fb{font-size:15px}.fb.ok{color:var(--ok);font-weight:700}.fb.bad{color:var(--bad)}
+.choices label{display:block;margin:4px 0}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}.kpi div{background:var(--paper);border-radius:10px;padding:6px 12px;font-size:14px;color:var(--slate)}.kpi b{display:block;font-size:20px;color:var(--ink)}
+.chart{background:var(--paper);border-radius:12px;padding:6px;margin:8px 0}
+svg{width:100%;height:auto;display:block}
+input[type=range]{width:100%;accent-color:var(--teal)}
+.note{font-size:14px;color:var(--slate)}
+.hidden{display:none}
+pre.sum{white-space:pre-wrap;background:var(--paper);border-radius:10px;padding:12px;font-size:14px}
+a{color:var(--teal)}
+</style>
+<style>
+.step.locked > *:not(.tag){display:none}
+table.tb{border-collapse:collapse;width:100%;font-size:15px;margin:8px 0}
+table.tb th{background:var(--paper);text-align:left;padding:5px 8px;border-bottom:2px solid var(--mist)}
+table.tb td{padding:5px 8px;border-bottom:1px solid #e6e3dd}
+table.tb td.n,table.tb th.n{text-align:right;font-variant-numeric:tabular-nums}
+ol.rl{margin:4px 0 0;padding-left:22px;font-size:15px}
+.lights{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.light{border-radius:999px;padding:3px 10px;font-size:14px;font-weight:700}
+.light.ok{background:#e3f0ef;color:var(--teal)}.light.bad{background:#f6e3de;color:var(--rust)}
+.code{background:#1f262d;color:#e8eef2;border-radius:10px;padding:10px 8px;font-family:Menlo,Consolas,monospace;font-size:13.5px;overflow-x:auto}
+.ln{display:flex;align-items:center;gap:8px;padding:3px 4px;border-radius:6px;white-space:pre}
+.ln.fixed{background:#24433f}
+.ln .no{color:#8a96a0;width:18px;text-align:right}
+.ln .tx{flex:1}
+.ln .okk{width:38px;color:#9fd6c9;font-size:12px;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700}
+button.sm{width:38px;font-size:12px;padding:2px 9px;margin:0;background:transparent;color:#9fd6c9;border:1px solid #9fd6c9}
+.ctrlrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0;font-size:15px;color:var(--slate)}
+.ctrlrow input[type=range]{flex:1;min-width:160px;accent-color:var(--teal)}
+.wide{overflow-x:auto}.wide table.tb{font-size:12px}.wide table.tb td,.wide table.tb th{padding:3px 4px}
+@media (max-width:600px){table.tb{display:block;overflow-x:auto;font-size:13px}}
+.codestep{margin:8px 0}
+textarea.codebox{width:100%;box-sizing:border-box;background:#1f262d;color:#e8eef2;border-radius:10px;padding:10px;font-family:Menlo,Consolas,monospace;font-size:13.5px;line-height:1.45;tab-size:4;white-space:pre;overflow-x:auto;min-height:180px}
+pre.out{background:var(--paper);border-radius:8px;padding:8px 10px;font-size:13px;white-space:pre-wrap;max-height:240px;overflow:auto;margin:6px 0}
+pre.out:empty{display:none}
+.ans{background:var(--paper);border-radius:8px;padding:4px 12px;margin-top:8px}
+</style>
+
+</head>
+<body><main>
+<header><div class="kicker">2105601 · Session 5 · Problem set</div><h1>Bifurcation and multiplicity: derivations</h1><div class="sub">Five derivations for Session 5. About two hours; do them before the midterm.</div></header>
+<section class="card"><h2>How to use this set</h2><p>Work each problem on paper before you look at the final answer. The final answer lets you check your result; it does not show the derivation, which is the point of the exercise. These problems are in the style of the midterm.</p></section>
+<section class="card"><h2>Problem 1 · The S-curve and its folds</h2><p>For the scaled cooled CSTR, dx<sub>1</sub>/dt = −x<sub>1</sub> + Da(1 − x<sub>1</sub>)e<sup>x₂</sup>, dx<sub>2</sub>/dt = −(1 + β)x<sub>2</sub> + B Da(1 − x<sub>1</sub>)e<sup>x₂</sup>, derive the closed form Da(x<sub>2</sub>) of the steady states and the fold condition. Evaluate both folds (x<sub>2</sub> and Da) for B = 14, β = 2.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> Da = c x<sub>2</sub>e<sup>−x₂</sup>/(1 − c x<sub>2</sub>), c = (1 + β)/B; folds at c x<sub>2</sub>² − x<sub>2</sub> + 1 = 0. For B = 14, β = 2: x<sub>2</sub> = 1.451 (Da = 0.1057, ignition) and x<sub>2</sub> = 3.215 (Da = 0.0889, extinction).</p></div></section><section class="card"><h2>Problem 2 · Trace and determinant on the branch</h2><p>Show that on the steady-state branch tr J = −1/(1 − x<sub>1</sub>) − (1 + β) + Bx<sub>1</sub> and det J = [(1 + β) − Bx<sub>1</sub>(1 − x<sub>1</sub>)]/(1 − x<sub>1</sub>). Then show that det J = 0 gives the same folds as dDa/dx<sub>2</sub> = 0.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> Use Da(1 − x<sub>1</sub>)e<sup>x₂</sup> = x<sub>1</sub>; with x<sub>1</sub> = c x<sub>2</sub>, (1 + β) − Bx<sub>1</sub>(1 − x<sub>1</sub>) = (1 + β)(1 − x<sub>2</sub> + c x<sub>2</sub>²), which vanishes exactly at the fold quadratic.</p></div></section><section class="card"><h2>Problem 3 · A Hopf point in the Brusselator</h2><p>For dx/dt = a − (b + 1)x + x²y, dy/dt = bx − x²y with a, b &gt; 0, find the steady state, its Jacobian, and the value of b at which a Hopf bifurcation occurs. Give the period of the small oscillations there.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> Steady state (a, b/a); tr J = b − 1 − a², det J = a²; Hopf at b = 1 + a², period 2π/a.</p></div></section><section class="card"><h2>Problem 4 · Why pseudo-arclength passes a fold</h2><p>At a simple fold, J = ∂F/∂x has a one-dimensional null space spanned by φ, and F<sub>Da</sub> is not in the range of J. Show that the tangent is t = (φ, 0) and that the bordered matrix [J F<sub>Da</sub>; tᵀ] is nonsingular, while J alone is singular.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> [J F<sub>Da</sub>] has rank n with null vector (φ, 0), so t = (φ, 0). If [J F<sub>Da</sub>; tᵀ](v, μ) = 0, then Jv + μF<sub>Da</sub> = 0 forces μ = 0 (F<sub>Da</sub> not in the range), so v ∝ φ, and tᵀ(v, 0) = 0 forces v = 0.</p></div></section><section class="card"><h2>Problem 5 · A subcritical Hopf bifurcation</h2><p>The amplitude equation ṙ = μr + r³ − r⁵ describes a subcritical Hopf bifurcation. Find all limit cycles, their stability, and the range of μ in which a stable steady state coexists with a stable cycle.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> r² = [1 ± √(1 + 4μ)]/2: the larger root is a stable cycle and the smaller an unstable one; they exist for −1/4 &lt; μ (the unstable one only for μ &lt; 0). Bistability (hysteresis) for −1/4 &lt; μ &lt; 0.</p></div></section>
+<p class="note">Slides: <a href="slides.html">Session 5</a> · Lab: <a href="lab.html">Lab 5</a></p></main></body></html>

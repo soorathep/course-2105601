@@ -3,12 +3,12 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 856.1,
+ "total_seconds": 988.3,
  "slides": [
   {
    "n": 1,
    "file": "audio/slide-01.mp3",
-   "duration": 32.04,
+   "duration": 32.064,
    "hold": false,
    "cues": [
     {
@@ -37,9 +37,9 @@
     },
     {
      "s": 28.026,
-     "e": 31.974,
-     "en": "On your own, the narration takes about fifteen minutes.",
-     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบห้านาที"
+     "e": 32.0,
+     "en": "On your own, the narration takes about sixteen minutes.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบหกนาที"
     }
    ]
   },
@@ -294,6 +294,44 @@
   {
    "n": 9,
    "file": "audio/slide-09.mp3",
+   "duration": 45.984,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.592,
+     "en": "Let us derive the fold condition. Multiply the mass balance by B and subtract the energy balance. The rate cancels, and conversion is proportional to temperature: x one equals c x two.",
+     "th": "มาหาเงื่อนไขของจุดพับ คูณสมดุลมวลด้วย B แล้วลบด้วยสมดุลพลังงาน พจน์อัตราจะหักล้างกัน และค่าการเปลี่ยนแปลงแปรผันตรงกับอุณหภูมิ คือ x หนึ่งเท่ากับ c x สอง"
+    },
+    {
+     "s": 13.592,
+     "e": 24.482,
+     "en": "Substituting back gives Da as an explicit function of x two, the whole S curve in closed form. A fold is where Da turns back, so set its derivative to zero.",
+     "th": "แทนค่ากลับจะได้ Da เป็นฟังก์ชันชัดแจ้งของ x สอง ซึ่งคือเส้นโค้ง S ทั้งเส้นในรูปปิด จุดพับคือที่ Da วกกลับ จึงตั้งอนุพันธ์ให้เป็นศูนย์"
+    },
+    {
+     "s": 24.482,
+     "e": 31.211,
+     "en": "After clearing fractions, you get the quadratic c x two squared minus x two plus one equals zero.",
+     "th": "เมื่อจัดเศษส่วนแล้วจะได้สมการกำลังสอง c x สองกำลังสอง ลบ x สอง บวกหนึ่ง เท่ากับศูนย์"
+    },
+    {
+     "s": 31.211,
+     "e": 40.43,
+     "en": "Two real roots need a positive discriminant, which is B greater than four times one plus beta. At equality the folds merge at the cusp.",
+     "th": "การมีรากจริงสองตัวต้องมี discriminant เป็นบวก ซึ่งคือ B มากกว่าสี่คูณหนึ่งบวก beta เมื่อเท่ากัน จุดพับทั้งสองรวมกันที่ cusp"
+    },
+    {
+     "s": 40.43,
+     "e": 45.921,
+     "en": "The same quadratic comes from setting the determinant of J to zero on the branch.",
+     "th": "สมการกำลังสองเดียวกันนี้ได้จากการตั้งดีเทอร์มิแนนต์ของ J บนสาขาให้เป็นศูนย์"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
    "duration": 59.376,
    "hold": false,
    "cues": [
@@ -342,8 +380,8 @@
    ]
   },
   {
-   "n": 10,
-   "file": "audio/slide-10.mp3",
+   "n": 11,
+   "file": "audio/slide-11.mp3",
    "duration": 7.272,
    "hold": true,
    "cues": [
@@ -356,8 +394,8 @@
    ]
   },
   {
-   "n": 11,
-   "file": "audio/slide-11.mp3",
+   "n": 12,
+   "file": "audio/slide-12.mp3",
    "duration": 72.096,
    "hold": false,
    "cues": [
@@ -418,8 +456,8 @@
    ]
   },
   {
-   "n": 12,
-   "file": "audio/slide-12.mp3",
+   "n": 13,
+   "file": "audio/slide-13.mp3",
    "duration": 39.72,
    "hold": false,
    "cues": [
@@ -450,8 +488,8 @@
    ]
   },
   {
-   "n": 13,
-   "file": "audio/slide-13.mp3",
+   "n": 14,
+   "file": "audio/slide-14.mp3",
    "duration": 70.44,
    "hold": false,
    "cues": [
@@ -506,8 +544,40 @@
    ]
   },
   {
-   "n": 14,
-   "file": "audio/slide-14.mp3",
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 38.976,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.803,
+     "en": "Now derive the Jacobian on the branch. Differentiate, then use the steady state to remove Da. Both the trace and the determinant become explicit functions of the conversion alone.",
+     "th": "ต่อไปหา Jacobian บนสาขา หาอนุพันธ์ แล้วใช้สภาวะคงตัวกำจัด Da ทั้ง trace และดีเทอร์มิแนนต์จะกลายเป็นฟังก์ชันชัดแจ้งของค่าการเปลี่ยนแปลงเพียงตัวเดียว"
+    },
+    {
+     "s": 12.803,
+     "e": 18.326,
+     "en": "For a two by two matrix the eigenvalues are half the trace plus or minus a square root.",
+     "th": "สำหรับเมทริกซ์สองคูณสอง ค่าลักษณะเฉพาะคือครึ่งหนึ่งของ trace บวกหรือลบรากที่สอง"
+    },
+    {
+     "s": 18.326,
+     "e": 28.118,
+     "en": "When the trace is zero and the determinant positive, they are a purely imaginary pair, plus or minus i omega, with omega the square root of the determinant.",
+     "th": "เมื่อ trace เป็นศูนย์และดีเทอร์มิแนนต์เป็นบวก จะได้คู่จินตภาพแท้ บวกลบ i omega โดย omega คือรากที่สองของดีเทอร์มิแนนต์"
+    },
+    {
+     "s": 28.118,
+     "e": 38.908,
+     "en": "So the folds solve det J equal to zero and the Hopf points solve trace J equal to zero, each as one equation in one unknown. That is how the module refines them.",
+     "th": "ดังนั้นจุดพับคือคำตอบของ det J เท่ากับศูนย์ และจุด Hopf คือคำตอบของ trace J เท่ากับศูนย์ แต่ละอันเป็นสมการเดียวตัวแปรเดียว นี่คือวิธีที่โมดูลปรับค่าให้ละเอียด"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
    "duration": 42.72,
    "hold": false,
    "cues": [
@@ -550,8 +620,8 @@
    ]
   },
   {
-   "n": 15,
-   "file": "audio/slide-15.mp3",
+   "n": 17,
+   "file": "audio/slide-17.mp3",
    "duration": 9.312,
    "hold": true,
    "cues": [
@@ -564,8 +634,8 @@
    ]
   },
   {
-   "n": 16,
-   "file": "audio/slide-16.mp3",
+   "n": 18,
+   "file": "audio/slide-18.mp3",
    "duration": 16.704,
    "hold": true,
    "cues": [
@@ -590,8 +660,8 @@
    ]
   },
   {
-   "n": 17,
-   "file": "audio/slide-17.mp3",
+   "n": 19,
+   "file": "audio/slide-19.mp3",
    "duration": 42.36,
    "hold": false,
    "cues": [
@@ -628,8 +698,52 @@
    ]
   },
   {
-   "n": 18,
-   "file": "audio/slide-18.mp3",
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 43.464,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.418,
+     "en": "Here is why the amplitude grows as a square root.",
+     "th": "นี่คือเหตุผลที่แอมพลิจูดเพิ่มตามรากที่สอง"
+    },
+    {
+     "s": 3.418,
+     "e": 12.776,
+     "en": "Near a Hopf point every planar system reduces to the same normal form in a complex variable z, with a linear growth rate mu and a cubic term.",
+     "th": "ใกล้จุด Hopf ระบบสองมิติทุกระบบลดรูปเป็น normal form เดียวกันในตัวแปรเชิงซ้อน z โดยมีอัตราการเติบโตเชิงเส้น mu และพจน์กำลังสาม"
+    },
+    {
+     "s": 12.776,
+     "e": 17.649,
+     "en": "In polar coordinates the radius obeys r dot equals mu r minus a r cubed.",
+     "th": "ในพิกัดเชิงขั้ว รัศมีเป็นไปตาม r dot เท่ากับ mu r ลบ a r"
+    },
+    {
+     "s": 17.649,
+     "e": 30.0,
+     "en": "When a is positive, a stable cycle of radius square root of mu over a appears, so the amplitude squared is proportional to the distance from the Hopf point. You measure this in the lab.",
+     "th": "กำลังสาม เมื่อ a เป็นบวก จะเกิดวงจรเสถียรที่มีรัศมีเท่ากับรากที่สองของ mu หาร a ดังนั้นแอมพลิจูดกำลังสองแปรผันตรงกับระยะห่างจากจุด Hopf คุณจะวัดสิ่งนี้ในแล็บ"
+    },
+    {
+     "s": 30.0,
+     "e": 36.869,
+     "en": "When a is negative the bifurcation is subcritical: the reactor jumps to a large cycle, with hysteresis.",
+     "th": "เมื่อ a เป็นลบ bifurcation เป็นแบบ subcritical เครื่องปฏิกรณ์จะกระโดดไปยังวงจรขนาดใหญ่ และมี"
+    },
+    {
+     "s": 36.869,
+     "e": 43.408,
+     "en": "Far from the Hopf point the truncation fails, and the oscillation becomes a relaxation oscillation.",
+     "th": "hysteresis เมื่อห่างจากจุด Hopf การตัดพจน์ใช้ไม่ได้ และการแกว่งกลายเป็น relaxation oscillation"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
    "duration": 30.264,
    "hold": false,
    "cues": [
@@ -660,8 +774,8 @@
    ]
   },
   {
-   "n": 19,
-   "file": "audio/slide-19.mp3",
+   "n": 22,
+   "file": "audio/slide-22.mp3",
    "duration": 36.192,
    "hold": false,
    "cues": [
@@ -698,8 +812,8 @@
    ]
   },
   {
-   "n": 20,
-   "file": "audio/slide-20.mp3",
+   "n": 23,
+   "file": "audio/slide-23.mp3",
    "duration": 7.44,
    "hold": true,
    "cues": [
@@ -712,8 +826,8 @@
    ]
   },
   {
-   "n": 21,
-   "file": "audio/slide-21.mp3",
+   "n": 24,
+   "file": "audio/slide-24.mp3",
    "duration": 7.224,
    "hold": true,
    "cues": [
@@ -726,8 +840,8 @@
    ]
   },
   {
-   "n": 22,
-   "file": "audio/slide-22.mp3",
+   "n": 25,
+   "file": "audio/slide-25.mp3",
    "duration": 14.472,
    "hold": false,
    "cues": [
@@ -746,34 +860,34 @@
    ]
   },
   {
-   "n": 23,
-   "file": "audio/slide-23.mp3",
-   "duration": 22.152,
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 24.096,
    "hold": true,
    "cues": [
     {
      "s": 0.1,
-     "e": 4.496,
+     "e": 4.336,
      "en": "Lab 5 uses the reactor with B equal to fourteen and beta equal to two.",
      "th": "Lab 5 ใช้เครื่องปฏิกรณ์ที่ B เท่ากับสิบสี่ และ beta"
     },
     {
-     "s": 4.496,
-     "e": 14.464,
-     "en": "You check the cusp condition, compute both folds yourself from the closed form, read the continuation and the Hopf point, measure the period of the oscillation,",
-     "th": "เท่ากับสอง คุณจะตรวจเงื่อนไข cusp คำนวณจุดพับทั้งสองเองจากรูปปิด อ่านผล continuation และจุด Hopf วัดคาบของการแกว่ง"
+     "s": 4.336,
+     "e": 14.36,
+     "en": "You check the cusp condition, compute both folds yourself from the closed form, write the corrector of a pseudo arclength continuation and find the Hopf point with it,",
+     "th": "เท่ากับสอง คุณจะตรวจเงื่อนไข cusp คำนวณจุดพับทั้งสองเองจากรูปปิด เขียนส่วน corrector ของ pseudo arclength continuation และหาจุด Hopf"
     },
     {
-     "s": 14.464,
-     "e": 22.079,
-     "en": "test the square root growth of its amplitude, and change beta until the folds disappear. Upload the answer file at the end.",
-     "th": "ทดสอบการเพิ่มขึ้นตามรากที่สองของแอมพลิจูด และเปลี่ยน beta จนจุดพับหายไป อัปโหลดไฟล์คำตอบตอนท้าย"
+     "s": 14.36,
+     "e": 24.026,
+     "en": "measure the period of the oscillation, test the square root growth of its amplitude, and change beta until the folds disappear. Upload the answer file at the end.",
+     "th": "ด้วยโค้ดนั้น วัดคาบของการแกว่ง ทดสอบการเพิ่มขึ้นตามรากที่สองของแอมพลิจูด และเปลี่ยน beta จนจุดพับหายไป อัปโหลดไฟล์คำตอบตอนท้าย"
     }
    ]
   },
   {
-   "n": 24,
-   "file": "audio/slide-24.mp3",
+   "n": 27,
+   "file": "audio/slide-27.mp3",
    "duration": 24.096,
    "hold": false,
    "cues": [
@@ -792,28 +906,28 @@
    ]
   },
   {
-   "n": 25,
-   "file": "audio/slide-25.mp3",
-   "duration": 15.336,
+   "n": 28,
+   "file": "audio/slide-28.mp3",
+   "duration": 17.136,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 12.269,
-     "en": "Before the next session, finish Lab 5 and upload the answer file. Read the bifurcation sections of Varma and Morbidelli, chapter two, and Strogatz, chapters three and eight.",
-     "th": "ก่อนคาบถัดไป ทำ Lab 5 ให้เสร็จและอัปโหลดไฟล์คำตอบ อ่านหัวข้อ bifurcation ใน Varma กับ Morbidelli บทที่สอง และ Strogatz บทที่สามและแปด หนังสือของ Seydel"
+     "e": 6.9,
+     "en": "Before the next session, finish Lab 5 and upload the answer file, and work through problem set five.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 5 ให้เสร็จและอัปโหลดไฟล์คำตอบ และทำชุดโจทย์ที่ห้า อ่านหัวข้อ"
     },
     {
-     "s": 12.269,
-     "e": 15.276,
-     "en": "Seydel is optional reading on continuation.",
-     "th": "เป็นการอ่านเพิ่มเติมเรื่อง continuation"
+     "s": 6.9,
+     "e": 17.066,
+     "en": "Read the bifurcation sections of Varma and Morbidelli, chapter two, and Strogatz, chapters three and eight. Seydel is optional reading on continuation.",
+     "th": "bifurcation ใน Varma กับ Morbidelli บทที่สอง และ Strogatz บทที่สามและแปด หนังสือของ Seydel เป็นการอ่านเพิ่มเติมเรื่อง continuation"
     }
    ]
   },
   {
-   "n": 26,
-   "file": "audio/slide-26.mp3",
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 7.272,
    "hold": true,
    "cues": [

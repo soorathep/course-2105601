@@ -3,12 +3,12 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 585.2,
+ "total_seconds": 698.1,
  "slides": [
   {
    "n": 1,
    "file": "audio/slide-01.mp3",
-   "duration": 21.36,
+   "duration": 21.432,
    "hold": false,
    "cues": [
     {
@@ -25,9 +25,9 @@
     },
     {
      "s": 17.605,
-     "e": 21.303,
-     "en": "On your own, the narration takes about ten minutes.",
-     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบนาที"
+     "e": 21.382,
+     "en": "On your own, the narration takes about twelve minutes.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบสองนาที"
     }
    ]
   },
@@ -210,6 +210,32 @@
   {
    "n": 9,
    "file": "audio/slide-09.mp3",
+   "duration": 33.528,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.276,
+     "en": "Let us derive the overall effectiveness factor. Start from the flux balance at the surface: what leaves the film enters the pellet. Scaled, that is the Robin condition with the Biot number.",
+     "th": "มาหา effectiveness factor รวมกัน เริ่มจากสมดุลฟลักซ์ที่ผิว สิ่งที่ออกจากฟิล์มเข้าสู่เม็ดตัวเร่ง เมื่อทำให้ไร้มิติจะได้เงื่อนไข Robin ที่มีเลข Biot"
+    },
+    {
+     "s": 13.276,
+     "e": 22.421,
+     "en": "The solution is still A cosh phi z. Substituting into the Robin condition fixes A, and the flux at the surface gives the overall effectiveness factor.",
+     "th": "คำตอบยังเป็น A cosh phi z เมื่อแทนลงในเงื่อนไข Robin จะได้ค่า A และฟลักซ์ที่ผิวให้ effectiveness factor รวม"
+    },
+    {
+     "s": 22.421,
+     "e": 33.461,
+     "en": "Dividing through shows two resistances in series, the pellet and the film. When the film controls, the rate no longer depends on the rate constant or the diffusivity at all.",
+     "th": "เมื่อหารตลอดจะเห็นความต้านทานสองตัวต่ออนุกรม คือเม็ดตัวเร่งและฟิล์ม เมื่อฟิล์มเป็นตัวควบคุม อัตราจะไม่ขึ้นกับค่าคงที่อัตราหรือสัมประสิทธิ์การแพร่อีกเลย"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
    "duration": 34.704,
    "hold": false,
    "cues": [
@@ -240,8 +266,8 @@
    ]
   },
   {
-   "n": 10,
-   "file": "audio/slide-10.mp3",
+   "n": 11,
+   "file": "audio/slide-11.mp3",
    "duration": 7.848,
    "hold": true,
    "cues": [
@@ -254,8 +280,8 @@
    ]
   },
   {
-   "n": 11,
-   "file": "audio/slide-11.mp3",
+   "n": 12,
+   "file": "audio/slide-12.mp3",
    "duration": 35.184,
    "hold": false,
    "cues": [
@@ -286,8 +312,8 @@
    ]
   },
   {
-   "n": 12,
-   "file": "audio/slide-12.mp3",
+   "n": 13,
+   "file": "audio/slide-13.mp3",
    "duration": 33.72,
    "hold": false,
    "cues": [
@@ -312,8 +338,8 @@
    ]
   },
   {
-   "n": 13,
-   "file": "audio/slide-13.mp3",
+   "n": 14,
+   "file": "audio/slide-14.mp3",
    "duration": 32.424,
    "hold": false,
    "cues": [
@@ -338,8 +364,34 @@
    ]
   },
   {
-   "n": 14,
-   "file": "audio/slide-14.mp3",
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 34.056,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.868,
+     "en": "Now derive the Green's function itself. It is the response to a unit point source. Away from the source it is linear, and each piece meets one boundary condition.",
+     "th": "ต่อไปหาฟังก์ชันของ Green เอง มันคือผลตอบสนองต่อแหล่งกำเนิดแบบจุดขนาดหนึ่งหน่วย ห่างจากแหล่งกำเนิด มันเป็นเส้นตรง และแต่ละช่วงสอดคล้องกับเงื่อนไขขอบเขตหนึ่งข้อ"
+    },
+    {
+     "s": 11.868,
+     "e": 24.118,
+     "en": "Two conditions join the pieces: the function is continuous, and its slope jumps by one across the source. That gives x times one minus s on one side and s times one minus x on the other.",
+     "th": "เงื่อนไขสองข้อเชื่อมสองช่วงเข้าด้วยกัน คือฟังก์ชันต่อเนื่อง และความชันกระโดดหนึ่งหน่วยที่ตำแหน่งแหล่งกำเนิด ได้ x คูณหนึ่งลบ s ด้านหนึ่ง และ s คูณหนึ่งลบ x อีกด้านหนึ่ง"
+    },
+    {
+     "s": 24.118,
+     "e": 34.0,
+     "en": "The Green's function is symmetric in x and s, which is self adjointness again. Expanded in sines, it is exactly the eigenfunction series.",
+     "th": "ฟังก์ชันของ Green สมมาตรใน x และ s ซึ่งก็คือ self adjoint อีกครั้ง เมื่อกระจายเป็นอนุกรมไซน์ ก็คืออนุกรมฟังก์ชันลักษณะเฉพาะนั่นเอง"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
    "duration": 32.832,
    "hold": false,
    "cues": [
@@ -370,8 +422,8 @@
    ]
   },
   {
-   "n": 15,
-   "file": "audio/slide-15.mp3",
+   "n": 17,
+   "file": "audio/slide-17.mp3",
    "duration": 7.896,
    "hold": true,
    "cues": [
@@ -384,8 +436,8 @@
    ]
   },
   {
-   "n": 16,
-   "file": "audio/slide-16.mp3",
+   "n": 18,
+   "file": "audio/slide-18.mp3",
    "duration": 14.376,
    "hold": true,
    "cues": [
@@ -404,8 +456,8 @@
    ]
   },
   {
-   "n": 17,
-   "file": "audio/slide-17.mp3",
+   "n": 19,
+   "file": "audio/slide-19.mp3",
    "duration": 34.632,
    "hold": false,
    "cues": [
@@ -436,8 +488,46 @@
    ]
   },
   {
-   "n": 18,
-   "file": "audio/slide-18.mp3",
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 40.728,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.796,
+     "en": "Here is the derivation of the dispersion model. The inlet condition is flux continuity across the inlet plane.",
+     "th": "นี่คือการหาสูตรของแบบจำลองการกระจาย เงื่อนไขทางเข้าคือความต่อเนื่องของฟลักซ์ผ่านระนาบทางเข้า"
+    },
+    {
+     "s": 7.796,
+     "e": 13.342,
+     "en": "The outlet condition says there is no gradient where nothing happens downstream.",
+     "th": "เงื่อนไขทางออกบอกว่าไม่มีเกรเดียนต์ ในที่ซึ่งด้านท้ายน้ำไม่มีอะไรเกิดขึ้น"
+    },
+    {
+     "s": 13.342,
+     "e": 23.533,
+     "en": "The equation is linear with constant coefficients, so try e to the r z. The two roots depend on q, the square root of one plus four Da over Pe.",
+     "th": "สมการเป็นเชิงเส้นและมีสัมประสิทธิ์คงที่ จึงลอง e กำลัง r z รากทั้งสองขึ้นกับ q ซึ่งเป็นรากที่สองของหนึ่งบวกสี่ Da หาร"
+    },
+    {
+     "s": 23.533,
+     "e": 27.355,
+     "en": "Apply both conditions and solve the two by two system.",
+     "th": "Pe ใช้เงื่อนไขทั้งสอง แล้วแก้ระบบสองคูณสอง"
+    },
+    {
+     "s": 27.355,
+     "e": 40.671,
+     "en": "Always check the limits. Large Pe gives plug flow, and small Pe gives one stirred tank. In the lab, a second order rate removes the closed form, and you will write the solver yourself.",
+     "th": "ตรวจขีดจำกัดเสมอ Pe ค่ามากให้การไหลแบบปลั๊ก และ Pe ค่าน้อยให้ถังกวนหนึ่งถัง ในแล็บ อัตราอันดับสองทำให้ไม่มีสูตรปิด และคุณจะเขียนตัวแก้สมการเอง"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
    "duration": 25.392,
    "hold": false,
    "cues": [
@@ -456,8 +546,8 @@
    ]
   },
   {
-   "n": 19,
-   "file": "audio/slide-19.mp3",
+   "n": 22,
+   "file": "audio/slide-22.mp3",
    "duration": 26.256,
    "hold": false,
    "cues": [
@@ -482,8 +572,8 @@
    ]
   },
   {
-   "n": 20,
-   "file": "audio/slide-20.mp3",
+   "n": 23,
+   "file": "audio/slide-23.mp3",
    "duration": 7.992,
    "hold": true,
    "cues": [
@@ -496,8 +586,8 @@
    ]
   },
   {
-   "n": 21,
-   "file": "audio/slide-21.mp3",
+   "n": 24,
+   "file": "audio/slide-24.mp3",
    "duration": 7.416,
    "hold": true,
    "cues": [
@@ -510,8 +600,8 @@
    ]
   },
   {
-   "n": 22,
-   "file": "audio/slide-22.mp3",
+   "n": 25,
+   "file": "audio/slide-25.mp3",
    "duration": 23.352,
    "hold": false,
    "cues": [
@@ -542,28 +632,34 @@
    ]
   },
   {
-   "n": 23,
-   "file": "audio/slide-23.mp3",
-   "duration": 15.432,
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 18.168,
    "hold": true,
    "cues": [
     {
      "s": 0.1,
-     "e": 13.569,
-     "en": "Lab seven. Open the lab page with the code. You will compute the limits and the Wehner Wilhelm conversion, read the profiles, and find how much dispersion the reactor can tolerate.",
-     "th": "แล็บที่เจ็ด เปิดหน้าแล็บด้วยโค้ด คุณจะคำนวณขีดจำกัดและค่าการเปลี่ยนแปลงของ Wehner Wilhelm อ่านโปรไฟล์ และหาว่าเครื่องปฏิกรณ์ยอมให้มีการกระจายได้มากเพียงใด"
+     "e": 3.112,
+     "en": "Lab seven. Open the lab page with the code.",
+     "th": "แล็บที่เจ็ด เปิดหน้าแล็บด้วยโค้ด"
     },
     {
-     "s": 13.569,
-     "e": 15.355,
-     "en": "Pause the narration now.",
-     "th": "หยุดเสียงบรรยายตอนนี้"
+     "s": 3.112,
+     "e": 12.217,
+     "en": "You will compute the limits and the Wehner Wilhelm conversion, read the profiles, find how much dispersion the reactor can tolerate,",
+     "th": "คุณจะคำนวณขีดจำกัดและค่าการเปลี่ยนแปลงของ Wehner Wilhelm อ่านโปรไฟล์ หาว่าเครื่องปฏิกรณ์ยอมให้มีการกระจายได้มากเพียงใด"
+    },
+    {
+     "s": 12.217,
+     "e": 18.105,
+     "en": "and write a finite difference solver for a second order rate. Pause the narration now.",
+     "th": "และเขียนตัวแก้สมการแบบผลต่างจำกัดสำหรับอัตราอันดับสอง หยุดเสียงบรรยายตอนนี้"
     }
    ]
   },
   {
-   "n": 24,
-   "file": "audio/slide-24.mp3",
+   "n": 27,
+   "file": "audio/slide-27.mp3",
    "duration": 26.424,
    "hold": false,
    "cues": [
@@ -588,22 +684,22 @@
    ]
   },
   {
-   "n": 25,
-   "file": "audio/slide-25.mp3",
-   "duration": 9.672,
+   "n": 28,
+   "file": "audio/slide-28.mp3",
+   "duration": 11.4,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 9.618,
-     "en": "Before the midterm, finish the lab and upload the answer file. Go over the four checks of every session without notes, and bring your finished card.",
-     "th": "ก่อนสอบกลางภาค ทำแล็บให้เสร็จและอัปโหลดไฟล์คำตอบ ทบทวนแบบฝึกหัดตรวจสอบสี่ข้อของทุกคาบโดยไม่ดูโน้ต และนำการ์ดที่เสร็จแล้วมาด้วย"
+     "e": 11.342,
+     "en": "Before the midterm, finish the lab and upload the answer file, and work through problem set seven. Go over the four checks of every session without notes, and bring your finished card.",
+     "th": "ก่อนสอบกลางภาค ทำแล็บให้เสร็จและอัปโหลดไฟล์คำตอบ และทำชุดโจทย์ที่เจ็ด ทบทวนแบบฝึกหัดตรวจสอบสี่ข้อของทุกคาบโดยไม่ดูโน้ต และนำการ์ดที่เสร็จแล้วมาด้วย"
     }
    ]
   },
   {
-   "n": 26,
-   "file": "audio/slide-26.mp3",
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 14.4,
    "hold": true,
    "cues": [

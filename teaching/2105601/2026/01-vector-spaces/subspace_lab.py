@@ -198,6 +198,22 @@ def reconcile(A, m, b, sigma=None):
             "dof": int(num_rank(A)), "chi2_crit95": float(chi2_dist.ppf(0.95, num_rank(A)))}
 
 
+GROSS = {"meter": 2, "bias": 0.06}           # SYNTHETIC: the CO meter reads 0.06 mol/s high
+
+
+def gross_error(meter=GROSS["meter"], bias=GROSS["bias"]):
+    """Measurement test (Narasimhan and Jordache): z_j = |a_j| / sqrt(V_jj) with adjustments a = n_hat - m
+    and their covariance V = S A^T (A S A^T)^-1 A S, for the SMR data with one biased meter."""
+    A = np.array(SMR["A"], float); n0 = np.array(SMR["n0"]); b = A @ n0
+    m = np.array(SMR["measured"], float); m[meter] += bias
+    S = np.diag(np.array(SMR["sigma"], float) ** 2)
+    W = S @ A.T @ np.linalg.inv(A @ S @ A.T)
+    a = -W @ (A @ m - b); V = W @ A @ S
+    z = np.abs(a) / np.sqrt(np.diag(V))
+    return {"m": m.tolist(), "z": z.tolist(), "suspect": int(np.argmax(z)), "z_max": float(z.max()),
+            "chi2": float(np.sum(a ** 2 / np.diag(S))), "chi2_crit95": float(chi2_dist.ppf(0.95, 3))}
+
+
 def lab_results():
     A = np.array(SMR["A"], float); N = np.array(list(SMR["reactions"].values()), float).T
     n0 = np.array(SMR["n0"]); b = A @ n0
@@ -223,7 +239,7 @@ def lab_results():
     return {"A": SA, "N": SN, "AN_max": float(np.abs(A @ N).max()), "exact": exact_null_basis(SMR["A"]),
             "R3_minus_R1_R2": (N[:, 2] - N[:, 0] - N[:, 1]).tolist(),
             "n_true": n_true.tolist(), "b": b.tolist(), "measured": SMR["measured"], "sigma": SMR["sigma"],
-            "rec": out, "xi_raw": xi_raw.tolist(), "raw_residual": float(np.linalg.norm(Nind @ xi_raw - (m - n0))),
+            "rec": out, "gross": gross_error(), "xi_raw": xi_raw.tolist(), "raw_residual": float(np.linalg.norm(Nind @ xi_raw - (m - n0))),
             "CH4_conversion_raw": float(1 - m[0] / n0[0]),
             "extended": {"species": EXT["species"], "rank": SE["rank"], "dim_null": SE["dim_null"],
                          "basis": exact_null_basis(EXT["A"])["basis"]}}

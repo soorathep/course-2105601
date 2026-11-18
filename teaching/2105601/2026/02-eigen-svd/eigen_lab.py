@@ -72,6 +72,14 @@ def decay_design(tmax, n=8):
             "se_rel_k": float(np.sqrt(cov[1, 1]) / k)}       # relative standard error of k per unit noise
 
 
+def optimal_window(lo=0.5, hi=20.0):
+    """Sampling window (n = 8 equally spaced samples) that minimizes the relative standard error of k."""
+    from scipy.optimize import minimize_scalar
+    r = minimize_scalar(lambda t: decay_design(t)["se_rel_k"], bounds=(lo, hi), method="bounded", options={"xatol": 1e-9})
+    d = decay_design(float(r.x))
+    return {"tmax": float(r.x), "se_rel_k": d["se_rel_k"], "cond": d["cond"], "corr": d["corr"]}
+
+
 def decay_sweep():
     return [decay_design(float(t)) for t in np.round(np.arange(0.5, 12.01, 0.5), 2)]
 
@@ -172,7 +180,7 @@ def clean(o):
 
 def classroom_results():
     R = {"lecture": {"two": two_by_two(), "decay": decay_sweep(), "profiles": profiles()},
-         "lab": {"arr": arrhenius(), "spec": spectra(), "sweep": spectra_sweep()},
+         "lab": {"arr": arrhenius(), "spec": spectra(), "sweep": spectra_sweep(), "opt": optimal_window()},
          "versions": {"numpy": np.__version__, "scipy": __import__("scipy").__version__}}
     return clean(R)
 

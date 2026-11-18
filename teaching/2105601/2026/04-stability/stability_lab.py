@@ -138,6 +138,19 @@ def clean(o):
     return o
 
 
+def ignition_threshold(Da, x10=0.0, lo=0.0, hi=8.0, tol=1e-6):
+    """Smallest initial temperature x2(0), with x1(0) = x10, from which the reactor ends at the hot steady state (bisection)."""
+    S = analyse(Da); x2s = [s["x"][1] for s in S]; sad = [s for s in S if s["type"] == "saddle"][0]["x"][1]
+    def hot(x20):
+        sol = solve_ivp(lambda t, x: f(x, Da), (0, 60), [x10, x20], rtol=1e-9, atol=1e-11, method="LSODA")
+        return sol.y[1, -1] > sad
+    assert not hot(lo) and hot(hi)
+    while hi - lo > tol:
+        mid = 0.5 * (lo + hi)
+        lo, hi = (lo, mid) if hot(mid) else (mid, hi)
+    return {"Da": Da, "x10": x10, "x20": 0.5 * (lo + hi), "steady_x2": x2s}
+
+
 def classroom_results():
     grid = [[a, b] for a in (0.0, 0.5, 1.0) for b in (0.0, 4.0, 8.0)]
     lab_starts = []
@@ -148,7 +161,7 @@ def classroom_results():
     R = {"lecture": {"P": P, "Da": DA_LECTURE, "ss": analyse(DA_LECTURE), "heat": heat_curves(DA_LECTURE),
                      "traj": trajectories(DA_LECTURE, grid), "sep": separatrix(DA_LECTURE), "tg": transient_growth()},
          "lab": {"Da": DA_LAB, "ss": S, "kick": trajectories(DA_LAB, lab_starts), "sweep": da_sweep(),
-                 "heat": heat_curves(DA_LAB), "sep": separatrix(DA_LAB)},
+                 "heat": heat_curves(DA_LAB), "sep": separatrix(DA_LAB), "ign": ignition_threshold(DA_LAB)},
          "versions": {"numpy": np.__version__, "scipy": __import__("scipy").__version__}}
     return clean(R)
 

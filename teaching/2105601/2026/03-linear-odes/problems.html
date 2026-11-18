@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Problem set 3 · Linear ODE systems and the matrix exponential · 2105601</title>
+<style>
+:root{--teal:#0F6E6B;--amber:#E29A2D;--rust:#BE654C;--graphite:#333F4A;--ink:#1C242B;--slate:#66727C;--mist:#B9C1C6;--paper:#F3F0EB;--sand:#DFC98F;--ok:#0F6E6B;--bad:#BE654C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Helvetica Neue",Helvetica,Arial,sans-serif}
+main{max-width:820px;margin:0 auto;padding:18px 16px 80px}
+header h1{color:var(--teal);font-size:30px;margin:4px 0 2px}
+.kicker{color:var(--amber);font-weight:700;letter-spacing:.12em;font-size:13px;text-transform:uppercase}
+.sub{color:var(--slate);font-size:15px}
+.prog{position:sticky;top:0;background:var(--paper);padding:10px 0;z-index:3}
+.bar{height:8px;background:#e2ddd4;border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.prog span{font-size:13px;color:var(--slate)}
+.card{background:#fff;border-radius:14px;padding:18px 18px 16px;margin:14px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card h2{font-size:21px;margin:0 0 4px;color:var(--teal)}
+.card h3{font-size:17px;margin:16px 0 6px}
+.step{border-left:4px solid var(--mist);padding:2px 0 2px 14px;margin:14px 0}
+.step.done{border-color:var(--teal)}.step.locked{opacity:.45;pointer-events:none}
+.step.locked .chart,.step.locked .kpi,.step.locked .chk,.step.locked input[type=range],.step.locked .row{display:none}
+.step.locked::after{content:"Finish the step above to open this one.";display:block;font-size:13px;color:var(--slate)}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;border-radius:6px;padding:2px 8px;margin-right:6px;color:#fff;background:var(--slate)}
+.tag.p{background:var(--amber)}.tag.r{background:var(--teal)}.tag.c{background:var(--graphite)}.tag.e{background:var(--rust)}
+textarea,input[type=text],select{font:inherit;font-size:16px;width:100%;border:1.5px solid var(--mist);border-radius:8px;padding:8px 10px;background:#fff}
+textarea{min-height:70px}
+button{font:inherit;font-size:15px;padding:8px 14px;border-radius:8px;border:none;background:var(--teal);color:#fff;cursor:pointer;margin:8px 8px 0 0}
+button.ghost{background:#fff;color:var(--teal);border:1.5px solid var(--teal)}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row label{flex:1 1 240px}
+.chk{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.chk input{width:150px}
+.fb{font-size:15px}.fb.ok{color:var(--ok);font-weight:700}.fb.bad{color:var(--bad)}
+.choices label{display:block;margin:4px 0}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}.kpi div{background:var(--paper);border-radius:10px;padding:6px 12px;font-size:14px;color:var(--slate)}.kpi b{display:block;font-size:20px;color:var(--ink)}
+.chart{background:var(--paper);border-radius:12px;padding:6px;margin:8px 0}
+svg{width:100%;height:auto;display:block}
+input[type=range]{width:100%;accent-color:var(--teal)}
+.note{font-size:14px;color:var(--slate)}
+.hidden{display:none}
+pre.sum{white-space:pre-wrap;background:var(--paper);border-radius:10px;padding:12px;font-size:14px}
+a{color:var(--teal)}
+</style>
+<style>
+.step.locked > *:not(.tag){display:none}
+table.tb{border-collapse:collapse;width:100%;font-size:15px;margin:8px 0}
+table.tb th{background:var(--paper);text-align:left;padding:5px 8px;border-bottom:2px solid var(--mist)}
+table.tb td{padding:5px 8px;border-bottom:1px solid #e6e3dd}
+table.tb td.n,table.tb th.n{text-align:right;font-variant-numeric:tabular-nums}
+ol.rl{margin:4px 0 0;padding-left:22px;font-size:15px}
+.lights{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.light{border-radius:999px;padding:3px 10px;font-size:14px;font-weight:700}
+.light.ok{background:#e3f0ef;color:var(--teal)}.light.bad{background:#f6e3de;color:var(--rust)}
+.code{background:#1f262d;color:#e8eef2;border-radius:10px;padding:10px 8px;font-family:Menlo,Consolas,monospace;font-size:13.5px;overflow-x:auto}
+.ln{display:flex;align-items:center;gap:8px;padding:3px 4px;border-radius:6px;white-space:pre}
+.ln.fixed{background:#24433f}
+.ln .no{color:#8a96a0;width:18px;text-align:right}
+.ln .tx{flex:1}
+.ln .okk{width:38px;color:#9fd6c9;font-size:12px;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700}
+button.sm{width:38px;font-size:12px;padding:2px 9px;margin:0;background:transparent;color:#9fd6c9;border:1px solid #9fd6c9}
+.ctrlrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0;font-size:15px;color:var(--slate)}
+.ctrlrow input[type=range]{flex:1;min-width:160px;accent-color:var(--teal)}
+.wide{overflow-x:auto}.wide table.tb{font-size:12px}.wide table.tb td,.wide table.tb th{padding:3px 4px}
+@media (max-width:600px){table.tb{display:block;overflow-x:auto;font-size:13px}}
+.codestep{margin:8px 0}
+textarea.codebox{width:100%;box-sizing:border-box;background:#1f262d;color:#e8eef2;border-radius:10px;padding:10px;font-family:Menlo,Consolas,monospace;font-size:13.5px;line-height:1.45;tab-size:4;white-space:pre;overflow-x:auto;min-height:180px}
+pre.out{background:var(--paper);border-radius:8px;padding:8px 10px;font-size:13px;white-space:pre-wrap;max-height:240px;overflow:auto;margin:6px 0}
+pre.out:empty{display:none}
+.ans{background:var(--paper);border-radius:8px;padding:4px 12px;margin-top:8px}
+</style>
+
+</head>
+<body><main>
+<header><div class="kicker">2105601 · Session 3 · Problem set</div><h1>Linear ODE systems and the matrix exponential: derivations</h1><div class="sub">Five derivations for Session 3. About two hours; do them before the midterm.</div></header>
+<section class="card"><h2>How to use this set</h2><p>Work each problem on paper before you look at the final answer. The final answer lets you check your result; it does not show the derivation, which is the point of the exercise. These problems are in the style of the midterm.</p></section>
+<section class="card"><h2>Problem 1 · A reversible pair by eigenvectors</h2><p>Solve A ⇌ B with forward constant k<sub>1</sub>, backward constant k<sub>2</sub>, a(0) = 1, b(0) = 0, by writing ẋ = Kx and expanding x(0) in the eigenvectors of K. Give the eigenvalues and the time constant of the approach to equilibrium.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> λ = 0 (equilibrium (k<sub>2</sub>, k<sub>1</sub>)/(k<sub>1</sub> + k<sub>2</sub>)) and λ = −(k<sub>1</sub> + k<sub>2</sub>); a(t) = [k<sub>2</sub> + k<sub>1</sub>e<sup>−(k₁+k₂)t</sup>]/(k<sub>1</sub> + k<sub>2</sub>); time constant 1/(k<sub>1</sub> + k<sub>2</sub>).</p></div></section><section class="card"><h2>Problem 2 · The defective case of A → B → C</h2><p>For A → B → C with k<sub>1</sub> = k<sub>2</sub> = k, show that the matrix has a single eigenvector, solve for b(t), and find the time and value of its maximum. Check your answer as the limit k<sub>2</sub> → k<sub>1</sub> of the general formula.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> b(t) = kt e<sup>−kt</sup>; maximum at t = 1/k with b = 1/e ≈ 0.368.</p></div></section><section class="card"><h2>Problem 3 · A damped oscillator as a first-order system</h2><p>Write ẍ + 2ζω<sub>n</sub>ẋ + ω<sub>n</sub>²x = 0 as ẏ = Ay. Find the eigenvalues, the damped frequency and the decay time, and evaluate them for ζ = 0.2, ω<sub>n</sub> = 1.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> λ = −ζω<sub>n</sub> ± iω<sub>n</sub>√(1 − ζ²); for ζ = 0.2, ω<sub>n</sub> = 1: λ = −0.2 ± 0.980i, damped period 6.41, decay time 5.</p></div></section><section class="card"><h2>Problem 4 · Three tanks in series</h2><p>Derive the transfer function from feed to outlet of three equal mixed tanks with time constant τ each, and its unit-step response.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> G(s) = 1/(τs + 1)³; c<sub>3</sub>(t) = 1 − e<sup>−t/τ</sup>[1 + t/τ + t²/(2τ²)].</p></div></section><section class="card"><h2>Problem 5 · Detailed balance around a cycle</h2><p>For the triangle network 1 ⇌ 2 ⇌ 3 ⇌ 1, show that detailed balance requires k<sub>12</sub>k<sub>23</sub>k<sub>31</sub> = k<sub>21</sub>k<sub>32</sub>k<sub>13</sub> (Wegscheider’s condition), and verify it for the Lab 3 constants, which are built as k<sub>ij</sub> = c<sub>ij</sub>/x<sub>i</sub>* with c<sub>ij</sub> = c<sub>ji</sub>.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> From k<sub>ij</sub>x<sub>i</sub>* = k<sub>ji</sub>x<sub>j</sub>* for each pair, the product of the three ratios k<sub>ij</sub>/k<sub>ji</sub> = x<sub>j</sub>*/x<sub>i</sub>* around the cycle is 1. With k<sub>ij</sub> = c<sub>ij</sub>/x<sub>i</sub>*, both products equal c<sub>12</sub>c<sub>23</sub>c<sub>31</sub>/(x<sub>1</sub>*x<sub>2</sub>*x<sub>3</sub>*).</p></div></section>
+<p class="note">Slides: <a href="slides.html">Session 3</a> · Lab: <a href="lab.html">Lab 3</a></p></main></body></html>

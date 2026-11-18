@@ -3,12 +3,12 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 1730.5,
+ "total_seconds": 1849.3,
  "slides": [
   {
    "n": 1,
    "file": "audio/slide-01.mp3",
-   "duration": 39.72,
+   "duration": 39.96,
    "hold": false,
    "cues": [
     {
@@ -31,13 +31,13 @@
     },
     {
      "s": 26.961,
-     "e": 34.25,
-     "en": "On your own, the narration takes about thirty minutes; the activities, four checks and the lab fill the rest of the three hours.",
-     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสามสิบนาที ส่วนกิจกรรม การตรวจความเข้าใจสี่ครั้ง และแล็บ ใช้เวลาที่เหลือของสามชั่วโมง"
+     "e": 34.487,
+     "en": "On your own, the narration takes about thirty one minutes; the activities, four checks and the lab fill the rest of the three hours.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสามสิบเอ็ดนาที ส่วนกิจกรรม การตรวจความเข้าใจสี่ครั้ง และแล็บ ใช้เวลาที่เหลือของสามชั่วโมง"
     },
     {
-     "s": 34.25,
-     "e": 39.658,
+     "s": 34.487,
+     "e": 39.895,
      "en": "When the narration for a slide ends, press the right arrow key, or Next, to go on.",
      "th": "เมื่อเสียงบรรยายของแต่ละหน้าจบ กดลูกศรขวาหรือปุ่ม Next เพื่อไปหน้าถัดไป"
     }
@@ -538,6 +538,44 @@
   {
    "n": 11,
    "file": "audio/slide-11.mp3",
+   "duration": 35.808,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.748,
+     "en": "Let us derive the two facts behind the spectral theorem. Multiply M v equals lambda v by the conjugate transpose of v.",
+     "th": "มาหาข้อเท็จจริงสองข้อเบื้องหลัง spectral theorem คูณ M v เท่ากับ lambda v ด้วย conjugate transpose ของ v"
+    },
+    {
+     "s": 7.748,
+     "e": 13.789,
+     "en": "Symmetry makes the left side real, and the length squared of v is positive, so lambda is real.",
+     "th": "ความสมมาตรทำให้ด้านซ้ายเป็นจำนวนจริง และความยาวกำลังสองของ v เป็นบวก lambda จึงเป็นจำนวนจริง"
+    },
+    {
+     "s": 13.789,
+     "e": 19.926,
+     "en": "Moving M across the inner product shows that eigenvectors of different eigenvalues are orthogonal.",
+     "th": "การย้าย M ข้ามผลคูณภายในแสดงว่าเวกเตอร์เฉพาะของค่าเฉพาะที่ต่างกันตั้งฉากกัน จากนั้นเวกเตอร์ใดๆ"
+    },
+    {
+     "s": 19.926,
+     "e": 27.737,
+     "en": "Then any vector is a combination of orthonormal eigenvectors, and the Rayleigh quotient is a weighted mean of the eigenvalues.",
+     "th": "เป็นผลรวมเชิงเส้นของเวกเตอร์เฉพาะตั้งฉากปกติ และ Rayleigh quotient คือค่าเฉลี่ยถ่วงน้ำหนักของค่าเฉพาะ"
+    },
+    {
+     "s": 27.737,
+     "e": 35.737,
+     "en": "So every trial vector gives a bound on the largest and smallest eigenvalues, which is the idea behind the power and Lanczos methods.",
+     "th": "ดังนั้นเวกเตอร์ทดลองทุกตัวให้ขอบเขตของค่าเฉพาะที่ใหญ่ที่สุดและเล็กที่สุด ซึ่งเป็นแนวคิดเบื้องหลัง power method และ Lanczos method"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
    "duration": 78.48,
    "hold": false,
    "cues": [
@@ -604,8 +642,8 @@
    ]
   },
   {
-   "n": 12,
-   "file": "audio/slide-12.mp3",
+   "n": 13,
+   "file": "audio/slide-13.mp3",
    "duration": 17.712,
    "hold": true,
    "cues": [
@@ -630,8 +668,8 @@
    ]
   },
   {
-   "n": 13,
-   "file": "audio/slide-13.mp3",
+   "n": 14,
+   "file": "audio/slide-14.mp3",
    "duration": 108.432,
    "hold": false,
    "cues": [
@@ -716,8 +754,8 @@
    ]
   },
   {
-   "n": 14,
-   "file": "audio/slide-14.mp3",
+   "n": 15,
+   "file": "audio/slide-15.mp3",
    "duration": 46.32,
    "hold": false,
    "cues": [
@@ -760,8 +798,8 @@
    ]
   },
   {
-   "n": 15,
-   "file": "audio/slide-15.mp3",
+   "n": 16,
+   "file": "audio/slide-16.mp3",
    "duration": 72.408,
    "hold": false,
    "cues": [
@@ -822,8 +860,8 @@
    ]
   },
   {
-   "n": 16,
-   "file": "audio/slide-16.mp3",
+   "n": 17,
+   "file": "audio/slide-17.mp3",
    "duration": 96.984,
    "hold": false,
    "cues": [
@@ -914,8 +952,40 @@
    ]
   },
   {
-   "n": 17,
-   "file": "audio/slide-17.mp3",
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 34.056,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.487,
+     "en": "Now derive the error bound. An error in the data moves the solution by A inverse times that error.",
+     "th": "ต่อไปหาขอบเขตความคลาดเคลื่อน ความคลาดเคลื่อนในข้อมูลทำให้คำตอบเลื่อนไปเท่ากับ A inverse"
+    },
+    {
+     "s": 6.487,
+     "e": 14.875,
+     "en": "Through the singular value decomposition, A inverse stretches by at most one over sigma min, and A stretches by at most sigma max.",
+     "th": "คูณความคลาดเคลื่อนนั้น ผ่าน singular value decomposition A inverse ยืดได้มากที่สุดหนึ่งหาร sigma min และ A ยืดได้มากที่สุด sigma max"
+    },
+    {
+     "s": 14.875,
+     "e": 25.066,
+     "en": "Dividing the two inequalities gives the relative error bound with kappa. Equality holds when the signal lies along the strongest direction and the error along the weakest.",
+     "th": "การหารอสมการทั้งสองให้ขอบเขตความคลาดเคลื่อนสัมพัทธ์ที่มี kappa ความเท่ากันเกิดขึ้นเมื่อสัญญาณอยู่ตามทิศที่แรงที่สุด และความคลาดเคลื่อนอยู่ตามทิศที่อ่อนที่สุด"
+    },
+    {
+     "s": 25.066,
+     "e": 34.0,
+     "en": "One practical consequence: forming X transpose X squares the condition number, so least squares should be solved with QR or the SVD.",
+     "th": "ผลในทางปฏิบัติข้อหนึ่ง การสร้าง X transpose X ทำให้ condition number ยกกำลังสอง ดังนั้นควรแก้ least squares ด้วย QR หรือ SVD"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
    "duration": 103.968,
    "hold": false,
    "cues": [
@@ -1006,8 +1076,8 @@
    ]
   },
   {
-   "n": 18,
-   "file": "audio/slide-18.mp3",
+   "n": 20,
+   "file": "audio/slide-20.mp3",
    "duration": 85.68,
    "hold": false,
    "cues": [
@@ -1086,8 +1156,8 @@
    ]
   },
   {
-   "n": 19,
-   "file": "audio/slide-19.mp3",
+   "n": 21,
+   "file": "audio/slide-21.mp3",
    "duration": 18.864,
    "hold": true,
    "cues": [
@@ -1112,8 +1182,8 @@
    ]
   },
   {
-   "n": 20,
-   "file": "audio/slide-20.mp3",
+   "n": 22,
+   "file": "audio/slide-22.mp3",
    "duration": 39.6,
    "hold": true,
    "cues": [
@@ -1150,8 +1220,8 @@
    ]
   },
   {
-   "n": 21,
-   "file": "audio/slide-21.mp3",
+   "n": 23,
+   "file": "audio/slide-23.mp3",
    "duration": 95.064,
    "hold": false,
    "cues": [
@@ -1224,8 +1294,40 @@
    ]
   },
   {
-   "n": 22,
-   "file": "audio/slide-22.mp3",
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 36.192,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.876,
+     "en": "Why does centering remove the correlation? The covariance of the estimates is sigma squared times the inverse of X transpose X.",
+     "th": "ทำไมการเลื่อนศูนย์กลางจึงขจัดสหสัมพันธ์ ความแปรปรวนร่วมของค่าประมาณคือ sigma กำลังสองคูณ inverse ของ X transpose"
+    },
+    {
+     "s": 8.876,
+     "e": 14.566,
+     "en": "Its off diagonal gives a correlation of minus u bar over the root mean square of u.",
+     "th": "X พจน์นอกแนวทแยงให้สหสัมพันธ์เท่ากับลบ u bar หารด้วยรากกำลังสองเฉลี่ยของ u"
+    },
+    {
+     "s": 14.566,
+     "e": 25.013,
+     "en": "For temperatures from three hundred to three hundred sixty kelvin, that ratio is zero point nine nine eight, because the data sit far from infinite temperature, where ln A is defined.",
+     "th": "สำหรับอุณหภูมิตั้งแต่สามร้อยถึงสามร้อยหกสิบเคลวิน อัตราส่วนนี้เท่ากับศูนย์จุดเก้าเก้าแปด เพราะข้อมูลอยู่ห่างจากอุณหภูมิอนันต์มาก ซึ่งเป็นตำแหน่งที่นิยาม ln A"
+    },
+    {
+     "s": 25.013,
+     "e": 36.132,
+     "en": "After centering, X transpose X is diagonal and the correlation is zero. The fit and the activation energy are unchanged; only the meaning of the intercept changes.",
+     "th": "หลังเลื่อนศูนย์กลาง X transpose X เป็นเมทริกซ์ทแยง และสหสัมพันธ์เป็นศูนย์ การ fit และพลังงานกระตุ้นไม่เปลี่ยน มีเพียงความหมายของจุดตัดแกนที่เปลี่ยน"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
    "duration": 80.4,
    "hold": false,
    "cues": [
@@ -1280,10 +1382,10 @@
    ]
   },
   {
-   "n": 23,
-   "file": "audio/slide-23.mp3",
+   "n": 26,
+   "file": "audio/slide-26.mp3",
    "duration": 60.72,
-   "hold": false,
+   "hold": true,
    "cues": [
     {
      "s": 0.1,
@@ -1336,8 +1438,8 @@
    ]
   },
   {
-   "n": 24,
-   "file": "audio/slide-24.mp3",
+   "n": 27,
+   "file": "audio/slide-27.mp3",
    "duration": 8.664,
    "hold": true,
    "cues": [
@@ -1356,10 +1458,10 @@
    ]
   },
   {
-   "n": 25,
-   "file": "audio/slide-25.mp3",
+   "n": 28,
+   "file": "audio/slide-28.mp3",
    "duration": 11.64,
-   "hold": true,
+   "hold": false,
    "cues": [
     {
      "s": 0.1,
@@ -1376,10 +1478,10 @@
    ]
   },
   {
-   "n": 26,
-   "file": "audio/slide-26.mp3",
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 35.64,
-   "hold": false,
+   "hold": true,
    "cues": [
     {
      "s": 0.1,
@@ -1414,52 +1516,58 @@
    ]
   },
   {
-   "n": 27,
-   "file": "audio/slide-27.mp3",
-   "duration": 34.872,
-   "hold": true,
+   "n": 30,
+   "file": "audio/slide-30.mp3",
+   "duration": 45.672,
+   "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 3.616,
-     "en": "Lab 2 takes forty minutes and has two parts.",
-     "th": "Lab 2 ใช้เวลาสี่สิบนาที และมีสองส่วน"
+     "e": 6.971,
+     "en": "Lab 2 takes forty minutes and has three parts: about twenty minutes of guided steps and twenty minutes of code.",
+     "th": "Lab 2 ใช้เวลาสี่สิบนาที และมีสามส่วน คือขั้นตอนนำทางประมาณยี่สิบนาที และเขียนโค้ดอีกยี่สิบนาที"
     },
     {
-     "s": 3.616,
-     "e": 9.132,
+     "s": 6.971,
+     "e": 12.487,
      "en": "First, seven synthetic rate constants between three hundred and three hundred sixty kelvin.",
      "th": "ส่วนแรก ค่าคงที่อัตราสังเคราะห์เจ็ดค่าระหว่างสามร้อยถึงสามร้อยหกสิบเคลวิน ทำนาย"
     },
     {
-     "s": 9.132,
-     "e": 18.066,
+     "s": 12.487,
+     "e": 21.421,
      "en": "Predict the condition number of the design matrix, then compare the raw, centered and scaled fits, and compute the rate at the reference temperature.",
      "th": "condition number ของ design matrix แล้วเปรียบเทียบการ fit แบบดิบ แบบเลื่อนจุดศูนย์กลาง และแบบปรับสเกล และคำนวณอัตราที่อุณหภูมิอ้างอิง"
     },
     {
-     "s": 18.066,
-     "e": 20.788,
+     "s": 21.421,
+     "e": 24.143,
      "en": "Second, fifteen synthetic mixture spectra.",
      "th": "ส่วนที่สอง สเปกตรัมของสารผสมสังเคราะห์สิบห้าชุด"
     },
     {
-     "s": 20.788,
-     "e": 30.408,
+     "s": 24.143,
+     "e": 33.763,
      "en": "Count the absorbing species from the singular values and a noise threshold, then raise the noise and find where the third species can no longer be seen.",
      "th": "นับจำนวนสปีชีส์ที่ดูดกลืนแสงจาก singular value และค่าขีดแบ่งจากสัญญาณรบกวน แล้วเพิ่มสัญญาณรบกวนเพื่อหาว่าสปีชีส์ที่สามมองไม่เห็นที่ระดับใด"
     },
     {
-     "s": 30.408,
-     "e": 34.816,
+     "s": 33.763,
+     "e": 41.211,
+     "en": "Third, write code that chooses the sampling window for the best estimate of a rate constant, from the sensitivity matrix.",
+     "th": "ส่วนที่สาม เขียนโค้ดเลือกช่วงเวลาเก็บตัวอย่างที่ให้ค่าประมาณค่าคงที่อัตราดีที่สุด จาก sensitivity matrix"
+    },
+    {
+     "s": 41.211,
+     "e": 45.618,
      "en": "Download the answer file at the end and upload it to myCourseVille.",
      "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
     }
    ]
   },
   {
-   "n": 28,
-   "file": "audio/slide-28.mp3",
+   "n": 31,
+   "file": "audio/slide-31.mp3",
    "duration": 43.2,
    "hold": false,
    "cues": [
@@ -1502,34 +1610,34 @@
    ]
   },
   {
-   "n": 29,
-   "file": "audio/slide-29.mp3",
-   "duration": 23.568,
+   "n": 32,
+   "file": "audio/slide-32.mp3",
+   "duration": 25.248,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 9.434,
-     "en": "Before the next session, finish Lab 2 and upload the answer file. Keep your card; Session 3 adds the linear dynamics of your model.",
-     "th": "ก่อนคาบถัดไป ทำ Lab 2 ให้เสร็จและอัปโหลดไฟล์คำตอบ เก็บบัตรไว้ คาบที่ 3 จะเพิ่มพลวัตเชิงเส้นของแบบจำลองของคุณ"
+     "e": 11.105,
+     "en": "Before the next session, finish Lab 2 and upload the answer file, and work through problem set two. Keep your card; Session 3 adds the linear dynamics of your model.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 2 ให้เสร็จและอัปโหลดไฟล์คำตอบ และทำชุดโจทย์ที่สอง เก็บบัตรไว้ คาบที่ 3 จะเพิ่มพลวัตเชิงเส้นของแบบจำลองของคุณ"
     },
     {
-     "s": 9.434,
-     "e": 17.585,
+     "s": 11.105,
+     "e": 19.256,
      "en": "Read Strang, chapter five and section six point three, and the eigenvalue sections of Varma and Morbidelli, chapter one.",
      "th": "อ่าน Strang บทที่ห้าและหัวข้อหกจุดสาม และหัวข้อเรื่องค่าเฉพาะใน Varma กับ Morbidelli บทที่หนึ่ง หนังสือของ Bard"
     },
     {
-     "s": 17.585,
-     "e": 23.513,
+     "s": 19.256,
+     "e": 25.184,
      "en": "Bard, or Trefethen and Bau, are optional reading on parameter estimation and on the SVD.",
      "th": "หรือของ Trefethen กับ Bau เป็นการอ่านเพิ่มเติมเรื่องการประมาณพารามิเตอร์และ SVD"
     }
    ]
   },
   {
-   "n": 30,
-   "file": "audio/slide-30.mp3",
+   "n": 33,
+   "file": "audio/slide-33.mp3",
    "duration": 15.888,
    "hold": true,
    "cues": [

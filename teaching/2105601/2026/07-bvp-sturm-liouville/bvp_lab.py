@@ -149,6 +149,15 @@ def disp_numeric(Pe, Da):
     return {"c1": float(sol.sol(1.0)[0]), "c0": float(sol.sol(0.0)[0]), "nodes": int(sol.x.size), "ok": bool(sol.success)}
 
 
+def disp_second(Pe, Da):
+    """Second-order rate: (1/Pe) u'' - u' - Da u^2 = 0 with Danckwerts conditions (solve_bvp); no closed form."""
+    z = np.linspace(0, 1, 201)
+    sol = solve_bvp(lambda z, y: np.vstack([y[1], Pe * (y[1] + Da * y[0] ** 2)]),
+                    lambda ya, yb: np.array([ya[0] - ya[1] / Pe - 1, yb[1]]), z, np.vstack([np.exp(-z), -np.exp(-z)]), tol=1e-8)
+    return {"Pe": Pe, "Da": Da, "X": float(1 - sol.sol(1.0)[0]), "ok": bool(sol.success), "nodes": int(sol.x.size),
+            "pfr": Da / (1 + Da), "cstr": float(1 - (np.sqrt(1 + 4 * Da) - 1) / (2 * Da))}
+
+
 PE_LIST = [0.1, 0.2, 0.5, 1, 2, 5, 10, 15, 20, 30, 50, 100, 200, 500, 1000]
 
 
@@ -178,7 +187,7 @@ def classroom_results():
                      "disp": {"Da": LECT_DA, "prof": [disp_profile(p, LECT_DA) for p in (1, 10, 100)], "sweep": disp_sweep(LECT_DA),
                               "num10": disp_numeric(10, LECT_DA), "pfr": float(1 - np.exp(-LECT_DA)), "cstr": LECT_DA / (1 + LECT_DA)}},
          "lab": {"Da": LAB_DA, "prof": [disp_profile(p, LAB_DA) for p in (1, 5, 50)], "num5": disp_numeric(5, LAB_DA),
-                 "sweep": disp_sweep(LAB_DA), "pfr": float(1 - np.exp(-LAB_DA)), "cstr": LAB_DA / (1 + LAB_DA)},
+                 "sweep": disp_sweep(LAB_DA), "second": disp_second(5.0, LAB_DA), "pfr": float(1 - np.exp(-LAB_DA)), "cstr": LAB_DA / (1 + LAB_DA)},
          "versions": {"numpy": np.__version__, "scipy": __import__("scipy").__version__}}
     return clean(R)
 
@@ -198,4 +207,5 @@ if __name__ == "__main__":
     D = L["disp"]; print("disp", [(q["Pe"], r6(q["c0"]), r6(q["X"])) for q in D["prof"]], "num10", D["num10"], "pfr", r6(D["pfr"]), "cstr", r6(D["cstr"]))
     print("sweep", [(q["Pe"], r6(q["X"])) for q in D["sweep"]])
     B = R["lab"]; print("lab", [(q["Pe"], r6(q["c0"]), r6(q["X"])) for q in B["prof"]], "num5", B["num5"], r6(B["pfr"]), r6(B["cstr"]))
+    print("lab second", B["second"])
     print("lab sweep", [(q["Pe"], r6(q["X"])) for q in B["sweep"]])

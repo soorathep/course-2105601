@@ -3,12 +3,12 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 737.7,
+ "total_seconds": 855.7,
  "slides": [
   {
    "n": 1,
    "file": "audio/slide-01.mp3",
-   "duration": 19.68,
+   "duration": 19.824,
    "hold": false,
    "cues": [
     {
@@ -25,9 +25,9 @@
     },
     {
      "s": 15.842,
-     "e": 19.618,
-     "en": "On your own, the narration takes about twelve minutes.",
-     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบสองนาที"
+     "e": 19.763,
+     "en": "On your own, the narration takes about fourteen minutes.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบสี่นาที"
     }
    ]
   },
@@ -302,6 +302,44 @@
   {
    "n": 10,
    "file": "audio/slide-10.mp3",
+   "duration": 39.744,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.934,
+     "en": "Let us derive the first correction properly. Substitute the expansion into the equation and the initial condition, and collect powers of epsilon.",
+     "th": "มาหาการแก้ไขอันดับแรกอย่างเป็นระบบ แทนการกระจายลงในสมการและเงื่อนไขเริ่มต้น แล้วรวบรวมพจน์ตามกำลังของ epsilon"
+    },
+    {
+     "s": 9.934,
+     "e": 18.542,
+     "en": "Order one gives the linear decay. Order epsilon gives a linear equation for c one, forced by minus c zero squared.",
+     "th": "อันดับหนึ่งให้การสลายตัวเชิงเส้น อันดับ epsilon ให้สมการเชิงเส้นของ c หนึ่ง ซึ่งถูกขับด้วยลบ c ศูนย์กำลังสอง"
+    },
+    {
+     "s": 18.542,
+     "e": 24.829,
+     "en": "An integrating factor solves it, and c one of zero equal to zero fixes the constant.",
+     "th": "ใช้ integrating factor แก้ได้ และเงื่อนไข c หนึ่งที่ศูนย์เท่ากับศูนย์กำหนดค่าคงที่"
+    },
+    {
+     "s": 24.829,
+     "e": 34.169,
+     "en": "The exact solution of this Bernoulli equation, expanded in epsilon, gives the same c one. That is the check. Notice the pattern:",
+     "th": "คำตอบแม่นตรงของสมการ Bernoulli นี้ เมื่อกระจายตาม epsilon ให้ c หนึ่งตัวเดียวกัน นั่นคือการตรวจสอบ สังเกตรูปแบบ"
+    },
+    {
+     "s": 34.169,
+     "e": 39.671,
+     "en": "every order is the same linear operator, forced by products of lower orders.",
+     "th": "ทุกอันดับใช้ตัวดำเนินการเชิงเส้นตัวเดียวกัน โดยถูกขับด้วยผลคูณของอันดับที่ต่ำกว่า"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
    "duration": 7.848,
    "hold": true,
    "cues": [
@@ -314,8 +352,8 @@
    ]
   },
   {
-   "n": 11,
-   "file": "audio/slide-11.mp3",
+   "n": 12,
+   "file": "audio/slide-12.mp3",
    "duration": 34.968,
    "hold": false,
    "cues": [
@@ -346,8 +384,8 @@
    ]
   },
   {
-   "n": 12,
-   "file": "audio/slide-12.mp3",
+   "n": 13,
+   "file": "audio/slide-13.mp3",
    "duration": 60.576,
    "hold": false,
    "cues": [
@@ -396,8 +434,8 @@
    ]
   },
   {
-   "n": 13,
-   "file": "audio/slide-13.mp3",
+   "n": 14,
+   "file": "audio/slide-14.mp3",
    "duration": 33.672,
    "hold": false,
    "cues": [
@@ -428,8 +466,8 @@
    ]
   },
   {
-   "n": 14,
-   "file": "audio/slide-14.mp3",
+   "n": 15,
+   "file": "audio/slide-15.mp3",
    "duration": 46.176,
    "hold": false,
    "cues": [
@@ -472,8 +510,40 @@
    ]
   },
   {
-   "n": 15,
-   "file": "audio/slide-15.mp3",
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 36.84,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.431,
+     "en": "Now derive the quasi steady state approximation from the mass action model. The key step is the scale for the complex: the largest value it can reach, E zero S zero over S zero plus K M.",
+     "th": "ต่อไปหาการประมาณสภาวะกึ่งคงตัวจากแบบจำลองกฎมวลสาร ขั้นสำคัญคือสเกลของสารเชิงซ้อน คือค่าสูงสุดที่มันมีได้ E ศูนย์ S ศูนย์ หารด้วย S ศูนย์บวก K M"
+    },
+    {
+     "s": 11.431,
+     "e": 19.819,
+     "en": "Scale time by the slow time, divide the complex balance by its fast rate, and the ratio of the two times appears in front of the derivative.",
+     "th": "ปรับสเกลเวลาด้วยเวลาช้า หารสมดุลของสารเชิงซ้อนด้วยอัตราเร็วของมัน แล้วอัตราส่วนของเวลาทั้งสองจะปรากฏหน้าอนุพันธ์"
+    },
+    {
+     "s": 19.819,
+     "e": 24.102,
+     "en": "That ratio is epsilon, and it is bounded by E zero over S zero plus K M.",
+     "th": "อัตราส่วนนั้นคือ epsilon และมีค่าไม่เกิน E ศูนย์หารด้วย S ศูนย์บวก K M"
+    },
+    {
+     "s": 24.102,
+     "e": 36.776,
+     "en": "Setting epsilon to zero leaves an algebraic relation for the complex, and the Michaelis Menten rate law follows. Scaling the complex by E zero instead would hide the right small parameter.",
+     "th": "เมื่อให้ epsilon เป็นศูนย์ จะเหลือความสัมพันธ์เชิงพีชคณิตของสารเชิงซ้อน และได้กฎอัตรา Michaelis Menten ถ้าปรับสเกลสารเชิงซ้อนด้วย E ศูนย์แทน จะซ่อนพารามิเตอร์ขนาดเล็กที่ถูกต้อง"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
    "duration": 7.896,
    "hold": true,
    "cues": [
@@ -486,8 +556,8 @@
    ]
   },
   {
-   "n": 16,
-   "file": "audio/slide-16.mp3",
+   "n": 18,
+   "file": "audio/slide-18.mp3",
    "duration": 16.608,
    "hold": true,
    "cues": [
@@ -506,8 +576,8 @@
    ]
   },
   {
-   "n": 17,
-   "file": "audio/slide-17.mp3",
+   "n": 19,
+   "file": "audio/slide-19.mp3",
    "duration": 36.84,
    "hold": false,
    "cues": [
@@ -532,8 +602,8 @@
    ]
   },
   {
-   "n": 18,
-   "file": "audio/slide-18.mp3",
+   "n": 20,
+   "file": "audio/slide-20.mp3",
    "duration": 34.992,
    "hold": false,
    "cues": [
@@ -564,8 +634,46 @@
    ]
   },
   {
-   "n": 19,
-   "file": "audio/slide-19.mp3",
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 35.256,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.674,
+     "en": "Here is the derivation behind the large phi result, for any reaction order. Stretch the coordinate near the surface by phi.",
+     "th": "นี่คือการหาสูตรเบื้องหลังผลที่ phi ค่ามาก สำหรับปฏิกิริยาอันดับใดก็ได้ ยืดพิกัดใกล้ผิวด้วย phi"
+    },
+    {
+     "s": 8.674,
+     "e": 13.306,
+     "en": "In the layer the equation becomes u double prime equals u to the n.",
+     "th": "ในชั้นนั้นสมการกลายเป็น u สองไพรม์เท่ากับ u กำลัง n"
+    },
+    {
+     "s": 13.306,
+     "e": 20.144,
+     "en": "Multiply by u prime and integrate once. Deep inside, both u and its slope vanish, so the constant is zero.",
+     "th": "คูณด้วย u ไพรม์แล้วอินทิเกรตหนึ่งครั้ง ลึกเข้าไปด้านใน ทั้ง u และความชันเป็นศูนย์"
+    },
+    {
+     "s": 20.144,
+     "e": 28.197,
+     "en": "At the surface u equals one, which gives the slope, and the effectiveness factor follows without ever solving for the profile.",
+     "th": "ค่าคงที่จึงเป็นศูนย์ ที่ผิว u เท่ากับหนึ่ง ซึ่งให้ค่าความชัน และได้ effectiveness factor โดยไม่ต้องแก้หาโปรไฟล์เลย"
+    },
+    {
+     "s": 28.197,
+     "e": 35.184,
+     "en": "In the lab you will write a Newton solver for the second order case and measure how large phi must be for this result to hold.",
+     "th": "ในแล็บ คุณจะเขียนตัวแก้สมการแบบ Newton สำหรับกรณีอันดับสอง และวัดว่า phi ต้องมากเพียงใดผลนี้จึงใช้ได้"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
    "duration": 35.904,
    "hold": false,
    "cues": [
@@ -596,8 +704,8 @@
    ]
   },
   {
-   "n": 20,
-   "file": "audio/slide-20.mp3",
+   "n": 23,
+   "file": "audio/slide-23.mp3",
    "duration": 7.992,
    "hold": true,
    "cues": [
@@ -610,8 +718,8 @@
    ]
   },
   {
-   "n": 21,
-   "file": "audio/slide-21.mp3",
+   "n": 24,
+   "file": "audio/slide-24.mp3",
    "duration": 8.832,
    "hold": true,
    "cues": [
@@ -624,8 +732,8 @@
    ]
   },
   {
-   "n": 22,
-   "file": "audio/slide-22.mp3",
+   "n": 25,
+   "file": "audio/slide-25.mp3",
    "duration": 22.968,
    "hold": false,
    "cues": [
@@ -644,22 +752,28 @@
    ]
   },
   {
-   "n": 23,
-   "file": "audio/slide-23.mp3",
-   "duration": 14.568,
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 16.608,
    "hold": true,
    "cues": [
     {
      "s": 0.1,
-     "e": 14.5,
-     "en": "Lab six. Open the lab page with the code. You will compute the Thiele modulus, read the reaction layer, and test the large phi asymptote for a second order rate. Pause the narration now.",
-     "th": "แล็บที่หก เปิดหน้าแล็บด้วยโค้ด คุณจะคำนวณ Thiele modulus อ่านชั้นปฏิกิริยา และทดสอบเส้นเชิงเส้นกำกับที่ phi ค่ามากสำหรับปฏิกิริยาอันดับสอง หยุดเสียงบรรยายตอนนี้"
+     "e": 3.144,
+     "en": "Lab six. Open the lab page with the code.",
+     "th": "แล็บที่หก เปิดหน้าแล็บด้วยโค้ด คุณจะคำนวณ"
+    },
+    {
+     "s": 3.144,
+     "e": 16.553,
+     "en": "You will compute the Thiele modulus, read the reaction layer, write your own Newton solver for a second order rate, and test the large phi asymptote against it. Pause the narration now.",
+     "th": "Thiele modulus อ่านชั้นปฏิกิริยา เขียนตัวแก้สมการแบบ Newton สำหรับปฏิกิริยาอันดับสองด้วยตนเอง และทดสอบเส้นเชิงเส้นกำกับที่ phi ค่ามากกับผลนั้น หยุดเสียงบรรยายตอนนี้"
     }
    ]
   },
   {
-   "n": 24,
-   "file": "audio/slide-24.mp3",
+   "n": 27,
+   "file": "audio/slide-27.mp3",
    "duration": 34.656,
    "hold": false,
    "cues": [
@@ -684,22 +798,28 @@
    ]
   },
   {
-   "n": 25,
-   "file": "audio/slide-25.mp3",
-   "duration": 11.712,
+   "n": 28,
+   "file": "audio/slide-28.mp3",
+   "duration": 15.696,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 11.658,
-     "en": "Before next session, finish the lab and upload the answer file. Keep your card, and read the chapter on perturbation methods in Rice and Do, and the paper by Segel and Slemrod.",
-     "th": "ก่อนคาบหน้า ทำแล็บให้เสร็จและอัปโหลดไฟล์คำตอบ เก็บการ์ดไว้ และอ่านบทว่าด้วยวิธี perturbation ใน Rice และ Do และบทความของ Segel และ Slemrod"
+     "e": 8.844,
+     "en": "Before next session, finish the lab and upload the answer file, and work through problem set six, five derivations in the style of the midterm.",
+     "th": "ก่อนคาบหน้า ทำแล็บให้เสร็จและอัปโหลดไฟล์คำตอบ และทำชุดโจทย์ที่หก ซึ่งเป็นการหาสูตรห้าข้อในรูปแบบการสอบกลางภาค"
+    },
+    {
+     "s": 8.844,
+     "e": 15.645,
+     "en": "Keep your card, and read the chapter on perturbation methods in Rice and Do, and the paper by Segel and Slemrod.",
+     "th": "เก็บการ์ดไว้ และอ่านบทว่าด้วยวิธี perturbation ใน Rice และ Do และบทความของ Segel และ Slemrod"
     }
    ]
   },
   {
-   "n": 26,
-   "file": "audio/slide-26.mp3",
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 10.848,
    "hold": true,
    "cues": [

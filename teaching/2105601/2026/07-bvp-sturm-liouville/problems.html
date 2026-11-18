@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Problem set 7 · Boundary value problems and Sturm–Liouville theory · 2105601</title>
+<style>
+:root{--teal:#0F6E6B;--amber:#E29A2D;--rust:#BE654C;--graphite:#333F4A;--ink:#1C242B;--slate:#66727C;--mist:#B9C1C6;--paper:#F3F0EB;--sand:#DFC98F;--ok:#0F6E6B;--bad:#BE654C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Helvetica Neue",Helvetica,Arial,sans-serif}
+main{max-width:820px;margin:0 auto;padding:18px 16px 80px}
+header h1{color:var(--teal);font-size:30px;margin:4px 0 2px}
+.kicker{color:var(--amber);font-weight:700;letter-spacing:.12em;font-size:13px;text-transform:uppercase}
+.sub{color:var(--slate);font-size:15px}
+.prog{position:sticky;top:0;background:var(--paper);padding:10px 0;z-index:3}
+.bar{height:8px;background:#e2ddd4;border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.prog span{font-size:13px;color:var(--slate)}
+.card{background:#fff;border-radius:14px;padding:18px 18px 16px;margin:14px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card h2{font-size:21px;margin:0 0 4px;color:var(--teal)}
+.card h3{font-size:17px;margin:16px 0 6px}
+.step{border-left:4px solid var(--mist);padding:2px 0 2px 14px;margin:14px 0}
+.step.done{border-color:var(--teal)}.step.locked{opacity:.45;pointer-events:none}
+.step.locked .chart,.step.locked .kpi,.step.locked .chk,.step.locked input[type=range],.step.locked .row{display:none}
+.step.locked::after{content:"Finish the step above to open this one.";display:block;font-size:13px;color:var(--slate)}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;border-radius:6px;padding:2px 8px;margin-right:6px;color:#fff;background:var(--slate)}
+.tag.p{background:var(--amber)}.tag.r{background:var(--teal)}.tag.c{background:var(--graphite)}.tag.e{background:var(--rust)}
+textarea,input[type=text],select{font:inherit;font-size:16px;width:100%;border:1.5px solid var(--mist);border-radius:8px;padding:8px 10px;background:#fff}
+textarea{min-height:70px}
+button{font:inherit;font-size:15px;padding:8px 14px;border-radius:8px;border:none;background:var(--teal);color:#fff;cursor:pointer;margin:8px 8px 0 0}
+button.ghost{background:#fff;color:var(--teal);border:1.5px solid var(--teal)}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row label{flex:1 1 240px}
+.chk{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.chk input{width:150px}
+.fb{font-size:15px}.fb.ok{color:var(--ok);font-weight:700}.fb.bad{color:var(--bad)}
+.choices label{display:block;margin:4px 0}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}.kpi div{background:var(--paper);border-radius:10px;padding:6px 12px;font-size:14px;color:var(--slate)}.kpi b{display:block;font-size:20px;color:var(--ink)}
+.chart{background:var(--paper);border-radius:12px;padding:6px;margin:8px 0}
+svg{width:100%;height:auto;display:block}
+input[type=range]{width:100%;accent-color:var(--teal)}
+.note{font-size:14px;color:var(--slate)}
+.hidden{display:none}
+pre.sum{white-space:pre-wrap;background:var(--paper);border-radius:10px;padding:12px;font-size:14px}
+a{color:var(--teal)}
+</style>
+<style>
+.step.locked > *:not(.tag){display:none}
+table.tb{border-collapse:collapse;width:100%;font-size:15px;margin:8px 0}
+table.tb th{background:var(--paper);text-align:left;padding:5px 8px;border-bottom:2px solid var(--mist)}
+table.tb td{padding:5px 8px;border-bottom:1px solid #e6e3dd}
+table.tb td.n,table.tb th.n{text-align:right;font-variant-numeric:tabular-nums}
+ol.rl{margin:4px 0 0;padding-left:22px;font-size:15px}
+.lights{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.light{border-radius:999px;padding:3px 10px;font-size:14px;font-weight:700}
+.light.ok{background:#e3f0ef;color:var(--teal)}.light.bad{background:#f6e3de;color:var(--rust)}
+.code{background:#1f262d;color:#e8eef2;border-radius:10px;padding:10px 8px;font-family:Menlo,Consolas,monospace;font-size:13.5px;overflow-x:auto}
+.ln{display:flex;align-items:center;gap:8px;padding:3px 4px;border-radius:6px;white-space:pre}
+.ln.fixed{background:#24433f}
+.ln .no{color:#8a96a0;width:18px;text-align:right}
+.ln .tx{flex:1}
+.ln .okk{width:38px;color:#9fd6c9;font-size:12px;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700}
+button.sm{width:38px;font-size:12px;padding:2px 9px;margin:0;background:transparent;color:#9fd6c9;border:1px solid #9fd6c9}
+.ctrlrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0;font-size:15px;color:var(--slate)}
+.ctrlrow input[type=range]{flex:1;min-width:160px;accent-color:var(--teal)}
+.wide{overflow-x:auto}.wide table.tb{font-size:12px}.wide table.tb td,.wide table.tb th{padding:3px 4px}
+@media (max-width:600px){table.tb{display:block;overflow-x:auto;font-size:13px}}
+.codestep{margin:8px 0}
+textarea.codebox{width:100%;box-sizing:border-box;background:#1f262d;color:#e8eef2;border-radius:10px;padding:10px;font-family:Menlo,Consolas,monospace;font-size:13.5px;line-height:1.45;tab-size:4;white-space:pre;overflow-x:auto;min-height:180px}
+pre.out{background:var(--paper);border-radius:8px;padding:8px 10px;font-size:13px;white-space:pre-wrap;max-height:240px;overflow:auto;margin:6px 0}
+pre.out:empty{display:none}
+.ans{background:var(--paper);border-radius:8px;padding:4px 12px;margin-top:8px}
+</style>
+
+</head>
+<body><main>
+<header><div class="kicker">2105601 · Session 7 · Problem set</div><h1>Boundary value problems and Sturm–Liouville theory: derivations</h1><div class="sub">Six derivations for Session 7. About two hours; do them before the midterm, which covers Sessions 1 to 7.</div></header>
+<section class="card"><h2>How to use this set</h2><p>Work each problem on paper before you look at the final answer. The final answer lets you check your result; it does not show the derivation, which is the point of the exercise. These problems are in the style of the midterm.</p></section>
+<section class="card"><h2>Problem 1 · A pellet with a film resistance</h2><p>Derive the overall effectiveness factor η<sub>o</sub> of a first-order slab with a Robin condition at the surface, and show that the pellet and the film act as resistances in series. Evaluate η<sub>o</sub> at φ = 2, Bi = 5, and say which resistance is larger.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> η<sub>o</sub> = (tanh φ/φ)·Bi/(Bi + φ tanh φ); at φ = 2, Bi = 5: η = 0.4820 and η<sub>o</sub> = 0.3479. 1/(ηφ²) = 0.519 against 1/Bi = 0.2, so the pellet resistance is larger.</p></div></section><section class="card"><h2>Problem 2 · Sturm–Liouville form and a weight function</h2><p>Put u″ + 2u′ + λu = 0, u(0) = u(1) = 0 in Sturm–Liouville form. Find the eigenvalues and eigenfunctions, and state the weight with which the eigenfunctions are orthogonal.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> Multiply by e<sup>2x</sup>: (e<sup>2x</sup>u′)′ + λe<sup>2x</sup>u = 0, so p = w = e<sup>2x</sup>; λ<sub>n</sub> = 1 + n²π², u<sub>n</sub> = e<sup>−x</sup> sin nπx, orthogonal with weight e<sup>2x</sup>.</p></div></section><section class="card"><h2>Problem 3 · The Fredholm alternative</h2><p>For −u″ − π²u = x − a, u(0) = u(1) = 0, find the value of a for which a solution exists, and explain why the solution is then not unique.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> a = 1/2, from ∫<sub>0</sub><sup>1</sup>(x − a) sin πx dx = (1 − 2a)/π = 0; any multiple of sin πx can be added to a solution.</p></div></section><section class="card"><h2>Problem 4 · A Green’s function with a symmetry condition</h2><p>Find the Green’s function of −u″ = f on (0, 1) with u′(0) = 0 and u(1) = 0, and use it to solve the uniform case f = 1.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> G(x, s) = 1 − max(x, s); for f = 1, u = (1 − x²)/2.</p></div></section><section class="card"><h2>Problem 5 · The spherical pellet</h2><p>Solve r<sup>−2</sup>(r²u′)′ = φ²u, u′(0) = 0, u(1) = 1 with the substitution u = v/r, and derive η = 3u′(1)/φ² for the sphere. Give its small- and large-φ limits.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> u = sinh(φr)/(r sinh φ), η = (3/φ²)(φ coth φ − 1); η ≈ 1 − φ²/15 for small φ and η ≈ 3/φ for large φ.</p></div></section><section class="card"><h2>Problem 6 · Small dispersion</h2><p>Expand the Wehner–Wilhelm exit concentration for large Pe and show that u(1) ≈ exp(−Da + Da²/Pe). Check it at Da = 2, Pe = 100 against the exact conversion 0.8594.</p>
+<button class="ghost" type="button" onclick="this.nextElementSibling.hidden=!this.nextElementSibling.hidden">Show the final answer</button><div class="ans" hidden><p><b>Final answer.</b> u(1) ≈ exp(−Da + Da²/Pe); at Da = 2, Pe = 100 this gives a conversion of 0.8591, against 0.8594 exactly.</p></div></section>
+<p class="note">Slides: <a href="slides.html">Session 7</a> · Lab: <a href="lab.html">Lab 7</a></p></main></body></html>

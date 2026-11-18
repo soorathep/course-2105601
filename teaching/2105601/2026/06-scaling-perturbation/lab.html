@@ -66,6 +66,11 @@ button.sm{width:38px;font-size:12px;padding:2px 9px;margin:0;background:transpar
 .ctrlrow input[type=range]{flex:1;min-width:160px;accent-color:var(--teal)}
 .wide{overflow-x:auto}.wide table.tb{font-size:12px}.wide table.tb td,.wide table.tb th{padding:3px 4px}
 @media (max-width:600px){table.tb{display:block;overflow-x:auto;font-size:13px}}
+.codestep{margin:8px 0}
+textarea.codebox{width:100%;box-sizing:border-box;background:#1f262d;color:#e8eef2;border-radius:10px;padding:10px;font-family:Menlo,Consolas,monospace;font-size:13.5px;line-height:1.45;tab-size:4;white-space:pre;overflow-x:auto;min-height:180px}
+pre.out{background:var(--paper);border-radius:8px;padding:8px 10px;font-size:13px;white-space:pre-wrap;max-height:240px;overflow:auto;margin:6px 0}
+pre.out:empty{display:none}
+.ans{background:var(--paper);border-radius:8px;padding:4px 12px;margin-top:8px}
 </style>
 
 </head>
@@ -83,8 +88,8 @@ const zE = (()=>{const z=P1.z,c=P1.c,t=Math.exp(-1);for(let i=1;i<z.length;i++)i
 const asymErr = q => 100*(q.eta2_asym/q.eta2_num-1);
 const LAB = {num: 6, module: "perturb_lab", title: "A catalyst slab at large Thiele modulus: the boundary layer",
  sub: "About 40 minutes. Works in class or on your own, on a laptop or a phone. Nothing to install; a calculator helps.",
- how: `<p>An isothermal catalyst slab with a first- or second-order reaction. You scale the model, compute the Thiele modulus and the exact effectiveness factor, read the reaction layer from the concentration profile, test the large-φ asymptote for a second-order rate against a numerical solution, and find where the asymptote becomes accurate. Write each prediction before you look; the next step stays locked until you do. Numbers are accepted within about 1% (or the stated tolerance); after two tries the expected value is shown.</p>
- <p class="note"><b>What runs where.</b> The RUN steps and the slider show results that <a href="perturb_lab.py">perturb_lab.py</a> computed in advance (closed forms and solve_bvp); the page itself only draws them. No Python is installed or run on your device. To run the Python yourself, open the slides and press D on a slide marked “D · Python”, or run perturb_lab.py in desktop Python.</p>`,
+ how: `<p>An isothermal catalyst slab with a first- or second-order reaction. You scale the model, compute the Thiele modulus and the exact effectiveness factor, read the reaction layer from the concentration profile, write your own Newton solver for a second-order rate, test the large-φ asymptote against it, and find where the asymptote becomes accurate. Plan about 20 minutes for the guided steps and 20 for the code. Write each prediction before you look; the next step stays locked until you do. Numbers are accepted within about 1% (or the stated tolerance); after two tries the expected value is shown.</p>
+ <p class="note"><b>What runs where.</b> The CODE step runs your Python in this page (Pyodide, with NumPy and SciPy; the first run loads it, about 20 seconds). The RUN steps and the slider show results that <a href="perturb_lab.py">perturb_lab.py</a> computed in advance (closed forms and solve_bvp); the page itself only draws them. Nothing is installed on your device. To run the Python yourself, open the slides and press D on a slide marked “D · Python”, or run perturb_lab.py in desktop Python.</p>`,
  dataTitle: "The model and the data",
  data: () => `<p>D d²c/dx² = k c<sup>n</sup> on 0 &lt; x &lt; L, &nbsp;dc/dx(0) = 0 (symmetry), &nbsp;c(L) = c<sub>s</sub>. Effectiveness factor η = (rate in the pellet)/(rate at surface conditions).</p>
  <table class="tb"><tr><th>Quantity</th><th class="n">Value</th></tr><tr><td>Effective diffusivity D</td><td class="n">4.0 × 10⁻⁹ m²/s</td></tr><tr><td>Half thickness L</td><td class="n">2.0 mm</td></tr><tr><td>First-order rate constant k (per pellet volume)</td><td class="n">0.025 s⁻¹</td></tr></table>
@@ -95,9 +100,8 @@ const LAB = {num: 6, module: "perturb_lab", title: "A catalyst slab at large Thi
    {id: "1b", tag: "RECOMPUTE", text: "Compute φ = L√(k/D) and the exact first-order effectiveness factor.",
     inputs: [{id: "c1a", kind: "num", label: "Thiele modulus φ (1%)", sum: "phi", target: () => LL*Math.sqrt(KK/DD), d: 3},
              {id: "c1b", kind: "num", label: "η = tanh φ/φ (1%)", sum: "eta exact", target: () => P5.exact, d: 4},
-             {id: "c1c", kind: "sel", label: "Which approximation should you use at this φ?", sum: "limit", options: [["a","1/φ: the large-φ (boundary-layer) limit"],["b","1 − φ²/3: the small-φ (regular) limit"],["c","Neither applies"]], target: () => "a"}]},
-   {id: "1d", tag: "CHECK", text: `The small-φ expansion gives 1 − φ²/3 = ${P5.small.toFixed(2).replace("-","−")} at φ = 5, an impossible negative effectiveness factor.`,
-    inputs: [{id: "c1d", kind: "sel", label: "Why?", sum: "why small-phi fails", options: [["a","It is a series in φ², valid only for φ² ≪ 1; at φ = 5 the neglected terms are larger than the kept ones"],["b","The exact solution is wrong at large φ"],["c","A sign error in the expansion"]], target: () => "a"}]}]},
+             {id: "c1c", kind: "sel", label: "Which approximation should you use at this φ?", sum: "limit", options: [["a","1/φ: the large-φ (boundary-layer) limit"],["b","1 − φ²/3: the small-φ (regular) limit"],["c","Neither applies"]], target: () => "a"},
+             {id: "c1d", kind: "sel", label: `The small-φ expansion gives 1 − φ²/3 = ${P5.small.toFixed(2).replace("-","−")} at φ = 5. Why is it impossible here?`, sum: "why small-phi fails", options: [["a","It is a series in φ², valid only for φ² ≪ 1; at φ = 5 the neglected terms are larger than the kept ones"],["b","The exact solution is wrong at large φ"],["c","A sign error in the expansion"]], target: () => "a"}]}]},
   {title: "The reaction layer", steps: [
    {id: "2a", tag: "RUN", text: "The numerical concentration profile at φ = 5 (first order, solve_bvp), with the inner (boundary-layer) solution u ≈ e<sup>−φ(1−z)</sup>.",
     body: () => labChart({xmin:0,xmax:1,ymin:0,ymax:1,xt:[0,.2,.4,.6,.8,1],yt:[0,.2,.4,.6,.8,1],xf:v=>fmt(v,1),yf:v=>fmt(v,1),xlab:"position z = x/L (center at 0, surface at 1)",ylab:"u = c/cₛ",
@@ -105,11 +109,48 @@ const LAB = {num: 6, module: "perturb_lab", title: "A catalyst slab at large Thi
     inputs: [{id: "c2a", kind: "num", label: "z where u falls to 1/e ≈ 0.368, read from the plot (±0.02)", sum: "z at 1/e", target: () => zE, rel: 0, abs: 0.02, d: 3},
              {id: "c2b", kind: "num", label: "Layer thickness as a fraction of L, 1 − z (±0.02)", sum: "layer thickness", target: () => 1-zE, rel: 0, abs: 0.02, d: 3},
              {id: "c2c", kind: "sel", label: "That thickness is close to", sum: "thickness scale", options: [["a","1/φ, the balance of diffusion and reaction in the layer"],["b","1/φ²"],["c","the full half thickness"]], target: () => "a"}]}]},
-  {title: "A second-order rate", steps: [
+  {title: "A second-order rate: write the solver", steps: [
    {id: "3a", tag: "PREDICT", text: "At the same φ, is η for a second-order rate larger or smaller than for a first-order rate?", inputs: [{id: "p3", kind: "radio", sum: "predicted order effect", options: [["larger","larger"],["smaller","smaller"],["same","the same"]]}]},
-   {id: "3b", tag: "RUN", text: "solve_bvp for u″ = φ²u², u′(0) = 0, u(1) = 1 at φ = 5.",
-    body: () => `<table class="tb"><tr><th>Result</th><th class="n">Value</th></tr><tr><td>Converged</td><td class="n">${P2.ok?"yes":"no"}</td></tr><tr><td>η, second order (numerical)</td><td class="n">${fmt(P2.eta,5)}</td></tr><tr><td>η, first order (numerical; exact ${fmt(P5.exact,5)})</td><td class="n">${fmt(P1.eta,5)}</td></tr></table>`+
-     labChart({xmin:0,xmax:1,ymin:0,ymax:1,xt:[0,.2,.4,.6,.8,1],yt:[0,.5,1],xf:v=>fmt(v,1),yf:v=>fmt(v,1),xlab:"z",ylab:"u",series:[{pts:P1.z.map((z,i)=>[z,P1.c[i]]),c:C.teal,dash:true},{pts:P2.z.map((z,i)=>[z,P2.c[i]]),c:C.amber}],legend:[{c:C.teal,dash:true,t:"first order"},{c:C.amber,t:"second order"}]}),
+   {id: "3b", tag: "CODE", text: `Write a finite-difference Newton solver for u″ = φ²u<sup>n</sup>, u′(0) = 0, u(1) = 1 at φ = 5, n = 2. Fill in the two TODO blocks: the residual F and the Jacobian J = ∂F/∂u. At the center use a ghost node u<sub>−1</sub> = u<sub>1</sub>, so the first row is (2u<sub>1</sub> − 2u<sub>0</sub>)/h² − φ²u<sub>0</sub><sup>n</sup>. Then compute η as the reaction integral ∫<sub>0</sub><sup>1</sup> u<sup>n</sup> dz. Press <b>Run only</b> as often as you like; <b>Check</b> grades the value of <code>eta</code> (0.5%). Python runs in this page; a laptop is needed.`,
+    inputs: [{id: "k3", kind: "code", label: "eta", sum: "eta from your solver", expr: "eta", target: () => P2.eta, rel: 0.005, d: 5,
+      starter: `import numpy as np
+phi, n, N = 5.0, 2, 400                  # Thiele modulus, order, intervals
+z = np.linspace(0, 1, N + 1); h = z[1] - z[0]
+u = np.ones(N + 1)                       # initial guess
+for it in range(30):
+    F = np.zeros(N + 1); J = np.zeros((N + 1, N + 1))
+    # TODO center row, ghost node u[-1] = u[1]: F[0], J[0, 0], J[0, 1]
+
+    for i in range(1, N):
+        # TODO interior rows: F[i] and J[i, i-1], J[i, i], J[i, i+1]
+        pass
+    F[N] = u[N] - 1; J[N, N] = 1         # surface: u(1) = 1
+    du = np.linalg.solve(J, -F); u += du
+    if np.abs(du).max() < 1e-10:
+        break
+eta = np.trapezoid(u**n, z)              # rate in the pellet / rate at the surface
+print("Newton iterations", it, "eta", eta)`,
+      solution: `import numpy as np
+phi, n, N = 5.0, 2, 400
+z = np.linspace(0, 1, N + 1); h = z[1] - z[0]
+u = np.ones(N + 1)
+for it in range(30):
+    F = np.zeros(N + 1); J = np.zeros((N + 1, N + 1))
+    F[0] = (2*u[1] - 2*u[0])/h**2 - phi**2*u[0]**n
+    J[0, 0] = -2/h**2 - n*phi**2*u[0]**(n-1); J[0, 1] = 2/h**2
+    for i in range(1, N):
+        F[i] = (u[i-1] - 2*u[i] + u[i+1])/h**2 - phi**2*u[i]**n
+        J[i, i-1] = J[i, i+1] = 1/h**2
+        J[i, i] = -2/h**2 - n*phi**2*u[i]**(n-1)
+    F[N] = u[N] - 1; J[N, N] = 1
+    du = np.linalg.solve(J, -F); u += du
+    if np.abs(du).max() < 1e-10:
+        break
+eta = np.trapezoid(u**n, z)
+print("Newton iterations", it, "eta", eta)`},
+             {id: "c3k", kind: "sel", label: "Computing η instead from the one-sided slope (u<sub>N</sub> − u<sub>N−1</sub>)/(hφ²) gives about 0.1617, almost 1% low. Why?", sum: "why the slope is worse", options: [["a","The one-sided difference is first-order accurate, O(h), and the profile is steepest at the surface; the trapezoidal integral is O(h²)"],["b","Newton has not converged"],["c","The integral and the slope define different quantities"]], target: () => "a"}]},
+   {id: "3c", tag: "CHECK", text: `The module’s solve_bvp result is η = ${P2.eta.toFixed(5)}. Compare it with the asymptote from the Part 3 derivation.`,
+    body: () => labChart({xmin:0,xmax:1,ymin:0,ymax:1,xt:[0,.2,.4,.6,.8,1],yt:[0,.5,1],xf:v=>fmt(v,1),yf:v=>fmt(v,1),xlab:"z",ylab:"u",series:[{pts:P1.z.map((z,i)=>[z,P1.c[i]]),c:C.teal,dash:true},{pts:P2.z.map((z,i)=>[z,P2.c[i]]),c:C.amber}],legend:[{c:C.teal,dash:true,t:"first order"},{c:C.amber,t:"second order"}]}),
     inputs: [{id: "c3a", kind: "num", label: "Large-φ asymptote (1/φ)√(2/3) (1%)", sum: "eta2 asymptotic", target: () => Math.sqrt(2/3)/5, d: 4},
              {id: "c3b", kind: "num", label: "Its error relative to the numerical η, in % (±0.05)", sum: "asymptote error %", target: () => 100*(Math.sqrt(2/3)/5/P2.eta-1), rel: 0, abs: 0.05, d: 2},
              {id: "c3c", kind: "sel", label: "Why is the second-order η smaller?", sum: "why smaller", options: [["a","Inside the pellet u < 1, and u² < u, so the rate falls faster with depth than for first order"],["b","Second-order reactions are always slower"],["c","The numerical solution is less accurate"]], target: () => "a"}]}]},
@@ -149,13 +190,25 @@ function labChart(o){const w=o.w||640,h=o.h||280,l=o.l||60,t=16,X=w-l-16,Y=h-t-4
  s+=`<text x="${l}" y="${t-4}">${o.ylab||""}</text><text x="${l+X}" y="${t+Y+34}" text-anchor="end">${o.xlab||""}</text>`;
  if(o.legend)o.legend.forEach((g,i)=>{s+=`<line x1="${l+X-150}" x2="${l+X-128}" y1="${t+10+i*16}" y2="${t+10+i*16}" stroke="${g.c}" stroke-width="3" ${g.dash?'stroke-dasharray="6 4"':''}/><text x="${l+X-122}" y="${t+14+i*16}">${g.t}</text>`});
  return s+"</svg>"}
-const TAGCLS={"PREDICT":"p","RUN":"r","CHECK":"c","RECOMPUTE":"c","CHANGE ONE CONDITION":"r","EXPLAIN":"e"};
+const TAGCLS={"PREDICT":"p","RUN":"r","CHECK":"c","RECOMPUTE":"c","CHANGE ONE CONDITION":"r","EXPLAIN":"e","CODE":"r"};
+/* CODE steps: Python written by the student runs in the browser (Pyodide 0.29, NumPy, SciPy) with the session module importable.
+   input {id, kind:"code", label, starter, expr (Python expression evaluated after the code), target, rel, abs, d, solution, sum} */
+let PYO=null;
+async function py(){if(PYO)return PYO;
+ if(!window.loadPyodide){await new Promise((ok,bad)=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js";s.onload=ok;s.onerror=()=>bad(new Error("could not load Python"));document.head.appendChild(s)})}
+ const p=await loadPyodide();await p.loadPackage(["numpy","scipy"]);p.FS.writeFile(LAB.module+".py",await (await fetch(LAB.module+".py")).text());PYO=p;return p}
+async function runCode(q){const out=$("out_"+q.id);out.textContent=PYO?"Running…":"Loading Python in your browser (about 20 seconds the first time)…";
+ try{const p=await py();p.globals.set("__src",$(q.id).value);
+  const r=p.runPython(`import sys, io, json, math\n_b=io.StringIO();_o=sys.stdout;sys.stdout=_b\n_ns={}\ntry:\n    exec(__src,_ns)\n    _v=eval(${JSON.stringify(q.expr)},_ns)\n    _e=""\nexcept Exception as _x:\n    _v=None;_e=type(_x).__name__+": "+str(_x)\nsys.stdout=_o\njson.dumps({"out":_b.getvalue()[-3000:],"v":None if _v is None else float(_v),"e":_e})`);
+  const o=JSON.parse(r);out.textContent=(o.out||"")+(o.e?"\n"+o.e:"")+(o.v!=null?`\n${q.label}: ${o.v}`:"");return o}
+ catch(e){out.textContent="Python could not run here: "+e.message+". Use a laptop with a current browser.";return {v:null,e:String(e)}}}
 let ST={};const KEY=`lab${LAB.num}-2026-v1`;
 try{ST=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){ST={}}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(ST))}catch(e){}};
 const STEPS=[].concat(...LAB.tasks.map(t=>t.steps));const ORDER=STEPS.map(s=>s.id);
 const num=s=>parseFloat(String(s).replace(/,/g,"").replace(/[−–]/g,"-").replace("%",""));
 function inputHtml(q){
+ if(q.kind==="code")return `<div class="codestep"><textarea id="${q.id}" class="codebox" spellcheck="false" autocapitalize="off" rows="${Math.max(8,q.starter.split("\n").length+2)}">${q.starter.replace(/</g,"&lt;")}</textarea><div class="chk"><span>${q.label}</span><button type="button" class="ghost" data-run="${q.id}">Run only</button><span class="fb" id="fb_${q.id}"></span></div><pre class="out" id="out_${q.id}"></pre></div>`;
  if(q.kind==="radio")return `<div class="choices">${q.options.map(([v,l])=>`<label><input type="radio" name="${q.id}" value="${v}"> ${l}</label>`).join("")}</div>`;
  if(q.kind==="text")return `<textarea id="${q.id}"></textarea>`;
  if(q.kind==="sel")return `<div class="chk"><span>${q.label}</span><select id="${q.id}"><option value="">choose</option>${q.options.map(([v,l])=>`<option value="${v}">${l}</option>`).join("")}</select><span class="fb" id="fb_${q.id}"></span></div>`;
@@ -184,15 +237,19 @@ function need(id,msg){const st=document.querySelector(`[data-step="${id}"]`);let
 function verdict(id,ok,expected){ST["tries_"+id]=(ST["tries_"+id]||0)+(ok?0:1);const f=$("fb_"+id);f.className="fb "+(ok?"ok":"bad");
  f.textContent=ok?"Correct":(ST["tries_"+id]>=2?`Not yet. Expected: ${expected}.`:"Not yet. Look again.");return ok||ST["tries_"+id]>=2}
 function valueOf(q){if(q.kind==="radio"){const r=document.querySelector(`input[name="${q.id}"]:checked`);return r?r.value:""}return $(q.id).value}
-function grade(q){const v=valueOf(q);ST[q.id]=v;
+async function grade(q){const v=valueOf(q);ST[q.id]=v;
+ if(q.kind==="code"){const o=await runCode(q);ST[q.id+"_val"]=o.v;if(o.v==null){ST["tries_"+q.id]=(ST["tries_"+q.id]||0);$("fb_"+q.id).className="fb bad";$("fb_"+q.id).textContent="Your code must run and define the result.";return false}
+  const t=q.target(),tol=Math.max(q.abs||0,(q.rel===undefined?0.01:q.rel)*Math.abs(t));return verdict(q.id,Math.abs(o.v-t)<=tol+1e-12,fmt(t,q.d===undefined?4:q.d))}
  if(q.target===undefined){if(q.kind==="text")return v.trim().length>=(q.min||60);return v!==""}
  if(q.kind==="sel")return verdict(q.id,v===q.target(),q.show||q.options.find(o=>o[0]===q.target())[1]);
  const t=q.target(),x=num(v),tol=Math.max(q.abs||0,(q.rel===undefined?0.01:q.rel)*Math.abs(t));
  return verdict(q.id,isFinite(x)&&Math.abs(x-t)<=tol+1e-12,fmt(t,q.d===undefined?3:q.d))}
-document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{const s=STEPS.find(z=>z.id===b.dataset.go);let ok=true;
- for(const q of s.inputs||[]){const r=grade(q);if(!r&&q.target===undefined){ok=false;need(s.id,q.kind==="text"?"Write at least three sentences.":"Choose or enter an answer first.")}else if(!r)ok=false}
- if(ok){const nd=document.querySelector(`[data-step="${s.id}"] .need`);if(nd)nd.textContent="";ST["done_"+s.id]=true;refresh()}else save()});
-function summary(){const lines=[`Lab ${LAB.num} answers`];STEPS.forEach((s,i)=>{const parts=(s.inputs||[]).map(q=>{let v=ST[q.id];if(v==null||v==="")v="?";
+document.querySelectorAll("textarea.codebox").forEach(t=>t.addEventListener("keydown",e=>{if(e.key==="Tab"){e.preventDefault();const a=t.selectionStart;t.setRangeText("    ",a,t.selectionEnd,"end")}}));
+document.querySelectorAll("[data-run]").forEach(b=>b.onclick=async()=>{const q=[].concat(...STEPS.map(s=>s.inputs||[])).find(z=>z.id===b.dataset.run);b.disabled=true;await runCode(q);b.disabled=false});
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=async()=>{const s=STEPS.find(z=>z.id===b.dataset.go);let ok=true;b.disabled=true;
+ for(const q of s.inputs||[]){const r=await grade(q);if(!r&&q.target===undefined){ok=false;need(s.id,q.kind==="text"?"Write at least three sentences.":"Choose or enter an answer first.")}else if(!r)ok=false}
+ b.disabled=false;if(ok){const nd=document.querySelector(`[data-step="${s.id}"] .need`);if(nd)nd.textContent="";ST["done_"+s.id]=true;refresh()}else save()});
+function summary(){const lines=[`Lab ${LAB.num} answers`];STEPS.forEach((s,i)=>{const parts=(s.inputs||[]).map(q=>{let v=q.kind==="code"?(ST[q.id+"_val"]==null?null:fmt(ST[q.id+"_val"],q.d===undefined?4:q.d)):ST[q.id];if(v==null||v==="")v="?";
   else if(q.options){const o=q.options.find(o=>o[0]===v);if(o)v=o[1].replace(/<[^>]+>/g,"")}return `${q.sum||q.label||"answer"}: ${String(v).replace(/<[^>]+>/g,"")}`});
   if(parts.length)lines.push(`${s.id}. ${parts.join("; ")}`)});$("sum").textContent=lines.join("\n")}
 $("copy").onclick=async()=>{try{await navigator.clipboard.writeText($("sum").textContent);$("copied").textContent="Copied. Paste it into the Exit Ticket box."}catch(e){$("copied").textContent="Copy did not work here. Select the text above and copy it."}};
@@ -202,7 +259,7 @@ STEPS.forEach(s=>(s.inputs||[]).forEach(q=>{const v=ST[q.id];if(v==null)return;i
 STEPS.forEach(s=>{if(s.draw)s.draw()});if(LAB.after)LAB.after();
 refresh();
 /* test hook: expected answers for the automated lab test */
-window.__expected=()=>Object.fromEntries([].concat(...STEPS.map(s=>(s.inputs||[]).map(q=>[q.id,q.kind==="radio"?q.options[0][0]:q.kind==="text"?"This is a test explanation of several sentences. It names the result and the reason. It states what the check shows and what it does not show.":q.target===undefined?(q.options?q.options[0][0]:"1"):(q.kind==="sel"?q.target():String(q.target()))]))));
+window.__expected=()=>Object.fromEntries([].concat(...STEPS.map(s=>(s.inputs||[]).map(q=>[q.id,q.kind==="radio"?q.options[0][0]:q.kind==="code"?q.solution:q.kind==="text"?"This is a test explanation of several sentences. It names the result and the reason. It states what the check shows and what it does not show.":q.target===undefined?(q.options?q.options[0][0]:"1"):(q.kind==="sel"?q.target():String(q.target()))]))));
 
 
 /* hand-in: an answer file for myCourseVille (no name or ID in it) */

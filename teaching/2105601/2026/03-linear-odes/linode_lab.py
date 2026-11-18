@@ -11,6 +11,7 @@ import sys
 
 import numpy as np
 from scipy.integrate import solve_ivp
+from scipy.optimize import brentq
 from scipy.linalg import eig, expm, null_space
 
 
@@ -149,6 +150,16 @@ def butene(c13=None):
             "colsum": float(np.abs(K.sum(axis=0)).max())}
 
 
+def crossing_time(level=0.2):
+    """Time at which 1-butene, starting pure, falls to `level` (Wei-Prater symmetrization, then brentq)."""
+    K, _ = rate_matrix(); xeq = np.array(BUT["xeq"])
+    Dh, Dmh = np.diag(np.sqrt(xeq)), np.diag(1 / np.sqrt(xeq))
+    S = Dmh @ K @ Dh
+    lam, Q = np.linalg.eigh((S + S.T) / 2)
+    x = lambda t: Dh @ Q @ np.diag(np.exp(lam * t)) @ Q.T @ Dmh @ np.array([1.0, 0, 0])
+    return {"level": level, "t": float(brentq(lambda t: x(t)[0] - level, 0, 5, xtol=1e-13)), "asym": float(np.abs(S - S.T).max())}
+
+
 def butene_sweep():
     out = []
     for c13 in np.round(np.arange(0.0, 1.201, 0.05), 2):
@@ -172,7 +183,7 @@ def clean(o):
 
 def classroom_results():
     R = {"lecture": {"consec": consecutive(), "osc": oscillator(), "tanks": tanks(), "stiff": stiffness()},
-         "lab": {"but": butene(), "sweep": butene_sweep(), "names": BUT["names"], "xeq": BUT["xeq"], "c": BUT["c"]},
+         "lab": {"but": butene(), "sweep": butene_sweep(), "names": BUT["names"], "xeq": BUT["xeq"], "c": BUT["c"], "cross": crossing_time()},
          "versions": {"numpy": np.__version__, "scipy": __import__("scipy").__version__}}
     return clean(R)
 

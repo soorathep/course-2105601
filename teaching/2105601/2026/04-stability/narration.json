@@ -3,12 +3,12 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 1154.6,
+ "total_seconds": 1272.0,
  "slides": [
   {
    "n": 1,
    "file": "audio/slide-01.mp3",
-   "duration": 36.504,
+   "duration": 36.672,
    "hold": false,
    "cues": [
     {
@@ -37,9 +37,9 @@
     },
     {
      "s": 28.974,
-     "e": 36.434,
-     "en": "On your own, the narration takes about twenty minutes. Press the right arrow key or Next when a slide ends.",
-     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณยี่สิบนาที กดลูกศรขวาหรือปุ่ม Next เมื่อแต่ละหน้าจบ"
+     "e": 36.605,
+     "en": "On your own, the narration takes about twenty one minutes. Press the right arrow key or Next when a slide ends.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณยี่สิบเอ็ดนาที กดลูกศรขวาหรือปุ่ม Next เมื่อแต่ละหน้าจบ"
     }
    ]
   },
@@ -366,6 +366,38 @@
   {
    "n": 9,
    "file": "audio/slide-09.mp3",
+   "duration": 39.84,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.316,
+     "en": "Where does the dimensionless model come from? Start from the mass and energy balances of a cooled CSTR, with an Arrhenius rate.",
+     "th": "แบบจำลองไร้มิติมาจากไหน เริ่มจากสมดุลมวลและสมดุลพลังงานของ CSTR ที่มีการระบายความร้อน โดยใช้อัตราแบบ Arrhenius"
+    },
+    {
+     "s": 9.316,
+     "e": 19.17,
+     "en": "Scale concentration as conversion, time by the residence time, and temperature by T f over gamma, where gamma is the dimensionless activation energy.",
+     "th": "ปรับสเกลความเข้มข้นเป็นค่าการเปลี่ยนแปลง เวลาเป็นเวลาพัก และอุณหภูมิด้วย T f หาร gamma โดย gamma คือพลังงานกระตุ้นไร้มิติ เมื่อ"
+    },
+    {
+     "s": 19.17,
+     "e": 27.908,
+     "en": "For large gamma, the Arrhenius factor becomes e to the minus gamma times e to the x two. This is the Frank Kamenetskii approximation.",
+     "th": "gamma มีค่ามาก ตัวประกอบ Arrhenius จะกลายเป็น e กำลังลบ gamma คูณ e กำลัง x สอง นี่คือการประมาณของ Frank Kamenetskii"
+    },
+    {
+     "s": 27.908,
+     "e": 39.776,
+     "en": "Six dimensional parameters collapse into three groups: Da, B and beta. But the approximation overstates the rate at large temperature rises, so report it as a model choice.",
+     "th": "พารามิเตอร์ที่มีมิติหกตัวยุบรวมเป็นสามกลุ่ม คือ Da B และ beta แต่การประมาณนี้ให้อัตราสูงเกินจริงเมื่ออุณหภูมิเพิ่มขึ้นมาก จึงต้องรายงานว่าเป็นการเลือกแบบจำลอง"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
    "duration": 89.592,
    "hold": false,
    "cues": [
@@ -438,8 +470,8 @@
    ]
   },
   {
-   "n": 10,
-   "file": "audio/slide-10.mp3",
+   "n": 11,
+   "file": "audio/slide-11.mp3",
    "duration": 8.016,
    "hold": true,
    "cues": [
@@ -452,8 +484,8 @@
    ]
   },
   {
-   "n": 11,
-   "file": "audio/slide-11.mp3",
+   "n": 12,
+   "file": "audio/slide-12.mp3",
    "duration": 81.24,
    "hold": false,
    "cues": [
@@ -514,8 +546,40 @@
    ]
   },
   {
-   "n": 12,
-   "file": "audio/slide-12.mp3",
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 37.056,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.54,
+     "en": "Now connect the heat balance picture to the Jacobian.",
+     "th": "ต่อไปเชื่อมภาพสมดุลความร้อนกับ Jacobian ตามสภาวะคงตัว"
+    },
+    {
+     "s": 3.54,
+     "e": 13.987,
+     "en": "Along the steady states, conversion is a function of temperature, so heat generation G is a function of x two alone, and its slope is B x one times one minus x one.",
+     "th": "ค่าการเปลี่ยนแปลงเป็นฟังก์ชันของอุณหภูมิ ดังนั้นความร้อนที่เกิด G เป็นฟังก์ชันของ x สองเพียงตัวเดียว และความชันของมันคือ B x หนึ่ง คูณหนึ่งลบ x หนึ่ง"
+    },
+    {
+     "s": 13.987,
+     "e": 25.447,
+     "en": "Substituting into the determinant gives R prime minus G prime, divided by one minus x one. So the middle crossing, where G is steeper than R, is always a saddle.",
+     "th": "เมื่อแทนลงในดีเทอร์มิแนนต์ จะได้ R ไพรม์ลบ G ไพรม์ หารด้วยหนึ่งลบ x หนึ่ง ดังนั้นจุดตัดตรงกลางที่ G ชันกว่า R จะเป็น saddle เสมอ"
+    },
+    {
+     "s": 25.447,
+     "e": 36.987,
+     "en": "But a positive determinant is not enough. The trace must also be negative, and the heat balance picture cannot see the trace. That is where oscillations come from.",
+     "th": "แต่ดีเทอร์มิแนนต์ที่เป็นบวกยังไม่พอ trace ต้องเป็นลบด้วย และภาพสมดุลความร้อนมองไม่เห็น trace นี่คือที่มาของการแกว่ง"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
    "duration": 76.992,
    "hold": false,
    "cues": [
@@ -588,8 +652,8 @@
    ]
   },
   {
-   "n": 13,
-   "file": "audio/slide-13.mp3",
+   "n": 15,
+   "file": "audio/slide-15.mp3",
    "duration": 57.096,
    "hold": false,
    "cues": [
@@ -644,8 +708,8 @@
    ]
   },
   {
-   "n": 14,
-   "file": "audio/slide-14.mp3",
+   "n": 16,
+   "file": "audio/slide-16.mp3",
    "duration": 78.456,
    "hold": false,
    "cues": [
@@ -712,8 +776,8 @@
    ]
   },
   {
-   "n": 15,
-   "file": "audio/slide-15.mp3",
+   "n": 17,
+   "file": "audio/slide-17.mp3",
    "duration": 8.352,
    "hold": true,
    "cues": [
@@ -726,8 +790,8 @@
    ]
   },
   {
-   "n": 16,
-   "file": "audio/slide-16.mp3",
+   "n": 18,
+   "file": "audio/slide-18.mp3",
    "duration": 22.896,
    "hold": true,
    "cues": [
@@ -752,8 +816,8 @@
    ]
   },
   {
-   "n": 17,
-   "file": "audio/slide-17.mp3",
+   "n": 19,
+   "file": "audio/slide-19.mp3",
    "duration": 89.04,
    "hold": false,
    "cues": [
@@ -832,8 +896,40 @@
    ]
   },
   {
-   "n": 18,
-   "file": "audio/slide-18.mp3",
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 37.56,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 15.237,
+     "en": "Here is a Lyapunov function built step by step. For a linear system, try V equal to x transpose P x. Its derivative along trajectories is x transpose times A transpose P plus P A, times x.",
+     "th": "นี่คือฟังก์ชัน Lyapunov ที่สร้างทีละขั้น สำหรับระบบเชิงเส้น ลอง V เท่ากับ x transpose P x อนุพันธ์ตามวิถีคือ x transpose คูณ A transpose P บวก P A คูณ x"
+    },
+    {
+     "s": 15.237,
+     "e": 20.479,
+     "en": "So choose Q, here the identity, and solve the linear Lyapunov equation for P.",
+     "th": "จึงเลือก Q ในที่นี้คือเมทริกซ์เอกลักษณ์ แล้วแก้สมการ Lyapunov เชิงเส้นหา"
+    },
+    {
+     "s": 20.479,
+     "e": 28.276,
+     "en": "For the example the solution is positive definite, which proves stability without solving the differential equation.",
+     "th": "P สำหรับตัวอย่างนี้ คำตอบเป็น positive definite ซึ่งพิสูจน์ความเสถียรได้โดยไม่ต้องแก้สมการเชิงอนุพันธ์"
+    },
+    {
+     "s": 28.276,
+     "e": 37.5,
+     "en": "Notice that the plain squared distance fails here, because the matrix is non normal. The weighting P is what absorbs the transient growth.",
+     "th": "สังเกตว่าระยะทางกำลังสองแบบธรรมดาใช้ไม่ได้ในกรณีนี้ เพราะเมทริกซ์ไม่ normal เมทริกซ์ถ่วงน้ำหนัก P คือสิ่งที่รองรับการเติบโตชั่วขณะ"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
    "duration": 61.128,
    "hold": false,
    "cues": [
@@ -894,8 +990,8 @@
    ]
   },
   {
-   "n": 19,
-   "file": "audio/slide-19.mp3",
+   "n": 22,
+   "file": "audio/slide-22.mp3",
    "duration": 46.392,
    "hold": false,
    "cues": [
@@ -938,8 +1034,8 @@
    ]
   },
   {
-   "n": 20,
-   "file": "audio/slide-20.mp3",
+   "n": 23,
+   "file": "audio/slide-23.mp3",
    "duration": 7.728,
    "hold": true,
    "cues": [
@@ -952,8 +1048,8 @@
    ]
   },
   {
-   "n": 21,
-   "file": "audio/slide-21.mp3",
+   "n": 24,
+   "file": "audio/slide-24.mp3",
    "duration": 7.416,
    "hold": true,
    "cues": [
@@ -966,8 +1062,8 @@
    ]
   },
   {
-   "n": 22,
-   "file": "audio/slide-22.mp3",
+   "n": 25,
+   "file": "audio/slide-25.mp3",
    "duration": 31.752,
    "hold": false,
    "cues": [
@@ -998,40 +1094,40 @@
    ]
   },
   {
-   "n": 23,
-   "file": "audio/slide-23.mp3",
-   "duration": 21.096,
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 22.248,
    "hold": true,
    "cues": [
     {
      "s": 0.1,
-     "e": 4.186,
+     "e": 4.187,
      "en": "Lab 4 uses the same reactor at Da equal to zero point zero four five.",
      "th": "Lab 4 ใช้เครื่องปฏิกรณ์เดิมที่ Da เท่ากับศูนย์จุดศูนย์สี่ห้า"
     },
     {
-     "s": 4.186,
-     "e": 13.408,
-     "en": "You find the steady states, classify them yourself from their Jacobians, check the hot state with the heat balance slope, kick the saddle in both directions,",
-     "th": "คุณจะหาสภาวะคงตัว จำแนกเองจาก Jacobian ตรวจสภาวะร้อนด้วยความชันของการดุลความร้อน ผลัก saddle ไปทั้งสองทิศ"
+     "s": 4.187,
+     "e": 14.578,
+     "en": "You find the steady states, classify them yourself from their Jacobians, kick the saddle in both directions, write code that finds the smallest preheat that ignites the reactor,",
+     "th": "คุณจะหาสภาวะคงตัว จำแนกเองจาก Jacobian ผลัก saddle ไปทั้งสองทิศ เขียนโค้ดหาอุณหภูมิอุ่นเริ่มต้นต่ำสุดที่ทำให้เครื่องปฏิกรณ์ติดไฟ"
     },
     {
-     "s": 13.408,
-     "e": 16.618,
+     "s": 14.578,
+     "e": 17.789,
      "en": "and move Da to find the range with three steady states.",
      "th": "และเลื่อน Da เพื่อหาช่วงที่มีสามสภาวะคงตัว"
     },
     {
-     "s": 16.618,
-     "e": 21.026,
+     "s": 17.789,
+     "e": 22.197,
      "en": "Download the answer file at the end and upload it to myCourseVille.",
      "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
     }
    ]
   },
   {
-   "n": 24,
-   "file": "audio/slide-24.mp3",
+   "n": 27,
+   "file": "audio/slide-27.mp3",
    "duration": 32.952,
    "hold": false,
    "cues": [
@@ -1056,28 +1152,28 @@
    ]
   },
   {
-   "n": 25,
-   "file": "audio/slide-25.mp3",
-   "duration": 14.568,
+   "n": 28,
+   "file": "audio/slide-28.mp3",
+   "duration": 16.224,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 11.032,
-     "en": "Before the next session, finish Lab 4 and upload the answer file. Read Varma and Morbidelli, chapter two, and the paper by Uppal, Ray and Poore.",
-     "th": "ก่อนคาบถัดไป ทำ Lab 4 ให้เสร็จและอัปโหลดไฟล์คำตอบ อ่าน Varma กับ Morbidelli บทที่สอง และบทความของ Uppal, Ray และ Poore หนังสือของ"
+     "e": 12.9,
+     "en": "Before the next session, finish Lab 4 and upload the answer file, and work through problem set four. Read Varma and Morbidelli, chapter two, and the paper by Uppal, Ray and Poore.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 4 ให้เสร็จและอัปโหลดไฟล์คำตอบ และทำชุดโจทย์ที่สี่ อ่าน Varma กับ Morbidelli บทที่สอง และบทความของ Uppal, Ray และ Poore หนังสือของ Strogatz"
     },
     {
-     "s": 11.032,
-     "e": 14.5,
+     "s": 12.9,
+     "e": 16.171,
      "en": "Strogatz, chapters five to seven, is optional.",
-     "th": "Strogatz บทที่ห้าถึงเจ็ดเป็นการอ่านเพิ่มเติม"
+     "th": "บทที่ห้าถึงเจ็ดเป็นการอ่านเพิ่มเติม"
     }
    ]
   },
   {
-   "n": 26,
-   "file": "audio/slide-26.mp3",
+   "n": 29,
+   "file": "audio/slide-29.mp3",
    "duration": 9.6,
    "hold": true,
    "cues": [
