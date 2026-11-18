@@ -3,7 +3,7 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 698.1,
+ "total_seconds": 698.2,
  "slides": [
   {
    "n": 1,
@@ -490,7 +490,7 @@
   {
    "n": 20,
    "file": "audio/slide-20.mp3",
-   "duration": 40.728,
+   "duration": 40.848,
    "hold": false,
    "cues": [
     {
@@ -507,19 +507,19 @@
     },
     {
      "s": 13.342,
-     "e": 23.533,
-     "en": "The equation is linear with constant coefficients, so try e to the r z. The two roots depend on q, the square root of one plus four Da over Pe.",
-     "th": "สมการเป็นเชิงเส้นและมีสัมประสิทธิ์คงที่ จึงลอง e กำลัง r z รากทั้งสองขึ้นกับ q ซึ่งเป็นรากที่สองของหนึ่งบวกสี่ Da หาร"
+     "e": 23.639,
+     "en": "The equation is linear with constant coefficients, so try e to the r z. The two roots depend on q, the square root of one plus four D A over Pe.",
+     "th": "สมการเป็นเชิงเส้นและมีสัมประสิทธิ์คงที่ จึงลอง e กำลัง r z รากทั้งสองขึ้นกับ q ซึ่งเป็นรากที่สองของหนึ่งบวกสี่ D A หาร"
     },
     {
-     "s": 23.533,
-     "e": 27.355,
+     "s": 23.639,
+     "e": 27.474,
      "en": "Apply both conditions and solve the two by two system.",
      "th": "Pe ใช้เงื่อนไขทั้งสอง แล้วแก้ระบบสองคูณสอง"
     },
     {
-     "s": 27.355,
-     "e": 40.671,
+     "s": 27.474,
+     "e": 40.789,
      "en": "Always check the limits. Large Pe gives plug flow, and small Pe gives one stirred tank. In the lab, a second order rate removes the closed form, and you will write the solver yourself.",
      "th": "ตรวจขีดจำกัดเสมอ Pe ค่ามากให้การไหลแบบปลั๊ก และ Pe ค่าน้อยให้ถังกวนหนึ่งถัง ในแล็บ อัตราอันดับสองทำให้ไม่มีสูตรปิด และคุณจะเขียนตัวแก้สมการเอง"
     }

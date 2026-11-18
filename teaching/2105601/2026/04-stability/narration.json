@@ -3,7 +3,7 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 1272.0,
+ "total_seconds": 1273.8,
  "slides": [
   {
    "n": 1,
@@ -168,7 +168,7 @@
   {
    "n": 6,
    "file": "audio/slide-06.mp3",
-   "duration": 99.072,
+   "duration": 99.288,
    "hold": false,
    "cues": [
     {
@@ -215,19 +215,19 @@
     },
     {
      "s": 76.645,
-     "e": 85.405,
-     "en": "Let us linearize one equation by hand. The first equation is minus x one plus Da times one minus x one times e to the x two.",
-     "th": "ลองทำให้สมการหนึ่งเป็นเชิงเส้นด้วยมือ สมการแรกคือ ลบ x หนึ่ง บวก Da คูณ หนึ่งลบ x หนึ่ง คูณ e กำลัง"
+     "e": 85.475,
+     "en": "Let us linearize one equation by hand. The first equation is minus x one plus D A times one minus x one times e to the x two.",
+     "th": "ลองทำให้สมการหนึ่งเป็นเชิงเส้นด้วยมือ สมการแรกคือ ลบ x หนึ่ง บวก D A คูณ หนึ่งลบ x หนึ่ง คูณ e กำลัง"
     },
     {
-     "s": 85.405,
-     "e": 96.197,
-     "en": "Its derivative with respect to x one is minus one minus Da e to the x two, and with respect to x two it is Da times one minus x one times e to the x two.",
-     "th": "x สอง อนุพันธ์เทียบกับ x หนึ่งคือ ลบหนึ่ง ลบ Da e กำลัง x สอง และเทียบกับ x สองคือ Da คูณ หนึ่งลบ x หนึ่ง คูณ e กำลัง"
+     "s": 85.475,
+     "e": 96.408,
+     "en": "Its derivative with respect to x one is minus one minus D A e to the x two, and with respect to x two it is D A times one minus x one times e to the x two.",
+     "th": "x สอง อนุพันธ์เทียบกับ x หนึ่งคือ ลบหนึ่ง ลบ D A e กำลัง x สอง และเทียบกับ x สองคือ D A คูณ หนึ่งลบ x หนึ่ง คูณ e กำลัง"
     },
     {
-     "s": 96.197,
-     "e": 99.0,
+     "s": 96.408,
+     "e": 99.211,
      "en": "Those are the first row of J on slide 8.",
      "th": "x สอง นี่คือแถวแรกของ J ในหน้า 8"
     }
@@ -236,7 +236,7 @@
   {
    "n": 7,
    "file": "audio/slide-07.mp3",
-   "duration": 77.136,
+   "duration": 77.784,
    "hold": false,
    "cues": [
     {
@@ -259,37 +259,37 @@
     },
     {
      "s": 25.408,
-     "e": 36.684,
-     "en": "Move the Damköhler number. At low Da there is one crossing, cold. In the middle there are three. At high Da there is one again, hot.",
-     "th": "เลื่อนเลข Damköhler ที่ Da ต่ำมีจุดตัดเดียวซึ่งเย็น ช่วงกลางมีสามจุด และที่ Da สูงมีจุดเดียวอีกครั้งซึ่งร้อน"
+     "e": 37.342,
+     "en": "Move the Damköhler number. At low D A there is one crossing, cold. In the middle there are three. At high D A there is one again, hot.",
+     "th": "เลื่อนเลข Damköhler ที่ D A ต่ำมีจุดตัดเดียวซึ่งเย็น ช่วงกลางมีสามจุด และที่ D A สูงมีจุดเดียวอีกครั้งซึ่งร้อน"
     },
     {
-     "s": 36.684,
-     "e": 48.137,
+     "s": 37.342,
+     "e": 48.795,
      "en": "At the middle crossing, the generation curve rises faster than the removal line. A small rise in temperature generates more heat than is removed, so the rise grows.",
      "th": "ที่จุดตัดกลาง เส้นการเกิดความร้อนชันกว่าเส้นการระบาย การเพิ่มอุณหภูมิเล็กน้อยทำให้เกิดความร้อนมากกว่าที่ระบายออก อุณหภูมิจึงเพิ่มต่อไป"
     },
     {
-     "s": 48.137,
-     "e": 50.566,
+     "s": 48.795,
+     "e": 51.224,
      "en": "That steady state cannot be stable.",
      "th": "สภาวะคงตัวนั้นจึงเสถียรไม่ได้"
     },
     {
-     "s": 50.566,
-     "e": 60.421,
+     "s": 51.224,
+     "e": 61.079,
      "en": "The opposite slope condition is necessary for stability but not sufficient: a state can pass it and still be unstable through an oscillation, which the slope test cannot see.",
      "th": "เงื่อนไขความชันแบบตรงข้ามจำเป็นต่อเสถียรภาพ แต่ไม่เพียงพอ สภาวะหนึ่งอาจผ่านเงื่อนไขนี้แต่ยังไม่เสถียรเพราะการแกว่ง ซึ่งการทดสอบความชันมองไม่เห็น"
     },
     {
-     "s": 60.421,
-     "e": 67.45,
+     "s": 61.079,
+     "e": 68.108,
      "en": "Two practical messages follow. Weaker cooling, a smaller removal slope, widens the range of multiplicity.",
      "th": "ข้อความในทางปฏิบัติสองข้อตามมา การระบายความร้อนที่อ่อนลง ซึ่งคือความชันของการระบายที่น้อยลง"
     },
     {
-     "s": 67.45,
-     "e": 77.066,
+     "s": 68.108,
+     "e": 77.724,
      "en": "And a reactor designed to run at the middle temperature, because the conversion there looks attractive, cannot be operated there without control.",
      "th": "ทำให้ช่วงของการมีหลายคำตอบกว้างขึ้น และเครื่องปฏิกรณ์ที่ออกแบบให้เดินที่อุณหภูมิกลาง เพราะ conversion ที่นั่นดูน่าสนใจ จะเดินที่นั่นไม่ได้หากไม่มีการควบคุม"
     }
@@ -298,7 +298,7 @@
   {
    "n": 8,
    "file": "audio/slide-08.mp3",
-   "duration": 86.256,
+   "duration": 86.712,
    "hold": false,
    "cues": [
     {
@@ -309,55 +309,55 @@
     },
     {
      "s": 11.539,
-     "e": 19.5,
-     "en": "Da is the rate at the feed temperature times the residence time, B is the adiabatic temperature rise, and beta measures the cooling.",
-     "th": "Da คืออัตราที่อุณหภูมิป้อนคูณเวลาพัก B คือการเพิ่มอุณหภูมิแบบ adiabatic และ beta วัดการระบายความร้อน"
+     "e": 19.724,
+     "en": "D A is the rate at the feed temperature times the residence time, B is the adiabatic temperature rise, and beta measures the cooling.",
+     "th": "D A คืออัตราที่อุณหภูมิป้อนคูณเวลาพัก B คือการเพิ่มอุณหภูมิแบบ adiabatic และ beta วัดการระบายความร้อน"
     },
     {
-     "s": 19.5,
-     "e": 27.816,
-     "en": "At Da equal to zero point zero six there are three steady states. The table lists them with the eigenvalues of J.",
-     "th": "ที่ Da เท่ากับศูนย์จุดศูนย์หก มีสภาวะคงตัวสามสภาวะ ตารางแสดงพร้อมค่าเฉพาะของ J"
+     "s": 19.724,
+     "e": 28.25,
+     "en": "At D A equal to zero point zero six there are three steady states. The table lists them with the eigenvalues of J.",
+     "th": "ที่ D A เท่ากับศูนย์จุดศูนย์หก มีสภาวะคงตัวสามสภาวะ ตารางแสดงพร้อมค่าเฉพาะของ J"
     },
     {
-     "s": 27.816,
-     "e": 37.258,
+     "s": 28.25,
+     "e": 37.692,
      "en": "The low and high states have two negative eigenvalues: stable nodes. The middle one has one positive and one negative eigenvalue: a saddle.",
      "th": "สภาวะต่ำและสูงมีค่าเฉพาะเป็นลบทั้งสองตัว เป็น stable node สภาวะกลางมีค่าเฉพาะบวกหนึ่งตัวและลบหนึ่งตัว เป็น saddle"
     },
     {
-     "s": 37.258,
-     "e": 42.855,
+     "s": 37.692,
+     "e": 43.289,
      "en": "The plant can run cold or hot, and which one it reaches depends on where it starts.",
      "th": "โรงงานเดินเครื่องได้ทั้งแบบเย็นและแบบร้อน และจะไปถึงแบบใดขึ้นกับจุดเริ่มต้น"
     },
     {
-     "s": 42.855,
-     "e": 51.763,
+     "s": 43.289,
+     "e": 52.197,
      "en": "Notice the residual column in the D drawer. Always check that the point really is a steady state before you trust its eigenvalues.",
      "th": "สังเกตค่า residual ใน D drawer ให้ตรวจเสมอว่าจุดนั้นเป็นสภาวะคงตัวจริงก่อนเชื่อค่าเฉพาะของมัน"
     },
     {
-     "s": 51.763,
-     "e": 58.066,
+     "s": 52.197,
+     "e": 58.5,
      "en": "Look at the eigenvalues of the hot state: minus one point five and minus fourteen point seven.",
      "th": "ดูค่าเฉพาะของสภาวะร้อน ลบหนึ่งจุดห้า และลบสิบสี่จุดเจ็ด ตัวที่เร็วเป็นของอุณหภูมิ"
     },
     {
-     "s": 58.066,
-     "e": 69.145,
+     "s": 58.5,
+     "e": 69.579,
      "en": "The fast one belongs to temperature, which reacts quickly to the strongly temperature dependent rate. The ratio is about ten, a mild stiffness that Session 6 will use.",
      "th": "ซึ่งตอบสนองอย่างรวดเร็วต่ออัตราที่ขึ้นกับอุณหภูมิอย่างมาก อัตราส่วนประมาณสิบ เป็นความแข็งระดับปานกลางที่คาบที่ 6 จะใช้"
     },
     {
-     "s": 69.145,
-     "e": 80.061,
+     "s": 69.579,
+     "e": 80.496,
      "en": "The middle state has eigenvalues about plus one and minus zero point nine. A deviation along the unstable eigenvector doubles in about zero point seven residence times.",
      "th": "สภาวะกลางมีค่าเฉพาะประมาณบวกหนึ่งและลบศูนย์จุดเก้า การเบี่ยงเบนตามเวกเตอร์เฉพาะที่ไม่เสถียรเพิ่มเป็นสองเท่าในเวลาประมาณศูนย์จุดเจ็ดของเวลาพัก"
     },
     {
-     "s": 80.061,
-     "e": 86.197,
+     "s": 80.496,
+     "e": 86.632,
      "en": "In practice the reactor would leave the saddle within a few residence times of any disturbance.",
      "th": "ในทางปฏิบัติ เครื่องปฏิกรณ์จะออกจาก saddle ภายในไม่กี่เท่าของเวลาพักหลังการรบกวนใดๆ"
     }
@@ -366,7 +366,7 @@
   {
    "n": 9,
    "file": "audio/slide-09.mp3",
-   "duration": 39.84,
+   "duration": 40.08,
    "hold": false,
    "cues": [
     {
@@ -389,9 +389,9 @@
     },
     {
      "s": 27.908,
-     "e": 39.776,
-     "en": "Six dimensional parameters collapse into three groups: Da, B and beta. But the approximation overstates the rate at large temperature rises, so report it as a model choice.",
-     "th": "พารามิเตอร์ที่มีมิติหกตัวยุบรวมเป็นสามกลุ่ม คือ Da B และ beta แต่การประมาณนี้ให้อัตราสูงเกินจริงเมื่ออุณหภูมิเพิ่มขึ้นมาก จึงต้องรายงานว่าเป็นการเลือกแบบจำลอง"
+     "e": 40.026,
+     "en": "Six dimensional parameters collapse into three groups: D A, B and beta. But the approximation overstates the rate at large temperature rises, so report it as a model choice.",
+     "th": "พารามิเตอร์ที่มีมิติหกตัวยุบรวมเป็นสามกลุ่ม คือ D A B และ beta แต่การประมาณนี้ให้อัตราสูงเกินจริงเมื่ออุณหภูมิเพิ่มขึ้นมาก จึงต้องรายงานว่าเป็นการเลือกแบบจำลอง"
     }
    ]
   },
@@ -1064,30 +1064,30 @@
   {
    "n": 25,
    "file": "audio/slide-25.mp3",
-   "duration": 31.752,
+   "duration": 31.776,
    "hold": false,
    "cues": [
     {
      "s": 0.1,
-     "e": 3.411,
-     "en": "Session 5 follows each steady state as Da changes.",
-     "th": "คาบที่ 5 ติดตามสภาวะคงตัวแต่ละตัวเมื่อ Da"
+     "e": 3.465,
+     "en": "Session 5 follows each steady state as D A changes.",
+     "th": "คาบที่ 5 ติดตามสภาวะคงตัวแต่ละตัวเมื่อ D A"
     },
     {
-     "s": 3.411,
-     "e": 12.5,
+     "s": 3.465,
+     "e": 12.526,
      "en": "The result is an S shaped curve, with ignition and extinction where the determinant of J vanishes, and oscillation where the trace vanishes.",
      "th": "เปลี่ยน ผลคือเส้นโค้งรูปตัว S โดยมีการติดไฟและการดับที่ดีเทอร์มิแนนต์ของ J เป็นศูนย์ และการแกว่งที่ trace เป็นศูนย์"
     },
     {
-     "s": 12.5,
-     "e": 22.026,
+     "s": 12.526,
+     "e": 22.053,
      "en": "Session 6 separates fast and slow variables near a stable node, and Session 7 moves to distributed models, whose steady states can also be multiple.",
      "th": "คาบที่ 6 แยกตัวแปรเร็วและช้าใกล้ stable node และคาบที่ 7 ไปสู่แบบจำลองแบบกระจาย ซึ่งสภาวะคงตัวก็มีได้หลายค่าเช่นกัน"
     },
     {
-     "s": 22.026,
-     "e": 31.697,
+     "s": 22.053,
+     "e": 31.724,
      "en": "When you return to your own model in Session 5, the question becomes which single parameter, if changed, would carry your steady state to a fold or to a Hopf point.",
      "th": "เมื่อคุณกลับมาที่แบบจำลองของตัวเองในคาบที่ 5 คำถามจะเป็นว่าพารามิเตอร์ตัวใดตัวหนึ่ง หากเปลี่ยนไป จะพาสภาวะคงตัวของคุณไปถึงจุดพับหรือจุด Hopf"
     }
@@ -1096,30 +1096,30 @@
   {
    "n": 26,
    "file": "audio/slide-26.mp3",
-   "duration": 22.248,
+   "duration": 22.44,
    "hold": true,
    "cues": [
     {
      "s": 0.1,
-     "e": 4.187,
-     "en": "Lab 4 uses the same reactor at Da equal to zero point zero four five.",
-     "th": "Lab 4 ใช้เครื่องปฏิกรณ์เดิมที่ Da เท่ากับศูนย์จุดศูนย์สี่ห้า"
+     "e": 4.261,
+     "en": "Lab 4 uses the same reactor at D A equal to zero point zero four five.",
+     "th": "Lab 4 ใช้เครื่องปฏิกรณ์เดิมที่ D A เท่ากับศูนย์จุดศูนย์สี่ห้า"
     },
     {
-     "s": 4.187,
-     "e": 14.578,
+     "s": 4.261,
+     "e": 14.692,
      "en": "You find the steady states, classify them yourself from their Jacobians, kick the saddle in both directions, write code that finds the smallest preheat that ignites the reactor,",
      "th": "คุณจะหาสภาวะคงตัว จำแนกเองจาก Jacobian ผลัก saddle ไปทั้งสองทิศ เขียนโค้ดหาอุณหภูมิอุ่นเริ่มต้นต่ำสุดที่ทำให้เครื่องปฏิกรณ์ติดไฟ"
     },
     {
-     "s": 14.578,
-     "e": 17.789,
-     "en": "and move Da to find the range with three steady states.",
-     "th": "และเลื่อน Da เพื่อหาช่วงที่มีสามสภาวะคงตัว"
+     "s": 14.692,
+     "e": 17.974,
+     "en": "and move D A to find the range with three steady states.",
+     "th": "และเลื่อน D A เพื่อหาช่วงที่มีสามสภาวะคงตัว"
     },
     {
-     "s": 17.789,
-     "e": 22.197,
+     "s": 17.974,
+     "e": 22.382,
      "en": "Download the answer file at the end and upload it to myCourseVille.",
      "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
     }
