@@ -1,0 +1,1093 @@
+{
+ "voice": "en-US-GuyNeural",
+ "rate": "-5%",
+ "provider": "Microsoft Edge neural speech (edge-tts)",
+ "synthetic_voice": true,
+ "total_seconds": 1154.6,
+ "slides": [
+  {
+   "n": 1,
+   "file": "audio/slide-01.mp3",
+   "duration": 36.504,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.695,
+     "en": "Welcome to Session 4 of Advanced Engineering Mathematics for Chemical Engineers.",
+     "th": "ยินดีต้อนรับสู่คาบที่ 4 ของวิชา Advanced Engineering Mathematics for Chemical Engineers"
+    },
+    {
+     "s": 5.695,
+     "e": 16.618,
+     "en": "Until now our models were linear. Real reactors are not: the rate grows exponentially with temperature, and that feedback can give a reactor more than one steady state.",
+     "th": "จนถึงตอนนี้แบบจำลองของเราเป็นเชิงเส้น เครื่องปฏิกรณ์จริงไม่เป็นเช่นนั้น อัตราเพิ่มขึ้นแบบเอกซ์โพเนนเชียลตามอุณหภูมิ และการป้อนกลับนี้ทำให้เครื่องปฏิกรณ์มีสภาวะคงตัวได้มากกว่าหนึ่ง"
+    },
+    {
+     "s": 16.618,
+     "e": 23.461,
+     "en": "Today we ask which steady states a reactor can hold, which it cannot, and where it goes when it leaves one.",
+     "th": "วันนี้เราถามว่าเครื่องปฏิกรณ์รักษาสภาวะคงตัวใดได้ ใดไม่ได้ และจะไปที่ใดเมื่อออกจากสภาวะหนึ่ง"
+    },
+    {
+     "s": 23.461,
+     "e": 28.974,
+     "en": "The tools are the Jacobian, its eigenvalues from Sessions 2 and 3, and the phase plane.",
+     "th": "เครื่องมือคือ Jacobian ค่าเฉพาะของมันจากคาบที่ 2 และ 3 และระนาบเฟส"
+    },
+    {
+     "s": 28.974,
+     "e": 36.434,
+     "en": "On your own, the narration takes about twenty minutes. Press the right arrow key or Next when a slide ends.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณยี่สิบนาที กดลูกศรขวาหรือปุ่ม Next เมื่อแต่ละหน้าจบ"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "file": "audio/slide-02.mp3",
+   "duration": 26.016,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.932,
+     "en": "Part one covers steady states and linearization, the heat balance picture of multiplicity, the cooled CSTR, and classification by trace and determinant.",
+     "th": "ส่วนที่หนึ่งว่าด้วยสภาวะคงตัวและการทำให้เป็นเชิงเส้น ภาพการดุลความร้อนของการมีหลายคำตอบ CSTR ที่มีการระบายความร้อน และการจำแนกด้วย trace และดีเทอร์มิแนนต์"
+    },
+    {
+     "s": 9.932,
+     "e": 17.118,
+     "en": "Part two covers the phase plane: nullclines, trajectories, the separatrix, start up, and transient growth.",
+     "th": "ส่วนที่สองว่าด้วยระนาบเฟส ได้แก่ nullcline เส้นทางการเคลื่อนที่ separatrix การเริ่มเดินเครื่อง และ transient growth"
+    },
+    {
+     "s": 17.118,
+     "e": 25.961,
+     "en": "Part three goes beyond linearization with Lyapunov functions and limit cycles, and lists what to report. Lab 4 follows.",
+     "th": "ส่วนที่สามไปไกลกว่าการทำให้เป็นเชิงเส้นด้วย Lyapunov function และ limit cycle และสรุปสิ่งที่ควรรายงาน แล้วตามด้วย Lab 4"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "file": "audio/slide-03.mp3",
+   "duration": 16.944,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.761,
+     "en": "Activity 1 is a retrieval check on Session 3: the modal solution, complex eigenvalues, conservation in a closed network, and the stability limit of explicit Euler.",
+     "th": "กิจกรรมที่ 1 คือการทบทวนคาบที่ 3 ได้แก่ คำตอบในรูปโหมด ค่าเฉพาะเชิงซ้อน การอนุรักษ์ในเครือข่ายปิด และขีดจำกัดเสถียรภาพของ explicit Euler"
+    },
+    {
+     "s": 10.761,
+     "e": 16.895,
+     "en": "Write alone, then compare. On your own, pause and then press Show answers.",
+     "th": "เขียนคนเดียว แล้วเทียบกับเพื่อน ถ้าเรียนเอง ให้หยุดเสียงแล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "file": "audio/slide-04.mp3",
+   "duration": 21.384,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.895,
+     "en": "By the end of today you should be able to find steady states and linearize there, decide local stability from the eigenvalues of the Jacobian,",
+     "th": "เมื่อจบคาบนี้ คุณควรหาสภาวะคงตัวและทำให้เป็นเชิงเส้นที่จุดนั้นได้ ตัดสินเสถียรภาพเฉพาะที่จากค่าเฉพาะของ Jacobian"
+    },
+    {
+     "s": 7.895,
+     "e": 12.747,
+     "en": "classify a planar steady state from its trace and determinant, and read a phase portrait.",
+     "th": "จำแนกสภาวะคงตัวในระนาบจาก trace และดีเทอร์มิแนนต์ และอ่านภาพเฟสได้"
+    },
+    {
+     "s": 12.747,
+     "e": 21.329,
+     "en": "You should also be able to explain the heat balance picture of multiplicity, explain transient growth, and say when linearization is not enough.",
+     "th": "คุณควรอธิบายภาพการดุลความร้อนของการมีหลายคำตอบ อธิบาย transient growth และบอกได้ว่าเมื่อใดการทำให้เป็นเชิงเส้นไม่เพียงพอ"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "file": "audio/slide-05.mp3",
+   "duration": 46.968,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.934,
+     "en": "Session 3 solved d x d t equals K x. Today K becomes the Jacobian at a steady state, and the same modes describe small deviations from it.",
+     "th": "คาบที่ 3 แก้ d x d t เท่ากับ K x วันนี้ K กลายเป็น Jacobian ที่สภาวะคงตัว และโหมดเดียวกันอธิบายการเบี่ยงเบนเล็กน้อยจากสภาวะนั้น"
+    },
+    {
+     "s": 10.934,
+     "e": 18.059,
+     "en": "Complex eigenvalues become a focus in the phase plane, and non normal matrices become transient excursions.",
+     "th": "ค่าเฉพาะเชิงซ้อนกลายเป็นจุดโฟกัสในระนาบเฟส และเมทริกซ์ที่ไม่ normal กลายเป็นการเบี่ยงเบนชั่วคราว"
+    },
+    {
+     "s": 18.059,
+     "e": 25.447,
+     "en": "The rank condition from Session 1 returns as the place where steady states appear and merge, which is Session 5.",
+     "th": "เงื่อนไขของ rank จากคาบที่ 1 กลับมาเป็นจุดที่สภาวะคงตัวเกิดขึ้นและรวมกัน ซึ่งคือคาบที่ 5"
+    },
+    {
+     "s": 25.447,
+     "e": 32.0,
+     "en": "The model for the whole session is the cooled CSTR of Uppal, Ray and Poore, in dimensionless form.",
+     "th": "แบบจำลองตลอดคาบนี้คือ CSTR ที่มีการระบายความร้อนของ Uppal, Ray และ Poore ในรูปไร้มิติ"
+    },
+    {
+     "s": 32.0,
+     "e": 32.757,
+     "en": "Why a CSTR?",
+     "th": "ทำไมต้องเป็น"
+    },
+    {
+     "s": 32.757,
+     "e": 40.016,
+     "en": "Because it is the simplest model in which the exponential temperature dependence of the rate meets a heat balance,",
+     "th": "CSTR เพราะเป็นแบบจำลองที่ง่ายที่สุดที่การขึ้นกับอุณหภูมิแบบเอกซ์โพเนนเชียลของอัตรามาพบกับการดุลความร้อน"
+    },
+    {
+     "s": 40.016,
+     "e": 46.895,
+     "en": "and almost every phenomenon of nonlinear dynamics that matters in reaction engineering already appears in it.",
+     "th": "และปรากฏการณ์เกือบทั้งหมดของพลวัตไม่เชิงเส้นที่สำคัญในวิศวกรรมปฏิกิริยาปรากฏอยู่ในแบบจำลองนี้แล้ว"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "file": "audio/slide-06.mp3",
+   "duration": 99.072,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 14.737,
+     "en": "Part one. Expand f around a steady state x star. The constant term is zero, so to first order the deviation obeys d delta x d t equals J delta x, where J is the Jacobian at x star.",
+     "th": "ส่วนที่หนึ่ง กระจาย f รอบสภาวะคงตัว x star พจน์ค่าคงที่เป็นศูนย์ ดังนั้นในอันดับหนึ่ง การเบี่ยงเบนเป็นไปตาม d delta x d t เท่ากับ J delta x โดย J คือ Jacobian ที่ x star"
+    },
+    {
+     "s": 14.737,
+     "e": 27.895,
+     "en": "If every eigenvalue of J has a negative real part, small deviations decay and x star is locally asymptotically stable. If any eigenvalue has a positive real part, x star is unstable.",
+     "th": "ถ้าค่าเฉพาะทุกตัวของ J มีส่วนจริงเป็นลบ การเบี่ยงเบนเล็กน้อยจะลดลง และ x star เสถียรแบบเข้าหาเฉพาะที่ ถ้ามีค่าเฉพาะใดมีส่วนจริงเป็นบวก x star ไม่เสถียร"
+    },
+    {
+     "s": 27.895,
+     "e": 33.833,
+     "en": "If some eigenvalue has a zero real part and none is positive, the linearization decides nothing.",
+     "th": "ถ้ามีค่าเฉพาะที่ส่วนจริงเป็นศูนย์และไม่มีตัวใดเป็นบวก การทำให้เป็นเชิงเส้นตัดสินอะไรไม่ได้"
+    },
+    {
+     "s": 33.833,
+     "e": 43.566,
+     "en": "The Hartman Grobman theorem says that away from that case, the nonlinear flow near x star looks like the linear flow, up to a continuous change of coordinates.",
+     "th": "ทฤษฎีบท Hartman Grobman กล่าวว่า นอกเหนือจากกรณีนั้น การไหลแบบไม่เชิงเส้นใกล้ x star ดูเหมือนการไหลเชิงเส้น ภายใต้การเปลี่ยนพิกัดแบบต่อเนื่อง"
+    },
+    {
+     "s": 43.566,
+     "e": 56.618,
+     "en": "Two cautions. Stability is local: it says nothing about how large the basin is. And compute J analytically when you can; a finite difference Jacobian loses about half the digits.",
+     "th": "ข้อควรระวังสองข้อ เสถียรภาพเป็นเรื่องเฉพาะที่ ไม่ได้บอกว่าแอ่งดึงดูดใหญ่เพียงใด และให้คำนวณ J เชิงวิเคราะห์เมื่อทำได้ Jacobian จากผลต่างจำกัดเสียตัวเลขไปประมาณครึ่งหนึ่ง"
+    },
+    {
+     "s": 56.618,
+     "e": 70.764,
+     "en": "A small example shows why the zero real part case is undecided. For d x d t equals minus x cubed and for d x d t equals plus x cubed, the Jacobian at zero is zero in both cases.",
+     "th": "ตัวอย่างเล็กๆ แสดงว่าทำไมกรณีส่วนจริงเป็นศูนย์จึงตัดสินไม่ได้ สำหรับ d x d t เท่ากับลบ x กำลังสาม และ d x d t เท่ากับบวก x กำลังสาม Jacobian ที่ศูนย์เป็นศูนย์ทั้งสองกรณี"
+    },
+    {
+     "s": 70.764,
+     "e": 76.645,
+     "en": "The first is stable, the second unstable. Only the nonlinear terms decide.",
+     "th": "กรณีแรกเสถียร กรณีที่สองไม่เสถียร มีเพียงพจน์ไม่เชิงเส้นที่ตัดสินได้"
+    },
+    {
+     "s": 76.645,
+     "e": 85.405,
+     "en": "Let us linearize one equation by hand. The first equation is minus x one plus Da times one minus x one times e to the x two.",
+     "th": "ลองทำให้สมการหนึ่งเป็นเชิงเส้นด้วยมือ สมการแรกคือ ลบ x หนึ่ง บวก Da คูณ หนึ่งลบ x หนึ่ง คูณ e กำลัง"
+    },
+    {
+     "s": 85.405,
+     "e": 96.197,
+     "en": "Its derivative with respect to x one is minus one minus Da e to the x two, and with respect to x two it is Da times one minus x one times e to the x two.",
+     "th": "x สอง อนุพันธ์เทียบกับ x หนึ่งคือ ลบหนึ่ง ลบ Da e กำลัง x สอง และเทียบกับ x สองคือ Da คูณ หนึ่งลบ x หนึ่ง คูณ e กำลัง"
+    },
+    {
+     "s": 96.197,
+     "e": 99.0,
+     "en": "Those are the first row of J on slide 8.",
+     "th": "x สอง นี่คือแถวแรกของ J ในหน้า 8"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "file": "audio/slide-07.mp3",
+   "duration": 77.136,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.329,
+     "en": "Here is the classic picture of multiplicity, due to van Heerden. At steady state the conversion can be eliminated, leaving one equation in temperature: heat generated equals heat removed.",
+     "th": "นี่คือภาพคลาสสิกของการมีหลายคำตอบ ซึ่งมาจาก van Heerden ที่สภาวะคงตัว ตัด conversion ออกได้ เหลือสมการเดียวในอุณหภูมิ คือความร้อนที่เกิดเท่ากับความร้อนที่ระบายออก"
+    },
+    {
+     "s": 12.329,
+     "e": 22.817,
+     "en": "The amber curve, heat generation, is S shaped: slow at low temperature, steep in the middle as the rate takes off, and flat at the top where the reactant is used up.",
+     "th": "เส้นสีส้มอำพันซึ่งคือการเกิดความร้อนมีรูปตัว S ช้าที่อุณหภูมิต่ำ ชันตรงกลางเมื่ออัตราเร่งขึ้น และแบนที่ด้านบนเมื่อสารตั้งต้นถูกใช้หมด"
+    },
+    {
+     "s": 22.817,
+     "e": 25.408,
+     "en": "The teal line, heat removal, is straight.",
+     "th": "เส้นสีเขียวหัวเป็ดซึ่งคือการระบายความร้อนเป็นเส้นตรง"
+    },
+    {
+     "s": 25.408,
+     "e": 36.684,
+     "en": "Move the Damköhler number. At low Da there is one crossing, cold. In the middle there are three. At high Da there is one again, hot.",
+     "th": "เลื่อนเลข Damköhler ที่ Da ต่ำมีจุดตัดเดียวซึ่งเย็น ช่วงกลางมีสามจุด และที่ Da สูงมีจุดเดียวอีกครั้งซึ่งร้อน"
+    },
+    {
+     "s": 36.684,
+     "e": 48.137,
+     "en": "At the middle crossing, the generation curve rises faster than the removal line. A small rise in temperature generates more heat than is removed, so the rise grows.",
+     "th": "ที่จุดตัดกลาง เส้นการเกิดความร้อนชันกว่าเส้นการระบาย การเพิ่มอุณหภูมิเล็กน้อยทำให้เกิดความร้อนมากกว่าที่ระบายออก อุณหภูมิจึงเพิ่มต่อไป"
+    },
+    {
+     "s": 48.137,
+     "e": 50.566,
+     "en": "That steady state cannot be stable.",
+     "th": "สภาวะคงตัวนั้นจึงเสถียรไม่ได้"
+    },
+    {
+     "s": 50.566,
+     "e": 60.421,
+     "en": "The opposite slope condition is necessary for stability but not sufficient: a state can pass it and still be unstable through an oscillation, which the slope test cannot see.",
+     "th": "เงื่อนไขความชันแบบตรงข้ามจำเป็นต่อเสถียรภาพ แต่ไม่เพียงพอ สภาวะหนึ่งอาจผ่านเงื่อนไขนี้แต่ยังไม่เสถียรเพราะการแกว่ง ซึ่งการทดสอบความชันมองไม่เห็น"
+    },
+    {
+     "s": 60.421,
+     "e": 67.45,
+     "en": "Two practical messages follow. Weaker cooling, a smaller removal slope, widens the range of multiplicity.",
+     "th": "ข้อความในทางปฏิบัติสองข้อตามมา การระบายความร้อนที่อ่อนลง ซึ่งคือความชันของการระบายที่น้อยลง"
+    },
+    {
+     "s": 67.45,
+     "e": 77.066,
+     "en": "And a reactor designed to run at the middle temperature, because the conversion there looks attractive, cannot be operated there without control.",
+     "th": "ทำให้ช่วงของการมีหลายคำตอบกว้างขึ้น และเครื่องปฏิกรณ์ที่ออกแบบให้เดินที่อุณหภูมิกลาง เพราะ conversion ที่นั่นดูน่าสนใจ จะเดินที่นั่นไม่ได้หากไม่มีการควบคุม"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "file": "audio/slide-08.mp3",
+   "duration": 86.256,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.539,
+     "en": "Here is the full model. The first equation is the mass balance for conversion, and the second is the energy balance for the dimensionless temperature rise, with cooling through beta.",
+     "th": "นี่คือแบบจำลองเต็ม สมการแรกคือการดุลมวลสำหรับ conversion และสมการที่สองคือการดุลพลังงานสำหรับการเพิ่มอุณหภูมิไร้มิติ โดยมีการระบายความร้อนผ่าน beta"
+    },
+    {
+     "s": 11.539,
+     "e": 19.5,
+     "en": "Da is the rate at the feed temperature times the residence time, B is the adiabatic temperature rise, and beta measures the cooling.",
+     "th": "Da คืออัตราที่อุณหภูมิป้อนคูณเวลาพัก B คือการเพิ่มอุณหภูมิแบบ adiabatic และ beta วัดการระบายความร้อน"
+    },
+    {
+     "s": 19.5,
+     "e": 27.816,
+     "en": "At Da equal to zero point zero six there are three steady states. The table lists them with the eigenvalues of J.",
+     "th": "ที่ Da เท่ากับศูนย์จุดศูนย์หก มีสภาวะคงตัวสามสภาวะ ตารางแสดงพร้อมค่าเฉพาะของ J"
+    },
+    {
+     "s": 27.816,
+     "e": 37.258,
+     "en": "The low and high states have two negative eigenvalues: stable nodes. The middle one has one positive and one negative eigenvalue: a saddle.",
+     "th": "สภาวะต่ำและสูงมีค่าเฉพาะเป็นลบทั้งสองตัว เป็น stable node สภาวะกลางมีค่าเฉพาะบวกหนึ่งตัวและลบหนึ่งตัว เป็น saddle"
+    },
+    {
+     "s": 37.258,
+     "e": 42.855,
+     "en": "The plant can run cold or hot, and which one it reaches depends on where it starts.",
+     "th": "โรงงานเดินเครื่องได้ทั้งแบบเย็นและแบบร้อน และจะไปถึงแบบใดขึ้นกับจุดเริ่มต้น"
+    },
+    {
+     "s": 42.855,
+     "e": 51.763,
+     "en": "Notice the residual column in the D drawer. Always check that the point really is a steady state before you trust its eigenvalues.",
+     "th": "สังเกตค่า residual ใน D drawer ให้ตรวจเสมอว่าจุดนั้นเป็นสภาวะคงตัวจริงก่อนเชื่อค่าเฉพาะของมัน"
+    },
+    {
+     "s": 51.763,
+     "e": 58.066,
+     "en": "Look at the eigenvalues of the hot state: minus one point five and minus fourteen point seven.",
+     "th": "ดูค่าเฉพาะของสภาวะร้อน ลบหนึ่งจุดห้า และลบสิบสี่จุดเจ็ด ตัวที่เร็วเป็นของอุณหภูมิ"
+    },
+    {
+     "s": 58.066,
+     "e": 69.145,
+     "en": "The fast one belongs to temperature, which reacts quickly to the strongly temperature dependent rate. The ratio is about ten, a mild stiffness that Session 6 will use.",
+     "th": "ซึ่งตอบสนองอย่างรวดเร็วต่ออัตราที่ขึ้นกับอุณหภูมิอย่างมาก อัตราส่วนประมาณสิบ เป็นความแข็งระดับปานกลางที่คาบที่ 6 จะใช้"
+    },
+    {
+     "s": 69.145,
+     "e": 80.061,
+     "en": "The middle state has eigenvalues about plus one and minus zero point nine. A deviation along the unstable eigenvector doubles in about zero point seven residence times.",
+     "th": "สภาวะกลางมีค่าเฉพาะประมาณบวกหนึ่งและลบศูนย์จุดเก้า การเบี่ยงเบนตามเวกเตอร์เฉพาะที่ไม่เสถียรเพิ่มเป็นสองเท่าในเวลาประมาณศูนย์จุดเจ็ดของเวลาพัก"
+    },
+    {
+     "s": 80.061,
+     "e": 86.197,
+     "en": "In practice the reactor would leave the saddle within a few residence times of any disturbance.",
+     "th": "ในทางปฏิบัติ เครื่องปฏิกรณ์จะออกจาก saddle ภายในไม่กี่เท่าของเวลาพักหลังการรบกวนใดๆ"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
+   "duration": 89.592,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.789,
+     "en": "In two dimensions, the trace and the determinant decide everything. The characteristic equation is lambda squared minus the trace times lambda plus the determinant.",
+     "th": "ในสองมิติ trace และดีเทอร์มิแนนต์ตัดสินได้ทั้งหมด สมการลักษณะเฉพาะคือ lambda กำลังสอง ลบ trace คูณ lambda บวกดีเทอร์มิแนนต์"
+    },
+    {
+     "s": 10.789,
+     "e": 22.137,
+     "en": "A negative determinant means real eigenvalues of opposite sign: a saddle. With a positive determinant, a negative trace means stable and a positive trace unstable.",
+     "th": "ดีเทอร์มิแนนต์ที่เป็นลบหมายถึงค่าเฉพาะจริงที่มีเครื่องหมายตรงข้าม คือ saddle เมื่อดีเทอร์มิแนนต์เป็นบวก trace ที่เป็นลบหมายถึงเสถียร และเป็นบวกหมายถึงไม่เสถียร"
+    },
+    {
+     "s": 22.137,
+     "e": 28.711,
+     "en": "Below the dashed parabola the eigenvalues are real, a node; above it they are complex, a focus.",
+     "th": "ใต้พาราโบลาเส้นประค่าเฉพาะเป็นจริง เป็น node เหนือขึ้นไปเป็นเชิงซ้อน เป็นโฟกัส"
+    },
+    {
+     "s": 28.711,
+     "e": 36.763,
+     "en": "The three steady states of the CSTR are plotted. The middle one sits below the axis, in the saddle region.",
+     "th": "สภาวะคงตัวสามสภาวะของ CSTR ถูกพล็อตไว้ สภาวะกลางอยู่ใต้แกน ในบริเวณ saddle"
+    },
+    {
+     "s": 36.763,
+     "e": 46.309,
+     "en": "Keep two boundaries in mind for Session 5. The determinant crossing zero is where a real eigenvalue passes through zero and steady states merge.",
+     "th": "จำขอบเขตสองเส้นไว้สำหรับคาบที่ 5 ดีเทอร์มิแนนต์ที่ผ่านศูนย์คือจุดที่ค่าเฉพาะจริงผ่านศูนย์และสภาวะคงตัวรวมกัน"
+    },
+    {
+     "s": 46.309,
+     "e": 54.605,
+     "en": "The trace crossing zero with a positive determinant is where a complex pair crosses the imaginary axis and oscillations begin.",
+     "th": "trace ที่ผ่านศูนย์ขณะดีเทอร์มิแนนต์เป็นบวกคือจุดที่คู่เชิงซ้อนผ่านแกนจินตภาพและการแกว่งเริ่มขึ้น"
+    },
+    {
+     "s": 54.605,
+     "e": 63.023,
+     "en": "In more than two dimensions use the eigenvalues directly, or the Routh Hurwitz conditions on the coefficients of the characteristic polynomial,",
+     "th": "ในมากกว่าสองมิติ ให้ใช้ค่าเฉพาะโดยตรง หรือใช้เงื่อนไข Routh Hurwitz กับสัมประสิทธิ์ของพหุนามลักษณะเฉพาะ"
+    },
+    {
+     "s": 63.023,
+     "e": 65.829,
+     "en": "which test stability without computing any root.",
+     "th": "ซึ่งทดสอบเสถียรภาพโดยไม่ต้องคำนวณรากใดเลย"
+    },
+    {
+     "s": 65.829,
+     "e": 74.231,
+     "en": "Let us place the cold state by hand. Its trace is minus one point six and its determinant about zero point six five.",
+     "th": "ลองวางสภาวะเย็นด้วยมือ trace เท่ากับลบหนึ่งจุดหก และดีเทอร์มิแนนต์ประมาณศูนย์จุดหกห้า trace"
+    },
+    {
+     "s": 74.231,
+     "e": 86.295,
+     "en": "The trace squared, about two point six, is just above four times the determinant, two point six. So it sits just below the parabola: a node, close to becoming a focus.",
+     "th": "กำลังสองประมาณสองจุดหก ใกล้เคียงกับสี่เท่าของดีเทอร์มิแนนต์ซึ่งประมาณสองจุดหก จึงอยู่ใต้พาราโบลาเล็กน้อย เป็น node ที่ใกล้จะเป็นโฟกัส"
+    },
+    {
+     "s": 86.295,
+     "e": 89.526,
+     "en": "At the lab conditions it does become a focus.",
+     "th": "ที่สภาวะของแล็บ มันกลายเป็นโฟกัสจริง"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
+   "duration": 8.016,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.947,
+     "en": "Check 1 has four questions on linearization and classification. Take five minutes, then press Show answers.",
+     "th": "Check 1 มีสี่คำถามเรื่องการทำให้เป็นเชิงเส้นและการจำแนก ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
+   "duration": 81.24,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.395,
+     "en": "Part two. The phase plane shows the whole state space at once: conversion across, temperature up.",
+     "th": "ส่วนที่สอง ระนาบเฟสแสดงปริภูมิสถานะทั้งหมดพร้อมกัน conversion ตามแนวนอน อุณหภูมิตามแนวตั้ง"
+    },
+    {
+     "s": 7.395,
+     "e": 17.724,
+     "en": "The dashed curves are the nullclines, where one of the two derivatives is zero. Steady states are their crossings, and between them the arrows of the flow change direction.",
+     "th": "เส้นประคือ nullcline ซึ่งเป็นที่ที่อนุพันธ์ตัวใดตัวหนึ่งเป็นศูนย์ สภาวะคงตัวคือจุดตัดของเส้นเหล่านี้ และระหว่างเส้นทั้งสอง ทิศของการไหลเปลี่ยนไป"
+    },
+    {
+     "s": 17.724,
+     "e": 27.5,
+     "en": "The grey curves are trajectories from nine starting states, computed with an ODE solver. Every one ends at either the cold or the hot steady state.",
+     "th": "เส้นสีเทาคือเส้นทางจากจุดเริ่มต้นเก้าจุด คำนวณด้วยตัวแก้สมการเชิงอนุพันธ์ ทุกเส้นสิ้นสุดที่สภาวะคงตัวเย็นหรือร้อน"
+    },
+    {
+     "s": 27.5,
+     "e": 35.092,
+     "en": "The amber curve is the separatrix. Starting points above it end hot, and points below it end cold.",
+     "th": "เส้นสีส้มอำพันคือ separatrix จุดเริ่มต้นที่อยู่เหนือเส้นนี้จบที่ร้อน และจุดที่อยู่ใต้เส้นจบที่เย็น"
+    },
+    {
+     "s": 35.092,
+     "e": 43.711,
+     "en": "Near each stable node, trajectories come in along the slow eigenvector, exactly as the modes of Session 3 predicted, now valid locally.",
+     "th": "ใกล้ stable node แต่ละจุด เส้นทางเข้ามาตามเวกเตอร์เฉพาะที่ช้า ตรงตามที่โหมดในคาบที่ 3 ทำนาย ซึ่งตอนนี้ใช้ได้เฉพาะที่"
+    },
+    {
+     "s": 43.711,
+     "e": 55.136,
+     "en": "Read the flow between nullclines. To the left of the sky nullcline conversion increases, and to the right it decreases. Below the sage nullcline temperature increases.",
+     "th": "อ่านการไหลระหว่าง nullcline ด้านซ้ายของ nullcline สีฟ้า conversion เพิ่มขึ้น และด้านขวาลดลง ใต้ nullcline สีเขียว อุณหภูมิเพิ่มขึ้น"
+    },
+    {
+     "s": 55.136,
+     "e": 65.132,
+     "en": "So in each region between the curves, the direction of motion is known without solving anything. That is often enough to sketch a portrait by hand.",
+     "th": "ดังนั้นในแต่ละบริเวณระหว่างเส้นโค้ง ทราบทิศการเคลื่อนที่ได้โดยไม่ต้องแก้สมการ ซึ่งมักเพียงพอสำหรับร่างภาพเฟสด้วยมือ"
+    },
+    {
+     "s": 65.132,
+     "e": 71.721,
+     "en": "Notice also how the trajectories from the right edge, at full conversion, first move toward lower conversion:",
+     "th": "สังเกตด้วยว่าเส้นทางจากขอบขวา ที่ conversion เต็ม เคลื่อนไปทาง conversion ที่ต่ำลงก่อน เมื่อมีสารป้อนเข้ามา"
+    },
+    {
+     "s": 71.721,
+     "e": 81.184,
+     "en": "with the feed entering, an over converted reactor loses conversion before it settles. The picture shows such details at a glance, which no single number does.",
+     "th": "เครื่องปฏิกรณ์ที่ conversion สูงเกินจะเสีย conversion ก่อนเข้าสู่สภาวะคงตัว ภาพแสดงรายละเอียดแบบนี้ได้ในทันที ซึ่งตัวเลขเดี่ยวทำไม่ได้"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
+   "duration": 76.992,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.603,
+     "en": "The separatrix is the stable manifold of the saddle: every state whose trajectory leads into the saddle.",
+     "th": "separatrix คือ stable manifold ของ saddle ได้แก่สถานะทุกตัวที่เส้นทางนำเข้าสู่ saddle"
+    },
+    {
+     "s": 6.603,
+     "e": 13.413,
+     "en": "To compute it, start a tiny step from the saddle along its stable eigenvector and integrate backward in time.",
+     "th": "การคำนวณทำได้โดยเริ่มห่างจาก saddle เล็กน้อยตามเวกเตอร์เฉพาะที่เสถียร แล้วอินทิเกรตย้อนเวลา"
+    },
+    {
+     "s": 13.413,
+     "e": 20.408,
+     "en": "Backward in time, the stable direction becomes unstable, so the solver follows the manifold away from the saddle.",
+     "th": "เมื่อย้อนเวลา ทิศที่เสถียรกลายเป็นไม่เสถียร ตัวแก้สมการจึงตามแมนิโฟลด์ออกจาก saddle ไปได้"
+    },
+    {
+     "s": 20.408,
+     "e": 30.111,
+     "en": "In two dimensions this curve is the boundary between the basins of the two stable states. What matters in operation is not only small disturbances but large ones:",
+     "th": "ในสองมิติ เส้นโค้งนี้คือขอบเขตระหว่างแอ่งดึงดูดของสองสภาวะที่เสถียร สิ่งที่สำคัญในการเดินเครื่องไม่ใช่เพียงการรบกวนเล็กน้อย แต่รวมถึงการรบกวนขนาดใหญ่ด้วย"
+    },
+    {
+     "s": 30.111,
+     "e": 36.421,
+     "en": "a short loss of cooling can push the state across, and the reactor ignites even after the cooling returns.",
+     "th": "การสูญเสียการระบายความร้อนช่วงสั้นๆ อาจผลักสถานะข้ามเส้นนี้ และเครื่องปฏิกรณ์จะติดไฟแม้การระบายความร้อนกลับมาแล้ว"
+    },
+    {
+     "s": 36.421,
+     "e": 43.724,
+     "en": "In higher dimensions the separatrix is a surface, and simulation from many starting points is the practical tool.",
+     "th": "ในมิติที่สูงขึ้น separatrix เป็นพื้นผิว และการจำลองจากจุดเริ่มต้นจำนวนมากเป็นเครื่องมือในทางปฏิบัติ"
+    },
+    {
+     "s": 43.724,
+     "e": 52.386,
+     "en": "The unstable manifold of the saddle is also worth computing. It leaves the saddle in both directions and ends at the two stable states.",
+     "th": "unstable manifold ของ saddle ก็ควรคำนวณเช่นกัน มันออกจาก saddle ทั้งสองทิศ และสิ้นสุดที่สองสภาวะที่เสถียร"
+    },
+    {
+     "s": 52.386,
+     "e": 58.882,
+     "en": "Those two curves are the paths a reactor follows when it ignites or extinguishes from near the saddle.",
+     "th": "เส้นโค้งทั้งสองคือเส้นทางที่เครื่องปฏิกรณ์ตามไปเมื่อติดไฟหรือดับจากบริเวณใกล้ saddle"
+    },
+    {
+     "s": 58.882,
+     "e": 61.094,
+     "en": "A practical recipe for your own model:",
+     "th": "สูตรในทางปฏิบัติสำหรับแบบจำลองของคุณ"
+    },
+    {
+     "s": 61.094,
+     "e": 68.525,
+     "en": "find the saddle, compute its eigenvectors, step a distance of about ten to the minus four along the stable one in both directions,",
+     "th": "หา saddle คำนวณเวกเตอร์เฉพาะ ก้าวระยะประมาณสิบยกกำลังลบสี่ตามทิศที่เสถียรทั้งสองด้าน"
+    },
+    {
+     "s": 68.525,
+     "e": 76.921,
+     "en": "and integrate backward with a stiff solver and an event that stops the run when it leaves the physical region. That is exactly what the module does.",
+     "th": "แล้วอินทิเกรตย้อนเวลาด้วยตัวแก้สมการสำหรับระบบแข็ง พร้อมเหตุการณ์ที่หยุดการคำนวณเมื่อออกนอกบริเวณทางกายภาพ ซึ่งคือสิ่งที่โมดูลทำ"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 57.096,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.404,
+     "en": "Start up is a question about basins. A reactor started cold and empty ends at the cold steady state, with only ten percent conversion.",
+     "th": "การเริ่มเดินเครื่องเป็นคำถามเรื่องแอ่งดึงดูด เครื่องปฏิกรณ์ที่เริ่มเย็นและว่างเปล่าจบที่สภาวะเย็น ซึ่งมี conversion เพียงสิบเปอร์เซ็นต์"
+    },
+    {
+     "s": 9.404,
+     "e": 14.987,
+     "en": "A reactor started with a hot charge ends at the hot one, with ninety six percent.",
+     "th": "เครื่องที่เริ่มด้วยประจุร้อนจบที่สภาวะร้อน ซึ่งมี conversion เก้าสิบหกเปอร์เซ็นต์"
+    },
+    {
+     "s": 14.987,
+     "e": 18.6,
+     "en": "Both are the same reactor at the same operating conditions.",
+     "th": "ทั้งสองคือเครื่องปฏิกรณ์เดียวกันที่สภาวะการเดินเครื่องเดียวกัน"
+    },
+    {
+     "s": 18.6,
+     "e": 28.355,
+     "en": "To run hot, the start up must place the state inside the hot basin, for example by preheating or by starting with a higher feed temperature and lowering it later.",
+     "th": "ถ้าต้องการเดินแบบร้อน การเริ่มเดินเครื่องต้องวางสถานะไว้ในแอ่งร้อน เช่น โดยการอุ่นล่วงหน้า หรือเริ่มด้วยอุณหภูมิป้อนที่สูงขึ้นแล้วค่อยลดลง"
+    },
+    {
+     "s": 28.355,
+     "e": 35.882,
+     "en": "To run cold safely, the distance from the operating point to the separatrix is a safety margin you can compute and report.",
+     "th": "ถ้าต้องการเดินแบบเย็นอย่างปลอดภัย ระยะจากจุดเดินเครื่องถึง separatrix คือระยะปลอดภัยที่คุณคำนวณและรายงานได้"
+    },
+    {
+     "s": 35.882,
+     "e": 39.624,
+     "en": "The same logic explains why catalytic converters need light off:",
+     "th": "ตรรกะเดียวกันอธิบายว่าทำไมเครื่องฟอกไอเสียแบบตัวเร่งปฏิกิริยาต้องมี"
+    },
+    {
+     "s": 39.624,
+     "e": 47.224,
+     "en": "a cold converter sits on the cold branch until the exhaust heats it past its separatrix, and then it jumps to the hot, active state.",
+     "th": "light off ตัวฟอกที่เย็นอยู่บนสาขาเย็นจนกว่าไอเสียจะทำให้ร้อนพอข้าม separatrix แล้วจึงกระโดดไปสู่สภาวะร้อนที่ทำงาน"
+    },
+    {
+     "s": 47.224,
+     "e": 57.026,
+     "en": "Compute the margin for this reactor yourself in the lab: the temperature rise needed to cross the separatrix from the cold state is a single number you can read off the plot.",
+     "th": "คุณจะคำนวณระยะปลอดภัยของเครื่องปฏิกรณ์นี้เองในแล็บ การเพิ่มอุณหภูมิที่ต้องใช้เพื่อข้าม separatrix จากสภาวะเย็นเป็นตัวเลขเดียวที่อ่านได้จากกราฟ"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 78.456,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.276,
+     "en": "Here is a warning from Session 2, now in a dynamic setting. This linear system has eigenvalues minus one and minus two, so every deviation decays eventually.",
+     "th": "นี่คือคำเตือนจากคาบที่ 2 ในบริบทของพลวัต ระบบเชิงเส้นนี้มีค่าเฉพาะลบหนึ่งและลบสอง ดังนั้นการเบี่ยงเบนทุกแบบจะลดลงในที่สุด"
+    },
+    {
+     "s": 11.276,
+     "e": 19.523,
+     "en": "Yet the largest amplification, the norm of e to the J t, rises to about five at t equal to zero point seven before it decays.",
+     "th": "แต่การขยายที่มากที่สุด ซึ่งคือ norm ของ e กำลัง J t เพิ่มขึ้นเป็นประมาณห้าที่ t เท่ากับศูนย์จุดเจ็ดก่อนจะลดลง"
+    },
+    {
+     "s": 19.523,
+     "e": 23.974,
+     "en": "The dashed curve is what the slowest eigenvalue alone would suggest.",
+     "th": "เส้นประคือสิ่งที่ค่าเฉพาะที่ช้าที่สุดเพียงอย่างเดียวบ่งบอก"
+    },
+    {
+     "s": 23.974,
+     "e": 31.618,
+     "en": "The cause is non normality: the two eigenvectors are nearly parallel, and the two modes cancel at first, then separate.",
+     "th": "สาเหตุคือความไม่ normal เวกเตอร์เฉพาะทั้งสองเกือบขนานกัน และสองโหมดหักล้างกันในตอนแรก แล้วแยกออกจากกัน"
+    },
+    {
+     "s": 31.618,
+     "e": 43.358,
+     "en": "For a nonlinear plant, a transient of that size can leave the region where the linearization holds and even cross a separatrix. Linearly stable is not the same as safe.",
+     "th": "สำหรับโรงงานแบบไม่เชิงเส้น การเบี่ยงเบนชั่วคราวขนาดนั้นอาจออกนอกบริเวณที่การทำให้เป็นเชิงเส้นใช้ได้ และอาจข้าม separatrix ได้ด้วย เสถียรเชิงเส้นไม่ได้แปลว่าปลอดภัย"
+    },
+    {
+     "s": 43.358,
+     "e": 48.013,
+     "en": "Check the norm of e to the J t over time, not only the eigenvalues.",
+     "th": "ให้ตรวจ norm ของ e กำลัง J t ตามเวลา ไม่ใช่เพียงค่าเฉพาะ"
+    },
+    {
+     "s": 48.013,
+     "e": 50.973,
+     "en": "Where does such a matrix come from in practice?",
+     "th": "เมทริกซ์แบบนี้มาจากที่ใดในทางปฏิบัติ"
+    },
+    {
+     "s": 50.973,
+     "e": 62.566,
+     "en": "Any process where one variable strongly drives another but not the reverse, such as a fast exothermic step feeding heat into a slow one, or a cascade of units with strong forward coupling.",
+     "th": "กระบวนการใดก็ตามที่ตัวแปรหนึ่งขับอีกตัวอย่างแรงแต่ไม่ย้อนกลับ เช่น ขั้นคายความร้อนที่เร็วป้อนความร้อนเข้าสู่ขั้นที่ช้า หรือหน่วยกระบวนการต่ออนุกรมที่มีการเชื่อมโยงไปข้างหน้าอย่างแรง"
+    },
+    {
+     "s": 62.566,
+     "e": 71.844,
+     "en": "A quick estimate of the effect: the off diagonal entry twenty, compared with the difference of the eigenvalues, one, sets the size of the excursion.",
+     "th": "การประมาณผลอย่างรวดเร็ว สมาชิกนอกแนวทแยงยี่สิบ เทียบกับผลต่างของค่าเฉพาะซึ่งเท่ากับหนึ่ง กำหนดขนาดของการเบี่ยงเบน"
+    },
+    {
+     "s": 71.844,
+     "e": 78.382,
+     "en": "When an off diagonal coupling is much larger than the spread of the eigenvalues, expect transient growth.",
+     "th": "เมื่อการเชื่อมโยงนอกแนวทแยงมีค่ามากกว่าการกระจายของค่าเฉพาะมาก ให้คาดว่าจะมี transient growth"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 8.352,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.289,
+     "en": "Check 2 has four questions on the phase plane. Take five minutes, press Show answers, and then take the ten minute break.",
+     "th": "Check 2 มีสี่คำถามเรื่องระนาบเฟส ใช้เวลาห้านาที กด Show answers แล้วพักสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 22.896,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.618,
+     "en": "Welcome back. Activity 2 adds the steady state and its stability to your card.",
+     "th": "ยินดีต้อนรับกลับ กิจกรรมที่ 2 เพิ่มสภาวะคงตัวและเสถียรภาพลงในบัตรของคุณ"
+    },
+    {
+     "s": 6.618,
+     "e": 14.287,
+     "en": "Write the steady state equations and ask how many solutions there could be, and which feedback could create more than one.",
+     "th": "เขียนสมการสภาวะคงตัว และถามว่ามีได้กี่คำตอบ และการป้อนกลับใดทำให้มีมากกว่าหนึ่ง เขียนรูปแบบเครื่องหมายของ"
+    },
+    {
+     "s": 14.287,
+     "e": 22.829,
+     "en": "Write the sign pattern of the Jacobian, decide stability, and name one large disturbance your system meets in practice. Take ten minutes.",
+     "th": "Jacobian ตัดสินเสถียรภาพ และระบุการรบกวนขนาดใหญ่หนึ่งอย่างที่ระบบของคุณพบในทางปฏิบัติ ใช้เวลาสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
+   "duration": 89.04,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.289,
+     "en": "Part three. When the linearization says nothing, or when you want the size of a basin, a Lyapunov function can help.",
+     "th": "ส่วนที่สาม เมื่อการทำให้เป็นเชิงเส้นตัดสินอะไรไม่ได้ หรือเมื่อต้องการทราบขนาดของแอ่งดึงดูด Lyapunov function ช่วยได้"
+    },
+    {
+     "s": 8.289,
+     "e": 15.148,
+     "en": "It is an energy like quantity, positive except at the steady state, that never increases along trajectories.",
+     "th": "มันเป็นปริมาณคล้ายพลังงาน ที่เป็นบวกยกเว้นที่สภาวะคงตัว และไม่เคยเพิ่มขึ้นตามเส้นทาง"
+    },
+    {
+     "s": 15.148,
+     "e": 23.013,
+     "en": "If it strictly decreases, the steady state is asymptotically stable, and any region where it decreases lies inside the basin.",
+     "th": "ถ้ามันลดลงอย่างเข้ม สภาวะคงตัวนั้นเสถียรแบบเข้าหา และบริเวณใดที่มันลดลงอยู่ภายในแอ่งดึงดูด"
+    },
+    {
+     "s": 23.013,
+     "e": 31.581,
+     "en": "For linear systems, a quadratic V built from the Lyapunov equation gives back the eigenvalue test. Chemistry offers natural candidates:",
+     "th": "สำหรับระบบเชิงเส้น V แบบกำลังสองที่สร้างจากสมการ Lyapunov ให้การทดสอบค่าเฉพาะกลับมา เคมีมีตัวเลือกตามธรรมชาติ ได้แก่"
+    },
+    {
+     "s": 31.581,
+     "e": 39.645,
+     "en": "the Gibbs energy of a closed system, and for mass action networks with detailed balance, the function found by Horn and Jackson.",
+     "th": "พลังงานกิบส์ของระบบปิด และสำหรับเครือข่าย mass action ที่มี detailed balance คือฟังก์ชันที่ Horn และ Jackson ค้นพบ"
+    },
+    {
+     "s": 39.645,
+     "e": 47.987,
+     "en": "For an open reactor with heat release no such general function exists, which is exactly why multiplicity and oscillation can appear.",
+     "th": "สำหรับเครื่องปฏิกรณ์แบบเปิดที่มีการปล่อยความร้อน ไม่มีฟังก์ชันทั่วไปแบบนี้ ซึ่งเป็นเหตุผลที่การมีหลายคำตอบและการแกว่งเกิดขึ้นได้"
+    },
+    {
+     "s": 47.987,
+     "e": 53.576,
+     "en": "A worked case: for d x d t equals minus x cubed, take V equal to x squared.",
+     "th": "กรณีตัวอย่าง สำหรับ d x d t เท่ากับลบ x กำลังสาม ให้ V เท่ากับ x"
+    },
+    {
+     "s": 53.576,
+     "e": 62.474,
+     "en": "Its rate of change is two x times minus x cubed, which is minus two x to the fourth, negative everywhere except at zero.",
+     "th": "กำลังสอง อัตราการเปลี่ยนแปลงคือ สอง x คูณ ลบ x กำลังสาม เท่ากับ ลบ สอง x กำลังสี่ ซึ่งเป็นลบทุกที่ยกเว้นที่ศูนย์"
+    },
+    {
+     "s": 62.474,
+     "e": 70.711,
+     "en": "So zero is asymptotically stable, although the linearization gave no answer. Check 3 asks you to reproduce this.",
+     "th": "ดังนั้นศูนย์เสถียรแบบเข้าหา แม้การทำให้เป็นเชิงเส้นไม่ให้คำตอบ Check 3 ให้คุณทำซ้ำเรื่องนี้"
+    },
+    {
+     "s": 70.711,
+     "e": 74.348,
+     "en": "A Lyapunov function also gives a safe operating region.",
+     "th": "Lyapunov function ยังให้บริเวณการเดินเครื่องที่ปลอดภัยด้วย"
+    },
+    {
+     "s": 74.348,
+     "e": 85.389,
+     "en": "If V is quadratic around the cold state and its rate of change is negative inside some level set, every upset that stays inside that level set returns to the cold state.",
+     "th": "ถ้า V เป็นกำลังสองรอบสภาวะเย็น และอัตราการเปลี่ยนแปลงเป็นลบภายใน level set หนึ่ง การรบกวนทุกแบบที่อยู่ภายใน level set นั้นจะกลับสู่สภาวะเย็น"
+    },
+    {
+     "s": 85.389,
+     "e": 88.961,
+     "en": "That is a certificate you can put in a safety analysis.",
+     "th": "นี่คือใบรับรองที่ใส่ในการวิเคราะห์ความปลอดภัยได้"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 61.128,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.103,
+     "en": "When no steady state is stable, a planar system can settle onto a limit cycle, an isolated closed orbit.",
+     "th": "เมื่อไม่มีสภาวะคงตัวใดเสถียร ระบบในระนาบอาจเข้าสู่ limit cycle ซึ่งคือวงโคจรปิดที่แยกตัวอยู่"
+    },
+    {
+     "s": 7.103,
+     "e": 15.524,
+     "en": "The Poincaré Bendixson theorem says that in the plane, a bounded trajectory that approaches no steady state must approach a closed orbit.",
+     "th": "ทฤษฎีบท Poincaré Bendixson กล่าวว่าในระนาบ เส้นทางที่มีขอบเขตและไม่เข้าหาสภาวะคงตัวใด ต้องเข้าหาวงโคจรปิด"
+    },
+    {
+     "s": 15.524,
+     "e": 20.711,
+     "en": "So a trapping region that contains only an unstable focus must contain a limit cycle.",
+     "th": "ดังนั้นบริเวณกักขังที่มีเพียงโฟกัสที่ไม่เสถียรต้องมี limit cycle"
+    },
+    {
+     "s": 20.711,
+     "e": 27.974,
+     "en": "Bendixson's test works the other way: if the trace of J keeps one sign over a region, no closed orbit lies there.",
+     "th": "การทดสอบของ Bendixson ทำงานในทางกลับกัน ถ้า trace ของ J มีเครื่องหมายเดียวตลอดบริเวณหนึ่ง จะไม่มีวงโคจรปิดในบริเวณนั้น"
+    },
+    {
+     "s": 27.974,
+     "e": 39.199,
+     "en": "With stronger cooling interaction, the hot state of the CSTR becomes an unstable focus and the reactor oscillates. Session 5 finds where that begins.",
+     "th": "เมื่อปฏิสัมพันธ์การระบายความร้อนแรงขึ้น สภาวะร้อนของ CSTR กลายเป็นโฟกัสที่ไม่เสถียร และเครื่องปฏิกรณ์แกว่ง คาบที่ 5 จะหาจุดที่สิ่งนี้เริ่มต้น"
+    },
+    {
+     "s": 39.199,
+     "e": 42.566,
+     "en": "And beyond two dimensions, chaos is possible.",
+     "th": "และเมื่อเกินสองมิติ ความอลวนหรือ chaos เกิดขึ้นได้"
+    },
+    {
+     "s": 42.566,
+     "e": 45.575,
+     "en": "Oscillating reactors are not only a curiosity.",
+     "th": "เครื่องปฏิกรณ์ที่แกว่งไม่ได้เป็นเพียงเรื่องน่าสนใจ"
+    },
+    {
+     "s": 45.575,
+     "e": 55.689,
+     "en": "Some polymerization and oxidation reactors show sustained temperature oscillations in practice, and controllers can introduce them when the gain is too high.",
+     "th": "เครื่องปฏิกรณ์พอลิเมอไรเซชันและออกซิเดชันบางชนิดแสดงการแกว่งของอุณหภูมิอย่างต่อเนื่องในทางปฏิบัติ และตัวควบคุมอาจทำให้เกิดการแกว่งเมื่ออัตราขยายสูงเกินไป"
+    },
+    {
+     "s": 55.689,
+     "e": 61.066,
+     "en": "Recognizing a limit cycle tells you that tuning, not the instrument, is the problem.",
+     "th": "การรู้จัก limit cycle บอกคุณว่าปัญหาอยู่ที่การปรับตั้ง ไม่ใช่ที่เครื่องมือวัด"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
+   "duration": 46.392,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.339,
+     "en": "Here is what to report about the stability of a steady state.",
+     "th": "นี่คือสิ่งที่ควรรายงานเกี่ยวกับเสถียรภาพของสภาวะคงตัว"
+    },
+    {
+     "s": 4.339,
+     "e": 16.646,
+     "en": "The residual, so the reader knows the point is a steady state. All eigenvalues of J, and how J was computed. How many steady states exist at your conditions and how you searched for them:",
+     "th": "ค่า residual เพื่อให้ผู้อ่านรู้ว่าจุดนั้นเป็นสภาวะคงตัว ค่าเฉพาะทั้งหมดของ J และวิธีคำนวณ J จำนวนสภาวะคงตัวที่มีที่สภาวะของคุณและวิธีค้นหา เช่น การค้นหาแบบคร่อมช่วงหรือ"
+    },
+    {
+     "s": 16.646,
+     "e": 22.276,
+     "en": "a bracketing search over a range or continuation, not one Newton solve from one guess.",
+     "th": "continuation ไม่ใช่การแก้ด้วย Newton ครั้งเดียวจากค่าเดาค่าเดียว"
+    },
+    {
+     "s": 22.276,
+     "e": 30.757,
+     "en": "The size of disturbance you tested, or the distance to the nearest separatrix. The peak amplification when J is far from normal.",
+     "th": "ขนาดของการรบกวนที่คุณทดสอบ หรือระยะถึง separatrix ที่ใกล้ที่สุด การขยายสูงสุดเมื่อ J ห่างจาก normal มาก"
+    },
+    {
+     "s": 30.757,
+     "e": 39.237,
+     "en": "And simulations from several starting states, with the solver and tolerances, as the check that catches what the analysis missed.",
+     "th": "และการจำลองจากหลายจุดเริ่มต้น พร้อมตัวแก้สมการและค่าความคลาดเคลื่อนที่ยอมรับ เพื่อเป็นการตรวจที่จับสิ่งที่การวิเคราะห์มองข้าม"
+    },
+    {
+     "s": 39.237,
+     "e": 46.316,
+     "en": "These items take little extra work once the model is in code, and they let a reader judge whether the conclusions hold.",
+     "th": "รายการเหล่านี้ใช้แรงเพิ่มเพียงเล็กน้อยเมื่อแบบจำลองอยู่ในโค้ดแล้ว และทำให้ผู้อ่านตัดสินได้ว่าข้อสรุปเชื่อถือได้หรือไม่"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 7.728,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.658,
+     "en": "Check 3 has four questions on what lies beyond linearization. Take five minutes, then press Show answers.",
+     "th": "Check 3 มีสี่คำถามเรื่องสิ่งที่อยู่เหนือการทำให้เป็นเชิงเส้น ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 7.416,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.355,
+     "en": "Check 4 has four questions on the cooled CSTR. Take five minutes, then press Show answers.",
+     "th": "Check 4 มีสี่คำถามเรื่อง CSTR ที่มีการระบายความร้อน ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
+   "duration": 31.752,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.411,
+     "en": "Session 5 follows each steady state as Da changes.",
+     "th": "คาบที่ 5 ติดตามสภาวะคงตัวแต่ละตัวเมื่อ Da"
+    },
+    {
+     "s": 3.411,
+     "e": 12.5,
+     "en": "The result is an S shaped curve, with ignition and extinction where the determinant of J vanishes, and oscillation where the trace vanishes.",
+     "th": "เปลี่ยน ผลคือเส้นโค้งรูปตัว S โดยมีการติดไฟและการดับที่ดีเทอร์มิแนนต์ของ J เป็นศูนย์ และการแกว่งที่ trace เป็นศูนย์"
+    },
+    {
+     "s": 12.5,
+     "e": 22.026,
+     "en": "Session 6 separates fast and slow variables near a stable node, and Session 7 moves to distributed models, whose steady states can also be multiple.",
+     "th": "คาบที่ 6 แยกตัวแปรเร็วและช้าใกล้ stable node และคาบที่ 7 ไปสู่แบบจำลองแบบกระจาย ซึ่งสภาวะคงตัวก็มีได้หลายค่าเช่นกัน"
+    },
+    {
+     "s": 22.026,
+     "e": 31.697,
+     "en": "When you return to your own model in Session 5, the question becomes which single parameter, if changed, would carry your steady state to a fold or to a Hopf point.",
+     "th": "เมื่อคุณกลับมาที่แบบจำลองของตัวเองในคาบที่ 5 คำถามจะเป็นว่าพารามิเตอร์ตัวใดตัวหนึ่ง หากเปลี่ยนไป จะพาสภาวะคงตัวของคุณไปถึงจุดพับหรือจุด Hopf"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "file": "audio/slide-23.mp3",
+   "duration": 21.096,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.186,
+     "en": "Lab 4 uses the same reactor at Da equal to zero point zero four five.",
+     "th": "Lab 4 ใช้เครื่องปฏิกรณ์เดิมที่ Da เท่ากับศูนย์จุดศูนย์สี่ห้า"
+    },
+    {
+     "s": 4.186,
+     "e": 13.408,
+     "en": "You find the steady states, classify them yourself from their Jacobians, check the hot state with the heat balance slope, kick the saddle in both directions,",
+     "th": "คุณจะหาสภาวะคงตัว จำแนกเองจาก Jacobian ตรวจสภาวะร้อนด้วยความชันของการดุลความร้อน ผลัก saddle ไปทั้งสองทิศ"
+    },
+    {
+     "s": 13.408,
+     "e": 16.618,
+     "en": "and move Da to find the range with three steady states.",
+     "th": "และเลื่อน Da เพื่อหาช่วงที่มีสามสภาวะคงตัว"
+    },
+    {
+     "s": 16.618,
+     "e": 21.026,
+     "en": "Download the answer file at the end and upload it to myCourseVille.",
+     "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 32.952,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.934,
+     "en": "To summarize. Near a steady state, deviations follow e to the J t, and all eigenvalues in the left half plane mean local stability. In the plane, the trace and determinant give the type.",
+     "th": "สรุป ใกล้สภาวะคงตัว การเบี่ยงเบนเป็นไปตาม e กำลัง J t และค่าเฉพาะทั้งหมดอยู่ครึ่งซ้ายของระนาบหมายถึงเสถียรเฉพาะที่ ในระนาบ trace และดีเทอร์มิแนนต์ให้ชนิดของจุด"
+    },
+    {
+     "s": 13.934,
+     "e": 26.639,
+     "en": "Heat generation against removal explains multiplicity. The separatrix divides the basins, and large upsets can cross it. Stable eigenvalues do not exclude transient growth.",
+     "th": "การเกิดความร้อนเทียบกับการระบายอธิบายการมีหลายคำตอบ separatrix แบ่งแอ่งดึงดูด และการรบกวนขนาดใหญ่ข้ามได้ ค่าเฉพาะที่เสถียรไม่ได้ตัด transient growth ออกไป และ"
+    },
+    {
+     "s": 26.639,
+     "e": 32.882,
+     "en": "And Lyapunov functions and the Poincaré Bendixson theorem reach beyond linearization.",
+     "th": "Lyapunov function กับทฤษฎีบท Poincaré Bendixson ไปได้ไกลกว่าการทำให้เป็นเชิงเส้น"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
+   "duration": 14.568,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.032,
+     "en": "Before the next session, finish Lab 4 and upload the answer file. Read Varma and Morbidelli, chapter two, and the paper by Uppal, Ray and Poore.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 4 ให้เสร็จและอัปโหลดไฟล์คำตอบ อ่าน Varma กับ Morbidelli บทที่สอง และบทความของ Uppal, Ray และ Poore หนังสือของ"
+    },
+    {
+     "s": 11.032,
+     "e": 14.5,
+     "en": "Strogatz, chapters five to seven, is optional.",
+     "th": "Strogatz บทที่ห้าถึงเจ็ดเป็นการอ่านเพิ่มเติม"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 9.6,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.539,
+     "en": "Please finish with the Exit Ticket for Session 4. The form is anonymous. Thank you, and see you in Session 5.",
+     "th": "กรุณาปิดท้ายด้วย Exit Ticket ของคาบที่ 4 แบบฟอร์มไม่ระบุตัวตน ขอบคุณ แล้วพบกันในคาบที่ 5"
+    }
+   ]
+  }
+ ]
+}

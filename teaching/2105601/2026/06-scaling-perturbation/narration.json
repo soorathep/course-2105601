@@ -1,0 +1,715 @@
+{
+ "voice": "en-US-GuyNeural",
+ "rate": "-5%",
+ "provider": "Microsoft Edge neural speech (edge-tts)",
+ "synthetic_voice": true,
+ "total_seconds": 737.7,
+ "slides": [
+  {
+   "n": 1,
+   "file": "audio/slide-01.mp3",
+   "duration": 19.68,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.721,
+     "en": "Welcome to Session 6 of Advanced Engineering Mathematics for Chemical Engineers.",
+     "th": "ยินดีต้อนรับสู่คาบที่ 6 ของวิชา Advanced Engineering Mathematics for Chemical Engineers"
+    },
+    {
+     "s": 5.721,
+     "e": 15.842,
+     "en": "Today is about scaling and perturbation methods: how to find the small parameter hidden in a model, and how to build approximate solutions that tell you why they work and where they fail.",
+     "th": "วันนี้ว่าด้วยการทำให้ไร้มิติและวิธี perturbation คือการหาพารามิเตอร์ขนาดเล็กที่ซ่อนอยู่ในแบบจำลอง และการสร้างคำตอบโดยประมาณที่บอกได้ว่าทำไมจึงใช้ได้และใช้ไม่ได้ที่ใด"
+    },
+    {
+     "s": 15.842,
+     "e": 19.618,
+     "en": "On your own, the narration takes about twelve minutes.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบสองนาที"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "file": "audio/slide-02.mp3",
+   "duration": 27.216,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.208,
+     "en": "Part one covers scaling, dimensionless groups and time scales, and regular perturbation in algebra and in a differential equation.",
+     "th": "ส่วนที่หนึ่งว่าด้วยการทำให้ไร้มิติ กลุ่มไร้มิติและสเกลเวลา และ regular perturbation ทั้งในสมการพีชคณิตและสมการเชิงอนุพันธ์"
+    },
+    {
+     "s": 8.208,
+     "e": 17.211,
+     "en": "Part two covers singular perturbation: lost roots, boundary layers, matching, composite solutions, and the quasi steady state approximation.",
+     "th": "ส่วนที่สองว่าด้วย singular perturbation คือรากที่หายไป ชั้นขอบเขต การจับคู่ คำตอบผสม และการประมาณสภาวะกึ่งคงตัว"
+    },
+    {
+     "s": 17.211,
+     "e": 27.158,
+     "en": "Part three covers secular terms, the limits of the Thiele modulus, and what to report. The lab tests the boundary layer in a catalyst slab.",
+     "th": "ส่วนที่สามว่าด้วยพจน์ secular ขีดจำกัดของ Thiele modulus และสิ่งที่ควรรายงาน แล็บทดสอบชั้นขอบเขตในแผ่นตัวเร่งปฏิกิริยา"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "file": "audio/slide-03.mp3",
+   "duration": 18.648,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.158,
+     "en": "Activity one. Without notes, answer the four questions on Session 5, then compare with a partner. Pause the narration now.",
+     "th": "กิจกรรมที่หนึ่ง ตอบคำถามสี่ข้อเกี่ยวกับคาบที่ 5 โดยไม่ดูโน้ต แล้วเปรียบเทียบกับเพื่อน หยุดเสียงบรรยายตอนนี้"
+    },
+    {
+     "s": 10.158,
+     "e": 18.579,
+     "en": "The last answer leads into today. The large oscillation had slow and fast parts, and a small parameter separates them.",
+     "th": "คำตอบข้อสุดท้ายนำเข้าสู่เนื้อหาวันนี้ การแกว่งขนาดใหญ่มีส่วนที่ช้าและส่วนที่เร็ว และพารามิเตอร์ขนาดเล็กเป็นตัวแยกสองส่วนนี้"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "file": "audio/slide-04.mp3",
+   "duration": 23.736,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.511,
+     "en": "By the end of today you can scale a model so that its terms are of order one, and name its small parameter.",
+     "th": "เมื่อจบคาบนี้ คุณจะทำให้แบบจำลองไร้มิติจนแต่ละพจน์มีขนาดอันดับหนึ่ง และระบุพารามิเตอร์ขนาดเล็กได้"
+    },
+    {
+     "s": 6.511,
+     "e": 15.592,
+     "en": "You can build regular and singular expansions, match inner and outer solutions, derive the quasi steady state approximation with the right small parameter,",
+     "th": "คุณจะสร้างการกระจายแบบ regular และ singular จับคู่คำตอบชั้นในกับชั้นนอก หาการประมาณสภาวะกึ่งคงตัวพร้อมพารามิเตอร์ขนาดเล็กที่ถูกต้อง"
+    },
+    {
+     "s": 15.592,
+     "e": 19.026,
+     "en": "and report an asymptotic result with its range of validity.",
+     "th": "และรายงานผลเชิงเส้นกำกับพร้อมช่วงที่ใช้ได้"
+    },
+    {
+     "s": 19.026,
+     "e": 23.671,
+     "en": "Each outcome is tested in a check, in the lab, or on the midterm.",
+     "th": "แต่ละผลลัพธ์การเรียนรู้จะถูกทดสอบในแบบฝึกหัดตรวจสอบ ในแล็บ หรือในการสอบกลางภาค"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "file": "audio/slide-05.mp3",
+   "duration": 29.208,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.638,
+     "en": "Small parameters were already in this course. In Session 2, units changed the condition number. In Session 3, widely separated eigenvalues made systems stiff.",
+     "th": "พารามิเตอร์ขนาดเล็กมีอยู่แล้วในวิชานี้ ในคาบที่ 2 หน่วยเปลี่ยนค่า condition number ในคาบที่ 3 ค่าลักษณะเฉพาะที่ห่างกันมากทำให้ระบบ stiff"
+    },
+    {
+     "s": 12.638,
+     "e": 17.763,
+     "en": "In Session 5, the oscillation had slow heating and fast ignition.",
+     "th": "ในคาบที่ 5 การแกว่งมีช่วงร้อนขึ้นช้าและการติดไฟที่เร็ว"
+    },
+    {
+     "s": 17.763,
+     "e": 23.211,
+     "en": "Today we make those ratios explicit and use them to build approximate solutions.",
+     "th": "วันนี้เราทำให้อัตราส่วนเหล่านั้นชัดเจน และใช้มันสร้างคำตอบโดยประมาณ"
+    },
+    {
+     "s": 23.211,
+     "e": 29.132,
+     "en": "Session 7 will meet today's boundary layer again, in the axial dispersion reactor.",
+     "th": "คาบที่ 7 จะพบชั้นขอบเขตของวันนี้อีกครั้ง ในเครื่องปฏิกรณ์ที่มีการกระจายตามแนวแกน"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "file": "audio/slide-06.mp3",
+   "duration": 63.432,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.145,
+     "en": "Start with the catalyst slab. Divide position by the half thickness and concentration by its surface value. What remains is one group, phi squared, equal to k L squared over D.",
+     "th": "เริ่มจากแผ่นตัวเร่งปฏิกิริยา หารตำแหน่งด้วยครึ่งความหนา และหารความเข้มข้นด้วยค่าที่ผิว สิ่งที่เหลือคือกลุ่มเดียว phi กำลังสอง เท่ากับ k L กำลังสองหารด้วย D"
+    },
+    {
+     "s": 13.145,
+     "e": 24.421,
+     "en": "It is the ratio of the diffusion time to the reaction time. A good scale is the size a variable actually reaches; then the size of each term is carried by the group in front of it.",
+     "th": "มันคืออัตราส่วนของเวลาการแพร่ต่อเวลาการเกิดปฏิกิริยา สเกลที่ดีคือขนาดที่ตัวแปรนั้นมีจริง แล้วขนาดของแต่ละพจน์จะถูกบอกโดยกลุ่มที่อยู่ด้านหน้า"
+    },
+    {
+     "s": 24.421,
+     "e": 32.882,
+     "en": "Wrong scales hide the small parameter. At large phi the right length is the penetration depth, L over phi, not L.",
+     "th": "สเกลที่ผิดจะซ่อนพารามิเตอร์ขนาดเล็ก ที่ phi ค่ามาก ความยาวที่ถูกต้องคือระยะแทรกซึม L หารด้วย phi ไม่ใช่ L"
+    },
+    {
+     "s": 32.882,
+     "e": 40.763,
+     "en": "For the slab, the Buckingham pi theorem says how many groups to expect. Physics decides which are useful.",
+     "th": "สำหรับแผ่นตัวเร่ง ทฤษฎีบท Buckingham pi บอกว่าควรมีกี่กลุ่ม ส่วนฟิสิกส์ตัดสินว่ากลุ่มใดมีประโยชน์"
+    },
+    {
+     "s": 40.763,
+     "e": 52.184,
+     "en": "The exact solution is a hyperbolic cosine, and the effectiveness factor is hyperbolic tangent of phi over phi. We will use this exact result to test both limits.",
+     "th": "คำตอบแม่นตรงคือ hyperbolic cosine และ effectiveness factor คือ hyperbolic tangent ของ phi หารด้วย phi เราจะใช้ผลแม่นตรงนี้ทดสอบขีดจำกัดทั้งสอง"
+    },
+    {
+     "s": 52.184,
+     "e": 63.368,
+     "en": "At small phi, reaction is slow compared with diffusion and the pellet is nearly uniform. At large phi, reaction is fast and the reactant is consumed close to the surface.",
+     "th": "ที่ phi ค่าน้อย ปฏิกิริยาช้าเมื่อเทียบกับการแพร่ และความเข้มข้นในเม็ดเกือบสม่ำเสมอ ที่ phi ค่ามาก ปฏิกิริยาเร็วและสารตั้งต้นถูกใช้หมดใกล้ผิว"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "file": "audio/slide-07.mp3",
+   "duration": 45.12,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.005,
+     "en": "Michaelis Menten kinetics show that the small parameter is not always the obvious one. Estimate two time scales from the model:",
+     "th": "จลนศาสตร์ Michaelis Menten แสดงว่าพารามิเตอร์ขนาดเล็กไม่ได้เป็นตัวที่เห็นชัดเสมอไป ประมาณสเกลเวลาสองค่าจากแบบจำลอง"
+    },
+    {
+     "s": 8.005,
+     "e": 13.316,
+     "en": "the fast time for the complex to form, and the slow time for the substrate to be used.",
+     "th": "คือเวลาเร็วที่สารเชิงซ้อนเกิดขึ้น และเวลาช้าที่สารตั้งต้นถูกใช้"
+    },
+    {
+     "s": 13.316,
+     "e": 26.789,
+     "en": "Their ratio is E zero over S zero plus K M. This is the condition of Segel and Slemrod. The classical rule, enzyme much less than substrate, is sufficient but not necessary.",
+     "th": "อัตราส่วนของทั้งสองคือ E ศูนย์หารด้วย S ศูนย์บวก K M ซึ่งเป็นเงื่อนไขของ Segel และ Slemrod กฎแบบดั้งเดิมที่ว่าเอนไซม์น้อยกว่าสารตั้งต้นมาก เป็นเงื่อนไขพอเพียงแต่ไม่จำเป็น"
+    },
+    {
+     "s": 26.789,
+     "e": 33.389,
+     "en": "With the synthetic constants on the slide, the fast time is about zero point zero eight seconds at every enzyme level,",
+     "th": "ด้วยค่าคงที่สมมติบนสไลด์ เวลาเร็วมีค่าประมาณศูนย์จุดศูนย์แปดวินาทีที่ทุกระดับเอนไซม์"
+    },
+    {
+     "s": 33.389,
+     "e": 37.882,
+     "en": "while the slow time ranges from over a thousand seconds down to about one second.",
+     "th": "ขณะที่เวลาช้ามีค่าตั้งแต่กว่าพันวินาทีลงมาจนถึงประมาณหนึ่งวินาที"
+    },
+    {
+     "s": 37.882,
+     "e": 45.039,
+     "en": "So find the small parameter by estimating each time scale from the model, not by comparing concentrations by eye.",
+     "th": "ดังนั้น ให้หาพารามิเตอร์ขนาดเล็กโดยประมาณแต่ละสเกลเวลาจากแบบจำลอง ไม่ใช่การเทียบความเข้มข้นด้วยตา"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "file": "audio/slide-08.mp3",
+   "duration": 42.744,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.368,
+     "en": "Regular perturbation. Expand the root in powers of epsilon, substitute, and collect terms of each order. Each order gives a simple equation for the next coefficient.",
+     "th": "Regular perturbation กระจายรากเป็นอนุกรมกำลังของ epsilon แทนค่า แล้วรวบรวมพจน์ของแต่ละอันดับ แต่ละอันดับให้สมการง่ายๆ สำหรับสัมประสิทธิ์ตัวถัดไป"
+    },
+    {
+     "s": 12.368,
+     "e": 22.684,
+     "en": "Look at the table. Each tenfold drop in epsilon cuts the two term error about a hundred times, and the three term error about a thousand times.",
+     "th": "ดูตาราง เมื่อ epsilon ลดลงสิบเท่า ความคลาดเคลื่อนของสองพจน์ลดลงประมาณร้อยเท่า และของสามพจน์ลดลงประมาณพันเท่า"
+    },
+    {
+     "s": 22.684,
+     "e": 27.842,
+     "en": "That scaling is the check that an expansion is right. Use it every time.",
+     "th": "การลดลงตามสเกลนี้คือการตรวจว่าการกระจายถูกต้อง ใช้การตรวจนี้ทุกครั้ง"
+    },
+    {
+     "s": 27.842,
+     "e": 38.513,
+     "en": "Regular means that setting epsilon to zero leaves a problem of the same kind. Here the quadratic still has a root near one, and the series approaches it smoothly.",
+     "th": "Regular หมายความว่าการให้ epsilon เป็นศูนย์ยังเหลือปัญหาชนิดเดิม ในที่นี้สมการกำลังสองยังมีรากใกล้หนึ่ง และอนุกรมเข้าใกล้รากนั้นอย่างราบเรียบ"
+    },
+    {
+     "s": 38.513,
+     "e": 42.684,
+     "en": "Press D on this slide to run the same comparison in Python.",
+     "th": "กด D ที่สไลด์นี้เพื่อรันการเปรียบเทียบเดียวกันใน Python"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
+   "duration": 40.872,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.066,
+     "en": "The same method works for a weakly nonlinear decay. The leading order is the linear decay. The first correction solves a linear equation driven by the leading order.",
+     "th": "วิธีเดียวกันใช้ได้กับการสลายตัวที่ไม่เชิงเส้นเล็กน้อย อันดับนำคือการสลายตัวเชิงเส้น การแก้ไขอันดับแรกได้จากสมการเชิงเส้นที่ถูกขับโดยอันดับนำ"
+    },
+    {
+     "s": 12.066,
+     "e": 21.066,
+     "en": "With epsilon equal to zero point two, one term is off by about zero point zero four six, and two terms by about zero point zero zero five.",
+     "th": "ที่ epsilon เท่ากับศูนย์จุดสอง หนึ่งพจน์คลาดเคลื่อนประมาณศูนย์จุดศูนย์สี่หก และสองพจน์คลาดเคลื่อนประมาณศูนย์จุดศูนย์ศูนย์ห้า"
+    },
+    {
+     "s": 21.066,
+     "e": 30.053,
+     "en": "This expansion stays uniform because the decay removes the nonlinearity as time grows. Part three shows a case where it does not.",
+     "th": "การกระจายนี้ใช้ได้ตลอดเพราะการสลายตัวทำให้ความไม่เชิงเส้นหมดไปเมื่อเวลาผ่านไป ส่วนที่สามจะแสดงกรณีที่ไม่เป็นเช่นนั้น"
+    },
+    {
+     "s": 30.053,
+     "e": 40.816,
+     "en": "This is the general pattern. Each order of a perturbation expansion is a linear problem, of the kind you solved in Session 3, forced by the orders below it.",
+     "th": "นี่คือรูปแบบทั่วไป แต่ละอันดับของการกระจาย perturbation เป็นปัญหาเชิงเส้นแบบที่คุณแก้ในคาบที่ 3 โดยถูกขับด้วยอันดับที่ต่ำกว่า"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
+   "duration": 7.848,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.789,
+     "en": "Check one. Answer the four questions, then show the answers. Pause the narration now.",
+     "th": "แบบฝึกหัดตรวจสอบที่หนึ่ง ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
+   "duration": 34.968,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.974,
+     "en": "Now a singular problem. When epsilon multiplies the highest power, setting epsilon to zero lowers the degree, and one root disappears.",
+     "th": "ต่อไปเป็นปัญหาแบบ singular เมื่อ epsilon คูณกับกำลังสูงสุด การให้ epsilon เป็นศูนย์จะลดดีกรีลง และรากหนึ่งตัวหายไป"
+    },
+    {
+     "s": 9.974,
+     "e": 20.776,
+     "en": "The lost root is large. Rescale x as capital X over epsilon and balance the largest terms. The table shows how well the result matches.",
+     "th": "รากที่หายไปมีขนาดใหญ่ ปรับสเกล x เป็น X ตัวใหญ่หารด้วย epsilon แล้วถ่วงดุลพจน์ที่ใหญ่ที่สุด ตารางแสดงว่าผลลัพธ์ตรงกันเพียงใด"
+    },
+    {
+     "s": 20.776,
+     "e": 27.197,
+     "en": "In a differential equation the same thing loses a boundary condition, which is recovered in a thin layer.",
+     "th": "ในสมการเชิงอนุพันธ์ สิ่งเดียวกันทำให้เงื่อนไขขอบเขตหนึ่งหายไป และได้คืนมาในชั้นบางๆ"
+    },
+    {
+     "s": 27.197,
+     "e": 34.908,
+     "en": "The regular root, near one, still follows a simple series. Only the large root needs the rescaling.",
+     "th": "รากแบบ regular ที่อยู่ใกล้หนึ่ง ยังตามอนุกรมธรรมดา เฉพาะรากขนาดใหญ่เท่านั้นที่ต้องปรับสเกล"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
+   "duration": 60.576,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.789,
+     "en": "Take epsilon y double prime plus y prime plus y equal to zero. The outer solution ignores the second derivative and meets the condition at x equal to one.",
+     "th": "พิจารณา epsilon y สองไพรม์ บวก y ไพรม์ บวก y เท่ากับศูนย์ คำตอบชั้นนอกละอนุพันธ์อันดับสอง และสอดคล้องกับเงื่อนไขที่ x เท่ากับหนึ่ง"
+    },
+    {
+     "s": 10.789,
+     "e": 23.776,
+     "en": "Near x equal to zero, stretch the variable by epsilon. The inner solution meets the other condition. Matching sets the inner solution far out equal to the outer solution close in.",
+     "th": "ใกล้ x เท่ากับศูนย์ ยืดตัวแปรด้วย epsilon คำตอบชั้นในสอดคล้องกับอีกเงื่อนไขหนึ่ง การจับคู่กำหนดให้คำตอบชั้นในที่ระยะไกลเท่ากับคำตอบชั้นนอกที่ระยะใกล้"
+    },
+    {
+     "s": 23.776,
+     "e": 30.75,
+     "en": "The composite adds both and subtracts their common part, and is uniformly valid with error of order epsilon.",
+     "th": "คำตอบผสมรวมทั้งสองแล้วลบส่วนร่วม และใช้ได้ทั่วทั้งโดเมนด้วยความคลาดเคลื่อนอันดับ epsilon"
+    },
+    {
+     "s": 30.75,
+     "e": 39.75,
+     "en": "The layer sits where the outer solution fails. A layer at the other end would grow into the domain instead of decaying, and could not match.",
+     "th": "ชั้นขอบเขตอยู่ที่ตำแหน่งที่คำตอบชั้นนอกใช้ไม่ได้ ชั้นที่ปลายอีกด้านจะโตขึ้นเข้าไปในโดเมนแทนที่จะลดลง และจับคู่ไม่ได้"
+    },
+    {
+     "s": 39.75,
+     "e": 46.025,
+     "en": "The layer thickness comes from the balance of the second derivative term with the first derivative term.",
+     "th": "ความหนาของชั้นได้จากการถ่วงดุลพจน์อนุพันธ์อันดับสองกับพจน์อนุพันธ์อันดับหนึ่ง"
+    },
+    {
+     "s": 46.025,
+     "e": 51.224,
+     "en": "Both are large inside the layer, and their balance sets the thickness equal to epsilon.",
+     "th": "ทั้งสองมีค่ามากภายในชั้น และการถ่วงดุลกำหนดให้ความหนาเท่ากับ epsilon"
+    },
+    {
+     "s": 51.224,
+     "e": 60.5,
+     "en": "In chemical engineering you meet such layers as the reaction zone in a pellet, the concentration layer at a wall, and the entry region of a tubular reactor.",
+     "th": "ในวิศวกรรมเคมี คุณพบชั้นแบบนี้ในรูปของเขตปฏิกิริยาในเม็ดตัวเร่ง ชั้นความเข้มข้นที่ผนัง และบริเวณทางเข้าของเครื่องปฏิกรณ์แบบท่อ"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 33.672,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.342,
+     "en": "Move the slider and watch the layer sharpen as epsilon shrinks. The table shows the module's largest composite error.",
+     "th": "เลื่อนแถบและดูชั้นขอบเขตคมขึ้นเมื่อ epsilon เล็กลง ตารางแสดงความคลาดเคลื่อนสูงสุดของคำตอบผสมจากโมดูล"
+    },
+    {
+     "s": 8.342,
+     "e": 17.218,
+     "en": "For the smallest values of epsilon, the error divided by epsilon settles near two and a half. That confirms order epsilon.",
+     "th": "สำหรับ epsilon ค่าเล็กที่สุด ความคลาดเคลื่อนหารด้วย epsilon เข้าใกล้สองจุดห้า ซึ่งยืนยันอันดับ epsilon"
+    },
+    {
+     "s": 17.218,
+     "e": 24.868,
+     "en": "At larger epsilon the ratio is not yet constant, because the expansion is not yet in its asymptotic range.",
+     "th": "ที่ epsilon ค่ามากกว่านี้ อัตราส่วนยังไม่คงที่ เพราะการกระจายยังไม่เข้าสู่ช่วงเชิงเส้นกำกับ"
+    },
+    {
+     "s": 24.868,
+     "e": 33.605,
+     "en": "The curves are drawn on this page from the closed forms, so you can compare the exact solution, the outer solution and the composite at each epsilon.",
+     "th": "เส้นโค้งถูกวาดบนหน้านี้จากสูตรปิด คุณจึงเปรียบเทียบคำตอบแม่นตรง คำตอบชั้นนอก และคำตอบผสมได้ที่แต่ละค่า epsilon"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 46.176,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.754,
+     "en": "The quasi steady state approximation is the outer solution of a singular perturbation.",
+     "th": "การประมาณสภาวะกึ่งคงตัวคือคำตอบชั้นนอกของ singular perturbation การให้"
+    },
+    {
+     "s": 5.754,
+     "e": 13.487,
+     "en": "Setting epsilon to zero turns the complex equation into an algebraic relation, and gives the Michaelis Menten rate law.",
+     "th": "epsilon เป็นศูนย์เปลี่ยนสมการของสารเชิงซ้อนเป็นความสัมพันธ์เชิงพีชคณิต และให้กฎอัตรา Michaelis Menten"
+    },
+    {
+     "s": 13.487,
+     "e": 18.239,
+     "en": "The inner layer is the short time in which the complex builds up from zero.",
+     "th": "ชั้นในคือช่วงเวลาสั้นๆ ที่สารเชิงซ้อนเพิ่มขึ้นจากศูนย์"
+    },
+    {
+     "s": 18.239,
+     "e": 26.118,
+     "en": "The table shows the error growing roughly in proportion to epsilon, until at epsilon zero point eight the approximation fails.",
+     "th": "ตารางแสดงว่าความคลาดเคลื่อนเพิ่มขึ้นตามสัดส่วนของ epsilon โดยประมาณ จนที่ epsilon ศูนย์จุดแปด การประมาณใช้ไม่ได้"
+    },
+    {
+     "s": 26.118,
+     "e": 35.25,
+     "en": "The chart plots substrate against slow time for four enzyme levels. Solid lines are the full model and dashed lines the approximation.",
+     "th": "กราฟแสดงสารตั้งต้นเทียบกับเวลาช้าสำหรับระดับเอนไซม์สี่ค่า เส้นทึบคือแบบจำลองเต็ม และเส้นประคือการประมาณ"
+    },
+    {
+     "s": 35.25,
+     "e": 46.118,
+     "en": "Notice that at the largest enzyme level the enzyme exceeds the substrate tenfold, yet the classical rule would not have told you how large the error is. Epsilon does.",
+     "th": "สังเกตว่าที่ระดับเอนไซม์สูงสุด เอนไซม์มากกว่าสารตั้งต้นสิบเท่า แต่กฎแบบดั้งเดิมไม่ได้บอกว่าความคลาดเคลื่อนมากเพียงใด epsilon บอกได้"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 7.896,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.829,
+     "en": "Check two. Answer the four questions, then show the answers. Pause the narration now.",
+     "th": "แบบฝึกหัดตรวจสอบที่สอง ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 16.608,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 14.576,
+     "en": "Activity two. Take your card. Choose a scale for every variable, write the scaled model, and estimate each dimensionless group. Decide whether any limit is regular or singular.",
+     "th": "กิจกรรมที่สอง ใช้การ์ดของคุณ เลือกสเกลให้ทุกตัวแปร เขียนแบบจำลองไร้มิติ และประมาณค่าแต่ละกลุ่มไร้มิติ ตัดสินว่าขีดจำกัดใดเป็นแบบ regular หรือ singular"
+    },
+    {
+     "s": 14.576,
+     "e": 16.539,
+     "en": "Pause the narration now.",
+     "th": "หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
+   "duration": 36.84,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.75,
+     "en": "Expansions can also fail in time. For a weakly nonlinear oscillator, the first correction contains t times sine t, which grows without bound. This is a secular term.",
+     "th": "การกระจายอาจล้มเหลวตามเวลาได้เช่นกัน สำหรับตัวแกว่งที่ไม่เชิงเส้นเล็กน้อย การแก้ไขอันดับแรกมี t คูณ sine t ซึ่งโตขึ้นไม่มีขอบเขต นี่คือพจน์ secular"
+    },
+    {
+     "s": 12.75,
+     "e": 25.5,
+     "en": "It signals a missed slow time scale. The method of multiple scales introduces a slow time and lets the amplitude and phase depend on it. In this course you need to recognize the symptom.",
+     "th": "มันบอกว่าเราพลาดสเกลเวลาช้าไป วิธี multiple scales เพิ่มเวลาช้าเข้ามา และให้แอมพลิจูดและเฟสขึ้นกับเวลานั้น ในวิชานี้คุณต้องจำอาการนี้ได้"
+    },
+    {
+     "s": 25.5,
+     "e": 36.763,
+     "en": "The result is a frequency that depends on amplitude, approximately one plus three epsilon a squared over eight. The same idea gives the amplitude equation near a Hopf point.",
+     "th": "ผลลัพธ์คือความถี่ที่ขึ้นกับแอมพลิจูด ประมาณหนึ่งบวกสาม epsilon a กำลังสองหารแปด แนวคิดเดียวกันให้สมการแอมพลิจูดใกล้จุด Hopf"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 34.992,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.026,
+     "en": "Back to the slab. At small phi the limit is regular, and the effectiveness factor is close to one minus phi squared over three.",
+     "th": "กลับมาที่แผ่นตัวเร่ง ที่ phi ค่าน้อย ขีดจำกัดเป็นแบบ regular และ effectiveness factor ใกล้กับหนึ่งลบ phi กำลังสองหารสาม"
+    },
+    {
+     "s": 9.026,
+     "e": 19.467,
+     "en": "At large phi the limit is singular. The reactant is used up in a layer of thickness one over phi, so the effectiveness factor is about one over phi.",
+     "th": "ที่ phi ค่ามาก ขีดจำกัดเป็นแบบ singular สารตั้งต้นถูกใช้หมดในชั้นที่หนาหนึ่งหารด้วย phi ดังนั้น effectiveness factor มีค่าประมาณหนึ่งหารด้วย phi สำหรับอันดับ"
+    },
+    {
+     "s": 19.467,
+     "e": 24.513,
+     "en": "For order n, a square root factor appears, which needs no full solution.",
+     "th": "n จะมีตัวประกอบรากที่สองเพิ่มเข้ามา ซึ่งหาได้โดยไม่ต้องแก้สมการทั้งหมด"
+    },
+    {
+     "s": 24.513,
+     "e": 34.921,
+     "en": "The chart compares the exact result with both limits. The small phi line is useful only below about one, and the one over phi line only above about two.",
+     "th": "กราฟเปรียบเทียบผลแม่นตรงกับขีดจำกัดทั้งสอง เส้น phi ค่าน้อยใช้ได้เฉพาะต่ำกว่าประมาณหนึ่ง และเส้นหนึ่งหารด้วย phi ใช้ได้เฉพาะสูงกว่าประมาณสอง"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
+   "duration": 35.904,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.313,
+     "en": "When you report an asymptotic result, give the scales and the groups with their values, the small parameter, and whether the limit is regular or singular.",
+     "th": "เมื่อรายงานผลเชิงเส้นกำกับ ให้ระบุสเกลและกลุ่มไร้มิติพร้อมค่า พารามิเตอร์ขนาดเล็ก และขีดจำกัดเป็นแบบ regular หรือ singular"
+    },
+    {
+     "s": 9.313,
+     "e": 17.921,
+     "en": "Give the order of the approximation, a comparison with a numerical solution at your parameter values, and the range of validity with evidence.",
+     "th": "ให้อันดับของการประมาณ การเปรียบเทียบกับคำตอบเชิงตัวเลขที่ค่าพารามิเตอร์ของคุณ และช่วงที่ใช้ได้พร้อมหลักฐาน"
+    },
+    {
+     "s": 17.921,
+     "e": 27.513,
+     "en": "The order of the approximation tells you how the error scales, not how large it is at your epsilon. Only the numerical comparison gives that.",
+     "th": "อันดับของการประมาณบอกว่าความคลาดเคลื่อนเปลี่ยนตามสเกลอย่างไร ไม่ได้บอกว่ามีขนาดเท่าใดที่ epsilon ของคุณ มีเพียงการเปรียบเทียบเชิงตัวเลขที่บอกได้"
+    },
+    {
+     "s": 27.513,
+     "e": 35.842,
+     "en": "An asymptotic formula is worth reporting because it shows which group controls the result, which a table of numerical solutions does not.",
+     "th": "สูตรเชิงเส้นกำกับควรรายงานเพราะมันแสดงว่ากลุ่มใดควบคุมผลลัพธ์ ซึ่งตารางคำตอบเชิงตัวเลขไม่แสดง"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 7.992,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.921,
+     "en": "Check three. Answer the four questions, then show the answers. Pause the narration now.",
+     "th": "แบบฝึกหัดตรวจสอบที่สาม ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 8.832,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.776,
+     "en": "Check four. Build the outer, inner and composite solutions for a short problem. Pause the narration now.",
+     "th": "แบบฝึกหัดตรวจสอบที่สี่ สร้างคำตอบชั้นนอก ชั้นใน และคำตอบผสมสำหรับปัญหาสั้นๆ หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
+   "duration": 22.968,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.789,
+     "en": "Session 7 treats boundary value problems. The pellet and the axial dispersion reactor are both boundary value problems, and at large Péclet number a layer forms at the outlet.",
+     "th": "คาบที่ 7 ว่าด้วยปัญหาค่าขอบ แผ่นตัวเร่งและเครื่องปฏิกรณ์แบบมีการกระจายตามแนวแกนต่างเป็นปัญหาค่าขอบ และที่เลข Péclet ค่ามาก จะเกิดชั้นขอบเขตที่ทางออก"
+    },
+    {
+     "s": 11.789,
+     "e": 22.908,
+     "en": "Session 7 also gives the exact effectiveness factors for the cylinder and the sphere, through Bessel functions, to compare with today's limits. After that comes the midterm.",
+     "th": "คาบที่ 7 ยังให้ effectiveness factor แม่นตรงของทรงกระบอกและทรงกลมผ่านฟังก์ชัน Bessel เพื่อเปรียบเทียบกับขีดจำกัดของวันนี้ หลังจากนั้นคือการสอบกลางภาค"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "file": "audio/slide-23.mp3",
+   "duration": 14.568,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 14.5,
+     "en": "Lab six. Open the lab page with the code. You will compute the Thiele modulus, read the reaction layer, and test the large phi asymptote for a second order rate. Pause the narration now.",
+     "th": "แล็บที่หก เปิดหน้าแล็บด้วยโค้ด คุณจะคำนวณ Thiele modulus อ่านชั้นปฏิกิริยา และทดสอบเส้นเชิงเส้นกำกับที่ phi ค่ามากสำหรับปฏิกิริยาอันดับสอง หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 34.656,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 14.671,
+     "en": "To summarize. Scale every variable by the size it reaches. Regular limits are solved order by order. Singular limits lose a root or a boundary condition, recovered on a short scale.",
+     "th": "สรุป ทำให้ทุกตัวแปรไร้มิติด้วยขนาดที่มันมีจริง ขีดจำกัดแบบ regular แก้ทีละอันดับ ขีดจำกัดแบบ singular ทำให้รากหรือเงื่อนไขขอบเขตหายไป และได้คืนมาในสเกลสั้น"
+    },
+    {
+     "s": 14.671,
+     "e": 26.263,
+     "en": "The composite is outer plus inner minus common part. The quasi steady state approximation is an outer solution. A pellet at large phi is a boundary layer.",
+     "th": "คำตอบผสมคือชั้นนอกบวกชั้นในลบส่วนร่วม การประมาณสภาวะกึ่งคงตัวคือคำตอบชั้นนอก แผ่นตัวเร่งที่ phi ค่ามากคือชั้นขอบเขต"
+    },
+    {
+     "s": 26.263,
+     "e": 34.592,
+     "en": "In your own work, state the groups of your model and the limit you work in, and test any asymptotic formula against a numerical solution.",
+     "th": "ในงานของคุณเอง ให้ระบุกลุ่มไร้มิติของแบบจำลองและขีดจำกัดที่ทำงานอยู่ และทดสอบสูตรเชิงเส้นกำกับทุกสูตรกับคำตอบเชิงตัวเลข"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
+   "duration": 11.712,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.658,
+     "en": "Before next session, finish the lab and upload the answer file. Keep your card, and read the chapter on perturbation methods in Rice and Do, and the paper by Segel and Slemrod.",
+     "th": "ก่อนคาบหน้า ทำแล็บให้เสร็จและอัปโหลดไฟล์คำตอบ เก็บการ์ดไว้ และอ่านบทว่าด้วยวิธี perturbation ใน Rice และ Do และบทความของ Segel และ Slemrod"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 10.848,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.789,
+     "en": "Finally, the Exit Ticket and feedback. Scan the code, choose Session 6, and paste the answers that the lab page copies for you. Thank you.",
+     "th": "สุดท้าย Exit Ticket และแบบประเมิน สแกนโค้ด เลือกคาบที่ 6 แล้ววางคำตอบที่หน้าแล็บคัดลอกไว้ให้ ขอบคุณครับ"
+    }
+   ]
+  }
+ ]
+}

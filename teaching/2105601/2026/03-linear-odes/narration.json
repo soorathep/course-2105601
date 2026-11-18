@@ -1,0 +1,1225 @@
+{
+ "voice": "en-US-GuyNeural",
+ "rate": "-5%",
+ "provider": "Microsoft Edge neural speech (edge-tts)",
+ "synthetic_voice": true,
+ "total_seconds": 1373.2,
+ "slides": [
+  {
+   "n": 1,
+   "file": "audio/slide-01.mp3",
+   "duration": 38.328,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.708,
+     "en": "Welcome to Session 3 of Advanced Engineering Mathematics for Chemical Engineers.",
+     "th": "ยินดีต้อนรับสู่คาบที่ 3 ของวิชา Advanced Engineering Mathematics for Chemical Engineers"
+    },
+    {
+     "s": 5.708,
+     "e": 9.257,
+     "en": "Today the eigenvectors of Session 2 start to move.",
+     "th": "วันนี้เวกเตอร์เฉพาะจากคาบที่ 2 เริ่มเคลื่อนที่"
+    },
+    {
+     "s": 9.257,
+     "e": 19.974,
+     "en": "A linear system of differential equations, d x d t equals K x, separates into independent modes in the eigenvector basis, each with its own time constant.",
+     "th": "ระบบสมการเชิงอนุพันธ์เชิงเส้น d x d t เท่ากับ K x แยกออกเป็นโหมดอิสระใน basis ของเวกเตอร์เฉพาะ แต่ละโหมดมีค่าคงที่เวลาของตัวเอง"
+    },
+    {
+     "s": 19.974,
+     "e": 29.368,
+     "en": "For a reaction network, those modes are straight line paths in composition space, and finding them was one of the classic results of chemical reaction engineering.",
+     "th": "สำหรับเครือข่ายปฏิกิริยา โหมดเหล่านั้นคือเส้นทางแบบเส้นตรงในปริภูมิองค์ประกอบ และการหาเส้นทางเหล่านี้เป็นผลงานคลาสสิกชิ้นหนึ่งของวิศวกรรมปฏิกิริยาเคมี"
+    },
+    {
+     "s": 29.368,
+     "e": 38.263,
+     "en": "On your own, the narration takes about twenty five minutes. When the narration for a slide ends, press the right arrow key, or Next.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณยี่สิบห้านาที เมื่อเสียงบรรยายของแต่ละหน้าจบ กดลูกศรขวาหรือปุ่ม Next"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "file": "audio/slide-02.mp3",
+   "duration": 27.984,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 2.116,
+     "en": "Here is the plan.",
+     "th": "นี่คือแผนของวันนี้"
+    },
+    {
+     "s": 2.116,
+     "e": 11.487,
+     "en": "Part one solves d x d t equals K x in the eigenvector basis, with modes, time constants, conserved quantities and complex eigenvalues.",
+     "th": "ส่วนที่หนึ่งแก้ d x d t เท่ากับ K x ใน basis ของเวกเตอร์เฉพาะ พร้อมโหมด ค่าคงที่เวลา ปริมาณอนุรักษ์ และค่าเฉพาะเชิงซ้อน"
+    },
+    {
+     "s": 11.487,
+     "e": 18.5,
+     "en": "Part two covers the matrix exponential, inputs, Laplace transforms and transfer functions, and stiffness.",
+     "th": "ส่วนที่สองว่าด้วย matrix exponential อินพุต Laplace transform และ transfer function และความแข็ง หรือ stiffness"
+    },
+    {
+     "s": 18.5,
+     "e": 27.921,
+     "en": "Part three applies all of it to first order reaction networks, with detailed balance and straight line reaction paths. Lab 3 follows.",
+     "th": "ส่วนที่สามนำทั้งหมดไปใช้กับเครือข่ายปฏิกิริยาอันดับหนึ่ง พร้อม detailed balance และเส้นทางปฏิกิริยาแบบเส้นตรง แล้วตามด้วย Lab 3"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "file": "audio/slide-03.mp3",
+   "duration": 26.136,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.826,
+     "en": "Activity 1 is a retrieval check on Session 2: powers of a diagonalized matrix, non normal stretching, the meaning of a condition number, and a strong parameter correlation.",
+     "th": "กิจกรรมที่ 1 คือการทบทวนคาบที่ 2 ได้แก่ กำลังของเมทริกซ์ที่แปลงเป็นเมทริกซ์ทแยงแล้ว การยืดของเมทริกซ์ที่ไม่ normal ความหมายของ condition number และสหสัมพันธ์ที่สูงของพารามิเตอร์"
+    },
+    {
+     "s": 10.826,
+     "e": 19.882,
+     "en": "The first question is today's bridge. Replace the power ten by an exponential, and you have the solution of a linear ODE system.",
+     "th": "คำถามแรกเป็นสะพานไปสู่วันนี้ เปลี่ยนกำลังสิบเป็นฟังก์ชันเอกซ์โพเนนเชียล ก็จะได้คำตอบของระบบสมการเชิงอนุพันธ์เชิงเส้น"
+    },
+    {
+     "s": 19.882,
+     "e": 26.066,
+     "en": "Write alone, then compare. On your own, pause and then press Show answers.",
+     "th": "เขียนคนเดียว แล้วเทียบกับเพื่อน ถ้าเรียนเอง ให้หยุดเสียงแล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "file": "audio/slide-04.mp3",
+   "duration": 29.352,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.445,
+     "en": "By the end of today you should be able to solve a linear system in the eigenvector basis and read off its modes and time constants.",
+     "th": "เมื่อจบคาบนี้ คุณควรแก้ระบบเชิงเส้นใน basis ของเวกเตอร์เฉพาะ และอ่านโหมดกับค่าคงที่เวลาได้"
+    },
+    {
+     "s": 7.445,
+     "e": 13.262,
+     "en": "Explain a zero eigenvalue as a conserved quantity and complex eigenvalues as oscillation.",
+     "th": "อธิบายค่าเฉพาะศูนย์ว่าเป็นปริมาณอนุรักษ์ และค่าเฉพาะเชิงซ้อนว่าเป็นการแกว่ง คำนวณ"
+    },
+    {
+     "s": 13.262,
+     "e": 22.829,
+     "en": "Compute the matrix exponential correctly, relate transfer function poles to eigenvalues, recognize stiffness, and find straight line reaction paths.",
+     "th": "matrix exponential อย่างถูกต้อง เชื่อมโยงขั้วของ transfer function กับค่าเฉพาะ จำความแข็งของระบบได้ และหาเส้นทางปฏิกิริยาแบบเส้นตรงได้"
+    },
+    {
+     "s": 22.829,
+     "e": 29.289,
+     "en": "Each of these appears on a slide with a demo or a D drawer, and each is tested in the checks or in the lab.",
+     "th": "ทุกข้อปรากฏในสไลด์ที่มี demo หรือ D drawer และทุกข้อถูกทดสอบใน check หรือในแล็บ"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "file": "audio/slide-05.mp3",
+   "duration": 53.592,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.967,
+     "en": "From Session 1 you have the stoichiometric matrix and its left null space.",
+     "th": "จากคาบที่ 1 คุณมี stoichiometric matrix และ left null space ของมัน"
+    },
+    {
+     "s": 4.967,
+     "e": 13.921,
+     "en": "With first order rates, the mole balance of a batch reactor becomes d n d t equals K n, and the left null space of K holds the invariants.",
+     "th": "เมื่ออัตราเป็นอันดับหนึ่ง สมการดุลโมลของเครื่องปฏิกรณ์แบบกะกลายเป็น d n d t เท่ากับ K n และ left null space ของ K เก็บค่าที่ไม่แปรเปลี่ยน"
+    },
+    {
+     "s": 13.921,
+     "e": 22.592,
+     "en": "From Session 2 you have diagonalization. Today it becomes e to the K t equals V e to the Lambda t V inverse.",
+     "th": "จากคาบที่ 2 คุณมีการแปลงเป็นเมทริกซ์ทแยง วันนี้มันกลายเป็น e กำลัง K t เท่ากับ V e กำลัง Lambda t V inverse"
+    },
+    {
+     "s": 22.592,
+     "e": 31.382,
+     "en": "From undergraduate process control you have transfer functions. Today their poles become the eigenvalues of the state matrix.",
+     "th": "จากวิชาควบคุมกระบวนการระดับปริญญาตรี คุณมี transfer function วันนี้ขั้วของมันกลายเป็นค่าเฉพาะของเมทริกซ์สถานะ"
+    },
+    {
+     "s": 31.382,
+     "e": 37.368,
+     "en": "And Session 4 will replace K by the Jacobian of a nonlinear model at a steady state.",
+     "th": "และคาบที่ 4 จะแทน K ด้วย Jacobian ของแบบจำลองไม่เชิงเส้นที่สภาวะคงตัว"
+    },
+    {
+     "s": 37.368,
+     "e": 43.868,
+     "en": "One thread runs through all of this: a linear operator is understood in the basis that makes it simple.",
+     "th": "เส้นเรื่องเดียวที่ต่อเนื่องคือ เราเข้าใจ linear operator ได้ใน basis ที่ทำให้มันง่าย"
+    },
+    {
+     "s": 43.868,
+     "e": 53.513,
+     "en": "In this course the rate matrix plays the role that the stoichiometric matrix played in Session 1: an integer structure from chemistry, now with rate constants attached.",
+     "th": "ในวิชานี้เมทริกซ์อัตราทำหน้าที่แบบเดียวกับที่ stoichiometric matrix ทำในคาบที่ 1 คือโครงสร้างจำนวนเต็มจากเคมี ที่ตอนนี้มีค่าคงที่อัตราติดอยู่ด้วย"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "file": "audio/slide-06.mp3",
+   "duration": 107.736,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.197,
+     "en": "Part one. The scalar equation d x d t equals k x has the solution e to the k t times x zero. For a system, change to the eigenvector basis.",
+     "th": "ส่วนที่หนึ่ง สมการสเกลาร์ d x d t เท่ากับ k x มีคำตอบเป็น e กำลัง k t คูณ x ศูนย์ สำหรับระบบสมการ ให้เปลี่ยนไปใช้ basis ของเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 12.197,
+     "e": 24.131,
+     "en": "With y equal to V inverse x, the system becomes d y d t equals Lambda y, which is n separate scalar equations. Each eigen coordinate grows or decays as e to the lambda i t.",
+     "th": "เมื่อ y เท่ากับ V inverse x ระบบกลายเป็น d y d t เท่ากับ Lambda y ซึ่งคือสมการสเกลาร์ n สมการที่แยกกัน พิกัดเฉพาะแต่ละตัวเพิ่มหรือลดตาม e กำลัง lambda i t"
+    },
+    {
+     "s": 24.131,
+     "e": 31.728,
+     "en": "Changing back gives x of t as a sum of modes: a coefficient c i, times e to the lambda i t, times the fixed direction v i.",
+     "th": "เมื่อเปลี่ยนกลับจะได้ x ของ t เป็นผลรวมของโหมด คือ สัมประสิทธิ์ c i คูณ e กำลัง lambda i t คูณทิศคงที่ v"
+    },
+    {
+     "s": 31.728,
+     "e": 36.855,
+     "en": "The coefficients are the coordinates of the initial state in the eigenvector basis.",
+     "th": "i สัมประสิทธิ์เหล่านี้คือพิกัดของสถานะเริ่มต้นใน basis ของเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 36.855,
+     "e": 46.592,
+     "en": "The compact form is x of t equals the matrix exponential e to the K t times x zero, defined by the same power series as the scalar exponential.",
+     "th": "รูปแบบกะทัดรัดคือ x ของ t เท่ากับ matrix exponential e กำลัง K t คูณ x ศูนย์ ซึ่งนิยามด้วยอนุกรมกำลังแบบเดียวกับเอกซ์โพเนนเชียลของสเกลาร์"
+    },
+    {
+     "s": 46.592,
+     "e": 55.587,
+     "en": "A negative real eigenvalue decays with time constant minus one over lambda. A zero eigenvalue is a direction that never changes.",
+     "th": "ค่าเฉพาะจริงที่เป็นลบลดลงด้วยค่าคงที่เวลาลบหนึ่งส่วน lambda ค่าเฉพาะศูนย์คือทิศที่ไม่เปลี่ยนเลย และ matrix exponential"
+    },
+    {
+     "s": 55.587,
+     "e": 64.303,
+     "en": "And the matrix exponential exists for every square matrix, even a defective one, although the eigenvector formula then fails.",
+     "th": "มีอยู่สำหรับเมทริกซ์จัตุรัสทุกตัว แม้แต่เมทริกซ์ defective แม้ว่าสูตรจากเวกเตอร์เฉพาะจะใช้ไม่ได้ในกรณีนั้น"
+    },
+    {
+     "s": 64.303,
+     "e": 69.406,
+     "en": "Here is why the series definition is worth knowing even if you never sum it.",
+     "th": "นี่คือเหตุผลที่ควรรู้นิยามแบบอนุกรมแม้จะไม่เคยรวมมันเอง อนุพันธ์ทีละพจน์เท่ากับ"
+    },
+    {
+     "s": 69.406,
+     "e": 77.624,
+     "en": "Its derivative term by term is K times the series, so it satisfies the equation, and at t equal to zero it is the identity.",
+     "th": "K คูณอนุกรมนั้น จึงสอดคล้องกับสมการ และที่ t เท่ากับศูนย์มีค่าเป็นเมทริกซ์เอกลักษณ์"
+    },
+    {
+     "s": 77.624,
+     "e": 82.197,
+     "en": "That proves existence and uniqueness for every square K in two lines.",
+     "th": "นี่พิสูจน์การมีอยู่และความเป็นหนึ่งเดียวของคำตอบสำหรับ K จัตุรัสทุกตัวในสองบรรทัด"
+    },
+    {
+     "s": 82.197,
+     "e": 93.197,
+     "en": "Let us also see what the coefficients mean physically. If the initial state lies entirely along one eigenvector, all other coefficients are zero and only that mode moves.",
+     "th": "ลองดูความหมายทางกายภาพของสัมประสิทธิ์ ถ้าสถานะเริ่มต้นอยู่ตามเวกเตอร์เฉพาะตัวเดียวทั้งหมด สัมประสิทธิ์อื่นเป็นศูนย์ และมีเพียงโหมดนั้นที่เคลื่อนที่"
+    },
+    {
+     "s": 93.197,
+     "e": 103.297,
+     "en": "If the eigenvectors are nearly parallel, as for a nearly defective matrix, the coefficients can be large with opposite signs, and the modes cancel at first.",
+     "th": "ถ้าเวกเตอร์เฉพาะเกือบขนานกัน เช่น ในเมทริกซ์ที่เกือบ defective สัมประสิทธิ์อาจมีค่ามากและมีเครื่องหมายตรงข้าม และโหมดต่างๆ หักล้างกันในตอนแรก"
+    },
+    {
+     "s": 103.297,
+     "e": 107.671,
+     "en": "That cancellation is the transient growth we discussed in Session 2.",
+     "th": "การหักล้างนี้คือ transient growth ที่เราคุยกันในคาบที่ 2"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "file": "audio/slide-07.mp3",
+   "duration": 92.184,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.576,
+     "en": "Here is the consecutive reaction A to B to C, with k one equal to one and k two equal to zero point five per minute.",
+     "th": "นี่คือปฏิกิริยาต่อเนื่อง A ไป B ไป C โดย k หนึ่ง เท่ากับหนึ่ง และ k สอง เท่ากับศูนย์จุดห้าต่อนาที"
+    },
+    {
+     "s": 7.576,
+     "e": 16.158,
+     "en": "The rate matrix is lower triangular, so its eigenvalues are its diagonal entries: zero, minus zero point five, and minus one.",
+     "th": "เมทริกซ์อัตราเป็นเมทริกซ์สามเหลี่ยมล่าง ค่าเฉพาะจึงเป็นสมาชิกบนแนวทแยง คือ ศูนย์ ลบศูนย์จุดห้า และลบหนึ่ง"
+    },
+    {
+     "s": 16.158,
+     "e": 27.289,
+     "en": "The zero eigenvalue has the left eigenvector one, one, one. That is the statement that A plus B plus C never changes, which the table confirms at every time.",
+     "th": "ค่าเฉพาะศูนย์มี left eigenvector เป็น หนึ่ง หนึ่ง หนึ่ง ซึ่งคือข้อความว่า A บวก B บวก C ไม่เปลี่ยนเลย ตารางยืนยันได้ทุกเวลา"
+    },
+    {
+     "s": 27.289,
+     "e": 40.263,
+     "en": "Move the time slider. B rises and falls, and peaks at the natural log of k one over k two, divided by k one minus k two, which is one point three nine minutes, where it reaches one half.",
+     "th": "เลื่อนแถบเวลา B เพิ่มขึ้นแล้วลดลง และสูงสุดที่ ล็อกธรรมชาติของ k หนึ่ง ส่วน k สอง หารด้วย k หนึ่ง ลบ k สอง ซึ่งเท่ากับหนึ่งจุดสามเก้านาที ณ จุดนั้นมีค่าครึ่งหนึ่ง"
+    },
+    {
+     "s": 40.263,
+     "e": 52.921,
+     "en": "The D drawer checks the matrix exponential against an ODE solver. They agree to better than ten to the minus nine. Always make such a check when you implement a solution yourself.",
+     "th": "D drawer ตรวจ matrix exponential เทียบกับตัวแก้สมการเชิงอนุพันธ์ ได้ค่าตรงกันดีกว่าสิบยกกำลังลบเก้า ควรตรวจแบบนี้ทุกครั้งที่คุณเขียนคำตอบเอง"
+    },
+    {
+     "s": 52.921,
+     "e": 61.378,
+     "en": "Notice also the shape of C. It starts with zero slope, because C is formed only from B, which is zero at the start.",
+     "th": "สังเกตรูปของ C ด้วย มันเริ่มด้วยความชันศูนย์ เพราะ C เกิดจาก B เท่านั้น ซึ่งเป็นศูนย์ในตอนเริ่มต้น"
+    },
+    {
+     "s": 61.378,
+     "e": 67.211,
+     "en": "This induction period is a signature of a consecutive mechanism in kinetic data.",
+     "th": "ช่วงเหนี่ยวนำนี้เป็นลายเซ็นของกลไกแบบต่อเนื่องในข้อมูลจลนพลศาสตร์"
+    },
+    {
+     "s": 67.211,
+     "e": 73.087,
+     "en": "Try reading the eigenvectors too. The eigenvector for minus one is one, minus two, one:",
+     "th": "ลองอ่านเวกเตอร์เฉพาะด้วย เวกเตอร์เฉพาะของลบหนึ่งคือ หนึ่ง ลบสอง หนึ่ง"
+    },
+    {
+     "s": 73.087,
+     "e": 85.507,
+     "en": "in this mode A and C change together, and B changes twice as much in the opposite direction, so the total stays fixed. The eigenvector for minus zero point five is zero, one, minus one:",
+     "th": "ในโหมดนี้ A และ C เปลี่ยนไปด้วยกัน และ B เปลี่ยนสองเท่าในทิศตรงข้าม ผลรวมจึงคงที่ เวกเตอร์เฉพาะของลบศูนย์จุดห้าคือ ศูนย์ หนึ่ง ลบหนึ่ง คือ B"
+    },
+    {
+     "s": 85.507,
+     "e": 92.118,
+     "en": "B turns into C with A untouched. Every composition change is a combination of these two directions.",
+     "th": "เปลี่ยนเป็น C โดย A ไม่เปลี่ยน การเปลี่ยนแปลงองค์ประกอบทุกแบบเป็นผลรวมของสองทิศนี้"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "file": "audio/slide-08.mp3",
+   "duration": 78.408,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.05,
+     "en": "Subtract the final state, and what remains is a sum of decaying modes.",
+     "th": "เมื่อลบสถานะสุดท้ายออก สิ่งที่เหลือคือผลรวมของโหมดที่กำลังลดลง"
+    },
+    {
+     "s": 5.05,
+     "e": 14.829,
+     "en": "When the eigenvalues are well separated, the fast modes die after a few of their time constants, and the state then approaches its final value along the slowest eigenvector.",
+     "th": "เมื่อค่าเฉพาะห่างกันมาก โหมดเร็วจะหายไปหลังจากผ่านค่าคงที่เวลาของมันไม่กี่เท่า แล้วสถานะจะเข้าหาค่าสุดท้ายตามเวกเตอร์เฉพาะที่ช้าที่สุด"
+    },
+    {
+     "s": 14.829,
+     "e": 22.895,
+     "en": "If you start exactly along one eigenvector from the final state, only one mode is present, and the state moves along a straight line.",
+     "th": "ถ้าเริ่มต้นตามเวกเตอร์เฉพาะตัวใดตัวหนึ่งจากสถานะสุดท้ายพอดี จะมีเพียงโหมดเดียว และสถานะเคลื่อนที่ตามเส้นตรง"
+    },
+    {
+     "s": 22.895,
+     "e": 31.013,
+     "en": "That observation is how Wei and Prater found the eigenvectors of real reaction networks by experiment, which is part three and the lab.",
+     "th": "ข้อสังเกตนี้คือวิธีที่ Wei และ Prater หาเวกเตอร์เฉพาะของเครือข่ายปฏิกิริยาจริงด้วยการทดลอง ซึ่งคือส่วนที่สามและแล็บ"
+    },
+    {
+     "s": 31.013,
+     "e": 40.605,
+     "en": "And when the separation is large, the fast modes reach a quasi steady state. Session 6 turns that into a systematic approximation.",
+     "th": "และเมื่อการแยกมีขนาดใหญ่ โหมดเร็วจะเข้าสู่ quasi steady state คาบที่ 6 จะทำให้เรื่องนี้เป็นการประมาณอย่างเป็นระบบ"
+    },
+    {
+     "s": 40.605,
+     "e": 49.07,
+     "en": "Let us check the claim with numbers. For A to B to C, the fast mode has a time constant of one minute and the slow one two minutes.",
+     "th": "ลองตรวจข้อความนี้ด้วยตัวเลข สำหรับ A ไป B ไป C โหมดเร็วมีค่าคงที่เวลาหนึ่งนาที และโหมดช้าสองนาที"
+    },
+    {
+     "s": 49.07,
+     "e": 59.138,
+     "en": "After three minutes the fast mode has decayed to e to the minus three, five percent, and the slow mode to e to the minus one point five, twenty two percent.",
+     "th": "หลังสามนาที โหมดเร็วลดเหลือ e กำลังลบสาม ห้าเปอร์เซ็นต์ และโหมดช้าเหลือ e กำลังลบหนึ่งจุดห้า ยี่สิบสองเปอร์เซ็นต์"
+    },
+    {
+     "s": 59.138,
+     "e": 61.895,
+     "en": "The slow mode carries most of what remains.",
+     "th": "โหมดช้าจึงเป็นส่วนใหญ่ของสิ่งที่เหลือ"
+    },
+    {
+     "s": 61.895,
+     "e": 71.928,
+     "en": "A practical consequence for experiments: to measure a fast mode, sample early and densely; to measure a slow one, sample long after the fast modes have died.",
+     "th": "ผลในทางปฏิบัติต่อการทดลอง คือ ถ้าต้องการวัดโหมดเร็ว ให้เก็บตัวอย่างเร็วและถี่ ถ้าต้องการวัดโหมดช้า ให้เก็บนานหลังจากโหมดเร็วหายไปแล้ว"
+    },
+    {
+     "s": 71.928,
+     "e": 78.342,
+     "en": "One sampling plan rarely serves both, which links today to the identifiability question of Session 2.",
+     "th": "แผนการเก็บตัวอย่างเดียวแทบไม่ตอบโจทย์ทั้งสองอย่าง ซึ่งเชื่อมวันนี้กับคำถามเรื่องการระบุพารามิเตอร์ในคาบที่ 2"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
+   "duration": 78.816,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.392,
+     "en": "A complex pair of eigenvalues gives a damped oscillation.",
+     "th": "ค่าเฉพาะเชิงซ้อนคู่หนึ่งให้การแกว่งที่ถูกหน่วง"
+    },
+    {
+     "s": 4.392,
+     "e": 15.26,
+     "en": "Write e to the a plus i b times t as e to the a t times cosine b t plus i sine b t. The real part sets the decay, and the imaginary part sets the frequency.",
+     "th": "เขียน e กำลัง a บวก i b คูณ t เป็น e กำลัง a t คูณ cosine b t บวก i sine b t ส่วนจริงกำหนดการลดลง และส่วนจินตภาพกำหนดความถี่"
+    },
+    {
+     "s": 15.26,
+     "e": 21.697,
+     "en": "For a real matrix the complex modes come in conjugate pairs and combine into a real solution.",
+     "th": "สำหรับเมทริกซ์จริง โหมดเชิงซ้อนมาเป็นคู่สังยุค และรวมกันเป็นคำตอบจริง"
+    },
+    {
+     "s": 21.697,
+     "e": 28.183,
+     "en": "The example is a second order process with natural frequency one. Move the damping ratio.",
+     "th": "ตัวอย่างคือกระบวนการอันดับสองที่มีความถี่ธรรมชาติเท่ากับหนึ่ง เลื่อนอัตราส่วนการหน่วง"
+    },
+    {
+     "s": 28.183,
+     "e": 35.75,
+     "en": "Below one the response oscillates, with a period and an amplitude ratio per cycle that the table reports.",
+     "th": "เมื่อต่ำกว่าหนึ่ง ผลตอบสนองจะแกว่ง โดยมีคาบและอัตราส่วนแอมพลิจูดต่อรอบตามที่ตารางรายงาน"
+    },
+    {
+     "s": 35.75,
+     "e": 44.376,
+     "en": "At exactly one, the two eigenvalues coincide and the matrix is defective. The response is one plus t times e to the minus t:",
+     "th": "ที่หนึ่งพอดี ค่าเฉพาะทั้งสองตรงกัน และเมทริกซ์เป็น defective ผลตอบสนองคือ หนึ่งบวก t คูณ e กำลังลบ t ซึ่งคือพจน์"
+    },
+    {
+     "s": 44.376,
+     "e": 49.0,
+     "en": "the t e to the lambda t term we met as a Jordan block in Session 2.",
+     "th": "t e กำลัง lambda t ที่เราพบในรูป Jordan block ในคาบที่ 2"
+    },
+    {
+     "s": 49.0,
+     "e": 54.513,
+     "en": "Above one, both eigenvalues are real and negative, and there is no overshoot.",
+     "th": "เมื่อมากกว่าหนึ่ง ค่าเฉพาะทั้งสองเป็นจำนวนจริงลบ และไม่มีการพุ่งเกิน"
+    },
+    {
+     "s": 54.513,
+     "e": 63.843,
+     "en": "In chemical engineering, complex eigenvalues appear in a controlled loop with too much gain, in a cascade of tanks with recycle, and, as Session 5 shows,",
+     "th": "ในวิศวกรรมเคมี ค่าเฉพาะเชิงซ้อนปรากฏในวงควบคุมที่มีอัตราขยายมากเกินไป ในถังต่ออนุกรมที่มีการป้อนกลับ และตามที่คาบที่ 5 แสดง"
+    },
+    {
+     "s": 63.843,
+     "e": 66.145,
+     "en": "in a cooled reactor near a Hopf point.",
+     "th": "ในเครื่องปฏิกรณ์ที่มีการระบายความร้อนใกล้จุด Hopf"
+    },
+    {
+     "s": 66.145,
+     "e": 71.307,
+     "en": "The amplitude ratio per cycle is a quick way to estimate damping from a measured response:",
+     "th": "อัตราส่วนแอมพลิจูดต่อรอบเป็นวิธีประมาณการหน่วงจากผลตอบสนองที่วัดได้อย่างรวดเร็ว"
+    },
+    {
+     "s": 71.307,
+     "e": 78.737,
+     "en": "measure two successive peaks, take the natural log of their ratio, and you have two pi times the real part over the imaginary part.",
+     "th": "วัดยอดสองยอดที่ต่อกัน หาล็อกธรรมชาติของอัตราส่วน ก็จะได้ สองพาย คูณส่วนจริง หารด้วยส่วนจินตภาพ"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
+   "duration": 7.392,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.329,
+     "en": "Check 1 has four questions on modes and eigenvalues. Take five minutes, then press Show answers.",
+     "th": "Check 1 มีสี่คำถามเรื่องโหมดและค่าเฉพาะ ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
+   "duration": 113.856,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.441,
+     "en": "Part two. With an input, d x d t equals K x plus b u, the solution adds a convolution: the input at each earlier time, carried forward by the matrix exponential.",
+     "th": "ส่วนที่สอง เมื่อมีอินพุต d x d t เท่ากับ K x บวก b u คำตอบจะมีคอนโวลูชันเพิ่มขึ้น คืออินพุตที่เวลาก่อนหน้าแต่ละขณะ ถูกส่งต่อไปข้างหน้าด้วย matrix exponential"
+    },
+    {
+     "s": 12.441,
+     "e": 14.803,
+     "en": "That is variation of constants.",
+     "th": "ซึ่งคือ variation of constants"
+    },
+    {
+     "s": 14.803,
+     "e": 22.579,
+     "en": "For a constant input and an invertible K, the integral has a closed form, and the steady state is minus K inverse b.",
+     "th": "สำหรับอินพุตคงที่และ K ที่หาตัวผกผันได้ อินทิกรัลมีรูปปิด และสภาวะคงตัวคือ ลบ K inverse b"
+    },
+    {
+     "s": 22.579,
+     "e": 31.14,
+     "en": "How should you compute the matrix exponential? The eigenvector formula is fine for symmetric matrices and gives insight.",
+     "th": "ควรคำนวณ matrix exponential อย่างไร สูตรจากเวกเตอร์เฉพาะใช้ได้ดีกับเมทริกซ์สมมาตรและให้ความเข้าใจ"
+    },
+    {
+     "s": 31.14,
+     "e": 42.461,
+     "en": "The library function uses scaling and squaring with a rational approximation, and is the default. An ODE solver handles large, sparse, or time varying problems.",
+     "th": "ฟังก์ชันในไลบรารีใช้ scaling and squaring กับการประมาณแบบตรรกยะ และเป็นตัวเลือกหลัก ส่วนตัวแก้สมการเชิงอนุพันธ์ใช้กับปัญหาขนาดใหญ่ เบาบาง หรือแปรตามเวลา"
+    },
+    {
+     "s": 42.461,
+     "e": 54.325,
+     "en": "Never sum the Taylor series term by term when the norm of K t is large. The terms grow enormously before they cancel, and rounding errors in the large terms destroy the small result.",
+     "th": "อย่ารวมอนุกรมเทย์เลอร์ทีละพจน์เมื่อ norm ของ K t มีค่ามาก พจน์ต่างๆ จะโตมากก่อนที่จะหักล้างกัน และความคลาดเคลื่อนจากการปัดเศษในพจน์ใหญ่ทำลายผลลัพธ์ที่มีค่าน้อย"
+    },
+    {
+     "s": 54.325,
+     "e": 58.539,
+     "en": "Moler and Van Loan's review of nineteen methods is worth reading.",
+     "th": "บทความทบทวนสิบเก้าวิธีของ Moler และ Van Loan ควรอ่าน"
+    },
+    {
+     "s": 58.539,
+     "e": 66.429,
+     "en": "One more property deserves care. The exponential of a sum is the product of exponentials only when the matrices commute.",
+     "th": "อีกสมบัติหนึ่งต้องระวัง เอกซ์โพเนนเชียลของผลบวกเท่ากับผลคูณของเอกซ์โพเนนเชียลเฉพาะเมื่อเมทริกซ์สลับที่การคูณได้"
+    },
+    {
+     "s": 66.429,
+     "e": 77.579,
+     "en": "For a reactor whose rate matrix changes with time, for example a temperature ramp, you cannot simply multiply exponentials of each piece unless they commute; use a solver.",
+     "th": "สำหรับเครื่องปฏิกรณ์ที่เมทริกซ์อัตราเปลี่ยนตามเวลา เช่น เมื่อเพิ่มอุณหภูมิเป็นทางลาด คุณคูณเอกซ์โพเนนเชียลของแต่ละช่วงไม่ได้ เว้นแต่จะสลับที่ได้ ให้ใช้ตัวแก้สมการ"
+    },
+    {
+     "s": 77.579,
+     "e": 87.805,
+     "en": "Here is a practical check you can always run. Compute the solution at one time with the library exponential and with an ODE solver at tight tolerances.",
+     "th": "นี่คือการตรวจในทางปฏิบัติที่ทำได้เสมอ คำนวณคำตอบที่เวลาหนึ่งด้วยฟังก์ชันเอกซ์โพเนนเชียลของไลบรารี และด้วยตัวแก้สมการที่ค่าความคลาดเคลื่อนยอมรับได้ต่ำ"
+    },
+    {
+     "s": 87.805,
+     "e": 98.368,
+     "en": "If they disagree beyond the tolerance, either the matrix is badly conditioned or something is wrong in your setup. The D drawer on slide 7 does exactly this.",
+     "th": "ถ้าได้ค่าต่างกันเกินกว่าค่าที่ยอมรับ แสดงว่าเมทริกซ์มีภาวะไม่ดี หรือมีบางอย่างผิดในการตั้งปัญหา D drawer ในหน้า 7 ทำแบบนี้พอดี"
+    },
+    {
+     "s": 98.368,
+     "e": 105.304,
+     "en": "When K is singular, as for a closed reaction network, the constant input formula with K inverse fails.",
+     "th": "เมื่อ K เป็นเมทริกซ์ singular เช่น เครือข่ายปฏิกิริยาแบบปิด สูตรสำหรับอินพุตคงที่ที่ใช้ K inverse"
+    },
+    {
+     "s": 105.304,
+     "e": 113.789,
+     "en": "The fix is to exponentiate a larger matrix that contains K and b, which libraries handle for you, or to integrate numerically.",
+     "th": "ใช้ไม่ได้ วิธีแก้คือหาเอกซ์โพเนนเชียลของเมทริกซ์ที่ใหญ่ขึ้นซึ่งบรรจุ K และ b ไว้ ซึ่งไลบรารีจัดการให้ได้ หรืออินทิเกรตเชิงตัวเลข"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
+   "duration": 77.448,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.721,
+     "en": "The Laplace transform turns the system into linear algebra in s. X of s equals s I minus K, inverse, times the initial state plus b U of s.",
+     "th": "Laplace transform เปลี่ยนระบบให้เป็นพีชคณิตเชิงเส้นในตัวแปร s X ของ s เท่ากับ s I ลบ K ผกผัน คูณสถานะเริ่มต้นบวก b U ของ s"
+    },
+    {
+     "s": 9.721,
+     "e": 17.487,
+     "en": "For one output y equal to c transpose x, the transfer function is c transpose times s I minus K inverse times b.",
+     "th": "สำหรับเอาต์พุตเดียว y เท่ากับ c transpose x transfer function คือ c transpose คูณ s I ลบ K ผกผัน คูณ b"
+    },
+    {
+     "s": 17.487,
+     "e": 29.868,
+     "en": "The inverse of s I minus K is its adjugate over its determinant, and the determinant is zero exactly at the eigenvalues. So every pole of the transfer function is an eigenvalue of K.",
+     "th": "ตัวผกผันของ s I ลบ K เท่ากับ adjugate หารด้วยดีเทอร์มิแนนต์ และดีเทอร์มิแนนต์เป็นศูนย์ที่ค่าเฉพาะพอดี ดังนั้นขั้วทุกตัวของ transfer function คือค่าเฉพาะของ K"
+    },
+    {
+     "s": 29.868,
+     "e": 37.567,
+     "en": "The converse can fail: a mode that the input cannot excite, or the output cannot see, cancels from the transfer function.",
+     "th": "ข้อความกลับอาจไม่จริง โหมดที่อินพุตกระตุ้นไม่ได้ หรือเอาต์พุตมองไม่เห็น จะหักล้างออกจาก transfer function รูปแบบ"
+    },
+    {
+     "s": 37.567,
+     "e": 43.184,
+     "en": "The state form keeps it, which is one reason to prefer it for models with many variables.",
+     "th": "state ยังเก็บโหมดนั้นไว้ ซึ่งเป็นเหตุผลหนึ่งที่ควรใช้รูปแบบนี้กับแบบจำลองที่มีตัวแปรมาก"
+    },
+    {
+     "s": 43.184,
+     "e": 55.592,
+     "en": "Partial fractions make the link explicit. A transfer function with distinct poles splits into a sum of terms r i over s minus lambda i, whose inverse transforms are r i e to the lambda i t.",
+     "th": "การแยกเศษส่วนย่อยทำให้เห็นความเชื่อมโยงชัดเจน transfer function ที่มีขั้วไม่ซ้ำกันแยกเป็นผลรวมของพจน์ r i ส่วน s ลบ lambda i ซึ่งแปลงกลับได้ r i e กำลัง"
+    },
+    {
+     "s": 55.592,
+     "e": 61.013,
+     "en": "Those are the modes of slide 6, with residues playing the role of the coefficients.",
+     "th": "lambda i t นี่คือโหมดของหน้า 6 โดย residue ทำหน้าที่เป็นสัมประสิทธิ์"
+    },
+    {
+     "s": 61.013,
+     "e": 72.749,
+     "en": "For a model with several inputs and outputs, the transfer function becomes a matrix of transfer functions, and every entry shares the same denominator, the characteristic polynomial of K.",
+     "th": "สำหรับแบบจำลองที่มีหลายอินพุตและหลายเอาต์พุต transfer function กลายเป็นเมทริกซ์ของ transfer function และทุกสมาชิกมีตัวส่วนเดียวกัน คือพหุนามลักษณะเฉพาะของ K"
+    },
+    {
+     "s": 72.749,
+     "e": 77.368,
+     "en": "This is why multivariable control design starts from the state space form.",
+     "th": "นี่คือเหตุผลที่การออกแบบการควบคุมหลายตัวแปรเริ่มจากรูปแบบ state space"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 76.656,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.167,
+     "en": "Two stirred tanks in series show the connection.",
+     "th": "ถังกวนสองถังต่ออนุกรมแสดงความเชื่อมโยงนี้"
+    },
+    {
+     "s": 3.167,
+     "e": 12.618,
+     "en": "The state matrix is lower triangular, with eigenvalues minus one over tau one and minus one over tau two, which are the poles of the transfer function.",
+     "th": "เมทริกซ์สถานะเป็นเมทริกซ์สามเหลี่ยมล่าง มีค่าเฉพาะลบหนึ่งส่วน tau หนึ่ง และลบหนึ่งส่วน tau สอง ซึ่งคือขั้วของ transfer function"
+    },
+    {
+     "s": 12.618,
+     "e": 22.053,
+     "en": "The dashed curve is the first tank, a simple exponential. The second tank responds with an S shape, because it must wait for the first.",
+     "th": "เส้นประคือถังแรก ซึ่งเป็นเอกซ์โพเนนเชียลอย่างง่าย ถังที่สองตอบสนองเป็นรูปตัว S เพราะต้องรอถังแรก"
+    },
+    {
+     "s": 22.053,
+     "e": 31.382,
+     "en": "Move tau one. When one tank is much slower than the other, the slow pole dominates and the pair behaves almost like a single tank with a delay.",
+     "th": "เลื่อน tau หนึ่ง เมื่อถังหนึ่งช้ากว่าอีกถังมาก ขั้วช้าจะเด่น และทั้งสองถังมีพฤติกรรมเกือบเหมือนถังเดียวที่มีการหน่วงเวลา"
+    },
+    {
+     "s": 31.382,
+     "e": 40.447,
+     "en": "The module computes the same response with the matrix exponential formula from the previous slide and agrees with the analytic expression to rounding error.",
+     "th": "โมดูลคำนวณผลตอบสนองเดียวกันด้วยสูตร matrix exponential จากหน้าก่อน และได้ค่าตรงกับนิพจน์เชิงวิเคราะห์ภายในความคลาดเคลื่อนจากการปัดเศษ"
+    },
+    {
+     "s": 40.447,
+     "e": 52.632,
+     "en": "This is also why a chain of many tanks approaches a plug flow reactor with a pure delay: many poles of similar size combine into a sharp front. Session 7 meets the continuous version.",
+     "th": "นี่ยังเป็นเหตุผลที่ถังจำนวนมากต่ออนุกรมเข้าใกล้เครื่องปฏิกรณ์แบบไหลในท่อที่มีการหน่วงเวลาบริสุทธิ์ ขั้วจำนวนมากที่มีขนาดใกล้กันรวมกันเป็นหน้าคลื่นที่คม คาบที่ 7 จะพบแบบต่อเนื่องของเรื่องนี้"
+    },
+    {
+     "s": 52.632,
+     "e": 60.429,
+     "en": "Read the table as you move the slider. When tau one equals tau two the eigenvalues coincide and the matrix becomes defective;",
+     "th": "อ่านตารางขณะเลื่อนแถบเลื่อน เมื่อ tau หนึ่ง เท่ากับ tau สอง ค่าเฉพาะตรงกัน และเมทริกซ์กลายเป็น defective"
+    },
+    {
+     "s": 60.429,
+     "e": 66.555,
+     "en": "the analytic formula then needs the t e to the minus t over tau form, and the page switches to it.",
+     "th": "สูตรเชิงวิเคราะห์จึงต้องใช้รูป t e กำลังลบ t ส่วน tau และหน้านี้เปลี่ยนไปใช้รูปนั้น"
+    },
+    {
+     "s": 66.555,
+     "e": 76.579,
+     "en": "The response itself changes smoothly through that point, which is another reason not to fear defective matrices in an exponential, only in an eigenvector formula.",
+     "th": "ตัวผลตอบสนองเปลี่ยนอย่างต่อเนื่องผ่านจุดนั้น ซึ่งเป็นอีกเหตุผลที่ไม่ต้องกลัวเมทริกซ์ defective ใน exponential แต่ต้องระวังในสูตรจากเวกเตอร์เฉพาะ"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 104.136,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.879,
+     "en": "Widely spread eigenvalues make a system stiff.",
+     "th": "ค่าเฉพาะที่กระจายห่างกันมากทำให้ระบบแข็ง"
+    },
+    {
+     "s": 3.879,
+     "e": 13.382,
+     "en": "Take eigenvalues minus one and minus one thousand. The fast mode is gone within a few milliseconds, and the solution is smooth after that.",
+     "th": "พิจารณาค่าเฉพาะลบหนึ่งและลบหนึ่งพัน โหมดเร็วหายไปภายในไม่กี่มิลลิวินาที และคำตอบเรียบหลังจากนั้น"
+    },
+    {
+     "s": 13.382,
+     "e": 17.73,
+     "en": "Explicit Euler multiplies the state by one plus h K each step.",
+     "th": "explicit Euler คูณสถานะด้วย หนึ่ง บวก h K ทุกขั้น"
+    },
+    {
+     "s": 17.73,
+     "e": 27.184,
+     "en": "It is stable only if one plus h lambda has modulus at most one for every eigenvalue, which here means h at most zero point zero zero two.",
+     "th": "ซึ่งเสถียรเฉพาะเมื่อ หนึ่ง บวก h lambda มีขนาดไม่เกินหนึ่งสำหรับค่าเฉพาะทุกตัว ในที่นี้หมายถึง h ไม่เกินศูนย์จุดศูนย์ศูนย์สอง"
+    },
+    {
+     "s": 27.184,
+     "e": 40.408,
+     "en": "The table shows the result. Just above that limit, the explicit solution explodes, although the true solution is smooth. The step size is limited by stability, not by accuracy.",
+     "th": "ตารางแสดงผลลัพธ์ เมื่อเกินขีดจำกัดนั้นเพียงเล็กน้อย คำตอบแบบ explicit ระเบิดออก แม้คำตอบจริงจะเรียบ ขนาดขั้นถูกจำกัดด้วยเสถียรภาพ ไม่ใช่ความแม่นยำ"
+    },
+    {
+     "s": 40.408,
+     "e": 45.73,
+     "en": "Implicit Euler solves a linear system each step and is stable for every step size.",
+     "th": "implicit Euler แก้ระบบเชิงเส้นทุกขั้น และเสถียรสำหรับขนาดขั้นทุกค่า"
+    },
+    {
+     "s": 45.73,
+     "e": 57.658,
+     "en": "For stiff kinetics, which in combustion or surface chemistry can have ratios of ten to the six or more, use an implicit method such as Radau or BDF, and supply the Jacobian when you can.",
+     "th": "สำหรับจลนพลศาสตร์ที่แข็ง ซึ่งในการเผาไหม้หรือเคมีพื้นผิวอาจมีอัตราส่วนสิบยกกำลังหกหรือมากกว่า ให้ใช้วิธี implicit เช่น Radau หรือ BDF และให้ Jacobian เมื่อทำได้"
+    },
+    {
+     "s": 57.658,
+     "e": 64.562,
+     "en": "How do you recognize stiffness in your own work? Compute the eigenvalues of the Jacobian at a typical state.",
+     "th": "จะรู้ได้อย่างไรว่างานของคุณแข็ง คำนวณค่าเฉพาะของ Jacobian ที่สถานะทั่วไป"
+    },
+    {
+     "s": 64.562,
+     "e": 74.316,
+     "en": "If the ratio of the largest to the smallest magnitude is above about a thousand, and you need the solution over the slow time scale, the problem is stiff.",
+     "th": "ถ้าอัตราส่วนของขนาดที่ใหญ่ที่สุดต่อที่เล็กที่สุดมากกว่าประมาณหนึ่งพัน และคุณต้องการคำตอบตลอดมาตราเวลาที่ช้า ปัญหานั้นแข็ง"
+    },
+    {
+     "s": 74.316,
+     "e": 81.237,
+     "en": "Another sign is an explicit solver that takes millions of tiny steps through a region where nothing seems to happen.",
+     "th": "อีกสัญญาณหนึ่งคือตัวแก้สมการแบบ explicit ที่ใช้ขั้นเล็กๆ นับล้านขั้นผ่านช่วงที่ดูเหมือนไม่มีอะไรเกิดขึ้น"
+    },
+    {
+     "s": 81.237,
+     "e": 93.783,
+     "en": "Why is implicit Euler always stable here? Its amplification factor for a mode is one over one minus h lambda. For any negative lambda and any positive h this has magnitude below one.",
+     "th": "ทำไม implicit Euler จึงเสถียรเสมอในที่นี้ ตัวขยายของแต่ละโหมดคือหนึ่งส่วน หนึ่ง ลบ h lambda สำหรับ lambda ที่เป็นลบใดๆ และ h ที่เป็นบวกใดๆ ค่านี้มีขนาดต่ำกว่าหนึ่ง"
+    },
+    {
+     "s": 93.783,
+     "e": 104.066,
+     "en": "The price is a linear solve with the matrix I minus h K at each step, which for large sparse models is cheap compared with millions of explicit steps.",
+     "th": "ราคาที่ต้องจ่ายคือการแก้ระบบเชิงเส้นด้วยเมทริกซ์ I ลบ h K ทุกขั้น ซึ่งสำหรับแบบจำลองขนาดใหญ่ที่เบาบางถูกกว่าการทำขั้น explicit นับล้านขั้น"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 9.6,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.539,
+     "en": "Check 2 has four questions on exponentials, poles and stiffness. Take five minutes, press Show answers, and then take the ten minute break.",
+     "th": "Check 2 มีสี่คำถามเรื่องเอกซ์โพเนนเชียล ขั้ว และความแข็ง ใช้เวลาห้านาที กด Show answers แล้วพักสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 28.728,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.618,
+     "en": "Welcome back. Activity 2 adds the linear dynamics of your model to your card.",
+     "th": "ยินดีต้อนรับกลับ กิจกรรมที่ 2 เพิ่มพลวัตเชิงเส้นของแบบจำลองลงในบัตรของคุณ"
+    },
+    {
+     "s": 6.618,
+     "e": 12.205,
+     "en": "Write the model as d x d t equals f of x and u. Mark which parts are already linear.",
+     "th": "เขียนแบบจำลองเป็น d x d t เท่ากับ f ของ x และ u ระบุว่าส่วนใดเป็นเชิงเส้นอยู่แล้ว"
+    },
+    {
+     "s": 12.205,
+     "e": 20.224,
+     "en": "Pick a steady state and sketch the structure of K, the derivative of f with respect to x, at least which entries are zero.",
+     "th": "เลือกสภาวะคงตัวหนึ่งและร่างโครงสร้างของ K ซึ่งคืออนุพันธ์ของ f เทียบกับ x อย่างน้อยให้รู้ว่าสมาชิกใดเป็นศูนย์"
+    },
+    {
+     "s": 20.224,
+     "e": 28.671,
+     "en": "Then estimate the time constants, from milliseconds to hours, and decide whether the model is stiff. Take ten minutes.",
+     "th": "จากนั้นประมาณค่าคงที่เวลา ตั้งแต่มิลลิวินาทีถึงชั่วโมง และตัดสินว่าแบบจำลองแข็งหรือไม่ ใช้เวลาสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
+   "duration": 118.152,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.372,
+     "en": "Part three. For a first order reaction network, each column of K describes what happens to one species.",
+     "th": "ส่วนที่สาม สำหรับเครือข่ายปฏิกิริยาอันดับหนึ่ง แต่ละหลักของ K อธิบายสิ่งที่เกิดกับสปีชีส์หนึ่ง"
+    },
+    {
+     "s": 7.372,
+     "e": 14.645,
+     "en": "The off diagonal entries are the rate constants into other species, and the diagonal is minus their sum.",
+     "th": "สมาชิกนอกแนวทแยงคือค่าคงที่อัตราที่ไปเป็นสปีชีส์อื่น และสมาชิกบนแนวทแยงคือลบผลรวมของค่าเหล่านั้น"
+    },
+    {
+     "s": 14.645,
+     "e": 25.237,
+     "en": "So every column sums to zero, the vector of ones is a left null vector, and total moles are conserved. The equilibrium composition is the null space of K.",
+     "th": "ทุกหลักจึงรวมกันได้ศูนย์ เวกเตอร์ของเลขหนึ่งเป็น left null vector และจำนวนโมลรวมถูกอนุรักษ์ องค์ประกอบสมดุลคือ null space ของ K"
+    },
+    {
+     "s": 25.237,
+     "e": 36.118,
+     "en": "At equilibrium every elementary reaction is balanced by its reverse: k i j x i star equals k j i x j star. This is detailed balance.",
+     "th": "ที่สมดุล ปฏิกิริยามูลฐานทุกตัวสมดุลกับปฏิกิริยาย้อนกลับ คือ k i j x i star เท่ากับ k j i x j star นี่คือ detailed balance"
+    },
+    {
+     "s": 36.118,
+     "e": 45.341,
+     "en": "Detailed balance makes D to the minus one half K D to the one half symmetric, with D the diagonal matrix of equilibrium mole fractions.",
+     "th": "detailed balance ทำให้ D กำลังลบครึ่ง K D กำลังครึ่ง เป็นเมทริกซ์สมมาตร โดย D คือเมทริกซ์ทแยงของเศษส่วนโมลที่สมดุล"
+    },
+    {
+     "s": 45.341,
+     "e": 55.039,
+     "en": "So K has the same real eigenvalues as a symmetric matrix, all zero or negative. A closed first order network near equilibrium cannot oscillate.",
+     "th": "K จึงมีค่าเฉพาะจริงเหมือนเมทริกซ์สมมาตร ซึ่งเป็นศูนย์หรือลบทั้งหมด เครือข่ายอันดับหนึ่งแบบปิดใกล้สมดุลจึงแกว่งไม่ได้"
+    },
+    {
+     "s": 55.039,
+     "e": 65.039,
+     "en": "Its eigenvectors are orthogonal in an inner product weighted by one over the equilibrium fractions: the weighted inner product from Session 1, now with a physical meaning.",
+     "th": "เวกเตอร์เฉพาะของมันตั้งฉากกันใน inner product ที่ถ่วงน้ำหนักด้วยหนึ่งส่วนเศษส่วนสมดุล ซึ่งคือ inner product แบบถ่วงน้ำหนักจากคาบที่ 1 ที่ตอนนี้มีความหมายทางกายภาพ"
+    },
+    {
+     "s": 65.039,
+     "e": 68.085,
+     "en": "A small example makes detailed balance concrete.",
+     "th": "ตัวอย่างเล็กๆ ทำให้ detailed balance ชัดขึ้น"
+    },
+    {
+     "s": 68.085,
+     "e": 79.647,
+     "en": "For A to B and back, with k forward equal to two and k backward equal to one, detailed balance gives x B star over x A star equal to two, so the equilibrium is one third and two thirds,",
+     "th": "สำหรับ A ไป B และย้อนกลับ ค่าคงที่ไปข้างหน้าเท่ากับสอง และย้อนกลับเท่ากับหนึ่ง detailed balance ให้ x B star ส่วน x A star เท่ากับสอง สมดุลจึงเป็นหนึ่งในสามกับสองในสาม"
+    },
+    {
+     "s": 79.647,
+     "e": 84.434,
+     "en": "and the nonzero eigenvalue is minus three, the sum of the two rate constants.",
+     "th": "และค่าเฉพาะที่ไม่เป็นศูนย์คือลบสาม ซึ่งเท่ากับผลรวมของค่าคงที่อัตราทั้งสอง"
+    },
+    {
+     "s": 84.434,
+     "e": 93.393,
+     "en": "Why is detailed balance true? At equilibrium, statistical mechanics requires each elementary process to occur as often as its reverse.",
+     "th": "ทำไม detailed balance จึงเป็นจริง ที่สมดุล กลศาสตร์สถิติกำหนดให้กระบวนการมูลฐานแต่ละตัวเกิดบ่อยเท่ากับกระบวนการย้อนกลับ"
+    },
+    {
+     "s": 93.393,
+     "e": 102.551,
+     "en": "A network that violated it could circulate around a cycle at equilibrium, A to B to C to A, which would allow a perpetual motion machine.",
+     "th": "เครือข่ายที่ละเมิดข้อนี้จะไหลวนรอบวงจรได้ที่สมดุล เช่น A ไป B ไป C ไป A ซึ่งจะทำให้สร้างเครื่องจักรนิรันดร์ได้"
+    },
+    {
+     "s": 102.551,
+     "e": 108.855,
+     "en": "Wegscheider stated the resulting conditions on rate constants around cycles in nineteen oh one.",
+     "th": "Wegscheider ได้ระบุเงื่อนไขของค่าคงที่อัตรารอบวงจรไว้ในปี หนึ่งเก้าศูนย์หนึ่ง"
+    },
+    {
+     "s": 108.855,
+     "e": 118.066,
+     "en": "In the lab you can check it directly: around the cycle one to two to three to one, the product of forward rate constants equals the product of the backward ones.",
+     "th": "ในแล็บ คุณตรวจได้โดยตรง รอบวงจร หนึ่ง ไป สอง ไป สาม ไป หนึ่ง ผลคูณของค่าคงที่อัตราไปข้างหน้าเท่ากับผลคูณของค่าคงที่ย้อนกลับ"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 86.352,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.566,
+     "en": "Here is a synthetic butene network on a composition triangle. Each corner is a pure isomer, and x star is the equilibrium.",
+     "th": "นี่คือเครือข่ายบิวทีนสังเคราะห์บนสามเหลี่ยมองค์ประกอบ มุมแต่ละมุมคือไอโซเมอร์บริสุทธิ์ และ x star คือสมดุล"
+    },
+    {
+     "s": 9.566,
+     "e": 15.092,
+     "en": "From pure one butene, the teal path curves. Both modes are present at first.",
+     "th": "จากหนึ่งบิวทีนบริสุทธิ์ เส้นทางสีเขียวหัวเป็ดโค้ง ในตอนแรกมีทั้งสองโหมด"
+    },
+    {
+     "s": 15.092,
+     "e": 23.776,
+     "en": "The fast mode, which exchanges one butene and cis two butene, dies quickly, and the path bends onto the slow eigenvector.",
+     "th": "โหมดเร็วซึ่งแลกเปลี่ยนหนึ่งบิวทีนกับซิสสองบิวทีนหายไปอย่างรวดเร็ว แล้วเส้นทางเลี้ยวเข้าสู่เวกเตอร์เฉพาะที่ช้า"
+    },
+    {
+     "s": 23.776,
+     "e": 30.013,
+     "en": "Starting from a point on a line through x star along an eigenvector, the amber paths go straight in.",
+     "th": "เมื่อเริ่มจากจุดบนเส้นที่ผ่าน x star ตามเวกเตอร์เฉพาะ เส้นทางสีส้มอำพันวิ่งตรงเข้าไป"
+    },
+    {
+     "s": 30.013,
+     "e": 41.846,
+     "en": "Wei and Prater turned this into a method. Run from any start, pick a point on the late, nearly straight part of the path, and start a new run there. Its path is straighter.",
+     "th": "Wei และ Prater ทำให้เรื่องนี้เป็นวิธีการ เริ่มจากจุดใดก็ได้ เลือกจุดบนส่วนท้ายของเส้นทางที่เกือบตรง แล้วเริ่มการทดลองใหม่จากจุดนั้น เส้นทางใหม่จะตรงขึ้น"
+    },
+    {
+     "s": 41.846,
+     "e": 53.132,
+     "en": "Repeat, and the straight line is the slow eigenvector. Once all eigenvectors and eigenvalues are known, every rate constant follows from K equals V Lambda V inverse.",
+     "th": "ทำซ้ำ แล้วเส้นตรงที่ได้คือเวกเตอร์เฉพาะที่ช้า เมื่อรู้เวกเตอร์เฉพาะและค่าเฉพาะทั้งหมด ค่าคงที่อัตราทุกตัวได้จาก K เท่ากับ V Lambda V inverse"
+    },
+    {
+     "s": 53.132,
+     "e": 64.078,
+     "en": "In the lab, the fast mode exchanges one butene and cis two butene with trans two butene fixed, and the slow mode converts both into trans two butene in the ratio one to two.",
+     "th": "ในแล็บ โหมดเร็วแลกเปลี่ยนหนึ่งบิวทีนกับซิสสองบิวทีน โดยทรานส์สองบิวทีนคงที่ และโหมดช้าเปลี่ยนทั้งสองไปเป็นทรานส์สองบิวทีนในอัตราส่วนหนึ่งต่อสอง"
+    },
+    {
+     "s": 64.078,
+     "e": 67.224,
+     "en": "You will read those numbers from the eigenvectors.",
+     "th": "คุณจะอ่านตัวเลขเหล่านั้นจากเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 67.224,
+     "e": 77.306,
+     "en": "Why does this matter for kinetics? Fitting six rate constants to curved trajectories by nonlinear least squares is poorly conditioned, as Session 2 warned.",
+     "th": "ทำไมเรื่องนี้จึงสำคัญกับจลนพลศาสตร์ การ fit ค่าคงที่อัตราหกตัวกับเส้นทางโค้งด้วย least squares แบบไม่เชิงเส้นมีภาวะไม่ดี ตามที่คาบที่"
+    },
+    {
+     "s": 77.306,
+     "e": 86.289,
+     "en": "Finding straight lines first separates the problem into eigenvectors and eigenvalues, each estimated from data where it is clearly visible.",
+     "th": "2 เตือนไว้ การหาเส้นตรงก่อนแยกปัญหาออกเป็นเวกเตอร์เฉพาะและค่าเฉพาะ ซึ่งแต่ละตัวประมาณได้จากข้อมูลในช่วงที่เห็นได้ชัด"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
+   "duration": 63.24,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.896,
+     "en": "A conserved quantity is a vector w with w transpose K equal to zero, so it lies in the left null space of K. A closed network has the total as one invariant.",
+     "th": "ปริมาณอนุรักษ์คือเวกเตอร์ w ที่ w transpose K เท่ากับศูนย์ จึงอยู่ใน left null space ของ K เครือข่ายปิดมีผลรวมเป็นค่าไม่แปรเปลี่ยนหนึ่งตัว"
+    },
+    {
+     "s": 11.896,
+     "e": 14.658,
+     "en": "Separate closed groups have one each.",
+     "th": "กลุ่มปิดที่แยกกันมีกลุ่มละหนึ่งตัว"
+    },
+    {
+     "s": 14.658,
+     "e": 27.128,
+     "en": "Lumping replaces many species by a few pseudo species, y equals L x. It is exact only when L K equals K hat L for some smaller matrix K hat. Wei and Kuo gave the conditions:",
+     "th": "การรวมกลุ่ม หรือ lumping แทนสปีชีส์จำนวนมากด้วยสปีชีส์เทียมไม่กี่ตัว y เท่ากับ L x ซึ่งจะแม่นตรงเฉพาะเมื่อ L K เท่ากับ K hat L สำหรับเมทริกซ์ K hat ที่เล็กกว่า Wei และ"
+    },
+    {
+     "s": 27.128,
+     "e": 34.724,
+     "en": "the rows of L must span a subspace that K maps into itself, for example combinations of left eigenvectors.",
+     "th": "Kuo ให้เงื่อนไขไว้ คือแถวของ L ต้อง span subspace ที่ K ส่งเข้าหาตัวเอง เช่น ผลรวมของ left eigenvector"
+    },
+    {
+     "s": 34.724,
+     "e": 42.5,
+     "en": "Refinery kinetics depends on lumps. Check a proposed lump numerically before you trust its kinetics.",
+     "th": "จลนพลศาสตร์ในโรงกลั่นพึ่งพาการรวมกลุ่ม ให้ตรวจการรวมกลุ่มที่เสนอด้วยตัวเลขก่อนเชื่อถือจลนพลศาสตร์ของมัน"
+    },
+    {
+     "s": 42.5,
+     "e": 49.833,
+     "en": "A refinery example: hydrocracking models often lump hundreds of molecules into five or six boiling range fractions.",
+     "th": "ตัวอย่างในโรงกลั่น แบบจำลองไฮโดรแครกกิงมักรวมโมเลกุลหลายร้อยตัวเป็นห้าหรือหกช่วงจุดเดือด"
+    },
+    {
+     "s": 49.833,
+     "e": 58.43,
+     "en": "The lumped model predicts product yields well only near the conditions where its lumps were fitted. The lumping condition explains why:",
+     "th": "แบบจำลองที่รวมกลุ่มทำนายผลได้ดีเฉพาะใกล้สภาวะที่ใช้ fit กลุ่มเหล่านั้น เงื่อนไขการรวมกลุ่มอธิบายเหตุผลได้"
+    },
+    {
+     "s": 58.43,
+     "e": 63.171,
+     "en": "away from those conditions, the lumps no longer span an invariant subspace.",
+     "th": "คือเมื่อห่างจากสภาวะเหล่านั้น กลุ่มไม่ได้ span subspace ที่คงที่อีกต่อไป"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 7.224,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.171,
+     "en": "Check 3 has four questions on reaction networks. Take five minutes, then press Show answers.",
+     "th": "Check 3 มีสี่คำถามเรื่องเครือข่ายปฏิกิริยา ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 7.32,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.25,
+     "en": "Check 4 has four questions on computing and solving. Take five minutes, then press Show answers.",
+     "th": "Check 4 มีสี่คำถามเรื่องการคำนวณและการแก้สมการ ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
+   "duration": 43.728,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.809,
+     "en": "Next session, K becomes the Jacobian of a nonlinear model at a steady state, and today's solution describes small deviations from it.",
+     "th": "คาบหน้า K กลายเป็น Jacobian ของแบบจำลองไม่เชิงเส้นที่สภาวะคงตัว และคำตอบของวันนี้อธิบายการเบี่ยงเบนเล็กน้อยจากสภาวะนั้น"
+    },
+    {
+     "s": 8.809,
+     "e": 13.618,
+     "en": "The steady state is stable when every eigenvalue has a negative real part.",
+     "th": "สภาวะคงตัวเสถียรเมื่อค่าเฉพาะทุกตัวมีส่วนจริงเป็นลบ"
+    },
+    {
+     "s": 13.618,
+     "e": 23.75,
+     "en": "Session 5 watches an eigenvalue cross zero, or a complex pair cross the imaginary axis, which is where the oscillation from slide 9 appears in a reactor.",
+     "th": "คาบที่ 5 ดูค่าเฉพาะที่ผ่านศูนย์ หรือคู่เชิงซ้อนที่ผ่านแกนจินตภาพ ซึ่งคือจุดที่การแกว่งจากหน้า 9 ปรากฏในเครื่องปฏิกรณ์"
+    },
+    {
+     "s": 23.75,
+     "e": 31.184,
+     "en": "Session 6 treats stiffness as a small parameter, and Session 7 extends the modal sum to infinitely many modes.",
+     "th": "คาบที่ 6 มองความแข็งเป็นพารามิเตอร์ขนาดเล็ก และคาบที่ 7 ขยายผลรวมของโหมดไปยังโหมดจำนวนอนันต์"
+    },
+    {
+     "s": 31.184,
+     "e": 39.862,
+     "en": "When you linearize your own model next week, write down its eigenvalues and compare them with the time scales you estimated on your card today.",
+     "th": "เมื่อคุณทำให้แบบจำลองของตัวเองเป็นเชิงเส้นในสัปดาห์หน้า ให้เขียนค่าเฉพาะของมัน แล้วเทียบกับมาตราเวลาที่ประมาณไว้ในบัตรวันนี้"
+    },
+    {
+     "s": 39.862,
+     "e": 43.658,
+     "en": "Large differences point to a process you have not yet included.",
+     "th": "ความต่างที่มากบ่งบอกกระบวนการที่คุณยังไม่ได้รวมไว้"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "file": "audio/slide-23.mp3",
+   "duration": 28.632,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.882,
+     "en": "Lab 3 takes forty minutes. You work with a synthetic three isomer network that obeys detailed balance.",
+     "th": "Lab 3 ใช้เวลาสี่สิบนาที คุณจะทำงานกับเครือข่ายไอโซเมอร์สามตัวแบบสังเคราะห์ที่เป็นไปตาม detailed balance"
+    },
+    {
+     "s": 7.882,
+     "e": 14.16,
+     "en": "Predict the number of zero eigenvalues, read the time constants, identify which species exchange in each mode,",
+     "th": "ทำนายจำนวนค่าเฉพาะศูนย์ อ่านค่าคงที่เวลา ระบุว่าสปีชีส์ใดแลกเปลี่ยนกันในแต่ละโหมด"
+    },
+    {
+     "s": 14.16,
+     "e": 24.171,
+     "en": "compute a composition with the modal formula and compare it with the matrix exponential and an ODE solver, then change one rate constant and watch the separation of time scales.",
+     "th": "คำนวณองค์ประกอบด้วยสูตรโหมดแล้วเทียบกับ matrix exponential และตัวแก้สมการเชิงอนุพันธ์ จากนั้นเปลี่ยนค่าคงที่อัตราหนึ่งตัวแล้วดูการแยกของมาตราเวลา"
+    },
+    {
+     "s": 24.171,
+     "e": 28.579,
+     "en": "Download the answer file at the end and upload it to myCourseVille.",
+     "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 39.816,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.776,
+     "en": "To summarize. The solution of a linear system is a sum of modes, each with a fixed direction and a time constant of minus one over the real part of its eigenvalue.",
+     "th": "สรุป คำตอบของระบบเชิงเส้นคือผลรวมของโหมด แต่ละโหมดมีทิศคงที่และค่าคงที่เวลาเท่ากับลบหนึ่งส่วนส่วนจริงของค่าเฉพาะ"
+    },
+    {
+     "s": 10.776,
+     "e": 23.104,
+     "en": "A zero eigenvalue is a conserved quantity, and a complex pair is an oscillation. Compute the matrix exponential with the library or a solver. Poles are eigenvalues.",
+     "th": "ค่าเฉพาะศูนย์คือปริมาณอนุรักษ์ และคู่เชิงซ้อนคือการแกว่ง คำนวณ matrix exponential ด้วยไลบรารีหรือตัวแก้สมการ ขั้วคือค่าเฉพาะ"
+    },
+    {
+     "s": 23.104,
+     "e": 31.697,
+     "en": "Stiffness calls for implicit methods. And detailed balance gives real eigenvalues and straight line reaction paths.",
+     "th": "ความแข็งต้องใช้วิธี implicit และ detailed balance ให้ค่าเฉพาะจริงและเส้นทางปฏิกิริยาแบบเส้นตรง"
+    },
+    {
+     "s": 31.697,
+     "e": 39.75,
+     "en": "The key numbers from today are in the table on the left. Use them to check your work in the lab and in the exercises.",
+     "th": "ตัวเลขสำคัญของวันนี้อยู่ในตารางทางซ้าย ใช้ตรวจงานของคุณในแล็บและในแบบฝึกหัด"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
+   "duration": 18.84,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.355,
+     "en": "Before the next session, finish Lab 3 and upload the answer file. Keep your card for Session 4.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 3 ให้เสร็จและอัปโหลดไฟล์คำตอบ เก็บบัตรไว้สำหรับคาบที่ 4"
+    },
+    {
+     "s": 7.355,
+     "e": 18.776,
+     "en": "Read Varma and Morbidelli, chapters one and two, and if you can, Wei and Prater's original paper in Advances in Catalysis. Moler and Van Loan's review is optional.",
+     "th": "อ่าน Varma กับ Morbidelli บทที่หนึ่งและสอง และถ้าทำได้ ให้อ่านบทความต้นฉบับของ Wei และ Prater ใน Advances in Catalysis บทความทบทวนของ Moler และ Van Loan เป็นการอ่านเพิ่มเติม"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 9.528,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.474,
+     "en": "Please finish with the Exit Ticket for Session 3. The form is anonymous. Thank you, and see you in Session 4.",
+     "th": "กรุณาปิดท้ายด้วย Exit Ticket ของคาบที่ 3 แบบฟอร์มไม่ระบุตัวตน ขอบคุณ แล้วพบกันในคาบที่ 4"
+    }
+   ]
+  }
+ ]
+}

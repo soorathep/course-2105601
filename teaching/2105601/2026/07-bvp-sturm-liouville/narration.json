@@ -1,0 +1,619 @@
+{
+ "voice": "en-US-GuyNeural",
+ "rate": "-5%",
+ "provider": "Microsoft Edge neural speech (edge-tts)",
+ "synthetic_voice": true,
+ "total_seconds": 585.2,
+ "slides": [
+  {
+   "n": 1,
+   "file": "audio/slide-01.mp3",
+   "duration": 21.36,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.708,
+     "en": "Welcome to Session 7 of Advanced Engineering Mathematics for Chemical Engineers, the last session before the midterm.",
+     "th": "ยินดีต้อนรับสู่คาบที่ 7 ของวิชา Advanced Engineering Mathematics for Chemical Engineers ซึ่งเป็นคาบสุดท้ายก่อนการสอบกลางภาค"
+    },
+    {
+     "s": 7.708,
+     "e": 17.605,
+     "en": "Today is about boundary value problems: models with conditions at two ends, the eigenfunctions that solve them, Green's functions, and the axial dispersion reactor.",
+     "th": "วันนี้ว่าด้วยปัญหาค่าขอบ คือแบบจำลองที่มีเงื่อนไขที่ปลายทั้งสองด้าน ฟังก์ชันลักษณะเฉพาะที่ใช้แก้ปัญหา ฟังก์ชันของ Green และเครื่องปฏิกรณ์ที่มีการกระจายตามแนวแกน"
+    },
+    {
+     "s": 17.605,
+     "e": 21.303,
+     "en": "On your own, the narration takes about ten minutes.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "file": "audio/slide-02.mp3",
+   "duration": 18.672,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.695,
+     "en": "Part one covers boundary conditions, shooting and collocation, external mass transfer, and when a solution exists.",
+     "th": "ส่วนที่หนึ่งว่าด้วยเงื่อนไขขอบเขต วิธี shooting และ collocation การถ่ายโอนมวลภายนอก และเมื่อใดคำตอบจึงมีอยู่"
+    },
+    {
+     "s": 7.695,
+     "e": 18.618,
+     "en": "Part two covers Sturm Liouville problems, eigenfunction expansions, Green's functions, and pellet shape. Part three covers the dispersion reactor and the course as a whole.",
+     "th": "ส่วนที่สองว่าด้วยปัญหา Sturm Liouville การกระจายด้วยฟังก์ชันลักษณะเฉพาะ ฟังก์ชันของ Green และรูปร่างของเม็ดตัวเร่ง ส่วนที่สามว่าด้วยเครื่องปฏิกรณ์แบบมีการกระจาย และภาพรวมของวิชา"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "file": "audio/slide-03.mp3",
+   "duration": 21.552,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.171,
+     "en": "Activity one. Without notes, answer the four questions on Session 6, then compare with a partner. Pause the narration now.",
+     "th": "กิจกรรมที่หนึ่ง ตอบคำถามสี่ข้อเกี่ยวกับคาบที่ 6 โดยไม่ดูโน้ต แล้วเปรียบเทียบกับเพื่อน หยุดเสียงบรรยายตอนนี้"
+    },
+    {
+     "s": 10.171,
+     "e": 21.487,
+     "en": "The last answer leads into today. The one over phi result came from a layer argument. Today we solve the full problem, with conditions at both ends.",
+     "th": "คำตอบข้อสุดท้ายนำเข้าสู่เนื้อหาวันนี้ ผลหนึ่งหารด้วย phi มาจากการพิจารณาชั้นขอบเขต วันนี้เราแก้ปัญหาเต็ม โดยมีเงื่อนไขที่ปลายทั้งสองด้าน"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "file": "audio/slide-04.mp3",
+   "duration": 17.256,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.063,
+     "en": "By the end of today you can write and justify boundary conditions, choose a numerical method, and decide whether a linear problem has a unique solution.",
+     "th": "เมื่อจบคาบนี้ คุณจะเขียนและให้เหตุผลของเงื่อนไขขอบเขตได้ เลือกวิธีเชิงตัวเลขได้ และตัดสินได้ว่าปัญหาเชิงเส้นมีคำตอบเดียวหรือไม่"
+    },
+    {
+     "s": 9.063,
+     "e": 17.184,
+     "en": "You can also use Sturm Liouville theory and Green's functions, and compute the conversion of a dispersion reactor between the two ideal limits.",
+     "th": "คุณยังจะใช้ทฤษฎี Sturm Liouville และฟังก์ชันของ Green ได้ และคำนวณค่าการเปลี่ยนแปลงของเครื่องปฏิกรณ์แบบมีการกระจายซึ่งอยู่ระหว่างขีดจำกัดอุดมคติทั้งสอง"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "file": "audio/slide-05.mp3",
+   "duration": 22.896,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.951,
+     "en": "Much of today repeats earlier sessions in a space of functions. Orthogonal bases and projection came from Sessions 1 and 2.",
+     "th": "เนื้อหาวันนี้ส่วนมากเป็นการทำซ้ำคาบก่อนๆ ในปริภูมิของฟังก์ชัน ฐานตั้งฉากและการฉายมาจากคาบที่ 1 และ 2"
+    },
+    {
+     "s": 8.951,
+     "e": 14.947,
+     "en": "Symmetric matrices with real eigenvalues become self-adjoint differential operators.",
+     "th": "เมทริกซ์สมมาตรที่มีค่าลักษณะเฉพาะเป็นจำนวนจริงกลายเป็นตัวดำเนินการเชิงอนุพันธ์แบบ self-adjoint"
+    },
+    {
+     "s": 14.947,
+     "e": 22.842,
+     "en": "Stiffness from Session 3 explains why one numerical method fails, and the slab from Session 6 gets its exact solutions.",
+     "th": "ความ stiff จากคาบที่ 3 อธิบายว่าทำไมวิธีเชิงตัวเลขวิธีหนึ่งจึงล้มเหลว และแผ่นตัวเร่งจากคาบที่ 6 จะได้คำตอบแม่นตรง"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "file": "audio/slide-06.mp3",
+   "duration": 29.136,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.684,
+     "en": "Every boundary condition is a balance at a boundary. A fixed surface concentration is a Dirichlet condition. Symmetry at the center gives a Neumann condition.",
+     "th": "เงื่อนไขขอบเขตทุกข้อคือสมดุลที่ขอบเขต ความเข้มข้นที่ผิวคงที่คือเงื่อนไข Dirichlet ความสมมาตรที่จุดศูนย์กลางให้เงื่อนไข Neumann"
+    },
+    {
+     "s": 11.684,
+     "e": 22.974,
+     "en": "A film resistance at the surface gives a Robin condition, with the Biot number. The Danckwerts conditions of a tubular reactor are flux balances at the inlet and outlet.",
+     "th": "ความต้านทานของฟิล์มที่ผิวให้เงื่อนไข Robin ซึ่งมีเลข Biot เงื่อนไข Danckwerts ของเครื่องปฏิกรณ์แบบท่อคือสมดุลฟลักซ์ที่ทางเข้าและทางออก"
+    },
+    {
+     "s": 22.974,
+     "e": 29.066,
+     "en": "A second order equation needs two conditions. Count them before you solve.",
+     "th": "สมการอันดับสองต้องการเงื่อนไขสองข้อ นับจำนวนเงื่อนไขก่อนแก้สมการ"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "file": "audio/slide-07.mp3",
+   "duration": 33.216,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.145,
+     "en": "Shooting guesses the missing initial value, integrates, and adjusts the guess until the far condition holds. For the slab, any error in the guess is multiplied by hyperbolic cosine of phi.",
+     "th": "วิธี shooting เดาค่าเริ่มต้นที่ขาดไป อินทิเกรต แล้วปรับค่าเดาจนเงื่อนไขที่ปลายอีกด้านเป็นจริง สำหรับแผ่นตัวเร่ง ความคลาดเคลื่อนของค่าเดาจะถูกคูณด้วย hyperbolic cosine ของ phi"
+    },
+    {
+     "s": 12.145,
+     "e": 23.0,
+     "en": "At phi equal to forty that factor exceeds ten to the sixteen, beyond double precision. This is the stiffness of Session 3: one mode grows while the other decays.",
+     "th": "ที่ phi เท่ากับสี่สิบ ตัวคูณนี้เกินสิบยกกำลังสิบหก ซึ่งเกินความแม่นยำของ double precision นี่คือความ stiff ของคาบที่ 3 คือโหมดหนึ่งโตขึ้นขณะที่อีกโหมดลดลง"
+    },
+    {
+     "s": 23.0,
+     "e": 33.145,
+     "en": "Collocation, as in solve bvp, satisfies the equation and both conditions together, and adapts its mesh. It is the default in this course.",
+     "th": "Collocation เช่นใน solve bvp ทำให้สมการและเงื่อนไขทั้งสองเป็นจริงพร้อมกัน และปรับ mesh เอง นี่คือวิธีมาตรฐานในวิชานี้"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "file": "audio/slide-08.mp3",
+   "duration": 31.2,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.718,
+     "en": "With a film at the surface, the condition becomes Robin.",
+     "th": "เมื่อมีฟิล์มที่ผิว เงื่อนไขกลายเป็น Robin"
+    },
+    {
+     "s": 3.718,
+     "e": 12.224,
+     "en": "The solution is still a hyperbolic cosine, and the overall effectiveness factor adds the film and the pellet as resistances in series.",
+     "th": "คำตอบยังเป็น hyperbolic cosine และ effectiveness factor รวมนำฟิล์มและเม็ดตัวเร่งมาบวกกันเป็นความต้านทานอนุกรม"
+    },
+    {
+     "s": 12.224,
+     "e": 21.024,
+     "en": "At phi equal to three and Biot number one, the surface concentration is only a quarter of the bulk value, and the film limits the rate.",
+     "th": "ที่ phi เท่ากับสามและเลข Biot เท่ากับหนึ่ง ความเข้มข้นที่ผิวเหลือเพียงหนึ่งในสี่ของค่าในเฟสหลัก และฟิล์มเป็นตัวจำกัดอัตรา"
+    },
+    {
+     "s": 21.024,
+     "e": 26.395,
+     "en": "As the Biot number grows, the result returns to the Dirichlet problem of Session 6.",
+     "th": "เมื่อเลข Biot มากขึ้น ผลลัพธ์กลับไปเป็นปัญหา Dirichlet ของคาบที่ 6"
+    },
+    {
+     "s": 26.395,
+     "e": 31.132,
+     "en": "Press D to run the comparison of solve bvp with the closed form.",
+     "th": "กด D เพื่อรันการเปรียบเทียบ solve bvp กับสูตรปิด"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
+   "duration": 34.704,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.079,
+     "en": "Does a linear boundary value problem always have a solution? The Fredholm alternative answers this. If lambda is not an eigenvalue, there is exactly one solution for every source.",
+     "th": "ปัญหาค่าขอบเชิงเส้นมีคำตอบเสมอหรือไม่ Fredholm alternative ตอบคำถามนี้ ถ้า lambda ไม่ใช่ค่าลักษณะเฉพาะ จะมีคำตอบเดียวสำหรับทุกแหล่งกำเนิด"
+    },
+    {
+     "s": 13.079,
+     "e": 21.373,
+     "en": "If lambda is an eigenvalue, a solution exists only when the source is orthogonal to the eigenfunction, and then it is not unique.",
+     "th": "ถ้า lambda เป็นค่าลักษณะเฉพาะ คำตอบมีอยู่เฉพาะเมื่อแหล่งกำเนิดตั้งฉากกับฟังก์ชันลักษณะเฉพาะ และคำตอบนั้นไม่เป็นหนึ่งเดียว"
+    },
+    {
+     "s": 21.373,
+     "e": 26.158,
+     "en": "This is the Session 1 statement about the null space, applied to functions.",
+     "th": "นี่คือข้อความเรื่อง null space ของคาบที่ 1 ที่ใช้กับฟังก์ชัน"
+    },
+    {
+     "s": 26.158,
+     "e": 34.645,
+     "en": "A common trap is a problem with only Neumann conditions. A steady state then exists only if sources and sinks balance.",
+     "th": "กับดักที่พบบ่อยคือปัญหาที่มีแต่เงื่อนไข Neumann สภาวะคงตัวจะมีอยู่ก็ต่อเมื่อแหล่งกำเนิดและแหล่งรับสมดุลกัน"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
+   "duration": 7.848,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.789,
+     "en": "Check one. Answer the four questions, then show the answers. Pause the narration now.",
+     "th": "แบบฝึกหัดตรวจสอบที่หนึ่ง ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
+   "duration": 35.184,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.615,
+     "en": "A Sturm Liouville problem has the form minus p u prime, prime, plus q u, equals lambda w u, with separated conditions at the two ends.",
+     "th": "ปัญหา Sturm Liouville มีรูปแบบ ลบอนุพันธ์ของ p คูณ u ไพรม์ บวก q u เท่ากับ lambda w u โดยมีเงื่อนไขแยกกันที่ปลายทั้งสองด้าน"
+    },
+    {
+     "s": 9.615,
+     "e": 15.395,
+     "en": "With p and w positive, the operator is self-adjoint in the weighted inner product.",
+     "th": "เมื่อ p และ w เป็นบวก ตัวดำเนินการเป็น self-adjoint ในผลคูณภายในแบบถ่วงน้ำหนัก"
+    },
+    {
+     "s": 15.395,
+     "e": 27.421,
+     "en": "Then the eigenvalues are real and ordered, the eigenfunctions are orthogonal with weight w, and they form a complete basis. These are the properties of a symmetric matrix from Session 2.",
+     "th": "ดังนั้นค่าลักษณะเฉพาะเป็นจำนวนจริงและเรียงลำดับได้ ฟังก์ชันลักษณะเฉพาะตั้งฉากกันด้วยน้ำหนัก w และเป็นฐานที่สมบูรณ์ นี่คือสมบัติของเมทริกซ์สมมาตรจากคาบที่ 2"
+    },
+    {
+     "s": 27.421,
+     "e": 35.132,
+     "en": "For the cylinder the weight is r, and the equation is Bessel's equation. For the sphere the weight is r squared.",
+     "th": "สำหรับทรงกระบอก น้ำหนักคือ r และสมการคือสมการของ Bessel สำหรับทรงกลม น้ำหนักคือ r กำลังสอง"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
+   "duration": 33.72,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.5,
+     "en": "Here is an example with a Robin condition at one end. The eigenvalues come from a transcendental equation, tan mu equals minus mu over h, solved with a root finder.",
+     "th": "นี่คือตัวอย่างที่มีเงื่อนไข Robin ที่ปลายด้านหนึ่ง ค่าลักษณะเฉพาะได้จากสมการอดิศัย tan mu เท่ากับลบ mu หารด้วย h ซึ่งแก้ด้วยวิธีหาราก"
+    },
+    {
+     "s": 11.5,
+     "e": 22.461,
+     "en": "A finite difference matrix gives the same eigenvalues to within about one part in ten thousand. The error grows with n because higher modes oscillate faster on the same grid.",
+     "th": "เมทริกซ์ผลต่างจำกัดให้ค่าลักษณะเฉพาะเดียวกันภายในประมาณหนึ่งส่วนในหมื่น ความคลาดเคลื่อนเพิ่มขึ้นตาม n เพราะโหมดที่สูงขึ้นแกว่งเร็วขึ้นบนกริดเดียวกัน"
+    },
+    {
+     "s": 22.461,
+     "e": 33.645,
+     "en": "The chart shows the first four eigenfunctions. The n th one has n minus one interior zeros, and their Gram matrix is the identity to within ten to the minus seven.",
+     "th": "กราฟแสดงฟังก์ชันลักษณะเฉพาะสี่ตัวแรก ตัวที่ n มีจุดศูนย์ภายใน n ลบหนึ่งจุด และเมทริกซ์ Gram ของพวกมันเท่ากับเมทริกซ์เอกลักษณ์ภายในสิบยกกำลังลบเจ็ด"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 32.424,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.645,
+     "en": "A nonuniform source can be handled in two ways. The Green's function is the response to a point source; integrating it against the source gives the solution directly.",
+     "th": "แหล่งกำเนิดที่ไม่สม่ำเสมอจัดการได้สองวิธี ฟังก์ชันของ Green คือผลตอบสนองต่อแหล่งกำเนิดแบบจุด การอินทิเกรตกับแหล่งกำเนิดให้คำตอบโดยตรง"
+    },
+    {
+     "s": 10.645,
+     "e": 20.355,
+     "en": "The eigenfunction series projects the source onto the sine basis and divides each coefficient by its eigenvalue. Move the slider to add terms.",
+     "th": "อนุกรมฟังก์ชันลักษณะเฉพาะฉายแหล่งกำเนิดลงบนฐานไซน์ แล้วหารแต่ละสัมประสิทธิ์ด้วยค่าลักษณะเฉพาะของมัน เลื่อนแถบเพื่อเพิ่มจำนวนพจน์"
+    },
+    {
+     "s": 20.355,
+     "e": 32.355,
+     "en": "The series for u converges as one over N squared. The series for the source itself overshoots near the jump, the Gibbs phenomenon, because it lacks the division by n squared pi squared.",
+     "th": "อนุกรมของ u ลู่เข้าแบบหนึ่งหารด้วย N กำลังสอง อนุกรมของแหล่งกำเนิดเองพุ่งเกินใกล้จุดกระโดด ซึ่งคือปรากฏการณ์ Gibbs เพราะไม่มีการหารด้วย n กำลังสอง pi กำลังสอง"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 32.832,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.368,
+     "en": "Pellet shape enters through the term s over r times u prime. The slab has a hyperbolic tangent, the cylinder a ratio of modified Bessel functions, and the sphere a hyperbolic cotangent.",
+     "th": "รูปร่างของเม็ดตัวเร่งเข้ามาทางพจน์ s หารด้วย r คูณ u ไพรม์ แผ่นมี hyperbolic tangent ทรงกระบอกมีอัตราส่วนของฟังก์ชัน Bessel แบบดัดแปลง และทรงกลมมี hyperbolic cotangent"
+    },
+    {
+     "s": 12.368,
+     "e": 19.618,
+     "en": "solve bvp handles the singular term at the center, and agrees with the exact values at phi equal to three.",
+     "th": "solve bvp จัดการพจน์เอกฐานที่จุดศูนย์กลางได้ และให้ค่าตรงกับค่าแม่นตรงที่ phi เท่ากับสาม"
+    },
+    {
+     "s": 19.618,
+     "e": 28.261,
+     "en": "When the modulus is based on volume over external surface, the three curves nearly coincide and share the limit one over the modulus.",
+     "th": "เมื่อนิยาม modulus โดยใช้ปริมาตรหารด้วยพื้นที่ผิวภายนอก เส้นโค้งทั้งสามเกือบทับกันและมีขีดจำกัดเดียวกันคือหนึ่งหารด้วย modulus"
+    },
+    {
+     "s": 28.261,
+     "e": 32.776,
+     "en": "This is Aris's normalization, and it lets one chart serve every shape.",
+     "th": "นี่คือการทำให้เป็นมาตรฐานของ Aris ซึ่งทำให้กราฟเดียวใช้ได้กับทุกรูปร่าง"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 7.896,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.829,
+     "en": "Check two. Answer the four questions, then show the answers. Pause the narration now.",
+     "th": "แบบฝึกหัดตรวจสอบที่สอง ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 14.376,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.575,
+     "en": "Activity two. Finish your card. Write the boundary conditions of your model and the balance behind each, count them, and decide which session's method you would use first.",
+     "th": "กิจกรรมที่สอง ทำการ์ดของคุณให้เสร็จ เขียนเงื่อนไขขอบเขตของแบบจำลองและสมดุลที่อยู่เบื้องหลังแต่ละข้อ นับจำนวน และตัดสินว่าจะใช้วิธีของคาบใดก่อน"
+    },
+    {
+     "s": 12.575,
+     "e": 14.316,
+     "en": "Pause the narration now.",
+     "th": "หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
+   "duration": 34.632,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.868,
+     "en": "The axial dispersion reactor adds a dispersion term to plug flow. With the Danckwerts conditions, the problem has a closed form solution due to Wehner and Wilhelm.",
+     "th": "เครื่องปฏิกรณ์แบบมีการกระจายตามแนวแกนเพิ่มพจน์การกระจายเข้าไปในการไหลแบบปลั๊ก เมื่อใช้เงื่อนไข Danckwerts ปัญหามีคำตอบรูปปิดของ Wehner และ Wilhelm"
+    },
+    {
+     "s": 10.868,
+     "e": 19.026,
+     "en": "At large Péclet number the conversion approaches plug flow. At small Péclet number it approaches one stirred tank.",
+     "th": "ที่เลข Péclet ค่ามาก ค่าการเปลี่ยนแปลงเข้าใกล้การไหลแบบปลั๊ก ที่เลข Péclet ค่าน้อย จะเข้าใกล้ถังกวนหนึ่งถัง"
+    },
+    {
+     "s": 19.026,
+     "e": 28.511,
+     "en": "The inlet condition says that the feed flux equals the convective plus dispersive flux just inside. So the concentration jumps at the inlet.",
+     "th": "เงื่อนไขทางเข้าบอกว่าฟลักซ์ของสารป้อนเท่ากับฟลักซ์จากการพาบวกฟลักซ์จากการกระจายที่อยู่ถัดเข้าไปด้านใน ดังนั้นความเข้มข้นจึงกระโดดที่ทางเข้า"
+    },
+    {
+     "s": 28.511,
+     "e": 34.566,
+     "en": "At large Péclet number the problem is a singular perturbation, with a layer at the outlet.",
+     "th": "ที่เลข Péclet ค่ามาก ปัญหาเป็น singular perturbation โดยมีชั้นขอบเขตที่ทางออก"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 25.392,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.132,
+     "en": "The chart shows profiles at three Péclet numbers against plug flow. At Péclet number one, back mixing dilutes the feed at once, and the inlet concentration is about half the feed value.",
+     "th": "กราฟแสดงโปรไฟล์ที่เลข Péclet สามค่าเทียบกับการไหลแบบปลั๊ก ที่เลข Péclet เท่ากับหนึ่ง การผสมย้อนกลับเจือจางสารป้อนทันที และความเข้มข้นที่ทางเข้ามีค่าประมาณครึ่งหนึ่งของสารป้อน"
+    },
+    {
+     "s": 12.132,
+     "e": 25.316,
+     "en": "solve bvp agrees with the closed form to six digits. Note that the closed form overflows if coded naively at large Péclet number. Divide through by the largest exponential first.",
+     "th": "solve bvp ให้ค่าตรงกับสูตรปิดถึงหกหลัก โปรดสังเกตว่าสูตรปิดจะ overflow ถ้าเขียนโค้ดตรงๆ ที่เลข Péclet ค่ามาก ให้หารด้วยเลขชี้กำลังที่ใหญ่ที่สุดก่อน"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
+   "duration": 26.256,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.984,
+     "en": "Conversion rises from the stirred tank value to the plug flow value as the Péclet number grows, and most of the change happens between one and one hundred.",
+     "th": "ค่าการเปลี่ยนแปลงเพิ่มจากค่าของถังกวนไปถึงค่าของการไหลแบบปลั๊กเมื่อเลข Péclet เพิ่มขึ้น และการเปลี่ยนแปลงส่วนใหญ่เกิดระหว่างหนึ่งถึงหนึ่งร้อย"
+    },
+    {
+     "s": 8.984,
+     "e": 18.863,
+     "en": "When you report a boundary value solution, give the conditions with their balances, the solver, its tolerance and mesh, the residual, and a check against a limit.",
+     "th": "เมื่อรายงานคำตอบของปัญหาค่าขอบ ให้ระบุเงื่อนไขพร้อมสมดุลของแต่ละข้อ ตัวแก้สมการ ค่าความคลาดเคลื่อนที่ยอมรับและ mesh ค่าคงเหลือ และการตรวจกับขีดจำกัด"
+    },
+    {
+     "s": 18.863,
+     "e": 26.197,
+     "en": "For a dispersion model, say how the Péclet number was obtained; its uncertainty often matters more than the solver error.",
+     "th": "สำหรับแบบจำลองการกระจาย ให้บอกว่าได้เลข Péclet มาอย่างไร ความไม่แน่นอนของมันมักสำคัญกว่าความคลาดเคลื่อนของตัวแก้สมการ"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 7.992,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.921,
+     "en": "Check three. Answer the four questions, then show the answers. Pause the narration now.",
+     "th": "แบบฝึกหัดตรวจสอบที่สาม ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 7.416,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.342,
+     "en": "Check four connects today with earlier sessions, in the style of the midterm. Pause the narration now.",
+     "th": "แบบฝึกหัดตรวจสอบที่สี่เชื่อมเนื้อหาวันนี้กับคาบก่อนๆ ในรูปแบบของการสอบกลางภาค หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
+   "duration": 23.352,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.51,
+     "en": "Here are the seven sessions as one toolkit. Each answers a different question about a model:",
+     "th": "นี่คือเจ็ดคาบในฐานะชุดเครื่องมือเดียว แต่ละคาบตอบคำถามต่างกันเกี่ยวกับแบบจำลอง"
+    },
+    {
+     "s": 5.51,
+     "e": 15.167,
+     "en": "which quantities are independent, which directions matter, how a linear network evolves, which states are stable, where they change, which group controls the result,",
+     "th": "คือปริมาณใดเป็นอิสระต่อกัน ทิศทางใดสำคัญ เครือข่ายเชิงเส้นเปลี่ยนแปลงอย่างไร สภาวะใดเสถียร สภาวะเปลี่ยนที่ใด กลุ่มใดควบคุมผลลัพธ์"
+    },
+    {
+     "s": 15.167,
+     "e": 17.145,
+     "en": "and what the boundaries determine.",
+     "th": "และขอบเขตกำหนดอะไร"
+    },
+    {
+     "s": 17.145,
+     "e": 23.289,
+     "en": "The midterm covers all seven, and expects at least one problem that needs two sessions together.",
+     "th": "การสอบกลางภาคครอบคลุมทั้งเจ็ดคาบ และมีอย่างน้อยหนึ่งข้อที่ต้องใช้สองคาบร่วมกัน"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "file": "audio/slide-23.mp3",
+   "duration": 15.432,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.569,
+     "en": "Lab seven. Open the lab page with the code. You will compute the limits and the Wehner Wilhelm conversion, read the profiles, and find how much dispersion the reactor can tolerate.",
+     "th": "แล็บที่เจ็ด เปิดหน้าแล็บด้วยโค้ด คุณจะคำนวณขีดจำกัดและค่าการเปลี่ยนแปลงของ Wehner Wilhelm อ่านโปรไฟล์ และหาว่าเครื่องปฏิกรณ์ยอมให้มีการกระจายได้มากเพียงใด"
+    },
+    {
+     "s": 13.569,
+     "e": 15.355,
+     "en": "Pause the narration now.",
+     "th": "หยุดเสียงบรรยายตอนนี้"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 26.424,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 13.487,
+     "en": "To summarize. Every boundary condition is a balance. Use collocation rather than shooting. A linear problem has a unique solution unless the homogeneous problem has one.",
+     "th": "สรุป เงื่อนไขขอบเขตทุกข้อคือสมดุล ใช้ collocation แทน shooting ปัญหาเชิงเส้นมีคำตอบเดียว เว้นแต่ปัญหาเอกพันธ์จะมีคำตอบ"
+    },
+    {
+     "s": 13.487,
+     "e": 22.23,
+     "en": "Sturm Liouville problems have real eigenvalues and orthogonal eigenfunctions, which solve nonuniform sources together with Green's functions.",
+     "th": "ปัญหา Sturm Liouville มีค่าลักษณะเฉพาะเป็นจำนวนจริงและฟังก์ชันลักษณะเฉพาะที่ตั้งฉากกัน ซึ่งใช้แก้แหล่งกำเนิดที่ไม่สม่ำเสมอร่วมกับฟังก์ชันของ"
+    },
+    {
+     "s": 22.23,
+     "e": 26.355,
+     "en": "The dispersion reactor lies between the stirred tank and plug flow.",
+     "th": "Green เครื่องปฏิกรณ์แบบมีการกระจายอยู่ระหว่างถังกวนกับการไหลแบบปลั๊ก"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
+   "duration": 9.672,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.618,
+     "en": "Before the midterm, finish the lab and upload the answer file. Go over the four checks of every session without notes, and bring your finished card.",
+     "th": "ก่อนสอบกลางภาค ทำแล็บให้เสร็จและอัปโหลดไฟล์คำตอบ ทบทวนแบบฝึกหัดตรวจสอบสี่ข้อของทุกคาบโดยไม่ดูโน้ต และนำการ์ดที่เสร็จแล้วมาด้วย"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 14.4,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 14.329,
+     "en": "Finally, the Exit Ticket and feedback. Scan the code and choose Session 7. Today the form also asks a few questions about the course as a whole. Thank you, and good luck with the midterm.",
+     "th": "สุดท้าย Exit Ticket และแบบประเมิน สแกนโค้ดแล้วเลือกคาบที่ 7 วันนี้แบบฟอร์มจะถามคำถามเกี่ยวกับวิชาโดยรวมด้วย ขอบคุณครับ และขอให้โชคดีในการสอบกลางภาค"
+    }
+   ]
+  }
+ ]
+}

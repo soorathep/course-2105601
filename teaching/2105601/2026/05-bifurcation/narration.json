@@ -1,0 +1,829 @@
+{
+ "voice": "en-US-GuyNeural",
+ "rate": "-5%",
+ "provider": "Microsoft Edge neural speech (edge-tts)",
+ "synthetic_voice": true,
+ "total_seconds": 856.1,
+ "slides": [
+  {
+   "n": 1,
+   "file": "audio/slide-01.mp3",
+   "duration": 32.04,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.747,
+     "en": "Welcome to Session 5 of Advanced Engineering Mathematics for Chemical Engineers.",
+     "th": "ยินดีต้อนรับสู่คาบที่ 5 ของวิชา Advanced Engineering Mathematics for Chemical Engineers"
+    },
+    {
+     "s": 5.747,
+     "e": 10.837,
+     "en": "Last session we studied the cooled CSTR at one value of the Damköhler number.",
+     "th": "คาบที่แล้วเราศึกษา CSTR ที่มีการระบายความร้อนที่เลข Damköhler ค่าเดียว"
+    },
+    {
+     "s": 10.837,
+     "e": 18.342,
+     "en": "Today we follow its steady states over every value, and watch where they appear, disappear, and start to oscillate.",
+     "th": "วันนี้เราติดตามสภาวะคงตัวของมันตลอดทุกค่า และดูว่าสภาวะเหล่านั้นเกิดขึ้น หายไป และเริ่มแกว่งที่ใด"
+    },
+    {
+     "s": 18.342,
+     "e": 28.026,
+     "en": "Those places are bifurcations. In a plant they are ignition, extinction, and sustained oscillation, and they decide the safe operating window.",
+     "th": "จุดเหล่านั้นคือ bifurcation ในโรงงาน จุดเหล่านี้คือการติดไฟ การดับ และการแกว่งอย่างต่อเนื่อง และเป็นตัวกำหนดช่วงการเดินเครื่องที่ปลอดภัย"
+    },
+    {
+     "s": 28.026,
+     "e": 31.974,
+     "en": "On your own, the narration takes about fifteen minutes.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบห้านาที"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "file": "audio/slide-02.mp3",
+   "duration": 27.168,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.8,
+     "en": "Part one covers branches of steady states, folds where the determinant of J vanishes, the S curve, the cusp condition, and hysteresis.",
+     "th": "ส่วนที่หนึ่งว่าด้วยสาขาของสภาวะคงตัว จุดพับที่ดีเทอร์มิแนนต์ของ J เป็นศูนย์ เส้นโค้งรูปตัว S เงื่อนไข cusp และ hysteresis"
+    },
+    {
+     "s": 8.8,
+     "e": 17.908,
+     "en": "Part two covers pseudo arclength continuation, how to detect bifurcations along a branch, and the Hopf bifurcation that gives birth to a limit cycle.",
+     "th": "ส่วนที่สองว่าด้วย pseudo arclength continuation วิธีตรวจหา bifurcation ตามสาขา และ Hopf bifurcation ที่ให้กำเนิด limit cycle"
+    },
+    {
+     "s": 17.908,
+     "e": 27.092,
+     "en": "Part three covers two parameter maps, where bifurcations appear in chemical engineering, and what to report. Lab 5 follows.",
+     "th": "ส่วนที่สามว่าด้วยแผนที่สองพารามิเตอร์ ที่ที่ bifurcation ปรากฏในวิศวกรรมเคมี และสิ่งที่ควรรายงาน แล้วตามด้วย Lab 5"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "file": "audio/slide-03.mp3",
+   "duration": 20.256,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.103,
+     "en": "Activity 1 is a retrieval check on Session 4: classifying a steady state, the heat balance slope test, the separatrix, and why a reactor could leave a stable state.",
+     "th": "กิจกรรมที่ 1 คือการทบทวนคาบที่ 4 ได้แก่ การจำแนกสภาวะคงตัว การทดสอบความชันของการดุลความร้อน separatrix และเหตุผลที่เครื่องปฏิกรณ์อาจออกจากสภาวะที่เสถียร"
+    },
+    {
+     "s": 10.103,
+     "e": 20.184,
+     "en": "The last answer adds a third reason today: a parameter change can remove the steady state altogether. Write alone, then compare, and press Show answers.",
+     "th": "คำตอบสุดท้ายเพิ่มเหตุผลที่สามในวันนี้ คือการเปลี่ยนพารามิเตอร์อาจทำให้สภาวะคงตัวหายไปทั้งหมด เขียนคนเดียว แล้วเทียบกับเพื่อน และกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "file": "audio/slide-04.mp3",
+   "duration": 17.112,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.534,
+     "en": "By the end of today you should be able to explain when a branch of steady states continues and when it turns, derive the S curve and the cusp condition of the cooled CSTR,",
+     "th": "เมื่อจบคาบนี้ คุณควรอธิบายได้ว่าสาขาของสภาวะคงตัวต่อเนื่องเมื่อใดและเลี้ยวกลับเมื่อใด หาเส้นโค้งรูปตัว S และเงื่อนไข cusp ของ CSTR ที่มีการระบายความร้อน"
+    },
+    {
+     "s": 9.534,
+     "e": 17.103,
+     "en": "explain hysteresis, describe pseudo arclength continuation, locate a Hopf point and predict its oscillation, and read a two parameter map.",
+     "th": "อธิบาย hysteresis อธิบาย pseudo arclength continuation หาจุด Hopf และทำนายการแกว่ง และอ่านแผนที่สองพารามิเตอร์ได้"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "file": "audio/slide-05.mp3",
+   "duration": 26.856,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.714,
+     "en": "Everything today rests on earlier sessions. Session 1's null space becomes the direction in which a branch turns. Session 2's SVD gives the tangent of the branch.",
+     "th": "ทุกอย่างวันนี้อาศัยคาบก่อนหน้า null space จากคาบที่ 1 กลายเป็นทิศที่สาขาเลี้ยวกลับ SVD จากคาบที่ 2 ให้เส้นสัมผัสของสาขา"
+    },
+    {
+     "s": 11.714,
+     "e": 19.908,
+     "en": "Session 3's complex eigenvalues become oscillations, and Session 4 gave the three steady states at one value of Da.",
+     "th": "ค่าเฉพาะเชิงซ้อนจากคาบที่ 3 กลายเป็นการแกว่ง และคาบที่ 4 ให้สภาวะคงตัวสามสภาวะที่ Da ค่าเดียว"
+    },
+    {
+     "s": 19.908,
+     "e": 26.789,
+     "en": "The lecture uses the same reactor as Session 4, with B equal to eight and beta equal to zero point three.",
+     "th": "การบรรยายใช้เครื่องปฏิกรณ์เดียวกับคาบที่ 4 โดย B เท่ากับแปด และ beta เท่ากับศูนย์จุดสาม"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "file": "audio/slide-06.mp3",
+   "duration": 83.88,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.684,
+     "en": "Part one. Differentiate the steady state equation along a branch, and you get J times the derivative of x star with respect to p, plus the derivative of f with respect to p, equal to zero.",
+     "th": "ส่วนที่หนึ่ง หาอนุพันธ์ของสมการสภาวะคงตัวตามสาขา จะได้ J คูณอนุพันธ์ของ x star เทียบกับ p บวกอนุพันธ์ของ f เทียบกับ p เท่ากับศูนย์"
+    },
+    {
+     "s": 12.684,
+     "e": 22.434,
+     "en": "While J is invertible, the implicit function theorem guarantees a unique smooth branch, and its slope is minus J inverse times the derivative of f with respect to p.",
+     "th": "ตราบใดที่ J หาตัวผกผันได้ ทฤษฎีบทฟังก์ชันโดยปริยายรับประกันว่ามีสาขาที่เรียบและเป็นหนึ่งเดียว และความชันคือ ลบ J inverse คูณอนุพันธ์ของ f เทียบกับ p"
+    },
+    {
+     "s": 22.434,
+     "e": 33.067,
+     "en": "Where the determinant of J is zero, that slope blows up, and the branch can turn back in p. This is a fold, also called a saddle node or a turning point.",
+     "th": "ที่ดีเทอร์มิแนนต์ของ J เป็นศูนย์ ความชันนั้นเป็นอนันต์ และสาขาเลี้ยวกลับในทิศของ p ได้ นี่คือจุดพับ หรือ saddle node หรือ turning point"
+    },
+    {
+     "s": 33.067,
+     "e": 35.829,
+     "en": "Two steady states meet there and vanish.",
+     "th": "สภาวะคงตัวสองสภาวะมาพบกันที่นั่นและหายไป"
+    },
+    {
+     "s": 35.829,
+     "e": 45.211,
+     "en": "At the fold, the null vector of J is the direction in which the branch turns, and one real eigenvalue passes through zero, turning a stable node into a saddle.",
+     "th": "ที่จุดพับ null vector ของ J คือทิศที่สาขาเลี้ยว และค่าเฉพาะจริงหนึ่งตัวผ่านศูนย์ ทำให้ stable node กลายเป็น saddle"
+    },
+    {
+     "s": 45.211,
+     "e": 50.865,
+     "en": "For one parameter, the generic bifurcations of steady states are the fold and the Hopf.",
+     "th": "สำหรับพารามิเตอร์ตัวเดียว bifurcation ทั่วไปของสภาวะคงตัวคือจุดพับและ Hopf"
+    },
+    {
+     "s": 50.865,
+     "e": 59.539,
+     "en": "Others, like the transcritical bifurcation at washout in a bioreactor, need a special structure, such as a solution that always exists.",
+     "th": "แบบอื่น เช่น transcritical bifurcation ที่ washout ในเครื่องปฏิกรณ์ชีวภาพ ต้องการโครงสร้างพิเศษ เช่น คำตอบที่มีอยู่เสมอ"
+    },
+    {
+     "s": 59.539,
+     "e": 69.68,
+     "en": "A simple example makes the fold concrete. For d x d t equals p minus x squared, steady states are plus and minus the square root of p.",
+     "th": "ตัวอย่างง่ายๆ ทำให้จุดพับชัดเจน สำหรับ d x d t เท่ากับ p ลบ x กำลังสอง สภาวะคงตัวคือบวกและลบรากที่สองของ p เมื่อ p"
+    },
+    {
+     "s": 69.68,
+     "e": 83.803,
+     "en": "For p positive there are two, one stable and one unstable. At p equal to zero they meet, and for negative p there are none. The Jacobian, minus two x, is zero exactly at the meeting point.",
+     "th": "เป็นบวกมีสองสภาวะ หนึ่งเสถียรและหนึ่งไม่เสถียร ที่ p เท่ากับศูนย์ทั้งสองมาพบกัน และเมื่อ p เป็นลบไม่มีสภาวะใดเลย Jacobian ซึ่งเท่ากับลบสอง x เป็นศูนย์ที่จุดพบกันพอดี"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "file": "audio/slide-07.mp3",
+   "duration": 50.568,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.787,
+     "en": "Here is the S curve of the lecture reactor: steady state temperature against Da. Teal is stable, and rust dashed is unstable.",
+     "th": "นี่คือเส้นโค้งรูปตัว S ของเครื่องปฏิกรณ์ในการบรรยาย อุณหภูมิที่สภาวะคงตัวเทียบกับ Da สีเขียวหัวเป็ดคือเสถียร และเส้นประสีสนิมคือไม่เสถียร"
+    },
+    {
+     "s": 7.787,
+     "e": 16.132,
+     "en": "Move the Da slider. The vertical line crosses the curve once at low Da, three times between the folds, and once at high Da.",
+     "th": "เลื่อนแถบ Da เส้นแนวตั้งตัดเส้นโค้งหนึ่งครั้งที่ Da ต่ำ สามครั้งระหว่างจุดพับ และหนึ่งครั้งที่ Da สูง"
+    },
+    {
+     "s": 16.132,
+     "e": 28.895,
+     "en": "The lower fold, at Da about zero point zero seven three, is ignition: the cold branch ends there. The upper fold, at about zero point zero two nine, is extinction: the hot branch ends there.",
+     "th": "จุดพับล่างที่ Da ประมาณศูนย์จุดศูนย์เจ็ดสาม คือการติดไฟ สาขาเย็นสิ้นสุดที่นั่น จุดพับบนที่ประมาณศูนย์จุดศูนย์สองเก้า คือการดับ สาขาร้อนสิ้นสุดที่นั่น"
+    },
+    {
+     "s": 28.895,
+     "e": 39.961,
+     "en": "The middle branch is made of saddles. There is also a short unstable stretch on the hot branch near extinction, ending at a Hopf point. Part two explains it.",
+     "th": "สาขากลางประกอบด้วย saddle นอกจากนี้ยังมีช่วงสั้นๆ ที่ไม่เสถียรบนสาขาร้อนใกล้จุดดับ ซึ่งสิ้นสุดที่จุด Hopf ส่วนที่สองจะอธิบายเรื่องนี้"
+    },
+    {
+     "s": 39.961,
+     "e": 50.513,
+     "en": "Remember from Session 4 that at Da equal to zero point zero six, three steady states existed. You can now see why: that value lies between the two folds.",
+     "th": "จำจากคาบที่ 4 ได้ว่าที่ Da เท่ากับศูนย์จุดศูนย์หก มีสามสภาวะคงตัว ตอนนี้คุณเห็นเหตุผลแล้ว ค่านั้นอยู่ระหว่างจุดพับทั้งสอง"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "file": "audio/slide-08.mp3",
+   "duration": 73.776,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.908,
+     "en": "For this model the whole curve has a closed form. At steady state x one equals c times x two, with c equal to one plus beta over B, so Da can be written as an explicit function of x two.",
+     "th": "สำหรับแบบจำลองนี้ เส้นโค้งทั้งเส้นมีรูปปิด ที่สภาวะคงตัว x หนึ่ง เท่ากับ c คูณ x สอง โดย c เท่ากับ หนึ่งบวก beta ส่วน B ดังนั้นเขียน Da เป็นฟังก์ชันชัดแจ้งของ x สอง ได้"
+    },
+    {
+     "s": 12.908,
+     "e": 25.776,
+     "en": "Folds are where Da as a function of x two has a maximum or a minimum. Setting the derivative of its logarithm to zero gives a quadratic: c x two squared minus x two plus one equals zero.",
+     "th": "จุดพับคือที่ที่ Da ในฐานะฟังก์ชันของ x สอง มีค่าสูงสุดหรือต่ำสุด การให้อนุพันธ์ของลอการิทึมเป็นศูนย์ได้สมการกำลังสอง c x สอง กำลังสอง ลบ x สอง บวก หนึ่ง เท่ากับศูนย์"
+    },
+    {
+     "s": 25.776,
+     "e": 33.311,
+     "en": "Two real roots exist only if one minus four c is positive, which is B greater than four times one plus beta.",
+     "th": "รากจริงสองตัวมีอยู่ก็ต่อเมื่อ หนึ่ง ลบ สี่ c เป็นบวก ซึ่งคือ B มากกว่าสี่เท่าของ หนึ่งบวก"
+    },
+    {
+     "s": 33.311,
+     "e": 39.395,
+     "en": "That is the classical condition for multiplicity in a CSTR with large activation energy.",
+     "th": "beta นี่คือเงื่อนไขคลาสสิกของการมีหลายคำตอบใน CSTR ที่มีพลังงานก่อกัมมันต์สูง"
+    },
+    {
+     "s": 39.395,
+     "e": 51.965,
+     "en": "On the right, the line B equals four times one plus beta separates the parameter plane. Above it multiplicity is possible for some Da; below it the steady state is unique for every Da.",
+     "th": "ทางขวา เส้น B เท่ากับสี่เท่าของ หนึ่งบวก beta แบ่งระนาบพารามิเตอร์ เหนือเส้นนี้มีหลายคำตอบได้สำหรับ Da บางค่า ใต้เส้นนี้สภาวะคงตัวเป็นหนึ่งเดียวทุกค่า Da"
+    },
+    {
+     "s": 51.965,
+     "e": 55.974,
+     "en": "Where the two folds meet, at x two equal to two, is a cusp.",
+     "th": "จุดที่จุดพับทั้งสองมาพบกัน ที่ x สอง เท่ากับสอง คือ cusp"
+    },
+    {
+     "s": 55.974,
+     "e": 66.403,
+     "en": "Let us check the lecture values. With B equal to eight and beta zero point three, c is zero point one six two five, and one minus four c is zero point three five.",
+     "th": "ลองตรวจค่าในการบรรยาย เมื่อ B เท่ากับแปด และ beta เท่ากับศูนย์จุดสาม c เท่ากับศูนย์จุดหนึ่งหกสองห้า และ หนึ่ง ลบ สี่ c เท่ากับศูนย์จุดสามห้า"
+    },
+    {
+     "s": 66.403,
+     "e": 73.697,
+     "en": "The roots are one point two six and four point nine, the two fold temperatures in the table on the previous slide.",
+     "th": "รากคือหนึ่งจุดสองหก และสี่จุดเก้า ซึ่งคืออุณหภูมิที่จุดพับทั้งสองในตารางของหน้าก่อน"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
+   "duration": 59.376,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.618,
+     "en": "Hysteresis is what an operator sees. Here the simulation raises Da in small steps, holding each one for forty residence times, then lowers it again.",
+     "th": "hysteresis คือสิ่งที่ผู้เดินเครื่องเห็น ในที่นี้การจำลองเพิ่ม Da ทีละน้อย คงไว้แต่ละค่าเป็นเวลาสี่สิบเท่าของเวลาพัก แล้วลดลงอีกครั้ง"
+    },
+    {
+     "s": 10.618,
+     "e": 20.139,
+     "en": "Rising, the reactor stays cold until the ignition fold, then jumps hot. Falling, it stays hot until the extinction fold, then drops cold.",
+     "th": "เมื่อเพิ่มขึ้น เครื่องปฏิกรณ์ยังเย็นจนถึงจุดพับของการติดไฟ แล้วกระโดดไปร้อน เมื่อลดลง ยังร้อนจนถึงจุดพับของการดับ แล้วตกลงเย็น"
+    },
+    {
+     "s": 20.139,
+     "e": 25.934,
+     "en": "The two jumps happen at different Da, and between them the state depends on history.",
+     "th": "การกระโดดทั้งสองเกิดที่ Da ต่างกัน และระหว่างนั้นสถานะขึ้นกับประวัติ"
+    },
+    {
+     "s": 25.934,
+     "e": 33.368,
+     "en": "The simulated jumps fall within one step of the computed folds. The middle branch is never seen.",
+     "th": "การกระโดดในการจำลองอยู่ภายในหนึ่งขั้นของจุดพับที่คำนวณได้ สาขากลางไม่เคยปรากฏให้เห็น"
+    },
+    {
+     "s": 33.368,
+     "e": 44.342,
+     "en": "Plants use this deliberately: start up past ignition, then bring Da back inside the multiplicity range, and stay hot. The extinction point is then the limit to watch.",
+     "th": "โรงงานใช้ประโยชน์จากเรื่องนี้โดยตั้งใจ คือเริ่มเดินเครื่องเลยจุดติดไฟ แล้วนำ Da กลับเข้าสู่ช่วงที่มีหลายคำตอบ และคงสภาวะร้อนไว้ จุดดับจึงเป็นขีดจำกัดที่ต้องเฝ้าดู"
+    },
+    {
+     "s": 44.342,
+     "e": 50.209,
+     "en": "Notice that the simulated jumps are a little later than the folds, because each hold is finite.",
+     "th": "สังเกตว่าการกระโดดในการจำลองช้ากว่าจุดพับเล็กน้อย เพราะการคงค่าแต่ละครั้งมีเวลาจำกัด"
+    },
+    {
+     "s": 50.209,
+     "e": 59.316,
+     "en": "Near a fold the dynamics slow down, a phenomenon called critical slowing down, which is itself a warning sign that a plant is close to a bifurcation.",
+     "th": "ใกล้จุดพับ พลวัตช้าลง ซึ่งเรียกว่า critical slowing down ปรากฏการณ์นี้เองเป็นสัญญาณเตือนว่าโรงงานอยู่ใกล้ bifurcation"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
+   "duration": 7.272,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.211,
+     "en": "Check 1 has four questions on folds and the S curve. Take five minutes, then press Show answers.",
+     "th": "Check 1 มีสี่คำถามเรื่องจุดพับและเส้นโค้งรูปตัว S ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
+   "duration": 72.096,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.908,
+     "en": "Part two. Most models have no closed form, so we need a general way to follow a branch: continuation.",
+     "th": "ส่วนที่สอง แบบจำลองส่วนใหญ่ไม่มีรูปปิด เราจึงต้องการวิธีทั่วไปในการติดตามสาขา ซึ่งคือ continuation"
+    },
+    {
+     "s": 7.908,
+     "e": 17.513,
+     "en": "Natural continuation steps the parameter and solves for x. It fails at a fold, because J is singular there and the branch turns back.",
+     "th": "natural continuation เพิ่มพารามิเตอร์ทีละขั้นแล้วแก้หา x วิธีนี้ล้มเหลวที่จุดพับ เพราะ J เป็น singular ที่นั่นและสาขาเลี้ยวกลับ"
+    },
+    {
+     "s": 17.513,
+     "e": 28.491,
+     "en": "Keller's pseudo arclength method makes the parameter an unknown. The tangent is the null vector of the n by n plus one matrix of derivatives, which the SVD gives robustly.",
+     "th": "วิธี pseudo arclength ของ Keller ทำให้พารามิเตอร์เป็นตัวไม่ทราบค่า เส้นสัมผัสคือ null vector ของเมทริกซ์อนุพันธ์ขนาด n คูณ n บวกหนึ่ง ซึ่ง SVD"
+    },
+    {
+     "s": 28.491,
+     "e": 37.618,
+     "en": "Predict a step along the tangent, then correct with Newton on the equations plus one extra equation that fixes the step length along the curve.",
+     "th": "หาได้อย่างมั่นคง ทำนายหนึ่งขั้นตามเส้นสัมผัส แล้วแก้ไขด้วย Newton บนสมการเดิมบวกสมการเพิ่มอีกหนึ่งสมการที่กำหนดความยาวขั้นตามเส้นโค้ง"
+    },
+    {
+     "s": 37.618,
+     "e": 43.711,
+     "en": "The bordered matrix stays invertible at a fold, so the method walks around it without noticing.",
+     "th": "เมทริกซ์ที่เติมขอบยังหาตัวผกผันได้ที่จุดพับ วิธีนี้จึงเดินผ่านจุดพับได้โดยไม่มีปัญหา"
+    },
+    {
+     "s": 43.711,
+     "e": 53.345,
+     "en": "For the lecture reactor it took about three hundred steps, never more than four Newton iterations per step, and matched the closed form to rounding error.",
+     "th": "สำหรับเครื่องปฏิกรณ์ในการบรรยาย ใช้ประมาณสามร้อยขั้น ไม่เกินสี่รอบของ Newton ต่อขั้น และตรงกับรูปปิดภายในความคลาดเคลื่อนจากการปัดเศษ"
+    },
+    {
+     "s": 53.345,
+     "e": 56.329,
+     "en": "That is how you test your own continuation code.",
+     "th": "นี่คือวิธีทดสอบโค้ด continuation ของคุณเอง"
+    },
+    {
+     "s": 56.329,
+     "e": 65.269,
+     "en": "A practical detail: the step length must adapt. Near a fold the curve bends sharply, and a fixed large step can jump to another branch.",
+     "th": "รายละเอียดในทางปฏิบัติ ความยาวขั้นต้องปรับได้ ใกล้จุดพับเส้นโค้งเลี้ยวอย่างแรง และขั้นที่ใหญ่คงที่อาจกระโดดไปยังสาขาอื่น"
+    },
+    {
+     "s": 65.269,
+     "e": 72.039,
+     "en": "Good codes shrink the step when Newton needs many iterations and grow it when Newton converges quickly.",
+     "th": "โค้ดที่ดีลดขั้นเมื่อ Newton ต้องใช้หลายรอบ และเพิ่มขั้นเมื่อ Newton ลู่เข้าเร็ว"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
+   "duration": 39.72,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.418,
+     "en": "Along the branch, watch test functions that change sign at a bifurcation: the determinant of J for folds, and the trace of J for Hopf points in two dimensions.",
+     "th": "ตามสาขา ให้เฝ้าดู test function ที่เปลี่ยนเครื่องหมายที่ bifurcation คือดีเทอร์มิแนนต์ของ J สำหรับจุดพับ และ trace ของ J สำหรับจุด Hopf ในสองมิติ"
+    },
+    {
+     "s": 9.418,
+     "e": 15.82,
+     "en": "Here the determinant crosses zero twice, at the two folds. The trace crosses zero twice too.",
+     "th": "ในที่นี้ดีเทอร์มิแนนต์ผ่านศูนย์สองครั้ง ที่จุดพับทั้งสอง trace ก็ผ่านศูนย์สองครั้งเช่นกัน"
+    },
+    {
+     "s": 15.82,
+     "e": 28.763,
+     "en": "The first crossing is on the saddle branch, where the determinant is negative, so it is not a Hopf point. The second is near the upper fold, with a positive determinant: a true Hopf point.",
+     "th": "ครั้งแรกอยู่บนสาขา saddle ซึ่งดีเทอร์มิแนนต์เป็นลบ จึงไม่ใช่จุด Hopf ครั้งที่สองอยู่ใกล้จุดพับบน โดยดีเทอร์มิแนนต์เป็นบวก ซึ่งเป็นจุด Hopf จริง"
+    },
+    {
+     "s": 28.763,
+     "e": 39.645,
+     "en": "A sign change between two steps only brackets the point. A few secant or Newton steps on an augmented system locate it accurately, which is what you will see in the lab.",
+     "th": "การเปลี่ยนเครื่องหมายระหว่างสองขั้นเพียงคร่อมจุดนั้นไว้ การทำ secant หรือ Newton ไม่กี่ขั้นบนระบบที่เติมสมการหาตำแหน่งได้แม่นยำ ซึ่งคุณจะเห็นในแล็บ"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 70.44,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.833,
+     "en": "At a Hopf point a complex pair of eigenvalues crosses the imaginary axis.",
+     "th": "ที่จุด Hopf ค่าเฉพาะเชิงซ้อนคู่หนึ่งผ่านแกนจินตภาพ"
+    },
+    {
+     "s": 4.833,
+     "e": 15.961,
+     "en": "In two dimensions that means the trace is zero and the determinant is positive, and the eigenvalues are plus and minus i omega, with omega the square root of the determinant.",
+     "th": "ในสองมิติหมายถึง trace เป็นศูนย์และดีเทอร์มิแนนต์เป็นบวก และค่าเฉพาะคือบวกและลบ i omega โดย omega คือรากที่สองของดีเทอร์มิแนนต์"
+    },
+    {
+     "s": 15.961,
+     "e": 22.342,
+     "en": "The Hopf theorem says a periodic orbit is born there, with period close to two pi over omega.",
+     "th": "ทฤษฎีบท Hopf กล่าวว่าวงโคจรเป็นคาบเกิดขึ้นที่นั่น โดยมีคาบใกล้กับ สองพาย ส่วน omega"
+    },
+    {
+     "s": 22.342,
+     "e": 29.815,
+     "en": "In the supercritical case the orbit is stable and its amplitude grows like the square root of the distance from the Hopf point.",
+     "th": "ในกรณี supercritical วงโคจรเสถียร และแอมพลิจูดเพิ่มขึ้นตามรากที่สองของระยะห่างจากจุด Hopf ในกรณี"
+    },
+    {
+     "s": 29.815,
+     "e": 38.513,
+     "en": "In the subcritical case an unstable orbit shrinks onto the steady state, and the system jumps to some distant attractor, which is far more dangerous.",
+     "th": "subcritical วงโคจรที่ไม่เสถียรหดเข้าหาสภาวะคงตัว และระบบกระโดดไปยัง attractor ที่อยู่ไกลออกไป ซึ่งอันตรายกว่ามาก"
+    },
+    {
+     "s": 38.513,
+     "e": 49.355,
+     "en": "For the lab reactor, with B equal to fourteen and beta equal to two, the Hopf point is at Da about zero point one three one, with a period of about one point five seven residence times.",
+     "th": "สำหรับเครื่องปฏิกรณ์ในแล็บ ซึ่ง B เท่ากับสิบสี่ และ beta เท่ากับสอง จุด Hopf อยู่ที่ Da ประมาณศูนย์จุดหนึ่งสามหนึ่ง มีคาบประมาณหนึ่งจุดห้าเจ็ดเท่าของเวลาพัก"
+    },
+    {
+     "s": 49.355,
+     "e": 59.251,
+     "en": "Why does supercritical growth follow a square root? Near the Hopf point, the amplitude equation has the form d r d t equals mu r minus a r cubed.",
+     "th": "ทำไมการเพิ่มแบบ supercritical จึงตามรากที่สอง ใกล้จุด Hopf สมการแอมพลิจูดมีรูป d r d t เท่ากับ mu r ลบ a r กำลังสาม"
+    },
+    {
+     "s": 59.251,
+     "e": 70.368,
+     "en": "Its nonzero steady state is r equal to the square root of mu over a, where mu measures the distance from the Hopf point. The sign of a decides super or subcritical.",
+     "th": "สภาวะคงตัวที่ไม่เป็นศูนย์คือ r เท่ากับรากที่สองของ mu ส่วน a โดย mu วัดระยะจากจุด Hopf เครื่องหมายของ a ตัดสินว่าเป็น super หรือ subcritical"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 42.72,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.879,
+     "en": "Here is that reactor at Da equal to zero point one two, below the Hopf point, where the only steady state is an unstable focus.",
+     "th": "นี่คือเครื่องปฏิกรณ์นั้นที่ Da เท่ากับศูนย์จุดหนึ่งสอง ต่ำกว่าจุด Hopf ซึ่งสภาวะคงตัวเดียวเป็นโฟกัสที่ไม่เสถียร"
+    },
+    {
+     "s": 7.879,
+     "e": 16.921,
+     "en": "After the transient, the temperature oscillates with a period of about two point seven residence times, swinging from about two point seven to almost seven.",
+     "th": "หลังช่วงเปลี่ยนผ่าน อุณหภูมิแกว่งด้วยคาบประมาณสองจุดเจ็ดเท่าของเวลาพัก โดยแกว่งจากประมาณสองจุดเจ็ดไปเกือบเจ็ด"
+    },
+    {
+     "s": 16.921,
+     "e": 21.833,
+     "en": "On the right the same motion is a closed loop in the phase plane: the limit cycle.",
+     "th": "ทางขวา การเคลื่อนที่เดียวกันเป็นวงปิดในระนาบเฟส คือ limit cycle"
+    },
+    {
+     "s": 21.833,
+     "e": 28.697,
+     "en": "The period is longer than the Hopf prediction because this far from the Hopf point the cycle is large and nonlinear.",
+     "th": "คาบยาวกว่าที่ Hopf ทำนาย เพราะเมื่อห่างจากจุด Hopf ขนาดนี้ วงโคจรมีขนาดใหญ่และไม่เชิงเส้น"
+    },
+    {
+     "s": 28.697,
+     "e": 39.128,
+     "en": "Watch the shape of each cycle: a slow rise in temperature, a sudden spike as the rate takes off, then a quench as the reactant is used up and fresh feed cools the reactor.",
+     "th": "ดูรูปร่างของแต่ละรอบ คือ อุณหภูมิเพิ่มขึ้นช้าๆ พุ่งขึ้นทันทีเมื่ออัตราเร่งตัว แล้วเย็นลงอย่างรวดเร็วเมื่อสารตั้งต้นถูกใช้หมดและสารป้อนใหม่ทำให้เครื่องปฏิกรณ์เย็นลง"
+    },
+    {
+     "s": 39.128,
+     "e": 42.645,
+     "en": "Session 6 will treat exactly this slow and fast structure.",
+     "th": "คาบที่ 6 จะจัดการโครงสร้างช้าและเร็วแบบนี้"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 9.312,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.25,
+     "en": "Check 2 has four questions on continuation and Hopf points. Take five minutes, press Show answers, and then take the ten minute break.",
+     "th": "Check 2 มีสี่คำถามเรื่อง continuation และจุด Hopf ใช้เวลาห้านาที กด Show answers แล้วพักสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 16.704,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 0.99,
+     "en": "Welcome back.",
+     "th": "ยินดีต้อนรับกลับ"
+    },
+    {
+     "s": 0.99,
+     "e": 11.863,
+     "en": "Activity 2 asks which parameter of your own model could create multiplicity or oscillation, where its Jacobian could become singular, which two variables could oscillate,",
+     "th": "กิจกรรมที่ 2 ถามว่าพารามิเตอร์ใดในแบบจำลองของคุณอาจทำให้เกิดหลายคำตอบหรือการแกว่ง Jacobian อาจเป็น singular ที่ใด ตัวแปรสองตัวใดอาจแกว่ง"
+    },
+    {
+     "s": 11.863,
+     "e": 16.632,
+     "en": "and what you would observe at a fold and at a Hopf point. Take ten minutes.",
+     "th": "และคุณจะสังเกตเห็นอะไรที่จุดพับและที่จุด Hopf ใช้เวลาสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
+   "duration": 42.36,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.539,
+     "en": "Part three. Following each fold and each Hopf point while a second parameter changes traces curves in a two parameter plane.",
+     "th": "ส่วนที่สาม การติดตามจุดพับและจุด Hopf แต่ละจุดขณะที่พารามิเตอร์ตัวที่สองเปลี่ยนไป จะได้เส้นโค้งในระนาบสองพารามิเตอร์"
+    },
+    {
+     "s": 8.539,
+     "e": 18.904,
+     "en": "Here B is fixed at fourteen and beta varies. The two fold curves close at the cusp, at beta equal to B over four minus one, which is two point five.",
+     "th": "ในที่นี้ B คงที่ที่สิบสี่ และ beta เปลี่ยนไป เส้นโค้งจุดพับทั้งสองปิดที่ cusp ที่ beta เท่ากับ B ส่วนสี่ ลบหนึ่ง"
+    },
+    {
+     "s": 18.904,
+     "e": 26.0,
+     "en": "Inside them there are three steady states. The Hopf points mark where the reactor starts to oscillate.",
+     "th": "ซึ่งเท่ากับสองจุดห้า ภายในเส้นโค้งมีสามสภาวะคงตัว จุด Hopf แสดงที่ที่เครื่องปฏิกรณ์เริ่มแกว่ง"
+    },
+    {
+     "s": 26.0,
+     "e": 35.263,
+     "en": "Such a map is an operating chart. It shows which combinations of cooling and throughput give a unique, stable reactor without oscillation.",
+     "th": "แผนที่แบบนี้เป็นแผนภูมิการเดินเครื่อง แสดงว่าการผสมของการระบายความร้อนและอัตราการผลิตแบบใดให้เครื่องปฏิกรณ์ที่มีคำตอบเดียว เสถียร และไม่แกว่ง"
+    },
+    {
+     "s": 35.263,
+     "e": 42.303,
+     "en": "Lab 5 asks you to find the value of beta where the folds disappear, and to explain it with the cusp formula.",
+     "th": "Lab 5 ให้คุณหาค่า beta ที่จุดพับหายไป และอธิบายด้วยสูตร cusp"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 30.264,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.395,
+     "en": "The same mathematics appears across chemical engineering:",
+     "th": "คณิตศาสตร์เดียวกันปรากฏทั่ววิศวกรรมเคมี ได้แก่"
+    },
+    {
+     "s": 3.395,
+     "e": 10.837,
+     "en": "ignition and blow out in burners and catalytic converters, rate oscillations in CO oxidation on platinum, washout of a bioreactor,",
+     "th": "การติดไฟและการดับในหัวเผาและเครื่องฟอกไอเสีย การแกว่งของอัตราในการออกซิไดซ์ CO บนแพลทินัม washout ของเครื่องปฏิกรณ์ชีวภาพ"
+    },
+    {
+     "s": 10.837,
+     "e": 20.721,
+     "en": "multiple steady states in azeotropic and reactive distillation, current oscillations in electrochemistry, and cycling in a feedback loop when the controller gain is too high.",
+     "th": "การมีหลายสภาวะคงตัวในการกลั่นแบบ azeotropic และการกลั่นแบบมีปฏิกิริยา การแกว่งของกระแสในไฟฟ้าเคมี และการวนเป็นรอบในวงป้อนกลับเมื่ออัตราขยายของตัวควบคุมสูงเกินไป"
+    },
+    {
+     "s": 20.721,
+     "e": 30.197,
+     "en": "In every case the analysis is the same: a branch of steady states, the eigenvalues of J along it, and the places where one crosses the imaginary axis.",
+     "th": "ทุกกรณีการวิเคราะห์เหมือนกัน คือ สาขาของสภาวะคงตัว ค่าเฉพาะของ J ตามสาขา และจุดที่ค่าเฉพาะผ่านแกนจินตภาพ"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
+   "duration": 36.192,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.009,
+     "en": "In practice, use a continuation package such as AUTO or MatCont, or modern options in Julia and Python.",
+     "th": "ในทางปฏิบัติ ให้ใช้ชุดโปรแกรม continuation เช่น AUTO หรือ MatCont หรือตัวเลือกใหม่ใน Julia และ"
+    },
+    {
+     "s": 7.009,
+     "e": 14.118,
+     "en": "For small steady state problems, a Keller continuation of about thirty lines, like the module's, is enough.",
+     "th": "Python สำหรับปัญหาสภาวะคงตัวขนาดเล็ก continuation แบบ Keller ประมาณสามสิบบรรทัดเหมือนในโมดูลก็เพียงพอ"
+    },
+    {
+     "s": 14.118,
+     "e": 22.316,
+     "en": "A brute force sweep by simulation finds attractors but misses unstable branches, and misses hysteresis unless you sweep both ways.",
+     "th": "การกวาดค่าแบบ brute force ด้วยการจำลองพบ attractor แต่พลาดสาขาที่ไม่เสถียร และพลาด hysteresis ถ้าไม่กวาดทั้งสองทาง"
+    },
+    {
+     "s": 22.316,
+     "e": 32.015,
+     "en": "When you report, give the parameter and range, the branch plot with stability marked, each special point and how it was located, the frequency and type of each Hopf point,",
+     "th": "เมื่อรายงาน ให้ระบุพารามิเตอร์และช่วง กราฟสาขาที่ระบุเสถียรภาพ จุดพิเศษแต่ละจุดและวิธีหาตำแหน่ง ความถี่และชนิดของจุด Hopf แต่ละจุด"
+    },
+    {
+     "s": 32.015,
+     "e": 36.132,
+     "en": "what was held fixed, and simulations on both sides of each special point.",
+     "th": "สิ่งที่คงที่ไว้ และการจำลองทั้งสองด้านของจุดพิเศษแต่ละจุด"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 7.44,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.368,
+     "en": "Check 3 has four questions on maps and applications. Take five minutes, then press Show answers.",
+     "th": "Check 3 มีสี่คำถามเรื่องแผนที่และการประยุกต์ ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 7.224,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.171,
+     "en": "Check 4 has four questions on reading the S curve. Take five minutes, then press Show answers.",
+     "th": "Check 4 มีสี่คำถามเรื่องการอ่านเส้นโค้งรูปตัว S ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
+   "duration": 14.472,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.585,
+     "en": "Next session, the relaxation oscillations far from the Hopf point become an example of slow and fast motion, and a small parameter will separate them.",
+     "th": "คาบหน้า การแกว่งแบบ relaxation ที่ห่างจากจุด Hopf จะเป็นตัวอย่างของการเคลื่อนที่ช้าและเร็ว และพารามิเตอร์ขนาดเล็กจะแยกทั้งสองออกจากกัน แล้วคาบที่ 7"
+    },
+    {
+     "s": 9.585,
+     "e": 14.421,
+     "en": "Session 7 then meets S curves again in catalyst pellets and tubular reactors.",
+     "th": "จะพบเส้นโค้งรูปตัว S อีกครั้งในเม็ดตัวเร่งปฏิกิริยาและเครื่องปฏิกรณ์แบบท่อ"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "file": "audio/slide-23.mp3",
+   "duration": 22.152,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.496,
+     "en": "Lab 5 uses the reactor with B equal to fourteen and beta equal to two.",
+     "th": "Lab 5 ใช้เครื่องปฏิกรณ์ที่ B เท่ากับสิบสี่ และ beta"
+    },
+    {
+     "s": 4.496,
+     "e": 14.464,
+     "en": "You check the cusp condition, compute both folds yourself from the closed form, read the continuation and the Hopf point, measure the period of the oscillation,",
+     "th": "เท่ากับสอง คุณจะตรวจเงื่อนไข cusp คำนวณจุดพับทั้งสองเองจากรูปปิด อ่านผล continuation และจุด Hopf วัดคาบของการแกว่ง"
+    },
+    {
+     "s": 14.464,
+     "e": 22.079,
+     "en": "test the square root growth of its amplitude, and change beta until the folds disappear. Upload the answer file at the end.",
+     "th": "ทดสอบการเพิ่มขึ้นตามรากที่สองของแอมพลิจูด และเปลี่ยน beta จนจุดพับหายไป อัปโหลดไฟล์คำตอบตอนท้าย"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 24.096,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.513,
+     "en": "To summarize. A branch of steady states continues while the determinant of J is nonzero, and can turn where it is zero. Between two folds the state depends on history.",
+     "th": "สรุป สาขาของสภาวะคงตัวต่อเนื่องตราบที่ดีเทอร์มิแนนต์ของ J ไม่เป็นศูนย์ และเลี้ยวกลับได้ที่ดีเทอร์มิแนนต์เป็นศูนย์ ระหว่างจุดพับสองจุด สถานะขึ้นกับประวัติ"
+    },
+    {
+     "s": 12.513,
+     "e": 24.039,
+     "en": "Pseudo arclength continuation passes folds. A Hopf point gives birth to a limit cycle. And two parameter maps of folds and Hopf points are operating charts.",
+     "th": "pseudo arclength continuation ผ่านจุดพับได้ จุด Hopf ให้กำเนิด limit cycle และแผนที่สองพารามิเตอร์ของจุดพับและจุด Hopf เป็นแผนภูมิการเดินเครื่อง"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
+   "duration": 15.336,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.269,
+     "en": "Before the next session, finish Lab 5 and upload the answer file. Read the bifurcation sections of Varma and Morbidelli, chapter two, and Strogatz, chapters three and eight.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 5 ให้เสร็จและอัปโหลดไฟล์คำตอบ อ่านหัวข้อ bifurcation ใน Varma กับ Morbidelli บทที่สอง และ Strogatz บทที่สามและแปด หนังสือของ Seydel"
+    },
+    {
+     "s": 12.269,
+     "e": 15.276,
+     "en": "Seydel is optional reading on continuation.",
+     "th": "เป็นการอ่านเพิ่มเติมเรื่อง continuation"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 7.272,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.197,
+     "en": "Please finish with the Exit Ticket for Session 5. Thank you, and see you in Session 6.",
+     "th": "กรุณาปิดท้ายด้วย Exit Ticket ของคาบที่ 5 ขอบคุณ แล้วพบกันในคาบที่ 6"
+    }
+   ]
+  }
+ ]
+}

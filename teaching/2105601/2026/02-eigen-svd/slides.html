@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>2105601 · Session 2 · Eigenvalue problems, the SVD and conditioning</title>
+<style>
+:root{--teal:#0F6E6B;--amber:#E29A2D;--rust:#BE654C;--sky:#5A91BE;--sage:#83A462;--plum:#995A90;--graphite:#333F4A;--sand:#DFC98F;
+--ink:#1C242B;--slate:#66727C;--mist:#B9C1C6;--paper:#F3F0EB;--mono:Menlo,Consolas,"DejaVu Sans Mono",monospace}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#2b3138;font-family:"Helvetica Neue",Helvetica,Arial,"DejaVu Sans",sans-serif;color:var(--ink)}
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#stage{width:1280px;height:720px;flex:0 0 auto;overflow:hidden;background:#fff;position:relative;transform-origin:center center;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.slide{position:absolute;inset:0;padding:40px 64px 58px;display:none;flex-direction:column}
+.slide.on{display:flex}
+.kicker{color:var(--amber);font-weight:700;letter-spacing:.14em;font-size:15px;text-transform:uppercase;margin:0}
+h1{color:var(--teal);font-size:42px;line-height:1.12;margin:6px 0 22px;font-weight:800}
+.body{flex:1;display:flex;gap:28px;min-height:0}
+.col{flex:1;min-width:0;display:flex;flex-direction:column}
+.w40{flex:0 0 40%}.w45{flex:0 0 45%}.w55{flex:0 0 55%}.w60{flex:0 0 60%}
+ul.b{list-style:none;margin:0;padding:0;font-size:24px;line-height:1.36}
+ul.b>li{position:relative;padding-left:30px;margin:0 0 16px}
+ul.b>li::before{content:"";position:absolute;left:2px;top:.5em;width:11px;height:11px;background:var(--amber)}
+ul.b.sm{font-size:21px}ul.b.sm>li{margin-bottom:11px}
+ul.b.xs{font-size:19px}ul.b.xs>li{margin-bottom:8px}
+.hl{color:var(--teal);font-weight:700}
+.panel{background:var(--paper);border-radius:14px;padding:16px 18px;min-height:0;display:flex;flex-direction:column}
+.panel.grow{flex:1}
+.math{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-size:25px;line-height:1.75}
+.math .lbl{font-family:"Helvetica Neue",Arial,sans-serif;font-size:16px;color:var(--slate);display:inline-block;width:150px}
+.code{font-family:var(--mono);font-size:17px;line-height:1.5;white-space:pre;color:var(--graphite)}
+.note{font-size:18px;color:var(--slate);margin-top:10px;line-height:1.4}
+.big{font-size:56px;font-weight:800;color:var(--teal)}
+table.t{border-collapse:collapse;font-size:19px;width:100%}
+table.t th{background:var(--paper);text-align:left;padding:7px 10px;border-bottom:2px solid var(--mist);font-weight:700}
+table.t td{padding:6px 10px;border-bottom:1px solid #e3e6e8}
+table.t td.n,table.t th.n{text-align:right;font-variant-numeric:tabular-nums}
+.act{border:3px solid var(--amber);border-radius:16px;padding:22px 28px;background:#fdf6ea}
+.act .tag{display:inline-block;background:var(--amber);color:#fff;font-weight:800;letter-spacing:.1em;font-size:15px;padding:4px 10px;border-radius:6px;margin-bottom:12px}
+.ctrl{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px;align-items:center;font-size:16px;color:var(--slate)}
+.ctrl button{font:inherit;font-size:15px;padding:5px 11px;border-radius:8px;border:1.5px solid var(--teal);background:#fff;color:var(--teal);cursor:pointer}
+.ctrl button.on{background:var(--teal);color:#fff}
+.ctrl input[type=range]{width:220px;accent-color:var(--teal)}
+.kpi{display:flex;gap:14px;margin-top:8px}
+.kpi div{background:#fff;border-radius:10px;padding:8px 12px;font-size:15px;color:var(--slate);flex:1}
+.kpi b{display:block;font-size:24px;color:var(--ink)}
+.kpi b.a{color:var(--amber)}
+svg.ch{width:100%;height:100%;display:block}
+.chart{flex:1;min-height:0}
+footer{position:absolute;left:64px;right:64px;bottom:20px;border-top:1px solid var(--mist);padding-top:7px;display:flex;justify-content:space-between;font-size:13px;color:var(--slate)}
+.title-slide{justify-content:center}
+.title-slide h1{font-size:64px;margin-bottom:12px}
+.title-slide .sub{font-size:28px;color:var(--graphite);margin-bottom:40px}
+.title-slide .meta{font-size:19px;color:var(--slate);line-height:1.6}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:13px;font-weight:700;letter-spacing:.06em}
+.pill.rec{background:var(--paper);color:var(--slate)}.pill.live{background:var(--amber);color:#fff}
+.dhint{position:absolute;right:64px;top:42px;font-size:13px;color:var(--slate);border:1px solid var(--mist);border-radius:8px;padding:3px 8px}
+/* Python drawer */
+#drawer{position:absolute;top:0;right:0;bottom:0;width:47%;background:#fbfaf7;border-left:3px solid var(--teal);box-shadow:-8px 0 24px rgba(0,0,0,.15);
+ transform:translateX(102%);transition:transform .25s;display:flex;flex-direction:column;padding:22px 24px 18px;z-index:5}
+#drawer.open{transform:none}
+#drawer h2{margin:0 0 4px;color:var(--teal);font-size:22px}
+#drawer .sub{font-size:14px;color:var(--slate);margin-bottom:10px}
+#drawer textarea{width:100%;height:190px;resize:vertical;border:none;margin:0;background:var(--paper);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:13px;line-height:1.45;color:var(--ink);white-space:pre-wrap;outline:none}
+#drawer pre{margin:0;background:var(--paper);border-radius:10px;padding:12px 14px;font-family:var(--mono);font-size:13.5px;line-height:1.45;overflow:auto;white-space:pre}
+#drawer .out{margin-top:10px;flex:1;min-height:0;display:flex;flex-direction:column}
+#drawer .out pre{flex:1;background:#1f262d;color:#e8eef2}
+#drawer .bar{display:flex;gap:8px;align-items:center;margin-top:10px;font-size:13px;color:var(--slate)}
+#drawer button{font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;border:none;background:var(--teal);color:#fff;cursor:pointer}
+#drawer button.ghost{background:#fff;color:var(--teal);border:1.5px solid var(--teal)}
+#notes{position:fixed;left:12px;bottom:12px;max-width:520px;background:#fffef8;border:1px solid var(--mist);border-radius:10px;padding:10px 14px;font-size:14px;line-height:1.45;display:none;z-index:9}
+#help{position:fixed;right:12px;bottom:12px;color:#c9d1d6;font-size:12px}
+
+/* narration and captions */
+#dock{position:fixed;left:0;right:0;display:none;flex-direction:column;align-items:center;gap:6px;padding:0 8px;z-index:8}
+#cap{display:none;color:#F3F0EB;line-height:1.45;text-align:center;overflow:hidden;padding:2px 6px;font-family:"Helvetica Neue",Arial,"Sukhumvit Set","Thonburi","Noto Sans Thai","Sarabun",sans-serif}
+#nbar{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;align-items:center;background:rgba(28,36,43,.9);color:#e8eef2;padding:6px 10px;border-radius:12px;font:13px "Helvetica Neue",Arial,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+#nbar button,#nbar select{white-space:nowrap;font:inherit;font-size:14px;background:#2f3a44;color:#fff;border:1px solid #4a5763;border-radius:8px;padding:5px 10px;cursor:pointer}
+#nbar button.on{background:#0F6E6B;border-color:#0F6E6B}
+#nbar .t{min-width:88px;text-align:center;font-variant-numeric:tabular-nums;color:#c9d1d6}
+#nbar .msg{color:#E29A2D;max-width:330px;line-height:1.25}
+#startov{position:absolute;inset:0;background:rgba(243,240,235,.92);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:6;gap:14px}
+#startov button{font:inherit;font-size:24px;padding:14px 28px;border-radius:12px;border:none;background:#0F6E6B;color:#fff;cursor:pointer}
+#startov p{color:#333F4A;font-size:18px;margin:0}
+@media print{#dock,#startov{display:none!important}}
+@media print{#viewport{position:static;display:block}#stage{transform:none!important;box-shadow:none}.slide{display:flex!important;position:relative;page-break-after:always;height:720px}#drawer,#help,#notes,.dhint{display:none}}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+<div id="slides"></div>
+<div id="startov"><button id="startBtn">▶ Start the narrated session</button><p>English narration with captions below the slide. You move to the next slide yourself.</p><p>→ or Next: next slide · P: pause · C: captions (English, ไทย, off)</p></div>
+<aside id="drawer" aria-label="Python for this slide">
+  <h2 id="dTitle">Python</h2>
+  <div class="sub" id="dSub"></div>
+  <textarea id="dCode" spellcheck="false"></textarea>
+  <div class="out"><div class="bar" style="margin:0 0 6px"><span>Output</span><span id="dMode" class="pill rec">RECORDED RUN</span></div><pre id="dOut"></pre></div>
+  <div class="bar"><button id="runCode">Run this code</button><button class="ghost" id="runLive">Recompute all slides</button><button class="ghost" id="useRec">Recorded run</button></div>
+  <div class="bar" id="liveMsg" style="min-height:18px"></div>
+</aside>
+</div></div>
+<div id="notes"></div>
+<div id="dock"><div id="cap" aria-live="polite"></div>
+<div id="nbar"><button id="nPrev" title="Previous slide (←)">‹ Back</button><button id="nPlay" title="Play or pause the narration (P)">▶ Play</button><button id="nStop" title="Stop and go back to the start of this slide">■ Stop</button><span class="t" id="nTime">0:00 / 0:00</span><select id="nSpeed" title="Speed"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select><button id="nCC" title="Captions: off, English, Thai (C)">CC off</button><button id="nNext" title="Next slide (→)">Next ›</button><span class="msg" id="nMsg"></span></div></div>
+<audio id="narr" preload="none"></audio>
+<div id="help">← → move · P narration · C captions · D Python · F full screen · N notes</div>
+<script>
+const RECORDED = {"lecture":{"two":{"sym":{"M":[[3.0,1.0],[1.0,2.0]],"lam":[3.618033988749895,1.381966011250105],"V":[[0.8506508083520399,0.5257311121191335],[0.5257311121191335,-0.8506508083520399]],"trace":5.0,"det":5.000000000000001,"VtV":[[0.9999999999999998,0.0],[0.0,0.9999999999999998]]},"defective":{"M":[[2.0,1.0],[0.0,2.0]],"lam":[2.0,2.0],"rank_of_M_minus_2I":1,"cond_V":4503599627370495.5},"shear":{"M":[[1.0,2.0],[0.0,1.0]],"lam":[1.0,1.0],"sv":[2.414213562373095,0.4142135623730951],"cond":5.828427124746189}},"decay":[{"tmax":0.5,"sv":[2.554189399341943,0.3398976240852585],"cond":7.514584446466331,"corr":0.8778495885361836,"se_rel_k":5.690140833551082},{"tmax":1.0,"sv":[2.4337556511743275,0.5448847454915812],"cond":4.466551268523135,"corr":0.865131198544404,"se_rel_k":3.2860961621681053},{"tmax":1.5,"sv":[2.375740236273055,0.6445213430433973],"cond":3.6860536302101794,"corr":0.8535263163007147,"se_rel_k":2.535080101071529},{"tmax":2.0,"sv":[2.332424481749398,0.6791475822515024],"cond":3.4343411398402846,"corr":0.843513219288691,"se_rel_k":2.2029442747692065},{"tmax":2.5,"sv":[2.2837733057628875,0.6780803223086226],"cond":3.3679982011385476,"corr":0.8354478326495229,"se_rel_k":2.0429605103121706},{"tmax":3.0,"sv":[2.2248789043206187,0.65846918137563],"cond":3.378865658788388,"corr":0.8295342056234135,"se_rel_k":1.9728634705028383},{"tmax":3.5,"sv":[2.157258353354736,0.6296447089120123],"cond":3.4261518008820353,"corr":0.825820378083174,"se_rel_k":1.9572888153860089},{"tmax":4.0,"sv":[2.0842873419367334,0.5966456528355437],"cond":3.493342039837564,"corr":0.8242161849955936,"se_rel_k":1.9783940221902792},{"tmax":4.5,"sv":[2.009264280952566,0.562238894361856],"cond":3.5736842489936436,"corr":0.8245255392416136,"se_rel_k":2.0260822124887636},{"tmax":5.0,"sv":[1.9347701401175488,0.5279725422820322],"cond":3.6645279539632463,"corr":0.8264846448027844,"se_rel_k":2.094111584196119},{"tmax":5.5,"sv":[1.8625814777688197,0.49471821003262784],"cond":3.764934138256156,"corr":0.8297987885488041,"se_rel_k":2.1783470579338813},{"tmax":6.0,"sv":[1.7937862468580128,0.4629561971885451],"cond":3.874634917409842,"corr":0.834172769493755,"se_rel_k":2.27590375085535},{"tmax":6.5,"sv":[1.7289501318414489,0.43293135185057224],"cond":3.9935895713050646,"corr":0.8393326599594415,"se_rel_k":2.384699070258618},{"tmax":7.0,"sv":[1.6682728633697,0.4047426006801129],"cond":4.121811888756959,"corr":0.8450387827212699,"se_rel_k":2.5032048365310073},{"tmax":7.5,"sv":[1.6117147435742758,0.3783972785372128],"cond":4.2593190675280574,"corr":0.8510912204533732,"se_rel_k":2.630301580117103},{"tmax":8.0,"sv":[1.5590909534797266,0.35384581910065277],"cond":4.406130775947468,"corr":0.8573298323085623,"se_rel_k":2.765186448929381},{"tmax":8.5,"sv":[1.5101378483709562,0.33100474994331985],"cond":4.5622845250092245,"corr":0.8636308054042768,"se_rel_k":2.9073099382577405},{"tmax":9.0,"sv":[1.4645572688211235,0.3097722151063016],"cond":4.727852264989438,"corr":0.8699014536746174,"se_rel_k":3.0563287810117754},{"tmax":9.5,"sv":[1.4220446674545502,0.29003843123232237],"cond":4.902952554985669,"corr":0.8760745115049225,"se_rel_k":3.212068667199503},{"tmax":10.0,"sv":[1.3823058784011923,0.2716925797776936],"cond":5.087757197978072,"corr":0.8821027087188743,"se_rel_k":3.3744937220632725},{"tmax":10.5,"sv":[1.3450662388007373,0.2546271608458797],"cond":5.282493172890054,"corr":0.8879540386306929,"se_rel_k":3.543681262849995},{"tmax":11.0,"sv":[1.3100747639445973,0.23874055242144424],"cond":5.487441285768439,"corr":0.8936078670728788,"se_rel_k":3.7198010535022172},{"tmax":11.5,"sv":[1.277105263947191,0.2239383284317002],"cond":5.702932914124614,"corr":0.8990518684495528,"se_rel_k":3.9030985317706297},{"tmax":12.0,"sv":[1.2459556751697625,0.21013374682583738],"cond":5.929345923681801,"corr":0.9042796911583663,"se_rel_k":4.093881545841733}],"profiles":{"sv":[122.95189932248155,70.86638006692407,3.9713832769908257,3.598218048488083,3.434782220693273,3.110018670909924,2.811490253316778,2.71048939653317,2.6574334045959014,2.3475831252809205,2.051777567315289,1.9068473563826325,1.5411501005772088,1.492216784320831,1.465611391836998,1.1135651420734158,0.7803176150020783,0.7201924795379157,0.5249895629151323,0.43474119297407654],"err2":[122.95189932248151,70.86638006692405,3.9713832769908266,3.5982180484880857,3.434782220693273,3.110018670909924],"noise_sd":0.5,"shape":[20,25],"noise_level":4.73606797749979}},"lab":{"arr":{"T":[300.0,310.0,320.0,330.0,340.0,350.0,360.0],"k":[8.925256617054376e-05,0.00022413005953658268,0.0005793297037983578,0.0013866963260927016,0.0029541424422210617,0.0063748179512648296,0.013436797267963726],"lnk":[-9.32404038510674,-8.403284051674337,-7.453638805846768,-6.5808311045966565,-5.824546875920044,-5.055399745009737,-4.30975827079934],"raw":{"cond":5402.525077859086,"sv":[2.6457635486378615,0.0004897272128325456],"beta":[20.752925775755823,-9028.515969284046],"corr":-0.9981532723443065,"Ea_kJ":75.06725852262824,"lnA":20.752925775755823,"s_resid":0.024538953597829417},"centered":{"cond":5402.475100873332,"sv":[2.6457513110645907,0.0004897294780010915],"beta":[-6.707357034136231,-9028.515969284044],"corr":0.0,"Ea_kJ":75.06725852262822,"lnA":20.752925775755813,"s_resid":0.02453895359782971},"scaled":{"cond":1.0000000000000004,"sv":[2.645751311064591,2.6457513110645903],"beta":[-6.707357034136231,-1.6711814123538582],"corr":0.0,"Ea_kJ":75.06725852262825,"lnA":20.752925775755823,"s_resid":0.024538953597829247},"Tm":328.78452242420803,"k_Tm":0.0012218892723828436},"spec":{"noise":0.002,"sv":[9.149501143854176,1.8793423429875802,1.2013046454920824,0.02102187098797857,0.01923002797923962,0.017658555311536057,0.017130851849260165,0.01595324273162661,0.014920317182748222,0.014181553066180887,0.012922545029167752,0.011889938828686414,0.011053981458619773,0.01001714665596624,0.009248785438679723],"delta":0.023237900077244505,"rank":3,"lam":[240.0,242.20338983050848,244.40677966101694,246.61016949152543,248.8135593220339,251.01694915254237,253.22033898305085,255.4237288135593,257.6271186440678,259.8305084745763,262.03389830508473,264.2372881355932,266.4406779661017,268.64406779661016,270.8474576271186,273.0508474576271,275.2542372881356,277.45762711864404,279.66101694915255,281.864406779661,284.06779661016947,286.271186440678,288.47457627118644,290.6779661016949,292.8813559322034,295.08474576271186,297.2881355932203,299.49152542372883,301.6949152542373,303.89830508474574,306.10169491525426,308.3050847457627,310.50847457627117,312.7118644067797,314.91525423728814,317.1186440677966,319.3220338983051,321.52542372881356,323.728813559322,325.93220338983053,328.135593220339,330.33898305084745,332.54237288135596,334.7457627118644,336.9491525423729,339.1525423728814,341.35593220338984,343.5593220338983,345.7627118644068,347.96610169491527,350.1694915254237,352.3728813559322,354.5762711864407,356.77966101694915,358.9830508474576,361.18644067796606,363.3898305084746,365.59322033898303,367.7966101694915,370.0],"E":[[0.05595887161990466,0.08290271380883107,0.11919370298368015,0.16631163882728936,0.22520433189299113,0.29594813204221554,0.37743244661550096,0.4671406142995855,0.5611006719624339,0.6540616960203052,0.7399142809329586,0.8123232229521787,0.8654880877043784,0.8949073735526071,0.8980072526470266,0.8745131977695427,0.8264901041106021,0.7580427770378161,0.674737015790463,0.5828544601746518,0.4886191438332968,0.39752605487260156,0.3138668762203335,0.24049726262185672,0.17883789774726405,0.12906061808921618,0.09038839844191847,0.06143507716830615,0.040523308045821306,0.025940487879846198,0.01611521688828783,0.009715808270656308,0.005684686028349767,0.0032278905196720495,0.0017787539423519912,0.0009512566832787208,0.0004937013701351012,0.0002486656001160959,0.00012154912970810645,5.7659751099721323e-05,2.6544737752345433e-05,1.1859568310456164e-05,5.142142276844951e-06,2.1637349636830313e-06,8.835859529843826e-07,3.501694944041016e-07,1.3467673568394454e-07,5.026800153329923e-08,1.8208552557936212e-08,6.400943510867838e-09,2.1837219075410534e-09,7.229952327451688e-10,2.32304863579655e-10,7.243791428884689e-11,2.1920897835379576e-11,6.4377707143050595e-12,1.834836783318172e-12,5.075094542551288e-13,1.362308925997028e-13,3.5488842396486466e-14],[0.00041191585172369814,0.0007042146737767045,0.0011800188857077174,0.0019380285413386764,0.003119742159418358,0.0049222600906749315,0.007611981721381816,0.011537673324985233,0.01714060167353666,0.024958656821751864,0.035620800853123205,0.04982800184825671,0.06831728318184611,0.09180683703421762,0.12092240771138647,0.1561082550986565,0.1975296415665469,0.24497739075018685,0.2977879063767642,0.354793317138587,0.4143154495262685,0.4742137562877376,0.5319912519595025,0.5849545942793369,0.6304158802129295,0.6659160086642507,0.6894441472623938,0.6996261691204869,0.6958575198599449,0.6783626480160241,0.6481728734240958,0.6070257286339434,0.557199437226598,0.5013044525976931,0.442058532595188,0.3820720918399211,0.3236668173028536,0.2687437427544734,0.2187086036778933,0.17445390584053014,0.13639010051559264,0.10451348375378541,0.07849628837001563,0.057784750491231184,0.041693147824552634,0.029485157460417317,0.020437583295625384,0.013884906238150701,0.009245782771264926,0.0060343673151889215,0.003860176139955458,0.0024203034750110305,0.001487372848959806,0.0008958951743338999,0.0005289101092199596,0.0003060510411398076,0.00017357739940326527,9.648944672919317e-05,5.2571912663469005e-05,2.8074695984553666e-05],[4.76817302835491e-11,1.3415839635703195e-10,3.6841844947442575e-10,9.874668911960402e-10,2.583219891535791e-09,6.595654073978936e-09,1.643660142859394e-08,3.997825545892262e-08,9.49059222965504e-08,2.198975799220944e-07,4.972848701352566e-07,1.0976091097185008e-06,2.3645462883002132e-06,4.971707821734671e-06,1.0202839066129319e-05,2.043591724201734e-05,3.9950746127950374e-05,7.622778750176334e-05,0.00014195784408476946,0.0002580258016831154,0.0004577459785585165,0.0007925808951098349,0.0013394309261631305,0.002209300064456525,0.0035566960190199144,0.00558851541167527,0.008570453788870367,0.012828292173740489,0.018740946825684553,0.026722179358281598,0.03718860446368434,0.050513277553702954,0.0669666966376407,0.08665025890540078,0.1094305327441719,0.13488536232401838,0.16227394440811757,0.19054186999874936,0.21836836079135538,0.244256801315276,0.2666620892565516,0.28414076794949805,0.2955040809346882,0.2999515264675519,0.297164092304417,0.28734208916397846,0.2711813510727869,0.2497917299495424,0.22457114427131114,0.19705502249568355,0.16876357851785023,0.14106770580451744,0.1150890861617668,0.09164279799866452,0.07122298965950505,0.05402561501392563,0.03999787324823962,0.028902255812911837,0.020383757406210037,0.014031186715187693]],"X0":[0.008172494221798145,0.011172213460497366,0.02138977550770994,0.030700911487709016,0.03892520081700982,0.05629712035449687,0.07060678745227848,0.0877185171409089,0.106379349467458,0.12758893564333665,0.14338292955243537,0.1671887533910235,0.1860133133388316,0.19865412954851686,0.2186861965194556,0.23190177763063727,0.24742882761409737,0.2581050802218579,0.2723364654025865,0.2872026920441714,0.2998750350652166,0.31875742645753796,0.33358244768707423,0.3504573471510849,0.3624878501619311,0.37701101654180336,0.3835810942067485,0.38501506334022256,0.38473354711025687,0.3792657510466772,0.3693124143136039,0.34818754688846043,0.3365069587050682,0.31817322087659367,0.29989863812066286,0.282297081930157,0.2731432302476992,0.25683261249294864,0.25152600861660024,0.24586918312761577,0.23402653861165554,0.23076661874957163,0.22217231450635286,0.21718274191457138,0.20955393460026506,0.1980677617121412,0.1756779526962986,0.1613565969895081,0.14580855932528547,0.12877725938314807,0.10774000940443687,0.08743947402879612,0.07289316922098868,0.057385474725384626,0.04412946874070678,0.032264308156348266,0.025721144543760073,0.018626889241199245,0.012508540575311353,0.00829065238811068],"X1":[0.001831727030665376,0.005566435166273022,0.011845985259913627,0.012836468698779597,0.015113072671319405,0.02647007101167133,0.031669232158522,0.042503223333120635,0.046738492223852075,0.05436205034487469,0.06105374803195628,0.07489808924458018,0.08502060289946682,0.08499037281287164,0.09112980485242547,0.09851482186727453,0.0998619421191536,0.10476766045416139,0.10829657526929379,0.113251202793822,0.11930365236324118,0.12184520489934074,0.12869372572233073,0.13124962912521293,0.13789877002106163,0.13777828197937628,0.1434286144568141,0.15159099558351596,0.15199471495901354,0.15731187642827435,0.1604782568533632,0.16611992278947518,0.17062557193338218,0.17853753132747227,0.18610681134647022,0.1971592745511252,0.2114501286948323,0.22779381331234597,0.242895975829628,0.25974683438404067,0.27427914907564316,0.285179572859459,0.2896293382925247,0.2866574911275733,0.2846969300640342,0.2738140134552624,0.2587498407261844,0.2365572716321864,0.20972997518240977,0.18331813698782962,0.16201065581318008,0.1334213706794952,0.11118633327161767,0.08982238619217624,0.06483022116402953,0.05116994400262442,0.038219442837797914,0.028068744164166763,0.02008741573396195,0.013483724740784278]},"sweep":[{"noise":0.001,"sv":[9.148874887011386,1.8800935118043258,1.1998905691160047,0.010509177760859573,0.009614926744173705,0.008830178296889462,0.008565662791041975,0.00797596837139951,0.007459075588947248,0.007090864646430433,0.0064625303363030845,0.005947241413765203,0.005527129246450321,0.005008530611999323,0.004625836071328152],"delta":0.011618950038622252,"rank":3},{"noise":0.002,"sv":[9.149501143854176,1.8793423429875802,1.2013046454920824,0.02102187098797857,0.01923002797923962,0.017658555311536057,0.017130851849260165,0.01595324273162661,0.014920317182748222,0.014181553066180887,0.012922545029167752,0.011889938828686414,0.011053981458619773,0.01001714665596624,0.009248785438679723],"delta":0.023237900077244505,"rank":3},{"noise":0.005,"sv":[9.151421343496926,1.877347524932643,1.2059819159536762,0.05258081421587887,0.048076310293154755,0.04413214363333784,0.04282291329975118,0.039892864600265955,0.03731704237414239,0.03545221795611086,0.03228758089390408,0.029690855964856013,0.02763288854745829,0.025043491186069623,0.02310066156845773],"delta":0.058094750193111264,"rank":3},{"noise":0.01,"sv":[9.154759718062197,1.8748902518167034,1.2152089015939702,0.10524722405225918,0.09615633099058145,0.08821219951277254,0.08562717147583179,0.0798180030506411,0.07468818813839012,0.07089656848667109,0.06451319833640805,0.059269201855664,0.055258966984221725,0.05008893807422734,0.046132881055999296],"delta":0.11618950038622253,"rank":3},{"noise":0.02,"sv":[9.1619537235849,1.8732669593807498,1.238868934247899,0.2108254399135591,0.19232475452787487,0.17618650978248643,0.17114201751395616,0.15976314495380003,0.14959109482110935,0.14174396886247748,0.12878412905766048,0.1180969954885562,0.11049106680407861,0.1001844168530605,0.09201443173861801],"delta":0.23237900077244505,"rank":3},{"noise":0.03,"sv":[9.169836699666973,1.8761025683180317,1.2691157245723195,0.3167121668127243,0.2885008096125816,0.26388003778890806,0.25645825388545607,0.2398313317034359,0.22470240598818145,0.21250645119029182,0.19282511985181194,0.17650665612710614,0.16569649524580815,0.15028271198776125,0.13769637374158783],"delta":0.34856850115866755,"rank":3},{"noise":0.04,"sv":[9.178407855370086,1.883479922134298,1.3054594885156683,0.42288560589734636,0.3846813924145891,0.3512794844140164,0.3414692323381142,0.3200181900246199,0.30001210508610676,0.28314838395428077,0.25664891786735256,0.23452823662369032,0.22087448499672685,0.20037788370947585,0.18323699667820265],"delta":0.4647580015448901,"rank":3},{"noise":0.05,"sv":[9.187666461016821,1.8954782170465672,1.3473619853325633,0.5293248375762203,0.4808643665928693,0.4384033348780863,0.4260470952125371,0.40031908735121835,0.37550774105703727,0.35363484075609725,0.32026739227008255,0.29219485259804323,0.2760232421912327,0.2504614174892297,0.2286950838084065],"delta":0.5809475019311127,"rank":3},{"noise":0.06,"sv":[9.197611846851705,1.912170874891004,1.3942630343039344,0.6360099199011794,0.577048235258132,0.5252975177982835,0.5100488928096072,0.48072915554924833,0.4511754755069512,0.42393188924171493,0.3836909833681715,0.3495397232231594,0.331139957473386,0.3005220558723257,0.2741248875107857],"delta":0.6971370023173351,"rank":3},{"noise":0.08,"sv":[9.219560571258507,1.9598872410597425,1.5008401353195124,0.8500428225067371,0.7694143320334134,0.6986445397659747,0.6757637008394901,0.6418562838093136,0.6029695682084844,0.5638282775713533,0.5099879838076136,0.4633863286365277,0.4412615201312261,0.40051605324817685,0.3650753961285239],"delta":0.9295160030897802,"rank":3},{"noise":0.1,"sv":[9.244249814681407,2.0269799476561774,1.6209943474767965,1.064843669904424,0.9617718085634418,0.8717599360182015,0.8377335364514086,0.8033565383501273,0.7552813137668961,0.7025956464718826,0.6355981110852326,0.5762798548442186,0.5512011891598679,0.5002185184546437,0.45634380810244435],"delta":1.1618950038622253,"rank":3},{"noise":0.15,"sv":[9.317942693387472,2.278125555379534,1.958898477079272,1.6043614251125224,1.4425570607517308,1.3046822480631906,1.2254456055133227,1.2083893330652165,1.137677830404308,1.0434130732958844,0.9469543014337714,0.855330008387767,0.8249884336571177,0.7470489847152872,0.6864305003533676],"delta":1.7428425057933377,"rank":3},{"noise":0.2,"sv":[9.40871377382622,2.631732921003427,2.326647384815553,2.1454725093589,1.9229430425088183,1.7379378616836156,1.615398462861356,1.5948853653603483,1.5214160839524884,1.375136590021995,1.2553191684753155,1.131293619426549,1.0970419290026572,0.9883905761324766,0.9188715324137422],"delta":2.3237900077244507,"rank":3},{"noise":0.3,"sv":[9.641487789776479,3.5086316461143983,3.2476803974275086,3.101100375798496,2.8796851323504047,2.604332986423639,2.4305346533331984,2.323866551316394,2.288832948103348,2.022208782652828,1.867966344829989,1.6793647266857117,1.6384343439192688,1.4527508187893197,1.3872305171625607],"delta":3.4856850115866753,"rank":2},{"noise":0.5,"sv":[10.3125598418183,5.490566705227493,5.410947192146019,4.8695895243147325,4.704799322806218,4.3319279490196685,4.056786689832821,3.838235649355023,3.7822002116330573,3.3092987962332345,3.088073401179644,2.7661406055560867,2.7271883700723545,2.358453471350432,2.3218171047304432],"delta":5.809475019311126,"rank":1}]},"versions":{"numpy":"2.2.5","scipy":"1.14.1"}};
+const LAB_FILE = "eigen_lab.py?v=s02-ca94d823";
+const LAB_SRC = "\"\"\"Session 2 (2026, semester 2): eigenvalue problems, diagonalization, the SVD and conditioning.\n\nCourse notation: M a general matrix; lambda an eigenvalue, v an eigenvector (M v = lambda v);\nM = U Sigma V^T the singular value decomposition with sigma_1 >= sigma_2 >= ... >= 0;\nkappa(M) = sigma_max / sigma_min the 2-norm condition number.\n\nRun `python eigen_lab.py` for a printed summary, or `python eigen_lab.py --json`\nto write eigen-results.json, which the slides and the lab page read.\n\"\"\"\nimport json\nimport sys\n\nimport numpy as np\nfrom scipy.linalg import eig, eigh, svd\n\nR_GAS = 8.314462618          # J/(mol K)\n\n\ndef r6(v):\n    \"\"\"Round for printing, so recorded and live runs print the same text.\"\"\"\n    if isinstance(v, (list, tuple, np.ndarray)):\n        return [r6(u) for u in v]\n    v = round(float(v), 6)\n    return 0.0 if v == 0 else v\n\n\ndef sig(v, n=4):\n    \"\"\"Significant-figure string, stable across platforms for printing.\"\"\"\n    return f\"{float(v):.{n}g}\"\n\n\n# ---------------------------------------------------------------------------\n# Part 1. Eigenvalues and eigenvectors of 2 x 2 matrices\n# ---------------------------------------------------------------------------\nSYM = [[3.0, 1.0], [1.0, 2.0]]          # symmetric: orthogonal eigenvectors\nDEFECTIVE = [[2.0, 1.0], [0.0, 2.0]]    # one eigenvalue, one eigenvector\nSHEAR = [[1.0, 2.0], [0.0, 1.0]]        # eigenvalues 1, 1; stretches by 2.414\n\n\ndef two_by_two():\n    S = np.array(SYM); w, V = eigh(S)\n    order = np.argsort(w)[::-1]; w, V = w[order], V[:, order]\n    for k in range(2):\n        if V[0, k] < 0:\n            V[:, k] = -V[:, k]\n    D = np.array(DEFECTIVE); wd, Vd = eig(D)\n    Sh = np.array(SHEAR); U, s, Vt = svd(Sh)\n    we, _ = eig(Sh)\n    return {\"sym\": {\"M\": SYM, \"lam\": w.tolist(), \"V\": V.T.tolist(), \"trace\": float(np.trace(S)), \"det\": float(np.linalg.det(S)),\n                    \"VtV\": (V.T @ V).tolist()},\n            \"defective\": {\"M\": DEFECTIVE, \"lam\": np.real(wd).tolist(), \"rank_of_M_minus_2I\": int(np.linalg.matrix_rank(D - 2 * np.eye(2))),\n                          \"cond_V\": float(np.linalg.cond(Vd))},\n            \"shear\": {\"M\": SHEAR, \"lam\": np.real(we).tolist(), \"sv\": s.tolist(), \"cond\": float(s[0] / s[1])}}\n\n\n# ---------------------------------------------------------------------------\n# Part 2. Identifiability of a first-order decay: the sensitivity matrix\n# ---------------------------------------------------------------------------\nDECAY = {\"c0\": 1.0, \"k\": 0.5}           # mol/L and 1/min\n\n\ndef decay_design(tmax, n=8):\n    \"\"\"Sensitivity matrix S = [dc/dc0, dc/dk] at n equally spaced times on (0, tmax].\"\"\"\n    c0, k = DECAY[\"c0\"], DECAY[\"k\"]\n    t = np.linspace(tmax / n, tmax, n)\n    S = np.column_stack([np.exp(-k * t), -c0 * t * np.exp(-k * t)])\n    s = svd(S, compute_uv=False)\n    F = S.T @ S\n    cov = np.linalg.inv(F)\n    corr = cov[0, 1] / np.sqrt(cov[0, 0] * cov[1, 1])\n    return {\"tmax\": float(tmax), \"sv\": s.tolist(), \"cond\": float(s[0] / s[1]), \"corr\": float(corr),\n            \"se_rel_k\": float(np.sqrt(cov[1, 1]) / k)}       # relative standard error of k per unit noise\n\n\ndef decay_sweep():\n    return [decay_design(float(t)) for t in np.round(np.arange(0.5, 12.01, 0.5), 2)]\n\n\n# ---------------------------------------------------------------------------\n# Part 3. Low-rank structure: synthetic axial temperature profiles (Eckart-Young)\n# ---------------------------------------------------------------------------\ndef profiles():\n    \"\"\"20 runs x 25 axial positions built from two modes plus fixed noise (SYNTHETIC).\"\"\"\n    rng = np.random.default_rng(7)\n    z = np.linspace(0, 1, 25)\n    m1 = np.exp(-((z - 0.3) / 0.15) ** 2)          # hot spot\n    m2 = z                                          # linear rise\n    a = rng.uniform(20, 60, 20); b = rng.uniform(5, 30, 20)\n    X = 500 + np.outer(a, m1) + np.outer(b, m2)\n    Xc = X - X.mean(axis=0)\n    noise = rng.normal(0, 0.5, X.shape)\n    Xn = Xc + noise\n    U, s, Vt = svd(Xn, full_matrices=False)\n    err = [float(np.linalg.norm(Xn - (U[:, :k] * s[:k]) @ Vt[:k], 2)) for k in range(0, 6)]\n    return {\"sv\": s.tolist(), \"err2\": err, \"noise_sd\": 0.5, \"shape\": list(Xn.shape),\n            \"noise_level\": float(0.5 * (np.sqrt(20) + np.sqrt(25)))}\n\n\n# ---------------------------------------------------------------------------\n# Part 4. Lab: Arrhenius conditioning, and the numerical rank of mixture spectra\n# ---------------------------------------------------------------------------\nARR = {\"T\": [300.0, 310.0, 320.0, 330.0, 340.0, 350.0, 360.0],            # K\n       \"Ea\": 75000.0, \"lnA\": np.log(1.0e9),                                   # J/mol, ln(1/s)\n       # SYNTHETIC multiplicative errors on k (fixed, about +-3 %)\n       \"err\": [0.021, -0.028, 0.012, 0.031, -0.017, -0.006, 0.024]}\n\n\ndef arrhenius():\n    T = np.array(ARR[\"T\"]); x = 1 / T\n    lnk = ARR[\"lnA\"] - ARR[\"Ea\"] / (R_GAS * T) + np.log1p(np.array(ARR[\"err\"]))\n    out = {\"T\": T.tolist(), \"k\": np.exp(lnk).tolist(), \"lnk\": lnk.tolist()}\n    Tm = 1 / x.mean()\n    designs = {\"raw\": np.column_stack([np.ones_like(x), x]),\n               \"centered\": np.column_stack([np.ones_like(x), x - x.mean()]),\n               \"scaled\": np.column_stack([np.ones_like(x), (x - x.mean()) / (x - x.mean()).std()])}\n    for key, X in designs.items():\n        s = svd(X, compute_uv=False)\n        beta, *_ = np.linalg.lstsq(X, lnk, rcond=None)\n        resid = lnk - X @ beta\n        s2 = resid @ resid / (len(T) - 2)\n        cov = s2 * np.linalg.inv(X.T @ X)\n        corr = cov[0, 1] / np.sqrt(cov[0, 0] * cov[1, 1])\n        if key == \"raw\":\n            Ea = -beta[1] * R_GAS; lnA = beta[0]\n        elif key == \"centered\":\n            Ea = -beta[1] * R_GAS; lnA = beta[0] - beta[1] * x.mean()\n        else:\n            slope = beta[1] / (x - x.mean()).std(); Ea = -slope * R_GAS; lnA = beta[0] - slope * x.mean()\n        out[key] = {\"cond\": float(s[0] / s[1]), \"sv\": s.tolist(), \"beta\": beta.tolist(), \"corr\": float(corr),\n                    \"Ea_kJ\": float(Ea / 1000), \"lnA\": float(lnA), \"s_resid\": float(np.sqrt(s2))}\n    out[\"Tm\"] = float(Tm)\n    out[\"k_Tm\"] = float(np.exp(out[\"centered\"][\"beta\"][0]))\n    return out\n\n\nSPEC = {\"species\": 3, \"mixtures\": 15, \"wavelengths\": 60, \"noise\": 0.002,\n        \"centers\": [270.0, 300.0, 335.0], \"widths\": [18.0, 22.0, 20.0], \"heights\": [0.9, 0.7, 0.3]}\n\n\ndef spectra(noise=None, seed=11):\n    \"\"\"Absorbance matrix X (mixtures x wavelengths) = C E + noise (Beer-Lambert, SYNTHETIC).\"\"\"\n    rng = np.random.default_rng(seed)\n    lam = np.linspace(240, 370, SPEC[\"wavelengths\"])\n    E = np.array([h * np.exp(-((lam - c) / w) ** 2) for c, w, h in zip(SPEC[\"centers\"], SPEC[\"widths\"], SPEC[\"heights\"])])\n    Cc = rng.uniform(0.05, 1.0, (SPEC[\"mixtures\"], SPEC[\"species\"]))\n    Z = rng.normal(0, 1, (SPEC[\"mixtures\"], SPEC[\"wavelengths\"]))\n    sd = SPEC[\"noise\"] if noise is None else noise\n    X = Cc @ E + sd * Z\n    s = svd(X, compute_uv=False)\n    delta = sd * (np.sqrt(X.shape[0]) + np.sqrt(X.shape[1]))     # expected largest singular value of the noise\n    return {\"noise\": float(sd), \"sv\": s.tolist(), \"delta\": float(delta), \"rank\": int(np.sum(s > delta)),\n            \"lam\": lam.tolist(), \"E\": E.tolist(), \"X0\": X[0].tolist(), \"X1\": X[1].tolist()}\n\n\ndef spectra_sweep():\n    return [{\"noise\": float(v), **{k: spectra(float(v))[k] for k in (\"sv\", \"delta\", \"rank\")}}\n            for v in [0.001, 0.002, 0.005, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.08, 0.1, 0.15, 0.2, 0.3, 0.5]]\n\n\ndef clean(o):\n    if isinstance(o, dict):\n        return {k: clean(v) for k, v in o.items()}\n    if isinstance(o, (list, tuple)):\n        return [clean(v) for v in o]\n    if isinstance(o, (np.floating, float)):\n        v = float(o)\n        return 0.0 if abs(v) < 1e-14 else v\n    if isinstance(o, np.integer):\n        return int(o)\n    return o\n\n\ndef classroom_results():\n    R = {\"lecture\": {\"two\": two_by_two(), \"decay\": decay_sweep(), \"profiles\": profiles()},\n         \"lab\": {\"arr\": arrhenius(), \"spec\": spectra(), \"sweep\": spectra_sweep()},\n         \"versions\": {\"numpy\": np.__version__, \"scipy\": __import__(\"scipy\").__version__}}\n    return clean(R)\n\n\nif __name__ == \"__main__\":\n    R = classroom_results()\n    if \"--json\" in sys.argv:\n        with open(\"eigen-results.json\", \"w\") as fh:\n            json.dump(R, fh, indent=1)\n        print(\"wrote eigen-results.json\"); sys.exit()\n    T = R[\"lecture\"][\"two\"]\n    print(\"1 sym lam\", r6(T[\"sym\"][\"lam\"]), \"V\", r6(T[\"sym\"][\"V\"]))\n    print(\"1 defective lam\", r6(T[\"defective\"][\"lam\"]), \"rank(M-2I)\", T[\"defective\"][\"rank_of_M_minus_2I\"], \"cond V\", sig(T[\"defective\"][\"cond_V\"]))\n    print(\"1 shear lam\", r6(T[\"shear\"][\"lam\"]), \"sv\", r6(T[\"shear\"][\"sv\"]), \"cond\", r6(T[\"shear\"][\"cond\"]))\n    for d in R[\"lecture\"][\"decay\"][::4]:\n        print(\"2 decay tmax\", d[\"tmax\"], \"cond\", sig(d[\"cond\"]), \"corr\", r6(d[\"corr\"]), \"se_rel_k\", r6(d[\"se_rel_k\"]))\n    P = R[\"lecture\"][\"profiles\"]; print(\"3 profiles sv\", [sig(v) for v in P[\"sv\"][:6]], \"noise level\", sig(P[\"noise_level\"]), \"err\", [sig(v) for v in P[\"err2\"]])\n    A = R[\"lab\"][\"arr\"]\n    for k in (\"raw\", \"centered\", \"scaled\"):\n        print(\"4\", k, \"cond\", sig(A[k][\"cond\"]), \"corr\", r6(A[k][\"corr\"]), \"Ea\", r6(A[k][\"Ea_kJ\"]), \"lnA\", r6(A[k][\"lnA\"]))\n    Sp = R[\"lab\"][\"spec\"]; print(\"4 spectra sv\", [sig(v) for v in Sp[\"sv\"][:6]], \"delta\", sig(Sp[\"delta\"]), \"rank\", Sp[\"rank\"])\n    print(\"4 sweep\", [(q[\"noise\"], q[\"rank\"]) for q in R[\"lab\"][\"sweep\"]])\n";   // embedded copy, so live Python also works when the file is opened locally
+let R = RECORDED, MODE = "recorded";
+const C = {teal:"#0F6E6B",amber:"#E29A2D",rust:"#BE654C",sky:"#5A91BE",sage:"#83A462",plum:"#995A90",graphite:"#333F4A",sand:"#DFC98F",ink:"#1C242B",slate:"#66727C",mist:"#B9C1C6",paper:"#F3F0EB"};
+const fmt = (x,d=0)=>x==null?"–":Number(x).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+
+/* ---------- tiny SVG chart helpers ---------- */
+function svgEl(w,h){return `<svg class="ch" viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet" font-family="Helvetica Neue,Arial,sans-serif">`}
+function niceStep(r,n=5){const raw=r/n,p=Math.pow(10,Math.floor(Math.log10(raw||1)));for(const m of [1,2,2.5,5,10]){if(m*p>=raw-1e-12)return m*p}return 10*p}
+function scale(o,lo,hi){const st=niceStep(hi-lo);o.step=st;o.ymin=Math.floor(lo/st+1e-9)*st;o.ymax=Math.ceil(hi/st-1e-9)*st;o.ticks=Math.round((o.ymax-o.ymin)/st);return o}
+function niceMax(v){const p=Math.pow(10,Math.floor(Math.log10(v||1)));for(const m of [1,1.2,1.5,2,2.5,3,4,5,6,8,10]){if(m*p>=v)return m*p}return 10*p}
+function axes(o){ // o: w,h,l,r,t,b,ymin,ymax,xlabels,ylab,ticks
+  const {w,h,l,r,t,b,ymin,ymax}=o, X=w-l-r, Y=h-t-b, n=o.ticks||5; let s="";
+  for(let k=0;k<=n;k++){const v=ymin+(ymax-ymin)*k/n, y=t+Y-(v-ymin)/(ymax-ymin)*Y;
+    s+=`<line x1="${l}" x2="${w-r}" y1="${y}" y2="${y}" stroke="${C.mist}" stroke-width="0.8" opacity=".7"/><text x="${l-8}" y="${y+5}" font-size="16" text-anchor="end" fill="${C.ink}">${fmt(v, (o.step||1)<1?1:0)}</text>`}
+  s+=`<line x1="${l}" x2="${l}" y1="${t}" y2="${t+Y}" stroke="${C.graphite}" stroke-width="1.5"/>`;
+  const z=t+Y-(0-ymin)/(ymax-ymin)*Y; s+=`<line x1="${l}" x2="${w-r}" y1="${Math.min(t+Y,Math.max(t,z))}" y2="${Math.min(t+Y,Math.max(t,z))}" stroke="${C.graphite}" stroke-width="1.5"/>`;
+  if(o.ylab)s+=`<text transform="translate(${16},${t+Y/2}) rotate(-90)" font-size="17" text-anchor="middle" fill="${C.ink}">${o.ylab}</text>`;
+  return s}
+function ymap(o,v){const Y=o.h-o.t-o.b;return o.t+Y-(v-o.ymin)/(o.ymax-o.ymin)*Y}
+function legend(items,x,y){let s="";items.forEach((it,i)=>{const yy=y+i*22;s+=it.line?`<line x1="${x}" x2="${x+22}" y1="${yy}" y2="${yy}" stroke="${it.c}" stroke-width="3" ${it.dash?'stroke-dasharray="6 4"':''}/>`:`<rect x="${x}" y="${yy-8}" width="16" height="16" fill="${it.c}" ${it.op?`opacity="${it.op}"`:''}/>`;s+=`<text x="${x+28}" y="${yy+5}" font-size="16" fill="${C.ink}">${it.t}</text>`});return s}
+function legendRow(items,x,y){let s="",xx=x;items.forEach(it=>{s+=it.line?`<line x1="${xx}" x2="${xx+20}" y1="${y}" y2="${y}" stroke="${it.c}" stroke-width="3" ${it.dash?'stroke-dasharray="6 4"':''}/>`:`<rect x="${xx}" y="${y-7}" width="14" height="14" fill="${it.c}" ${it.op?`opacity="${it.op}"`:''}/>`;s+=`<text x="${xx+26}" y="${y+5}" font-size="16" fill="${C.ink}">${it.t}</text>`;xx+=38+it.t.length*8.2});return s}
+
+/* Food Manufacture: stacked bars of a [month][oil] matrix, optional line */
+function hbar(items,opt={}){ // items: {t,v,c}
+  const w=opt.w||640,h=opt.h||330,l=opt.l||250,r=90,t=16,rowh=(h-t-20)/items.length;
+  const mx=opt.max||niceMax(Math.max(...items.map(i=>i.v)));let s=svgEl(w,h);
+  items.forEach((it,i)=>{const y=t+i*rowh,bw=(w-l-r)*it.v/mx;
+    s+=`<text x="${l-12}" y="${y+rowh/2+5}" font-size="16" text-anchor="end" fill="${C.ink}">${it.t}</text><rect x="${l}" y="${y+rowh*0.18}" width="${Math.max(bw,1)}" height="${rowh*0.64}" fill="${it.c}" rx="3"/><text x="${l+bw+8}" y="${y+rowh/2+6}" font-size="17" font-weight="700" fill="${C.ink}">${opt.fmt?opt.fmt(it.v):fmt(it.v)}</text>`});
+  s+=`<line x1="${l}" x2="${l}" y1="${t}" y2="${h-20}" stroke="${C.graphite}" stroke-width="1.5"/>`;
+  return s+"</svg>"}
+
+const foot = "2105601 Advanced Engineering Mathematics for Chemical Engineers · Session 2 · Eigenvalues, SVD and conditioning · semester 2, academic year 2026";
+/* ---------- 2105601 shared slide helpers ---------- */
+const LC = () => R.lecture;
+const LB = () => R.lab;
+const SEQ = ["#F6F6F6","#D2DFDE","#AFC7C5","#8BB0AE","#689A97","#428380","#0F6D6A","#005553","#003F3D"];
+const DIV = ["#086461","#46807D","#739D9A","#9EBAB8","#CAD8D7","#F6F6F6","#E5D2BE","#D1AF88","#B98D55","#A06C1F","#834D00"];
+const hexrgb = h => [1,3,5].map(i => parseInt(h.slice(i, i + 2), 16));
+function ramp(stops, t){t=Math.max(0,Math.min(1,t));const k=t*(stops.length-1),i=Math.min(stops.length-2,Math.floor(k)),f=k-i,a=hexrgb(stops[i]),b=hexrgb(stops[i+1]);
+ return `rgb(${a.map((v,j)=>Math.round(v+(b[j]-v)*f)).join(",")})`}
+const pyExp = (x, d) => x.toExponential(d).replace(/e([+-])(\d)$/, "e$10$2");
+const pyList = a => "[" + a.join(", ") + "]";
+
+/* a plotting plane: optional heat map, then overlays, then the frame */
+function plane(o){const w=o.w,h=o.h,l=o.l||62,r=o.r||14,t=o.t||14,b=o.b||52,X=w-l-r,Y=h-t-b;
+ const px=x=>l+X*(x-o.xr[0])/(o.xr[1]-o.xr[0]),py=y=>t+Y*(o.yr[1]-y)/(o.yr[1]-o.yr[0]);let s=svgEl(w,h);
+ if(o.val){const nx=o.nx||60,ny=o.ny||40,dx=X/nx,dy=Y/ny;for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){
+  const x=o.xr[0]+(i+.5)*(o.xr[1]-o.xr[0])/nx,y=o.yr[1]-(j+.5)*(o.yr[1]-o.yr[0])/ny;
+  s+=`<rect x="${(l+i*dx).toFixed(1)}" y="${(t+j*dy).toFixed(1)}" width="${(dx+.7).toFixed(1)}" height="${(dy+.7).toFixed(1)}" fill="${o.col(o.val(x,y),x,y)}"/>`}}
+ const frame=()=>{let q=`<rect x="${l}" y="${t}" width="${X}" height="${Y}" fill="none" stroke="${C.graphite}" stroke-width="1.4"/>`;
+  (o.xt||[]).forEach(x=>q+=`<text x="${px(x)}" y="${t+Y+22}" font-size="15" text-anchor="middle" fill="${C.ink}">${x}</text>`);
+  (o.yt||[]).forEach(y=>q+=`<text x="${l-8}" y="${py(y)+5}" font-size="15" text-anchor="end" fill="${C.ink}">${y}</text>`);
+  if(o.xlab)q+=`<text x="${l+X/2}" y="${h-8}" font-size="16" text-anchor="middle" fill="${C.ink}">${o.xlab}</text>`;
+  if(o.ylab)q+=`<text transform="translate(16,${t+Y/2}) rotate(-90)" font-size="16" text-anchor="middle" fill="${C.ink}">${o.ylab}</text>`;return q};
+ return {s,px,py,frame,l,t,X,Y}}
+
+/* contour lines by marching squares */
+function contours(f,xr,yr,nx,ny,levels,px,py,stroke,sw,op){let s="";const xs=[],ys=[];
+ for(let i=0;i<=nx;i++)xs.push(xr[0]+(xr[1]-xr[0])*i/nx);for(let j=0;j<=ny;j++)ys.push(yr[0]+(yr[1]-yr[0])*j/ny);
+ const F=ys.map(y=>xs.map(x=>f(x,y)));
+ levels.forEach(c=>{let d="";for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const v=[F[j][i],F[j][i+1],F[j+1][i+1],F[j+1][i]],
+   P=[[xs[i],ys[j]],[xs[i+1],ys[j]],[xs[i+1],ys[j+1]],[xs[i],ys[j+1]]],pts=[];
+  for(let k=0;k<4;k++){const a=v[k],b=v[(k+1)%4];if((a<c)!==(b<c)){const q=(c-a)/(b-a),A=P[k],B=P[(k+1)%4];pts.push([A[0]+q*(B[0]-A[0]),A[1]+q*(B[1]-A[1])])}}
+  for(let k=0;k+1<pts.length;k+=2)d+=`M${px(pts[k][0]).toFixed(1)},${py(pts[k][1]).toFixed(1)}L${px(pts[k+1][0]).toFixed(1)},${py(pts[k+1][1]).toFixed(1)}`}
+  s+=`<path d="${d}" fill="none" stroke="${stroke}" stroke-width="${sw||1}" opacity="${op||1}"/>`});return s}
+
+/* a simple x-y line chart */
+function xyChart(o){const w=o.w||620,h=o.h||430,l=o.l||76,r=20,t=16,b=56,X=w-l-r,Y=h-t-b;let s=svgEl(w,h);
+ const px=x=>l+X*(x-o.xmin)/(o.xmax-o.xmin),py=y=>t+Y*(o.ymax-y)/(o.ymax-o.ymin);
+ for(let y=o.ymin;y<=o.ymax+1e-9;y+=o.ystep)s+=`<line x1="${l}" x2="${l+X}" y1="${py(y)}" y2="${py(y)}" stroke="${C.mist}" stroke-width=".8" opacity=".7"/><text x="${l-8}" y="${py(y)+5}" font-size="15" text-anchor="end" fill="${C.ink}">${o.yfmt?o.yfmt(y):fmt(y)}</text>`;
+ for(let x=o.xmin;x<=o.xmax+1e-9;x+=o.xstep)s+=`<text x="${px(x)}" y="${t+Y+22}" font-size="15" text-anchor="middle" fill="${C.ink}">${o.xfmt?o.xfmt(x):fmt(x)}</text>`;
+ s+=`<line x1="${l}" x2="${l}" y1="${t}" y2="${t+Y}" stroke="${C.graphite}" stroke-width="1.4"/><line x1="${l}" x2="${l+X}" y1="${t+Y}" y2="${t+Y}" stroke="${C.graphite}" stroke-width="1.4"/>`;
+ s+=`<text x="${l+X/2}" y="${h-8}" font-size="16" text-anchor="middle" fill="${C.ink}">${o.xlab}</text><text transform="translate(16,${t+Y/2}) rotate(-90)" font-size="16" text-anchor="middle" fill="${C.ink}">${o.ylab}</text>`;
+ if(o.under)s+=o.under(px,py);
+ o.series.forEach(se=>{s+=`<polyline fill="none" stroke="${se.c}" stroke-width="${se.w||3}" ${se.dash?'stroke-dasharray="8 6"':''} points="${se.pts.map(p=>`${px(p[0]).toFixed(1)},${py(p[1]).toFixed(1)}`).join(" ")}"/>`});
+ (o.marks||[]).forEach(m=>{s+=`<circle cx="${px(m.x)}" cy="${py(m.y)}" r="${m.r||7}" fill="${m.c||C.amber}" stroke="#fff" stroke-width="2"/>`+(m.t?`<text x="${px(m.x)+(m.dx||10)}" y="${py(m.y)+(m.dy||-12)}" font-size="15" font-weight="700" text-anchor="${m.anchor||"start"}" fill="${C.ink}">${m.t}</text>`:"")});
+ if(o.over)s+=o.over(px,py);
+ if(o.legend)s+=legend(o.legend,o.lx||l+16,o.ly||t+18);
+ return s+"</svg>"}
+const lin = (a, b, n) => Array.from({length: n}, (_, k) => a + (b - a) * k / (n - 1));
+function reveal(bid,aid){const b=document.getElementById(bid);b.onclick=()=>{const p=document.getElementById(aid),on=p.style.visibility==="hidden";p.style.visibility=on?"visible":"hidden";b.textContent=on?"Hide answers":"Show answers"}}
+const CHECK=(n,q,a)=>`<div class="body"><div class="col w55"><div class="act"><span class="tag">PAUSE AND ANSWER</span>${q}</div>
+<div class="ctrl" style="margin-top:12px"><button id="k${n}btn">Show answers</button></div></div>
+<div class="col"><div class="panel grow" id="k${n}ans" style="visibility:hidden"><ul class="b xs">${a}</ul></div></div></div>`;
+const OL=`<ol style="font-size:19px;line-height:1.5;margin:0;padding-left:26px">`;
+
+
+/* Python-style printing of a number rounded to 6 decimals (matches subspace_lab.r6 and print) */
+const py6 = v => {let r=Math.round(v*1e6)/1e6;if(Object.is(r,-0)||r===0)r=0;const s=String(r);return /[.e]/.test(s)?s:s+".0"};
+const py6l = a => pyList(a.map(py6));
+/* arrow from (x0, y0) to (x1, y1) in pixels, with an optional label */
+function arrow(x0,y0,x1,y1,col,w,lab,lx,ly,anchor){const a=Math.atan2(y1-y0,x1-x0),L=Math.hypot(x1-x0,y1-y0);if(L<2)return"";const hs=Math.min(12,L*.45);
+ const p1=[x1-hs*Math.cos(a-0.4),y1-hs*Math.sin(a-0.4)],p2=[x1-hs*Math.cos(a+0.4),y1-hs*Math.sin(a+0.4)];
+ let s=`<line x1="${x0.toFixed(1)}" y1="${y0.toFixed(1)}" x2="${(x1-0.8*hs*Math.cos(a)).toFixed(1)}" y2="${(y1-0.8*hs*Math.sin(a)).toFixed(1)}" stroke="${col}" stroke-width="${w||3}"/><polygon points="${x1.toFixed(1)},${y1.toFixed(1)} ${p1[0].toFixed(1)},${p1[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}" fill="${col}"/>`;
+ if(lab){const tx=lx==null?x1+6:lx,ty=ly==null?y1-6:ly;s+=`<text x="${tx.toFixed(1)}" y="${ty.toFixed(1)}" font-size="15" font-weight="700" fill="${col}" text-anchor="${anchor||"start"}">${lab}</text>`}return s}
+const mn = s => String(s).replace(/^-/, "−").replace(/\/-/, "/−");
+
+/* rank of a small matrix by elimination with a tolerance (for the reaction-set demo) */
+function rankOf(M){if(!M.length)return 0;const A=M.map(r=>r.slice());const m=A.length,n=A[0].length;let r=0;
+ for(let c=0;c<n&&r<m;c++){let p=r;for(let i=r+1;i<m;i++)if(Math.abs(A[i][c])>Math.abs(A[p][c]))p=i;if(Math.abs(A[p][c])<1e-9)continue;
+  [A[r],A[p]]=[A[p],A[r]];for(let i=0;i<m;i++)if(i!==r){const f=A[i][c]/A[r][c];for(let j=c;j<n;j++)A[i][j]-=f*A[r][j]}r++}return r}
+/* a matrix as an HTML table with row and column labels */
+function mat(M,rows,cols,o={}){let s=`<table class="t" style="font-size:${o.fs||17}px;width:auto"><tr><th></th>${cols.map(c=>`<th class="n">${c}</th>`).join("")}</tr>`;
+ M.forEach((r,i)=>{s+=`<tr><td><b>${rows[i]}</b></td>${r.map(v=>`<td class="n">${mn(o.f?o.f(v):v)}</td>`).join("")}</tr>`});return s+"</table>"}
+const sb = s => s.replace(/([A-Za-z)])(\d+)/g,"$1<sub>$2</sub>");   /* CH4 -> CH<sub>4</sub> */
+const pyInt = a => "[" + a.map(r => Array.isArray(r) ? pyInt(r) : String(r)).join(", ") + "]";
+
+/* Python's f"{v:.4g}" (used by sig() in the modules) */
+const pyG=(v,n=4)=>{v=Number(v);if(v===0)return "0";const e=Math.floor(Math.log10(Math.abs(v))+1e-12);
+ if(e<-4||e>=n){let s=v.toExponential(n-1),[m,x]=s.split("e");if(m.includes("."))m=m.replace(/\.?0+$/,"");const sg=x[0]==="-"?"-":"+";let d=x.replace(/^[+-]/,"");if(d.length<2)d="0"+d;return m+"e"+sg+d}
+ let s=v.toFixed(Math.max(0,n-1-e));if(s.includes("."))s=s.replace(/\.?0+$/,"");return s};
+const S = [];
+/* ---------- Session 2: opening and Part 1 (eigenvalue problems) ---------- */
+const TW=()=>LC().two;
+/* eigen-decomposition of a symmetric 2x2 and SVD of any 2x2, in JavaScript (ports of the module) */
+function eig2s(a,b,d){const tr=a+d,df=Math.sqrt(((a-d)/2)**2+b*b),l1=tr/2+df,l2=tr/2-df;let v1=Math.abs(b)>1e-12?[b,l1-a]:(a>=d?[1,0]:[0,1]);const n=Math.hypot(...v1);v1=[v1[0]/n,v1[1]/n];if(v1[0]<0)v1=[-v1[0],-v1[1]];return {l:[l1,l2],v1,v2:[v1[1],-v1[0]]}}
+function svd2(M){const [[a,b],[c,d]]=M,E=eig2s(a*a+c*c,a*b+c*d,b*b+d*d),s1=Math.sqrt(Math.max(E.l[0],0)),s2=Math.sqrt(Math.max(E.l[1],0));
+ const u=(v,s)=>s>1e-12?[(a*v[0]+b*v[1])/s,(c*v[0]+d*v[1])/s]:[0,0];return {s:[s1,s2],v1:E.v1,v2:E.v2,u1:u(E.v1,s1),u2:u(E.v2,s2)}}
+
+S.push({cls:"title-slide", html:()=>`<p class="kicker">Session 2 · Lab 2</p><h1>Eigenvalue problems, the SVD and conditioning</h1>
+<div class="sub">Which directions a matrix keeps, how much it stretches them, and what your data can and cannot identify</div>
+<div class="meta">2105601 Advanced Engineering Mathematics for Chemical Engineers<br>Soorathep Kheawhom, Ph.D., FRSC<br>Department of Chemical Engineering, Chulalongkorn University<br>Semester 2, academic year 2026</div><p style="margin-top:28px;font-size:19px"><a href="?narrate=1#1">Studying on your own? Open the narrated version</a></p>`});
+
+S.push({kicker:"Plan for today", title:"Three hours, two activities, four checks and a lab", html:()=>`<div class="body"><div class="col"><table class="t" style="font-size:18px">
+<tr><th>Part</th><th>Content</th><th class="n">Minutes</th></tr>
+<tr><td></td><td>Activity 1: retrieval check on Session 1</td><td class="n">10</td></tr>
+<tr><td>1</td><td>Eigenvalue problems: invariant directions, diagonalization, defective matrices, symmetric matrices, non-normal matrices</td><td class="n">35</td></tr>
+<tr><td>2</td><td>The singular value decomposition: geometry, the four subspaces, conditioning, identifiability, low-rank approximation</td><td class="n">40</td></tr>
+<tr><td></td><td><i>Break</i></td><td class="n">10</td></tr>
+<tr><td></td><td>Activity 2: your card, the parameters you fit</td><td class="n">10</td></tr>
+<tr><td>3</td><td>Applications: reparameterization, principal components of process data, what to report</td><td class="n">30</td></tr>
+<tr><td>Lab 2</td><td>What can the data identify? Arrhenius fits and mixture spectra</td><td class="n">40</td></tr>
+<tr><td></td><td>Exit Ticket and feedback</td><td class="n">5</td></tr></table>
+<p class="note">Studying on your own: the narration takes about 30 minutes. Stop at every activity and check, then do Lab 2; the whole session takes about three hours.</p></div></div>`});
+
+S.push({kicker:"Activity 1 · 10 minutes · alone, then in pairs", title:"Retrieval check: Session 1 without notes", html:()=>`<div class="body"><div class="col w55"><div class="act"><span class="tag">WRITE, THEN COMPARE</span>
+${OL}
+<li>A matrix is 4 × 6 with rank 3. Give the dimensions of its four fundamental subspaces.</li>
+<li>When does Mx = b have a solution? State the test in terms of the left null space.</li>
+<li>Five species and three elements, rank A = 3. How many independent reactions, and what do the conserved quantities span?</li>
+<li>What did the condition number of the monomial Gram matrix tell you about a degree-9 fit?</li></ol></div>
+<div class="ctrl" style="margin-top:12px"><button id="a1btn">Show answers</button></div></div>
+<div class="col"><div class="panel grow" id="a1ans" style="visibility:hidden"><ul class="b xs">
+<li>C(M): 3, C(Mᵀ): 3, N(M): 6 − 3 = 3, N(Mᵀ): 4 − 3 = 1</li>
+<li>Exactly when yᵀb = 0 for every y in N(Mᵀ), that is, b ⊥ N(Mᵀ)</li>
+<li>5 − 3 = 2 independent reactions. When the reactions span N(A), the conserved quantities are the row space of A: the moles of each element</li>
+<li>κ ≈ 1.6 × 10¹³: about 13 of 16 digits lost. Today κ gets its definition through singular values</li></ul></div></div></div>`,
+draw:()=>reveal("a1btn","a1ans")});
+
+S.push({kicker:"Learning outcomes", title:"By the end of today you can", html:()=>`<div class="body"><div class="col"><ul class="b sm">
+<li>Compute eigenvalues and eigenvectors of small matrices, and explain them as directions a linear operator keeps</li>
+<li>Diagonalize a matrix, recognize a defective one, and use the spectral theorem for symmetric matrices</li>
+<li>Explain why eigenvalues do not measure how much a non-symmetric matrix stretches a vector</li>
+<li>Compute and interpret the singular value decomposition, and read the four subspaces and the pseudoinverse from it</li>
+<li>Use the condition number and the sensitivity matrix to decide which parameters your data can identify, and how reparameterization helps</li>
+<li>Find the numerical rank of a data matrix from its singular values and a noise level, and state the threshold you used</li></ul></div></div>`});
+
+S.push({kicker:"Context", title:"From Session 1: the subspaces; today: the right basis and the size of each direction", html:()=>`<div class="body"><div class="col"><table class="t" style="font-size:17px">
+<tr><th>What you have</th><th>Where</th><th>What today adds</th></tr>
+<tr><td>Bases, coordinates, change of basis</td><td>Session 1</td><td>The basis in which an operator acts by scaling: eigenvectors</td></tr>
+<tr><td>Four subspaces and their dimensions</td><td>Session 1</td><td>Orthonormal bases for all four at once, from the SVD</td></tr>
+<tr><td>Numerical rank, with a threshold “to be defined”</td><td>Session 1</td><td>Singular values, Eckart–Young, and a threshold set by the noise</td></tr>
+<tr><td>κ of a Gram matrix grows with the degree</td><td>Session 1</td><td>κ = σ<sub>max</sub>/σ<sub>min</sub>, and what it does to fitted parameters</td></tr>
+<tr><td>Least squares as projection</td><td>Session 1</td><td>Parameter covariance, correlation and identifiability</td></tr>
+<tr><td></td><td>Next: Session 3</td><td>dx/dt = Kx solved in the eigenvector basis</td></tr></table>
+<p class="note">Notation: Mv = λv, with eigenvalue λ and eigenvector v ≠ 0. M = UΣVᵀ with singular values σ<sub>1</sub> ≥ σ<sub>2</sub> ≥ … ≥ 0. κ(M) = σ<sub>max</sub>/σ<sub>min</sub>.</p></div></div>`});
+
+/* ---------- Part 1 ---------- */
+S.push({kicker:"Part 1 · The eigenvalue problem", title:"Directions that a matrix only stretches", html:()=>`<div class="body"><div class="col w55"><div class="panel"><div class="math" style="font-size:18px;line-height:1.75">
+Mv = λv, &nbsp;v ≠ 0 &nbsp;⇔ &nbsp;(M − λI)v = 0 has a nonzero solution<br>
+⇔ &nbsp;M − λI has a null space &nbsp;⇔ &nbsp;det(M − λI) = 0<br>
+2 × 2: &nbsp;λ² − (tr M) λ + det M = 0<br>
+Σλ<sub>i</sub> = tr M, &nbsp;Πλ<sub>i</sub> = det M<br>
+Eigenspace of λ: N(M − λI), a subspace of dimension ≥ 1</div></div>
+<p class="note">λ: eigenvalue; v: eigenvector, defined up to a nonzero scale. An n × n matrix has n eigenvalues counted with multiplicity, possibly complex.</p></div>
+<div class="col"><ul class="b xs"><li>The definition is Session 1 again: λ is an eigenvalue exactly when M − λI loses rank</li>
+<li>Example: M = [[3, 1], [1, 2]]: tr = 5, det = 5, so λ = (5 ± √5)/2 = ${fmt(TW().sym.lam[0],3)} and ${fmt(TW().sym.lam[1],3)}</li>
+<li>In chemical engineering the eigenvalues of a rate matrix are minus the inverse time constants of a reaction network (Session 3), and the eigenvalues of a Jacobian decide stability (Session 4)</li>
+<li>Do not compute eigenvalues from the characteristic polynomial for n &gt; 4: its roots are very sensitive to rounding. Libraries use the QR algorithm on the matrix itself</li></ul></div></div>`});
+
+S.push({kicker:"Part 1 · Demo", title:"Turn a vector: where does Mv point the same way as v?", html:()=>`<div class="body"><div class="col w55"><div class="panel grow"><div class="chart" id="ch-ev"></div></div>
+<div class="ctrl" style="margin-top:6px">angle of v <input type="range" id="eva" min="0" max="179" step="1" value="60"><b id="evav"></b><button id="evnext">Next eigenvector</button></div></div>
+<div class="col"><table class="t" style="font-size:17px" id="evt"></table><p style="font-size:17px;margin:10px 0 0;font-weight:700" id="evm"></p>
+<p class="note">M = [[3, 1], [1, 2]]. Teal: the unit vector v. Amber: Mv. The grey ellipse is the image of the unit circle; its axes are the eigenvectors because M is symmetric.</p></div></div>`,
+draw:()=>{const S2=TW().sym,M=S2.M;let k=-1;const angs=S2.V.map(v=>((Math.atan2(v[1],v[0])*180/Math.PI)+180)%180);
+ const go=a=>{const t=a*Math.PI/180,v=[Math.cos(t),Math.sin(t)],w=[M[0][0]*v[0]+M[0][1]*v[1],M[1][0]*v[0]+M[1][1]*v[1]],cr=v[0]*w[1]-v[1]*w[0],rq=v[0]*w[0]+v[1]*w[1];
+  const P=plane({w:560,h:420,xr:[-4.2,4.2],yr:[-3.15,3.15],xt:[-4,-2,0,2,4],yt:[-2,0,2],xlab:"first coordinate",ylab:"second coordinate",l:46,b:46});let s=P.s;
+  let d="";for(let i=0;i<=120;i++){const u=i/120*2*Math.PI,x=[Math.cos(u),Math.sin(u)];const y=[M[0][0]*x[0]+M[0][1]*x[1],M[1][0]*x[0]+M[1][1]*x[1]];d+=(i?"L":"M")+P.px(y[0]).toFixed(1)+","+P.py(y[1]).toFixed(1)}
+  s+=`<path d="${d}" fill="none" stroke="${C.mist}" stroke-width="2"/><circle cx="${P.px(0)}" cy="${P.py(0)}" r="${P.px(1)-P.px(0)}" fill="none" stroke="${C.mist}" stroke-dasharray="4 4"/>`;
+  S2.V.forEach(e=>{s+=`<line x1="${P.px(-4*e[0])}" y1="${P.py(-4*e[1])}" x2="${P.px(4*e[0])}" y2="${P.py(4*e[1])}" stroke="${C.slate}" stroke-dasharray="6 5" stroke-width="1.2"/>`});
+  s+=arrow(P.px(0),P.py(0),P.px(w[0]),P.py(w[1]),C.amber,4,"Mv");s+=arrow(P.px(0),P.py(0),P.px(v[0]),P.py(v[1]),C.teal,4,"v");
+  document.getElementById("ch-ev").innerHTML=s+P.frame()+"</svg>";document.getElementById("evav").textContent=`${a}°`;
+  const par=Math.abs(cr)<0.03;document.getElementById("evt").innerHTML=`<tr><th>Quantity</th><th class="n">Value</th></tr><tr><td>v</td><td class="n">(${mn(fmt(v[0],3))}, ${mn(fmt(v[1],3))})</td></tr><tr><td>Mv</td><td class="n">(${mn(fmt(w[0],3))}, ${mn(fmt(w[1],3))})</td></tr><tr><td>Rayleigh quotient vᵀMv</td><td class="n">${fmt(rq,3)}</td></tr><tr><td>Cross product v × Mv</td><td class="n">${mn(fmt(cr,3))}</td></tr>`;
+  const m=document.getElementById("evm");m.style.color=par?C.teal:C.slate;m.textContent=par?`An eigenvector: Mv = λv with λ = ${fmt(rq,3)}`:`Mv turns away from v. The Rayleigh quotient lies between ${fmt(S2.lam[1],3)} and ${fmt(S2.lam[0],3)}.`};
+ const sl=document.getElementById("eva");sl.oninput=()=>go(+sl.value);document.getElementById("evnext").onclick=()=>{k=(k+1)%2;const a=Math.round(angs[k]);sl.value=a;go(a)};go(60)},
+py:{title:"Eigenvalues and orthonormal eigenvectors of the symmetric example", sub:"eigen_lab.two_by_two()", code:
+`from eigen_lab import two_by_two, r6
+T = two_by_two()["sym"]
+print("lambda", r6(T["lam"]))
+print("V rows", r6(T["V"]))
+print("V^T V", r6(T["VtV"]))`,
+out:()=>{const T=TW().sym;return `lambda ${py6l(T.lam)}\nV rows [${T.V.map(py6l).join(", ")}]\nV^T V [${T.VtV.map(py6l).join(", ")}]`}}});
+
+S.push({kicker:"Part 1 · Diagonalization", title:"In the eigenvector basis the operator is diagonal", html:()=>`<div class="body"><div class="col w55"><div class="panel"><div class="math" style="font-size:18px;line-height:1.75">
+n independent eigenvectors: V = [v<sub>1</sub> … v<sub>n</sub>], Λ = diag(λ<sub>i</sub>)<br>
+MV = VΛ &nbsp;⇒ &nbsp;M = VΛV⁻¹<br>
+M<sup>k</sup> = VΛ<sup>k</sup>V⁻¹, &nbsp;f(M) = V f(Λ) V⁻¹<br>
+Distinct eigenvalues ⇒ independent eigenvectors<br>
+Defective: M = [[2, 1], [0, 2]], λ = 2 twice, rank(M − 2I) = ${TW().defective.rank_of_M_minus_2I}: one eigenvector only</div></div>
+<p class="note">Algebraic multiplicity: how often λ is a root. Geometric multiplicity: dim N(M − λI). A matrix is diagonalizable when the two agree for every eigenvalue.</p></div>
+<div class="col"><ul class="b xs"><li>Coordinates in the eigenvector basis decouple: each one is multiplied by its own λ. That turns dx/dt = Mx into n scalar equations (Session 3)</li>
+<li>A defective matrix has no eigenvector basis. Its Jordan form adds terms like t e<sup>λt</sup>, which you will see as a critically damped response</li>
+<li>Near-defective matrices are the practical danger: the computed V is nearly singular. For the defective example the library returns κ(V) ≈ ${pyExp(TW().defective.cond_V,0).replace(/e\+(\d+)/,"×10<sup>$1</sup>")}</li>
+<li>Rule: diagonalize symmetric matrices freely; for others, check κ(V) or use the Schur or singular value decomposition</li></ul></div></div>`,
+py:{title:"The defective example", sub:"eigen_lab.two_by_two()", code:
+`from eigen_lab import two_by_two, r6
+D = two_by_two()["defective"]
+print("lambda", r6(D["lam"]), "rank(M - 2I)", D["rank_of_M_minus_2I"])
+print("cond(V) above 1e12:", D["cond_V"] > 1e12)`,
+out:()=>{const D=TW().defective;return `lambda ${py6l(D.lam)} rank(M - 2I) ${D.rank_of_M_minus_2I}\ncond(V) above 1e12: ${D.cond_V>1e12?"True":"False"}`}}});
+
+S.push({kicker:"Part 1 · Symmetric matrices", title:"The spectral theorem: real eigenvalues, orthogonal eigenvectors", html:()=>`<div class="body"><div class="col w55"><div class="panel"><div class="math" style="font-size:18px;line-height:1.75">
+M = Mᵀ ⇒ M = QΛQᵀ, &nbsp;QᵀQ = I, &nbsp;λ<sub>i</sub> real<br>
+Rayleigh quotient: r(x) = xᵀMx / xᵀx<br>
+λ<sub>min</sub> ≤ r(x) ≤ λ<sub>max</sub>, equality at the eigenvectors<br>
+Positive definite: xᵀMx &gt; 0 for x ≠ 0 ⇔ all λ<sub>i</sub> &gt; 0<br>
+Proof of orthogonality: λ<sub>1</sub>v<sub>2</sub>ᵀv<sub>1</sub> = v<sub>2</sub>ᵀMv<sub>1</sub> = (Mv<sub>2</sub>)ᵀv<sub>1</sub> = λ<sub>2</sub>v<sub>2</sub>ᵀv<sub>1</sub></div></div></div>
+<div class="col"><table class="t" style="font-size:17px"><tr><th>Symmetric matrix</th><th>What its eigenvalues say</th></tr>
+<tr><td>Hessian of an objective</td><td>Curvature in each principal direction; all positive at a strict minimum</td></tr>
+<tr><td>Covariance of fitted parameters</td><td>Variance along each principal direction; a large one is a poorly identified combination</td></tr>
+<tr><td>Gram matrix MᵀM</td><td>Squares of the singular values of M (Part 2)</td></tr>
+<tr><td>Diffusion operator with symmetric boundary conditions</td><td>Decay rates of the modes; Session 7 extends the theorem to functions</td></tr></table>
+<p class="note">Q: orthogonal matrix of eigenvectors. For a symmetric matrix the eigenvector basis is orthonormal, so changing to it never amplifies errors.</p></div></div>`});
+
+S.push({kicker:"Part 1 · Non-normal matrices", title:"Eigenvalues do not tell you how much a matrix stretches", html:()=>{const H=TW().shear;return `<div class="body"><div class="col w55"><div class="panel grow"><div class="chart" id="ch-sh"></div></div></div>
+<div class="col"><ul class="b xs"><li>The shear M = [[1, 2], [0, 1]] has both eigenvalues equal to ${fmt(H.lam[0],0)}. Yet it stretches some vectors by ${fmt(H.sv[0],3)} and shrinks others to ${fmt(H.sv[1],3)} of their length</li>
+<li>Eigenvalues describe what happens after many applications, M<sup>k</sup> for large k. Singular values describe what happens after one</li>
+<li>A matrix is normal when MᵀM = MMᵀ (symmetric matrices are). For normal matrices |λ<sub>i</sub>| = σ<sub>i</sub>; for others they can differ by orders of magnitude</li>
+<li>Chemical engineering consequence: a reactor model whose linearization has only stable eigenvalues can still amplify a disturbance for a while before it decays. Session 4 returns to this transient growth</li></ul>
+<p class="note">Grey: the unit circle. Amber: its image under the shear, an ellipse with semi-axes ${fmt(H.sv[0],3)} and ${fmt(H.sv[1],3)}.</p></div></div>`},
+draw:()=>{const M=TW().shear.M,P=plane({w:560,h:420,xr:[-3.2,3.2],yr:[-2.4,2.4],xt:[-3,-2,-1,0,1,2,3],yt:[-2,-1,0,1,2],xlab:"first coordinate",ylab:"second coordinate",l:46,b:46});let s=P.s,d="",e="";
+ for(let i=0;i<=120;i++){const u=i/120*2*Math.PI,x=[Math.cos(u),Math.sin(u)],y=[M[0][0]*x[0]+M[0][1]*x[1],M[1][0]*x[0]+M[1][1]*x[1]];d+=(i?"L":"M")+P.px(y[0]).toFixed(1)+","+P.py(y[1]).toFixed(1);e+=(i?"L":"M")+P.px(x[0]).toFixed(1)+","+P.py(x[1]).toFixed(1)}
+ const D=svd2(M);s+=`<path d="${e}" fill="none" stroke="${C.mist}" stroke-width="2"/><path d="${d}" fill="none" stroke="${C.amber}" stroke-width="3"/>`;
+ s+=arrow(P.px(0),P.py(0),P.px(D.s[0]*D.u1[0]),P.py(D.s[0]*D.u1[1]),C.teal,3,"σ₁u₁");s+=arrow(P.px(0),P.py(0),P.px(D.s[1]*D.u2[0]),P.py(D.s[1]*D.u2[1]),C.teal,3,"σ₂u₂");
+ s+=`<line x1="${P.px(-3)}" y1="${P.py(0)}" x2="${P.px(3)}" y2="${P.py(0)}" stroke="${C.rust}" stroke-dasharray="6 4" stroke-width="2"/><text x="${P.px(1.6)}" y="${P.py(0)+18}" font-size="14" fill="${C.rust}">the only eigenvector direction</text>`;
+ document.getElementById("ch-sh").innerHTML=s+P.frame()+"</svg>"}});
+
+S.push({kicker:"Check 1 · 5 minutes", title:"Check 1: eigenvalue problems", html:()=>CHECK(1,`${OL}
+<li>Find the eigenvalues of [[4, 1], [2, 3]] from its trace and determinant.</li>
+<li>A 3 × 3 matrix has eigenvalues 2, 2 and 5, and rank(M − 2I) = 2. Is it diagonalizable?</li>
+<li>Why are the eigenvectors of a symmetric matrix orthogonal? One line.</li>
+<li>All eigenvalues of a matrix have modulus 1. Can it still double the length of some vector? Give an example.</li></ol>`,
+`<li>1. tr = 7, det = 10: λ² − 7λ + 10 = 0, so λ = 5 and 2</li>
+<li>2. No. dim N(M − 2I) = 3 − 2 = 1, but λ = 2 appears twice: one eigenvector is missing</li>
+<li>3. λ<sub>1</sub>v<sub>2</sub>ᵀv<sub>1</sub> = v<sub>2</sub>ᵀMv<sub>1</sub> = v<sub>1</sub>ᵀMv<sub>2</sub> = λ<sub>2</sub>v<sub>2</sub>ᵀv<sub>1</sub>; with λ<sub>1</sub> ≠ λ<sub>2</sub>, v<sub>2</sub>ᵀv<sub>1</sub> = 0</li>
+<li>4. Yes, if it is not normal. The shear [[1, 2], [0, 1]] has λ = 1, 1 and σ<sub>1</sub> = ${fmt(TW().shear.sv[0],3)}; a larger off-diagonal entry stretches more</li>`),
+draw:()=>reveal("k1btn","k1ans")});
+/* ---------- Session 2, Part 2: the singular value decomposition ---------- */
+S.push({kicker:"Part 2 · The SVD", title:"Every matrix: rotate, stretch, rotate", html:()=>`<div class="body"><div class="col w55"><div class="panel"><div class="math" style="font-size:18px;line-height:1.75">
+M = UΣVᵀ, &nbsp;M ∈ ℝ<sup>m×n</sup>, &nbsp;UᵀU = I, &nbsp;VᵀV = I<br>
+Σ = diag(σ<sub>1</sub>, …, σ<sub>p</sub>), σ<sub>1</sub> ≥ … ≥ σ<sub>p</sub> ≥ 0, p = min(m, n)<br>
+Mv<sub>i</sub> = σ<sub>i</sub>u<sub>i</sub>, &nbsp;Mᵀu<sub>i</sub> = σ<sub>i</sub>v<sub>i</sub><br>
+MᵀM = VΣ²Vᵀ, &nbsp;MMᵀ = UΣ²Uᵀ<br>
+M = Σ<sub>i</sub> σ<sub>i</sub> u<sub>i</sub>v<sub>i</sub>ᵀ (a sum of rank-one pieces)</div></div>
+<p class="note">v<sub>i</sub>: right singular vectors (input directions); u<sub>i</sub>: left singular vectors (output directions); σ<sub>i</sub>: how much M stretches v<sub>i</sub>.</p></div>
+<div class="col"><ul class="b xs"><li>It exists for every matrix: rectangular, rank deficient, non-normal. The eigendecomposition does not</li>
+<li>Geometry: the unit sphere in ℝⁿ goes to an ellipsoid in ℝᵐ with semi-axes σ<sub>i</sub>u<sub>i</sub></li>
+<li>σ<sub>1</sub> = max ‖Mx‖/‖x‖, the 2-norm of M; σ<sub>min</sub> is how close M comes to sending some direction to zero</li>
+<li>Proof in outline: MᵀM is symmetric and positive semidefinite, so it has orthonormal eigenvectors v<sub>i</sub> and eigenvalues σ<sub>i</sub>² ≥ 0; set u<sub>i</sub> = Mv<sub>i</sub>/σ<sub>i</sub></li>
+<li>Compute it directly (Golub–Kahan), not through MᵀM, which squares the condition number</li></ul></div></div>`});
+
+S.push({kicker:"Part 2 · Demo", title:"Change one entry and watch the singular values and the eigenvalues", html:()=>`<div class="body"><div class="col w55"><div class="panel grow"><div class="chart" id="ch-sv"></div></div>
+<div class="ctrl" style="margin-top:6px">M = [[1, b], [0, 1]], &nbsp;b <input type="range" id="svb" min="0" max="40" step="1" value="20"><b id="svbv"></b></div></div>
+<div class="col"><table class="t" style="font-size:17px" id="svt"></table><p style="font-size:17px;margin:10px 0 0;font-weight:700;color:${C.amber}" id="svm"></p>
+<p class="note">Grey: the unit circle. Amber: its image. Teal arrows: σ<sub>1</sub>u<sub>1</sub> and σ<sub>2</sub>u<sub>2</sub>. The eigenvalues stay 1 and 1 for every b.</p></div></div>`,
+draw:()=>{const go=()=>{const b=+document.getElementById("svb").value/10,M=[[1,b],[0,1]],D=svd2(M);document.getElementById("svbv").textContent=fmt(b,1);
+  const P=plane({w:560,h:420,xr:[-5.2,5.2],yr:[-3.9,3.9],xt:[-4,-2,0,2,4],yt:[-2,0,2],xlab:"first coordinate",ylab:"second coordinate",l:46,b:46});let s=P.s,d="",e="";
+  for(let i=0;i<=120;i++){const u=i/120*2*Math.PI,x=[Math.cos(u),Math.sin(u)],y=[x[0]+b*x[1],x[1]];d+=(i?"L":"M")+P.px(y[0]).toFixed(1)+","+P.py(y[1]).toFixed(1);e+=(i?"L":"M")+P.px(x[0]).toFixed(1)+","+P.py(x[1]).toFixed(1)}
+  s+=`<path d="${e}" fill="none" stroke="${C.mist}" stroke-width="2"/><path d="${d}" fill="none" stroke="${C.amber}" stroke-width="3"/>`;
+  s+=arrow(P.px(0),P.py(0),P.px(D.s[0]*D.u1[0]),P.py(D.s[0]*D.u1[1]),C.teal,3,"σ₁u₁");if(D.s[1]>0.05)s+=arrow(P.px(0),P.py(0),P.px(D.s[1]*D.u2[0]),P.py(D.s[1]*D.u2[1]),C.teal,3);
+  document.getElementById("ch-sv").innerHTML=s+P.frame()+"</svg>";
+  document.getElementById("svt").innerHTML=`<tr><th>Quantity</th><th class="n">Value</th></tr><tr><td>Eigenvalues</td><td class="n">1, 1</td></tr><tr><td>σ<sub>1</sub>, σ<sub>2</sub></td><td class="n">${fmt(D.s[0],3)}, ${fmt(D.s[1],3)}</td></tr><tr><td>σ<sub>1</sub>σ<sub>2</sub> = |det M|</td><td class="n">${fmt(D.s[0]*D.s[1],3)}</td></tr><tr><td>κ = σ<sub>1</sub>/σ<sub>2</sub></td><td class="n">${fmt(D.s[0]/D.s[1],2)}</td></tr>`;
+  document.getElementById("svm").textContent=`At b = ${fmt(b,1)} the matrix stretches some vector ${fmt(D.s[0],2)} times, with both eigenvalues equal to 1.`};
+ document.getElementById("svb").oninput=go;go()}});
+
+S.push({kicker:"Part 2 · The four subspaces again", title:"The SVD gives orthonormal bases for all four subspaces", html:()=>`<div class="body"><div class="col w55"><table class="t" style="font-size:17px"><tr><th>Subspace</th><th>Basis from M = UΣVᵀ, rank r</th></tr>
+<tr><td>Column space C(M)</td><td>u<sub>1</sub>, …, u<sub>r</sub></td></tr>
+<tr><td>Left null space N(Mᵀ)</td><td>u<sub>r+1</sub>, …, u<sub>m</sub></td></tr>
+<tr><td>Row space C(Mᵀ)</td><td>v<sub>1</sub>, …, v<sub>r</sub></td></tr>
+<tr><td>Null space N(M)</td><td>v<sub>r+1</sub>, …, v<sub>n</sub></td></tr></table>
+<div class="panel" style="margin-top:12px"><div class="math" style="font-size:18px;line-height:1.7">Pseudoinverse: M⁺ = VΣ⁺Uᵀ, &nbsp;Σ⁺ = diag(1/σ<sub>1</sub>, …, 1/σ<sub>r</sub>, 0, …)<br>x̂ = M⁺b: least squares, smallest norm</div></div></div>
+<div class="col"><ul class="b xs"><li>This is how <code>scipy.linalg.null_space</code> worked in Lab 1: it took the right singular vectors whose σ falls below the threshold</li>
+<li>The pseudoinverse inverts each direction M can see, and ignores the directions it sends to zero. A truncated SVD also ignores directions with tiny σ, which is a form of regularization</li>
+<li>Dividing by a small σ<sub>i</sub> is where noise is amplified: an error of size ε in b along u<sub>i</sub> becomes ε/σ<sub>i</sub> in x̂</li>
+<li>That one fact explains conditioning, the next slide</li></ul></div></div>`});
+
+S.push({kicker:"Part 2 · Conditioning", title:"κ = σmax/σmin bounds how errors grow", html:()=>{const A=LB().arr;return `<div class="body"><div class="col w55"><div class="panel"><div class="math" style="font-size:18px;line-height:1.75">
+Mx = b, perturbed data b + δb:<br>
+‖δx‖/‖x‖ ≤ κ(M) ‖δb‖/‖b‖, &nbsp;κ(M) = σ<sub>1</sub>/σ<sub>n</sub><br>
+Least squares: sensitivity grows like κ, and like κ² through the normal equations<br>
+Rule of thumb: you lose about log<sub>10</sub>κ digits</div></div>
+<p class="note">The bound is attained when b lies along u<sub>1</sub> and δb along u<sub>n</sub>. κ is a property of the problem, not of the algorithm; a poor algorithm can add more loss on top.</p></div>
+<div class="col"><table class="t" style="font-size:17px"><tr><th>Problem</th><th class="n">κ</th></tr>
+<tr><td>Monomial Gram matrix, degree 9 (Session 1)</td><td class="n">1.6 × 10¹³</td></tr>
+<tr><td>Arrhenius design [1, 1/T], 300 to 360 K (Lab 2)</td><td class="n">${fmt(A.raw.cond,0)}</td></tr>
+<tr><td>Same, with 1/T centered and scaled</td><td class="n">${fmt(A.scaled.cond,2)}</td></tr>
+<tr><td>Shear with b = 2</td><td class="n">${fmt(TW().shear.cond,2)}</td></tr></table>
+<ul class="b xs" style="margin-top:10px"><li>A large κ has two possible causes: columns of very different scale, or columns that are nearly parallel. Scaling cures the first; only a new experiment or a new parameterization cures the second</li></ul></div></div>`}});
+
+S.push({kicker:"Part 2 · Identifiability", title:"The sensitivity matrix says what an experiment can determine", html:()=>`<div class="body"><div class="col w55"><div class="panel grow"><div class="chart" id="ch-id"></div></div>
+<div class="ctrl" style="margin-top:6px">last sampling time <input type="range" id="idt" min="0" max="23" step="1" value="0"><b id="idtv"></b></div></div>
+<div class="col"><div class="panel" style="padding:12px 14px"><div class="math" style="font-size:17px;line-height:1.6">c(t) = c<sub>0</sub>e<sup>−kt</sup>, c<sub>0</sub> = 1 mol/L, k = 0.5 min⁻¹<br>S<sub>ij</sub> = ∂c(t<sub>i</sub>)/∂θ<sub>j</sub>, &nbsp;θ = (c<sub>0</sub>, k)<br>Cov(θ̂) ≈ s²(SᵀS)⁻¹</div></div>
+<table class="t" style="font-size:16px;margin-top:8px" id="idT"></table><p style="font-size:16px;margin:8px 0 0;font-weight:700" id="idM"></p></div></div>`,
+draw:()=>{const D=LC().decay;const go=()=>{const k=+document.getElementById("idt").value,q=D[k];document.getElementById("idtv").textContent=`${fmt(q.tmax,1)} min`;
+  document.getElementById("ch-id").innerHTML=xyChart({w:560,h:400,xmin:0,xmax:12,xstep:2,ymin:0,ymax:6,ystep:1,xlab:"last sampling time, min (8 samples, equally spaced)",ylab:"relative standard error of k, per unit noise",
+   series:[{pts:D.map(z=>[z.tmax,z.se_rel_k]),c:C.teal,w:2.8}],marks:[{x:q.tmax,y:q.se_rel_k,c:C.amber}]});
+  const best=D.reduce((a,b)=>b.se_rel_k<a.se_rel_k?b:a);
+  document.getElementById("idT").innerHTML=`<tr><th>At this design</th><th class="n">Value</th></tr><tr><td>σ<sub>1</sub>, σ<sub>2</sub> of S</td><td class="n">${fmt(q.sv[0],3)}, ${fmt(q.sv[1],3)}</td></tr><tr><td>κ(S)</td><td class="n">${fmt(q.cond,2)}</td></tr><tr><td>Correlation of ĉ<sub>0</sub> and k̂</td><td class="n">${fmt(q.corr,3)}</td></tr><tr><td>Relative s.e. of k̂ per unit noise</td><td class="n">${fmt(q.se_rel_k,2)}</td></tr>`;
+  document.getElementById("idM").textContent=`Best window in this sweep: ${fmt(best.tmax,1)} min, about ${fmt(best.tmax*0.5,1)} time constants.`};
+ document.getElementById("idt").oninput=go;go()},
+py:{title:"Identifiability of k for three sampling windows", sub:"eigen_lab.decay_design()", code:
+`from eigen_lab import decay_design, r6, sig
+for tmax in (0.5, 4.0, 12.0):
+    d = decay_design(tmax)
+    print(tmax, "cond", sig(d["cond"]), "corr", r6(d["corr"]), "se_rel_k", r6(d["se_rel_k"]))`,
+out:()=>[0.5,4.0,12.0].map(t=>{const d=LC().decay.find(z=>Math.abs(z.tmax-t)<1e-9);return `${py6(t)} cond ${pyG(d.cond)} corr ${py6(d.corr)} se_rel_k ${py6(d.se_rel_k)}`}).join("\n")},
+notes:"Ask students to predict before moving the slider: is a longer experiment always better? It is not; after a few time constants the late points carry almost no information about k."});
+
+S.push({kicker:"Part 2 · Low-rank approximation", title:"Eckart–Young: the best rank-k approximation keeps the first k terms", html:()=>{const P=LC().profiles;return `<div class="body"><div class="col w55"><div class="panel grow"><div class="chart" id="ch-ey"></div></div></div>
+<div class="col"><div class="panel" style="padding:12px 14px"><div class="math" style="font-size:17px;line-height:1.6">M<sub>k</sub> = Σ<sub>i≤k</sub> σ<sub>i</sub>u<sub>i</sub>v<sub>i</sub>ᵀ<br>min over rank-k X of ‖M − X‖<sub>2</sub> = σ<sub>k+1</sub></div></div>
+<ul class="b xs" style="margin-top:10px"><li>Synthetic data: 20 runs × 25 axial positions of a fixed-bed temperature profile, built from a hot-spot mode and a linear mode, mean removed, plus noise with s.d. 0.5 K</li>
+<li>Two singular values (${fmt(P.sv[0],1)} and ${fmt(P.sv[1],1)}) stand far above the rest, which sit near the noise level ${fmt(P.noise_level,2)} = s.d. × (√20 + √25)</li>
+<li>Numerical rank 2: the data hold two independent ways the profile can change. Keeping more terms only fits noise</li>
+<li>The threshold is the largest singular value expected from noise alone, not machine precision</li></ul></div></div>`},
+draw:()=>{const P=LC().profiles,s=P.sv.slice(0,12);const W=560,H=400,l=70,t=16,X=W-l-16,Y=H-t-56,n=s.length,bw=X/n*.6,py=v=>t+Y*(3-Math.log10(v))/(3+1);let g=svgEl(W,H);
+ [0.1,1,10,100,1000].forEach(v=>{g+=`<line x1="${l}" x2="${l+X}" y1="${py(v)}" y2="${py(v)}" stroke="${C.mist}" stroke-width=".8"/><text x="${l-8}" y="${py(v)+5}" font-size="14" text-anchor="end" fill="${C.ink}">${v}</text>`});
+ s.forEach((v,i)=>{const x=l+X*(i+.5)/n;g+=`<rect x="${x-bw/2}" y="${py(v)}" width="${bw}" height="${t+Y-py(v)}" fill="${i<2?C.amber:C.teal}"/><text x="${x}" y="${t+Y+20}" font-size="14" text-anchor="middle" fill="${C.ink}">${i+1}</text>`});
+ g+=`<line x1="${l}" x2="${l+X}" y1="${py(P.noise_level)}" y2="${py(P.noise_level)}" stroke="${C.rust}" stroke-width="2.4" stroke-dasharray="8 5"/><text x="${l+X-4}" y="${py(P.noise_level)-8}" font-size="14" text-anchor="end" fill="${C.rust}">noise level ${fmt(P.noise_level,2)}</text>`;
+ g+=`<line x1="${l}" x2="${l}" y1="${t}" y2="${t+Y}" stroke="${C.graphite}" stroke-width="1.4"/><line x1="${l}" x2="${l+X}" y1="${t+Y}" y2="${t+Y}" stroke="${C.graphite}" stroke-width="1.4"/><text x="${l+X/2}" y="${H-10}" font-size="15" text-anchor="middle" fill="${C.ink}">index i</text><text transform="translate(16,${t+Y/2}) rotate(-90)" font-size="15" text-anchor="middle" fill="${C.ink}">σᵢ, K (log scale)</text>`;
+ document.getElementById("ch-ey").innerHTML=g+"</svg>"},
+py:{title:"Singular values of the profile matrix and the noise level", sub:"eigen_lab.profiles()", code:
+`from eigen_lab import profiles, sig
+P = profiles()
+print("first six sv", [sig(v) for v in P["sv"][:6]])
+print("noise level", sig(P["noise_level"]), "rank", sum(v > P["noise_level"] for v in P["sv"]))`,
+out:()=>{const P=LC().profiles;return `first six sv [${P.sv.slice(0,6).map(v=>"'"+pyG(v)+"'").join(", ")}]\nnoise level ${pyG(P.noise_level)} rank ${P.sv.filter(v=>v>P.noise_level).length}`}}});
+
+S.push({kicker:"Check 2 · 5 minutes", title:"Check 2: the SVD and conditioning", html:()=>CHECK(2,`${OL}
+<li>M is 5 × 3 with singular values 4, 1 and 0. Give rank M and a basis for its null space in terms of the SVD.</li>
+<li>κ(M) = 10⁶ and your data have four correct digits. How many digits of the solution can you trust?</li>
+<li>Two fitted parameters have a correlation of −0.998. What does that say about the sensitivity matrix?</li>
+<li>A data matrix has singular values 12, 3.1, 0.40, 0.21, 0.20, and the noise level is 0.25. What rank do you report?</li></ol>`,
+`<li>1. Rank 2. N(M) is spanned by v<sub>3</sub>, the right singular vector for σ = 0</li>
+<li>2. About none: 4 − log<sub>10</sub>(10⁶) &lt; 0. The bound allows the relative error to exceed 1; change the problem, not the solver</li>
+<li>3. Its two columns are nearly parallel: σ<sub>2</sub> is small and one combination of the parameters is poorly determined</li>
+<li>4. Rank 3: 0.40 is above the noise level and 0.21 is below it. Say which threshold you used</li>`),
+draw:()=>reveal("k2btn","k2ans")});
+/* ---------- Session 2, Part 3 and closing slides ---------- */
+S.push({kicker:"Activity 2 · 10 minutes · alone", title:"Your card: the parameters you fit, and whether your data can identify them", html:()=>`<div class="body"><div class="col w55"><div class="act"><span class="tag">ADD TO YOUR CARD</span>
+${OL}
+<li>List the parameters you estimate from data, with units and the range you expect.</li>
+<li>For each one, name the measurement that is most sensitive to it.</li>
+<li>Which two parameters do you suspect are correlated? Why might their columns of the sensitivity matrix be nearly parallel?</li>
+<li>Propose one change to the experiment or to the parameterization that would separate them.</li></ol></div>
+<p class="note">No card? Use the Lab 1 steam reformer: a kinetic model with rate constants and activation energies for R1 and R2, measured by the outlet flows.</p></div>
+<div class="col"><ul class="b sm"><li>Typical pairs: a pre-exponential factor and an activation energy; an adsorption constant and a rate constant in a Langmuir–Hinshelwood rate; a diffusion coefficient and a film thickness</li>
+<li>Session 3 adds the linear dynamics of your model and its time constants</li></ul></div></div>`});
+
+S.push({kicker:"Part 3 · Reparameterization", title:"Centering and scaling: same model, better parameters", html:()=>`<div class="body"><div class="col w55"><div class="panel"><div class="math" style="font-size:18px;line-height:1.75">
+ln k = ln A − (E<sub>a</sub>/R)(1/T)<br>
+= ln k<sub>ref</sub> − (E<sub>a</sub>/R)(1/T − 1/T<sub>ref</sub>), &nbsp;ln k<sub>ref</sub> = ln A − E<sub>a</sub>/(RT<sub>ref</sub>)<br>
+With 1/T<sub>ref</sub> = mean of 1/T<sub>i</sub>: the two columns become orthogonal<br>
+Scaling each column to unit norm then makes κ ≈ 1</div></div>
+<p class="note">T<sub>ref</sub>: a reference temperature inside the data range. The fitted curve does not change; only the coordinates of the parameter vector do.</p></div>
+<div class="col"><ul class="b xs"><li>The raw parameters (ln A, E<sub>a</sub>) describe an extrapolation to 1/T = 0, far outside any data. Their estimates are almost perfectly correlated</li>
+<li>The centered parameters (ln k<sub>ref</sub>, E<sub>a</sub>) describe the rate in the middle of the data and its slope. Their estimates are uncorrelated</li>
+<li>Centering removes the correlation; scaling removes the difference in size between the columns. You need both to bring κ near 1</li>
+<li>The same idea applies to any model: write parameters as values and slopes at a reference point inside your data. Lab 2 measures the gain</li></ul></div></div>`});
+
+S.push({kicker:"Part 3 · Principal components", title:"PCA is the SVD of centered process data", html:()=>`<div class="body"><div class="col w55"><div class="panel"><div class="math" style="font-size:18px;line-height:1.75">
+X ∈ ℝ<sup>N×p</sup>: N samples of p variables, each column centered (and usually scaled)<br>
+X = UΣVᵀ: &nbsp;loadings V, scores UΣ<br>
+Variance explained by component i: σ<sub>i</sub>² / Σ<sub>j</sub>σ<sub>j</sub>²<br>
+Sample covariance XᵀX/(N − 1) = V Σ²/(N − 1) Vᵀ</div></div>
+<p class="note">Principal component analysis is an eigendecomposition of the covariance matrix, computed more accurately as an SVD of the data.</p></div>
+<div class="col"><ul class="b xs"><li>Process monitoring: a plant with 200 sensors may move in only five independent ways. Hotelling’s T² on the first scores and the residual Q statistic flag abnormal operation</li>
+<li>Spectroscopy: the number of significant components of a set of mixture spectra estimates the number of absorbing species (Lab 2)</li>
+<li>Scale before you compute: a temperature in K and a pressure in bar must be put on comparable scales, or the largest unit dominates the first component</li>
+<li>PCA finds directions of variance, not causes; interpreting a loading still needs chemistry</li></ul></div></div>`});
+
+S.push({kicker:"Part 3 · Reporting", title:"What to report when you fit, invert or reduce a matrix", html:()=>`<div class="body"><div class="col"><table class="t" style="font-size:18px">
+<tr><th>When you</th><th>Report</th><th>Compute it with</th></tr>
+<tr><td>Solve or invert</td><td>κ, and how many digits that leaves</td><td><code>numpy.linalg.cond</code> or the singular values</td></tr>
+<tr><td>Fit parameters</td><td>Standard errors and the correlation matrix of the estimates; the parameterization you used</td><td>QR or SVD of the sensitivity matrix, not the normal equations</td></tr>
+<tr><td>Claim a parameter is determined</td><td>The singular values of the scaled sensitivity matrix</td><td><code>scipy.linalg.svd</code></td></tr>
+<tr><td>Reduce data (PCA, number of species)</td><td>All singular values, the threshold and its basis in the noise</td><td>A plot like slide 17, with the noise line drawn</td></tr>
+<tr><td>Diagonalize a non-symmetric matrix</td><td>κ(V) of the eigenvector matrix</td><td><code>numpy.linalg.cond(V)</code></td></tr></table>
+<p class="note">A reviewer can check each of these. A fit reported with a correlation of 0.999 between two parameters has told the reader that only one combination of them is known.</p></div></div>`});
+
+S.push({kicker:"Check 3 · 5 minutes", title:"Check 3: reparameterization and PCA", html:()=>CHECK(3,`${OL}
+<li>Why are ln A and E<sub>a</sub> strongly correlated when fitted from data between 300 and 360 K?</li>
+<li>After centering 1/T, the correlation is zero but κ of the design matrix is still large. Why, and what fixes it?</li>
+<li>Ten sensors, 500 samples; the singular values of the scaled data are 30, 12, 0.9, 0.8, … Interpret.</li>
+<li>Why should you scale process variables before PCA?</li></ol>`,
+`<li>1. ln A is the intercept at 1/T = 0, far from the data. Any error in the slope swings the intercept: the two columns [1] and [1/T] are nearly parallel</li>
+<li>2. The columns are orthogonal but of very different size (1 against about 10⁻⁴). Scale the centered column to unit norm</li>
+<li>3. Two independent modes of variation; the rest sits near the noise. Monitor two scores and the residual</li>
+<li>4. Otherwise the variable with the largest numbers in its units dominates the first component, regardless of its information</li>`),
+draw:()=>reveal("k3btn","k3ans")});
+
+S.push({kicker:"Check 4 · 5 minutes", title:"Check 4: identifiability", html:()=>CHECK(4,`${OL}
+<li>In the decay demo, why does sampling only up to 0.5 min give a poor estimate of k?</li>
+<li>Why does sampling up to 12 min also make k worse than sampling up to about 4 min?</li>
+<li>A sensitivity matrix has σ = (8.1, 0.003) after scaling. What do you tell the person who wants both parameters?</li>
+<li>Which matrix should you factor to compute a least-squares fit accurately, S or SᵀS? Why?</li></ol>`,
+`<li>1. Over a short window e<sup>−kt</sup> is nearly linear; c<sub>0</sub> and k change the curve in almost the same way, so their columns are nearly parallel</li>
+<li>2. With equally spaced samples, late points carry little information about k (the curve has decayed), so fewer points sit where ∂c/∂k is large</li>
+<li>3. Only one combination, along v<sub>1</sub>, is determined. Fix one parameter from another source, or design an experiment that excites v<sub>2</sub></li>
+<li>4. S, by QR or SVD. SᵀS has κ(S)², so it loses twice as many digits</li>`),
+draw:()=>reveal("k4btn","k4ans")});
+
+S.push({kicker:"Where this goes next", title:"Eigenvalues and singular values in the next sessions", html:()=>`<div class="body"><div class="col"><table class="t" style="font-size:18px">
+<tr><th class="n">S</th><th>Topic</th><th>What today gives it</th></tr>
+<tr><td class="n">3</td><td>Linear ODE systems</td><td>x(t) = Σ c<sub>i</sub>e<sup>λ<sub>i</sub>t</sup>v<sub>i</sub>: the eigenvectors are the straight-line reaction paths, the eigenvalues the time constants</td></tr>
+<tr><td class="n">4</td><td>Stability</td><td>Signs of the real parts of the Jacobian eigenvalues; non-normality and transient growth</td></tr>
+<tr><td class="n">5</td><td>Bifurcation</td><td>An eigenvalue crossing zero (turning point) or a complex pair crossing the imaginary axis (Hopf)</td></tr>
+<tr><td class="n">6</td><td>Scaling and perturbation</td><td>Widely separated eigenvalues are separated time scales: the small parameter</td></tr>
+<tr><td class="n">7</td><td>Sturm–Liouville problems</td><td>The spectral theorem for differential operators: real eigenvalues, orthogonal eigenfunctions</td></tr>
+<tr><td></td><td>Your research</td><td>Report κ, the singular values of the scaled sensitivity matrix, and parameter correlations</td></tr></table></div></div>`});
+
+S.push({kicker:"Lab 2 · 40 minutes", title:"What can the data identify? Arrhenius fits and mixture spectra", html:()=>`<div class="body"><div class="col w55"><ul class="b sm">
+<li>Seven synthetic rate constants between 300 and 360 K: predict κ of the design matrix, then compare raw, centered and scaled fits</li>
+<li>Read the correlation of ln A and E<sub>a</sub> in each form, and the rate at the reference temperature</li>
+<li>Fifteen synthetic mixture spectra: count the absorbing species from the singular values and a noise threshold</li>
+<li>Raise the noise and find where the third species can no longer be seen</li></ul></div>
+<div class="col"><div class="panel grow" style="align-items:center;justify-content:center;text-align:center"><div style="width:270px"><svg style="width:100%;height:auto;background:#fff;border-radius:8px" width="45mm" height="45mm" version="1.1" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg"><path d="M2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM5,2H6V3H5zM6,2H7V3H6zM7,2H8V3H7zM8,2H9V3H8zM13,2H14V3H13zM14,2H15V3H14zM15,2H16V3H15zM17,2H18V3H17zM18,2H19V3H18zM20,2H21V3H20zM21,2H22V3H21zM25,2H26V3H25zM31,2H32V3H31zM33,2H34V3H33zM36,2H37V3H36zM37,2H38V3H37zM38,2H39V3H38zM39,2H40V3H39zM40,2H41V3H40zM41,2H42V3H41zM42,2H43V3H42zM2,3H3V4H2zM8,3H9V4H8zM13,3H14V4H13zM15,3H16V4H15zM16,3H17V4H16zM17,3H18V4H17zM20,3H21V4H20zM24,3H25V4H24zM29,3H30V4H29zM31,3H32V4H31zM36,3H37V4H36zM42,3H43V4H42zM2,4H3V5H2zM4,4H5V5H4zM5,4H6V5H5zM6,4H7V5H6zM8,4H9V5H8zM10,4H11V5H10zM11,4H12V5H11zM12,4H13V5H12zM14,4H15V5H14zM16,4H17V5H16zM18,4H19V5H18zM22,4H23V5H22zM28,4H29V5H28zM31,4H32V5H31zM32,4H33V5H32zM36,4H37V5H36zM38,4H39V5H38zM39,4H40V5H39zM40,4H41V5H40zM42,4H43V5H42zM2,5H3V6H2zM4,5H5V6H4zM5,5H6V6H5zM6,5H7V6H6zM8,5H9V6H8zM10,5H11V6H10zM12,5H13V6H12zM15,5H16V6H15zM16,5H17V6H16zM17,5H18V6H17zM20,5H21V6H20zM23,5H24V6H23zM24,5H25V6H24zM26,5H27V6H26zM29,5H30V6H29zM30,5H31V6H30zM34,5H35V6H34zM36,5H37V6H36zM38,5H39V6H38zM39,5H40V6H39zM40,5H41V6H40zM42,5H43V6H42zM2,6H3V7H2zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM11,6H12V7H11zM14,6H15V7H14zM16,6H17V7H16zM18,6H19V7H18zM21,6H22V7H21zM22,6H23V7H22zM23,6H24V7H23zM25,6H26V7H25zM28,6H29V7H28zM32,6H33V7H32zM33,6H34V7H33zM36,6H37V7H36zM38,6H39V7H38zM39,6H40V7H39zM40,6H41V7H40zM42,6H43V7H42zM2,7H3V8H2zM8,7H9V8H8zM10,7H11V8H10zM12,7H13V8H12zM14,7H15V8H14zM16,7H17V8H16zM17,7H18V8H17zM19,7H20V8H19zM20,7H21V8H20zM24,7H25V8H24zM28,7H29V8H28zM29,7H30V8H29zM31,7H32V8H31zM32,7H33V8H32zM34,7H35V8H34zM36,7H37V8H36zM42,7H43V8H42zM2,8H3V9H2zM3,8H4V9H3zM4,8H5V9H4zM5,8H6V9H5zM6,8H7V9H6zM7,8H8V9H7zM8,8H9V9H8zM10,8H11V9H10zM12,8H13V9H12zM14,8H15V9H14zM16,8H17V9H16zM18,8H19V9H18zM20,8H21V9H20zM22,8H23V9H22zM24,8H25V9H24zM26,8H27V9H26zM28,8H29V9H28zM30,8H31V9H30zM32,8H33V9H32zM34,8H35V9H34zM36,8H37V9H36zM37,8H38V9H37zM38,8H39V9H38zM39,8H40V9H39zM40,8H41V9H40zM41,8H42V9H41zM42,8H43V9H42zM10,9H11V10H10zM13,9H14V10H13zM14,9H15V10H14zM16,9H17V10H16zM17,9H18V10H17zM20,9H21V10H20zM21,9H22V10H21zM22,9H23V10H22zM23,9H24V10H23zM24,9H25V10H24zM30,9H31V10H30zM34,9H35V10H34zM2,10H3V11H2zM4,10H5V11H4zM5,10H6V11H5zM6,10H7V11H6zM7,10H8V11H7zM8,10H9V11H8zM11,10H12V11H11zM12,10H13V11H12zM14,10H15V11H14zM16,10H17V11H16zM18,10H19V11H18zM19,10H20V11H19zM20,10H21V11H20zM21,10H22V11H21zM24,10H25V11H24zM26,10H27V11H26zM27,10H28V11H27zM28,10H29V11H28zM29,10H30V11H29zM30,10H31V11H30zM31,10H32V11H31zM33,10H34V11H33zM34,10H35V11H34zM36,10H37V11H36zM37,10H38V11H37zM38,10H39V11H38zM39,10H40V11H39zM40,10H41V11H40zM2,11H3V12H2zM4,11H5V12H4zM10,11H11V12H10zM11,11H12V12H11zM13,11H14V12H13zM14,11H15V12H14zM17,11H18V12H17zM20,11H21V12H20zM21,11H22V12H21zM22,11H23V12H22zM23,11H24V12H23zM25,11H26V12H25zM30,11H31V12H30zM32,11H33V12H32zM33,11H34V12H33zM34,11H35V12H34zM36,11H37V12H36zM38,11H39V12H38zM40,11H41V12H40zM41,11H42V12H41zM42,11H43V12H42zM2,12H3V13H2zM3,12H4V13H3zM5,12H6V13H5zM8,12H9V13H8zM10,12H11V13H10zM12,12H13V13H12zM13,12H14V13H13zM14,12H15V13H14zM15,12H16V13H15zM17,12H18V13H17zM19,12H20V13H19zM22,12H23V13H22zM23,12H24V13H23zM26,12H27V13H26zM29,12H30V13H29zM30,12H31V13H30zM31,12H32V13H31zM32,12H33V13H32zM34,12H35V13H34zM36,12H37V13H36zM38,12H39V13H38zM41,12H42V13H41zM3,13H4V14H3zM4,13H5V14H4zM5,13H6V14H5zM7,13H8V14H7zM9,13H10V14H9zM10,13H11V14H10zM11,13H12V14H11zM12,13H13V14H12zM13,13H14V14H13zM15,13H16V14H15zM16,13H17V14H16zM18,13H19V14H18zM22,13H23V14H22zM23,13H24V14H23zM24,13H25V14H24zM25,13H26V14H25zM29,13H30V14H29zM32,13H33V14H32zM33,13H34V14H33zM34,13H35V14H34zM38,13H39V14H38zM39,13H40V14H39zM41,13H42V14H41zM42,13H43V14H42zM2,14H3V15H2zM4,14H5V15H4zM8,14H9V15H8zM11,14H12V15H11zM17,14H18V15H17zM19,14H20V15H19zM20,14H21V15H20zM24,14H25V15H24zM25,14H26V15H25zM27,14H28V15H27zM29,14H30V15H29zM31,14H32V15H31zM32,14H33V15H32zM33,14H34V15H33zM34,14H35V15H34zM37,14H38V15H37zM39,14H40V15H39zM40,14H41V15H40zM41,14H42V15H41zM10,15H11V16H10zM12,15H13V16H12zM13,15H14V16H13zM15,15H16V16H15zM19,15H20V16H19zM20,15H21V16H20zM22,15H23V16H22zM26,15H27V16H26zM27,15H28V16H27zM28,15H29V16H28zM29,15H30V16H29zM30,15H31V16H30zM35,15H36V16H35zM36,15H37V16H36zM37,15H38V16H37zM38,15H39V16H38zM39,15H40V16H39zM40,15H41V16H40zM42,15H43V16H42zM2,16H3V17H2zM3,16H4V17H3zM8,16H9V17H8zM9,16H10V17H9zM10,16H11V17H10zM13,16H14V17H13zM17,16H18V17H17zM18,16H19V17H18zM19,16H20V17H19zM21,16H22V17H21zM24,16H25V17H24zM28,16H29V17H28zM31,16H32V17H31zM32,16H33V17H32zM34,16H35V17H34zM35,16H36V17H35zM37,16H38V17H37zM38,16H39V17H38zM39,16H40V17H39zM40,16H41V17H40zM41,16H42V17H41zM2,17H3V18H2zM3,17H4V18H3zM4,17H5V18H4zM6,17H7V18H6zM11,17H12V18H11zM12,17H13V18H12zM13,17H14V18H13zM14,17H15V18H14zM16,17H17V18H16zM17,17H18V18H17zM21,17H22V18H21zM22,17H23V18H22zM23,17H24V18H23zM26,17H27V18H26zM28,17H29V18H28zM30,17H31V18H30zM32,17H33V18H32zM36,17H37V18H36zM37,17H38V18H37zM38,17H39V18H38zM39,17H40V18H39zM2,18H3V19H2zM3,18H4V19H3zM4,18H5V19H4zM5,18H6V19H5zM6,18H7V19H6zM8,18H9V19H8zM15,18H16V19H15zM18,18H19V19H18zM19,18H20V19H19zM21,18H22V19H21zM26,18H27V19H26zM27,18H28V19H27zM28,18H29V19H28zM30,18H31V19H30zM31,18H32V19H31zM32,18H33V19H32zM34,18H35V19H34zM35,18H36V19H35zM37,18H38V19H37zM40,18H41V19H40zM41,18H42V19H41zM2,19H3V20H2zM6,19H7V20H6zM13,19H14V20H13zM14,19H15V20H14zM16,19H17V20H16zM18,19H19V20H18zM19,19H20V20H19zM20,19H21V20H20zM21,19H22V20H21zM22,19H23V20H22zM23,19H24V20H23zM25,19H26V20H25zM27,19H28V20H27zM33,19H34V20H33zM36,19H37V20H36zM37,19H38V20H37zM38,19H39V20H38zM41,19H42V20H41zM42,19H43V20H42zM2,20H3V21H2zM3,20H4V21H3zM4,20H5V21H4zM8,20H9V21H8zM10,20H11V21H10zM11,20H12V21H11zM15,20H16V21H15zM19,20H20V21H19zM23,20H24V21H23zM27,20H28V21H27zM28,20H29V21H28zM29,20H30V21H29zM32,20H33V21H32zM35,20H36V21H35zM38,20H39V21H38zM41,20H42V21H41zM2,21H3V22H2zM4,21H5V22H4zM5,21H6V22H5zM6,21H7V22H6zM9,21H10V22H9zM10,21H11V22H10zM13,21H14V22H13zM17,21H18V22H17zM18,21H19V22H18zM19,21H20V22H19zM20,21H21V22H20zM21,21H22V22H21zM22,21H23V22H22zM23,21H24V22H23zM24,21H25V22H24zM25,21H26V22H25zM27,21H28V22H27zM29,21H30V22H29zM33,21H34V22H33zM35,21H36V22H35zM36,21H37V22H36zM38,21H39V22H38zM42,21H43V22H42zM7,22H8V23H7zM8,22H9V23H8zM13,22H14V23H13zM14,22H15V23H14zM16,22H17V23H16zM17,22H18V23H17zM23,22H24V23H23zM26,22H27V23H26zM28,22H29V23H28zM29,22H30V23H29zM30,22H31V23H30zM32,22H33V23H32zM39,22H40V23H39zM40,22H41V23H40zM42,22H43V23H42zM2,23H3V24H2zM3,23H4V24H3zM4,23H5V24H4zM6,23H7V24H6zM9,23H10V24H9zM10,23H11V24H10zM11,23H12V24H11zM12,23H13V24H12zM13,23H14V24H13zM14,23H15V24H14zM18,23H19V24H18zM19,23H20V24H19zM20,23H21V24H20zM21,23H22V24H21zM22,23H23V24H22zM24,23H25V24H24zM25,23H26V24H25zM27,23H28V24H27zM31,23H32V24H31zM33,23H34V24H33zM36,23H37V24H36zM37,23H38V24H37zM38,23H39V24H38zM39,23H40V24H39zM40,23H41V24H40zM41,23H42V24H41zM42,23H43V24H42zM7,24H8V25H7zM8,24H9V25H8zM12,24H13V25H12zM13,24H14V25H13zM15,24H16V25H15zM16,24H17V25H16zM19,24H20V25H19zM22,24H23V25H22zM23,24H24V25H23zM26,24H27V25H26zM29,24H30V25H29zM30,24H31V25H30zM31,24H32V25H31zM34,24H35V25H34zM35,24H36V25H35zM38,24H39V25H38zM40,24H41V25H40zM2,25H3V26H2zM9,25H10V26H9zM10,25H11V26H10zM11,25H12V26H11zM12,25H13V26H12zM14,25H15V26H14zM17,25H18V26H17zM20,25H21V26H20zM23,25H24V26H23zM24,25H25V26H24zM29,25H30V26H29zM30,25H31V26H30zM34,25H35V26H34zM37,25H38V26H37zM38,25H39V26H38zM39,25H40V26H39zM41,25H42V26H41zM42,25H43V26H42zM2,26H3V27H2zM3,26H4V27H3zM4,26H5V27H4zM6,26H7V27H6zM7,26H8V27H7zM8,26H9V27H8zM9,26H10V27H9zM17,26H18V27H17zM18,26H19V27H18zM19,26H20V27H19zM21,26H22V27H21zM22,26H23V27H22zM24,26H25V27H24zM26,26H27V27H26zM27,26H28V27H27zM28,26H29V27H28zM29,26H30V27H29zM31,26H32V27H31zM35,26H36V27H35zM37,26H38V27H37zM40,26H41V27H40zM3,27H4V28H3zM5,27H6V28H5zM10,27H11V28H10zM11,27H12V28H11zM16,27H17V28H16zM19,27H20V28H19zM20,27H21V28H20zM21,27H22V28H21zM22,27H23V28H22zM23,27H24V28H23zM24,27H25V28H24zM25,27H26V28H25zM26,27H27V28H26zM30,27H31V28H30zM32,27H33V28H32zM33,27H34V28H33zM35,27H36V28H35zM36,27H37V28H36zM38,27H39V28H38zM39,27H40V28H39zM41,27H42V28H41zM42,27H43V28H42zM2,28H3V29H2zM3,28H4V29H3zM5,28H6V29H5zM6,28H7V29H6zM8,28H9V29H8zM9,28H10V29H9zM10,28H11V29H10zM11,28H12V29H11zM17,28H18V29H17zM18,28H19V29H18zM19,28H20V29H19zM26,28H27V29H26zM29,28H30V29H29zM32,28H33V29H32zM34,28H35V29H34zM36,28H37V29H36zM2,29H3V30H2zM4,29H5V30H4zM5,29H6V30H5zM7,29H8V30H7zM9,29H10V30H9zM10,29H11V30H10zM12,29H13V30H12zM13,29H14V30H13zM17,29H18V30H17zM18,29H19V30H18zM23,29H24V30H23zM24,29H25V30H24zM26,29H27V30H26zM28,29H29V30H28zM33,29H34V30H33zM34,29H35V30H34zM35,29H36V30H35zM37,29H38V30H37zM38,29H39V30H38zM39,29H40V30H39zM2,30H3V31H2zM3,30H4V31H3zM4,30H5V31H4zM5,30H6V31H5zM7,30H8V31H7zM8,30H9V31H8zM10,30H11V31H10zM13,30H14V31H13zM17,30H18V31H17zM18,30H19V31H18zM19,30H20V31H19zM20,30H21V31H20zM21,30H22V31H21zM22,30H23V31H22zM24,30H25V31H24zM26,30H27V31H26zM27,30H28V31H27zM29,30H30V31H29zM30,30H31V31H30zM31,30H32V31H31zM32,30H33V31H32zM33,30H34V31H33zM35,30H36V31H35zM37,30H38V31H37zM39,30H40V31H39zM40,30H41V31H40zM41,30H42V31H41zM2,31H3V32H2zM3,31H4V32H3zM4,31H5V32H4zM5,31H6V32H5zM7,31H8V32H7zM11,31H12V32H11zM14,31H15V32H14zM17,31H18V32H17zM19,31H20V32H19zM29,31H30V32H29zM34,31H35V32H34zM35,31H36V32H35zM37,31H38V32H37zM38,31H39V32H38zM42,31H43V32H42zM2,32H3V33H2zM4,32H5V33H4zM5,32H6V33H5zM6,32H7V33H6zM7,32H8V33H7zM8,32H9V33H8zM10,32H11V33H10zM11,32H12V33H11zM12,32H13V33H12zM15,32H16V33H15zM16,32H17V33H16zM18,32H19V33H18zM22,32H23V33H22zM23,32H24V33H23zM24,32H25V33H24zM25,32H26V33H25zM26,32H27V33H26zM28,32H29V33H28zM29,32H30V33H29zM30,32H31V33H30zM31,32H32V33H31zM33,32H34V33H33zM35,32H36V33H35zM36,32H37V33H36zM37,32H38V33H37zM39,32H40V33H39zM40,32H41V33H40zM41,32H42V33H41zM2,33H3V34H2zM4,33H5V34H4zM5,33H6V34H5zM6,33H7V34H6zM11,33H12V34H11zM12,33H13V34H12zM14,33H15V34H14zM16,33H17V34H16zM17,33H18V34H17zM18,33H19V34H18zM20,33H21V34H20zM23,33H24V34H23zM24,33H25V34H24zM25,33H26V34H25zM28,33H29V34H28zM29,33H30V34H29zM32,33H33V34H32zM33,33H34V34H33zM34,33H35V34H34zM35,33H36V34H35zM36,33H37V34H36zM37,33H38V34H37zM39,33H40V34H39zM41,33H42V34H41zM42,33H43V34H42zM2,34H3V35H2zM4,34H5V35H4zM7,34H8V35H7zM8,34H9V35H8zM10,34H11V35H10zM12,34H13V35H12zM13,34H14V35H13zM17,34H18V35H17zM19,34H20V35H19zM22,34H23V35H22zM24,34H25V35H24zM25,34H26V35H25zM26,34H27V35H26zM27,34H28V35H27zM28,34H29V35H28zM29,34H30V35H29zM30,34H31V35H30zM31,34H32V35H31zM32,34H33V35H32zM33,34H34V35H33zM34,34H35V35H34zM35,34H36V35H35zM36,34H37V35H36zM37,34H38V35H37zM38,34H39V35H38zM40,34H41V35H40zM41,34H42V35H41zM10,35H11V36H10zM11,35H12V36H11zM12,35H13V36H12zM16,35H17V36H16zM18,35H19V36H18zM20,35H21V36H20zM21,35H22V36H21zM22,35H23V36H22zM24,35H25V36H24zM25,35H26V36H25zM31,35H32V36H31zM32,35H33V36H32zM33,35H34V36H33zM34,35H35V36H34zM38,35H39V36H38zM39,35H40V36H39zM41,35H42V36H41zM42,35H43V36H42zM2,36H3V37H2zM3,36H4V37H3zM4,36H5V37H4zM5,36H6V37H5zM6,36H7V37H6zM7,36H8V37H7zM8,36H9V37H8zM12,36H13V37H12zM15,36H16V37H15zM16,36H17V37H16zM20,36H21V37H20zM22,36H23V37H22zM24,36H25V37H24zM29,36H30V37H29zM30,36H31V37H30zM31,36H32V37H31zM33,36H34V37H33zM34,36H35V37H34zM36,36H37V37H36zM38,36H39V37H38zM39,36H40V37H39zM2,37H3V38H2zM8,37H9V38H8zM10,37H11V38H10zM14,37H15V38H14zM15,37H16V38H15zM17,37H18V38H17zM18,37H19V38H18zM21,37H22V38H21zM26,37H27V38H26zM28,37H29V38H28zM30,37H31V38H30zM31,37H32V38H31zM32,37H33V38H32zM34,37H35V38H34zM38,37H39V38H38zM2,38H3V39H2zM4,38H5V39H4zM5,38H6V39H5zM6,38H7V39H6zM8,38H9V39H8zM10,38H11V39H10zM11,38H12V39H11zM12,38H13V39H12zM15,38H16V39H15zM17,38H18V39H17zM20,38H21V39H20zM23,38H24V39H23zM24,38H25V39H24zM25,38H26V39H25zM30,38H31V39H30zM34,38H35V39H34zM35,38H36V39H35zM36,38H37V39H36zM37,38H38V39H37zM38,38H39V39H38zM39,38H40V39H39zM40,38H41V39H40zM41,38H42V39H41zM42,38H43V39H42zM2,39H3V40H2zM4,39H5V40H4zM5,39H6V40H5zM6,39H7V40H6zM8,39H9V40H8zM10,39H11V40H10zM11,39H12V40H11zM15,39H16V40H15zM16,39H17V40H16zM18,39H19V40H18zM21,39H22V40H21zM22,39H23V40H22zM23,39H24V40H23zM25,39H26V40H25zM28,39H29V40H28zM31,39H32V40H31zM32,39H33V40H32zM33,39H34V40H33zM34,39H35V40H34zM35,39H36V40H35zM37,39H38V40H37zM40,39H41V40H40zM2,40H3V41H2zM4,40H5V41H4zM5,40H6V41H5zM6,40H7V41H6zM8,40H9V41H8zM10,40H11V41H10zM11,40H12V41H11zM13,40H14V41H13zM14,40H15V41H14zM15,40H16V41H15zM17,40H18V41H17zM19,40H20V41H19zM20,40H21V41H20zM23,40H24V41H23zM24,40H25V41H24zM28,40H29V41H28zM29,40H30V41H29zM31,40H32V41H31zM33,40H34V41H33zM34,40H35V41H34zM35,40H36V41H35zM36,40H37V41H36zM37,40H38V41H37zM38,40H39V41H38zM2,41H3V42H2zM8,41H9V42H8zM13,41H14V42H13zM14,41H15V42H14zM15,41H16V42H15zM16,41H17V42H16zM18,41H19V42H18zM19,41H20V42H19zM23,41H24V42H23zM25,41H26V42H25zM28,41H29V42H28zM29,41H30V42H29zM34,41H35V42H34zM35,41H36V42H35zM38,41H39V42H38zM39,41H40V42H39zM41,41H42V42H41zM2,42H3V43H2zM3,42H4V43H3zM4,42H5V43H4zM5,42H6V43H5zM6,42H7V43H6zM7,42H8V43H7zM8,42H9V43H8zM10,42H11V43H10zM11,42H12V43H11zM12,42H13V43H12zM14,42H15V43H14zM15,42H16V43H15zM17,42H18V43H17zM19,42H20V43H19zM21,42H22V43H21zM24,42H25V43H24zM25,42H26V43H25zM27,42H28V43H27zM28,42H29V43H28zM29,42H30V43H29zM30,42H31V43H30zM31,42H32V43H31zM33,42H34V43H33zM36,42H37V43H36zM37,42H38V43H37zM38,42H39V43H38zM39,42H40V43H39zM40,42H41V43H40z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none" /></svg></div><a href="lab.html" target="_blank" rel="noopener" style="color:${C.teal};font-size:18px;margin-top:10px">Open the lab page</a></div></div></div>`});
+
+S.push({kicker:"Summary", title:"What to take from today", html:()=>{const T=TW(),A=LB().arr,P=LC().profiles;return `<div class="body"><div class="col w45"><table class="t" style="font-size:17px">
+<tr><th>Quantity</th><th class="n">Value</th></tr><tr><td>[[3, 1], [1, 2]]: λ</td><td class="n">${fmt(T.sym.lam[0],3)}, ${fmt(T.sym.lam[1],3)}</td></tr>
+<tr><td>Shear: λ, σ</td><td class="n">1, 1; ${fmt(T.shear.sv[0],3)}, ${fmt(T.shear.sv[1],3)}</td></tr>
+<tr><td>Arrhenius design κ: raw, scaled</td><td class="n">${fmt(A.raw.cond,0)}, ${fmt(A.scaled.cond,2)}</td></tr>
+<tr><td>Decay: best last sample</td><td class="n">${fmt(LC().decay.reduce((a,b)=>b.se_rel_k<a.se_rel_k?b:a).tmax,1)} min</td></tr>
+<tr><td>Profiles: numerical rank</td><td class="n">${P.sv.filter(v=>v>P.noise_level).length}</td></tr></table></div>
+<div class="col"><ul class="b xs"><li>Eigenvectors are the directions an operator only stretches; the eigenvalues are the stretch factors. Diagonalization decouples a linear system</li>
+<li>Symmetric matrices have real eigenvalues and orthonormal eigenvectors. Non-normal matrices can stretch far more than their eigenvalues suggest</li>
+<li>Every matrix has an SVD; singular values measure stretch, give the numerical rank and the condition number</li>
+<li>κ = σ<sub>max</sub>/σ<sub>min</sub>: about log<sub>10</sub>κ digits lost. Correlated parameters are a small singular value of the sensitivity matrix</li>
+<li>Reparameterize at a reference point, scale columns, and set rank thresholds from the noise</li></ul></div></div>`}});
+
+S.push({kicker:"Before the next session", title:"Before we meet again", html:()=>`<div class="body"><div class="col"><ul class="b sm">
+<li>Finish Lab 2 if you did not finish in class, and upload the answer file to myCourseVille</li>
+<li>Keep your card: Session 3 adds the linear dynamics of your model and its time constants</li>
+<li>Read Strang, <i>Linear Algebra and Its Applications</i>, Chapter 5 (eigenvalues and eigenvectors) and Section 6.3 (the singular value decomposition)</li>
+<li>Read Varma and Morbidelli, <i>Mathematical Methods in Chemical Engineering</i>, Chapter 1, the sections on eigenvalue problems</li>
+<li>Optional: Bard, <i>Nonlinear Parameter Estimation</i>, on the design and interpretation of parameter estimation, or Trefethen and Bau, <i>Numerical Linear Algebra</i>, Lectures 4, 5 and 12 on the SVD and conditioning</li></ul></div></div>`});
+
+S.push({kicker:"Exit Ticket and feedback · 5 minutes", title:"Exit Ticket and feedback", html:()=>`<div class="body"><div class="col w55"><ul class="b sm">
+<li>Scan the code and choose <b>Session 2</b></li><li>Exit Ticket: paste the answers that the lab page copies for you</li>
+<li>Feedback: pace, confidence, how far you got in the lab, and what is still unclear</li><li>Studying on your own? Choose “On my own”</li></ul>
+<p class="note">One form for both. Anonymous; no name or student ID.</p></div>
+<div class="col"><div class="panel grow" style="align-items:center;justify-content:center;text-align:center"><div style="width:270px"><svg style="width:100%;height:auto;background:#fff;border-radius:8px" width="41mm" height="41mm" version="1.1" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg"><path d="M2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM5,2H6V3H5zM6,2H7V3H6zM7,2H8V3H7zM8,2H9V3H8zM12,2H13V3H12zM15,2H16V3H15zM18,2H19V3H18zM19,2H20V3H19zM22,2H23V3H22zM24,2H25V3H24zM27,2H28V3H27zM30,2H31V3H30zM32,2H33V3H32zM33,2H34V3H33zM34,2H35V3H34zM35,2H36V3H35zM36,2H37V3H36zM37,2H38V3H37zM38,2H39V3H38zM2,3H3V4H2zM8,3H9V4H8zM10,3H11V4H10zM12,3H13V4H12zM13,3H14V4H13zM14,3H15V4H14zM15,3H16V4H15zM16,3H17V4H16zM18,3H19V4H18zM22,3H23V4H22zM23,3H24V4H23zM24,3H25V4H24zM26,3H27V4H26zM28,3H29V4H28zM32,3H33V4H32zM38,3H39V4H38zM2,4H3V5H2zM4,4H5V5H4zM5,4H6V5H5zM6,4H7V5H6zM8,4H9V5H8zM10,4H11V5H10zM11,4H12V5H11zM17,4H18V5H17zM18,4H19V5H18zM21,4H22V5H21zM23,4H24V5H23zM26,4H27V5H26zM28,4H29V5H28zM29,4H30V5H29zM32,4H33V5H32zM34,4H35V5H34zM35,4H36V5H35zM36,4H37V5H36zM38,4H39V5H38zM2,5H3V6H2zM4,5H5V6H4zM5,5H6V6H5zM6,5H7V6H6zM8,5H9V6H8zM10,5H11V6H10zM11,5H12V6H11zM13,5H14V6H13zM14,5H15V6H14zM16,5H17V6H16zM17,5H18V6H17zM19,5H20V6H19zM20,5H21V6H20zM22,5H23V6H22zM23,5H24V6H23zM25,5H26V6H25zM26,5H27V6H26zM27,5H28V6H27zM30,5H31V6H30zM32,5H33V6H32zM34,5H35V6H34zM35,5H36V6H35zM36,5H37V6H36zM38,5H39V6H38zM2,6H3V7H2zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM11,6H12V7H11zM14,6H15V7H14zM15,6H16V7H15zM16,6H17V7H16zM17,6H18V7H17zM18,6H19V7H18zM19,6H20V7H19zM20,6H21V7H20zM21,6H22V7H21zM22,6H23V7H22zM25,6H26V7H25zM26,6H27V7H26zM28,6H29V7H28zM30,6H31V7H30zM32,6H33V7H32zM34,6H35V7H34zM35,6H36V7H35zM36,6H37V7H36zM38,6H39V7H38zM2,7H3V8H2zM8,7H9V8H8zM12,7H13V8H12zM14,7H15V8H14zM15,7H16V8H15zM18,7H19V8H18zM22,7H23V8H22zM26,7H27V8H26zM32,7H33V8H32zM38,7H39V8H38zM2,8H3V9H2zM3,8H4V9H3zM4,8H5V9H4zM5,8H6V9H5zM6,8H7V9H6zM7,8H8V9H7zM8,8H9V9H8zM10,8H11V9H10zM12,8H13V9H12zM14,8H15V9H14zM16,8H17V9H16zM18,8H19V9H18zM20,8H21V9H20zM22,8H23V9H22zM24,8H25V9H24zM26,8H27V9H26zM28,8H29V9H28zM30,8H31V9H30zM32,8H33V9H32zM33,8H34V9H33zM34,8H35V9H34zM35,8H36V9H35zM36,8H37V9H36zM37,8H38V9H37zM38,8H39V9H38zM10,9H11V10H10zM11,9H12V10H11zM13,9H14V10H13zM14,9H15V10H14zM16,9H17V10H16zM18,9H19V10H18zM21,9H22V10H21zM24,9H25V10H24zM25,9H26V10H25zM26,9H27V10H26zM28,9H29V10H28zM2,10H3V11H2zM8,10H9V11H8zM10,10H11V11H10zM12,10H13V11H12zM13,10H14V11H13zM14,10H15V11H14zM15,10H16V11H15zM18,10H19V11H18zM19,10H20V11H19zM20,10H21V11H20zM22,10H23V11H22zM24,10H25V11H24zM27,10H28V11H27zM30,10H31V11H30zM31,10H32V11H31zM32,10H33V11H32zM35,10H36V11H35zM36,10H37V11H36zM37,10H38V11H37zM2,11H3V12H2zM5,11H6V12H5zM6,11H7V12H6zM9,11H10V12H9zM12,11H13V12H12zM13,11H14V12H13zM14,11H15V12H14zM15,11H16V12H15zM16,11H17V12H16zM18,11H19V12H18zM19,11H20V12H19zM21,11H22V12H21zM23,11H24V12H23zM25,11H26V12H25zM28,11H29V12H28zM29,11H30V12H29zM30,11H31V12H30zM34,11H35V12H34zM35,11H36V12H35zM36,11H37V12H36zM37,11H38V12H37zM2,12H3V13H2zM6,12H7V13H6zM7,12H8V13H7zM8,12H9V13H8zM9,12H10V13H9zM11,12H12V13H11zM12,12H13V13H12zM15,12H16V13H15zM17,12H18V13H17zM18,12H19V13H18zM22,12H23V13H22zM23,12H24V13H23zM29,12H30V13H29zM32,12H33V13H32zM33,12H34V13H33zM34,12H35V13H34zM37,12H38V13H37zM38,12H39V13H38zM4,13H5V14H4zM6,13H7V14H6zM9,13H10V14H9zM12,13H13V14H12zM13,13H14V14H13zM21,13H22V14H21zM22,13H23V14H22zM24,13H25V14H24zM29,13H30V14H29zM30,13H31V14H30zM31,13H32V14H31zM33,13H34V14H33zM35,13H36V14H35zM38,13H39V14H38zM3,14H4V15H3zM4,14H5V15H4zM6,14H7V15H6zM8,14H9V15H8zM10,14H11V15H10zM16,14H17V15H16zM17,14H18V15H17zM20,14H21V15H20zM25,14H26V15H25zM26,14H27V15H26zM28,14H29V15H28zM29,14H30V15H29zM30,14H31V15H30zM32,14H33V15H32zM35,14H36V15H35zM38,14H39V15H38zM2,15H3V16H2zM5,15H6V16H5zM6,15H7V16H6zM10,15H11V16H10zM11,15H12V16H11zM14,15H15V16H14zM17,15H18V16H17zM21,15H22V16H21zM22,15H23V16H22zM25,15H26V16H25zM27,15H28V16H27zM29,15H30V16H29zM30,15H31V16H30zM33,15H34V16H33zM35,15H36V16H35zM2,16H3V17H2zM4,16H5V17H4zM5,16H6V17H5zM8,16H9V17H8zM13,16H14V17H13zM14,16H15V17H14zM15,16H16V17H15zM16,16H17V17H16zM17,16H18V17H17zM19,16H20V17H19zM20,16H21V17H20zM23,16H24V17H23zM24,16H25V17H24zM27,16H28V17H27zM28,16H29V17H28zM29,16H30V17H29zM31,16H32V17H31zM33,16H34V17H33zM34,16H35V17H34zM35,16H36V17H35zM37,16H38V17H37zM38,16H39V17H38zM2,17H3V18H2zM3,17H4V18H3zM5,17H6V18H5zM7,17H8V18H7zM11,17H12V18H11zM13,17H14V18H13zM15,17H16V18H15zM16,17H17V18H16zM18,17H19V18H18zM20,17H21V18H20zM21,17H22V18H21zM22,17H23V18H22zM24,17H25V18H24zM31,17H32V18H31zM33,17H34V18H33zM35,17H36V18H35zM36,17H37V18H36zM38,17H39V18H38zM4,18H5V19H4zM8,18H9V19H8zM10,18H11V19H10zM12,18H13V19H12zM13,18H14V19H13zM14,18H15V19H14zM16,18H17V19H16zM17,18H18V19H17zM20,18H21V19H20zM22,18H23V19H22zM26,18H27V19H26zM27,18H28V19H27zM29,18H30V19H29zM30,18H31V19H30zM32,18H33V19H32zM34,18H35V19H34zM36,18H37V19H36zM37,18H38V19H37zM38,18H39V19H38zM2,19H3V20H2zM3,19H4V20H3zM4,19H5V20H4zM5,19H6V20H5zM6,19H7V20H6zM7,19H8V20H7zM10,19H11V20H10zM11,19H12V20H11zM12,19H13V20H12zM14,19H15V20H14zM18,19H19V20H18zM20,19H21V20H20zM21,19H22V20H21zM23,19H24V20H23zM25,19H26V20H25zM27,19H28V20H27zM28,19H29V20H28zM29,19H30V20H29zM31,19H32V20H31zM33,19H34V20H33zM37,19H38V20H37zM7,20H8V21H7zM8,20H9V21H8zM10,20H11V21H10zM14,20H15V21H14zM15,20H16V21H15zM18,20H19V21H18zM20,20H21V21H20zM21,20H22V21H21zM22,20H23V21H22zM25,20H26V21H25zM29,20H30V21H29zM33,20H34V21H33zM36,20H37V21H36zM38,20H39V21H38zM2,21H3V22H2zM3,21H4V22H3zM4,21H5V22H4zM6,21H7V22H6zM7,21H8V22H7zM14,21H15V22H14zM15,21H16V22H15zM16,21H17V22H16zM17,21H18V22H17zM18,21H19V22H18zM20,21H21V22H20zM22,21H23V22H22zM24,21H25V22H24zM25,21H26V22H25zM30,21H31V22H30zM31,21H32V22H31zM33,21H34V22H33zM34,21H35V22H34zM35,21H36V22H35zM38,21H39V22H38zM2,22H3V23H2zM5,22H6V23H5zM6,22H7V23H6zM7,22H8V23H7zM8,22H9V23H8zM9,22H10V23H9zM11,22H12V23H11zM12,22H13V23H12zM13,22H14V23H13zM18,22H19V23H18zM19,22H20V23H19zM20,22H21V23H20zM21,22H22V23H21zM22,22H23V23H22zM25,22H26V23H25zM27,22H28V23H27zM28,22H29V23H28zM29,22H30V23H29zM30,22H31V23H30zM31,22H32V23H31zM32,22H33V23H32zM34,22H35V23H34zM35,22H36V23H35zM36,22H37V23H36zM2,23H3V24H2zM4,23H5V24H4zM5,23H6V24H5zM6,23H7V24H6zM7,23H8V24H7zM9,23H10V24H9zM10,23H11V24H10zM11,23H12V24H11zM13,23H14V24H13zM15,23H16V24H15zM17,23H18V24H17zM18,23H19V24H18zM19,23H20V24H19zM21,23H22V24H21zM23,23H24V24H23zM24,23H25V24H24zM25,23H26V24H25zM28,23H29V24H28zM29,23H30V24H29zM34,23H35V24H34zM36,23H37V24H36zM37,23H38V24H37zM2,24H3V25H2zM3,24H4V25H3zM5,24H6V25H5zM8,24H9V25H8zM9,24H10V25H9zM11,24H12V25H11zM12,24H13V25H12zM14,24H15V25H14zM15,24H16V25H15zM16,24H17V25H16zM17,24H18V25H17zM19,24H20V25H19zM22,24H23V25H22zM24,24H25V25H24zM26,24H27V25H26zM27,24H28V25H27zM29,24H30V25H29zM30,24H31V25H30zM32,24H33V25H32zM33,24H34V25H33zM34,24H35V25H34zM35,24H36V25H35zM37,24H38V25H37zM38,24H39V25H38zM3,25H4V26H3zM4,25H5V26H4zM5,25H6V26H5zM6,25H7V26H6zM9,25H10V26H9zM10,25H11V26H10zM11,25H12V26H11zM12,25H13V26H12zM15,25H16V26H15zM17,25H18V26H17zM18,25H19V26H18zM19,25H20V26H19zM20,25H21V26H20zM22,25H23V26H22zM26,25H27V26H26zM33,25H34V26H33zM34,25H35V26H34zM35,25H36V26H35zM37,25H38V26H37zM3,26H4V27H3zM4,26H5V27H4zM7,26H8V27H7zM8,26H9V27H8zM10,26H11V27H10zM12,26H13V27H12zM13,26H14V27H13zM15,26H16V27H15zM17,26H18V27H17zM19,26H20V27H19zM21,26H22V27H21zM22,26H23V27H22zM26,26H27V27H26zM28,26H29V27H28zM29,26H30V27H29zM31,26H32V27H31zM32,26H33V27H32zM33,26H34V27H33zM2,27H3V28H2zM3,27H4V28H3zM12,27H13V28H12zM13,27H14V28H13zM15,27H16V28H15zM16,27H17V28H16zM20,27H21V28H20zM21,27H22V28H21zM22,27H23V28H22zM23,27H24V28H23zM25,27H26V28H25zM26,27H27V28H26zM28,27H29V28H28zM29,27H30V28H29zM31,27H32V28H31zM33,27H34V28H33zM2,28H3V29H2zM4,28H5V29H4zM7,28H8V29H7zM8,28H9V29H8zM9,28H10V29H9zM10,28H11V29H10zM11,28H12V29H11zM13,28H14V29H13zM14,28H15V29H14zM15,28H16V29H15zM17,28H18V29H17zM18,28H19V29H18zM20,28H21V29H20zM22,28H23V29H22zM24,28H25V29H24zM26,28H27V29H26zM27,28H28V29H27zM28,28H29V29H28zM29,28H30V29H29zM31,28H32V29H31zM33,28H34V29H33zM36,28H37V29H36zM37,28H38V29H37zM38,28H39V29H38zM2,29H3V30H2zM4,29H5V30H4zM7,29H8V30H7zM13,29H14V30H13zM14,29H15V30H14zM18,29H19V30H18zM25,29H26V30H25zM30,29H31V30H30zM31,29H32V30H31zM35,29H36V30H35zM36,29H37V30H36zM2,30H3V31H2zM5,30H6V31H5zM6,30H7V31H6zM8,30H9V31H8zM11,30H12V31H11zM13,30H14V31H13zM16,30H17V31H16zM17,30H18V31H17zM18,30H19V31H18zM19,30H20V31H19zM20,30H21V31H20zM21,30H22V31H21zM22,30H23V31H22zM24,30H25V31H24zM26,30H27V31H26zM27,30H28V31H27zM28,30H29V31H28zM29,30H30V31H29zM30,30H31V31H30zM31,30H32V31H31zM32,30H33V31H32zM33,30H34V31H33zM34,30H35V31H34zM35,30H36V31H35zM36,30H37V31H36zM37,30H38V31H37zM10,31H11V32H10zM11,31H12V32H11zM13,31H14V32H13zM16,31H17V32H16zM17,31H18V32H17zM21,31H22V32H21zM22,31H23V32H22zM23,31H24V32H23zM25,31H26V32H25zM30,31H31V32H30zM34,31H35V32H34zM2,32H3V33H2zM3,32H4V33H3zM4,32H5V33H4zM5,32H6V33H5zM6,32H7V33H6zM7,32H8V33H7zM8,32H9V33H8zM12,32H13V33H12zM16,32H17V33H16zM17,32H18V33H17zM19,32H20V33H19zM20,32H21V33H20zM21,32H22V33H21zM23,32H24V33H23zM24,32H25V33H24zM25,32H26V33H25zM26,32H27V33H26zM27,32H28V33H27zM28,32H29V33H28zM30,32H31V33H30zM32,32H33V33H32zM34,32H35V33H34zM37,32H38V33H37zM38,32H39V33H38zM2,33H3V34H2zM8,33H9V34H8zM11,33H12V34H11zM16,33H17V34H16zM18,33H19V34H18zM21,33H22V34H21zM22,33H23V34H22zM29,33H30V34H29zM30,33H31V34H30zM34,33H35V34H34zM37,33H38V34H37zM38,33H39V34H38zM2,34H3V35H2zM4,34H5V35H4zM5,34H6V35H5zM6,34H7V35H6zM8,34H9V35H8zM11,34H12V35H11zM14,34H15V35H14zM15,34H16V35H15zM16,34H17V35H16zM17,34H18V35H17zM20,34H21V35H20zM21,34H22V35H21zM24,34H25V35H24zM27,34H28V35H27zM29,34H30V35H29zM30,34H31V35H30zM31,34H32V35H31zM32,34H33V35H32zM33,34H34V35H33zM34,34H35V35H34zM36,34H37V35H36zM38,34H39V35H38zM2,35H3V36H2zM4,35H5V36H4zM5,35H6V36H5zM6,35H7V36H6zM8,35H9V36H8zM11,35H12V36H11zM12,35H13V36H12zM13,35H14V36H13zM21,35H22V36H21zM25,35H26V36H25zM26,35H27V36H26zM27,35H28V36H27zM31,35H32V36H31zM32,35H33V36H32zM38,35H39V36H38zM2,36H3V37H2zM4,36H5V37H4zM5,36H6V37H5zM6,36H7V37H6zM8,36H9V37H8zM11,36H12V37H11zM12,36H13V37H12zM15,36H16V37H15zM20,36H21V37H20zM26,36H27V37H26zM29,36H30V37H29zM31,36H32V37H31zM35,36H36V37H35zM37,36H38V37H37zM38,36H39V37H38zM2,37H3V38H2zM8,37H9V38H8zM11,37H12V38H11zM12,37H13V38H12zM17,37H18V38H17zM18,37H19V38H18zM20,37H21V38H20zM22,37H23V38H22zM24,37H25V38H24zM25,37H26V38H25zM26,37H27V38H26zM28,37H29V38H28zM29,37H30V38H29zM30,37H31V38H30zM32,37H33V38H32zM34,37H35V38H34zM35,37H36V38H35zM38,37H39V38H38zM2,38H3V39H2zM3,38H4V39H3zM4,38H5V39H4zM5,38H6V39H5zM6,38H7V39H6zM7,38H8V39H7zM8,38H9V39H8zM10,38H11V39H10zM15,38H16V39H15zM16,38H17V39H16zM20,38H21V39H20zM21,38H22V39H21zM22,38H23V39H22zM25,38H26V39H25zM29,38H30V39H29zM30,38H31V39H30zM32,38H33V39H32zM33,38H34V39H33zM35,38H36V39H35zM38,38H39V39H38z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none" /></svg></div><a href="https://soorathep.github.io/course-2105601/teaching/2105601/2026/exit.html?s=2" target="_blank" rel="noopener" style="color:${C.teal};font-size:18px;margin-top:10px">Open the Exit Ticket</a></div></div></div>`});
+
+/* ---------- deck engine ---------- */
+const N=S.length; let cur=0;
+function build(){const host=document.getElementById("slides");host.innerHTML="";
+ S.forEach((s,i)=>{const d=document.createElement("section");d.className="slide"+(s.cls?" "+s.cls:"");d.id="s"+(i+1);
+  d.innerHTML=(s.kicker&&!s.cls?`<p class="kicker">${s.kicker}</p>`:"")+(s.title?`<h1>${s.title}</h1>`:"")+s.html()+(s.py?`<div class="dhint">D · Python</div>`:"")+`<footer><span>${foot}</span><span>${i+1} / ${N}</span></footer>`;host.appendChild(d)})}
+function drawAll(){S.forEach(s=>{if(s.draw)try{s.draw()}catch(e){console.error(e)}})}
+function show(i){cur=Math.max(0,Math.min(N-1,i));document.querySelectorAll(".slide").forEach((el,k)=>el.classList.toggle("on",k===cur));
+ history.replaceState(null,"",location.search+"#"+(cur+1));fillDrawer();if(window.onSlideChange)onSlideChange(cur);const n=document.getElementById("notes");n.textContent=S[cur].notes||"No notes for this slide."}
+let CAP_ON=false;   // set by the narration player; reserves a caption band under the slide
+function fit(){const W=innerWidth,H=innerHeight,vp=document.getElementById("viewport"),dock=document.getElementById("dock"),cap=document.getElementById("cap");
+ const hasDock=dock.style.display==="flex",barH=hasDock?document.getElementById("nbar").offsetHeight:0;
+ let k=Math.min(W/1280,H/720)*0.98,capH=0,fs=0,dockH=0;
+ for(let it=0;it<3;it++){if(hasDock&&CAP_ON){const lines=k<0.6?4:2;fs=Math.max(12,Math.min(22,24*k));capH=Math.ceil(lines*fs*1.45)+4}else capH=0;
+  dockH=hasDock?capH+barH+(capH?6:0)+14:0;k=Math.min(W/1280,Math.max(120,H-dockH)/720)*0.98}
+ const h=720*k,pad=10,top=Math.max(0,(H-h-dockH)/2);
+ vp.style.top=(top-pad)+"px";vp.style.bottom="auto";vp.style.height=(h+2*pad)+"px";
+ document.getElementById("stage").style.transform=`scale(${k})`;
+ if(hasDock){dock.style.top=(top+h+6)+"px";cap.style.display=CAP_ON?"block":"none";cap.style.width=Math.min(1280*k,W-16)+"px";cap.style.height=capH+"px";cap.dataset.fs=fs;if(window.capRefit)capRefit()}}
+function fillDrawer(){const p=S[cur].py,dr=document.getElementById("drawer");
+ if(!p){document.getElementById("dTitle").textContent="No Python on this slide";document.getElementById("dSub").textContent="Slides with a 'D · Python' tag have code and output.";document.getElementById("dCode").value="";document.getElementById("dOut").textContent="";return}
+ document.getElementById("dTitle").textContent=p.title;document.getElementById("dSub").textContent=p.sub||"";document.getElementById("dCode").value=p.code;
+ try{document.getElementById("dOut").textContent=p.out()}catch(e){document.getElementById("dOut").textContent=String(e)}
+ const m=document.getElementById("dMode");m.className="pill "+(MODE==="live"?"live":"rec");m.textContent=MODE==="live"?"LIVE RUN":"RECORDED RUN"}
+document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA"].includes(e.target.tagName)){if(e.key==="Escape")e.target.blur();return}const k=e.key;
+ if(["ArrowRight","PageDown"," "].includes(k)){e.preventDefault();show(cur+1)}else if(["ArrowLeft","PageUp"].includes(k)){e.preventDefault();show(cur-1)}
+ else if(k==="Home")show(0);else if(k==="End")show(N-1);else if(k==="d"||k==="D")document.getElementById("drawer").classList.toggle("open");
+ else if(k==="f"||k==="F"){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
+ else if(k==="p"||k==="P"){if(window.narrToggle)narrToggle()}
+ else if(k==="c"||k==="C"){if(window.ccCycle)ccCycle()}
+ else if(k==="n"||k==="N"){const n=document.getElementById("notes");n.style.display=n.style.display==="block"?"none":"block"}});
+document.getElementById("stage").addEventListener("click",e=>{if(e.target.closest("button,input,select,#drawer,a,#startov"))return;const r=e.currentTarget.getBoundingClientRect();(e.clientX-r.left)>r.width*0.5?show(cur+1):show(cur-1)});
+addEventListener("resize",fit);
+
+/* ---------- live Python (Pyodide) ---------- */
+let py=null;
+async function ensurePy(msg){if(py)return py;msg.textContent="Loading Python in the browser (first time about 5–10 s) ...";
+ if(!window.loadPyodide){await new Promise((ok,bad)=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js";s.onload=ok;s.onerror=()=>bad(new Error("could not load Pyodide"));document.head.appendChild(s)})}
+ const p=await loadPyodide();await p.loadPackage(["numpy","scipy"]);
+ const src=LAB_SRC||await (await fetch(LAB_FILE)).text();p.FS.writeFile("eigen_lab.py",src);
+ await p.runPythonAsync('import sys\nsys.path.insert(0, ".")\nfrom eigen_lab import *');py=p;return p}
+async function runCode(){const msg=document.getElementById("liveMsg"),out=document.getElementById("dOut"),t0=performance.now();
+ try{const p=await ensurePy(msg);msg.textContent="Running ...";const buf=[];p.setStdout({batched:s=>buf.push(s)});p.setStderr({batched:s=>buf.push(s)});
+  try{await p.runPythonAsync(document.getElementById("dCode").value)}catch(e){buf.push(String(e.message||e).split("\n").slice(-4).join("\n"))}
+  out.textContent=buf.join("\n")||"(no output)";const m=document.getElementById("dMode");m.className="pill live";m.textContent="LIVE OUTPUT";
+  msg.textContent=`Ran in ${((performance.now()-t0)/1000).toFixed(1)} s in the browser`}
+ catch(e){msg.textContent="Python could not start: "+e.message+". The recorded output is still available."}}
+async function runLive(){const msg=document.getElementById("liveMsg"),t0=performance.now();
+ try{const p=await ensurePy(msg);msg.textContent="Solving every model ...";
+  const out=await p.runPythonAsync('import importlib, json\nimport eigen_lab as lab\nimportlib.reload(lab)\njson.dumps(lab.classroom_results())');
+  R=JSON.parse(out);MODE="live";drawAll();fillDrawer();msg.textContent=`All slides now show a live run (${((performance.now()-t0)/1000).toFixed(1)} s, SciPy ${R.meta.scipy})`}
+ catch(e){msg.textContent="Live run failed: "+e.message+". The recorded run is still shown."}}
+document.getElementById("runCode").onclick=runCode;
+document.getElementById("runLive").onclick=runLive;
+document.getElementById("useRec").onclick=()=>{R=RECORDED;MODE="recorded";drawAll();fillDrawer();document.getElementById("liveMsg").textContent="Showing the recorded run."};
+
+/* ---------- narration and captions ---------- */
+const NARR = {
+ "voice": "en-US-GuyNeural",
+ "rate": "-5%",
+ "provider": "Microsoft Edge neural speech (edge-tts)",
+ "synthetic_voice": true,
+ "total_seconds": 1670.1,
+ "slides": [
+  {
+   "n": 1,
+   "file": "audio/slide-01.mp3",
+   "duration": 39.72,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.603,
+     "en": "Welcome to Session 2 of Advanced Engineering Mathematics for Chemical Engineers.",
+     "th": "ยินดีต้อนรับสู่คาบที่ 2 ของวิชา Advanced Engineering Mathematics for Chemical Engineers"
+    },
+    {
+     "s": 5.603,
+     "e": 15.539,
+     "en": "Session 1 gave us the four subspaces of a matrix: what it can reach, and what it sends to zero. Today we ask how much it stretches each direction.",
+     "th": "คาบที่ 1 ให้ subspace ทั้งสี่ของเมทริกซ์ คือสิ่งที่มันไปถึงได้ และสิ่งที่มันส่งไปที่ศูนย์ วันนี้เราถามว่ามันยืดแต่ละทิศมากเท่าใด"
+    },
+    {
+     "s": 15.539,
+     "e": 26.961,
+     "en": "Eigenvalues answer that question for the directions a matrix keeps. Singular values answer it for every matrix, and they decide which parameters your data can identify.",
+     "th": "ค่าเฉพาะตอบคำถามนี้สำหรับทิศที่เมทริกซ์คงไว้ ส่วน singular value ตอบได้สำหรับเมทริกซ์ทุกตัว และเป็นตัวตัดสินว่าข้อมูลของคุณระบุพารามิเตอร์ใดได้"
+    },
+    {
+     "s": 26.961,
+     "e": 34.25,
+     "en": "On your own, the narration takes about thirty minutes; the activities, four checks and the lab fill the rest of the three hours.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสามสิบนาที ส่วนกิจกรรม การตรวจความเข้าใจสี่ครั้ง และแล็บ ใช้เวลาที่เหลือของสามชั่วโมง"
+    },
+    {
+     "s": 34.25,
+     "e": 39.658,
+     "en": "When the narration for a slide ends, press the right arrow key, or Next, to go on.",
+     "th": "เมื่อเสียงบรรยายของแต่ละหน้าจบ กดลูกศรขวาหรือปุ่ม Next เพื่อไปหน้าถัดไป"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "file": "audio/slide-02.mp3",
+   "duration": 36.456,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 2.116,
+     "en": "Here is the plan.",
+     "th": "นี่คือแผนของวันนี้"
+    },
+    {
+     "s": 2.116,
+     "e": 14.263,
+     "en": "After a retrieval check on Session 1, part one covers eigenvalue problems: invariant directions, diagonalization, defective matrices, symmetric matrices, and matrices that are not normal.",
+     "th": "หลังทบทวนคาบที่ 1 ส่วนที่หนึ่งว่าด้วยปัญหาค่าเฉพาะ ได้แก่ ทิศที่ไม่เปลี่ยน การแปลงเป็นเมทริกซ์ทแยง เมทริกซ์ defective เมทริกซ์สมมาตร และเมทริกซ์ที่ไม่ normal"
+    },
+    {
+     "s": 14.263,
+     "e": 24.066,
+     "en": "Part two covers the singular value decomposition, conditioning, identifiability of parameters, and the best low rank approximation of a data matrix.",
+     "th": "ส่วนที่สองว่าด้วย singular value decomposition ภาวะของปัญหา ความสามารถในการระบุพารามิเตอร์ และการประมาณเมทริกซ์ข้อมูลด้วย rank ต่ำที่ดีที่สุด"
+    },
+    {
+     "s": 24.066,
+     "e": 36.382,
+     "en": "After the break and Activity 2, part three applies this to reparameterization, principal components of process data, and what to report. Lab 2 and the Exit Ticket close the session.",
+     "th": "หลังพักและกิจกรรมที่ 2 ส่วนที่สามนำไปใช้กับการเปลี่ยนรูปพารามิเตอร์ principal component ของข้อมูลกระบวนการ และสิ่งที่ควรรายงาน แล้วปิดด้วย Lab 2 และ Exit Ticket"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "file": "audio/slide-03.mp3",
+   "duration": 28.536,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.918,
+     "en": "Activity 1 is a retrieval check on Session 1.",
+     "th": "กิจกรรมที่ 1 คือการทบทวนคาบที่ 1"
+    },
+    {
+     "s": 3.918,
+     "e": 14.605,
+     "en": "Four questions: the dimensions of the four subspaces, the solvability test, the number of independent reactions, and what the condition number of the monomial Gram matrix told you.",
+     "th": "สี่คำถาม ได้แก่ มิติของ subspace ทั้งสี่ การทดสอบการมีคำตอบ จำนวนปฏิกิริยาอิสระ และสิ่งที่ condition number ของ Gram matrix ของ monomial บอก"
+    },
+    {
+     "s": 14.605,
+     "e": 20.658,
+     "en": "The last question is today's bridge: we now define the condition number through singular values.",
+     "th": "คำถามสุดท้ายเป็นสะพานไปสู่วันนี้ เราจะนิยาม condition number ผ่าน singular value"
+    },
+    {
+     "s": 20.658,
+     "e": 28.474,
+     "en": "Write alone, then compare with a partner. On your own, pause the narration and press Show answers when you are done.",
+     "th": "เขียนคนเดียว แล้วเทียบกับเพื่อน ถ้าเรียนเอง หยุดเสียงบรรยาย แล้วกด Show answers เมื่อเขียนเสร็จ"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "file": "audio/slide-04.mp3",
+   "duration": 40.344,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.866,
+     "en": "By the end of today you should be able to do six things.",
+     "th": "เมื่อจบคาบนี้ คุณควรทำได้หกอย่าง"
+    },
+    {
+     "s": 3.866,
+     "e": 16.289,
+     "en": "Compute eigenvalues and eigenvectors of small matrices and explain them as directions an operator keeps. Diagonalize a matrix, recognize a defective one, and use the spectral theorem.",
+     "th": "คำนวณค่าเฉพาะและเวกเตอร์เฉพาะของเมทริกซ์ขนาดเล็ก และอธิบายว่าเป็นทิศที่ operator คงไว้ แปลงเมทริกซ์เป็นเมทริกซ์ทแยง จำเมทริกซ์ defective ได้ และใช้ spectral theorem"
+    },
+    {
+     "s": 16.289,
+     "e": 21.697,
+     "en": "Explain why eigenvalues do not measure how much a non symmetric matrix stretches.",
+     "th": "อธิบายว่าทำไมค่าเฉพาะจึงไม่ได้วัดว่าเมทริกซ์ที่ไม่สมมาตรยืดเวกเตอร์มากเท่าใด"
+    },
+    {
+     "s": 21.697,
+     "e": 28.895,
+     "en": "Compute and interpret the singular value decomposition, and read the four subspaces and the pseudoinverse from it.",
+     "th": "คำนวณและตีความ singular value decomposition และอ่าน subspace ทั้งสี่กับ pseudoinverse จากมัน"
+    },
+    {
+     "s": 28.895,
+     "e": 40.289,
+     "en": "Use the condition number and the sensitivity matrix to decide which parameters your data can identify. And set the numerical rank of a data matrix from a stated noise level.",
+     "th": "ใช้ condition number และ sensitivity matrix ตัดสินว่าข้อมูลระบุพารามิเตอร์ใดได้ และกำหนด rank เชิงตัวเลขของเมทริกซ์ข้อมูลจากระดับสัญญาณรบกวนที่ระบุ"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "file": "audio/slide-05.mp3",
+   "duration": 64.776,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.142,
+     "en": "Session 1 gave us bases, the four subspaces, a numerical rank with a threshold still to be defined, and the condition number of a Gram matrix.",
+     "th": "คาบที่ 1 ให้ basis subspace ทั้งสี่ rank เชิงตัวเลขที่ยังต้องนิยามค่าขีดแบ่ง และ condition number ของ Gram matrix"
+    },
+    {
+     "s": 9.142,
+     "e": 16.295,
+     "en": "Today each of these is completed. The eigenvector basis is the one in which an operator acts by scaling.",
+     "th": "วันนี้แต่ละเรื่องจะสมบูรณ์ basis ของเวกเตอร์เฉพาะคือ basis ที่ operator กระทำโดยการยืดเท่านั้น"
+    },
+    {
+     "s": 16.295,
+     "e": 26.513,
+     "en": "The singular value decomposition gives orthonormal bases for all four subspaces at once, defines the numerical rank, and defines the condition number.",
+     "th": "singular value decomposition ให้ basis ตั้งฉากปกติของ subspace ทั้งสี่พร้อมกัน และนิยามทั้ง rank เชิงตัวเลขและ condition number"
+    },
+    {
+     "s": 26.513,
+     "e": 32.776,
+     "en": "Least squares from Session 1 gains a covariance, and with it the question of identifiability.",
+     "th": "least squares จากคาบที่ 1 จะได้ความแปรปรวนร่วม และพร้อมกันนั้นคำถามเรื่องความสามารถในการระบุพารามิเตอร์"
+    },
+    {
+     "s": 32.776,
+     "e": 37.129,
+     "en": "Session 3 will use the eigenvector basis to solve d x d t equals K x.",
+     "th": "คาบที่ 3 จะใช้ basis ของเวกเตอร์เฉพาะแก้สมการ d x d t เท่ากับ K x"
+    },
+    {
+     "s": 37.129,
+     "e": 46.158,
+     "en": "Note the notation: lambda is an eigenvalue, sigma a singular value, and kappa the ratio of the largest to the smallest singular value.",
+     "th": "สังเกตสัญลักษณ์ lambda คือค่าเฉพาะ sigma คือ singular value และ kappa คืออัตราส่วนของ singular value ที่ใหญ่ที่สุดต่อที่เล็กที่สุด"
+    },
+    {
+     "s": 46.158,
+     "e": 54.405,
+     "en": "One thread runs through the whole course. A linear operator is understood by finding the basis that makes it simple.",
+     "th": "มีเส้นเรื่องหนึ่งที่ต่อเนื่องตลอดวิชา เราเข้าใจ linear operator ได้ด้วยการหา basis ที่ทำให้มันง่าย"
+    },
+    {
+     "s": 54.405,
+     "e": 64.697,
+     "en": "Today that basis is the eigenvectors, or the pair of singular vector bases. In Session 7 it will be the eigenfunctions of a differential operator.",
+     "th": "วันนี้ basis นั้นคือเวกเตอร์เฉพาะ หรือคู่ของ basis จาก singular vector ในคาบที่ 7 จะเป็น eigenfunction ของ differential operator"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "file": "audio/slide-06.mp3",
+   "duration": 109.464,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.76,
+     "en": "Part one. An eigenvector is a nonzero vector that a matrix only stretches: M v equals lambda v.",
+     "th": "ส่วนที่หนึ่ง เวกเตอร์เฉพาะคือเวกเตอร์ที่ไม่เป็นศูนย์ซึ่งเมทริกซ์เพียงแค่ยืด คือ M v เท่ากับ lambda v"
+    },
+    {
+     "s": 7.76,
+     "e": 19.0,
+     "en": "Rewrite it as M minus lambda I times v equals zero. A nonzero solution exists exactly when M minus lambda I has a null space, that is, when its determinant is zero.",
+     "th": "เขียนใหม่เป็น M ลบ lambda I คูณ v เท่ากับศูนย์ คำตอบที่ไม่เป็นศูนย์มีอยู่ก็ต่อเมื่อ M ลบ lambda I มี null space นั่นคือเมื่อดีเทอร์มิแนนต์เป็นศูนย์"
+    },
+    {
+     "s": 19.0,
+     "e": 27.013,
+     "en": "So an eigenvalue is a value of lambda at which M minus lambda I loses rank. That is Session 1 again.",
+     "th": "ดังนั้นค่าเฉพาะคือค่า lambda ที่ทำให้ M ลบ lambda I สูญเสีย rank ซึ่งก็คือเรื่องของคาบที่ 1 อีกครั้ง"
+    },
+    {
+     "s": 27.013,
+     "e": 34.719,
+     "en": "For a two by two matrix, the characteristic equation is lambda squared minus the trace times lambda plus the determinant.",
+     "th": "สำหรับเมทริกซ์สองคูณสอง สมการลักษณะเฉพาะคือ lambda กำลังสอง ลบ trace คูณ lambda บวกดีเทอร์มิแนนต์"
+    },
+    {
+     "s": 34.719,
+     "e": 39.645,
+     "en": "The sum of the eigenvalues is the trace, and their product is the determinant.",
+     "th": "ผลรวมของค่าเฉพาะเท่ากับ trace และผลคูณเท่ากับดีเทอร์มิแนนต์"
+    },
+    {
+     "s": 39.645,
+     "e": 48.632,
+     "en": "For the example three, one, one, two, the trace is five and the determinant is five, which gives about three point six two and one point three eight.",
+     "th": "สำหรับตัวอย่าง สาม หนึ่ง หนึ่ง สอง trace เท่ากับห้า และดีเทอร์มิแนนต์เท่ากับห้า จึงได้ประมาณสามจุดหกสอง และหนึ่งจุดสามแปด"
+    },
+    {
+     "s": 48.632,
+     "e": 61.496,
+     "en": "One practical warning: for matrices larger than about four by four, do not find eigenvalues as roots of the characteristic polynomial. The roots are extremely sensitive to rounding.",
+     "th": "ข้อควรระวังในทางปฏิบัติ สำหรับเมทริกซ์ที่ใหญ่กว่าประมาณสี่คูณสี่ อย่าหาค่าเฉพาะจากรากของพหุนามลักษณะเฉพาะ เพราะรากไวต่อการปัดเศษมาก"
+    },
+    {
+     "s": 61.496,
+     "e": 65.171,
+     "en": "Libraries use the QR algorithm on the matrix itself.",
+     "th": "ไลบรารีใช้ QR algorithm กับตัวเมทริกซ์โดยตรง"
+    },
+    {
+     "s": 65.171,
+     "e": 75.666,
+     "en": "Let us check the example by hand. With lambda equal to three point six two, M minus lambda I is minus zero point six two, one, one, minus one point six two.",
+     "th": "ลองตรวจตัวอย่างด้วยมือ เมื่อ lambda เท่ากับสามจุดหกสอง M ลบ lambda I คือ ลบศูนย์จุดหกสอง หนึ่ง หนึ่ง ลบหนึ่งจุดหกสอง"
+    },
+    {
+     "s": 75.666,
+     "e": 83.687,
+     "en": "Its two rows are multiples of each other, so the rank is one, and the null space is spanned by one, zero point six two.",
+     "th": "สองแถวเป็นพหุคูณของกันและกัน rank จึงเท่ากับหนึ่ง และ null space span ด้วย หนึ่ง ศูนย์จุดหกสอง"
+    },
+    {
+     "s": 83.687,
+     "e": 91.842,
+     "en": "Normalized, that is zero point eight five, zero point five three, the first eigenvector in the D drawer of the next slide.",
+     "th": "เมื่อทำให้เป็นหนึ่งหน่วยได้ ศูนย์จุดแปดห้า ศูนย์จุดห้าสาม ซึ่งคือเวกเตอร์เฉพาะตัวแรกใน D drawer ของหน้าถัดไป"
+    },
+    {
+     "s": 91.842,
+     "e": 102.104,
+     "en": "Eigenvalues of a real matrix may be complex. A rotation by ninety degrees keeps no real direction, and its eigenvalues are plus and minus i.",
+     "th": "ค่าเฉพาะของเมทริกซ์จริงอาจเป็นจำนวนเชิงซ้อน การหมุนเก้าสิบองศาไม่คงทิศจริงใดไว้เลย และค่าเฉพาะของมันคือบวกและลบ i"
+    },
+    {
+     "s": 102.104,
+     "e": 109.382,
+     "en": "In a linear ODE system, complex eigenvalues mean oscillation, which we will see in Sessions 3 and 4.",
+     "th": "ในระบบสมการเชิงอนุพันธ์เชิงเส้น ค่าเฉพาะเชิงซ้อนหมายถึงการแกว่ง ซึ่งเราจะเห็นในคาบที่ 3 และ 4"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "file": "audio/slide-07.mp3",
+   "duration": 64.776,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.765,
+     "en": "Here is the symmetric example as a picture. The teal arrow is a unit vector v, and the amber arrow is M v.",
+     "th": "นี่คือตัวอย่างเมทริกซ์สมมาตรในรูปภาพ ลูกศรสีเขียวหัวเป็ดคือเวกเตอร์หนึ่งหน่วย v และลูกศรสีส้มอำพันคือ M v"
+    },
+    {
+     "s": 7.765,
+     "e": 17.316,
+     "en": "Turn v with the slider. For most angles M v points in a different direction. Press Next eigenvector, and the two arrows line up.",
+     "th": "หมุน v ด้วยแถบเลื่อน มุมส่วนใหญ่ M v ชี้ไปคนละทิศ กด Next eigenvector แล้วลูกศรทั้งสองจะอยู่ในแนวเดียวกัน"
+    },
+    {
+     "s": 17.316,
+     "e": 27.855,
+     "en": "The grey ellipse is the image of the unit circle. For a symmetric matrix its axes are exactly the eigenvectors, and the semi axes are the eigenvalues.",
+     "th": "วงรีสีเทาคือภาพของวงกลมหนึ่งหน่วย สำหรับเมทริกซ์สมมาตร แกนของวงรีคือเวกเตอร์เฉพาะพอดี และครึ่งแกนคือค่าเฉพาะ"
+    },
+    {
+     "s": 27.855,
+     "e": 39.731,
+     "en": "The table shows the Rayleigh quotient, v transpose M v. It always lies between the smallest and the largest eigenvalue, and it equals an eigenvalue at an eigenvector.",
+     "th": "ตารางแสดง Rayleigh quotient คือ v transpose M v ค่านี้อยู่ระหว่างค่าเฉพาะที่เล็กที่สุดกับที่ใหญ่ที่สุดเสมอ และเท่ากับค่าเฉพาะเมื่อ v เป็นเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 39.731,
+     "e": 43.5,
+     "en": "That fact is the basis of many eigenvalue algorithms.",
+     "th": "ข้อเท็จจริงนี้เป็นพื้นฐานของอัลกอริทึมหาค่าเฉพาะหลายตัว"
+    },
+    {
+     "s": 43.5,
+     "e": 56.212,
+     "en": "Try one more thing. Set the angle to forty five degrees. The vector is halfway between the two eigenvectors, and M v is pulled toward the eigenvector with the larger eigenvalue.",
+     "th": "ลองอีกอย่างหนึ่ง ตั้งมุมเป็นสี่สิบห้าองศา เวกเตอร์อยู่กึ่งกลางระหว่างเวกเตอร์เฉพาะทั้งสอง และ M v ถูกดึงไปทางเวกเตอร์เฉพาะที่มีค่าเฉพาะมากกว่า"
+    },
+    {
+     "s": 56.212,
+     "e": 64.711,
+     "en": "Applying M again and again would pull it closer each time. That is the power method, the simplest eigenvalue algorithm.",
+     "th": "การใช้ M ซ้ำๆ จะดึงเข้าใกล้ขึ้นทุกครั้ง นี่คือ power method ซึ่งเป็นอัลกอริทึมหาค่าเฉพาะที่ง่ายที่สุด"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "file": "audio/slide-08.mp3",
+   "duration": 106.968,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.842,
+     "en": "If a matrix has n independent eigenvectors, put them as the columns of V and the eigenvalues on the diagonal of Lambda. Then M V equals V Lambda, so M equals V Lambda V inverse.",
+     "th": "ถ้าเมทริกซ์มีเวกเตอร์เฉพาะที่เป็นอิสระ n ตัว นำมาเป็นหลักของ V และนำค่าเฉพาะไปไว้บนแนวทแยงของ Lambda จะได้ M V เท่ากับ V Lambda ดังนั้น M เท่ากับ V Lambda V inverse"
+    },
+    {
+     "s": 12.842,
+     "e": 26.75,
+     "en": "In the eigenvector basis the operator is diagonal. Powers and functions of M become powers and functions of the eigenvalues. This is what will decouple a linear ODE system in Session 3.",
+     "th": "ใน basis ของเวกเตอร์เฉพาะ operator เป็นเมทริกซ์ทแยง กำลังและฟังก์ชันของ M กลายเป็นกำลังและฟังก์ชันของค่าเฉพาะ ซึ่งคือสิ่งที่จะแยกระบบสมการเชิงอนุพันธ์เชิงเส้นออกจากกันในคาบที่ 3"
+    },
+    {
+     "s": 26.75,
+     "e": 34.289,
+     "en": "Distinct eigenvalues guarantee independent eigenvectors. Repeated eigenvalues may not.",
+     "th": "ค่าเฉพาะที่ไม่ซ้ำกันรับประกันว่าเวกเตอร์เฉพาะเป็นอิสระ ค่าเฉพาะที่ซ้ำกันอาจไม่เป็นเช่นนั้น"
+    },
+    {
+     "s": 34.289,
+     "e": 46.813,
+     "en": "The matrix two, one, zero, two has the eigenvalue two twice, but M minus two I has rank one, so its null space is only one dimensional. There is one eigenvector, not two.",
+     "th": "เมทริกซ์ สอง หนึ่ง ศูนย์ สอง มีค่าเฉพาะสองซ้ำสองครั้ง แต่ M ลบ สอง I มี rank หนึ่ง null space จึงมีเพียงหนึ่งมิติ มีเวกเตอร์เฉพาะเพียงตัวเดียว ไม่ใช่สองตัว"
+    },
+    {
+     "s": 46.813,
+     "e": 49.303,
+     "en": "Such a matrix is called defective.",
+     "th": "เมทริกซ์แบบนี้เรียกว่า defective"
+    },
+    {
+     "s": 49.303,
+     "e": 58.399,
+     "en": "Exactly defective matrices are rare in data, but nearly defective ones are common, and then the computed eigenvector matrix is nearly singular.",
+     "th": "เมทริกซ์ที่ defective พอดีพบน้อยในข้อมูล แต่เมทริกซ์ที่เกือบ defective พบบ่อย และเมทริกซ์เวกเตอร์เฉพาะที่คำนวณได้จะเกือบ singular"
+    },
+    {
+     "s": 58.399,
+     "e": 63.895,
+     "en": "For this example the library returns a condition number of V around ten to the fifteen.",
+     "th": "สำหรับตัวอย่างนี้ ไลบรารีคืนค่า condition number ของ V ประมาณสิบยกกำลังสิบห้า"
+    },
+    {
+     "s": 63.895,
+     "e": 75.895,
+     "en": "The rule is simple. Diagonalize symmetric matrices freely. For others, check the condition number of V, or use a decomposition with orthogonal factors.",
+     "th": "หลักง่ายๆ คือ แปลงเมทริกซ์สมมาตรเป็นเมทริกซ์ทแยงได้เลย สำหรับเมทริกซ์อื่น ให้ตรวจ condition number ของ V หรือใช้การแยกตัวประกอบที่มีตัวประกอบตั้งฉาก"
+    },
+    {
+     "s": 75.895,
+     "e": 85.973,
+     "en": "Here is why diagonalization matters for dynamics. If x of k plus one equals M x of k, then x of k equals V Lambda to the k V inverse x zero.",
+     "th": "นี่คือเหตุผลที่การแปลงเป็นเมทริกซ์ทแยงสำคัญกับพลวัต ถ้า x ของ k บวกหนึ่ง เท่ากับ M x ของ k แล้ว x ของ k เท่ากับ V Lambda กำลัง k V inverse"
+    },
+    {
+     "s": 85.973,
+     "e": 96.408,
+     "en": "Each coordinate in the eigenvector basis is multiplied by its own lambda at each step, so the largest eigenvalue in modulus controls the long run.",
+     "th": "x ศูนย์ พิกัดแต่ละตัวใน basis ของเวกเตอร์เฉพาะถูกคูณด้วย lambda ของตัวเองในแต่ละขั้น ค่าเฉพาะที่มีขนาดใหญ่ที่สุดจึงควบคุมพฤติกรรมระยะยาว"
+    },
+    {
+     "s": 96.408,
+     "e": 106.882,
+     "en": "A staged separation or a recycle loop with a linear model behaves this way: the dominant eigenvalue tells you how fast the composition settles from stage to stage or from pass to pass.",
+     "th": "กระบวนการแยกแบบหลายขั้นหรือวงจรป้อนกลับที่มีแบบจำลองเชิงเส้นมีพฤติกรรมแบบนี้ ค่าเฉพาะที่เด่นบอกว่าองค์ประกอบเข้าสู่สภาวะคงตัวเร็วเพียงใดจากขั้นหนึ่งไปอีกขั้นหรือจากรอบหนึ่งไปอีกรอบ"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
+   "duration": 100.992,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.974,
+     "en": "Symmetric matrices are the well behaved case. The spectral theorem says their eigenvalues are real and their eigenvectors can be chosen orthonormal: M equals Q Lambda Q transpose.",
+     "th": "เมทริกซ์สมมาตรเป็นกรณีที่ดี spectral theorem กล่าวว่าค่าเฉพาะเป็นจำนวนจริง และเลือกเวกเตอร์เฉพาะให้ตั้งฉากปกติได้ คือ M เท่ากับ Q Lambda Q transpose"
+    },
+    {
+     "s": 11.974,
+     "e": 25.234,
+     "en": "The proof of orthogonality fits in one line. Lambda one times v two transpose v one equals v two transpose M v one, which by symmetry equals lambda two times v two transpose v one.",
+     "th": "การพิสูจน์การตั้งฉากใช้บรรทัดเดียว lambda หนึ่ง คูณ v สอง transpose v หนึ่ง เท่ากับ v สอง transpose M v หนึ่ง ซึ่งโดยความสมมาตรเท่ากับ lambda สอง คูณ v สอง transpose v หนึ่ง"
+    },
+    {
+     "s": 25.234,
+     "e": 29.776,
+     "en": "If the eigenvalues differ, v two transpose v one must be zero.",
+     "th": "ถ้าค่าเฉพาะต่างกัน v สอง transpose v หนึ่ง ต้องเป็นศูนย์"
+    },
+    {
+     "s": 29.776,
+     "e": 39.066,
+     "en": "A symmetric matrix is positive definite when all its eigenvalues are positive, which means x transpose M x is positive for every nonzero x.",
+     "th": "เมทริกซ์สมมาตรเป็น positive definite เมื่อค่าเฉพาะทุกตัวเป็นบวก หมายความว่า x transpose M x เป็นบวกสำหรับ x ที่ไม่เป็นศูนย์ทุกตัว"
+    },
+    {
+     "s": 39.066,
+     "e": 46.77,
+     "en": "Many matrices in chemical engineering are symmetric. The Hessian of an objective has eigenvalues that measure curvature.",
+     "th": "เมทริกซ์จำนวนมากในวิศวกรรมเคมีเป็นเมทริกซ์สมมาตร ค่าเฉพาะของ Hessian ของฟังก์ชันเป้าหมายวัดความโค้ง"
+    },
+    {
+     "s": 46.77,
+     "e": 57.211,
+     "en": "The covariance of fitted parameters has eigenvalues that measure the variance along each principal direction, and a large one marks a poorly identified combination.",
+     "th": "ค่าเฉพาะของความแปรปรวนร่วมของพารามิเตอร์ที่ fit วัดความแปรปรวนตามทิศหลักแต่ละทิศ และค่าที่ใหญ่บ่งบอกผลรวมของพารามิเตอร์ที่ระบุได้ไม่ดี"
+    },
+    {
+     "s": 57.211,
+     "e": 65.145,
+     "en": "And Session 7 extends the same theorem to differential operators, where the eigenvectors become orthogonal eigenfunctions.",
+     "th": "และคาบที่ 7 ขยายทฤษฎีบทเดียวกันนี้ไปยัง differential operator ซึ่งเวกเตอร์เฉพาะกลายเป็น eigenfunction ที่ตั้งฉากกัน"
+    },
+    {
+     "s": 65.145,
+     "e": 76.979,
+     "en": "The Rayleigh quotient gives a practical tool. The largest eigenvalue of a symmetric matrix is the maximum of x transpose M x over unit vectors, and the smallest is the minimum.",
+     "th": "Rayleigh quotient ให้เครื่องมือในทางปฏิบัติ ค่าเฉพาะที่ใหญ่ที่สุดของเมทริกซ์สมมาตรคือค่าสูงสุดของ x transpose M x บนเวกเตอร์หนึ่งหน่วย และค่าที่เล็กที่สุดคือค่าต่ำสุด"
+    },
+    {
+     "s": 76.979,
+     "e": 82.461,
+     "en": "So bounds on eigenvalues can be found by trying vectors, without solving anything.",
+     "th": "จึงหาขอบเขตของค่าเฉพาะได้ด้วยการลองเวกเตอร์ โดยไม่ต้องแก้สมการใด"
+    },
+    {
+     "s": 82.461,
+     "e": 93.194,
+     "en": "Positive definiteness is also how you check a minimum. At a stationary point, if the Hessian has all positive eigenvalues, the point is a strict local minimum.",
+     "th": "ความเป็น positive definite ยังใช้ตรวจค่าต่ำสุดด้วย ที่จุดคงที่ ถ้า Hessian มีค่าเฉพาะเป็นบวกทั้งหมด จุดนั้นเป็นค่าต่ำสุดเฉพาะที่แบบเข้ม"
+    },
+    {
+     "s": 93.194,
+     "e": 100.908,
+     "en": "A zero eigenvalue marks a flat direction, which in parameter estimation is again a combination the data cannot fix.",
+     "th": "ค่าเฉพาะศูนย์บ่งบอกทิศที่แบน ซึ่งในการประมาณพารามิเตอร์ก็คือผลรวมที่ข้อมูลกำหนดไม่ได้อีกเช่นกัน"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
+   "duration": 78.48,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.763,
+     "en": "Now a warning about non symmetric matrices. Eigenvalues do not tell you how much a matrix stretches.",
+     "th": "ทีนี้คำเตือนเรื่องเมทริกซ์ที่ไม่สมมาตร ค่าเฉพาะไม่ได้บอกว่าเมทริกซ์ยืดเวกเตอร์มากเท่าใด"
+    },
+    {
+     "s": 7.763,
+     "e": 11.953,
+     "en": "The shear one, two, zero, one has both eigenvalues equal to one.",
+     "th": "เมทริกซ์เฉือน หนึ่ง สอง ศูนย์ หนึ่ง มีค่าเฉพาะทั้งสองเท่ากับหนึ่ง"
+    },
+    {
+     "s": 11.953,
+     "e": 21.105,
+     "en": "Yet it maps the unit circle to the amber ellipse, stretching one direction by two point four one and shrinking another to zero point four one.",
+     "th": "แต่มันส่งวงกลมหนึ่งหน่วยไปเป็นวงรีสีส้มอำพัน ยืดทิศหนึ่งเป็นสองจุดสี่หนึ่งเท่า และหดอีกทิศเหลือศูนย์จุดสี่หนึ่ง"
+    },
+    {
+     "s": 21.105,
+     "e": 27.263,
+     "en": "It has only one eigenvector direction, the dashed line, and that is not where the stretching happens.",
+     "th": "มันมีทิศของเวกเตอร์เฉพาะเพียงทิศเดียว คือเส้นประ และการยืดไม่ได้เกิดในทิศนั้น"
+    },
+    {
+     "s": 27.263,
+     "e": 36.408,
+     "en": "Eigenvalues describe the behavior after many applications of the matrix. Singular values describe what happens after one.",
+     "th": "ค่าเฉพาะอธิบายพฤติกรรมหลังจากใช้เมทริกซ์หลายครั้ง ส่วน singular value อธิบายสิ่งที่เกิดหลังจากใช้ครั้งเดียว"
+    },
+    {
+     "s": 36.408,
+     "e": 45.237,
+     "en": "For normal matrices, which include all symmetric ones, the two agree. For others they can differ by orders of magnitude.",
+     "th": "สำหรับเมทริกซ์ normal ซึ่งรวมเมทริกซ์สมมาตรทุกตัว ทั้งสองค่าตรงกัน สำหรับเมทริกซ์อื่นอาจต่างกันหลายอันดับ"
+    },
+    {
+     "s": 45.237,
+     "e": 58.763,
+     "en": "This matters in reactor dynamics. A linearized model with only stable eigenvalues can still amplify a disturbance for a while before it decays. Session 4 calls this transient growth.",
+     "th": "เรื่องนี้สำคัญในพลวัตของเครื่องปฏิกรณ์ แบบจำลองเชิงเส้นที่มีค่าเฉพาะเสถียรทั้งหมดยังขยายสิ่งรบกวนได้ชั่วระยะหนึ่งก่อนจะลดลง คาบที่ 4 เรียกปรากฏการณ์นี้ว่า transient growth"
+    },
+    {
+     "s": 58.763,
+     "e": 63.014,
+     "en": "Here is a concrete case of non normality in chemical engineering.",
+     "th": "นี่คือกรณีจริงของความไม่ normal ในวิศวกรรมเคมี"
+    },
+    {
+     "s": 63.014,
+     "e": 72.418,
+     "en": "A plug flow reactor discretized into many cells has a Jacobian that is strongly non normal, because each cell feeds only the next one downstream.",
+     "th": "เครื่องปฏิกรณ์แบบไหลในท่อที่แบ่งเป็นหลายช่องมี Jacobian ที่ไม่ normal อย่างมาก เพราะแต่ละช่องป้อนเฉพาะช่องถัดไปท้ายน้ำ"
+    },
+    {
+     "s": 72.418,
+     "e": 78.408,
+     "en": "Its eigenvalues can all be stable while a pulse grows in size as it travels before it leaves.",
+     "th": "ค่าเฉพาะทั้งหมดอาจเสถียร ขณะที่พัลส์มีขนาดเพิ่มขึ้นระหว่างเคลื่อนที่ก่อนจะออกไป"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
+   "duration": 17.712,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.178,
+     "en": "Check 1 has four questions on eigenvalue problems:",
+     "th": "Check 1 มีสี่คำถามเรื่องปัญหาค่าเฉพาะ ได้แก่"
+    },
+    {
+     "s": 3.178,
+     "e": 14.405,
+     "en": "eigenvalues from the trace and determinant, whether a matrix is diagonalizable, why symmetric eigenvectors are orthogonal, and whether a matrix with unit eigenvalues can double a length.",
+     "th": "ค่าเฉพาะจาก trace และดีเทอร์มิแนนต์ เมทริกซ์แปลงเป็นเมทริกซ์ทแยงได้หรือไม่ ทำไมเวกเตอร์เฉพาะของเมทริกซ์สมมาตรจึงตั้งฉาก และเมทริกซ์ที่ค่าเฉพาะมีขนาดหนึ่งทำให้ความยาวเพิ่มเป็นสองเท่าได้หรือไม่"
+    },
+    {
+     "s": 14.405,
+     "e": 17.658,
+     "en": "Take five minutes, then press Show answers.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
+   "duration": 108.432,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.303,
+     "en": "Part two. Every matrix, of any shape, can be written as U Sigma V transpose: a rotation, a stretch along the axes, and another rotation.",
+     "th": "ส่วนที่สอง เมทริกซ์ทุกตัวไม่ว่ารูปร่างใด เขียนได้เป็น U Sigma V transpose คือการหมุน การยืดตามแกน และการหมุนอีกครั้ง"
+    },
+    {
+     "s": 10.303,
+     "e": 19.573,
+     "en": "The columns of V are the right singular vectors, the input directions. The columns of U are the left singular vectors, the output directions.",
+     "th": "หลักของ V คือ right singular vector ซึ่งเป็นทิศของอินพุต หลักของ U คือ left singular vector ซึ่งเป็นทิศของเอาต์พุต sigma i"
+    },
+    {
+     "s": 19.573,
+     "e": 24.339,
+     "en": "Each sigma i says how much M stretches v i, and M v i equals sigma i u i.",
+     "th": "แต่ละตัวบอกว่า M ยืด v i มากเท่าใด และ M v i เท่ากับ sigma i u i"
+    },
+    {
+     "s": 24.339,
+     "e": 34.658,
+     "en": "Geometrically, the unit sphere goes to an ellipsoid with semi axes sigma i u i. The largest singular value is the largest stretch, the two norm of M.",
+     "th": "ในเชิงเรขาคณิต ทรงกลมหนึ่งหน่วยถูกส่งไปเป็นทรงรีที่มีครึ่งแกน sigma i u i singular value ที่ใหญ่ที่สุดคือการยืดที่มากที่สุด ซึ่งคือ two norm ของ M"
+    },
+    {
+     "s": 34.658,
+     "e": 47.247,
+     "en": "The proof uses the spectral theorem. M transpose M is symmetric and positive semidefinite, so it has orthonormal eigenvectors v i and eigenvalues sigma i squared.",
+     "th": "การพิสูจน์ใช้ spectral theorem M transpose M เป็นเมทริกซ์สมมาตรและ positive semidefinite จึงมีเวกเตอร์เฉพาะตั้งฉากปกติ v i และค่าเฉพาะ sigma i กำลังสอง"
+    },
+    {
+     "s": 47.247,
+     "e": 50.105,
+     "en": "Then u i is M v i divided by sigma i.",
+     "th": "แล้ว u i คือ M v i หารด้วย sigma i"
+    },
+    {
+     "s": 50.105,
+     "e": 61.171,
+     "en": "That proof is not how to compute it. Forming M transpose M squares the condition number. Libraries compute the decomposition directly from M.",
+     "th": "การพิสูจน์นี้ไม่ใช่วิธีคำนวณ การสร้าง M transpose M ทำให้ condition number ยกกำลังสอง ไลบรารีคำนวณการแยกตัวประกอบจาก M โดยตรง"
+    },
+    {
+     "s": 61.171,
+     "e": 69.868,
+     "en": "The decomposition can also be read as a sum of rank one pieces, sigma i u i v i transpose, ordered from most to least important.",
+     "th": "การแยกตัวประกอบนี้อ่านได้อีกแบบว่าเป็นผลรวมของส่วนที่มี rank หนึ่ง คือ sigma i u i v i transpose เรียงจากสำคัญมากไปน้อย"
+    },
+    {
+     "s": 69.868,
+     "e": 74.25,
+     "en": "That reading gives the low rank approximation later in this part.",
+     "th": "การอ่านแบบนี้ให้การประมาณด้วย rank ต่ำในช่วงท้ายของส่วนนี้"
+    },
+    {
+     "s": 74.25,
+     "e": 87.475,
+     "en": "A small example. The matrix three, zero, zero, minus two is already diagonal, but its singular values are three and two, not three and minus two. Singular values are never negative:",
+     "th": "ตัวอย่างเล็กๆ เมทริกซ์ สาม ศูนย์ ศูนย์ ลบสอง เป็นเมทริกซ์ทแยงอยู่แล้ว แต่ singular value คือสามและสอง ไม่ใช่สามและลบสอง singular value ไม่เป็นลบเลย"
+    },
+    {
+     "s": 87.475,
+     "e": 90.382,
+     "en": "the sign goes into the singular vectors.",
+     "th": "เครื่องหมายไปอยู่ใน singular vector"
+    },
+    {
+     "s": 90.382,
+     "e": 100.73,
+     "en": "For a rectangular matrix, say five measurements by two parameters, there are only two singular values. The remaining three left singular vectors span the left null space:",
+     "th": "สำหรับเมทริกซ์สี่เหลี่ยมผืนผ้า เช่น การวัดห้าครั้งกับพารามิเตอร์สองตัว จะมี singular value เพียงสองตัว left singular vector ที่เหลือสามตัว span"
+    },
+    {
+     "s": 100.73,
+     "e": 108.355,
+     "en": "the directions in measurement space that no choice of parameters can produce, which is where the least squares residual lives.",
+     "th": "left null space คือทิศในปริภูมิการวัดที่ไม่มีค่าพารามิเตอร์ใดสร้างได้ ซึ่งเป็นที่อยู่ของเศษเหลือ least squares"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 46.32,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.5,
+     "en": "Here is the shear family one, b, zero, one. Move b with the slider.",
+     "th": "นี่คือกลุ่มเมทริกซ์เฉือน หนึ่ง b ศูนย์ หนึ่ง เลื่อน b ด้วยแถบเลื่อน"
+    },
+    {
+     "s": 6.5,
+     "e": 11.783,
+     "en": "The eigenvalues stay one and one for every b. The singular values spread apart:",
+     "th": "ค่าเฉพาะยังคงเป็นหนึ่งและหนึ่งทุกค่า b แต่ singular value แยกห่างออกจากกัน"
+    },
+    {
+     "s": 11.783,
+     "e": 20.434,
+     "en": "the product stays one, because it equals the absolute value of the determinant, but the ratio, the condition number, grows quickly.",
+     "th": "ผลคูณยังคงเป็นหนึ่งเพราะเท่ากับค่าสัมบูรณ์ของดีเทอร์มิแนนต์ แต่อัตราส่วนซึ่งคือ condition number เพิ่มขึ้นอย่างรวดเร็ว"
+    },
+    {
+     "s": 20.434,
+     "e": 32.184,
+     "en": "At b equal to four, the matrix stretches some vector more than four times while every eigenvalue says one. If you judged this operator by its eigenvalues, you would miss all of that.",
+     "th": "ที่ b เท่ากับสี่ เมทริกซ์ยืดเวกเตอร์บางตัวมากกว่าสี่เท่า ขณะที่ค่าเฉพาะทุกตัวบอกว่าหนึ่ง ถ้าตัดสิน operator นี้จากค่าเฉพาะ คุณจะพลาดเรื่องนี้ทั้งหมด"
+    },
+    {
+     "s": 32.184,
+     "e": 44.528,
+     "en": "Notice also how the image of the circle leans over as b grows. The direction of largest stretch turns toward the first axis, and the direction of least stretch turns toward the second.",
+     "th": "สังเกตด้วยว่าภาพของวงกลมเอนลงเมื่อ b เพิ่มขึ้น ทิศที่ยืดมากที่สุดหมุนเข้าหาแกนแรก และทิศที่ยืดน้อยที่สุดหมุนเข้าหาแกนที่สอง"
+    },
+    {
+     "s": 44.528,
+     "e": 46.263,
+     "en": "Neither is an eigenvector.",
+     "th": "ทั้งสองไม่ใช่เวกเตอร์เฉพาะ"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 72.408,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.103,
+     "en": "The SVD gives orthonormal bases for all four subspaces at once.",
+     "th": "SVD ให้ basis ตั้งฉากปกติของ subspace ทั้งสี่พร้อมกัน"
+    },
+    {
+     "s": 5.103,
+     "e": 16.513,
+     "en": "If the rank is r, the first r columns of U span the column space and the rest span the left null space. The first r columns of V span the row space and the rest span the null space.",
+     "th": "ถ้า rank เท่ากับ r หลักแรก r หลักของ U span column space และหลักที่เหลือ span left null space หลักแรก r หลักของ V span row space และหลักที่เหลือ span null space"
+    },
+    {
+     "s": 16.513,
+     "e": 25.092,
+     "en": "This is exactly how the null space function in Lab 1 worked: it kept the right singular vectors whose singular values fall below the threshold.",
+     "th": "นี่คือวิธีที่ฟังก์ชัน null space ใน Lab 1 ทำงาน มันเก็บ right singular vector ที่ singular value ต่ำกว่าค่าขีดแบ่ง"
+    },
+    {
+     "s": 25.092,
+     "e": 34.132,
+     "en": "The pseudoinverse inverts each direction the matrix can see and ignores the others. It gives the least squares solution of smallest norm.",
+     "th": "pseudoinverse กลับทิศที่เมทริกซ์มองเห็นแต่ละทิศ และไม่สนใจทิศอื่น ให้คำตอบ least squares ที่มี norm เล็กที่สุด"
+    },
+    {
+     "s": 34.132,
+     "e": 46.954,
+     "en": "Notice what it does to noise. An error of size epsilon in b along u i becomes epsilon divided by sigma i in the solution. A small singular value is an amplifier.",
+     "th": "สังเกตว่ามันทำอะไรกับสัญญาณรบกวน ความคลาดเคลื่อนขนาด epsilon ใน b ตามทิศ u i กลายเป็น epsilon หารด้วย sigma i ในคำตอบ singular value ที่เล็กคือตัวขยาย"
+    },
+    {
+     "s": 46.954,
+     "e": 49.803,
+     "en": "That one fact explains conditioning.",
+     "th": "ข้อเท็จจริงนี้อธิบายเรื่องภาวะของปัญหาได้ทั้งหมด"
+    },
+    {
+     "s": 49.803,
+     "e": 57.065,
+     "en": "Here is the truncated SVD as a method. Keep only the singular values above a threshold, and invert those.",
+     "th": "นี่คือ truncated SVD ในฐานะวิธีการ เก็บเฉพาะ singular value ที่สูงกว่าค่าขีดแบ่ง"
+    },
+    {
+     "s": 57.065,
+     "e": 64.532,
+     "en": "The solution loses the directions the data cannot see, and in exchange it does not amplify noise along them.",
+     "th": "แล้วกลับค่าเหล่านั้น คำตอบจะไม่มีทิศที่ข้อมูลมองไม่เห็น แลกกับการไม่ขยายสัญญาณรบกวนในทิศเหล่านั้น วิธี"
+    },
+    {
+     "s": 64.532,
+     "e": 72.342,
+     "en": "Regularization methods used in inverse problems, such as Tikhonov regularization, are smooth versions of this cut.",
+     "th": "regularization ที่ใช้ในปัญหาผกผัน เช่น Tikhonov regularization เป็นการตัดแบบนี้ในรูปที่นุ่มนวลขึ้น"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 96.984,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.247,
+     "en": "The condition number is the ratio of the largest to the smallest singular value.",
+     "th": "condition number คืออัตราส่วนของ singular value ที่ใหญ่ที่สุดต่อที่เล็กที่สุด"
+    },
+    {
+     "s": 5.247,
+     "e": 11.912,
+     "en": "For a linear system, the relative error in the solution is at most kappa times the relative error in the data.",
+     "th": "สำหรับระบบเชิงเส้น ความคลาดเคลื่อนสัมพัทธ์ในคำตอบมีค่าไม่เกิน kappa คูณความคลาดเคลื่อนสัมพัทธ์ในข้อมูล"
+    },
+    {
+     "s": 11.912,
+     "e": 18.276,
+     "en": "The bound is reached when the data lie along the first output direction and the error lies along the last.",
+     "th": "ขอบเขตนี้เกิดขึ้นจริงเมื่อข้อมูลอยู่ตามทิศเอาต์พุตแรก และความคลาดเคลื่อนอยู่ตามทิศสุดท้าย"
+    },
+    {
+     "s": 18.276,
+     "e": 22.566,
+     "en": "A rule of thumb: you lose about log ten of kappa digits.",
+     "th": "หลักง่ายๆ คือ คุณเสียตัวเลขไปประมาณ log ฐานสิบของ kappa หลัก"
+    },
+    {
+     "s": 22.566,
+     "e": 29.073,
+     "en": "The table collects examples. The monomial basis from Session 1 had about ten to the thirteen.",
+     "th": "ตารางรวบรวมตัวอย่าง monomial basis จากคาบที่ 1 มีประมาณสิบยกกำลังสิบสาม design"
+    },
+    {
+     "s": 29.073,
+     "e": 40.079,
+     "en": "The Arrhenius design for data between three hundred and three hundred sixty kelvin has about five thousand four hundred. After centering and scaling it is one.",
+     "th": "ของ Arrhenius สำหรับข้อมูลระหว่างสามร้อยถึงสามร้อยหกสิบเคลวินมีประมาณห้าพันสี่ร้อย หลังเลื่อนจุดศูนย์กลางและปรับสเกลเหลือหนึ่ง"
+    },
+    {
+     "s": 40.079,
+     "e": 49.81,
+     "en": "A large kappa has two possible causes: columns of very different size, or columns that are nearly parallel. Scaling cures the first.",
+     "th": "kappa ที่ใหญ่มีสาเหตุได้สองแบบ คือ หลักมีขนาดต่างกันมาก หรือหลักเกือบขนานกัน การปรับสเกลแก้แบบแรก"
+    },
+    {
+     "s": 49.81,
+     "e": 54.566,
+     "en": "Only a new experiment or a new parameterization cures the second.",
+     "th": "ส่วนแบบที่สองแก้ได้ด้วยการทดลองใหม่หรือการเปลี่ยนรูปพารามิเตอร์เท่านั้น"
+    },
+    {
+     "s": 54.566,
+     "e": 64.263,
+     "en": "Kappa is a property of the problem, not of the algorithm. A poor algorithm, such as the normal equations, adds more loss on top.",
+     "th": "kappa เป็นสมบัติของปัญหา ไม่ใช่ของอัลกอริทึม อัลกอริทึมที่ไม่ดี เช่น normal equation ทำให้สูญเสียเพิ่มขึ้นอีก"
+    },
+    {
+     "s": 64.263,
+     "e": 66.273,
+     "en": "Let us put numbers on the bound.",
+     "th": "ลองใส่ตัวเลขให้ขอบเขตนี้"
+    },
+    {
+     "s": 66.273,
+     "e": 72.121,
+     "en": "Rate constants measured to about three percent, with kappa equal to five thousand four hundred,",
+     "th": "ค่าคงที่อัตราที่วัดได้ละเอียดประมาณสามเปอร์เซ็นต์ เมื่อ kappa เท่ากับห้าพันสี่ร้อย"
+    },
+    {
+     "s": 72.121,
+     "e": 82.842,
+     "en": "could in the worst case give relative parameter errors of more than one hundred times three percent. In practice the damage shows up as the near perfect correlation in the lab.",
+     "th": "ในกรณีเลวร้ายที่สุดอาจให้ความคลาดเคลื่อนสัมพัทธ์ของพารามิเตอร์มากกว่าหนึ่งร้อยเท่าของสามเปอร์เซ็นต์ ในทางปฏิบัติผลเสียปรากฏเป็นสหสัมพันธ์ที่เกือบสมบูรณ์ในแล็บ"
+    },
+    {
+     "s": 82.842,
+     "e": 94.634,
+     "en": "Kappa also depends on the units you choose. Measuring one variable in pascals and another in bar changes kappa by ten to the five, without changing the information.",
+     "th": "kappa ยังขึ้นกับหน่วยที่เลือก การวัดตัวแปรหนึ่งเป็นปาสคาลและอีกตัวเป็นบาร์ทำให้ kappa เปลี่ยนไปสิบยกกำลังห้า โดยที่ข้อมูลไม่ได้เปลี่ยน"
+    },
+    {
+     "s": 94.634,
+     "e": 96.921,
+     "en": "That is why scaling comes first.",
+     "th": "นี่คือเหตุผลที่ต้องปรับสเกลก่อน"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 103.968,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.655,
+     "en": "Now the question every modeler meets: which parameters can my experiment determine?",
+     "th": "ทีนี้คำถามที่ผู้สร้างแบบจำลองทุกคนพบ คือ การทดลองของฉันกำหนดพารามิเตอร์ใดได้บ้าง"
+    },
+    {
+     "s": 5.655,
+     "e": 15.272,
+     "en": "The sensitivity matrix S has one row per measurement and one column per parameter: the derivative of the predicted measurement with respect to that parameter.",
+     "th": "sensitivity matrix S มีหนึ่งแถวต่อการวัดหนึ่งครั้ง และหนึ่งหลักต่อพารามิเตอร์หนึ่งตัว คืออนุพันธ์ของค่าวัดที่ทำนายเทียบกับพารามิเตอร์นั้น"
+    },
+    {
+     "s": 15.272,
+     "e": 21.684,
+     "en": "Near the best fit, the covariance of the estimates is approximately s squared times S transpose S inverse.",
+     "th": "ใกล้คำตอบที่ดีที่สุด ความแปรปรวนร่วมของค่าประมาณประมาณเท่ากับ s กำลังสอง คูณ S transpose S inverse"
+    },
+    {
+     "s": 21.684,
+     "e": 31.355,
+     "en": "Take a first order decay with c zero equal to one and k equal to zero point five per minute, sampled eight times. Move the last sampling time.",
+     "th": "พิจารณาการสลายตัวอันดับหนึ่งที่ c ศูนย์ เท่ากับหนึ่ง และ k เท่ากับศูนย์จุดห้าต่อนาที เก็บตัวอย่างแปดครั้ง แล้วเลื่อนเวลาเก็บตัวอย่างครั้งสุดท้าย"
+    },
+    {
+     "s": 31.355,
+     "e": 36.015,
+     "en": "With a window of only half a minute, the curve is nearly a straight line.",
+     "th": "เมื่อช่วงเวลาเพียงครึ่งนาที เส้นโค้งเกือบเป็นเส้นตรง การเปลี่ยน"
+    },
+    {
+     "s": 36.015,
+     "e": 44.013,
+     "en": "Changing c zero and changing k look almost the same, the two columns are nearly parallel, and the standard error of k is large.",
+     "th": "c ศูนย์ กับการเปลี่ยน k ดูเกือบเหมือนกัน สองหลักเกือบขนานกัน และความคลาดเคลื่อนมาตรฐานของ k มีค่ามาก"
+    },
+    {
+     "s": 44.013,
+     "e": 50.627,
+     "en": "The error falls to a minimum at about three and a half minutes, near two time constants, and then rises again.",
+     "th": "ความคลาดเคลื่อนลดลงจนต่ำสุดที่ประมาณสามนาทีครึ่ง ใกล้สองเท่าของค่าคงที่เวลา แล้วเพิ่มขึ้นอีก"
+    },
+    {
+     "s": 50.627,
+     "e": 58.671,
+     "en": "With equally spaced samples, a long window puts many points where the curve has already decayed and carries little information about k.",
+     "th": "เมื่อเก็บตัวอย่างห่างเท่ากัน ช่วงเวลายาวทำให้มีจุดจำนวนมากอยู่ในช่วงที่เส้นโค้งสลายไปแล้ว ซึ่งให้ข้อมูลเกี่ยวกับ k น้อย"
+    },
+    {
+     "s": 58.671,
+     "e": 70.092,
+     "en": "So identifiability is a property of the experiment and the model together. The singular values of the scaled sensitivity matrix measure it before you run a single test.",
+     "th": "ดังนั้นความสามารถในการระบุพารามิเตอร์เป็นสมบัติของการทดลองและแบบจำลองร่วมกัน singular value ของ sensitivity matrix ที่ปรับสเกลแล้ววัดเรื่องนี้ได้ก่อนที่คุณจะทดลองแม้แต่ครั้งเดียว"
+    },
+    {
+     "s": 70.092,
+     "e": 78.321,
+     "en": "The correlation in the table is worth reading. At every window it stays near zero point eight to zero point nine, positive.",
+     "th": "สหสัมพันธ์ในตารางควรอ่านด้วย ทุกช่วงเวลามีค่าประมาณศูนย์จุดแปดถึงศูนย์จุดเก้า และเป็นบวก ค่าประมาณ c ศูนย์"
+    },
+    {
+     "s": 78.321,
+     "e": 86.882,
+     "en": "A larger estimate of c zero goes with a larger estimate of k, because a higher start and a faster decay can produce similar data.",
+     "th": "ที่สูงขึ้นมาพร้อมค่าประมาณ k ที่สูงขึ้น เพราะจุดเริ่มต้นที่สูงกว่าและการสลายที่เร็วกว่าให้ข้อมูลที่คล้ายกันได้"
+    },
+    {
+     "s": 86.882,
+     "e": 90.429,
+     "en": "This is optimal experimental design in its simplest form:",
+     "th": "นี่คือการออกแบบการทดลองที่เหมาะสมในรูปที่ง่ายที่สุด"
+    },
+    {
+     "s": 90.429,
+     "e": 101.13,
+     "en": "choose the sampling times to make the smallest singular value of the scaled sensitivity matrix as large as possible, or the determinant of S transpose S as large as possible.",
+     "th": "คือเลือกเวลาเก็บตัวอย่างให้ singular value ที่เล็กที่สุดของ sensitivity matrix ที่ปรับสเกลแล้วมีค่ามากที่สุด หรือให้ดีเทอร์มิแนนต์ของ S transpose S มากที่สุด"
+    },
+    {
+     "s": 101.13,
+     "e": 103.882,
+     "en": "The second choice is called D optimal design.",
+     "th": "ทางเลือกที่สองเรียกว่า D optimal design"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
+   "duration": 85.68,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.925,
+     "en": "The SVD as a sum of rank one pieces gives the best low rank approximation. Keeping the first k terms gives the closest matrix of rank k, and the error is the next singular value.",
+     "th": "SVD ในรูปผลรวมของส่วนที่มี rank หนึ่งให้การประมาณด้วย rank ต่ำที่ดีที่สุด การเก็บ k พจน์แรกให้เมทริกซ์ rank k ที่ใกล้ที่สุด และความคลาดเคลื่อนเท่ากับ singular value"
+    },
+    {
+     "s": 12.925,
+     "e": 15.289,
+     "en": "This is the Eckart Young theorem.",
+     "th": "ตัวถัดไป นี่คือทฤษฎีบท Eckart Young"
+    },
+    {
+     "s": 15.289,
+     "e": 25.789,
+     "en": "The data here are synthetic: twenty runs of a fixed bed temperature profile at twenty five axial positions, built from a hot spot mode and a linear mode, with noise of half a kelvin.",
+     "th": "ข้อมูลในหน้านี้สังเคราะห์ขึ้น คือโปรไฟล์อุณหภูมิของเบดนิ่งยี่สิบครั้ง ที่ตำแหน่งตามแกนยี่สิบห้าจุด สร้างจากโหมดจุดร้อนและโหมดเชิงเส้น พร้อมสัญญาณรบกวนครึ่งเคลวิน"
+    },
+    {
+     "s": 25.789,
+     "e": 31.382,
+     "en": "Two singular values, about one hundred twenty three and seventy one, stand far above the rest.",
+     "th": "singular value สองตัว ประมาณหนึ่งร้อยยี่สิบสามและเจ็ดสิบเอ็ด สูงกว่าตัวอื่นมาก"
+    },
+    {
+     "s": 31.382,
+     "e": 37.917,
+     "en": "The others sit near the dashed line at four point seven, the largest singular value expected from noise alone,",
+     "th": "ตัวที่เหลืออยู่ใกล้เส้นประที่สี่จุดเจ็ด ซึ่งคือ singular value ที่ใหญ่ที่สุดที่คาดได้จากสัญญาณรบกวนอย่างเดียว"
+    },
+    {
+     "s": 37.917,
+     "e": 44.158,
+     "en": "which is the noise standard deviation times the square root of twenty plus the square root of twenty five.",
+     "th": "เท่ากับส่วนเบี่ยงเบนมาตรฐานของสัญญาณรบกวน คูณ รากที่สองของยี่สิบ บวกรากที่สองของยี่สิบห้า"
+    },
+    {
+     "s": 44.158,
+     "e": 53.447,
+     "en": "So the numerical rank is two: the data contain two independent ways the profile can change. Keeping a third term would only fit noise.",
+     "th": "rank เชิงตัวเลขจึงเท่ากับสอง ข้อมูลมีสองรูปแบบอิสระที่โปรไฟล์เปลี่ยนได้ การเก็บพจน์ที่สามจะ fit เพียงสัญญาณรบกวน"
+    },
+    {
+     "s": 53.447,
+     "e": 60.395,
+     "en": "This completes the threshold left open in Session 1: set it from the noise in the data, not from machine precision.",
+     "th": "นี่ทำให้ค่าขีดแบ่งที่ค้างไว้ในคาบที่ 1 สมบูรณ์ คือให้กำหนดจากสัญญาณรบกวนในข้อมูล ไม่ใช่จากความละเอียดของเครื่อง"
+    },
+    {
+     "s": 60.395,
+     "e": 63.435,
+     "en": "The same picture appears in many forms in research:",
+     "th": "ภาพเดียวกันนี้ปรากฏในงานวิจัยหลายรูปแบบ"
+    },
+    {
+     "s": 63.435,
+     "e": 69.106,
+     "en": "a scree plot in principal component analysis, the number of significant factors in chemometrics,",
+     "th": "เช่น scree plot ใน principal component analysis จำนวน factor ที่มีนัยสำคัญใน"
+    },
+    {
+     "s": 69.106,
+     "e": 75.303,
+     "en": "or the number of independent reactions estimated from concentration data rather than from the atom matrix.",
+     "th": "chemometrics หรือจำนวนปฏิกิริยาอิสระที่ประมาณจากข้อมูลความเข้มข้นแทนที่จะได้จาก atom matrix"
+    },
+    {
+     "s": 75.303,
+     "e": 85.605,
+     "en": "When the gap between signal and noise singular values is not clear, report that honestly: say which components are ambiguous and test whether your conclusions change with or without them.",
+     "th": "เมื่อช่องว่างระหว่าง singular value ของสัญญาณกับของสัญญาณรบกวนไม่ชัดเจน ให้รายงานอย่างตรงไปตรงมา บอกว่าองค์ประกอบใดกำกวม และทดสอบว่าข้อสรุปเปลี่ยนไปหรือไม่เมื่อรวมหรือไม่รวมองค์ประกอบเหล่านั้น"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 18.864,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.466,
+     "en": "Check 2 has four questions on the SVD and conditioning:",
+     "th": "Check 2 มีสี่คำถามเรื่อง SVD และภาวะของปัญหา ได้แก่"
+    },
+    {
+     "s": 3.466,
+     "e": 12.063,
+     "en": "a null space from the SVD, trustworthy digits, the meaning of a strong correlation, and a rank decision from singular values and a noise level.",
+     "th": "null space จาก SVD จำนวนหลักที่เชื่อถือได้ ความหมายของสหสัมพันธ์ที่สูง และการตัดสิน rank จาก singular value กับระดับสัญญาณรบกวน"
+    },
+    {
+     "s": 12.063,
+     "e": 18.803,
+     "en": "Take five minutes, then press Show answers. After this check, take the ten minute break.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers หลังจาก Check นี้ พักสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
+   "duration": 39.6,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.632,
+     "en": "Welcome back. Activity 2 adds the parameters to your card.",
+     "th": "ยินดีต้อนรับกลับ กิจกรรมที่ 2 เพิ่มพารามิเตอร์ลงในบัตรของคุณ"
+    },
+    {
+     "s": 5.632,
+     "e": 13.717,
+     "en": "List the parameters you estimate, with units and expected ranges. For each, name the measurement most sensitive to it.",
+     "th": "เขียนพารามิเตอร์ที่คุณประมาณค่า พร้อมหน่วยและช่วงที่คาดไว้ แต่ละตัวให้ระบุการวัดที่ไวต่อมันที่สุด"
+    },
+    {
+     "s": 13.717,
+     "e": 21.395,
+     "en": "Then name the pair you suspect is correlated, and explain why their sensitivity columns might be nearly parallel.",
+     "th": "จากนั้นระบุคู่ที่คุณสงสัยว่าสัมพันธ์กัน และอธิบายว่าทำไมหลักของ sensitivity ของทั้งคู่อาจเกือบขนานกัน"
+    },
+    {
+     "s": 21.395,
+     "e": 27.724,
+     "en": "Finally, propose one change to the experiment or to the parameterization that would separate them.",
+     "th": "สุดท้าย เสนอการเปลี่ยนแปลงการทดลองหรือรูปพารามิเตอร์หนึ่งอย่างที่จะแยกทั้งคู่ออกจากกัน"
+    },
+    {
+     "s": 27.724,
+     "e": 39.539,
+     "en": "Typical pairs are a pre exponential factor and an activation energy, an adsorption constant and a rate constant, or a diffusion coefficient and a film thickness. Take ten minutes.",
+     "th": "คู่ที่พบบ่อยคือ pre exponential factor กับพลังงานก่อกัมมันต์ ค่าคงที่การดูดซับกับค่าคงที่อัตรา หรือสัมประสิทธิ์การแพร่กับความหนาของฟิล์ม ใช้เวลาสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 95.064,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.276,
+     "en": "Part three. The first application is reparameterization, and the Arrhenius equation is the classic case.",
+     "th": "ส่วนที่สาม การประยุกต์แรกคือการเปลี่ยนรูปพารามิเตอร์ และสมการ Arrhenius เป็นกรณีคลาสสิก"
+    },
+    {
+     "s": 8.276,
+     "e": 19.595,
+     "en": "Write ln k as ln A minus E a over R times one over T. The intercept ln A is the value at one over T equal to zero, an infinite temperature far outside any data.",
+     "th": "เขียน ln k เป็น ln A ลบ E a หาร R คูณหนึ่งส่วน T จุดตัดแกน ln A คือค่าที่หนึ่งส่วน T เท่ากับศูนย์ ซึ่งคืออุณหภูมิอนันต์ที่อยู่นอกข้อมูลมาก"
+    },
+    {
+     "s": 19.595,
+     "e": 27.118,
+     "en": "Any change in the fitted slope swings that intercept, so the two estimates are almost perfectly correlated.",
+     "th": "การเปลี่ยนความชันที่ fit ได้ทำให้จุดตัดแกนแกว่งไปด้วย ค่าประมาณทั้งสองจึงสัมพันธ์กันเกือบสมบูรณ์"
+    },
+    {
+     "s": 27.118,
+     "e": 35.744,
+     "en": "Rewrite it around a reference temperature inside the data. The new intercept, ln k ref, is the rate in the middle of the data.",
+     "th": "เขียนใหม่โดยใช้อุณหภูมิอ้างอิงที่อยู่ในช่วงข้อมูล จุดตัดแกนใหม่ ln k ref คืออัตราที่กลางช่วงข้อมูล"
+    },
+    {
+     "s": 35.744,
+     "e": 43.079,
+     "en": "If one over T ref is the mean of one over T, the two columns become orthogonal and the correlation vanishes.",
+     "th": "ถ้าหนึ่งส่วน T ref เท่ากับค่าเฉลี่ยของหนึ่งส่วน T สองหลักจะตั้งฉากกันและสหสัมพันธ์หายไป"
+    },
+    {
+     "s": 43.079,
+     "e": 53.934,
+     "en": "Centering alone does not bring kappa near one, because the two columns still differ in size by a factor of about ten thousand. Scaling the centered column fixes that.",
+     "th": "การเลื่อนจุดศูนย์กลางอย่างเดียวไม่ทำให้ kappa ใกล้หนึ่ง เพราะสองหลักยังมีขนาดต่างกันประมาณหนึ่งหมื่นเท่า การปรับสเกลหลักที่เลื่อนแล้วแก้เรื่องนี้ได้"
+    },
+    {
+     "s": 53.934,
+     "e": 66.526,
+     "en": "The fitted curve is identical in all three forms. Only the coordinates of the parameter vector change, which is a change of basis in parameter space. Lab 2 measures the gain.",
+     "th": "เส้นโค้งที่ fit ได้เหมือนกันทั้งสามรูป เปลี่ยนเพียงพิกัดของเวกเตอร์พารามิเตอร์ ซึ่งคือการเปลี่ยน basis ในปริภูมิพารามิเตอร์ Lab 2 จะวัดผลที่ได้"
+    },
+    {
+     "s": 66.526,
+     "e": 77.961,
+     "en": "The same move works for any model. For a Langmuir Hinshelwood rate, write the adsorption constant at a reference temperature inside the data, with its own enthalpy as the slope.",
+     "th": "การเปลี่ยนแบบเดียวกันใช้ได้กับทุกแบบจำลอง สำหรับอัตราแบบ Langmuir Hinshelwood ให้เขียนค่าคงที่การดูดซับที่อุณหภูมิอ้างอิงภายในช่วงข้อมูล โดยมีเอนทาลปีของมันเป็นความชัน"
+    },
+    {
+     "s": 77.961,
+     "e": 82.329,
+     "en": "For a correlation in pressure, write it around a reference pressure.",
+     "th": "สำหรับสหสัมพันธ์ที่ขึ้นกับความดัน ให้เขียนรอบความดันอ้างอิง"
+    },
+    {
+     "s": 82.329,
+     "e": 87.803,
+     "en": "Fitting software then converges faster and the reported uncertainties become meaningful.",
+     "th": "ซอฟต์แวร์ fit จะลู่เข้าเร็วขึ้น และความไม่แน่นอนที่รายงานจะมีความหมาย"
+    },
+    {
+     "s": 87.803,
+     "e": 95.0,
+     "en": "You can still convert back to A and E a for comparison with the literature, but report their correlation when you do.",
+     "th": "คุณยังแปลงกลับเป็น A และ E a เพื่อเทียบกับเอกสารได้ แต่ต้องรายงานสหสัมพันธ์ของทั้งคู่ด้วย"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 80.4,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.011,
+     "en": "The second application is principal component analysis, which is the SVD of a centered data matrix.",
+     "th": "การประยุกต์ที่สองคือ principal component analysis ซึ่งคือ SVD ของเมทริกซ์ข้อมูลที่เลื่อนจุดศูนย์กลางแล้ว"
+    },
+    {
+     "s": 7.011,
+     "e": 16.637,
+     "en": "The right singular vectors are the loadings, the directions in variable space. The left singular vectors times the singular values are the scores.",
+     "th": "right singular vector คือ loading ซึ่งเป็นทิศในปริภูมิของตัวแปร left singular vector คูณ singular value คือ score"
+    },
+    {
+     "s": 16.637,
+     "e": 23.382,
+     "en": "The fraction of variance explained by component i is sigma i squared over the sum of all sigma squared.",
+     "th": "สัดส่วนความแปรปรวนที่อธิบายด้วยองค์ประกอบที่ i คือ sigma i กำลังสอง หารด้วยผลรวมของ sigma กำลังสองทั้งหมด"
+    },
+    {
+     "s": 23.382,
+     "e": 35.487,
+     "en": "In process monitoring, a plant with two hundred sensors may move in only a handful of independent ways. Statistics built on the first scores and on the residual flag abnormal operation.",
+     "th": "ในการเฝ้าติดตามกระบวนการ โรงงานที่มีเซนเซอร์สองร้อยตัวอาจเปลี่ยนแปลงได้เพียงไม่กี่รูปแบบอิสระ ค่าสถิติที่สร้างจาก score ตัวแรกๆ และจากเศษเหลือใช้ตรวจจับการทำงานผิดปกติ"
+    },
+    {
+     "s": 35.487,
+     "e": 44.697,
+     "en": "In spectroscopy, the number of significant components estimates the number of absorbing species. That is Task 2 of the lab.",
+     "th": "ในสเปกโทรสโกปี จำนวนองค์ประกอบที่มีนัยสำคัญใช้ประมาณจำนวนสปีชีส์ที่ดูดกลืนแสง ซึ่งคือ Task 2 ของแล็บ"
+    },
+    {
+     "s": 44.697,
+     "e": 57.882,
+     "en": "Two cautions. Scale the variables first, or the one with the largest numbers in its units dominates. And remember that principal components are directions of variance, not causes.",
+     "th": "ข้อควรระวังสองข้อ ให้ปรับสเกลตัวแปรก่อน มิฉะนั้นตัวแปรที่มีตัวเลขใหญ่ที่สุดตามหน่วยจะครอบงำ และจำไว้ว่า principal component คือทิศของความแปรปรวน ไม่ใช่สาเหตุ"
+    },
+    {
+     "s": 57.882,
+     "e": 67.987,
+     "en": "A short worked case. Ten sensors on a distillation column, five hundred samples, scaled. Singular values thirty and twelve, then about one.",
+     "th": "กรณีตัวอย่างสั้นๆ เซนเซอร์สิบตัวบนหอกลั่น ห้าร้อยตัวอย่าง ปรับสเกลแล้ว singular value สามสิบและสิบสอง จากนั้นประมาณหนึ่ง"
+    },
+    {
+     "s": 67.987,
+     "e": 80.329,
+     "en": "The first component may be feed rate moving every flow together, the second the reflux ratio moving temperatures against flows. Everything else is noise and small effects.",
+     "th": "องค์ประกอบแรกอาจเป็นอัตราป้อนที่ทำให้อัตราการไหลทุกตัวเปลี่ยนไปด้วยกัน องค์ประกอบที่สองอาจเป็นอัตราส่วนรีฟลักซ์ที่ทำให้อุณหภูมิเปลี่ยนสวนทางกับอัตราการไหล ที่เหลือคือสัญญาณรบกวนและผลขนาดเล็ก"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
+   "duration": 60.72,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.984,
+     "en": "Here is what to report whenever you fit, invert or reduce a matrix.",
+     "th": "นี่คือสิ่งที่ควรรายงานทุกครั้งที่คุณ fit หาตัวผกผัน หรือลดขนาดเมทริกซ์"
+    },
+    {
+     "s": 4.984,
+     "e": 10.001,
+     "en": "When you solve or invert, report kappa and how many digits that leaves.",
+     "th": "เมื่อแก้ระบบหรือหาตัวผกผัน ให้รายงาน kappa และจำนวนหลักที่เหลือ"
+    },
+    {
+     "s": 10.001,
+     "e": 22.961,
+     "en": "When you fit parameters, report standard errors, the correlation matrix of the estimates, and the parameterization you used. Compute the fit with QR or the SVD, not the normal equations.",
+     "th": "เมื่อ fit พารามิเตอร์ ให้รายงานความคลาดเคลื่อนมาตรฐาน เมทริกซ์สหสัมพันธ์ของค่าประมาณ และรูปพารามิเตอร์ที่ใช้ คำนวณการ fit ด้วย QR หรือ SVD ไม่ใช่ normal equation"
+    },
+    {
+     "s": 22.961,
+     "e": 29.763,
+     "en": "When you claim that a parameter is determined, show the singular values of the scaled sensitivity matrix.",
+     "th": "เมื่ออ้างว่าพารามิเตอร์ถูกกำหนดได้ ให้แสดง singular value ของ sensitivity matrix ที่ปรับสเกลแล้ว"
+    },
+    {
+     "s": 29.763,
+     "e": 36.946,
+     "en": "When you reduce data, show all the singular values, the threshold, and where the threshold comes from in the noise.",
+     "th": "เมื่อลดขนาดข้อมูล ให้แสดง singular value ทั้งหมด ค่าขีดแบ่ง และที่มาของค่าขีดแบ่งจากสัญญาณรบกวน"
+    },
+    {
+     "s": 36.946,
+     "e": 43.263,
+     "en": "And when you diagonalize a non symmetric matrix, check the condition number of the eigenvector matrix.",
+     "th": "และเมื่อแปลงเมทริกซ์ที่ไม่สมมาตรเป็นเมทริกซ์ทแยง ให้ตรวจ condition number ของเมทริกซ์เวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 43.263,
+     "e": 51.803,
+     "en": "A fit reported with a correlation of zero point nine nine nine between two parameters has told the reader that only one combination of them is known.",
+     "th": "การรายงานผล fit ที่มีสหสัมพันธ์ศูนย์จุดเก้าเก้าเก้าระหว่างพารามิเตอร์สองตัว ได้บอกผู้อ่านแล้วว่ารู้ค่าเพียงผลรวมเดียวของทั้งสอง"
+    },
+    {
+     "s": 51.803,
+     "e": 60.658,
+     "en": "Most of these reports cost a few lines of code. The D drawers on today's slides show each of them, and the lab asks you to read them.",
+     "th": "รายงานเหล่านี้ส่วนใหญ่ใช้โค้ดเพียงไม่กี่บรรทัด D drawer ในสไลด์วันนี้แสดงทุกตัว และแล็บให้คุณอ่านค่าเหล่านั้น"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "file": "audio/slide-23.mp3",
+   "duration": 8.664,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.353,
+     "en": "Check 3 has four questions on reparameterization and principal components.",
+     "th": "Check 3 มีสี่คำถามเรื่องการเปลี่ยนรูปพารามิเตอร์และ principal component"
+    },
+    {
+     "s": 5.353,
+     "e": 8.605,
+     "en": "Take five minutes, then press Show answers.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 11.64,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.326,
+     "en": "Check 4 has four questions on identifiability, based on the decay demo and on the choice between factoring S and S transpose S.",
+     "th": "Check 4 มีสี่คำถามเรื่องความสามารถในการระบุพารามิเตอร์ จาก demo การสลายตัว และการเลือกระหว่างการแยกตัวประกอบ S กับ S transpose S"
+    },
+    {
+     "s": 8.326,
+     "e": 11.579,
+     "en": "Take five minutes, then press Show answers.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
+   "duration": 35.64,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.155,
+     "en": "Here is where today's ideas go next.",
+     "th": "นี่คือการนำแนวคิดของวันนี้ไปใช้ต่อ"
+    },
+    {
+     "s": 3.155,
+     "e": 9.727,
+     "en": "Session 3 writes the solution of a linear ODE system as a sum of exponentials along the eigenvectors.",
+     "th": "คาบที่ 3 เขียนคำตอบของระบบสมการเชิงอนุพันธ์เชิงเส้นเป็นผลรวมของฟังก์ชันเอกซ์โพเนนเชียลตามเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 9.727,
+     "e": 17.329,
+     "en": "For a reaction network, the eigenvectors are straight line reaction paths and the eigenvalues give the time constants.",
+     "th": "สำหรับเครือข่ายปฏิกิริยา เวกเตอร์เฉพาะคือเส้นทางปฏิกิริยาแบบเส้นตรง และค่าเฉพาะให้ค่าคงที่เวลา"
+    },
+    {
+     "s": 17.329,
+     "e": 26.303,
+     "en": "Session 4 reads stability from the real parts of the Jacobian eigenvalues, and Session 5 watches an eigenvalue cross zero at a turning point.",
+     "th": "คาบที่ 4 อ่านเสถียรภาพจากส่วนจริงของค่าเฉพาะของ Jacobian และคาบที่ 5 ดูค่าเฉพาะที่ผ่านศูนย์ที่จุดเลี้ยวกลับ"
+    },
+    {
+     "s": 26.303,
+     "e": 35.566,
+     "en": "Session 6 treats widely separated eigenvalues as separated time scales, and Session 7 applies the spectral theorem to differential operators.",
+     "th": "คาบที่ 6 มองค่าเฉพาะที่ห่างกันมากเป็นมาตราเวลาที่แยกกัน และคาบที่ 7 ใช้ spectral theorem กับ differential operator"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 34.872,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.616,
+     "en": "Lab 2 takes forty minutes and has two parts.",
+     "th": "Lab 2 ใช้เวลาสี่สิบนาที และมีสองส่วน"
+    },
+    {
+     "s": 3.616,
+     "e": 9.132,
+     "en": "First, seven synthetic rate constants between three hundred and three hundred sixty kelvin.",
+     "th": "ส่วนแรก ค่าคงที่อัตราสังเคราะห์เจ็ดค่าระหว่างสามร้อยถึงสามร้อยหกสิบเคลวิน ทำนาย"
+    },
+    {
+     "s": 9.132,
+     "e": 18.066,
+     "en": "Predict the condition number of the design matrix, then compare the raw, centered and scaled fits, and compute the rate at the reference temperature.",
+     "th": "condition number ของ design matrix แล้วเปรียบเทียบการ fit แบบดิบ แบบเลื่อนจุดศูนย์กลาง และแบบปรับสเกล และคำนวณอัตราที่อุณหภูมิอ้างอิง"
+    },
+    {
+     "s": 18.066,
+     "e": 20.788,
+     "en": "Second, fifteen synthetic mixture spectra.",
+     "th": "ส่วนที่สอง สเปกตรัมของสารผสมสังเคราะห์สิบห้าชุด"
+    },
+    {
+     "s": 20.788,
+     "e": 30.408,
+     "en": "Count the absorbing species from the singular values and a noise threshold, then raise the noise and find where the third species can no longer be seen.",
+     "th": "นับจำนวนสปีชีส์ที่ดูดกลืนแสงจาก singular value และค่าขีดแบ่งจากสัญญาณรบกวน แล้วเพิ่มสัญญาณรบกวนเพื่อหาว่าสปีชีส์ที่สามมองไม่เห็นที่ระดับใด"
+    },
+    {
+     "s": 30.408,
+     "e": 34.816,
+     "en": "Download the answer file at the end and upload it to myCourseVille.",
+     "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "file": "audio/slide-27.mp3",
+   "duration": 43.2,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 2.076,
+     "en": "To summarize.",
+     "th": "สรุป"
+    },
+    {
+     "s": 2.076,
+     "e": 10.447,
+     "en": "Eigenvectors are the directions an operator only stretches, and diagonalization decouples a linear system in that basis.",
+     "th": "เวกเตอร์เฉพาะคือทิศที่ operator เพียงแค่ยืด และการแปลงเป็นเมทริกซ์ทแยงแยกระบบเชิงเส้นออกจากกันใน basis นั้น"
+    },
+    {
+     "s": 10.447,
+     "e": 15.289,
+     "en": "Symmetric matrices have real eigenvalues and orthonormal eigenvectors.",
+     "th": "เมทริกซ์สมมาตรมีค่าเฉพาะเป็นจำนวนจริงและเวกเตอร์เฉพาะตั้งฉากปกติ"
+    },
+    {
+     "s": 15.289,
+     "e": 20.276,
+     "en": "Non normal matrices can stretch far more than their eigenvalues suggest.",
+     "th": "เมทริกซ์ที่ไม่ normal ยืดเวกเตอร์ได้มากกว่าที่ค่าเฉพาะบ่งบอกมาก"
+    },
+    {
+     "s": 20.276,
+     "e": 31.5,
+     "en": "Every matrix has an SVD. Singular values measure stretch, set the numerical rank, and define the condition number, which tells you how many digits you lose.",
+     "th": "เมทริกซ์ทุกตัวมี SVD singular value วัดการยืด กำหนด rank เชิงตัวเลข และนิยาม condition number ซึ่งบอกว่าคุณเสียตัวเลขไปกี่หลัก"
+    },
+    {
+     "s": 31.5,
+     "e": 43.145,
+     "en": "Correlated parameters are a small singular value of the sensitivity matrix. Reparameterize at a reference point, scale columns, and set rank thresholds from the noise.",
+     "th": "พารามิเตอร์ที่สัมพันธ์กันคือ singular value ที่เล็กของ sensitivity matrix ให้เปลี่ยนรูปพารามิเตอร์ที่จุดอ้างอิง ปรับสเกลหลัก และกำหนดค่าขีดแบ่งของ rank จากสัญญาณรบกวน"
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "file": "audio/slide-28.mp3",
+   "duration": 23.568,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.434,
+     "en": "Before the next session, finish Lab 2 and upload the answer file. Keep your card; Session 3 adds the linear dynamics of your model.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 2 ให้เสร็จและอัปโหลดไฟล์คำตอบ เก็บบัตรไว้ คาบที่ 3 จะเพิ่มพลวัตเชิงเส้นของแบบจำลองของคุณ"
+    },
+    {
+     "s": 9.434,
+     "e": 17.585,
+     "en": "Read Strang, chapter five and section six point three, and the eigenvalue sections of Varma and Morbidelli, chapter one.",
+     "th": "อ่าน Strang บทที่ห้าและหัวข้อหกจุดสาม และหัวข้อเรื่องค่าเฉพาะใน Varma กับ Morbidelli บทที่หนึ่ง หนังสือของ Bard"
+    },
+    {
+     "s": 17.585,
+     "e": 23.513,
+     "en": "Bard, or Trefethen and Bau, are optional reading on parameter estimation and on the SVD.",
+     "th": "หรือของ Trefethen กับ Bau เป็นการอ่านเพิ่มเติมเรื่องการประมาณพารามิเตอร์และ SVD"
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "file": "audio/slide-29.mp3",
+   "duration": 15.888,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.079,
+     "en": "Please finish with the Exit Ticket. Scan the code and choose Session 2, paste the answers the lab page copied for you, and answer the feedback questions.",
+     "th": "กรุณาปิดท้ายด้วย Exit Ticket สแกนโค้ดแล้วเลือก Session 2 วางคำตอบที่หน้าแล็บคัดลอกไว้ให้ และตอบคำถาม feedback"
+    },
+    {
+     "s": 10.079,
+     "e": 15.816,
+     "en": "The form is anonymous. Thank you, and see you in Session 3.",
+     "th": "แบบฟอร์มไม่ระบุตัวตน ขอบคุณ แล้วพบกันในคาบที่ 3"
+    }
+   ]
+  }
+ ]
+};
+(function(){if(!NARR)return;
+ const au=document.getElementById("narr"),bar=document.getElementById("nbar"),cap=document.getElementById("cap"),play=document.getElementById("nPlay"),tm=document.getElementById("nTime"),msg=document.getElementById("nMsg");
+ document.getElementById("dock").style.display="flex";document.getElementById("help").style.display="none";let on=false,lang="off",slideIdx=-1;
+ const ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
+ lang=ls("cc-lang")||"off";const sp=ls("narr-speed");if(sp)document.getElementById("nSpeed").value=sp;
+ const fmtT=t=>isFinite(t)?`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,"0")}`:"0:00";
+ const S_=i=>NARR.slides[i];
+ function load(i){slideIdx=i;const s=S_(i);if(!s){au.removeAttribute("src");return}au.src=s.file;au.playbackRate=+document.getElementById("nSpeed").value;tm.textContent=`0:00 / ${fmtT(s.duration)}`;showCap(0)}
+ function setPlayUI(){play.textContent=au.paused?"▶ Play":"❚❚ Pause";play.classList.toggle("on",!au.paused)}
+ // captions sit in their own band under the slide; long lines shrink to fit the band
+ window.capRefit=()=>{let f=parseFloat(cap.dataset.fs)||18;cap.style.fontSize=f+"px";while(cap.scrollHeight>cap.clientHeight+1&&f>11){f-=1;cap.style.fontSize=f+"px"}};
+ function showCap(t){const s=S_(slideIdx);let c=null;if(s&&lang!=="off"){for(const q of s.cues){if(t>=q.s-0.05)c=q;else break}}
+  const txt=(!c||(au.paused&&au.currentTime===0&&!on))?"":(lang==="th"?c.th:c.en);if(cap.textContent!==txt){cap.textContent=txt;capRefit()}}
+ function ccUI(){const b=document.getElementById("nCC");b.textContent=lang==="off"?"CC off":lang==="en"?"CC English":"CC ไทย";b.classList.toggle("on",lang!=="off");CAP_ON=lang!=="off";fit();showCap(au.currentTime||0)}
+ window.ccCycle=()=>{lang=lang==="off"?"en":lang==="en"?"th":"off";ls("cc-lang",lang);ccUI()};
+ // "on" means the student is listening: it starts with Play and ends with Pause or Stop.
+ // Slides change only when the student moves; the new slide's narration then starts if "on".
+ window.narrToggle=()=>{if(au.paused){on=true;if(slideIdx!==cur)load(cur);if(au.ended)au.currentTime=0;msg.textContent="";au.play().catch(()=>{msg.textContent="Press Play again to start audio."})}else{on=false;au.pause()}};
+ window.onSlideChange=i=>{au.pause();msg.textContent="";load(i);if(on)au.play().catch(()=>{})};
+ document.getElementById("nPlay").onclick=narrToggle;
+ document.getElementById("nStop").onclick=()=>{au.pause();au.currentTime=0;on=false;setPlayUI();showCap(0);tm.textContent=`0:00 / ${fmtT((S_(cur)||{}).duration)}`};
+ document.getElementById("nCC").onclick=ccCycle;
+ document.getElementById("nPrev").onclick=()=>show(cur-1);document.getElementById("nNext").onclick=()=>show(cur+1);
+ document.getElementById("nSpeed").onchange=e=>{au.playbackRate=+e.target.value;ls("narr-speed",e.target.value)};
+ au.addEventListener("play",setPlayUI);au.addEventListener("pause",setPlayUI);
+ au.addEventListener("timeupdate",()=>{tm.textContent=`${fmtT(au.currentTime)} / ${fmtT((S_(slideIdx)||{}).duration)}`;showCap(au.currentTime)});
+ au.addEventListener("ended",()=>{setPlayUI();const s=S_(slideIdx);msg.textContent=s&&s.hold?"Activity: do it now, then press Next ›":cur<N-1?"Press Next › or → for the next slide":"End of the session"});
+ const q=new URLSearchParams(location.search);
+ if(q.get("narrate")==="1"){const ov=document.getElementById("startov");ov.style.display="flex";document.getElementById("startBtn").onclick=()=>{ov.style.display="none";if(lang==="off"){lang="en";ls("cc-lang",lang)}ccUI();on=true;load(cur);au.play().catch(()=>{})}}
+ ccUI();setTimeout(()=>{if(slideIdx<0)load(cur)},0);
+})();
+
+build();drawAll();fit();show((parseInt(location.hash.slice(1))||1)-1);
+</script>
+</body>
+</html>

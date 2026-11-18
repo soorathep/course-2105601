@@ -1,0 +1,1501 @@
+{
+ "voice": "en-US-GuyNeural",
+ "rate": "-5%",
+ "provider": "Microsoft Edge neural speech (edge-tts)",
+ "synthetic_voice": true,
+ "total_seconds": 1670.1,
+ "slides": [
+  {
+   "n": 1,
+   "file": "audio/slide-01.mp3",
+   "duration": 39.72,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.603,
+     "en": "Welcome to Session 2 of Advanced Engineering Mathematics for Chemical Engineers.",
+     "th": "ยินดีต้อนรับสู่คาบที่ 2 ของวิชา Advanced Engineering Mathematics for Chemical Engineers"
+    },
+    {
+     "s": 5.603,
+     "e": 15.539,
+     "en": "Session 1 gave us the four subspaces of a matrix: what it can reach, and what it sends to zero. Today we ask how much it stretches each direction.",
+     "th": "คาบที่ 1 ให้ subspace ทั้งสี่ของเมทริกซ์ คือสิ่งที่มันไปถึงได้ และสิ่งที่มันส่งไปที่ศูนย์ วันนี้เราถามว่ามันยืดแต่ละทิศมากเท่าใด"
+    },
+    {
+     "s": 15.539,
+     "e": 26.961,
+     "en": "Eigenvalues answer that question for the directions a matrix keeps. Singular values answer it for every matrix, and they decide which parameters your data can identify.",
+     "th": "ค่าเฉพาะตอบคำถามนี้สำหรับทิศที่เมทริกซ์คงไว้ ส่วน singular value ตอบได้สำหรับเมทริกซ์ทุกตัว และเป็นตัวตัดสินว่าข้อมูลของคุณระบุพารามิเตอร์ใดได้"
+    },
+    {
+     "s": 26.961,
+     "e": 34.25,
+     "en": "On your own, the narration takes about thirty minutes; the activities, four checks and the lab fill the rest of the three hours.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสามสิบนาที ส่วนกิจกรรม การตรวจความเข้าใจสี่ครั้ง และแล็บ ใช้เวลาที่เหลือของสามชั่วโมง"
+    },
+    {
+     "s": 34.25,
+     "e": 39.658,
+     "en": "When the narration for a slide ends, press the right arrow key, or Next, to go on.",
+     "th": "เมื่อเสียงบรรยายของแต่ละหน้าจบ กดลูกศรขวาหรือปุ่ม Next เพื่อไปหน้าถัดไป"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "file": "audio/slide-02.mp3",
+   "duration": 36.456,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 2.116,
+     "en": "Here is the plan.",
+     "th": "นี่คือแผนของวันนี้"
+    },
+    {
+     "s": 2.116,
+     "e": 14.263,
+     "en": "After a retrieval check on Session 1, part one covers eigenvalue problems: invariant directions, diagonalization, defective matrices, symmetric matrices, and matrices that are not normal.",
+     "th": "หลังทบทวนคาบที่ 1 ส่วนที่หนึ่งว่าด้วยปัญหาค่าเฉพาะ ได้แก่ ทิศที่ไม่เปลี่ยน การแปลงเป็นเมทริกซ์ทแยง เมทริกซ์ defective เมทริกซ์สมมาตร และเมทริกซ์ที่ไม่ normal"
+    },
+    {
+     "s": 14.263,
+     "e": 24.066,
+     "en": "Part two covers the singular value decomposition, conditioning, identifiability of parameters, and the best low rank approximation of a data matrix.",
+     "th": "ส่วนที่สองว่าด้วย singular value decomposition ภาวะของปัญหา ความสามารถในการระบุพารามิเตอร์ และการประมาณเมทริกซ์ข้อมูลด้วย rank ต่ำที่ดีที่สุด"
+    },
+    {
+     "s": 24.066,
+     "e": 36.382,
+     "en": "After the break and Activity 2, part three applies this to reparameterization, principal components of process data, and what to report. Lab 2 and the Exit Ticket close the session.",
+     "th": "หลังพักและกิจกรรมที่ 2 ส่วนที่สามนำไปใช้กับการเปลี่ยนรูปพารามิเตอร์ principal component ของข้อมูลกระบวนการ และสิ่งที่ควรรายงาน แล้วปิดด้วย Lab 2 และ Exit Ticket"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "file": "audio/slide-03.mp3",
+   "duration": 28.536,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.918,
+     "en": "Activity 1 is a retrieval check on Session 1.",
+     "th": "กิจกรรมที่ 1 คือการทบทวนคาบที่ 1"
+    },
+    {
+     "s": 3.918,
+     "e": 14.605,
+     "en": "Four questions: the dimensions of the four subspaces, the solvability test, the number of independent reactions, and what the condition number of the monomial Gram matrix told you.",
+     "th": "สี่คำถาม ได้แก่ มิติของ subspace ทั้งสี่ การทดสอบการมีคำตอบ จำนวนปฏิกิริยาอิสระ และสิ่งที่ condition number ของ Gram matrix ของ monomial บอก"
+    },
+    {
+     "s": 14.605,
+     "e": 20.658,
+     "en": "The last question is today's bridge: we now define the condition number through singular values.",
+     "th": "คำถามสุดท้ายเป็นสะพานไปสู่วันนี้ เราจะนิยาม condition number ผ่าน singular value"
+    },
+    {
+     "s": 20.658,
+     "e": 28.474,
+     "en": "Write alone, then compare with a partner. On your own, pause the narration and press Show answers when you are done.",
+     "th": "เขียนคนเดียว แล้วเทียบกับเพื่อน ถ้าเรียนเอง หยุดเสียงบรรยาย แล้วกด Show answers เมื่อเขียนเสร็จ"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "file": "audio/slide-04.mp3",
+   "duration": 40.344,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.866,
+     "en": "By the end of today you should be able to do six things.",
+     "th": "เมื่อจบคาบนี้ คุณควรทำได้หกอย่าง"
+    },
+    {
+     "s": 3.866,
+     "e": 16.289,
+     "en": "Compute eigenvalues and eigenvectors of small matrices and explain them as directions an operator keeps. Diagonalize a matrix, recognize a defective one, and use the spectral theorem.",
+     "th": "คำนวณค่าเฉพาะและเวกเตอร์เฉพาะของเมทริกซ์ขนาดเล็ก และอธิบายว่าเป็นทิศที่ operator คงไว้ แปลงเมทริกซ์เป็นเมทริกซ์ทแยง จำเมทริกซ์ defective ได้ และใช้ spectral theorem"
+    },
+    {
+     "s": 16.289,
+     "e": 21.697,
+     "en": "Explain why eigenvalues do not measure how much a non symmetric matrix stretches.",
+     "th": "อธิบายว่าทำไมค่าเฉพาะจึงไม่ได้วัดว่าเมทริกซ์ที่ไม่สมมาตรยืดเวกเตอร์มากเท่าใด"
+    },
+    {
+     "s": 21.697,
+     "e": 28.895,
+     "en": "Compute and interpret the singular value decomposition, and read the four subspaces and the pseudoinverse from it.",
+     "th": "คำนวณและตีความ singular value decomposition และอ่าน subspace ทั้งสี่กับ pseudoinverse จากมัน"
+    },
+    {
+     "s": 28.895,
+     "e": 40.289,
+     "en": "Use the condition number and the sensitivity matrix to decide which parameters your data can identify. And set the numerical rank of a data matrix from a stated noise level.",
+     "th": "ใช้ condition number และ sensitivity matrix ตัดสินว่าข้อมูลระบุพารามิเตอร์ใดได้ และกำหนด rank เชิงตัวเลขของเมทริกซ์ข้อมูลจากระดับสัญญาณรบกวนที่ระบุ"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "file": "audio/slide-05.mp3",
+   "duration": 64.776,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.142,
+     "en": "Session 1 gave us bases, the four subspaces, a numerical rank with a threshold still to be defined, and the condition number of a Gram matrix.",
+     "th": "คาบที่ 1 ให้ basis subspace ทั้งสี่ rank เชิงตัวเลขที่ยังต้องนิยามค่าขีดแบ่ง และ condition number ของ Gram matrix"
+    },
+    {
+     "s": 9.142,
+     "e": 16.295,
+     "en": "Today each of these is completed. The eigenvector basis is the one in which an operator acts by scaling.",
+     "th": "วันนี้แต่ละเรื่องจะสมบูรณ์ basis ของเวกเตอร์เฉพาะคือ basis ที่ operator กระทำโดยการยืดเท่านั้น"
+    },
+    {
+     "s": 16.295,
+     "e": 26.513,
+     "en": "The singular value decomposition gives orthonormal bases for all four subspaces at once, defines the numerical rank, and defines the condition number.",
+     "th": "singular value decomposition ให้ basis ตั้งฉากปกติของ subspace ทั้งสี่พร้อมกัน และนิยามทั้ง rank เชิงตัวเลขและ condition number"
+    },
+    {
+     "s": 26.513,
+     "e": 32.776,
+     "en": "Least squares from Session 1 gains a covariance, and with it the question of identifiability.",
+     "th": "least squares จากคาบที่ 1 จะได้ความแปรปรวนร่วม และพร้อมกันนั้นคำถามเรื่องความสามารถในการระบุพารามิเตอร์"
+    },
+    {
+     "s": 32.776,
+     "e": 37.129,
+     "en": "Session 3 will use the eigenvector basis to solve d x d t equals K x.",
+     "th": "คาบที่ 3 จะใช้ basis ของเวกเตอร์เฉพาะแก้สมการ d x d t เท่ากับ K x"
+    },
+    {
+     "s": 37.129,
+     "e": 46.158,
+     "en": "Note the notation: lambda is an eigenvalue, sigma a singular value, and kappa the ratio of the largest to the smallest singular value.",
+     "th": "สังเกตสัญลักษณ์ lambda คือค่าเฉพาะ sigma คือ singular value และ kappa คืออัตราส่วนของ singular value ที่ใหญ่ที่สุดต่อที่เล็กที่สุด"
+    },
+    {
+     "s": 46.158,
+     "e": 54.405,
+     "en": "One thread runs through the whole course. A linear operator is understood by finding the basis that makes it simple.",
+     "th": "มีเส้นเรื่องหนึ่งที่ต่อเนื่องตลอดวิชา เราเข้าใจ linear operator ได้ด้วยการหา basis ที่ทำให้มันง่าย"
+    },
+    {
+     "s": 54.405,
+     "e": 64.697,
+     "en": "Today that basis is the eigenvectors, or the pair of singular vector bases. In Session 7 it will be the eigenfunctions of a differential operator.",
+     "th": "วันนี้ basis นั้นคือเวกเตอร์เฉพาะ หรือคู่ของ basis จาก singular vector ในคาบที่ 7 จะเป็น eigenfunction ของ differential operator"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "file": "audio/slide-06.mp3",
+   "duration": 109.464,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.76,
+     "en": "Part one. An eigenvector is a nonzero vector that a matrix only stretches: M v equals lambda v.",
+     "th": "ส่วนที่หนึ่ง เวกเตอร์เฉพาะคือเวกเตอร์ที่ไม่เป็นศูนย์ซึ่งเมทริกซ์เพียงแค่ยืด คือ M v เท่ากับ lambda v"
+    },
+    {
+     "s": 7.76,
+     "e": 19.0,
+     "en": "Rewrite it as M minus lambda I times v equals zero. A nonzero solution exists exactly when M minus lambda I has a null space, that is, when its determinant is zero.",
+     "th": "เขียนใหม่เป็น M ลบ lambda I คูณ v เท่ากับศูนย์ คำตอบที่ไม่เป็นศูนย์มีอยู่ก็ต่อเมื่อ M ลบ lambda I มี null space นั่นคือเมื่อดีเทอร์มิแนนต์เป็นศูนย์"
+    },
+    {
+     "s": 19.0,
+     "e": 27.013,
+     "en": "So an eigenvalue is a value of lambda at which M minus lambda I loses rank. That is Session 1 again.",
+     "th": "ดังนั้นค่าเฉพาะคือค่า lambda ที่ทำให้ M ลบ lambda I สูญเสีย rank ซึ่งก็คือเรื่องของคาบที่ 1 อีกครั้ง"
+    },
+    {
+     "s": 27.013,
+     "e": 34.719,
+     "en": "For a two by two matrix, the characteristic equation is lambda squared minus the trace times lambda plus the determinant.",
+     "th": "สำหรับเมทริกซ์สองคูณสอง สมการลักษณะเฉพาะคือ lambda กำลังสอง ลบ trace คูณ lambda บวกดีเทอร์มิแนนต์"
+    },
+    {
+     "s": 34.719,
+     "e": 39.645,
+     "en": "The sum of the eigenvalues is the trace, and their product is the determinant.",
+     "th": "ผลรวมของค่าเฉพาะเท่ากับ trace และผลคูณเท่ากับดีเทอร์มิแนนต์"
+    },
+    {
+     "s": 39.645,
+     "e": 48.632,
+     "en": "For the example three, one, one, two, the trace is five and the determinant is five, which gives about three point six two and one point three eight.",
+     "th": "สำหรับตัวอย่าง สาม หนึ่ง หนึ่ง สอง trace เท่ากับห้า และดีเทอร์มิแนนต์เท่ากับห้า จึงได้ประมาณสามจุดหกสอง และหนึ่งจุดสามแปด"
+    },
+    {
+     "s": 48.632,
+     "e": 61.496,
+     "en": "One practical warning: for matrices larger than about four by four, do not find eigenvalues as roots of the characteristic polynomial. The roots are extremely sensitive to rounding.",
+     "th": "ข้อควรระวังในทางปฏิบัติ สำหรับเมทริกซ์ที่ใหญ่กว่าประมาณสี่คูณสี่ อย่าหาค่าเฉพาะจากรากของพหุนามลักษณะเฉพาะ เพราะรากไวต่อการปัดเศษมาก"
+    },
+    {
+     "s": 61.496,
+     "e": 65.171,
+     "en": "Libraries use the QR algorithm on the matrix itself.",
+     "th": "ไลบรารีใช้ QR algorithm กับตัวเมทริกซ์โดยตรง"
+    },
+    {
+     "s": 65.171,
+     "e": 75.666,
+     "en": "Let us check the example by hand. With lambda equal to three point six two, M minus lambda I is minus zero point six two, one, one, minus one point six two.",
+     "th": "ลองตรวจตัวอย่างด้วยมือ เมื่อ lambda เท่ากับสามจุดหกสอง M ลบ lambda I คือ ลบศูนย์จุดหกสอง หนึ่ง หนึ่ง ลบหนึ่งจุดหกสอง"
+    },
+    {
+     "s": 75.666,
+     "e": 83.687,
+     "en": "Its two rows are multiples of each other, so the rank is one, and the null space is spanned by one, zero point six two.",
+     "th": "สองแถวเป็นพหุคูณของกันและกัน rank จึงเท่ากับหนึ่ง และ null space span ด้วย หนึ่ง ศูนย์จุดหกสอง"
+    },
+    {
+     "s": 83.687,
+     "e": 91.842,
+     "en": "Normalized, that is zero point eight five, zero point five three, the first eigenvector in the D drawer of the next slide.",
+     "th": "เมื่อทำให้เป็นหนึ่งหน่วยได้ ศูนย์จุดแปดห้า ศูนย์จุดห้าสาม ซึ่งคือเวกเตอร์เฉพาะตัวแรกใน D drawer ของหน้าถัดไป"
+    },
+    {
+     "s": 91.842,
+     "e": 102.104,
+     "en": "Eigenvalues of a real matrix may be complex. A rotation by ninety degrees keeps no real direction, and its eigenvalues are plus and minus i.",
+     "th": "ค่าเฉพาะของเมทริกซ์จริงอาจเป็นจำนวนเชิงซ้อน การหมุนเก้าสิบองศาไม่คงทิศจริงใดไว้เลย และค่าเฉพาะของมันคือบวกและลบ i"
+    },
+    {
+     "s": 102.104,
+     "e": 109.382,
+     "en": "In a linear ODE system, complex eigenvalues mean oscillation, which we will see in Sessions 3 and 4.",
+     "th": "ในระบบสมการเชิงอนุพันธ์เชิงเส้น ค่าเฉพาะเชิงซ้อนหมายถึงการแกว่ง ซึ่งเราจะเห็นในคาบที่ 3 และ 4"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "file": "audio/slide-07.mp3",
+   "duration": 64.776,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.765,
+     "en": "Here is the symmetric example as a picture. The teal arrow is a unit vector v, and the amber arrow is M v.",
+     "th": "นี่คือตัวอย่างเมทริกซ์สมมาตรในรูปภาพ ลูกศรสีเขียวหัวเป็ดคือเวกเตอร์หนึ่งหน่วย v และลูกศรสีส้มอำพันคือ M v"
+    },
+    {
+     "s": 7.765,
+     "e": 17.316,
+     "en": "Turn v with the slider. For most angles M v points in a different direction. Press Next eigenvector, and the two arrows line up.",
+     "th": "หมุน v ด้วยแถบเลื่อน มุมส่วนใหญ่ M v ชี้ไปคนละทิศ กด Next eigenvector แล้วลูกศรทั้งสองจะอยู่ในแนวเดียวกัน"
+    },
+    {
+     "s": 17.316,
+     "e": 27.855,
+     "en": "The grey ellipse is the image of the unit circle. For a symmetric matrix its axes are exactly the eigenvectors, and the semi axes are the eigenvalues.",
+     "th": "วงรีสีเทาคือภาพของวงกลมหนึ่งหน่วย สำหรับเมทริกซ์สมมาตร แกนของวงรีคือเวกเตอร์เฉพาะพอดี และครึ่งแกนคือค่าเฉพาะ"
+    },
+    {
+     "s": 27.855,
+     "e": 39.731,
+     "en": "The table shows the Rayleigh quotient, v transpose M v. It always lies between the smallest and the largest eigenvalue, and it equals an eigenvalue at an eigenvector.",
+     "th": "ตารางแสดง Rayleigh quotient คือ v transpose M v ค่านี้อยู่ระหว่างค่าเฉพาะที่เล็กที่สุดกับที่ใหญ่ที่สุดเสมอ และเท่ากับค่าเฉพาะเมื่อ v เป็นเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 39.731,
+     "e": 43.5,
+     "en": "That fact is the basis of many eigenvalue algorithms.",
+     "th": "ข้อเท็จจริงนี้เป็นพื้นฐานของอัลกอริทึมหาค่าเฉพาะหลายตัว"
+    },
+    {
+     "s": 43.5,
+     "e": 56.212,
+     "en": "Try one more thing. Set the angle to forty five degrees. The vector is halfway between the two eigenvectors, and M v is pulled toward the eigenvector with the larger eigenvalue.",
+     "th": "ลองอีกอย่างหนึ่ง ตั้งมุมเป็นสี่สิบห้าองศา เวกเตอร์อยู่กึ่งกลางระหว่างเวกเตอร์เฉพาะทั้งสอง และ M v ถูกดึงไปทางเวกเตอร์เฉพาะที่มีค่าเฉพาะมากกว่า"
+    },
+    {
+     "s": 56.212,
+     "e": 64.711,
+     "en": "Applying M again and again would pull it closer each time. That is the power method, the simplest eigenvalue algorithm.",
+     "th": "การใช้ M ซ้ำๆ จะดึงเข้าใกล้ขึ้นทุกครั้ง นี่คือ power method ซึ่งเป็นอัลกอริทึมหาค่าเฉพาะที่ง่ายที่สุด"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "file": "audio/slide-08.mp3",
+   "duration": 106.968,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.842,
+     "en": "If a matrix has n independent eigenvectors, put them as the columns of V and the eigenvalues on the diagonal of Lambda. Then M V equals V Lambda, so M equals V Lambda V inverse.",
+     "th": "ถ้าเมทริกซ์มีเวกเตอร์เฉพาะที่เป็นอิสระ n ตัว นำมาเป็นหลักของ V และนำค่าเฉพาะไปไว้บนแนวทแยงของ Lambda จะได้ M V เท่ากับ V Lambda ดังนั้น M เท่ากับ V Lambda V inverse"
+    },
+    {
+     "s": 12.842,
+     "e": 26.75,
+     "en": "In the eigenvector basis the operator is diagonal. Powers and functions of M become powers and functions of the eigenvalues. This is what will decouple a linear ODE system in Session 3.",
+     "th": "ใน basis ของเวกเตอร์เฉพาะ operator เป็นเมทริกซ์ทแยง กำลังและฟังก์ชันของ M กลายเป็นกำลังและฟังก์ชันของค่าเฉพาะ ซึ่งคือสิ่งที่จะแยกระบบสมการเชิงอนุพันธ์เชิงเส้นออกจากกันในคาบที่ 3"
+    },
+    {
+     "s": 26.75,
+     "e": 34.289,
+     "en": "Distinct eigenvalues guarantee independent eigenvectors. Repeated eigenvalues may not.",
+     "th": "ค่าเฉพาะที่ไม่ซ้ำกันรับประกันว่าเวกเตอร์เฉพาะเป็นอิสระ ค่าเฉพาะที่ซ้ำกันอาจไม่เป็นเช่นนั้น"
+    },
+    {
+     "s": 34.289,
+     "e": 46.813,
+     "en": "The matrix two, one, zero, two has the eigenvalue two twice, but M minus two I has rank one, so its null space is only one dimensional. There is one eigenvector, not two.",
+     "th": "เมทริกซ์ สอง หนึ่ง ศูนย์ สอง มีค่าเฉพาะสองซ้ำสองครั้ง แต่ M ลบ สอง I มี rank หนึ่ง null space จึงมีเพียงหนึ่งมิติ มีเวกเตอร์เฉพาะเพียงตัวเดียว ไม่ใช่สองตัว"
+    },
+    {
+     "s": 46.813,
+     "e": 49.303,
+     "en": "Such a matrix is called defective.",
+     "th": "เมทริกซ์แบบนี้เรียกว่า defective"
+    },
+    {
+     "s": 49.303,
+     "e": 58.399,
+     "en": "Exactly defective matrices are rare in data, but nearly defective ones are common, and then the computed eigenvector matrix is nearly singular.",
+     "th": "เมทริกซ์ที่ defective พอดีพบน้อยในข้อมูล แต่เมทริกซ์ที่เกือบ defective พบบ่อย และเมทริกซ์เวกเตอร์เฉพาะที่คำนวณได้จะเกือบ singular"
+    },
+    {
+     "s": 58.399,
+     "e": 63.895,
+     "en": "For this example the library returns a condition number of V around ten to the fifteen.",
+     "th": "สำหรับตัวอย่างนี้ ไลบรารีคืนค่า condition number ของ V ประมาณสิบยกกำลังสิบห้า"
+    },
+    {
+     "s": 63.895,
+     "e": 75.895,
+     "en": "The rule is simple. Diagonalize symmetric matrices freely. For others, check the condition number of V, or use a decomposition with orthogonal factors.",
+     "th": "หลักง่ายๆ คือ แปลงเมทริกซ์สมมาตรเป็นเมทริกซ์ทแยงได้เลย สำหรับเมทริกซ์อื่น ให้ตรวจ condition number ของ V หรือใช้การแยกตัวประกอบที่มีตัวประกอบตั้งฉาก"
+    },
+    {
+     "s": 75.895,
+     "e": 85.973,
+     "en": "Here is why diagonalization matters for dynamics. If x of k plus one equals M x of k, then x of k equals V Lambda to the k V inverse x zero.",
+     "th": "นี่คือเหตุผลที่การแปลงเป็นเมทริกซ์ทแยงสำคัญกับพลวัต ถ้า x ของ k บวกหนึ่ง เท่ากับ M x ของ k แล้ว x ของ k เท่ากับ V Lambda กำลัง k V inverse"
+    },
+    {
+     "s": 85.973,
+     "e": 96.408,
+     "en": "Each coordinate in the eigenvector basis is multiplied by its own lambda at each step, so the largest eigenvalue in modulus controls the long run.",
+     "th": "x ศูนย์ พิกัดแต่ละตัวใน basis ของเวกเตอร์เฉพาะถูกคูณด้วย lambda ของตัวเองในแต่ละขั้น ค่าเฉพาะที่มีขนาดใหญ่ที่สุดจึงควบคุมพฤติกรรมระยะยาว"
+    },
+    {
+     "s": 96.408,
+     "e": 106.882,
+     "en": "A staged separation or a recycle loop with a linear model behaves this way: the dominant eigenvalue tells you how fast the composition settles from stage to stage or from pass to pass.",
+     "th": "กระบวนการแยกแบบหลายขั้นหรือวงจรป้อนกลับที่มีแบบจำลองเชิงเส้นมีพฤติกรรมแบบนี้ ค่าเฉพาะที่เด่นบอกว่าองค์ประกอบเข้าสู่สภาวะคงตัวเร็วเพียงใดจากขั้นหนึ่งไปอีกขั้นหรือจากรอบหนึ่งไปอีกรอบ"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "file": "audio/slide-09.mp3",
+   "duration": 100.992,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 11.974,
+     "en": "Symmetric matrices are the well behaved case. The spectral theorem says their eigenvalues are real and their eigenvectors can be chosen orthonormal: M equals Q Lambda Q transpose.",
+     "th": "เมทริกซ์สมมาตรเป็นกรณีที่ดี spectral theorem กล่าวว่าค่าเฉพาะเป็นจำนวนจริง และเลือกเวกเตอร์เฉพาะให้ตั้งฉากปกติได้ คือ M เท่ากับ Q Lambda Q transpose"
+    },
+    {
+     "s": 11.974,
+     "e": 25.234,
+     "en": "The proof of orthogonality fits in one line. Lambda one times v two transpose v one equals v two transpose M v one, which by symmetry equals lambda two times v two transpose v one.",
+     "th": "การพิสูจน์การตั้งฉากใช้บรรทัดเดียว lambda หนึ่ง คูณ v สอง transpose v หนึ่ง เท่ากับ v สอง transpose M v หนึ่ง ซึ่งโดยความสมมาตรเท่ากับ lambda สอง คูณ v สอง transpose v หนึ่ง"
+    },
+    {
+     "s": 25.234,
+     "e": 29.776,
+     "en": "If the eigenvalues differ, v two transpose v one must be zero.",
+     "th": "ถ้าค่าเฉพาะต่างกัน v สอง transpose v หนึ่ง ต้องเป็นศูนย์"
+    },
+    {
+     "s": 29.776,
+     "e": 39.066,
+     "en": "A symmetric matrix is positive definite when all its eigenvalues are positive, which means x transpose M x is positive for every nonzero x.",
+     "th": "เมทริกซ์สมมาตรเป็น positive definite เมื่อค่าเฉพาะทุกตัวเป็นบวก หมายความว่า x transpose M x เป็นบวกสำหรับ x ที่ไม่เป็นศูนย์ทุกตัว"
+    },
+    {
+     "s": 39.066,
+     "e": 46.77,
+     "en": "Many matrices in chemical engineering are symmetric. The Hessian of an objective has eigenvalues that measure curvature.",
+     "th": "เมทริกซ์จำนวนมากในวิศวกรรมเคมีเป็นเมทริกซ์สมมาตร ค่าเฉพาะของ Hessian ของฟังก์ชันเป้าหมายวัดความโค้ง"
+    },
+    {
+     "s": 46.77,
+     "e": 57.211,
+     "en": "The covariance of fitted parameters has eigenvalues that measure the variance along each principal direction, and a large one marks a poorly identified combination.",
+     "th": "ค่าเฉพาะของความแปรปรวนร่วมของพารามิเตอร์ที่ fit วัดความแปรปรวนตามทิศหลักแต่ละทิศ และค่าที่ใหญ่บ่งบอกผลรวมของพารามิเตอร์ที่ระบุได้ไม่ดี"
+    },
+    {
+     "s": 57.211,
+     "e": 65.145,
+     "en": "And Session 7 extends the same theorem to differential operators, where the eigenvectors become orthogonal eigenfunctions.",
+     "th": "และคาบที่ 7 ขยายทฤษฎีบทเดียวกันนี้ไปยัง differential operator ซึ่งเวกเตอร์เฉพาะกลายเป็น eigenfunction ที่ตั้งฉากกัน"
+    },
+    {
+     "s": 65.145,
+     "e": 76.979,
+     "en": "The Rayleigh quotient gives a practical tool. The largest eigenvalue of a symmetric matrix is the maximum of x transpose M x over unit vectors, and the smallest is the minimum.",
+     "th": "Rayleigh quotient ให้เครื่องมือในทางปฏิบัติ ค่าเฉพาะที่ใหญ่ที่สุดของเมทริกซ์สมมาตรคือค่าสูงสุดของ x transpose M x บนเวกเตอร์หนึ่งหน่วย และค่าที่เล็กที่สุดคือค่าต่ำสุด"
+    },
+    {
+     "s": 76.979,
+     "e": 82.461,
+     "en": "So bounds on eigenvalues can be found by trying vectors, without solving anything.",
+     "th": "จึงหาขอบเขตของค่าเฉพาะได้ด้วยการลองเวกเตอร์ โดยไม่ต้องแก้สมการใด"
+    },
+    {
+     "s": 82.461,
+     "e": 93.194,
+     "en": "Positive definiteness is also how you check a minimum. At a stationary point, if the Hessian has all positive eigenvalues, the point is a strict local minimum.",
+     "th": "ความเป็น positive definite ยังใช้ตรวจค่าต่ำสุดด้วย ที่จุดคงที่ ถ้า Hessian มีค่าเฉพาะเป็นบวกทั้งหมด จุดนั้นเป็นค่าต่ำสุดเฉพาะที่แบบเข้ม"
+    },
+    {
+     "s": 93.194,
+     "e": 100.908,
+     "en": "A zero eigenvalue marks a flat direction, which in parameter estimation is again a combination the data cannot fix.",
+     "th": "ค่าเฉพาะศูนย์บ่งบอกทิศที่แบน ซึ่งในการประมาณพารามิเตอร์ก็คือผลรวมที่ข้อมูลกำหนดไม่ได้อีกเช่นกัน"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "file": "audio/slide-10.mp3",
+   "duration": 78.48,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.763,
+     "en": "Now a warning about non symmetric matrices. Eigenvalues do not tell you how much a matrix stretches.",
+     "th": "ทีนี้คำเตือนเรื่องเมทริกซ์ที่ไม่สมมาตร ค่าเฉพาะไม่ได้บอกว่าเมทริกซ์ยืดเวกเตอร์มากเท่าใด"
+    },
+    {
+     "s": 7.763,
+     "e": 11.953,
+     "en": "The shear one, two, zero, one has both eigenvalues equal to one.",
+     "th": "เมทริกซ์เฉือน หนึ่ง สอง ศูนย์ หนึ่ง มีค่าเฉพาะทั้งสองเท่ากับหนึ่ง"
+    },
+    {
+     "s": 11.953,
+     "e": 21.105,
+     "en": "Yet it maps the unit circle to the amber ellipse, stretching one direction by two point four one and shrinking another to zero point four one.",
+     "th": "แต่มันส่งวงกลมหนึ่งหน่วยไปเป็นวงรีสีส้มอำพัน ยืดทิศหนึ่งเป็นสองจุดสี่หนึ่งเท่า และหดอีกทิศเหลือศูนย์จุดสี่หนึ่ง"
+    },
+    {
+     "s": 21.105,
+     "e": 27.263,
+     "en": "It has only one eigenvector direction, the dashed line, and that is not where the stretching happens.",
+     "th": "มันมีทิศของเวกเตอร์เฉพาะเพียงทิศเดียว คือเส้นประ และการยืดไม่ได้เกิดในทิศนั้น"
+    },
+    {
+     "s": 27.263,
+     "e": 36.408,
+     "en": "Eigenvalues describe the behavior after many applications of the matrix. Singular values describe what happens after one.",
+     "th": "ค่าเฉพาะอธิบายพฤติกรรมหลังจากใช้เมทริกซ์หลายครั้ง ส่วน singular value อธิบายสิ่งที่เกิดหลังจากใช้ครั้งเดียว"
+    },
+    {
+     "s": 36.408,
+     "e": 45.237,
+     "en": "For normal matrices, which include all symmetric ones, the two agree. For others they can differ by orders of magnitude.",
+     "th": "สำหรับเมทริกซ์ normal ซึ่งรวมเมทริกซ์สมมาตรทุกตัว ทั้งสองค่าตรงกัน สำหรับเมทริกซ์อื่นอาจต่างกันหลายอันดับ"
+    },
+    {
+     "s": 45.237,
+     "e": 58.763,
+     "en": "This matters in reactor dynamics. A linearized model with only stable eigenvalues can still amplify a disturbance for a while before it decays. Session 4 calls this transient growth.",
+     "th": "เรื่องนี้สำคัญในพลวัตของเครื่องปฏิกรณ์ แบบจำลองเชิงเส้นที่มีค่าเฉพาะเสถียรทั้งหมดยังขยายสิ่งรบกวนได้ชั่วระยะหนึ่งก่อนจะลดลง คาบที่ 4 เรียกปรากฏการณ์นี้ว่า transient growth"
+    },
+    {
+     "s": 58.763,
+     "e": 63.014,
+     "en": "Here is a concrete case of non normality in chemical engineering.",
+     "th": "นี่คือกรณีจริงของความไม่ normal ในวิศวกรรมเคมี"
+    },
+    {
+     "s": 63.014,
+     "e": 72.418,
+     "en": "A plug flow reactor discretized into many cells has a Jacobian that is strongly non normal, because each cell feeds only the next one downstream.",
+     "th": "เครื่องปฏิกรณ์แบบไหลในท่อที่แบ่งเป็นหลายช่องมี Jacobian ที่ไม่ normal อย่างมาก เพราะแต่ละช่องป้อนเฉพาะช่องถัดไปท้ายน้ำ"
+    },
+    {
+     "s": 72.418,
+     "e": 78.408,
+     "en": "Its eigenvalues can all be stable while a pulse grows in size as it travels before it leaves.",
+     "th": "ค่าเฉพาะทั้งหมดอาจเสถียร ขณะที่พัลส์มีขนาดเพิ่มขึ้นระหว่างเคลื่อนที่ก่อนจะออกไป"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "file": "audio/slide-11.mp3",
+   "duration": 17.712,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.178,
+     "en": "Check 1 has four questions on eigenvalue problems:",
+     "th": "Check 1 มีสี่คำถามเรื่องปัญหาค่าเฉพาะ ได้แก่"
+    },
+    {
+     "s": 3.178,
+     "e": 14.405,
+     "en": "eigenvalues from the trace and determinant, whether a matrix is diagonalizable, why symmetric eigenvectors are orthogonal, and whether a matrix with unit eigenvalues can double a length.",
+     "th": "ค่าเฉพาะจาก trace และดีเทอร์มิแนนต์ เมทริกซ์แปลงเป็นเมทริกซ์ทแยงได้หรือไม่ ทำไมเวกเตอร์เฉพาะของเมทริกซ์สมมาตรจึงตั้งฉาก และเมทริกซ์ที่ค่าเฉพาะมีขนาดหนึ่งทำให้ความยาวเพิ่มเป็นสองเท่าได้หรือไม่"
+    },
+    {
+     "s": 14.405,
+     "e": 17.658,
+     "en": "Take five minutes, then press Show answers.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "file": "audio/slide-12.mp3",
+   "duration": 108.432,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.303,
+     "en": "Part two. Every matrix, of any shape, can be written as U Sigma V transpose: a rotation, a stretch along the axes, and another rotation.",
+     "th": "ส่วนที่สอง เมทริกซ์ทุกตัวไม่ว่ารูปร่างใด เขียนได้เป็น U Sigma V transpose คือการหมุน การยืดตามแกน และการหมุนอีกครั้ง"
+    },
+    {
+     "s": 10.303,
+     "e": 19.573,
+     "en": "The columns of V are the right singular vectors, the input directions. The columns of U are the left singular vectors, the output directions.",
+     "th": "หลักของ V คือ right singular vector ซึ่งเป็นทิศของอินพุต หลักของ U คือ left singular vector ซึ่งเป็นทิศของเอาต์พุต sigma i"
+    },
+    {
+     "s": 19.573,
+     "e": 24.339,
+     "en": "Each sigma i says how much M stretches v i, and M v i equals sigma i u i.",
+     "th": "แต่ละตัวบอกว่า M ยืด v i มากเท่าใด และ M v i เท่ากับ sigma i u i"
+    },
+    {
+     "s": 24.339,
+     "e": 34.658,
+     "en": "Geometrically, the unit sphere goes to an ellipsoid with semi axes sigma i u i. The largest singular value is the largest stretch, the two norm of M.",
+     "th": "ในเชิงเรขาคณิต ทรงกลมหนึ่งหน่วยถูกส่งไปเป็นทรงรีที่มีครึ่งแกน sigma i u i singular value ที่ใหญ่ที่สุดคือการยืดที่มากที่สุด ซึ่งคือ two norm ของ M"
+    },
+    {
+     "s": 34.658,
+     "e": 47.247,
+     "en": "The proof uses the spectral theorem. M transpose M is symmetric and positive semidefinite, so it has orthonormal eigenvectors v i and eigenvalues sigma i squared.",
+     "th": "การพิสูจน์ใช้ spectral theorem M transpose M เป็นเมทริกซ์สมมาตรและ positive semidefinite จึงมีเวกเตอร์เฉพาะตั้งฉากปกติ v i และค่าเฉพาะ sigma i กำลังสอง"
+    },
+    {
+     "s": 47.247,
+     "e": 50.105,
+     "en": "Then u i is M v i divided by sigma i.",
+     "th": "แล้ว u i คือ M v i หารด้วย sigma i"
+    },
+    {
+     "s": 50.105,
+     "e": 61.171,
+     "en": "That proof is not how to compute it. Forming M transpose M squares the condition number. Libraries compute the decomposition directly from M.",
+     "th": "การพิสูจน์นี้ไม่ใช่วิธีคำนวณ การสร้าง M transpose M ทำให้ condition number ยกกำลังสอง ไลบรารีคำนวณการแยกตัวประกอบจาก M โดยตรง"
+    },
+    {
+     "s": 61.171,
+     "e": 69.868,
+     "en": "The decomposition can also be read as a sum of rank one pieces, sigma i u i v i transpose, ordered from most to least important.",
+     "th": "การแยกตัวประกอบนี้อ่านได้อีกแบบว่าเป็นผลรวมของส่วนที่มี rank หนึ่ง คือ sigma i u i v i transpose เรียงจากสำคัญมากไปน้อย"
+    },
+    {
+     "s": 69.868,
+     "e": 74.25,
+     "en": "That reading gives the low rank approximation later in this part.",
+     "th": "การอ่านแบบนี้ให้การประมาณด้วย rank ต่ำในช่วงท้ายของส่วนนี้"
+    },
+    {
+     "s": 74.25,
+     "e": 87.475,
+     "en": "A small example. The matrix three, zero, zero, minus two is already diagonal, but its singular values are three and two, not three and minus two. Singular values are never negative:",
+     "th": "ตัวอย่างเล็กๆ เมทริกซ์ สาม ศูนย์ ศูนย์ ลบสอง เป็นเมทริกซ์ทแยงอยู่แล้ว แต่ singular value คือสามและสอง ไม่ใช่สามและลบสอง singular value ไม่เป็นลบเลย"
+    },
+    {
+     "s": 87.475,
+     "e": 90.382,
+     "en": "the sign goes into the singular vectors.",
+     "th": "เครื่องหมายไปอยู่ใน singular vector"
+    },
+    {
+     "s": 90.382,
+     "e": 100.73,
+     "en": "For a rectangular matrix, say five measurements by two parameters, there are only two singular values. The remaining three left singular vectors span the left null space:",
+     "th": "สำหรับเมทริกซ์สี่เหลี่ยมผืนผ้า เช่น การวัดห้าครั้งกับพารามิเตอร์สองตัว จะมี singular value เพียงสองตัว left singular vector ที่เหลือสามตัว span"
+    },
+    {
+     "s": 100.73,
+     "e": 108.355,
+     "en": "the directions in measurement space that no choice of parameters can produce, which is where the least squares residual lives.",
+     "th": "left null space คือทิศในปริภูมิการวัดที่ไม่มีค่าพารามิเตอร์ใดสร้างได้ ซึ่งเป็นที่อยู่ของเศษเหลือ least squares"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "file": "audio/slide-13.mp3",
+   "duration": 46.32,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 6.5,
+     "en": "Here is the shear family one, b, zero, one. Move b with the slider.",
+     "th": "นี่คือกลุ่มเมทริกซ์เฉือน หนึ่ง b ศูนย์ หนึ่ง เลื่อน b ด้วยแถบเลื่อน"
+    },
+    {
+     "s": 6.5,
+     "e": 11.783,
+     "en": "The eigenvalues stay one and one for every b. The singular values spread apart:",
+     "th": "ค่าเฉพาะยังคงเป็นหนึ่งและหนึ่งทุกค่า b แต่ singular value แยกห่างออกจากกัน"
+    },
+    {
+     "s": 11.783,
+     "e": 20.434,
+     "en": "the product stays one, because it equals the absolute value of the determinant, but the ratio, the condition number, grows quickly.",
+     "th": "ผลคูณยังคงเป็นหนึ่งเพราะเท่ากับค่าสัมบูรณ์ของดีเทอร์มิแนนต์ แต่อัตราส่วนซึ่งคือ condition number เพิ่มขึ้นอย่างรวดเร็ว"
+    },
+    {
+     "s": 20.434,
+     "e": 32.184,
+     "en": "At b equal to four, the matrix stretches some vector more than four times while every eigenvalue says one. If you judged this operator by its eigenvalues, you would miss all of that.",
+     "th": "ที่ b เท่ากับสี่ เมทริกซ์ยืดเวกเตอร์บางตัวมากกว่าสี่เท่า ขณะที่ค่าเฉพาะทุกตัวบอกว่าหนึ่ง ถ้าตัดสิน operator นี้จากค่าเฉพาะ คุณจะพลาดเรื่องนี้ทั้งหมด"
+    },
+    {
+     "s": 32.184,
+     "e": 44.528,
+     "en": "Notice also how the image of the circle leans over as b grows. The direction of largest stretch turns toward the first axis, and the direction of least stretch turns toward the second.",
+     "th": "สังเกตด้วยว่าภาพของวงกลมเอนลงเมื่อ b เพิ่มขึ้น ทิศที่ยืดมากที่สุดหมุนเข้าหาแกนแรก และทิศที่ยืดน้อยที่สุดหมุนเข้าหาแกนที่สอง"
+    },
+    {
+     "s": 44.528,
+     "e": 46.263,
+     "en": "Neither is an eigenvector.",
+     "th": "ทั้งสองไม่ใช่เวกเตอร์เฉพาะ"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "file": "audio/slide-14.mp3",
+   "duration": 72.408,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.103,
+     "en": "The SVD gives orthonormal bases for all four subspaces at once.",
+     "th": "SVD ให้ basis ตั้งฉากปกติของ subspace ทั้งสี่พร้อมกัน"
+    },
+    {
+     "s": 5.103,
+     "e": 16.513,
+     "en": "If the rank is r, the first r columns of U span the column space and the rest span the left null space. The first r columns of V span the row space and the rest span the null space.",
+     "th": "ถ้า rank เท่ากับ r หลักแรก r หลักของ U span column space และหลักที่เหลือ span left null space หลักแรก r หลักของ V span row space และหลักที่เหลือ span null space"
+    },
+    {
+     "s": 16.513,
+     "e": 25.092,
+     "en": "This is exactly how the null space function in Lab 1 worked: it kept the right singular vectors whose singular values fall below the threshold.",
+     "th": "นี่คือวิธีที่ฟังก์ชัน null space ใน Lab 1 ทำงาน มันเก็บ right singular vector ที่ singular value ต่ำกว่าค่าขีดแบ่ง"
+    },
+    {
+     "s": 25.092,
+     "e": 34.132,
+     "en": "The pseudoinverse inverts each direction the matrix can see and ignores the others. It gives the least squares solution of smallest norm.",
+     "th": "pseudoinverse กลับทิศที่เมทริกซ์มองเห็นแต่ละทิศ และไม่สนใจทิศอื่น ให้คำตอบ least squares ที่มี norm เล็กที่สุด"
+    },
+    {
+     "s": 34.132,
+     "e": 46.954,
+     "en": "Notice what it does to noise. An error of size epsilon in b along u i becomes epsilon divided by sigma i in the solution. A small singular value is an amplifier.",
+     "th": "สังเกตว่ามันทำอะไรกับสัญญาณรบกวน ความคลาดเคลื่อนขนาด epsilon ใน b ตามทิศ u i กลายเป็น epsilon หารด้วย sigma i ในคำตอบ singular value ที่เล็กคือตัวขยาย"
+    },
+    {
+     "s": 46.954,
+     "e": 49.803,
+     "en": "That one fact explains conditioning.",
+     "th": "ข้อเท็จจริงนี้อธิบายเรื่องภาวะของปัญหาได้ทั้งหมด"
+    },
+    {
+     "s": 49.803,
+     "e": 57.065,
+     "en": "Here is the truncated SVD as a method. Keep only the singular values above a threshold, and invert those.",
+     "th": "นี่คือ truncated SVD ในฐานะวิธีการ เก็บเฉพาะ singular value ที่สูงกว่าค่าขีดแบ่ง"
+    },
+    {
+     "s": 57.065,
+     "e": 64.532,
+     "en": "The solution loses the directions the data cannot see, and in exchange it does not amplify noise along them.",
+     "th": "แล้วกลับค่าเหล่านั้น คำตอบจะไม่มีทิศที่ข้อมูลมองไม่เห็น แลกกับการไม่ขยายสัญญาณรบกวนในทิศเหล่านั้น วิธี"
+    },
+    {
+     "s": 64.532,
+     "e": 72.342,
+     "en": "Regularization methods used in inverse problems, such as Tikhonov regularization, are smooth versions of this cut.",
+     "th": "regularization ที่ใช้ในปัญหาผกผัน เช่น Tikhonov regularization เป็นการตัดแบบนี้ในรูปที่นุ่มนวลขึ้น"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "file": "audio/slide-15.mp3",
+   "duration": 96.984,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.247,
+     "en": "The condition number is the ratio of the largest to the smallest singular value.",
+     "th": "condition number คืออัตราส่วนของ singular value ที่ใหญ่ที่สุดต่อที่เล็กที่สุด"
+    },
+    {
+     "s": 5.247,
+     "e": 11.912,
+     "en": "For a linear system, the relative error in the solution is at most kappa times the relative error in the data.",
+     "th": "สำหรับระบบเชิงเส้น ความคลาดเคลื่อนสัมพัทธ์ในคำตอบมีค่าไม่เกิน kappa คูณความคลาดเคลื่อนสัมพัทธ์ในข้อมูล"
+    },
+    {
+     "s": 11.912,
+     "e": 18.276,
+     "en": "The bound is reached when the data lie along the first output direction and the error lies along the last.",
+     "th": "ขอบเขตนี้เกิดขึ้นจริงเมื่อข้อมูลอยู่ตามทิศเอาต์พุตแรก และความคลาดเคลื่อนอยู่ตามทิศสุดท้าย"
+    },
+    {
+     "s": 18.276,
+     "e": 22.566,
+     "en": "A rule of thumb: you lose about log ten of kappa digits.",
+     "th": "หลักง่ายๆ คือ คุณเสียตัวเลขไปประมาณ log ฐานสิบของ kappa หลัก"
+    },
+    {
+     "s": 22.566,
+     "e": 29.073,
+     "en": "The table collects examples. The monomial basis from Session 1 had about ten to the thirteen.",
+     "th": "ตารางรวบรวมตัวอย่าง monomial basis จากคาบที่ 1 มีประมาณสิบยกกำลังสิบสาม design"
+    },
+    {
+     "s": 29.073,
+     "e": 40.079,
+     "en": "The Arrhenius design for data between three hundred and three hundred sixty kelvin has about five thousand four hundred. After centering and scaling it is one.",
+     "th": "ของ Arrhenius สำหรับข้อมูลระหว่างสามร้อยถึงสามร้อยหกสิบเคลวินมีประมาณห้าพันสี่ร้อย หลังเลื่อนจุดศูนย์กลางและปรับสเกลเหลือหนึ่ง"
+    },
+    {
+     "s": 40.079,
+     "e": 49.81,
+     "en": "A large kappa has two possible causes: columns of very different size, or columns that are nearly parallel. Scaling cures the first.",
+     "th": "kappa ที่ใหญ่มีสาเหตุได้สองแบบ คือ หลักมีขนาดต่างกันมาก หรือหลักเกือบขนานกัน การปรับสเกลแก้แบบแรก"
+    },
+    {
+     "s": 49.81,
+     "e": 54.566,
+     "en": "Only a new experiment or a new parameterization cures the second.",
+     "th": "ส่วนแบบที่สองแก้ได้ด้วยการทดลองใหม่หรือการเปลี่ยนรูปพารามิเตอร์เท่านั้น"
+    },
+    {
+     "s": 54.566,
+     "e": 64.263,
+     "en": "Kappa is a property of the problem, not of the algorithm. A poor algorithm, such as the normal equations, adds more loss on top.",
+     "th": "kappa เป็นสมบัติของปัญหา ไม่ใช่ของอัลกอริทึม อัลกอริทึมที่ไม่ดี เช่น normal equation ทำให้สูญเสียเพิ่มขึ้นอีก"
+    },
+    {
+     "s": 64.263,
+     "e": 66.273,
+     "en": "Let us put numbers on the bound.",
+     "th": "ลองใส่ตัวเลขให้ขอบเขตนี้"
+    },
+    {
+     "s": 66.273,
+     "e": 72.121,
+     "en": "Rate constants measured to about three percent, with kappa equal to five thousand four hundred,",
+     "th": "ค่าคงที่อัตราที่วัดได้ละเอียดประมาณสามเปอร์เซ็นต์ เมื่อ kappa เท่ากับห้าพันสี่ร้อย"
+    },
+    {
+     "s": 72.121,
+     "e": 82.842,
+     "en": "could in the worst case give relative parameter errors of more than one hundred times three percent. In practice the damage shows up as the near perfect correlation in the lab.",
+     "th": "ในกรณีเลวร้ายที่สุดอาจให้ความคลาดเคลื่อนสัมพัทธ์ของพารามิเตอร์มากกว่าหนึ่งร้อยเท่าของสามเปอร์เซ็นต์ ในทางปฏิบัติผลเสียปรากฏเป็นสหสัมพันธ์ที่เกือบสมบูรณ์ในแล็บ"
+    },
+    {
+     "s": 82.842,
+     "e": 94.634,
+     "en": "Kappa also depends on the units you choose. Measuring one variable in pascals and another in bar changes kappa by ten to the five, without changing the information.",
+     "th": "kappa ยังขึ้นกับหน่วยที่เลือก การวัดตัวแปรหนึ่งเป็นปาสคาลและอีกตัวเป็นบาร์ทำให้ kappa เปลี่ยนไปสิบยกกำลังห้า โดยที่ข้อมูลไม่ได้เปลี่ยน"
+    },
+    {
+     "s": 94.634,
+     "e": 96.921,
+     "en": "That is why scaling comes first.",
+     "th": "นี่คือเหตุผลที่ต้องปรับสเกลก่อน"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "file": "audio/slide-16.mp3",
+   "duration": 103.968,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.655,
+     "en": "Now the question every modeler meets: which parameters can my experiment determine?",
+     "th": "ทีนี้คำถามที่ผู้สร้างแบบจำลองทุกคนพบ คือ การทดลองของฉันกำหนดพารามิเตอร์ใดได้บ้าง"
+    },
+    {
+     "s": 5.655,
+     "e": 15.272,
+     "en": "The sensitivity matrix S has one row per measurement and one column per parameter: the derivative of the predicted measurement with respect to that parameter.",
+     "th": "sensitivity matrix S มีหนึ่งแถวต่อการวัดหนึ่งครั้ง และหนึ่งหลักต่อพารามิเตอร์หนึ่งตัว คืออนุพันธ์ของค่าวัดที่ทำนายเทียบกับพารามิเตอร์นั้น"
+    },
+    {
+     "s": 15.272,
+     "e": 21.684,
+     "en": "Near the best fit, the covariance of the estimates is approximately s squared times S transpose S inverse.",
+     "th": "ใกล้คำตอบที่ดีที่สุด ความแปรปรวนร่วมของค่าประมาณประมาณเท่ากับ s กำลังสอง คูณ S transpose S inverse"
+    },
+    {
+     "s": 21.684,
+     "e": 31.355,
+     "en": "Take a first order decay with c zero equal to one and k equal to zero point five per minute, sampled eight times. Move the last sampling time.",
+     "th": "พิจารณาการสลายตัวอันดับหนึ่งที่ c ศูนย์ เท่ากับหนึ่ง และ k เท่ากับศูนย์จุดห้าต่อนาที เก็บตัวอย่างแปดครั้ง แล้วเลื่อนเวลาเก็บตัวอย่างครั้งสุดท้าย"
+    },
+    {
+     "s": 31.355,
+     "e": 36.015,
+     "en": "With a window of only half a minute, the curve is nearly a straight line.",
+     "th": "เมื่อช่วงเวลาเพียงครึ่งนาที เส้นโค้งเกือบเป็นเส้นตรง การเปลี่ยน"
+    },
+    {
+     "s": 36.015,
+     "e": 44.013,
+     "en": "Changing c zero and changing k look almost the same, the two columns are nearly parallel, and the standard error of k is large.",
+     "th": "c ศูนย์ กับการเปลี่ยน k ดูเกือบเหมือนกัน สองหลักเกือบขนานกัน และความคลาดเคลื่อนมาตรฐานของ k มีค่ามาก"
+    },
+    {
+     "s": 44.013,
+     "e": 50.627,
+     "en": "The error falls to a minimum at about three and a half minutes, near two time constants, and then rises again.",
+     "th": "ความคลาดเคลื่อนลดลงจนต่ำสุดที่ประมาณสามนาทีครึ่ง ใกล้สองเท่าของค่าคงที่เวลา แล้วเพิ่มขึ้นอีก"
+    },
+    {
+     "s": 50.627,
+     "e": 58.671,
+     "en": "With equally spaced samples, a long window puts many points where the curve has already decayed and carries little information about k.",
+     "th": "เมื่อเก็บตัวอย่างห่างเท่ากัน ช่วงเวลายาวทำให้มีจุดจำนวนมากอยู่ในช่วงที่เส้นโค้งสลายไปแล้ว ซึ่งให้ข้อมูลเกี่ยวกับ k น้อย"
+    },
+    {
+     "s": 58.671,
+     "e": 70.092,
+     "en": "So identifiability is a property of the experiment and the model together. The singular values of the scaled sensitivity matrix measure it before you run a single test.",
+     "th": "ดังนั้นความสามารถในการระบุพารามิเตอร์เป็นสมบัติของการทดลองและแบบจำลองร่วมกัน singular value ของ sensitivity matrix ที่ปรับสเกลแล้ววัดเรื่องนี้ได้ก่อนที่คุณจะทดลองแม้แต่ครั้งเดียว"
+    },
+    {
+     "s": 70.092,
+     "e": 78.321,
+     "en": "The correlation in the table is worth reading. At every window it stays near zero point eight to zero point nine, positive.",
+     "th": "สหสัมพันธ์ในตารางควรอ่านด้วย ทุกช่วงเวลามีค่าประมาณศูนย์จุดแปดถึงศูนย์จุดเก้า และเป็นบวก ค่าประมาณ c ศูนย์"
+    },
+    {
+     "s": 78.321,
+     "e": 86.882,
+     "en": "A larger estimate of c zero goes with a larger estimate of k, because a higher start and a faster decay can produce similar data.",
+     "th": "ที่สูงขึ้นมาพร้อมค่าประมาณ k ที่สูงขึ้น เพราะจุดเริ่มต้นที่สูงกว่าและการสลายที่เร็วกว่าให้ข้อมูลที่คล้ายกันได้"
+    },
+    {
+     "s": 86.882,
+     "e": 90.429,
+     "en": "This is optimal experimental design in its simplest form:",
+     "th": "นี่คือการออกแบบการทดลองที่เหมาะสมในรูปที่ง่ายที่สุด"
+    },
+    {
+     "s": 90.429,
+     "e": 101.13,
+     "en": "choose the sampling times to make the smallest singular value of the scaled sensitivity matrix as large as possible, or the determinant of S transpose S as large as possible.",
+     "th": "คือเลือกเวลาเก็บตัวอย่างให้ singular value ที่เล็กที่สุดของ sensitivity matrix ที่ปรับสเกลแล้วมีค่ามากที่สุด หรือให้ดีเทอร์มิแนนต์ของ S transpose S มากที่สุด"
+    },
+    {
+     "s": 101.13,
+     "e": 103.882,
+     "en": "The second choice is called D optimal design.",
+     "th": "ทางเลือกที่สองเรียกว่า D optimal design"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "file": "audio/slide-17.mp3",
+   "duration": 85.68,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 12.925,
+     "en": "The SVD as a sum of rank one pieces gives the best low rank approximation. Keeping the first k terms gives the closest matrix of rank k, and the error is the next singular value.",
+     "th": "SVD ในรูปผลรวมของส่วนที่มี rank หนึ่งให้การประมาณด้วย rank ต่ำที่ดีที่สุด การเก็บ k พจน์แรกให้เมทริกซ์ rank k ที่ใกล้ที่สุด และความคลาดเคลื่อนเท่ากับ singular value"
+    },
+    {
+     "s": 12.925,
+     "e": 15.289,
+     "en": "This is the Eckart Young theorem.",
+     "th": "ตัวถัดไป นี่คือทฤษฎีบท Eckart Young"
+    },
+    {
+     "s": 15.289,
+     "e": 25.789,
+     "en": "The data here are synthetic: twenty runs of a fixed bed temperature profile at twenty five axial positions, built from a hot spot mode and a linear mode, with noise of half a kelvin.",
+     "th": "ข้อมูลในหน้านี้สังเคราะห์ขึ้น คือโปรไฟล์อุณหภูมิของเบดนิ่งยี่สิบครั้ง ที่ตำแหน่งตามแกนยี่สิบห้าจุด สร้างจากโหมดจุดร้อนและโหมดเชิงเส้น พร้อมสัญญาณรบกวนครึ่งเคลวิน"
+    },
+    {
+     "s": 25.789,
+     "e": 31.382,
+     "en": "Two singular values, about one hundred twenty three and seventy one, stand far above the rest.",
+     "th": "singular value สองตัว ประมาณหนึ่งร้อยยี่สิบสามและเจ็ดสิบเอ็ด สูงกว่าตัวอื่นมาก"
+    },
+    {
+     "s": 31.382,
+     "e": 37.917,
+     "en": "The others sit near the dashed line at four point seven, the largest singular value expected from noise alone,",
+     "th": "ตัวที่เหลืออยู่ใกล้เส้นประที่สี่จุดเจ็ด ซึ่งคือ singular value ที่ใหญ่ที่สุดที่คาดได้จากสัญญาณรบกวนอย่างเดียว"
+    },
+    {
+     "s": 37.917,
+     "e": 44.158,
+     "en": "which is the noise standard deviation times the square root of twenty plus the square root of twenty five.",
+     "th": "เท่ากับส่วนเบี่ยงเบนมาตรฐานของสัญญาณรบกวน คูณ รากที่สองของยี่สิบ บวกรากที่สองของยี่สิบห้า"
+    },
+    {
+     "s": 44.158,
+     "e": 53.447,
+     "en": "So the numerical rank is two: the data contain two independent ways the profile can change. Keeping a third term would only fit noise.",
+     "th": "rank เชิงตัวเลขจึงเท่ากับสอง ข้อมูลมีสองรูปแบบอิสระที่โปรไฟล์เปลี่ยนได้ การเก็บพจน์ที่สามจะ fit เพียงสัญญาณรบกวน"
+    },
+    {
+     "s": 53.447,
+     "e": 60.395,
+     "en": "This completes the threshold left open in Session 1: set it from the noise in the data, not from machine precision.",
+     "th": "นี่ทำให้ค่าขีดแบ่งที่ค้างไว้ในคาบที่ 1 สมบูรณ์ คือให้กำหนดจากสัญญาณรบกวนในข้อมูล ไม่ใช่จากความละเอียดของเครื่อง"
+    },
+    {
+     "s": 60.395,
+     "e": 63.435,
+     "en": "The same picture appears in many forms in research:",
+     "th": "ภาพเดียวกันนี้ปรากฏในงานวิจัยหลายรูปแบบ"
+    },
+    {
+     "s": 63.435,
+     "e": 69.106,
+     "en": "a scree plot in principal component analysis, the number of significant factors in chemometrics,",
+     "th": "เช่น scree plot ใน principal component analysis จำนวน factor ที่มีนัยสำคัญใน"
+    },
+    {
+     "s": 69.106,
+     "e": 75.303,
+     "en": "or the number of independent reactions estimated from concentration data rather than from the atom matrix.",
+     "th": "chemometrics หรือจำนวนปฏิกิริยาอิสระที่ประมาณจากข้อมูลความเข้มข้นแทนที่จะได้จาก atom matrix"
+    },
+    {
+     "s": 75.303,
+     "e": 85.605,
+     "en": "When the gap between signal and noise singular values is not clear, report that honestly: say which components are ambiguous and test whether your conclusions change with or without them.",
+     "th": "เมื่อช่องว่างระหว่าง singular value ของสัญญาณกับของสัญญาณรบกวนไม่ชัดเจน ให้รายงานอย่างตรงไปตรงมา บอกว่าองค์ประกอบใดกำกวม และทดสอบว่าข้อสรุปเปลี่ยนไปหรือไม่เมื่อรวมหรือไม่รวมองค์ประกอบเหล่านั้น"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "file": "audio/slide-18.mp3",
+   "duration": 18.864,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.466,
+     "en": "Check 2 has four questions on the SVD and conditioning:",
+     "th": "Check 2 มีสี่คำถามเรื่อง SVD และภาวะของปัญหา ได้แก่"
+    },
+    {
+     "s": 3.466,
+     "e": 12.063,
+     "en": "a null space from the SVD, trustworthy digits, the meaning of a strong correlation, and a rank decision from singular values and a noise level.",
+     "th": "null space จาก SVD จำนวนหลักที่เชื่อถือได้ ความหมายของสหสัมพันธ์ที่สูง และการตัดสิน rank จาก singular value กับระดับสัญญาณรบกวน"
+    },
+    {
+     "s": 12.063,
+     "e": 18.803,
+     "en": "Take five minutes, then press Show answers. After this check, take the ten minute break.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers หลังจาก Check นี้ พักสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "file": "audio/slide-19.mp3",
+   "duration": 39.6,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.632,
+     "en": "Welcome back. Activity 2 adds the parameters to your card.",
+     "th": "ยินดีต้อนรับกลับ กิจกรรมที่ 2 เพิ่มพารามิเตอร์ลงในบัตรของคุณ"
+    },
+    {
+     "s": 5.632,
+     "e": 13.717,
+     "en": "List the parameters you estimate, with units and expected ranges. For each, name the measurement most sensitive to it.",
+     "th": "เขียนพารามิเตอร์ที่คุณประมาณค่า พร้อมหน่วยและช่วงที่คาดไว้ แต่ละตัวให้ระบุการวัดที่ไวต่อมันที่สุด"
+    },
+    {
+     "s": 13.717,
+     "e": 21.395,
+     "en": "Then name the pair you suspect is correlated, and explain why their sensitivity columns might be nearly parallel.",
+     "th": "จากนั้นระบุคู่ที่คุณสงสัยว่าสัมพันธ์กัน และอธิบายว่าทำไมหลักของ sensitivity ของทั้งคู่อาจเกือบขนานกัน"
+    },
+    {
+     "s": 21.395,
+     "e": 27.724,
+     "en": "Finally, propose one change to the experiment or to the parameterization that would separate them.",
+     "th": "สุดท้าย เสนอการเปลี่ยนแปลงการทดลองหรือรูปพารามิเตอร์หนึ่งอย่างที่จะแยกทั้งคู่ออกจากกัน"
+    },
+    {
+     "s": 27.724,
+     "e": 39.539,
+     "en": "Typical pairs are a pre exponential factor and an activation energy, an adsorption constant and a rate constant, or a diffusion coefficient and a film thickness. Take ten minutes.",
+     "th": "คู่ที่พบบ่อยคือ pre exponential factor กับพลังงานก่อกัมมันต์ ค่าคงที่การดูดซับกับค่าคงที่อัตรา หรือสัมประสิทธิ์การแพร่กับความหนาของฟิล์ม ใช้เวลาสิบนาที"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "file": "audio/slide-20.mp3",
+   "duration": 95.064,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.276,
+     "en": "Part three. The first application is reparameterization, and the Arrhenius equation is the classic case.",
+     "th": "ส่วนที่สาม การประยุกต์แรกคือการเปลี่ยนรูปพารามิเตอร์ และสมการ Arrhenius เป็นกรณีคลาสสิก"
+    },
+    {
+     "s": 8.276,
+     "e": 19.595,
+     "en": "Write ln k as ln A minus E a over R times one over T. The intercept ln A is the value at one over T equal to zero, an infinite temperature far outside any data.",
+     "th": "เขียน ln k เป็น ln A ลบ E a หาร R คูณหนึ่งส่วน T จุดตัดแกน ln A คือค่าที่หนึ่งส่วน T เท่ากับศูนย์ ซึ่งคืออุณหภูมิอนันต์ที่อยู่นอกข้อมูลมาก"
+    },
+    {
+     "s": 19.595,
+     "e": 27.118,
+     "en": "Any change in the fitted slope swings that intercept, so the two estimates are almost perfectly correlated.",
+     "th": "การเปลี่ยนความชันที่ fit ได้ทำให้จุดตัดแกนแกว่งไปด้วย ค่าประมาณทั้งสองจึงสัมพันธ์กันเกือบสมบูรณ์"
+    },
+    {
+     "s": 27.118,
+     "e": 35.744,
+     "en": "Rewrite it around a reference temperature inside the data. The new intercept, ln k ref, is the rate in the middle of the data.",
+     "th": "เขียนใหม่โดยใช้อุณหภูมิอ้างอิงที่อยู่ในช่วงข้อมูล จุดตัดแกนใหม่ ln k ref คืออัตราที่กลางช่วงข้อมูล"
+    },
+    {
+     "s": 35.744,
+     "e": 43.079,
+     "en": "If one over T ref is the mean of one over T, the two columns become orthogonal and the correlation vanishes.",
+     "th": "ถ้าหนึ่งส่วน T ref เท่ากับค่าเฉลี่ยของหนึ่งส่วน T สองหลักจะตั้งฉากกันและสหสัมพันธ์หายไป"
+    },
+    {
+     "s": 43.079,
+     "e": 53.934,
+     "en": "Centering alone does not bring kappa near one, because the two columns still differ in size by a factor of about ten thousand. Scaling the centered column fixes that.",
+     "th": "การเลื่อนจุดศูนย์กลางอย่างเดียวไม่ทำให้ kappa ใกล้หนึ่ง เพราะสองหลักยังมีขนาดต่างกันประมาณหนึ่งหมื่นเท่า การปรับสเกลหลักที่เลื่อนแล้วแก้เรื่องนี้ได้"
+    },
+    {
+     "s": 53.934,
+     "e": 66.526,
+     "en": "The fitted curve is identical in all three forms. Only the coordinates of the parameter vector change, which is a change of basis in parameter space. Lab 2 measures the gain.",
+     "th": "เส้นโค้งที่ fit ได้เหมือนกันทั้งสามรูป เปลี่ยนเพียงพิกัดของเวกเตอร์พารามิเตอร์ ซึ่งคือการเปลี่ยน basis ในปริภูมิพารามิเตอร์ Lab 2 จะวัดผลที่ได้"
+    },
+    {
+     "s": 66.526,
+     "e": 77.961,
+     "en": "The same move works for any model. For a Langmuir Hinshelwood rate, write the adsorption constant at a reference temperature inside the data, with its own enthalpy as the slope.",
+     "th": "การเปลี่ยนแบบเดียวกันใช้ได้กับทุกแบบจำลอง สำหรับอัตราแบบ Langmuir Hinshelwood ให้เขียนค่าคงที่การดูดซับที่อุณหภูมิอ้างอิงภายในช่วงข้อมูล โดยมีเอนทาลปีของมันเป็นความชัน"
+    },
+    {
+     "s": 77.961,
+     "e": 82.329,
+     "en": "For a correlation in pressure, write it around a reference pressure.",
+     "th": "สำหรับสหสัมพันธ์ที่ขึ้นกับความดัน ให้เขียนรอบความดันอ้างอิง"
+    },
+    {
+     "s": 82.329,
+     "e": 87.803,
+     "en": "Fitting software then converges faster and the reported uncertainties become meaningful.",
+     "th": "ซอฟต์แวร์ fit จะลู่เข้าเร็วขึ้น และความไม่แน่นอนที่รายงานจะมีความหมาย"
+    },
+    {
+     "s": 87.803,
+     "e": 95.0,
+     "en": "You can still convert back to A and E a for comparison with the literature, but report their correlation when you do.",
+     "th": "คุณยังแปลงกลับเป็น A และ E a เพื่อเทียบกับเอกสารได้ แต่ต้องรายงานสหสัมพันธ์ของทั้งคู่ด้วย"
+    }
+   ]
+  },
+  {
+   "n": 21,
+   "file": "audio/slide-21.mp3",
+   "duration": 80.4,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 7.011,
+     "en": "The second application is principal component analysis, which is the SVD of a centered data matrix.",
+     "th": "การประยุกต์ที่สองคือ principal component analysis ซึ่งคือ SVD ของเมทริกซ์ข้อมูลที่เลื่อนจุดศูนย์กลางแล้ว"
+    },
+    {
+     "s": 7.011,
+     "e": 16.637,
+     "en": "The right singular vectors are the loadings, the directions in variable space. The left singular vectors times the singular values are the scores.",
+     "th": "right singular vector คือ loading ซึ่งเป็นทิศในปริภูมิของตัวแปร left singular vector คูณ singular value คือ score"
+    },
+    {
+     "s": 16.637,
+     "e": 23.382,
+     "en": "The fraction of variance explained by component i is sigma i squared over the sum of all sigma squared.",
+     "th": "สัดส่วนความแปรปรวนที่อธิบายด้วยองค์ประกอบที่ i คือ sigma i กำลังสอง หารด้วยผลรวมของ sigma กำลังสองทั้งหมด"
+    },
+    {
+     "s": 23.382,
+     "e": 35.487,
+     "en": "In process monitoring, a plant with two hundred sensors may move in only a handful of independent ways. Statistics built on the first scores and on the residual flag abnormal operation.",
+     "th": "ในการเฝ้าติดตามกระบวนการ โรงงานที่มีเซนเซอร์สองร้อยตัวอาจเปลี่ยนแปลงได้เพียงไม่กี่รูปแบบอิสระ ค่าสถิติที่สร้างจาก score ตัวแรกๆ และจากเศษเหลือใช้ตรวจจับการทำงานผิดปกติ"
+    },
+    {
+     "s": 35.487,
+     "e": 44.697,
+     "en": "In spectroscopy, the number of significant components estimates the number of absorbing species. That is Task 2 of the lab.",
+     "th": "ในสเปกโทรสโกปี จำนวนองค์ประกอบที่มีนัยสำคัญใช้ประมาณจำนวนสปีชีส์ที่ดูดกลืนแสง ซึ่งคือ Task 2 ของแล็บ"
+    },
+    {
+     "s": 44.697,
+     "e": 57.882,
+     "en": "Two cautions. Scale the variables first, or the one with the largest numbers in its units dominates. And remember that principal components are directions of variance, not causes.",
+     "th": "ข้อควรระวังสองข้อ ให้ปรับสเกลตัวแปรก่อน มิฉะนั้นตัวแปรที่มีตัวเลขใหญ่ที่สุดตามหน่วยจะครอบงำ และจำไว้ว่า principal component คือทิศของความแปรปรวน ไม่ใช่สาเหตุ"
+    },
+    {
+     "s": 57.882,
+     "e": 67.987,
+     "en": "A short worked case. Ten sensors on a distillation column, five hundred samples, scaled. Singular values thirty and twelve, then about one.",
+     "th": "กรณีตัวอย่างสั้นๆ เซนเซอร์สิบตัวบนหอกลั่น ห้าร้อยตัวอย่าง ปรับสเกลแล้ว singular value สามสิบและสิบสอง จากนั้นประมาณหนึ่ง"
+    },
+    {
+     "s": 67.987,
+     "e": 80.329,
+     "en": "The first component may be feed rate moving every flow together, the second the reflux ratio moving temperatures against flows. Everything else is noise and small effects.",
+     "th": "องค์ประกอบแรกอาจเป็นอัตราป้อนที่ทำให้อัตราการไหลทุกตัวเปลี่ยนไปด้วยกัน องค์ประกอบที่สองอาจเป็นอัตราส่วนรีฟลักซ์ที่ทำให้อุณหภูมิเปลี่ยนสวนทางกับอัตราการไหล ที่เหลือคือสัญญาณรบกวนและผลขนาดเล็ก"
+    }
+   ]
+  },
+  {
+   "n": 22,
+   "file": "audio/slide-22.mp3",
+   "duration": 60.72,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 4.984,
+     "en": "Here is what to report whenever you fit, invert or reduce a matrix.",
+     "th": "นี่คือสิ่งที่ควรรายงานทุกครั้งที่คุณ fit หาตัวผกผัน หรือลดขนาดเมทริกซ์"
+    },
+    {
+     "s": 4.984,
+     "e": 10.001,
+     "en": "When you solve or invert, report kappa and how many digits that leaves.",
+     "th": "เมื่อแก้ระบบหรือหาตัวผกผัน ให้รายงาน kappa และจำนวนหลักที่เหลือ"
+    },
+    {
+     "s": 10.001,
+     "e": 22.961,
+     "en": "When you fit parameters, report standard errors, the correlation matrix of the estimates, and the parameterization you used. Compute the fit with QR or the SVD, not the normal equations.",
+     "th": "เมื่อ fit พารามิเตอร์ ให้รายงานความคลาดเคลื่อนมาตรฐาน เมทริกซ์สหสัมพันธ์ของค่าประมาณ และรูปพารามิเตอร์ที่ใช้ คำนวณการ fit ด้วย QR หรือ SVD ไม่ใช่ normal equation"
+    },
+    {
+     "s": 22.961,
+     "e": 29.763,
+     "en": "When you claim that a parameter is determined, show the singular values of the scaled sensitivity matrix.",
+     "th": "เมื่ออ้างว่าพารามิเตอร์ถูกกำหนดได้ ให้แสดง singular value ของ sensitivity matrix ที่ปรับสเกลแล้ว"
+    },
+    {
+     "s": 29.763,
+     "e": 36.946,
+     "en": "When you reduce data, show all the singular values, the threshold, and where the threshold comes from in the noise.",
+     "th": "เมื่อลดขนาดข้อมูล ให้แสดง singular value ทั้งหมด ค่าขีดแบ่ง และที่มาของค่าขีดแบ่งจากสัญญาณรบกวน"
+    },
+    {
+     "s": 36.946,
+     "e": 43.263,
+     "en": "And when you diagonalize a non symmetric matrix, check the condition number of the eigenvector matrix.",
+     "th": "และเมื่อแปลงเมทริกซ์ที่ไม่สมมาตรเป็นเมทริกซ์ทแยง ให้ตรวจ condition number ของเมทริกซ์เวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 43.263,
+     "e": 51.803,
+     "en": "A fit reported with a correlation of zero point nine nine nine between two parameters has told the reader that only one combination of them is known.",
+     "th": "การรายงานผล fit ที่มีสหสัมพันธ์ศูนย์จุดเก้าเก้าเก้าระหว่างพารามิเตอร์สองตัว ได้บอกผู้อ่านแล้วว่ารู้ค่าเพียงผลรวมเดียวของทั้งสอง"
+    },
+    {
+     "s": 51.803,
+     "e": 60.658,
+     "en": "Most of these reports cost a few lines of code. The D drawers on today's slides show each of them, and the lab asks you to read them.",
+     "th": "รายงานเหล่านี้ส่วนใหญ่ใช้โค้ดเพียงไม่กี่บรรทัด D drawer ในสไลด์วันนี้แสดงทุกตัว และแล็บให้คุณอ่านค่าเหล่านั้น"
+    }
+   ]
+  },
+  {
+   "n": 23,
+   "file": "audio/slide-23.mp3",
+   "duration": 8.664,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 5.353,
+     "en": "Check 3 has four questions on reparameterization and principal components.",
+     "th": "Check 3 มีสี่คำถามเรื่องการเปลี่ยนรูปพารามิเตอร์และ principal component"
+    },
+    {
+     "s": 5.353,
+     "e": 8.605,
+     "en": "Take five minutes, then press Show answers.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 24,
+   "file": "audio/slide-24.mp3",
+   "duration": 11.64,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 8.326,
+     "en": "Check 4 has four questions on identifiability, based on the decay demo and on the choice between factoring S and S transpose S.",
+     "th": "Check 4 มีสี่คำถามเรื่องความสามารถในการระบุพารามิเตอร์ จาก demo การสลายตัว และการเลือกระหว่างการแยกตัวประกอบ S กับ S transpose S"
+    },
+    {
+     "s": 8.326,
+     "e": 11.579,
+     "en": "Take five minutes, then press Show answers.",
+     "th": "ใช้เวลาห้านาที แล้วกด Show answers"
+    }
+   ]
+  },
+  {
+   "n": 25,
+   "file": "audio/slide-25.mp3",
+   "duration": 35.64,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.155,
+     "en": "Here is where today's ideas go next.",
+     "th": "นี่คือการนำแนวคิดของวันนี้ไปใช้ต่อ"
+    },
+    {
+     "s": 3.155,
+     "e": 9.727,
+     "en": "Session 3 writes the solution of a linear ODE system as a sum of exponentials along the eigenvectors.",
+     "th": "คาบที่ 3 เขียนคำตอบของระบบสมการเชิงอนุพันธ์เชิงเส้นเป็นผลรวมของฟังก์ชันเอกซ์โพเนนเชียลตามเวกเตอร์เฉพาะ"
+    },
+    {
+     "s": 9.727,
+     "e": 17.329,
+     "en": "For a reaction network, the eigenvectors are straight line reaction paths and the eigenvalues give the time constants.",
+     "th": "สำหรับเครือข่ายปฏิกิริยา เวกเตอร์เฉพาะคือเส้นทางปฏิกิริยาแบบเส้นตรง และค่าเฉพาะให้ค่าคงที่เวลา"
+    },
+    {
+     "s": 17.329,
+     "e": 26.303,
+     "en": "Session 4 reads stability from the real parts of the Jacobian eigenvalues, and Session 5 watches an eigenvalue cross zero at a turning point.",
+     "th": "คาบที่ 4 อ่านเสถียรภาพจากส่วนจริงของค่าเฉพาะของ Jacobian และคาบที่ 5 ดูค่าเฉพาะที่ผ่านศูนย์ที่จุดเลี้ยวกลับ"
+    },
+    {
+     "s": 26.303,
+     "e": 35.566,
+     "en": "Session 6 treats widely separated eigenvalues as separated time scales, and Session 7 applies the spectral theorem to differential operators.",
+     "th": "คาบที่ 6 มองค่าเฉพาะที่ห่างกันมากเป็นมาตราเวลาที่แยกกัน และคาบที่ 7 ใช้ spectral theorem กับ differential operator"
+    }
+   ]
+  },
+  {
+   "n": 26,
+   "file": "audio/slide-26.mp3",
+   "duration": 34.872,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 3.616,
+     "en": "Lab 2 takes forty minutes and has two parts.",
+     "th": "Lab 2 ใช้เวลาสี่สิบนาที และมีสองส่วน"
+    },
+    {
+     "s": 3.616,
+     "e": 9.132,
+     "en": "First, seven synthetic rate constants between three hundred and three hundred sixty kelvin.",
+     "th": "ส่วนแรก ค่าคงที่อัตราสังเคราะห์เจ็ดค่าระหว่างสามร้อยถึงสามร้อยหกสิบเคลวิน ทำนาย"
+    },
+    {
+     "s": 9.132,
+     "e": 18.066,
+     "en": "Predict the condition number of the design matrix, then compare the raw, centered and scaled fits, and compute the rate at the reference temperature.",
+     "th": "condition number ของ design matrix แล้วเปรียบเทียบการ fit แบบดิบ แบบเลื่อนจุดศูนย์กลาง และแบบปรับสเกล และคำนวณอัตราที่อุณหภูมิอ้างอิง"
+    },
+    {
+     "s": 18.066,
+     "e": 20.788,
+     "en": "Second, fifteen synthetic mixture spectra.",
+     "th": "ส่วนที่สอง สเปกตรัมของสารผสมสังเคราะห์สิบห้าชุด"
+    },
+    {
+     "s": 20.788,
+     "e": 30.408,
+     "en": "Count the absorbing species from the singular values and a noise threshold, then raise the noise and find where the third species can no longer be seen.",
+     "th": "นับจำนวนสปีชีส์ที่ดูดกลืนแสงจาก singular value และค่าขีดแบ่งจากสัญญาณรบกวน แล้วเพิ่มสัญญาณรบกวนเพื่อหาว่าสปีชีส์ที่สามมองไม่เห็นที่ระดับใด"
+    },
+    {
+     "s": 30.408,
+     "e": 34.816,
+     "en": "Download the answer file at the end and upload it to myCourseVille.",
+     "th": "ดาวน์โหลดไฟล์คำตอบตอนท้าย แล้วอัปโหลดเข้า myCourseVille"
+    }
+   ]
+  },
+  {
+   "n": 27,
+   "file": "audio/slide-27.mp3",
+   "duration": 43.2,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 2.076,
+     "en": "To summarize.",
+     "th": "สรุป"
+    },
+    {
+     "s": 2.076,
+     "e": 10.447,
+     "en": "Eigenvectors are the directions an operator only stretches, and diagonalization decouples a linear system in that basis.",
+     "th": "เวกเตอร์เฉพาะคือทิศที่ operator เพียงแค่ยืด และการแปลงเป็นเมทริกซ์ทแยงแยกระบบเชิงเส้นออกจากกันใน basis นั้น"
+    },
+    {
+     "s": 10.447,
+     "e": 15.289,
+     "en": "Symmetric matrices have real eigenvalues and orthonormal eigenvectors.",
+     "th": "เมทริกซ์สมมาตรมีค่าเฉพาะเป็นจำนวนจริงและเวกเตอร์เฉพาะตั้งฉากปกติ"
+    },
+    {
+     "s": 15.289,
+     "e": 20.276,
+     "en": "Non normal matrices can stretch far more than their eigenvalues suggest.",
+     "th": "เมทริกซ์ที่ไม่ normal ยืดเวกเตอร์ได้มากกว่าที่ค่าเฉพาะบ่งบอกมาก"
+    },
+    {
+     "s": 20.276,
+     "e": 31.5,
+     "en": "Every matrix has an SVD. Singular values measure stretch, set the numerical rank, and define the condition number, which tells you how many digits you lose.",
+     "th": "เมทริกซ์ทุกตัวมี SVD singular value วัดการยืด กำหนด rank เชิงตัวเลข และนิยาม condition number ซึ่งบอกว่าคุณเสียตัวเลขไปกี่หลัก"
+    },
+    {
+     "s": 31.5,
+     "e": 43.145,
+     "en": "Correlated parameters are a small singular value of the sensitivity matrix. Reparameterize at a reference point, scale columns, and set rank thresholds from the noise.",
+     "th": "พารามิเตอร์ที่สัมพันธ์กันคือ singular value ที่เล็กของ sensitivity matrix ให้เปลี่ยนรูปพารามิเตอร์ที่จุดอ้างอิง ปรับสเกลหลัก และกำหนดค่าขีดแบ่งของ rank จากสัญญาณรบกวน"
+    }
+   ]
+  },
+  {
+   "n": 28,
+   "file": "audio/slide-28.mp3",
+   "duration": 23.568,
+   "hold": false,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 9.434,
+     "en": "Before the next session, finish Lab 2 and upload the answer file. Keep your card; Session 3 adds the linear dynamics of your model.",
+     "th": "ก่อนคาบถัดไป ทำ Lab 2 ให้เสร็จและอัปโหลดไฟล์คำตอบ เก็บบัตรไว้ คาบที่ 3 จะเพิ่มพลวัตเชิงเส้นของแบบจำลองของคุณ"
+    },
+    {
+     "s": 9.434,
+     "e": 17.585,
+     "en": "Read Strang, chapter five and section six point three, and the eigenvalue sections of Varma and Morbidelli, chapter one.",
+     "th": "อ่าน Strang บทที่ห้าและหัวข้อหกจุดสาม และหัวข้อเรื่องค่าเฉพาะใน Varma กับ Morbidelli บทที่หนึ่ง หนังสือของ Bard"
+    },
+    {
+     "s": 17.585,
+     "e": 23.513,
+     "en": "Bard, or Trefethen and Bau, are optional reading on parameter estimation and on the SVD.",
+     "th": "หรือของ Trefethen กับ Bau เป็นการอ่านเพิ่มเติมเรื่องการประมาณพารามิเตอร์และ SVD"
+    }
+   ]
+  },
+  {
+   "n": 29,
+   "file": "audio/slide-29.mp3",
+   "duration": 15.888,
+   "hold": true,
+   "cues": [
+    {
+     "s": 0.1,
+     "e": 10.079,
+     "en": "Please finish with the Exit Ticket. Scan the code and choose Session 2, paste the answers the lab page copied for you, and answer the feedback questions.",
+     "th": "กรุณาปิดท้ายด้วย Exit Ticket สแกนโค้ดแล้วเลือก Session 2 วางคำตอบที่หน้าแล็บคัดลอกไว้ให้ และตอบคำถาม feedback"
+    },
+    {
+     "s": 10.079,
+     "e": 15.816,
+     "en": "The form is anonymous. Thank you, and see you in Session 3.",
+     "th": "แบบฟอร์มไม่ระบุตัวตน ขอบคุณ แล้วพบกันในคาบที่ 3"
+    }
+   ]
+  }
+ ]
+}
