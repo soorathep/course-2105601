@@ -3,12 +3,12 @@
  "rate": "-5%",
  "provider": "Microsoft Edge neural speech (edge-tts)",
  "synthetic_voice": true,
- "total_seconds": 698.2,
+ "total_seconds": 1905.5,
  "slides": [
   {
    "n": 1,
    "file": "audio/slide-01.mp3",
-   "duration": 21.432,
+   "duration": 34.56,
    "hold": false,
    "cues": [
     {
@@ -25,16 +25,28 @@
     },
     {
      "s": 17.605,
-     "e": 21.382,
-     "en": "On your own, the narration takes about twelve minutes.",
-     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสิบสองนาที"
+     "e": 21.579,
+     "en": "On your own, the narration takes about thirty two minutes.",
+     "th": "ถ้าเรียนเอง เสียงบรรยายใช้เวลาประมาณสามสิบสองนาที"
+    },
+    {
+     "s": 21.579,
+     "e": 31.26,
+     "en": "This session closes the first half of the course. Everything you have learned so far, from subspaces to perturbation methods, meets in one kind of problem:",
+     "th": "คาบนี้ปิดครึ่งแรกของวิชา ทุกสิ่งที่เรียนมา ตั้งแต่ subspace ไปจนถึงวิธี perturbation มาพบกันในปัญหาประเภทเดียว"
+    },
+    {
+     "s": 31.26,
+     "e": 34.487,
+     "en": "a differential equation with conditions at two ends.",
+     "th": "คือสมการเชิงอนุพันธ์ที่มีเงื่อนไขที่ปลายทั้งสองด้าน"
     }
    ]
   },
   {
    "n": 2,
    "file": "audio/slide-02.mp3",
-   "duration": 18.672,
+   "duration": 46.344,
    "hold": false,
    "cues": [
     {
@@ -48,13 +60,31 @@
      "e": 18.618,
      "en": "Part two covers Sturm Liouville problems, eigenfunction expansions, Green's functions, and pellet shape. Part three covers the dispersion reactor and the course as a whole.",
      "th": "ส่วนที่สองว่าด้วยปัญหา Sturm Liouville การกระจายด้วยฟังก์ชันลักษณะเฉพาะ ฟังก์ชันของ Green และรูปร่างของเม็ดตัวเร่ง ส่วนที่สามว่าด้วยเครื่องปฏิกรณ์แบบมีการกระจาย และภาพรวมของวิชา"
+    },
+    {
+     "s": 18.618,
+     "e": 27.262,
+     "en": "The parts are not equal in weight. Part one is about setting a problem up correctly, which is where most errors in practice come from.",
+     "th": "ส่วนต่างๆ มีน้ำหนักไม่เท่ากัน ส่วนที่หนึ่งว่าด้วยการตั้งปัญหาให้ถูกต้อง ซึ่งเป็นที่มาของข้อผิดพลาดส่วนใหญ่ในทางปฏิบัติ"
+    },
+    {
+     "s": 27.262,
+     "e": 37.25,
+     "en": "Part two is the theory that tells you why the solutions behave as they do. Part three applies both to a reactor you will meet again in reaction engineering.",
+     "th": "ส่วนที่สองคือทฤษฎีที่บอกว่าทำไมคำตอบจึงมีพฤติกรรมเช่นนั้น ส่วนที่สามนำทั้งสองไปใช้กับเครื่องปฏิกรณ์ที่คุณจะพบอีกในวิชาวิศวกรรมปฏิกิริยา"
+    },
+    {
+     "s": 37.25,
+     "e": 46.289,
+     "en": "The lab follows the same order: you set up the conditions, use the exact solution as a check, and then write a solver for a case with no exact solution.",
+     "th": "แล็บเป็นไปตามลำดับเดียวกัน คุณตั้งเงื่อนไข ใช้คำตอบแม่นตรงเป็นตัวตรวจ แล้วเขียนตัวแก้สมการสำหรับกรณีที่ไม่มีคำตอบแม่นตรง"
     }
    ]
   },
   {
    "n": 3,
    "file": "audio/slide-03.mp3",
-   "duration": 21.552,
+   "duration": 34.08,
    "hold": true,
    "cues": [
     {
@@ -68,13 +98,25 @@
      "e": 21.487,
      "en": "The last answer leads into today. The one over phi result came from a layer argument. Today we solve the full problem, with conditions at both ends.",
      "th": "คำตอบข้อสุดท้ายนำเข้าสู่เนื้อหาวันนี้ ผลหนึ่งหารด้วย phi มาจากการพิจารณาชั้นขอบเขต วันนี้เราแก้ปัญหาเต็ม โดยมีเงื่อนไขที่ปลายทั้งสองด้าน"
+    },
+    {
+     "s": 21.487,
+     "e": 28.919,
+     "en": "A hint for the last question: the layer thickness follows from balancing diffusion against reaction in the scaled equation.",
+     "th": "คำใบ้สำหรับข้อสุดท้าย ความหนาของชั้นได้จากการถ่วงดุลการแพร่กับปฏิกิริยาในสมการไร้มิติ"
+    },
+    {
+     "s": 28.919,
+     "e": 34.013,
+     "en": "If you cannot recall the result, derive it from that balance rather than from memory.",
+     "th": "ถ้าจำผลไม่ได้ ให้หาจากการถ่วงดุลนั้นแทนการจำ"
     }
    ]
   },
   {
    "n": 4,
    "file": "audio/slide-04.mp3",
-   "duration": 17.256,
+   "duration": 34.32,
    "hold": false,
    "cues": [
     {
@@ -88,13 +130,25 @@
      "e": 17.184,
      "en": "You can also use Sturm Liouville theory and Green's functions, and compute the conversion of a dispersion reactor between the two ideal limits.",
      "th": "คุณยังจะใช้ทฤษฎี Sturm Liouville และฟังก์ชันของ Green ได้ และคำนวณค่าการเปลี่ยนแปลงของเครื่องปฏิกรณ์แบบมีการกระจายซึ่งอยู่ระหว่างขีดจำกัดอุดมคติทั้งสอง"
+    },
+    {
+     "s": 17.184,
+     "e": 28.585,
+     "en": "Notice the verbs. Write and justify, choose, decide, build and compute. Each one is something you will be asked to do on the midterm, usually with a short reason.",
+     "th": "สังเกตคำกริยา คือ เขียนและให้เหตุผล เลือก ตัดสิน สร้าง และคำนวณ แต่ละคำคือสิ่งที่คุณจะถูกถามในการสอบกลางภาค มักพร้อมเหตุผลสั้นๆ"
+    },
+    {
+     "s": 28.585,
+     "e": 34.25,
+     "en": "A correct formula without the reason behind its boundary conditions earns little.",
+     "th": "สูตรที่ถูกแต่ไม่มีเหตุผลของเงื่อนไขขอบเขตได้คะแนนน้อย"
     }
    ]
   },
   {
    "n": 5,
    "file": "audio/slide-05.mp3",
-   "duration": 22.896,
+   "duration": 44.352,
    "hold": false,
    "cues": [
     {
@@ -114,13 +168,31 @@
      "e": 22.842,
      "en": "Stiffness from Session 3 explains why one numerical method fails, and the slab from Session 6 gets its exact solutions.",
      "th": "ความ stiff จากคาบที่ 3 อธิบายว่าทำไมวิธีเชิงตัวเลขวิธีหนึ่งจึงล้มเหลว และแผ่นตัวเร่งจากคาบที่ 6 จะได้คำตอบแม่นตรง"
+    },
+    {
+     "s": 22.842,
+     "e": 26.034,
+     "en": "Two links are worth keeping in mind all session.",
+     "th": "มีความเชื่อมโยงสองข้อที่ควรจำไว้ตลอดคาบ"
+    },
+    {
+     "s": 26.034,
+     "e": 36.588,
+     "en": "First, a Sturm Liouville operator is the continuous version of a symmetric matrix, so every fact about symmetric matrices from Session 2 has a counterpart today.",
+     "th": "ข้อแรก ตัวดำเนินการ Sturm Liouville คือเมทริกซ์สมมาตรในรูปต่อเนื่อง ข้อเท็จจริงทุกข้อเรื่องเมทริกซ์สมมาตรจากคาบที่ 2 จึงมีคู่ของมันในวันนี้"
+    },
+    {
+     "s": 36.588,
+     "e": 44.276,
+     "en": "Second, the boundary layer at large Péclet number is the singular perturbation of Session 6, now in a tubular reactor.",
+     "th": "ข้อที่สอง ชั้นขอบเขตที่เลข Péclet ค่ามากคือ singular perturbation ของคาบที่ 6 ในเครื่องปฏิกรณ์แบบท่อ"
     }
    ]
   },
   {
    "n": 6,
    "file": "audio/slide-06.mp3",
-   "duration": 29.136,
+   "duration": 79.056,
    "hold": false,
    "cues": [
     {
@@ -140,13 +212,49 @@
      "e": 29.066,
      "en": "A second order equation needs two conditions. Count them before you solve.",
      "th": "สมการอันดับสองต้องการเงื่อนไขสองข้อ นับจำนวนเงื่อนไขก่อนแก้สมการ"
+    },
+    {
+     "s": 29.066,
+     "e": 40.727,
+     "en": "Let us read the table row by row. A Dirichlet condition fixes the value: it is right when the surface is in contact with a well mixed fluid and the film resistance is negligible.",
+     "th": "อ่านตารางทีละแถว เงื่อนไข Dirichlet กำหนดค่า ใช้ได้เมื่อผิวสัมผัสกับของไหลที่ผสมดีและความต้านทานของฟิล์มน้อยมาก เงื่อนไข Neumann"
+    },
+    {
+     "s": 40.727,
+     "e": 47.763,
+     "en": "A Neumann condition fixes the flux; zero flux at the center expresses symmetry, not an absence of chemistry.",
+     "th": "กำหนดฟลักซ์ ฟลักซ์ศูนย์ที่จุดศูนย์กลางแสดงความสมมาตร ไม่ได้แปลว่าไม่มีปฏิกิริยา"
+    },
+    {
+     "s": 47.763,
+     "e": 56.497,
+     "en": "The Robin condition mixes the two. It comes from equating the diffusive flux just inside the surface with the film flux just outside.",
+     "th": "เงื่อนไข Robin ผสมทั้งสองแบบ ได้จากการตั้งฟลักซ์การแพร่ที่อยู่ถัดเข้าไปในผิวให้เท่ากับฟลักซ์ผ่านฟิล์มที่อยู่ถัดออกไปนอกผิว"
+    },
+    {
+     "s": 56.497,
+     "e": 63.211,
+     "en": "In scaled form the Biot number measures how fast the film is compared with diffusion inside the pellet.",
+     "th": "ในรูปไร้มิติ เลข Biot วัดว่าฟิล์มเร็วเพียงใดเมื่อเทียบกับการแพร่ภายในเม็ด"
+    },
+    {
+     "s": 63.211,
+     "e": 72.708,
+     "en": "The Danckwerts pair is the same idea at the two ends of a reactor. A common mistake is to write c at the inlet equal to the feed concentration.",
+     "th": "เงื่อนไขคู่ของ Danckwerts คือแนวคิดเดียวกันที่ปลายทั้งสองของเครื่องปฏิกรณ์ ข้อผิดพลาดที่พบบ่อยคือการเขียนว่าความเข้มข้นที่ทางเข้าเท่ากับความเข้มข้นของสารป้อน"
+    },
+    {
+     "s": 72.708,
+     "e": 78.974,
+     "en": "That ignores dispersion across the inlet plane, and it violates the mass balance at that plane.",
+     "th": "ซึ่งละเลยการกระจายผ่านระนาบทางเข้า และขัดกับสมดุลมวลที่ระนาบนั้น"
     }
    ]
   },
   {
    "n": 7,
    "file": "audio/slide-07.mp3",
-   "duration": 33.216,
+   "duration": 117.168,
    "hold": false,
    "cues": [
     {
@@ -166,13 +274,79 @@
      "e": 33.145,
      "en": "Collocation, as in solve bvp, satisfies the equation and both conditions together, and adapts its mesh. It is the default in this course.",
      "th": "Collocation เช่นใน solve bvp ทำให้สมการและเงื่อนไขทั้งสองเป็นจริงพร้อมกัน และปรับ mesh เอง นี่คือวิธีมาตรฐานในวิชานี้"
+    },
+    {
+     "s": 33.145,
+     "e": 40.985,
+     "en": "Look at the table of amplification. At phi equal to five, an error in the starting guess grows seventy four times.",
+     "th": "ดูตารางการขยาย ที่ phi เท่ากับห้า ความคลาดเคลื่อนในค่าเดาเริ่มต้นโตขึ้นเจ็ดสิบสี่เท่า"
+    },
+    {
+     "s": 40.985,
+     "e": 47.461,
+     "en": "At ten it grows eleven thousand times, and at forty it grows by more than ten to the seventeen.",
+     "th": "ที่สิบโตขึ้นหนึ่งหมื่นหนึ่งพันเท่า และที่สี่สิบโตขึ้นมากกว่าสิบยกกำลังสิบเจ็ด"
+    },
+    {
+     "s": 47.461,
+     "e": 55.255,
+     "en": "Double precision carries about sixteen digits, so at phi equal to forty no starting guess can be represented accurately enough.",
+     "th": "double precision เก็บได้ประมาณสิบหกหลัก ที่ phi เท่ากับสี่สิบจึงไม่มีค่าเดาเริ่มต้นใดแทนได้แม่นพอ"
+    },
+    {
+     "s": 55.255,
+     "e": 61.526,
+     "en": "The solver may report convergence and still return a wrong profile, which is the worst kind of failure.",
+     "th": "ตัวแก้สมการอาจรายงานว่าลู่เข้าแล้ว แต่ยังให้โปรไฟล์ที่ผิด ซึ่งเป็นความล้มเหลวแบบที่แย่ที่สุด"
+    },
+    {
+     "s": 61.526,
+     "e": 66.088,
+     "en": "Collocation avoids the problem because it never integrates from one end.",
+     "th": "collocation หลีกเลี่ยงปัญหานี้เพราะไม่อินทิเกรตจากปลายด้านเดียว"
+    },
+    {
+     "s": 66.088,
+     "e": 75.713,
+     "en": "It writes the solution as a piecewise polynomial on a mesh and solves for all its coefficients at once, so both boundary conditions are imposed together.",
+     "th": "มันเขียนคำตอบเป็นพหุนามเป็นช่วงบน mesh แล้วแก้หาสัมประสิทธิ์ทั้งหมดพร้อมกัน เงื่อนไขขอบเขตทั้งสองจึงถูกบังคับไปด้วยกัน"
+    },
+    {
+     "s": 75.713,
+     "e": 83.026,
+     "en": "solve bvp then adds nodes where the residual is large, which near a boundary layer means many nodes in a thin region.",
+     "th": "จากนั้น solve bvp เพิ่มจุดในที่ที่ค่าคงเหลือสูง ซึ่งใกล้ชั้นขอบเขตหมายถึงมีจุดจำนวนมากในบริเวณที่บาง"
+    },
+    {
+     "s": 83.026,
+     "e": 86.057,
+     "en": "It helps to know what solve bvp needs from you.",
+     "th": "ควรรู้ว่า solve bvp ต้องการอะไรจากคุณ"
+    },
+    {
+     "s": 86.057,
+     "e": 95.151,
+     "en": "You give the system as first order equations, the two boundary conditions as residuals that must be zero, an initial mesh and an initial guess.",
+     "th": "คุณให้ระบบเป็นสมการอันดับหนึ่ง เงื่อนไขขอบเขตทั้งสองเป็นค่าคงเหลือที่ต้องเป็นศูนย์ mesh เริ่มต้น และค่าเดาเริ่มต้น"
+    },
+    {
+     "s": 95.151,
+     "e": 105.066,
+     "en": "A poor guess is the usual reason for failure in nonlinear problems, so start from a solution you know, such as the linear one, and continue in the parameter.",
+     "th": "ค่าเดาที่ไม่ดีเป็นสาเหตุทั่วไปของความล้มเหลวในปัญหาไม่เชิงเส้น จึงควรเริ่มจากคำตอบที่รู้ เช่น คำตอบเชิงเส้น แล้วเปลี่ยนพารามิเตอร์ทีละน้อย"
+    },
+    {
+     "s": 105.066,
+     "e": 117.092,
+     "en": "After it returns, read three things: the success flag, the maximum residual, and the number of mesh nodes. A run that needed thousands of nodes is telling you where the solution is steep.",
+     "th": "หลังจากได้ผล ให้อ่านสามอย่าง คือสถานะความสำเร็จ ค่าคงเหลือสูงสุด และจำนวนจุดของ mesh การรันที่ต้องใช้หลายพันจุดกำลังบอกคุณว่าคำตอบชันที่ใด"
     }
    ]
   },
   {
    "n": 8,
    "file": "audio/slide-08.mp3",
-   "duration": 31.2,
+   "duration": 72.072,
    "hold": false,
    "cues": [
     {
@@ -204,13 +378,43 @@
      "e": 31.132,
      "en": "Press D to run the comparison of solve bvp with the closed form.",
      "th": "กด D เพื่อรันการเปรียบเทียบ solve bvp กับสูตรปิด"
+    },
+    {
+     "s": 31.132,
+     "e": 35.3,
+     "en": "Read the right hand column of the table, the surface concentration.",
+     "th": "อ่านคอลัมน์ด้านขวาของตาราง คือความเข้มข้นที่ผิว ที่เลข"
+    },
+    {
+     "s": 35.3,
+     "e": 46.211,
+     "en": "At a Biot number of one it is zero point two five of the bulk value, at three it is one half, at ten it is zero point seven seven, and at one hundred it is zero point nine seven.",
+     "th": "Biot เท่ากับหนึ่ง มีค่าศูนย์จุดสองห้าของค่าในเฟสหลัก ที่สามมีค่าครึ่งหนึ่ง ที่สิบมีค่าศูนย์จุดเจ็ดเจ็ด และที่หนึ่งร้อยมีค่าศูนย์จุดเก้าเจ็ด"
+    },
+    {
+     "s": 46.211,
+     "e": 55.492,
+     "en": "The overall effectiveness factor falls from zero point three three with no film to zero point zero eight three at a Biot number of one, a factor of four.",
+     "th": "effectiveness factor รวมลดลงจากศูนย์จุดสามสามเมื่อไม่มีฟิล์ม เหลือศูนย์จุดศูนย์แปดสามที่เลข Biot เท่ากับหนึ่ง ลดลงสี่เท่า"
+    },
+    {
+     "s": 55.492,
+     "e": 60.434,
+     "en": "A pellet designer who ignores the film would overestimate the rate by that factor.",
+     "th": "ผู้ออกแบบเม็ดตัวเร่งที่ละเลยฟิล์มจะประเมินอัตราสูงเกินไปเท่ากับตัวประกอบนั้น"
+    },
+    {
+     "s": 60.434,
+     "e": 72.013,
+     "en": "solve bvp agrees with the closed form to all digits shown, for every Biot number. Use such a closed form case to test any solver before you trust it on a problem without one.",
+     "th": "solve bvp ให้ค่าตรงกับสูตรปิดทุกหลักที่แสดง สำหรับเลข Biot ทุกค่า ใช้กรณีที่มีสูตรปิดแบบนี้ทดสอบตัวแก้สมการทุกตัว ก่อนจะเชื่อผลของมันในปัญหาที่ไม่มีสูตรปิด"
     }
    ]
   },
   {
    "n": 9,
    "file": "audio/slide-09.mp3",
-   "duration": 33.528,
+   "duration": 81.984,
    "hold": false,
    "cues": [
     {
@@ -230,13 +434,49 @@
      "e": 33.461,
      "en": "Dividing through shows two resistances in series, the pellet and the film. When the film controls, the rate no longer depends on the rate constant or the diffusivity at all.",
      "th": "เมื่อหารตลอดจะเห็นความต้านทานสองตัวต่ออนุกรม คือเม็ดตัวเร่งและฟิล์ม เมื่อฟิล์มเป็นตัวควบคุม อัตราจะไม่ขึ้นกับค่าคงที่อัตราหรือสัมประสิทธิ์การแพร่อีกเลย"
+    },
+    {
+     "s": 33.461,
+     "e": 46.573,
+     "en": "Go through the derivation once more, slowly. Step one is physics: the flux balance across the surface. Steps two and three are linear algebra on two unknown constants.",
+     "th": "ทบทวนการหาสูตรอีกครั้งอย่างช้าๆ ขั้นที่หนึ่งคือฟิสิกส์ คือสมดุลฟลักซ์ผ่านผิว ขั้นที่สองและสามคือพีชคณิตเชิงเส้นของค่าคงที่สองตัว"
+    },
+    {
+     "s": 46.573,
+     "e": 49.461,
+     "en": "Step four only rearranges the result.",
+     "th": "ขั้นที่สี่เป็นเพียงการจัดรูปผลลัพธ์"
+    },
+    {
+     "s": 49.461,
+     "e": 59.956,
+     "en": "Step five is the one to remember. One over eta phi squared is the resistance of the pellet, and one over the Biot number is the resistance of the film.",
+     "th": "ขั้นที่ห้าคือขั้นที่ควรจำ หนึ่งหาร eta phi กำลังสองคือความต้านทานของเม็ดตัวเร่ง และหนึ่งหารเลข Biot คือความต้านทานของฟิล์ม ทั้งสองบวกกัน"
+    },
+    {
+     "s": 59.956,
+     "e": 65.342,
+     "en": "They add, like resistances in series in a circuit, so the larger one controls.",
+     "th": "เหมือนความต้านทานต่ออนุกรมในวงจร ตัวที่ใหญ่กว่าจึงเป็นตัวควบคุม"
+    },
+    {
+     "s": 65.342,
+     "e": 73.797,
+     "en": "Always check the limits of a result like this. With no film, the Biot number goes to infinity and the slab result returns.",
+     "th": "ตรวจขีดจำกัดของผลลัพธ์แบบนี้เสมอ เมื่อไม่มีฟิล์ม เลข Biot เข้าสู่อนันต์ และได้ผลของแผ่นตัวเร่งเดิม"
+    },
+    {
+     "s": 73.797,
+     "e": 81.908,
+     "en": "With a slow film, the rate per volume becomes k c times c bulk over L, which no longer depends on the kinetics at all.",
+     "th": "เมื่อฟิล์มช้า อัตราต่อปริมาตรกลายเป็น k c คูณ c ในเฟสหลัก หาร L ซึ่งไม่ขึ้นกับจลนศาสตร์อีกเลย"
     }
    ]
   },
   {
    "n": 10,
    "file": "audio/slide-10.mp3",
-   "duration": 34.704,
+   "duration": 125.784,
    "hold": false,
    "cues": [
     {
@@ -262,13 +502,67 @@
      "e": 34.645,
      "en": "A common trap is a problem with only Neumann conditions. A steady state then exists only if sources and sinks balance.",
      "th": "กับดักที่พบบ่อยคือปัญหาที่มีแต่เงื่อนไข Neumann สภาวะคงตัวจะมีอยู่ก็ต่อเมื่อแหล่งกำเนิดและแหล่งรับสมดุลกัน"
+    },
+    {
+     "s": 34.645,
+     "e": 46.553,
+     "en": "Here is why this matters in practice. When a linear boundary value problem fails to solve, the first question is not about the solver but about the problem: does a unique solution exist?",
+     "th": "นี่คือเหตุผลที่เรื่องนี้สำคัญในทางปฏิบัติ เมื่อแก้ปัญหาค่าขอบเชิงเส้นไม่ได้ คำถามแรกไม่ใช่เรื่องตัวแก้สมการ แต่เป็นเรื่องตัวปัญหา คือมีคำตอบเดียวอยู่จริงหรือไม่"
+    },
+    {
+     "s": 46.553,
+     "e": 54.164,
+     "en": "The pure Neumann trap appears whenever every boundary is insulated or symmetric. Integrate the equation over the domain:",
+     "th": "กับดักของเงื่อนไข Neumann ล้วนเกิดขึ้นเมื่อทุกขอบเป็นฉนวนหรือสมมาตร อินทิเกรตสมการตลอดโดเมน"
+    },
+    {
+     "s": 54.164,
+     "e": 66.053,
+     "en": "the left side becomes the net flux through the boundaries, which is zero, so the source must integrate to zero too. Physically, a heated body with insulated walls has no steady temperature.",
+     "th": "ด้านซ้ายกลายเป็นฟลักซ์สุทธิผ่านขอบซึ่งเป็นศูนย์ แหล่งกำเนิดจึงต้องอินทิเกรตได้ศูนย์ด้วย ในทางกายภาพ วัตถุที่ให้ความร้อนโดยมีผนังเป็นฉนวนไม่มีอุณหภูมิคงตัว"
+    },
+    {
+     "s": 66.053,
+     "e": 74.222,
+     "en": "And even when a solution exists in that case, it is defined only up to a constant. A solver then sees a singular matrix.",
+     "th": "และแม้ในกรณีนั้นจะมีคำตอบ คำตอบก็กำหนดได้เพียงถึงค่าคงที่ ตัวแก้สมการจึงเห็นเมทริกซ์เอกฐาน"
+    },
+    {
+     "s": 74.222,
+     "e": 82.053,
+     "en": "The cure is to add the missing physics, such as a reference value or a heat loss, not to change the solver settings.",
+     "th": "วิธีแก้คือเพิ่มฟิสิกส์ที่ขาดไป เช่น ค่าอ้างอิงหรือการสูญเสียความร้อน ไม่ใช่การปรับตั้งค่าของตัวแก้สมการ"
+    },
+    {
+     "s": 82.053,
+     "e": 92.464,
+     "en": "Work the example on the slide in full. With lambda equal to pi squared and a uniform source, the homogeneous problem has the solution sine pi x.",
+     "th": "ทำตัวอย่างบนสไลด์ให้ครบ เมื่อ lambda เท่ากับ pi กำลังสองและแหล่งกำเนิดสม่ำเสมอ ปัญหาเอกพันธ์มีคำตอบ sine pi x"
+    },
+    {
+     "s": 92.464,
+     "e": 104.526,
+     "en": "The integral of the source against it is two over pi, not zero, so no solution exists. If you try anyway, a solver reports a singular matrix or returns enormous values.",
+     "th": "อินทิกรัลของแหล่งกำเนิดคูณกับฟังก์ชันนี้เท่ากับสองหาร pi ไม่ใช่ศูนย์ จึงไม่มีคำตอบ ถ้าพยายามแก้ ตัวแก้สมการจะรายงานเมทริกซ์เอกฐาน หรือให้ค่าที่ใหญ่มาก"
+    },
+    {
+     "s": 104.526,
+     "e": 115.516,
+     "en": "Now shift lambda slightly, to pi squared minus one. A unique solution exists again, but it is large, because the denominator in its eigenfunction expansion is small.",
+     "th": "ทีนี้เลื่อน lambda เล็กน้อยเป็น pi กำลังสองลบหนึ่ง จะมีคำตอบเดียวอีกครั้ง แต่มีขนาดใหญ่ เพราะตัวส่วนในการกระจายด้วยฟังก์ชันลักษณะเฉพาะมีค่าน้อย"
+    },
+    {
+     "s": 115.516,
+     "e": 125.711,
+     "en": "Near resonance, small changes in a parameter produce large changes in the solution: that is ill conditioning, the subject of Session 2, in function space.",
+     "th": "ใกล้การสั่นพ้อง การเปลี่ยนพารามิเตอร์เล็กน้อยทำให้คำตอบเปลี่ยนมาก นี่คือ ill conditioning ซึ่งเป็นหัวข้อของคาบที่ 2 ในปริภูมิของฟังก์ชัน"
     }
    ]
   },
   {
    "n": 11,
    "file": "audio/slide-11.mp3",
-   "duration": 7.848,
+   "duration": 24.168,
    "hold": true,
    "cues": [
     {
@@ -276,13 +570,25 @@
      "e": 7.789,
      "en": "Check one. Answer the four questions, then show the answers. Pause the narration now.",
      "th": "แบบฝึกหัดตรวจสอบที่หนึ่ง ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    },
+    {
+     "s": 7.789,
+     "e": 14.533,
+     "en": "Approach each question with a sketch. For the flux balance, draw the surface, the film and the arrows.",
+     "th": "ตอบแต่ละข้อโดยเริ่มจากภาพร่าง สำหรับสมดุลฟลักซ์ ให้วาดผิว ฟิล์ม และลูกศร"
+    },
+    {
+     "s": 14.533,
+     "e": 24.092,
+     "en": "For the solvability questions, integrate the equation over the domain, or test the source against the eigenfunction that the operator annihilates.",
+     "th": "สำหรับคำถามเรื่องการมีคำตอบ ให้อินทิเกรตสมการตลอดโดเมน หรือทดสอบแหล่งกำเนิดกับฟังก์ชันลักษณะเฉพาะที่ตัวดำเนินการส่งไปเป็นศูนย์"
     }
    ]
   },
   {
    "n": 12,
    "file": "audio/slide-12.mp3",
-   "duration": 35.184,
+   "duration": 120.696,
    "hold": false,
    "cues": [
     {
@@ -308,13 +614,79 @@
      "e": 35.132,
      "en": "For the cylinder the weight is r, and the equation is Bessel's equation. For the sphere the weight is r squared.",
      "th": "สำหรับทรงกระบอก น้ำหนักคือ r และสมการคือสมการของ Bessel สำหรับทรงกลม น้ำหนักคือ r กำลังสอง"
+    },
+    {
+     "s": 35.132,
+     "e": 43.132,
+     "en": "Let us see the parallel with Session 2 concretely. A symmetric matrix satisfies x transpose M y equals y transpose M x.",
+     "th": "มาดูความคล้ายกับคาบที่ 2 อย่างเป็นรูปธรรม เมทริกซ์สมมาตรเป็นไปตาม x transpose M y เท่ากับ y transpose"
+    },
+    {
+     "s": 43.132,
+     "e": 52.199,
+     "en": "A Sturm Liouville operator satisfies the same identity with the inner product as an integral, and integration by parts twice proves it,",
+     "th": "M x ตัวดำเนินการ Sturm Liouville เป็นไปตามเอกลักษณ์เดียวกัน โดยผลคูณภายในเป็นอินทิกรัล และการอินทิเกรตทีละส่วนสองครั้งพิสูจน์ได้"
+    },
+    {
+     "s": 52.199,
+     "e": 56.132,
+     "en": "using the boundary conditions to cancel the boundary terms.",
+     "th": "โดยใช้เงื่อนไขขอบเขตหักล้างพจน์ที่ขอบ"
+    },
+    {
+     "s": 56.132,
+     "e": 64.979,
+     "en": "That is why the boundary conditions matter so much. With separated conditions the boundary terms vanish and the operator is self adjoint.",
+     "th": "นี่คือเหตุผลที่เงื่อนไขขอบเขตสำคัญมาก เมื่อเงื่อนไขแยกกันที่แต่ละปลาย พจน์ที่ขอบหายไปและตัวดำเนินการเป็น self adjoint"
+    },
+    {
+     "s": 64.979,
+     "e": 72.737,
+     "en": "With other conditions, such as a mixed condition linking the two ends, they may not, and the nice properties can be lost.",
+     "th": "เมื่อเป็นเงื่อนไขแบบอื่น เช่น เงื่อนไขผสมที่เชื่อมสองปลายเข้าด้วยกัน อาจไม่หายไป และสมบัติที่ดีอาจสูญเสียไป"
+    },
+    {
+     "s": 72.737,
+     "e": 81.638,
+     "en": "The weight function deserves attention. In a cylinder, a thin shell at radius r has volume proportional to r, so averages and inner products carry r.",
+     "th": "ฟังก์ชันน้ำหนักควรได้รับความสนใจ ในทรงกระบอก เปลือกบางที่รัศมี r มีปริมาตรแปรผันตาม r ค่าเฉลี่ยและผลคูณภายในจึงมี r ติดอยู่"
+    },
+    {
+     "s": 81.638,
+     "e": 87.632,
+     "en": "Forgetting the weight is the most common error in eigenfunction expansions for cylinders and spheres.",
+     "th": "การลืมน้ำหนักเป็นข้อผิดพลาดที่พบบ่อยที่สุดในการกระจายด้วยฟังก์ชันลักษณะเฉพาะสำหรับทรงกระบอกและทรงกลม"
+    },
+    {
+     "s": 87.632,
+     "e": 97.387,
+     "en": "One more property is used constantly: the eigenvalues can be ordered and go to infinity, and the n th eigenfunction has n minus one zeros inside the interval.",
+     "th": "มีอีกสมบัติหนึ่งที่ใช้บ่อย คือค่าลักษณะเฉพาะเรียงลำดับได้และเพิ่มไปถึงอนันต์ และฟังก์ชันลักษณะเฉพาะตัวที่ n มีจุดศูนย์ภายในช่วง n ลบหนึ่งจุด"
+    },
+    {
+     "s": 97.387,
+     "e": 104.382,
+     "en": "Counting zeros is a quick way to check that a numerical eigenfunction belongs to the eigenvalue you think it does.",
+     "th": "การนับจุดศูนย์เป็นวิธีเร็วในการตรวจว่าฟังก์ชันลักษณะเฉพาะเชิงตัวเลขเป็นของค่าลักษณะเฉพาะที่คุณคิดหรือไม่"
+    },
+    {
+     "s": 104.382,
+     "e": 114.628,
+     "en": "The Rayleigh quotient carries over too. The lowest eigenvalue is bounded above by the quotient of any trial function that satisfies the boundary conditions.",
+     "th": "Rayleigh quotient ก็ใช้ได้เช่นกัน ค่าลักษณะเฉพาะต่ำสุดมีขอบเขตบนเป็นค่า quotient ของฟังก์ชันทดลองใดก็ได้ที่สอดคล้องกับเงื่อนไขขอบเขต"
+    },
+    {
+     "s": 114.628,
+     "e": 120.632,
+     "en": "Engineers used this long before computers to estimate the slowest decay rate of a transient.",
+     "th": "วิศวกรใช้วิธีนี้มานานก่อนมีคอมพิวเตอร์ เพื่อประมาณอัตราการสลายที่ช้าที่สุดของปัญหาชั่วขณะ"
     }
    ]
   },
   {
    "n": 13,
    "file": "audio/slide-13.mp3",
-   "duration": 33.72,
+   "duration": 97.224,
    "hold": false,
    "cues": [
     {
@@ -334,13 +706,61 @@
      "e": 33.645,
      "en": "The chart shows the first four eigenfunctions. The n th one has n minus one interior zeros, and their Gram matrix is the identity to within ten to the minus seven.",
      "th": "กราฟแสดงฟังก์ชันลักษณะเฉพาะสี่ตัวแรก ตัวที่ n มีจุดศูนย์ภายใน n ลบหนึ่งจุด และเมทริกซ์ Gram ของพวกมันเท่ากับเมทริกซ์เอกลักษณ์ภายในสิบยกกำลังลบเจ็ด"
+    },
+    {
+     "s": 33.645,
+     "e": 41.432,
+     "en": "Read the table. The first eigenvalue is about four point one, the second about twenty four, the third about sixty four.",
+     "th": "อ่านตาราง ค่าลักษณะเฉพาะแรกประมาณสี่จุดหนึ่ง ค่าที่สองประมาณยี่สิบสี่ ค่าที่สามประมาณหกสิบสี่"
+    },
+    {
+     "s": 41.432,
+     "e": 50.776,
+     "en": "They grow roughly like n squared pi squared, as they would for the simpler Dirichlet problem, because the Robin end matters less for fast modes.",
+     "th": "เพิ่มขึ้นประมาณตาม n กำลังสอง pi กำลังสอง เหมือนในปัญหา Dirichlet ที่ง่ายกว่า เพราะปลาย Robin มีผลน้อยลงสำหรับโหมดที่เร็ว"
+    },
+    {
+     "s": 50.776,
+     "e": 56.73,
+     "en": "For a transient diffusion problem with these conditions, each eigenvalue is a decay rate.",
+     "th": "สำหรับปัญหาการแพร่ชั่วขณะที่มีเงื่อนไขเหล่านี้ ค่าลักษณะเฉพาะแต่ละค่าคืออัตราการสลาย"
+    },
+    {
+     "s": 56.73,
+     "e": 67.513,
+     "en": "The second mode decays six times faster than the first, so after a short time only the first mode is visible. That is the time scale separation of Session 3 again.",
+     "th": "โหมดที่สองสลายเร็วกว่าโหมดแรกหกเท่า หลังเวลาสั้นๆ จึงเห็นเพียงโหมดแรก นี่คือการแยกสเกลเวลาของคาบที่ 3 อีกครั้ง"
+    },
+    {
+     "s": 67.513,
+     "e": 73.204,
+     "en": "Press D to compute the eigenvalues yourself. The finite difference check is a habit worth keeping:",
+     "th": "กด D เพื่อคำนวณค่าลักษณะเฉพาะเอง การตรวจด้วยผลต่างจำกัดเป็นนิสัยที่ควรรักษาไว้"
+    },
+    {
+     "s": 73.204,
+     "e": 81.368,
+     "en": "an independent method that agrees to five digits is strong evidence that the transcendental roots are the right ones and that none was missed.",
+     "th": "วิธีอิสระที่ให้ค่าตรงกันห้าหลักเป็นหลักฐานที่ดีว่ารากของสมการอดิศัยถูกต้องและไม่มีรากใดตกหล่น"
+    },
+    {
+     "s": 81.368,
+     "e": 93.217,
+     "en": "Look also at the chart. The first eigenfunction rises from zero and does not come back down to zero at the right end, because the Robin condition lets it keep a finite value there.",
+     "th": "ดูกราฟด้วย ฟังก์ชันลักษณะเฉพาะตัวแรกเพิ่มขึ้นจากศูนย์ และไม่กลับลงมาเป็นศูนย์ที่ปลายขวา เพราะเงื่อนไข Robin ให้มันมีค่าจำกัดที่นั่น ตัวที่สูงขึ้นแกว่ง"
+    },
+    {
+     "s": 93.217,
+     "e": 97.145,
+     "en": "The higher ones oscillate, each with one more interior zero.",
+     "th": "และแต่ละตัวมีจุดศูนย์ภายในเพิ่มขึ้นหนึ่งจุด"
     }
    ]
   },
   {
    "n": 14,
    "file": "audio/slide-14.mp3",
-   "duration": 32.424,
+   "duration": 102.696,
    "hold": false,
    "cues": [
     {
@@ -360,13 +780,67 @@
      "e": 32.355,
      "en": "The series for u converges as one over N squared. The series for the source itself overshoots near the jump, the Gibbs phenomenon, because it lacks the division by n squared pi squared.",
      "th": "อนุกรมของ u ลู่เข้าแบบหนึ่งหารด้วย N กำลังสอง อนุกรมของแหล่งกำเนิดเองพุ่งเกินใกล้จุดกระโดด ซึ่งคือปรากฏการณ์ Gibbs เพราะไม่มีการหารด้วย n กำลังสอง pi กำลังสอง"
+    },
+    {
+     "s": 32.355,
+     "e": 40.362,
+     "en": "Move the slider from one term to three. One sine gives the general shape, but misses by about a quarter of the peak value.",
+     "th": "เลื่อนแถบจากหนึ่งพจน์เป็นสามพจน์ ไซน์เพียงตัวเดียวให้รูปร่างโดยรวม แต่คลาดเคลื่อนประมาณหนึ่งในสี่ของค่ายอด"
+    },
+    {
+     "s": 40.362,
+     "e": 48.303,
+     "en": "Three terms bring the error to about two percent of the peak, and one hundred terms to a few millionths in absolute terms.",
+     "th": "สามพจน์ลดความคลาดเคลื่อนเหลือประมาณสองเปอร์เซ็นต์ของค่ายอด และหนึ่งร้อยพจน์เหลือไม่กี่ส่วนในล้านในค่าสัมบูรณ์"
+    },
+    {
+     "s": 48.303,
+     "e": 53.532,
+     "en": "The temperature profile has a kink at x equal to one half, where the heating stops.",
+     "th": "โปรไฟล์อุณหภูมิมีจุดหักที่ x เท่ากับครึ่งหนึ่ง ซึ่งเป็นจุดที่การให้ความร้อนหยุด"
+    },
+    {
+     "s": 53.532,
+     "e": 60.816,
+     "en": "A kink is smooth enough for the coefficients to fall like one over n cubed, which gives the fast convergence you see.",
+     "th": "จุดหักเรียบพอที่สัมประสิทธิ์จะลดลงตามหนึ่งหาร n กำลังสาม ซึ่งให้การลู่เข้าที่รวดเร็วอย่างที่เห็น"
+    },
+    {
+     "s": 60.816,
+     "e": 71.521,
+     "en": "The source itself has a jump, so its own series converges slowly and overshoots by eighteen percent near the jump, however many terms you take. This is a useful rule:",
+     "th": "แหล่งกำเนิดเองมีจุดกระโดด อนุกรมของมันจึงลู่เข้าช้าและพุ่งเกินสิบแปดเปอร์เซ็นต์ใกล้จุดกระโดด ไม่ว่าจะใช้กี่พจน์ นี่เป็นหลักที่มีประโยชน์"
+    },
+    {
+     "s": 71.521,
+     "e": 75.816,
+     "en": "expand the solution, not the data, when the data are discontinuous.",
+     "th": "คือให้กระจายคำตอบ ไม่ใช่ข้อมูล เมื่อข้อมูลไม่ต่อเนื่อง"
+    },
+    {
+     "s": 75.816,
+     "e": 85.284,
+     "en": "To compute the coefficients for your own source, project it onto each eigenfunction with the weighted inner product, and divide by the norm of the eigenfunction.",
+     "th": "การคำนวณสัมประสิทธิ์สำหรับแหล่งกำเนิดของคุณเอง ให้ฉายลงบนฟังก์ชันลักษณะเฉพาะแต่ละตัวด้วยผลคูณภายในแบบถ่วงน้ำหนัก แล้วหารด้วยนอร์มของฟังก์ชันลักษณะเฉพาะ"
+    },
+    {
+     "s": 85.284,
+     "e": 91.421,
+     "en": "For sines on zero to one, that norm is one half, which is where the factor two in the formula comes from.",
+     "th": "สำหรับไซน์บนช่วงศูนย์ถึงหนึ่ง นอร์มนั้นเท่ากับครึ่งหนึ่ง ซึ่งเป็นที่มาของตัวประกอบสองในสูตร"
+    },
+    {
+     "s": 91.421,
+     "e": 102.618,
+     "en": "The same recipe solves a transient problem: each coefficient then decays with its own eigenvalue in time. You will use exactly this in the second half of the semester.",
+     "th": "สูตรเดียวกันใช้แก้ปัญหาชั่วขณะได้ด้วย โดยสัมประสิทธิ์แต่ละตัวจะสลายตามเวลาด้วยค่าลักษณะเฉพาะของตัวเอง คุณจะใช้วิธีนี้ในครึ่งหลังของภาคการศึกษา"
     }
    ]
   },
   {
    "n": 15,
    "file": "audio/slide-15.mp3",
-   "duration": 34.056,
+   "duration": 96.816,
    "hold": false,
    "cues": [
     {
@@ -386,13 +860,61 @@
      "e": 34.0,
      "en": "The Green's function is symmetric in x and s, which is self adjointness again. Expanded in sines, it is exactly the eigenfunction series.",
      "th": "ฟังก์ชันของ Green สมมาตรใน x และ s ซึ่งก็คือ self adjoint อีกครั้ง เมื่อกระจายเป็นอนุกรมไซน์ ก็คืออนุกรมฟังก์ชันลักษณะเฉพาะนั่นเอง"
+    },
+    {
+     "s": 34.0,
+     "e": 42.784,
+     "en": "The Green's function is worth deriving once by hand, because its structure is general. Away from the source the homogeneous equation holds.",
+     "th": "ฟังก์ชันของ Green ควรหาด้วยมือสักครั้ง เพราะโครงสร้างของมันเป็นแบบทั่วไป ห่างจากแหล่งกำเนิด สมการเอกพันธ์เป็นจริง"
+    },
+    {
+     "s": 42.784,
+     "e": 52.132,
+     "en": "At the source, the function is continuous and its derivative jumps by the strength of the source divided by the coefficient of the second derivative.",
+     "th": "ที่แหล่งกำเนิด ฟังก์ชันต่อเนื่อง และอนุพันธ์กระโดดเท่ากับความแรงของแหล่งกำเนิดหารด้วยสัมประสิทธิ์ของอนุพันธ์อันดับสอง"
+    },
+    {
+     "s": 52.132,
+     "e": 59.546,
+     "en": "Physically, the Green's function is the temperature in a slab with cold faces when a unit of heat is released at one plane.",
+     "th": "ในทางกายภาพ ฟังก์ชันของ Green คืออุณหภูมิในแผ่นที่มีผิวเย็น เมื่อปล่อยความร้อนหนึ่งหน่วยที่ระนาบหนึ่ง"
+    },
+    {
+     "s": 59.546,
+     "e": 64.329,
+     "en": "It rises linearly from each face to the source, and the peak sits at the source.",
+     "th": "อุณหภูมิเพิ่มเป็นเส้นตรงจากผิวแต่ละด้านไปยังแหล่งกำเนิด และค่ายอดอยู่ที่แหล่งกำเนิด"
+    },
+    {
+     "s": 64.329,
+     "e": 68.132,
+     "en": "Once you have it, any source distribution is a superposition.",
+     "th": "เมื่อได้ฟังก์ชันนี้แล้ว การกระจายของแหล่งกำเนิดแบบใดก็เป็นการซ้อนทับ"
+    },
+    {
+     "s": 68.132,
+     "e": 76.842,
+     "en": "In the problem set you derive the Green's function for a slab with a symmetry condition at the center, which is the one you need for a pellet.",
+     "th": "ในชุดโจทย์ คุณจะหาฟังก์ชันของ Green ของแผ่นที่มีเงื่อนไขสมมาตรที่จุดศูนย์กลาง ซึ่งเป็นฟังก์ชันที่ต้องใช้กับเม็ดตัวเร่ง"
+    },
+    {
+     "s": 76.842,
+     "e": 87.67,
+     "en": "The note on the slide connects the two methods. Expand the Green's function itself in the sine basis: each coefficient is a sine of s divided by its eigenvalue.",
+     "th": "หมายเหตุบนสไลด์เชื่อมสองวิธีเข้าด้วยกัน กระจายฟังก์ชันของ Green เองด้วยฐานไซน์ แต่ละสัมประสิทธิ์คือไซน์ของ s หารด้วยค่าลักษณะเฉพาะ"
+    },
+    {
+     "s": 87.67,
+     "e": 96.75,
+     "en": "Integrating against the source then reproduces the eigenfunction series term by term. The two methods are one method seen in two bases.",
+     "th": "เมื่ออินทิเกรตกับแหล่งกำเนิด จะได้อนุกรมฟังก์ชันลักษณะเฉพาะทีละพจน์ สองวิธีนี้คือวิธีเดียวที่มองในสองฐาน"
     }
    ]
   },
   {
    "n": 16,
    "file": "audio/slide-16.mp3",
-   "duration": 32.832,
+   "duration": 102.336,
    "hold": false,
    "cues": [
     {
@@ -418,13 +940,67 @@
      "e": 32.776,
      "en": "This is Aris's normalization, and it lets one chart serve every shape.",
      "th": "นี่คือการทำให้เป็นมาตรฐานของ Aris ซึ่งทำให้กราฟเดียวใช้ได้กับทุกรูปร่าง"
+    },
+    {
+     "s": 32.776,
+     "e": 44.863,
+     "en": "Compare the three shapes at phi equal to three. The slab has an effectiveness factor of zero point three three, the cylinder zero point five four, and the sphere zero point six seven.",
+     "th": "เปรียบเทียบรูปร่างทั้งสามที่ phi เท่ากับสาม แผ่นมี effectiveness factor ศูนย์จุดสามสาม ทรงกระบอกศูนย์จุดห้าสี่ และทรงกลมศูนย์จุดหกเจ็ด ที่ phi"
+    },
+    {
+     "s": 44.863,
+     "e": 50.447,
+     "en": "At the same phi based on radius, the sphere looks best, but the comparison is unfair.",
+     "th": "เท่ากันซึ่งคิดจากรัศมี ทรงกลมดูดีที่สุด แต่การเปรียบเทียบนี้ไม่ยุติธรรม"
+    },
+    {
+     "s": 50.447,
+     "e": 60.476,
+     "en": "A sphere of radius R has a volume to surface ratio of R over three, while a slab of half thickness R has R. Most of the sphere is close to its surface.",
+     "th": "ทรงกลมรัศมี R มีอัตราส่วนปริมาตรต่อพื้นที่ผิวเท่ากับ R หารสาม ขณะที่แผ่นที่มีครึ่งความหนา R มีค่า R ส่วนใหญ่ของทรงกลมจึงอยู่ใกล้ผิว"
+    },
+    {
+     "s": 60.476,
+     "e": 68.855,
+     "en": "Aris's modulus corrects for this by using the volume to surface ratio as the length, and then the three curves almost coincide.",
+     "th": "modulus ของ Aris แก้ไขเรื่องนี้โดยใช้อัตราส่วนปริมาตรต่อพื้นที่ผิวเป็นความยาว แล้วเส้นโค้งทั้งสามเกือบทับกัน"
+    },
+    {
+     "s": 68.855,
+     "e": 77.544,
+     "en": "The cylinder needs modified Bessel functions, which are to the cylinder what hyperbolic functions are to the slab. You do not need to memorize them:",
+     "th": "ทรงกระบอกต้องใช้ฟังก์ชัน Bessel แบบดัดแปลง ซึ่งเป็นสำหรับทรงกระบอกเหมือนที่ฟังก์ชันไฮเพอร์โบลิกเป็นสำหรับแผ่น ไม่ต้องจำ"
+    },
+    {
+     "s": 77.544,
+     "e": 84.25,
+     "en": "know that they solve the radial equation, that I zero is finite at the center, and how to evaluate them with scipy.",
+     "th": "เพียงรู้ว่ามันเป็นคำตอบของสมการในแนวรัศมี I ศูนย์มีค่าจำกัดที่จุดศูนย์กลาง และคำนวณด้วย scipy ได้อย่างไร"
+    },
+    {
+     "s": 84.25,
+     "e": 89.444,
+     "en": "One practical note. Real pellets are cylinders with holes, rings, or trilobes.",
+     "th": "ข้อสังเกตในทางปฏิบัติ เม็ดตัวเร่งจริงเป็นทรงกระบอกมีรู วงแหวน หรือ"
+    },
+    {
+     "s": 89.444,
+     "e": 95.426,
+     "en": "None has a neat closed form, but the Aris normalization still works well at large modulus,",
+     "th": "trilobe ซึ่งไม่มีสูตรปิดที่เรียบร้อย แต่การทำให้เป็นมาตรฐานของ Aris ยังใช้ได้ดีที่"
+    },
+    {
+     "s": 95.426,
+     "e": 102.263,
+     "en": "because only a thin layer near the outer surface reacts and the shape of the interior no longer matters.",
+     "th": "modulus ค่ามาก เพราะมีเพียงชั้นบางๆ ใกล้ผิวด้านนอกที่เกิดปฏิกิริยา และรูปร่างภายในไม่มีผลอีก"
     }
    ]
   },
   {
    "n": 17,
    "file": "audio/slide-17.mp3",
-   "duration": 7.896,
+   "duration": 22.776,
    "hold": true,
    "cues": [
     {
@@ -432,13 +1008,25 @@
      "e": 7.829,
      "en": "Check two. Answer the four questions, then show the answers. Pause the narration now.",
      "th": "แบบฝึกหัดตรวจสอบที่สอง ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    },
+    {
+     "s": 7.829,
+     "e": 16.595,
+     "en": "For these questions, write the operator in the form minus p u prime, prime, plus q u, and identify p, q and w by matching terms.",
+     "th": "สำหรับคำถามชุดนี้ ให้เขียนตัวดำเนินการในรูป ลบอนุพันธ์ของ p u ไพรม์ บวก q u แล้วระบุ p q และ w โดยเทียบพจน์"
+    },
+    {
+     "s": 16.595,
+     "e": 22.711,
+     "en": "For the last one, look at how the coefficients of u are obtained from those of the source.",
+     "th": "สำหรับข้อสุดท้าย ให้ดูว่าสัมประสิทธิ์ของ u ได้มาจากสัมประสิทธิ์ของแหล่งกำเนิดอย่างไร"
     }
    ]
   },
   {
    "n": 18,
    "file": "audio/slide-18.mp3",
-   "duration": 14.376,
+   "duration": 39.024,
    "hold": true,
    "cues": [
     {
@@ -452,13 +1040,31 @@
      "e": 14.316,
      "en": "Pause the narration now.",
      "th": "หยุดเสียงบรรยายตอนนี้"
+    },
+    {
+     "s": 14.316,
+     "e": 18.131,
+     "en": "Here is an example of a finished entry. A packed bed adsorber:",
+     "th": "นี่คือตัวอย่างการ์ดที่เสร็จแล้ว เครื่องดูดซับแบบเบดบรรจุ"
+    },
+    {
+     "s": 18.131,
+     "e": 28.304,
+     "en": "the model is a partial differential equation, but at steady state it reduces to a boundary value problem in axial position, with Danckwerts conditions at the two ends.",
+     "th": "แบบจำลองเป็นสมการเชิงอนุพันธ์ย่อย แต่ที่สภาวะคงตัวลดรูปเป็นปัญหาค่าขอบในแนวแกน มีเงื่อนไข Danckwerts ที่ปลายทั้งสอง"
+    },
+    {
+     "s": 28.304,
+     "e": 38.961,
+     "en": "Its linearized operator is self adjoint only after a change of variable that removes the convection term, the same trick as the integrating factor on the Sturm Liouville slide.",
+     "th": "ตัวดำเนินการเชิงเส้นของมันเป็น self adjoint หลังการเปลี่ยนตัวแปรที่กำจัดพจน์การพา ซึ่งเป็นเทคนิคเดียวกับ integrating factor ในสไลด์ Sturm Liouville"
     }
    ]
   },
   {
    "n": 19,
    "file": "audio/slide-19.mp3",
-   "duration": 34.632,
+   "duration": 114.384,
    "hold": false,
    "cues": [
     {
@@ -484,13 +1090,73 @@
      "e": 34.566,
      "en": "At large Péclet number the problem is a singular perturbation, with a layer at the outlet.",
      "th": "ที่เลข Péclet ค่ามาก ปัญหาเป็น singular perturbation โดยมีชั้นขอบเขตที่ทางออก"
+    },
+    {
+     "s": 34.566,
+     "e": 43.53,
+     "en": "Take the limits one at a time. As the Péclet number grows, dispersion vanishes and the outlet concentration becomes e to the minus D A:",
+     "th": "พิจารณาขีดจำกัดทีละด้าน เมื่อเลข Péclet เพิ่มขึ้น การกระจายหายไป และความเข้มข้นที่ทางออกเป็น e กำลังลบ D A สำหรับ D"
+    },
+    {
+     "s": 43.53,
+     "e": 55.789,
+     "en": "for D A equal to two, a conversion of zero point eight six five. As it goes to zero, the reactor is perfectly mixed and the conversion is D A over one plus D A, zero point six six seven.",
+     "th": "A เท่ากับสอง ได้ค่าการเปลี่ยนแปลงศูนย์จุดแปดหกห้า เมื่อเข้าสู่ศูนย์ เครื่องปฏิกรณ์ผสมสมบูรณ์ และค่าการเปลี่ยนแปลงเป็น D A หารหนึ่งบวก D A เท่ากับศูนย์จุดหกหกเจ็ด"
+    },
+    {
+     "s": 55.789,
+     "e": 62.727,
+     "en": "Every real tubular reactor lies between these two numbers, and the dispersion model places it with one parameter.",
+     "th": "เครื่องปฏิกรณ์แบบท่อจริงทุกเครื่องอยู่ระหว่างสองค่านี้ และแบบจำลองการกระจายระบุตำแหน่งได้ด้วยพารามิเตอร์เดียว"
+    },
+    {
+     "s": 62.727,
+     "e": 69.908,
+     "en": "In practice that parameter is measured with a tracer test or taken from a correlation for the flow regime and packing.",
+     "th": "ในทางปฏิบัติ พารามิเตอร์นั้นวัดด้วยการทดสอบด้วย tracer หรือได้จากสหสัมพันธ์ของรูปแบบการไหลและการบรรจุ"
+    },
+    {
+     "s": 69.908,
+     "e": 80.434,
+     "en": "The exit formula looks heavy, but it contains only the two roots of a quadratic. You will derive it on the next slide, and recompute it by hand in the lab.",
+     "th": "สูตรที่ทางออกดูซับซ้อน แต่มีเพียงรากสองตัวของสมการกำลังสอง คุณจะหาสูตรนี้ในสไลด์ถัดไป และคำนวณซ้ำด้วยมือในแล็บ"
+    },
+    {
+     "s": 80.434,
+     "e": 83.354,
+     "en": "Where do Péclet numbers come from in practice?",
+     "th": "ในทางปฏิบัติเลข Péclet มาจากไหน"
+    },
+    {
+     "s": 83.354,
+     "e": 90.375,
+     "en": "For packed beds, correlations give a particle Péclet number of about two for gases at moderate Reynolds numbers,",
+     "th": "สำหรับเบดบรรจุ สหสัมพันธ์ให้เลข Péclet ของอนุภาคประมาณสองสำหรับแก๊สที่เลข Reynolds ปานกลาง เลข Péclet"
+    },
+    {
+     "s": 90.375,
+     "e": 99.882,
+     "en": "so the reactor Péclet number is roughly two times the bed length over the particle diameter. A bed one hundred particles long is then close to plug flow.",
+     "th": "ของเครื่องปฏิกรณ์จึงประมาณสองเท่าของความยาวเบดหารด้วยเส้นผ่านศูนย์กลางอนุภาค เบดที่ยาวหนึ่งร้อยอนุภาคจึงใกล้การไหลแบบปลั๊ก"
+    },
+    {
+     "s": 99.882,
+     "e": 109.071,
+     "en": "Laboratory reactors are the risky case: short beds of coarse particles, or empty tubes in laminar flow, can have Péclet numbers of ten or less.",
+     "th": "เครื่องปฏิกรณ์ในห้องปฏิบัติการเป็นกรณีที่เสี่ยง เบดสั้นที่บรรจุอนุภาคหยาบ หรือท่อเปล่าในการไหลแบบราบเรียบ อาจมีเลข Péclet สิบหรือต่ำกว่า"
+    },
+    {
+     "s": 109.071,
+     "e": 114.303,
+     "en": "Kinetic constants fitted on such a reactor as if it were plug flow will be biased.",
+     "th": "ค่าคงที่จลนศาสตร์ที่ fit จากเครื่องปฏิกรณ์แบบนี้โดยถือว่าเป็นการไหลแบบปลั๊กจะมีความเอนเอียง"
     }
    ]
   },
   {
    "n": 20,
    "file": "audio/slide-20.mp3",
-   "duration": 40.848,
+   "duration": 86.544,
    "hold": false,
    "cues": [
     {
@@ -522,13 +1188,43 @@
      "e": 40.789,
      "en": "Always check the limits. Large Pe gives plug flow, and small Pe gives one stirred tank. In the lab, a second order rate removes the closed form, and you will write the solver yourself.",
      "th": "ตรวจขีดจำกัดเสมอ Pe ค่ามากให้การไหลแบบปลั๊ก และ Pe ค่าน้อยให้ถังกวนหนึ่งถัง ในแล็บ อัตราอันดับสองทำให้ไม่มีสูตรปิด และคุณจะเขียนตัวแก้สมการเอง"
+    },
+    {
+     "s": 40.789,
+     "e": 53.521,
+     "en": "A careful point about step one. The flux balance is written across a thin control volume around the inlet plane. On the feed side there is no dispersion, only convection.",
+     "th": "ข้อควรระวังในขั้นที่หนึ่ง สมดุลฟลักซ์เขียนผ่านปริมาตรควบคุมบางๆ รอบระนาบทางเข้า ด้านสารป้อนไม่มีการกระจาย มีเพียงการพา"
+    },
+    {
+     "s": 53.521,
+     "e": 59.105,
+     "en": "On the reactor side there is both. Equating them gives the inlet condition.",
+     "th": "ด้านเครื่องปฏิกรณ์มีทั้งสองอย่าง การตั้งให้เท่ากันได้เงื่อนไขทางเข้า"
+    },
+    {
+     "s": 59.105,
+     "e": 66.426,
+     "en": "The outlet condition was debated for years, because zero gradient seems to impose something the reactor does not know about.",
+     "th": "เงื่อนไขทางออกเคยเป็นที่ถกเถียงหลายปี เพราะเกรเดียนต์ศูนย์ดูเหมือนบังคับสิ่งที่เครื่องปฏิกรณ์ไม่รู้"
+    },
+    {
+     "s": 66.426,
+     "e": 75.329,
+     "en": "The cleanest argument is that a nonzero gradient at the outlet would require the concentration to keep changing after the reactor, where nothing reacts.",
+     "th": "ข้อโต้แย้งที่ชัดเจนที่สุดคือ ถ้าเกรเดียนต์ที่ทางออกไม่เป็นศูนย์ ความเข้มข้นต้องเปลี่ยนต่อไปหลังเครื่องปฏิกรณ์ ซึ่งไม่มีปฏิกิริยาใดเกิดขึ้น"
+    },
+    {
+     "s": 75.329,
+     "e": 86.474,
+     "en": "Steps three to six are routine linear algebra. The real skill is the last line on the slide: check that the result reduces to plug flow and to one stirred tank in the two limits.",
+     "th": "ขั้นที่สามถึงหกเป็นพีชคณิตเชิงเส้นตามปกติ ทักษะที่แท้จริงอยู่ที่บรรทัดสุดท้ายบนสไลด์ คือตรวจว่าผลลัพธ์ลดรูปเป็นการไหลแบบปลั๊กและถังกวนหนึ่งถังในขีดจำกัดทั้งสอง"
     }
    ]
   },
   {
    "n": 21,
    "file": "audio/slide-21.mp3",
-   "duration": 25.392,
+   "duration": 89.136,
    "hold": false,
    "cues": [
     {
@@ -542,13 +1238,61 @@
      "e": 25.316,
      "en": "solve bvp agrees with the closed form to six digits. Note that the closed form overflows if coded naively at large Péclet number. Divide through by the largest exponential first.",
      "th": "solve bvp ให้ค่าตรงกับสูตรปิดถึงหกหลัก โปรดสังเกตว่าสูตรปิดจะ overflow ถ้าเขียนโค้ดตรงๆ ที่เลข Péclet ค่ามาก ให้หารด้วยเลขชี้กำลังที่ใหญ่ที่สุดก่อน"
+    },
+    {
+     "s": 25.316,
+     "e": 32.306,
+     "en": "Read the table under the chart. At a Péclet number of one, the conversion is zero point seven two.",
+     "th": "อ่านตารางใต้กราฟ ที่เลข Péclet เท่ากับหนึ่ง ค่าการเปลี่ยนแปลงเท่ากับศูนย์จุดเจ็ดสอง"
+    },
+    {
+     "s": 32.306,
+     "e": 39.013,
+     "en": "At ten it is zero point eight two, and at one hundred zero point eight six, close to plug flow.",
+     "th": "ที่สิบเท่ากับศูนย์จุดแปดสอง และที่หนึ่งร้อยเท่ากับศูนย์จุดแปดหก ใกล้การไหลแบบปลั๊ก"
+    },
+    {
+     "s": 39.013,
+     "e": 47.863,
+     "en": "Now look at the ends of the curves. At the inlet, the low Péclet profile starts at about half the feed concentration: the jump.",
+     "th": "ทีนี้ดูที่ปลายของเส้นโค้ง ที่ทางเข้า โปรไฟล์ที่เลข Péclet ต่ำเริ่มที่ประมาณครึ่งหนึ่งของความเข้มข้นสารป้อน"
+    },
+    {
+     "s": 47.863,
+     "e": 58.026,
+     "en": "At the outlet, every profile becomes flat, as the boundary condition requires. At large Péclet number that flattening happens in a very thin layer.",
+     "th": "คือการกระโดด ที่ทางออก ทุกโปรไฟล์แบนลงตามที่เงื่อนไขขอบเขตกำหนด ที่เลข Péclet ค่ามาก การแบนลงเกิดในชั้นที่บางมาก"
+    },
+    {
+     "s": 58.026,
+     "e": 65.663,
+     "en": "Press D to compute the conversion yourself for any Péclet number. Then compare with the overflow warning on the slide:",
+     "th": "กด D เพื่อคำนวณค่าการเปลี่ยนแปลงเองที่เลข Péclet ใดก็ได้ แล้วเทียบกับคำเตือนเรื่อง overflow บนสไลด์"
+    },
+    {
+     "s": 65.663,
+     "e": 70.605,
+     "en": "written naively, the formula fails for exactly the cases you care about most.",
+     "th": "ถ้าเขียนสูตรแบบตรงๆ สูตรจะใช้ไม่ได้ในกรณีที่คุณสนใจมากที่สุดพอดี"
+    },
+    {
+     "s": 70.605,
+     "e": 82.497,
+     "en": "A further observation. The inlet jump is not a numerical artifact: it is real and measurable as the difference between the feed concentration and the concentration just inside the bed.",
+     "th": "ข้อสังเกตเพิ่มเติม การกระโดดที่ทางเข้าไม่ใช่สิ่งที่เกิดจากการคำนวณเชิงตัวเลข มันเกิดจริงและวัดได้ คือความต่างระหว่างความเข้มข้นของสารป้อนกับความเข้มข้นที่อยู่ถัดเข้าไปในเบด"
+    },
+    {
+     "s": 82.497,
+     "e": 89.053,
+     "en": "Its size, one minus u at zero, equals the dispersive flux at the inlet divided by the convective flux.",
+     "th": "ขนาดของมัน คือหนึ่งลบ u ที่ศูนย์ เท่ากับฟลักซ์การกระจายที่ทางเข้าหารด้วยฟลักซ์การพา"
     }
    ]
   },
   {
    "n": 22,
    "file": "audio/slide-22.mp3",
-   "duration": 26.256,
+   "duration": 76.536,
    "hold": false,
    "cues": [
     {
@@ -568,13 +1312,49 @@
      "e": 26.197,
      "en": "For a dispersion model, say how the Péclet number was obtained; its uncertainty often matters more than the solver error.",
      "th": "สำหรับแบบจำลองการกระจาย ให้บอกว่าได้เลข Péclet มาอย่างไร ความไม่แน่นอนของมันมักสำคัญกว่าความคลาดเคลื่อนของตัวแก้สมการ"
+    },
+    {
+     "s": 26.197,
+     "e": 40.335,
+     "en": "On a logarithmic axis the curve has a simple shape. Below a Péclet number of about one, the reactor behaves almost like one tank. Above about one hundred, it behaves almost like plug flow.",
+     "th": "บนแกนลอการิทึม เส้นโค้งมีรูปร่างง่าย ต่ำกว่าเลข Péclet ประมาณหนึ่ง เครื่องปฏิกรณ์ทำงานเกือบเหมือนถังเดียว สูงกว่าประมาณหนึ่งร้อย ทำงานเกือบเหมือนการไหลแบบปลั๊ก"
+    },
+    {
+     "s": 40.335,
+     "e": 42.803,
+     "en": "The interesting range is between.",
+     "th": "ช่วงที่น่าสนใจอยู่ระหว่างนั้น"
+    },
+    {
+     "s": 42.803,
+     "e": 47.61,
+     "en": "For reporting, the uncertainty in the Péclet number usually dominates.",
+     "th": "สำหรับการรายงาน ความไม่แน่นอนของเลข Péclet มักเป็นตัวหลัก"
+    },
+    {
+     "s": 47.61,
+     "e": 58.579,
+     "en": "A factor of two in Péclet at a value of ten changes the conversion by about two percentage points here, far more than any solver error. Report it with its source.",
+     "th": "ตัวประกอบสองเท่าของเลข Péclet ที่ค่าสิบเปลี่ยนค่าการเปลี่ยนแปลงประมาณสองจุดเปอร์เซ็นต์ในกรณีนี้ มากกว่าความคลาดเคลื่อนของตัวแก้สมการใดๆ มาก ให้รายงานพร้อมที่มาของค่านั้น"
+    },
+    {
+     "s": 58.579,
+     "e": 69.386,
+     "en": "A reporting checklist for any boundary value solution: state the equation and each boundary condition with the balance behind it; name the solver, its tolerance and the final mesh size;",
+     "th": "รายการตรวจสำหรับการรายงานคำตอบของปัญหาค่าขอบใดๆ คือ ระบุสมการและเงื่อนไขขอบเขตแต่ละข้อพร้อมสมดุลเบื้องหลัง ระบุชื่อตัวแก้สมการ ค่าความคลาดเคลื่อนที่ยอมรับ และขนาด mesh"
+    },
+    {
+     "s": 69.386,
+     "e": 76.474,
+     "en": "report the largest residual; and show agreement with a limit or a closed form. Four lines in a methods section are enough.",
+     "th": "สุดท้าย รายงานค่าคงเหลือที่ใหญ่ที่สุด และแสดงความสอดคล้องกับขีดจำกัดหรือสูตรปิด สี่บรรทัดในส่วนวิธีการก็เพียงพอ"
     }
    ]
   },
   {
    "n": 23,
    "file": "audio/slide-23.mp3",
-   "duration": 7.992,
+   "duration": 18.288,
    "hold": true,
    "cues": [
     {
@@ -582,13 +1362,19 @@
      "e": 7.921,
      "en": "Check three. Answer the four questions, then show the answers. Pause the narration now.",
      "th": "แบบฝึกหัดตรวจสอบที่สาม ตอบคำถามสี่ข้อ แล้วกดแสดงคำตอบ หยุดเสียงบรรยายตอนนี้"
+    },
+    {
+     "s": 7.921,
+     "e": 18.224,
+     "en": "Draw the inlet plane and the fluxes on each side before you write anything. For the third question, compare the number with both limits, not with only one of them.",
+     "th": "วาดระนาบทางเข้าและฟลักซ์ทั้งสองด้านก่อนเขียนอะไร สำหรับข้อสาม ให้เทียบตัวเลขกับขีดจำกัดทั้งสอง ไม่ใช่เพียงด้านเดียว"
     }
    ]
   },
   {
    "n": 24,
    "file": "audio/slide-24.mp3",
-   "duration": 7.416,
+   "duration": 20.784,
    "hold": true,
    "cues": [
     {
@@ -596,13 +1382,25 @@
      "e": 7.342,
      "en": "Check four connects today with earlier sessions, in the style of the midterm. Pause the narration now.",
      "th": "แบบฝึกหัดตรวจสอบที่สี่เชื่อมเนื้อหาวันนี้กับคาบก่อนๆ ในรูปแบบของการสอบกลางภาค หยุดเสียงบรรยายตอนนี้"
+    },
+    {
+     "s": 7.342,
+     "e": 15.715,
+     "en": "These questions are the style of the midterm. Each one asks you to name a tool from another session and say why it applies.",
+     "th": "คำถามชุดนี้เป็นรูปแบบของการสอบกลางภาค แต่ละข้อให้ระบุเครื่องมือจากคาบอื่นและบอกว่าทำไมจึงใช้ได้"
+    },
+    {
+     "s": 15.715,
+     "e": 20.711,
+     "en": "One or two sentences per question is enough, but the reason must be there.",
+     "th": "ตอบข้อละหนึ่งหรือสองประโยคก็พอ แต่ต้องมีเหตุผล"
     }
    ]
   },
   {
    "n": 25,
    "file": "audio/slide-25.mp3",
-   "duration": 23.352,
+   "duration": 83.88,
    "hold": false,
    "cues": [
     {
@@ -628,13 +1426,55 @@
      "e": 23.289,
      "en": "The midterm covers all seven, and expects at least one problem that needs two sessions together.",
      "th": "การสอบกลางภาคครอบคลุมทั้งเจ็ดคาบ และมีอย่างน้อยหนึ่งข้อที่ต้องใช้สองคาบร่วมกัน"
+    },
+    {
+     "s": 23.289,
+     "e": 33.222,
+     "en": "Read the right hand column as a set of questions you can ask about any model in your research. They are not separate topics. A typical problem uses several:",
+     "th": "อ่านคอลัมน์ขวาเป็นชุดคำถามที่ถามได้กับแบบจำลองใดก็ได้ในงานวิจัยของคุณ ไม่ใช่หัวข้อที่แยกกัน ปัญหาโดยทั่วไปใช้หลายหัวข้อร่วมกัน"
+    },
+    {
+     "s": 33.222,
+     "e": 42.395,
+     "en": "scale the model, find its steady states, linearize, look at the eigenvalues, and then solve the boundary value problem with the right conditions.",
+     "th": "คือทำให้ไร้มิติ หาสภาวะคงตัว ทำให้เป็นเชิงเส้น ดูค่าลักษณะเฉพาะ แล้วแก้ปัญหาค่าขอบด้วยเงื่อนไขที่ถูกต้อง"
+    },
+    {
+     "s": 42.395,
+     "e": 45.271,
+     "en": "The midterm will reward that kind of connection.",
+     "th": "การสอบกลางภาคจะให้คะแนนกับการเชื่อมโยงแบบนั้น"
+    },
+    {
+     "s": 45.271,
+     "e": 55.776,
+     "en": "Expect at least one problem that starts from a physical description, asks you to write the model and its conditions, and then asks which tool from which session answers each part.",
+     "th": "คาดได้ว่าจะมีอย่างน้อยหนึ่งข้อที่เริ่มจากคำอธิบายทางกายภาพ ให้เขียนแบบจำลองและเงื่อนไข แล้วถามว่าเครื่องมือของคาบใดตอบแต่ละส่วน"
+    },
+    {
+     "s": 55.776,
+     "e": 67.16,
+     "en": "Here is one example of how the sessions combine. Take the exothermic catalyst pellet. Session 6 scales it and finds the Thiele modulus and the Prater number.",
+     "th": "นี่คือตัวอย่างการรวมคาบต่างๆ เข้าด้วยกัน พิจารณาเม็ดตัวเร่งแบบคายความร้อน คาบที่ 6 ทำให้ไร้มิติและหา Thiele modulus"
+    },
+    {
+     "s": 67.16,
+     "e": 75.229,
+     "en": "Session 7 sets up the boundary value problem. Session 5 continues its solutions in the modulus and finds folds.",
+     "th": "กับเลข Prater คาบที่ 7 ตั้งปัญหาค่าขอบ คาบที่ 5 ติดตามคำตอบตาม modulus และหาจุดพับ"
+    },
+    {
+     "s": 75.229,
+     "e": 83.803,
+     "en": "Session 4 decides which branches are stable, and Session 2 tells you whether the parameters can be estimated from data.",
+     "th": "คาบที่ 4 ตัดสินว่าสาขาใดเสถียร และคาบที่ 2 บอกว่าประมาณพารามิเตอร์จากข้อมูลได้หรือไม่"
     }
    ]
   },
   {
    "n": 26,
    "file": "audio/slide-26.mp3",
-   "duration": 18.168,
+   "duration": 44.664,
    "hold": true,
    "cues": [
     {
@@ -654,13 +1494,31 @@
      "e": 18.105,
      "en": "and write a finite difference solver for a second order rate. Pause the narration now.",
      "th": "และเขียนตัวแก้สมการแบบผลต่างจำกัดสำหรับอัตราอันดับสอง หยุดเสียงบรรยายตอนนี้"
+    },
+    {
+     "s": 18.105,
+     "e": 29.969,
+     "en": "A short guide to the lab. Task one is quick: three numbers from formulas on the data card. Task two asks you to read the profiles; take time over the inlet and the outlet.",
+     "th": "คำแนะนำสั้นๆ สำหรับแล็บ งานที่หนึ่งทำได้เร็ว คือตัวเลขสามค่าจากสูตรในบัตรข้อมูล งานที่สองให้อ่านโปรไฟล์ ใช้เวลากับทางเข้าและทางออก"
+    },
+    {
+     "s": 29.969,
+     "e": 40.591,
+     "en": "Task three is the slider. Task four is the code: start from the ghost node formulas in the instructions, write the residual, and run it before you check.",
+     "th": "งานที่สามคือแถบเลื่อน งานที่สี่คือโค้ด เริ่มจากสูตร ghost node ในคำแนะนำ เขียน residual และรันก่อนกดตรวจ การรันครั้งแรกจะโหลด"
+    },
+    {
+     "s": 40.591,
+     "e": 44.592,
+     "en": "The first run loads Python and takes about twenty seconds.",
+     "th": "Python และใช้เวลาประมาณยี่สิบวินาที"
     }
    ]
   },
   {
    "n": 27,
    "file": "audio/slide-27.mp3",
-   "duration": 26.424,
+   "duration": 46.704,
    "hold": false,
    "cues": [
     {
@@ -680,13 +1538,25 @@
      "e": 26.355,
      "en": "The dispersion reactor lies between the stirred tank and plug flow.",
      "th": "Green เครื่องปฏิกรณ์แบบมีการกระจายอยู่ระหว่างถังกวนกับการไหลแบบปลั๊ก"
+    },
+    {
+     "s": 26.355,
+     "e": 37.105,
+     "en": "Take the numbers in the table as checks you can reproduce. Each comes from a calculation you did or saw today, and each can be recomputed in a few lines of Python.",
+     "th": "ให้ถือตัวเลขในตารางเป็นตัวตรวจที่คุณทำซ้ำได้ แต่ละตัวมาจากการคำนวณที่คุณทำหรือเห็นในวันนี้ และแต่ละตัวคำนวณซ้ำได้ด้วย Python ไม่กี่บรรทัด"
+    },
+    {
+     "s": 37.105,
+     "e": 46.645,
+     "en": "If you remember one idea from today, make it this: the boundary conditions are part of the model, chosen from physics, and they decide which mathematics applies.",
+     "th": "ถ้าจะจำแนวคิดเดียวจากวันนี้ ให้จำว่า เงื่อนไขขอบเขตเป็นส่วนหนึ่งของแบบจำลอง เลือกจากฟิสิกส์ และเป็นตัวตัดสินว่าใช้คณิตศาสตร์แบบใด"
     }
    ]
   },
   {
    "n": 28,
    "file": "audio/slide-28.mp3",
-   "duration": 11.4,
+   "duration": 26.784,
    "hold": false,
    "cues": [
     {
@@ -694,13 +1564,25 @@
      "e": 11.342,
      "en": "Before the midterm, finish the lab and upload the answer file, and work through problem set seven. Go over the four checks of every session without notes, and bring your finished card.",
      "th": "ก่อนสอบกลางภาค ทำแล็บให้เสร็จและอัปโหลดไฟล์คำตอบ และทำชุดโจทย์ที่เจ็ด ทบทวนแบบฝึกหัดตรวจสอบสี่ข้อของทุกคาบโดยไม่ดูโน้ต และนำการ์ดที่เสร็จแล้วมาด้วย"
+    },
+    {
+     "s": 11.342,
+     "e": 19.766,
+     "en": "A suggestion for revision. For each session, redo the four checks without notes, then work the problem set, then reread your card.",
+     "th": "ข้อแนะนำสำหรับการทบทวน สำหรับแต่ละคาบ ให้ทำแบบฝึกหัดตรวจสอบทั้งสี่ข้อใหม่โดยไม่ดูโน้ต แล้วทำชุดโจทย์ แล้วอ่านการ์ดของคุณอีกครั้ง"
+    },
+    {
+     "s": 19.766,
+     "e": 26.711,
+     "en": "If a check takes you more than five minutes, return to that session's derivation slides before the problems.",
+     "th": "ถ้าข้อตรวจสอบข้อใดใช้เวลาเกินห้านาที ให้กลับไปที่สไลด์หาสูตรของคาบนั้นก่อนทำโจทย์"
     }
    ]
   },
   {
    "n": 29,
    "file": "audio/slide-29.mp3",
-   "duration": 14.4,
+   "duration": 22.32,
    "hold": true,
    "cues": [
     {
@@ -708,6 +1590,12 @@
      "e": 14.329,
      "en": "Finally, the Exit Ticket and feedback. Scan the code and choose Session 7. Today the form also asks a few questions about the course as a whole. Thank you, and good luck with the midterm.",
      "th": "สุดท้าย Exit Ticket และแบบประเมิน สแกนโค้ดแล้วเลือกคาบที่ 7 วันนี้แบบฟอร์มจะถามคำถามเกี่ยวกับวิชาโดยรวมด้วย ขอบคุณครับ และขอให้โชคดีในการสอบกลางภาค"
+    },
+    {
+     "s": 14.329,
+     "e": 22.25,
+     "en": "Your answers to the whole course questions help shape the second half of the semester, so please be specific about what helped and what did not.",
+     "th": "คำตอบของคุณในคำถามเกี่ยวกับวิชาโดยรวมช่วยกำหนดครึ่งหลังของภาคการศึกษา จึงขอให้ระบุให้ชัดว่าอะไรช่วยและอะไรไม่ช่วย"
     }
    ]
   }
